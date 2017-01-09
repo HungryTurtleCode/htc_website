@@ -11,9 +11,13 @@ html
   p
     font-size: 1em
 
-
-
-
-@media screen and (min-width: 320px)
-  html
+  @media screen and (min-width: 320px)
     font-size: calc(15px + 5 * ((100vw - 320px) / 1180))
+
+  #page-container
+    +outer-container
+    main
+      +span-columns(8)
+
+
+

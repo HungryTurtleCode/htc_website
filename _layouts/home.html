@@ -4,4 +4,10 @@ layout: default
 
 <h1>Home page call to action</h1>
 
-{{content}}
+<div id="page-container">
+  <main>
+    {{ content }}
+  </main>
+
+  {% include sidebar.html %}
+</div>
