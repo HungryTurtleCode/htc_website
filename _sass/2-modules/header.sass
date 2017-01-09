@@ -1,0 +1,33 @@
+header
+  background-color: $default-dark-color
+  font-size: 1rem
+
+  .header-container
+    +outer-container
+    +padding(10px 10px 3px 10px)
+    +position(relative)
+
+    .mascot
+      +position(absolute, 10px null null 0)
+
+    .logo
+      margin-left: 220px
+
+  nav
+    background-color: $primary-color
+
+    ul
+      +outer-container
+      +padding(0 0 0 95px)
+      +margin(0 auto)
+      +position(relative)
+      z-index: 2
+
+      li
+        display: inline-block
+        padding: 0.5em 0.8em
+        cursor: pointer
+        +transition(background-color 0.4s ease-in-out)
+        font-weight: bold
+        &:hover
+          background: tint($primary-color, 50%)
