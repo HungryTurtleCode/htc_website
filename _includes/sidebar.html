@@ -7,10 +7,11 @@
 
   <section class="recent-posts">
     <h2>Recent Posts</h2>
-
-    <div class="recent-item" style="background: url('https://res.cloudinary.com/djxscnpzf/image/upload/v1470611214/JavaScript_DebuggngTip_msy13l.jpg') no-repeat center; background-size: cover"></div>
-    <div class="recent-item" style="background: url('https://res.cloudinary.com/djxscnpzf/image/upload/v1470611214/JavaScript_DebuggngTip_msy13l.jpg') no-repeat center; background-size: cover"></div>
-    <div class="recent-item" style="background: url('https://res.cloudinary.com/djxscnpzf/image/upload/v1470611214/JavaScript_DebuggngTip_msy13l.jpg') no-repeat center; background-size: cover"></div>
+    {% for post in site.posts limit: 3 %}
+      <a href="{{site.url}}/{{post.permalink}}">
+        <div class="recent-item" style="background: url('{{post.image}}') no-repeat center; background-size: cover"></div>
+      </a>
+    {% endfor %}
 
   </section>
 
