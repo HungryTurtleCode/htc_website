@@ -1,17 +1,9 @@
 ---
-id: 11
 title: Terms of Use
 date: 2015-12-27T11:59:36+00:00
 author: Adrian
 layout: page
 permalink: /terms-of-use/
-guid: https://hungryturtlecode.com/?page_id=11
-factory_shortcodes_assets:
-  - 'a:0:{}'
-crp_post_meta:
-  - 'a:2:{s:16:"crp_disable_here";i:1;s:14:"manual_related";s:1:"0";}'
-per-page-ath-content:
-  - '<title>Terms of Use - Hungry Turtle Code</title>'
 ---
 **Last Revised: December 5, 2015**
 

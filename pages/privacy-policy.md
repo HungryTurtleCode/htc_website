@@ -1,17 +1,9 @@
 ---
-id: 9
 title: Privacy Policy
 date: 2015-12-27T11:59:09+00:00
 author: Adrian
 layout: page
 permalink: /privacy-policy/
-guid: https://hungryturtlecode.com/?page_id=9
-factory_shortcodes_assets:
-  - 'a:0:{}'
-crp_post_meta:
-  - 'a:2:{s:16:"crp_disable_here";i:1;s:14:"manual_related";s:1:"0";}'
-per-page-ath-content:
-  - '<title>Privacy Policy - Hungry Turtle Code</title>'
 ---
 **Last Revised: December 5, 2015**
 

@@ -1,19 +1,9 @@
 ---
-id: 1040
 title: Thanks For Confirming Your Email
 date: 2016-07-13T21:39:27+00:00
 author: Adrian
 layout: page
 permalink: /thanks-for-signing-up/
-guid: https://hungryturtlecode.com/?page_id=1040
-factory_shortcodes_assets:
-  - 'a:0:{}'
-per-page-ath-content:
-  - '<title>Thanks For Confirming Your Email</title>'
-crp_related_posts:
-  - '<div id="crp_related"> </div>'
-crp_post_meta:
-  - 'a:2:{s:16:"crp_disable_here";i:1;s:14:"manual_related";s:1:"0";}'
 ---
 Thanks for signing up for the newsletter and confirming your email address. We do this just to make sure you aren&#8217;t a bot and it also helps us ensure we are only sending information to those who really want to see it.
 

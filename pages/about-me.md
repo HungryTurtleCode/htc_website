@@ -1,16 +1,11 @@
 ---
-id: 5
-title: About Me
+title: About Adrian Henry
 date: 2015-12-27T11:58:34+00:00
 author: Adrian
 layout: page
 permalink: /about-me/
-guid: https://hungryturtlecode.com/?page_id=5
-factory_shortcodes_assets:
-  - 'a:0:{}'
-per-page-ath-content:
-  - '<title>About Adrian Henry - Hungry Turtle Code</title>'
 ---
+
 ## Who Am I? And What Is Hungry Turtle Code?
 
 <div id="attachment_471" style="width: 385px" class="wp-caption alignright">

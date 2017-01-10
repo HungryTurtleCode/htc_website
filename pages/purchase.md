@@ -1,17 +1,10 @@
 ---
-id: 1114
 title: Purchase
+head-title: Checkout
 date: 2016-10-15T17:53:33+00:00
 author: Adrian
 layout: page
 permalink: /purchase/
-guid: https://hungryturtlecode.com/purchase/
-factory_shortcodes_assets:
-  - 'a:0:{}'
-crp_related_posts:
-  - '<div id="crp_related"> </div>'
-per-page-ath-content:
-  - '<title>Checkout - Hungry Turtle Code</title>'
 ---
 <div class="lifterlms">
   <div class="llms-checkout-wrapper">
