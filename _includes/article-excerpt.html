@@ -1,19 +1,22 @@
 <article class="article-excerpt">
-  <a href="#" class="thumbnail">
-    <img class="post-summary-image" src="https://res.cloudinary.com/djxscnpzf/image/upload/v1470611214/JavaScript_DebuggngTip_msy13l.jpg" alt="Debug() – Javascript Debugging Tips">
+  <a href="{{site.url}}{{include.data.permalink}}" class="thumbnail">
+    <img class="post-summary-image" src="{{include.data.image}}" alt="Debug() – Javascript Debugging Tips">
   </a>
   <div class="summary">
-    <a href="#">
-      <h2>Debug() - Javascript Debugging Tips</h2>
+    <a href="{{site.url}}{{include.data.permalink}}">
+      <h2>{{include.data.title}}</h2>
     </a>
 
     <strong class="post-author-tag">
       By
-      <a href="#">Adrian</a> on August 9th, 2016 in <a href="#">Javascript</a>, <a href="#">Tips & Tricks</a>
+      <a href="#">{{include.data.author}}</a> on {{include.data.date}} in
+      {% for cat in include.data.categories %}
+        <a href="{{site.url}}/{{cat | slugify}}">{{cat}}</a>{% if forloop.index != include.data.categories.size  %}<span>, </span>{% endif %}
+      {% endfor %}
     </strong>
 
-    <a href="#">
-      <p>Debug() – The Death Of Ctrl+f If you are anything like me, you have wasted countless hours of your life using ctrl+f to find functions inside your code. If you only have one file, ctrl+f is still going to be …</p>
+    <a href="{{site.url}}{{include.data.permalink}}">
+      {{post.excerpt}}
     </a>
   </div>
 </article>

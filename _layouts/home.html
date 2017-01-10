@@ -6,16 +6,9 @@ layout: default
 
 <div id="page-container">
   <main>
-    {% include article-excerpt.html %}
-    {% include article-excerpt.html %}
-    {% include article-excerpt.html %}
-    {% include article-excerpt.html %}
-    {% include article-excerpt.html %}
-    {% include article-excerpt.html %}
-    {% include article-excerpt.html %}
-    {% include article-excerpt.html %}
-    {% include article-excerpt.html %}
-    {% include article-excerpt.html %}
+    {% for post in site.posts %}
+      {% include article-excerpt.html data=post %}
+    {% endfor %}
   </main>
 
   {% include sidebar.html %}
