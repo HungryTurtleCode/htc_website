@@ -4,6 +4,7 @@ title: Best Programming Language to Learn in 2016
 date: 2016-01-07T04:44:35+00:00
 author: Adrian
 layout: page
+permalink: /best-programming-languages-to-learn-2016/
 guid: https://hungryturtlecode.com/?page_id=172
 factory_shortcodes_assets:
   - 'a:0:{}'

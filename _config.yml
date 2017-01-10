@@ -40,3 +40,5 @@ exclude:
   - node_modules
   - package.json
   - webpack.config
+include:
+  - pages

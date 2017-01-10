@@ -4,6 +4,7 @@ title: Contact Me
 date: 2015-12-27T11:58:46+00:00
 author: Adrian
 layout: page
+permalink: /contact-me/
 guid: https://hungryturtlecode.com/?page_id=7
 factory_shortcodes_assets:
   - 'a:0:{}'

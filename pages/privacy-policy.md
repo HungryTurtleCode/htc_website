@@ -4,6 +4,7 @@ title: Privacy Policy
 date: 2015-12-27T11:59:09+00:00
 author: Adrian
 layout: page
+permalink: /privacy-policy/
 guid: https://hungryturtlecode.com/?page_id=9
 factory_shortcodes_assets:
   - 'a:0:{}'

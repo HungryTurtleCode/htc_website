@@ -4,6 +4,7 @@ title: Terms of Use
 date: 2015-12-27T11:59:36+00:00
 author: Adrian
 layout: page
+permalink: /terms-of-use/
 guid: https://hungryturtlecode.com/?page_id=11
 factory_shortcodes_assets:
   - 'a:0:{}'

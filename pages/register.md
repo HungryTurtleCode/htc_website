@@ -4,6 +4,7 @@ title: Register
 date: 2016-10-15T23:21:33+00:00
 author: Adrian
 layout: page
+permalink: /register/
 guid: https://hungryturtlecode.com/?page_id=1148
 factory_shortcodes_assets:
   - 'a:0:{}'

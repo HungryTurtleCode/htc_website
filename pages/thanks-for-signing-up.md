@@ -4,6 +4,7 @@ title: Thanks For Confirming Your Email
 date: 2016-07-13T21:39:27+00:00
 author: Adrian
 layout: page
+permalink: /thanks-for-signing-up/
 guid: https://hungryturtlecode.com/?page_id=1040
 factory_shortcodes_assets:
   - 'a:0:{}'

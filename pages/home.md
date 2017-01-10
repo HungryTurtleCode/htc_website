@@ -1,6 +1,7 @@
 ---
 layout: home
 title: "Home Page"
+permalink: /
 fulltitle: "Hungry Turtle Code | Learn Code, One Line At A Time" 
 excerpt: This is the greatest website on earth. Share! Like! Subscribe! I'm dead inside!
 ---

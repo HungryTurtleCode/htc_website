@@ -4,6 +4,7 @@ title: Thank you for commenting!
 date: 2016-01-01T03:21:32+00:00
 author: Adrian
 layout: page
+permalink: /commenting/
 guid: https://hungryturtlecode.com/?page_id=92
 factory_shortcodes_assets:
   - 'a:0:{}'

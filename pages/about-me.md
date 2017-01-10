@@ -4,6 +4,7 @@ title: About Me
 date: 2015-12-27T11:58:34+00:00
 author: Adrian
 layout: page
+permalink: /about-me/
 guid: https://hungryturtlecode.com/?page_id=5
 factory_shortcodes_assets:
   - 'a:0:{}'
