@@ -25,9 +25,15 @@ header
 
       li
         display: inline-block
-        padding: 0.5em 0.8em
-        cursor: pointer
-        +transition(background-color 0.4s ease-in-out)
-        font-weight: bold
-        &:hover
-          background: tint($primary-color, 50%)
+
+        a
+          font-weight: bold
+          display: inline-block
+          padding: 0.7em 1em
+          color: black
+          text-decoration: none
+          font-size: 0.9em
+          +transition(background-color 0.4s ease-in-out)
+
+          &:hover
+            background: tint($primary-color, 80%)

@@ -1,0 +1,13 @@
+primary:
+  - title: News
+    url: /news/
+  - title: Projects
+    url: /code-projects/
+  - title: Tips & Tricks
+    url: /tips-tricks/
+  - title: Tutorials
+    url: /tutorials/
+  - title: About Me
+    url: /about-me/
+  - title: Contact Me
+    url: /contact-me/
