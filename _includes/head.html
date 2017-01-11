@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Plain Description -->
-	<title>{%if page.head-title != nil %}{{ page.head-title }}{% else %}Home{% endif %} - Hungry Turtle Code</title>
+	<title>{%if page.head-title != nil %}{{ page.head-title }}{% elsif page.title != nil %}{{page.title}}{% else %}Home{% endif %} - Hungry Turtle Code</title>
 	<meta name="description" content="{% if page.excerpt %}{{page.excerpt}}{% else %}{{site.description}}{% endif %}">
 	<link rel="icon" type="image/png" href="{{site.url}}/favicon.png">
 
