@@ -15,7 +15,7 @@ categories:
 
 I often hear people who are just getting into programming ask things like, &#8220;but how do I use this in the real world?&#8221;. It is all well and good understanding things from a theoretical standpoint, but it&#8217;s all about actually using that knowledge to make something awesome.
 
-So today I am going to explain how you can build a pretty simple effect using <a href="https://hungryturtlecode.com/tutorials/javascript-tuts/jquery-tuts/" target="_blank">jQuery</a> by monitoring user keystrokes.
+So today I am going to explain how you can build a pretty simple effect using [jQuery](https://hungryturtlecode.com/tutorials/javascript-tuts/jquery-tuts/){:target="_blank"}<!--_--> by monitoring user keystrokes. 
 
 ### But What Is This Awesome Effect?
 
@@ -31,7 +31,7 @@ By pressing and releasing the &#8220;r&#8221; key, you can switch back and forth
 
 ### You Talk Too Much; Show Me Some Code!
 
-Head over to the <a href="https://github.com/adiman9/hondadoubleside" target="_blank">GitHub repo</a> and you will be able to get the video assets you need. You can also take a look at the code from the tutorial.
+Head over to the [Github repo](https://github.com/adiman9/hondadoubleside){:target="_blank"}<!--_--> and you will be able to get the video assets you need. You can also take a look at the code from the tutorial.
 
 ### Video or Text Tutorial? Pick Your Side.
 
@@ -39,42 +39,7 @@ I hate to discriminate, so I offer all my tutorials as both videos for us more v
 
 ## &#8220;Other Side&#8221; jQuery Video Tutorial
 
-<div class="embedoverlay overlay" style="background: url(https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_775/v1451773551/fun_with_keyboard_events3_lej3hr.jpg);">
-  <div class="embedoverlaycont ">
-    <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-    </div>
-    
-    <h2 class="optinform">
-      Get all my latest content and exclusive offers direct to your inbox
-    </h2>
-    
-    <p class="optinform">
-      Just enter you email below
-    </p>
-    
-    <div class="embedform optinform">
-    </div>
-    
-    <p class="embedreturn">
-      <small>Go back to the video</small>
-    </p>
-  </div>
-</div>
-
-<div class="embedcont"style="width: 100%; text-align: center;">
-</div>
-
-<div style="display: inline-block; padding-right: 20px; font-weight: bold; color: red; vertical-align: top; padding-top: 12px;">
-  Subscribe To My Channel...
-</div>
-
-<div style="margin-top: 5px; display: inline-block">
-  <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-  </div>
-</div>
-
-<div id="embedcode" style="display: none;">
-</div>
+{% include video-embed.html videoID="9NzKTSLceTc" %}
 
 ### Reading is cool though&#8230;
 

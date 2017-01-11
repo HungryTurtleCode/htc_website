@@ -1,0 +1,40 @@
+<div class="video-embed-container">
+
+  <iframe
+    width="800"
+    height="450"
+    src="https://www.youtube.com/embed/{{include.videoID}}" frameborder="0"
+    allowfullscreen>
+  </iframe>
+
+  <div class="subscribe-prompt">
+    <div class="text">
+      Subscribe To My Channel...
+    </div>
+
+    <div
+      class="g-ytsubscribe"
+      data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw"
+      data-layout="full"
+      data-count="hidden"
+      data-onytevent="onYtEvent">
+    </div>
+  </div>
+
+</div>
+
+<script src="https://apis.google.com/js/platform.js"></script>
+
+<script>
+function onYtEvent(payload) {
+  if (payload.eventType == 'subscribe') {
+    // Add code to handle subscribe event.
+  } else if (payload.eventType == 'unsubscribe') {
+    // Add code to handle unsubscribe event.
+  }
+  if (window.console) { // for debugging only
+    window.console.log('YT event: ', payload);
+  }
+}
+</script>
+
