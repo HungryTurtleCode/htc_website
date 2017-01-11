@@ -1,8 +1,18 @@
 .highlight{
+  font-size: 1.2rem;
   background: #272822;
   margin: 1em 0;
-  padding: 0.2em 1em;
-  overflow: auto
+  overflow: auto;
+  padding: 0 0.6em;
+  color: #eee;
+
+  pre{
+    margin: 0.5em 0;
+  }
+
+  .code{
+    padding-left: 1.2em
+  }
 }
 .highlight .hll { background-color: #49483e  }
 .highlight .c { color: #75715e  } /* Comment */
