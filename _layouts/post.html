@@ -16,7 +16,7 @@ layout: default
 
     <strong class="post-author-tag">
       By
-      <a href="#">{{page.author}}</a> on {{page.date}} in
+      <a href="#">{{page.author}}</a> on {{page.date | date: '%B %d, %Y'}} in
       {% for cat in page.categories %}
         <a href="{{site.url}}/{{cat | slugify}}">{{cat}}</a>{% if forloop.index != page.categories.size  %}<span>, </span>{% endif %}
       {% endfor %}

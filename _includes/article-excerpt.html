@@ -9,7 +9,7 @@
 
     <strong class="post-author-tag">
       By
-      <a href="#">{{include.data.author}}</a> on {{include.data.date}} in
+      <a href="#">{{include.data.author}}</a> on {{include.data.date | date: '%B %d, %Y'}} in
       {% for cat in include.data.categories %}
         <a href="{{site.url}}/{{cat | slugify}}">{{cat}}</a>{% if forloop.index != include.data.categories.size  %}<span>, </span>{% endif %}
       {% endfor %}
