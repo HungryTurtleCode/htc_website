@@ -2,7 +2,7 @@
 title: Privacy Policy
 date: 2015-12-27T11:59:09+00:00
 author: Adrian
-layout: page
+layout: fullwidth
 permalink: /privacy-policy/
 ---
 **Last Revised: December 5, 2015**

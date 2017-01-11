@@ -2,7 +2,7 @@
 title: Contact Me
 date: 2015-12-27T11:58:46+00:00
 author: Adrian
-layout: page
+layout: fullwidth
 permalink: /contact-me/
 ---
 If you have any questions or requests about myself or the content of this site, please do not hesitate to ask.

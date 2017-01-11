@@ -2,7 +2,7 @@
 title: About Adrian Henry
 date: 2015-12-27T11:58:34+00:00
 author: Adrian
-layout: page
+layout: post
 permalink: /about-me/
 ---
 

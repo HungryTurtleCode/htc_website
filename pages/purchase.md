@@ -3,7 +3,7 @@ title: Purchase
 head-title: Checkout
 date: 2016-10-15T17:53:33+00:00
 author: Adrian
-layout: page
+layout: fullwidth
 permalink: /purchase/
 ---
 <div class="lifterlms">

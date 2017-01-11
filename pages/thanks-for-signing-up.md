@@ -2,7 +2,7 @@
 title: Thanks For Confirming Your Email
 date: 2016-07-13T21:39:27+00:00
 author: Adrian
-layout: page
+layout: post
 permalink: /thanks-for-signing-up/
 ---
 Thanks for signing up for the newsletter and confirming your email address. We do this just to make sure you aren&#8217;t a bot and it also helps us ensure we are only sending information to those who really want to see it.

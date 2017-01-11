@@ -2,7 +2,7 @@
 title: Terms of Use
 date: 2015-12-27T11:59:36+00:00
 author: Adrian
-layout: page
+layout: fullwidth
 permalink: /terms-of-use/
 ---
 **Last Revised: December 5, 2015**

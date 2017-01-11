@@ -3,7 +3,7 @@ title: Best Programming Language to Learn in 2016
 head-title: Learning How to Code in 2016
 date: 2016-01-07T04:44:35+00:00
 author: Adrian
-layout: page
+layout: post
 permalink: /best-programming-languages-to-learn-2016/
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,h_150/v1452614939/5872169307_15b5d16087_o_nfril6.jpg
 ---

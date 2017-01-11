@@ -2,7 +2,7 @@
 title: Thank you for commenting!
 date: 2016-01-01T03:21:32+00:00
 author: Adrian
-layout: page
+layout: post
 permalink: /commenting/
 ---
 ## It really does mean a lot!
