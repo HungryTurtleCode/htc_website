@@ -4,7 +4,34 @@ layout: default
 
 <div id="page-container">
   <main>
+
+    <!-- TODO add the correct breadcrumbs and links -->
+    <div class="breadcrumbs">
+      <span><a href="{{site.url}}">Home</a> >></span>
+      <span><a href="{{site.url}}">{{page.categories}}</a> >></span>
+      <span>{{page.title}}</span>
+    </div>
+
+    <h1>{{page.title}}</h1>
+
+    <strong class="post-author-tag">
+      By
+      <a href="#">{{page.author}}</a> on {{page.date}} in
+      {% for cat in page.categories %}
+        <a href="{{site.url}}/{{cat | slugify}}">{{cat}}</a>{% if forloop.index != page.categories.size  %}<span>, </span>{% endif %}
+      {% endfor %}
+    </strong>
+
+    <p class="pleaseshare">
+      <strong>
+        Please
+        <span>share</span>
+        this post if you enjoy it!
+      </strong>
+    </p>
+
     {{content}}
+
   </main>
 
   {% include sidebar.html %}
