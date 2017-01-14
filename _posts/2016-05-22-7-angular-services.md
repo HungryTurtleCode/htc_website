@@ -14,7 +14,7 @@ categories:
 
 Fully armed with the knowledge on how to hide and show HTML elements, we can now go ahead and create the quiz controller that we will show at the same time that we hide the list controller &#8211; when the user clicks the “start quiz” button. Then we can learn about [Angular Services](https://docs.angularjs.org/guide/services){: target="_blank"}<!--_--> and how they solve some problems that may arise.
 
-**If you want to see the app for yourself,** [check it out here.](/turtlefacts)
+**If you want to see the app for yourself,** [check it out here.]({{site.url}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 

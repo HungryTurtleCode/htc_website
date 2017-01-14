@@ -42,7 +42,7 @@ We can now give ng-click a function that will change the value of the selected p
 
 In the ng-class we can make a comparison between the $index of all the possible answers and the selected property for the question. Only the possible answer that matches will be given the background.
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="row"
   ng-if="quiz.dataService.quizQuestions[quiz.activeQuestion].type === 'text'">
     <div class="col-sm-6" ng-repeat="answer in quiz.dataService.quizQuestions[quiz.activeQuestion].possibilities">
@@ -55,7 +55,7 @@ In the ng-class we can make a comparison between the $index of all the possible 
       </h4>
     </div>
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 Now let’s create the function in the quiz controller. This process will be familiar to you by now. I have left out all the rest of the code that we have added to the controller previously just to make sure you can see exactly what we are doing here.
 

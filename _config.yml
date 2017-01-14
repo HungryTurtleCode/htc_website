@@ -30,6 +30,7 @@ github_org: HungryTurtleCode
 
 # Build settings
 markdown: kramdown
+# markdown: redcarpet
 gems:
   - jekyll-feed
 exclude:

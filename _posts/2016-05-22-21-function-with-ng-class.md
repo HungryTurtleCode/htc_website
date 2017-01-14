@@ -26,7 +26,7 @@ Below the row we created in the last part we will continue to create the markup 
 
 ![results question area](){: class="aligncenter" width="800" height="344"}
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="row">
   <h3>Questions:</h3>
   <div class="well well-sm">
@@ -39,9 +39,9 @@ Below the row we created in the last part we will continue to create the markup 
     </div>
   </div>
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
-Inside the {{}} syntax of the h4 we will need to reference the active question again to ensure the correct data is showing. This means we will need to create an active question variable on the results controller.
+Inside the {% raw %}{{}}{% endraw %} syntax of the h4 we will need to reference the active question again to ensure the correct data is showing. This means we will need to create an active question variable on the results controller.
 
 {% highlight javascript linenos%}
 function ResultsController(quizMetrics, DataService){
@@ -58,7 +58,7 @@ function ResultsController(quizMetrics, DataService){
 
 Now that that&#8217;s done we can write the code into that h4. It will be much like the code in the h4 of the quiz controller so if you don’t quite understand what is going on here go back to the part where we created this markup in the quiz controller. Continuing on, we will also ng-repeat all the possible answers of the active question.
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="row">
   <h3>Questions:</h3>
   <div class="well well-sm">
@@ -83,7 +83,7 @@ Now that that&#8217;s done we can write the code into that h4. It will be much l
     </div>
   </div>
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 ### Adding More Feedback To Each Answer
 
@@ -93,7 +93,7 @@ If you have seen the [final application]({{site.url}}/turtlefacts){: target="_bl
 
 To implement that we need to create the two sets of text and ng-show then depending on the conditions of each possible answer.
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <h4 class="answer">
         
   {{answer.answer}}
@@ -109,7 +109,7 @@ To implement that we need to create the two sets of text and ng-show then depend
   </p>
 
 </h4>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 ## Fancy Expressions and a Function With Ng-Class
 

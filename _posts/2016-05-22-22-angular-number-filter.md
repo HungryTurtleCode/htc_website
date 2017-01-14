@@ -48,7 +48,7 @@ The final area to add to the results page is the bit in between the buttons and 
 
 ![score and percentage](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464631575/percentage_score_area_kbddbv.jpg){: class="aligncenter" width="800" height="316"}
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="row">
   <div class="col-xs-12 top-buffer">
       
@@ -58,7 +58,7 @@ The final area to add to the results page is the bit in between the buttons and 
 
   </div>
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 Here we make use of the numCorrect property that we created earlier which is incremented in the markQuiz function everytime the user gets an answer correct. We also use the .length method on the quizQuestions object to find the total number of questions in the quiz.
 
@@ -80,9 +80,9 @@ In this quiz we have 10 questions which will result in the percentage always bei
 
 There is another [Angular Filter](https://docs.angularjs.org/api/ng/filter/number){: target="_blank"}<!--_--> that will allow you to filter the number down to a certain number of decimal places. This would be how to do that:>
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <h2><strong>{{results.calculatePerc() | number:2}}%</strong></h2>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 The standard \| is used to tell Angular we are going to use a filter and the filter we use is called number. The a colon followed by the arguments for the filter. In this case, the only argument is the number of decimal places that you want to display.
 

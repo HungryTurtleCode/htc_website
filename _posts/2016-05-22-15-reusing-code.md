@@ -26,7 +26,7 @@ Much like we did for the text questions, we will add an ng-class and ng-click di
 
 ![image question border feedback](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464630497/image_question_feedback_qqh29a.jpg){: class="aligncenter" width="800" height="423"}
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="row"
   ng-if="quiz.dataService.quizQuestions[quiz.activeQuestion].type === 'image'">
                            
@@ -41,7 +41,7 @@ Much like we did for the text questions, we will add an ng-class and ng-click di
         </div>
     </div>
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 The ng-click is identical this time as it was to the last. We are still using $index to update the selected flag on the data for the question.
 

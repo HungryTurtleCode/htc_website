@@ -82,9 +82,9 @@ We could just start with the number one and increment the number as the user pro
 
 But we have the activeQuestion property which holds a number of the current question, just in 0 index form. So all we need to do is to add 1 to that value. Then we can print out the text of the question which we get from the question JSON in the dataservice by accessing the index of the active question.
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <h4>{{quiz.activeQuestion+1 + ". " + quiz.dataService.quizQuestions[quiz.activeQuestion].text}}</h4>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 ## Now We Bring Out The Ng-Repeat Gunz
 
@@ -132,7 +132,7 @@ The ng-repeat has the alias of answer and the possibilities object that we are l
 
 Now using the ng-repeat alias of answer (which will be looping through the object of possibilities) we can reference the answer value in each object. This gives us answer.answer. We will add this like so:
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="row">
   <div class="col-sm-6" 
     ng-repeat="answer in quiz.dataService.quizQuestions[quiz.activeQuestion].possibilities">
@@ -141,7 +141,7 @@ Now using the ng-repeat alias of answer (which will be looping through the objec
       </h4>
   </div>
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 ### Adding Custom Styling To The Questions
 

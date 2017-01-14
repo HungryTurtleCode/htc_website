@@ -32,10 +32,10 @@ You can watch this full tutorial in video form below or you can continue reading
 
 We will get ourselves ready for resizing images by adding a class to each of the image tags in our HTML.
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <img ng-src="{{turtle.image_url}}" 
      class="img-rounded img-responsive well-image">
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 The class we use here is well-image, but we could use anything that we want here. Now, inside our style.css file which lives in our CSS folder we can create some rules for our well-image class.
 
@@ -146,7 +146,7 @@ function ListController(){
 
 Now every time the learn more button is clicked the ng-click directive will trigger the changeActiveTurtle function which will set the active turtle to an object that contains all of the data associated with the turtle the user wants to learn more about.
 
-We can now use this data in the modal. This allows us to create a generic modal with placeholders using the {{}} Angular syntax that will then just insert the active turtle data as and when a particular turtle is clicked on.
+We can now use this data in the modal. This allows us to create a generic modal with placeholders using the {% raw %}{{}}{% endraw %} Angular syntax that will then just insert the active turtle data as and when a particular turtle is clicked on.
 
 So now it&#8217;s time to create HTML for this bootstrap modal and insert the angular bindings into it. We&#8217;ll start off by just creating a div for the modal and giving it the ID that we referenced in the  data-target attribute earlier &#8211; turtle-info. Along with this will also add a few more divs which are required by bootstrap to create a modal.
 
@@ -164,7 +164,7 @@ So now it&#8217;s time to create HTML for this bootstrap modal and insert the an
 
 ### A Little Reminder About The JSON
 
-At the top of the modal area we want to display the name of the turtle that is being displayed. We will add this into an H2 tag inside a modal header div. Inside the H2 is where we will use the {{}}  syntax to grab hold of the name of the currently active turtle.
+At the top of the modal area we want to display the name of the turtle that is being displayed. We will add this into an H2 tag inside a modal header div. Inside the H2 is where we will use the {% raw %}{{}}{% endraw %} syntax to grab hold of the name of the currently active turtle.
 
 Because the active turtle object is just one of the objects inside the JSON which looks something like the below snippet. Using the dot operator on the activeTurtle object, we are able to grab hold of the type, the locations, the image_url etc.
 
@@ -193,15 +193,15 @@ Because the active turtle object is just one of the objects inside the JSON whic
 
 So now with the H2 added into our modal the code looks like this.
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="modal-header">
   <h2>{{list.activeTurtle.type}}</h2>
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 When I want some responsive code that will centre a large image of the turtle inside the mobile. We will make a div that is 8 columns ([out of the possible 12](https://getbootstrap.com/examples/grid/){: target="_blank"}<!--_-->) wide and then offset it by two columns to give it to columns of space on each side to make up the full 12 and that the div is centred.
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="modal-content">
   <div class="modal-header">
     <h2>{{list.activeTurtle.type}}</h2>
@@ -216,7 +216,7 @@ When I want some responsive code that will centre a large image of the turtle in
     </div>
   </div>
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 The code inside the ng-src is exactly the same as what we&#8217;ve seen earlier except we are referencing the image_url on the activeTurtle property instead.
 
@@ -224,7 +224,7 @@ The code inside the ng-src is exactly the same as what we&#8217;ve seen earlier 
 
 To finish off the modal markup we want to create the area that will hold all of the text data about our turtle. This code should look very familiar to you so I won&#8217;t explain it in depth.
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="modal-content">
   <div class="modal-header">
     <h2>{{list.activeTurtle.type}}</h2>
@@ -247,7 +247,7 @@ To finish off the modal markup we want to create the area that will hold all of 
     </div>
   </div>
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 At this point the text to slightly too close to the image and the description is too close to the bullet point so we want to just add a bit of margin at the top of these areas just to make it look a bit nicer.
 
@@ -261,14 +261,14 @@ We will add a class of top-buffer to the row contains all of the text currently.
 
 The final things to do in our model is to add the close button that will return us back to the list view. To do this will just create a simple button element and add some bootstrap classes to style it and float it right. A bootstrap attribute called data-dismiss is what will actually allow the button to exit the modal.
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="col-xs-12 top-buffer">
   <p>{{list.activeTurtle.description}}</p>
     
   <button class="btn btn-danger pull-right" 
           data-dismiss="modal">Close</button>
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 ### See You In The Next Part
 

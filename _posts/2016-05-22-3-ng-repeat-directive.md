@@ -136,7 +136,7 @@ The old fashioned way of doing that would be to hard code all of the HTML for ea
 
 In steps the [ng-repeat](https://docs.angularjs.org/api/ng/directive/ngRepeat){: target="_blank"}<!--_--> directive. What this lovely directive allows us to do is declare an area of markup and tell Angular that it should repeat that markup for each item in a dataset that we specify.
 
-In our case we will create the markup for one of our turtles &#8211; also taking advantage of the {{}} binding to grab hold of each bit of information we want. Then using the ng-repeat directive, we will tell angular to simply repeat all of that markup for each turtle in the JSON. Phew! That&#8217;s more like it.
+In our case we will create the markup for one of our turtles &#8211; also taking advantage of the {% raw %}{{}}{% endraw %} binding to grab hold of each bit of information we want. Then using the ng-repeat directive, we will tell angular to simply repeat all of that markup for each turtle in the JSON. Phew! That&#8217;s more like it.
 
 ### We Need An Alias Again.
 
@@ -144,15 +144,15 @@ Much like we used an alias for our controller when we used the controller as syn
 
 The markup for a general ng-repeat will look something like this:
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div ng-repeat="data in controller.items">
   {{data}}
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 Here we have a property on our controller called items which is an object or array that we can loop through. We give each iteration through that loop an alias of data.
 
-Using that alias we can put inside the {{}} syntax and that will print out the value of each respective value in the items array or object.
+Using that alias we can put inside the {% raw %}{{}}{% endraw %} syntax and that will print out the value of each respective value in the items array or object.
 
 Of course, we can also harness this if our data is an object or array or objects or array ie nested objects or arrays (or multidimensional would be another name). This is in fact what we are going to do.
 
@@ -162,11 +162,11 @@ The top level property we are going to loop through is the data property on our 
 
 We can grab hold of these by using the dot notation something like this:
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div ng-repeat="turtle in list.data">
   {{turtle.type}}
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 This will print out the type property of each turtle in our data property. Using this we can now build the actual markup we need and lay out our information for each turtle nicely.
 
@@ -190,7 +190,7 @@ We now want to create the grey area that will contain the turtles themselves the
 
 This is the [Bootstrap](http://getbootstrap.com/){: target="_blank"}<!--_--> to do that along with the bindings to the data that we need:
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="row">
   <div class="col-sm-6" ng-repeat="turtle in list.data">
 
@@ -216,13 +216,13 @@ This is the [Bootstrap](http://getbootstrap.com/){: target="_blank"}<!--_--> to 
 
   </div><!-- col-sm-6 -->
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 ### ng-src? Wait! That&#8217;s new!
 
 This should all be easy to understand for the most part. The one new thing that you haven&#8217;t seen yet is the ng-src on the image. Notice that the image does not have a normal src attribute at all.
 
-The reason for this is because the URL for the image is coming from the JSON data and therefore we want to use the {{}} binding syntax to grab hold of it.
+The reason for this is because the URL for the image is coming from the JSON data and therefore we want to use the {% raw %}{{}}{% endraw %} binding syntax to grab hold of it.
 
 So you may think that we could just add that binding syntax to the normal src attribute and Angular will replace the binding with the url and the image will render just fine.
 
@@ -230,7 +230,7 @@ Unfortunately this is not the case. The reason for this is easy to understand th
 
 Basically, it comes down to the order things are rendered. With images when you use the normal src attribute the HTML tries to fetch the URL straight away as the page is loading. Importantly, this is before Angular has had time to load and hook into the page.
 
-This of course means that the HTML will see {{turtle.image_url}} when it looks at the src attribute. This literal string of course isn&#8217;t a URL and the HTML will not know what to do with it.
+This of course means that the HTML will see {% raw %}{{turtle.image_url}}{% endraw %} when it looks at the src attribute. This literal string of course isn&#8217;t a URL and the HTML will not know what to do with it.
 
 Finally when Angular loads it will change that literal string to the URL that we want but by that stage the HTML thinks all of the work with image urls is done and it will not try to fetch the url and therefore no image will be displayed.
 

@@ -299,13 +299,13 @@ This method is perfectly valid. Feel free to use it. However, I do not like doin
 
 I like to be as explicit and clean as possible. So I find directly naming the function and explicitly declaring it is more natural for me. But you do which ever way you prefer.
 
-## The Famous {{}} Angular Syntax
+## The Famous {% raw %}{{}}{% endraw %} Angular Syntax
 
-The first thing I ever saw of Angular was a line of code in an HTML file that used the {{}} syntax. This is used to tell Angular we are using some sort of expression and not a literal string as it would usually be in an HTML document.
+The first thing I ever saw of Angular was a line of code in an HTML file that used the {% raw %}{{}}{% endraw %} syntax. This is used to tell Angular we are using some sort of expression and not a literal string as it would usually be in an HTML document.
 
-So something like <span class="lang:default decode:true crayon-inline ">{{2+4}}</span>  will be evaluated as an expression by angular and the result will be the number 6 printed out to the screen.
+So something like <span class="lang:default decode:true crayon-inline ">{% raw %}{{2+4}}{% endraw %}</span>  will be evaluated as an expression by angular and the result will be the number 6 printed out to the screen.
 
-When inside our controller HTML we can take advantage of this {{}} syntax to bind on to properties that we define in our controller.
+When inside our controller HTML we can take advantage of this {% raw %}{{}}{% endraw %} syntax to bind on to properties that we define in our controller.
 
 The great thing about this is that if we then change that property on our controller at some point during the lifetime of the application the value on the screen will automatically update without us having to do anything. This is part of the beauty of Angular data binding.
 

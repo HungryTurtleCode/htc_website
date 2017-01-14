@@ -28,7 +28,7 @@ This time we want the images to display nicely but also want a border around the
 
 Like we did in the quiz controller we just duplicate the row that contains the text questions and modify it slightly to house the image questions.
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="row">
   <div class="col-sm-6" ng-repeat="answer in results.dataService.quizQuestions[results.activeQuestion].possibilities">
                                	
@@ -39,7 +39,7 @@ Like we did in the quiz controller we just duplicate the row that contains the t
 
   </div>
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 Now on the div with the class image-answer we will also give it an ng-class and pass in the same function we used earlier &#8211; getAnswerClass. You may say that this function returns one of two bootstrap classes, neither of which will give the images a border. You would be right.
 
@@ -64,7 +64,7 @@ Add the following to your stylesheet.
 
 Again, we only want to render one block or the other &#8211; either the text answer block or the image block, but never both. This is where ng-if comes into play again. Here are the two blocks with their respective ng-if statements added onto them.
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div class="row"
   ng-if="results.dataService.quizQuestions[results.activeQuestion].type === 'text'">
                                
@@ -94,7 +94,7 @@ Again, we only want to render one block or the other &#8211; either the text ans
       </div>
     </div>
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 You can see that the statements are identical except for the type we are testing for. Image and text.
 

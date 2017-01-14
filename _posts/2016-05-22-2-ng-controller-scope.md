@@ -44,13 +44,13 @@ function ListController($scope){
 }
 {% endhighlight %}
 
-Heading back into the HTML we could use that wonderful {{}} syntax to grab hold of that property like this:
+Heading back into the HTML we could use that wonderful {% raw %}{{}}{% endraw %} syntax to grab hold of that property like this:
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div ng-controller="listCtrl">
   {{dummyData}}
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 This will display the text &#8220;Hello World&#8221; out inside the div. Fantastic.
 
@@ -87,13 +87,13 @@ We need to make a few small changes. The first of which is changing <span class=
 
 What we are doing here is creating an alias for our controller. Notice is is the name of the controller as before, then &#8220;as list&#8221;. So we are referring to our controller as list. In other words, when we use the name &#8220;list&#8221;, Angular will know we are referring to the listCtrl controller.
 
-Now inside the {{}} we can refer to the exact controller which the dummyData property is on:
+Now inside the {% raw %}{{}}{% endraw %} we can refer to the exact controller which the dummyData property is on:
 
-{% highlight html linenos%}
+{% highlight html linenos%}{% raw %}
 <div ng-controller="listCtrl as list">
   {{list.dummyData}}
 </div>
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 Ahhhh! Yes! Everything is explicit now. No more potential confusion. When we see list.dummyData there is no doubt at all as to where the dummyData property is coming from. Just how we like it.
 
