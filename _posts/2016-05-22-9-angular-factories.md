@@ -12,7 +12,7 @@ categories:
 ---
 ## Mocking An API Request With Angular Factories
 
-<span style="font-weight: 400;">We have already covered how to build a basic factory when we built the quizMetrics factory in a <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/8-dependency-injection/" target="_blank">previous part</a>. In this part, we will build another factory; this time to mock data coming from an API. Let&#8217;s continue using Angular factories to further separate concerns.</span><!--more-->
+We have already covered how to build a basic factory when we built the quizMetrics factory in a [previous part](https://hungryturtlecode.com/code-projects/angular-quiz-app/8-dependency-injection/){: target="_blank"}<!--_-->. In this part, we will build another factory; this time to mock data coming from an API. Let&#8217;s continue using Angular factories to further separate concerns.
 
 Earlier, we mentioned that we won’t be using an actual API in this application but will instead copy and paste the JSON into the scripts. This is what we did for the list data in the list controller.
 
@@ -22,472 +22,374 @@ To solve this problem we will create a factory and copy all of the data into tha
 
 This way, we can copy the data in for now, but at a later date we can actually make API requests and put all the logic into the factory and the controller still receives the data in the exact same way. We won’t have to touch the controllers to make this change. Can you see how this allows our application to grow over time?
 
-<span style="font-weight: 400;">We don’t have to completely refactor the entire codebase to allow API calls, which is something we would have to do if we copied the data into each controller separately. We now put all that data into a factory and separate all of our concerns. It’s all coming together nicely.</span>
+We don’t have to completely refactor the entire codebase to allow API calls, which is something we would have to do if we copied the data into each controller separately. We now put all that data into a factory and separate all of our concerns. It’s all coming together nicely.
 
-**If you want to see the app for yourself,** [check it out here.](/turtlefacts)
+**If you want to see the app for yourself,** [check it out here.]({{site.url}}/turtlefacts){: target="_blank"}<!--_-->
 
-The git repo <a href="https://github.com/adiman9/HungryTurtleFactQuiz" target="_blank">can be found here</a>.
-
-<div id="angularsociallockerbox" style="margin: 50px 0; border-radius: 30px; border: 3px solid #00BCD4; padding: 30px;">
-  <h3>
-    Download Commented Code And PDFs For This Entire Series
-  </h3>
-  
-  <p>
-    Get correct and fully commented code for the start of all 24 parts, plus the finished app. Also get a PDF with the entire 24 chapter tutorial in it, so you can learn anywhere!
-  </p>
-  
-  <p>
-    I will also throw in individual PDFs of all chapters, just to allow efficient learning of specific topics.
-  </p>
-  
-  <div class="onp-locker-call" style="display: none;" data-lock-id="onpLock374580">
-  </div>
-  
-  <p>
-    I don&#8217;t want to force you to share my stuff to get the real content (I really hate that too). So you will still get 100% of the content &#8211; these bonuses don&#8217;t have any new information in them that you don&#8217;t already have in these articles or on github.
-  </p>
-  
-  <p>
-    However, they do make things more convenient for you to learn. So if you want these bonuses and are willing to help me out, just give me a share using one of the buttons above. It is greatly appreciated. Thanks
-  </p>
-</div>
+The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 
 ### Get On With It!
 
 Ok, enough chat, let&#8217;s write some code.
 
-<div class="embedoverlay overlay" style="background: url(https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1457631142/AngularJS-Turtle-Quiz-App-9_xkpzlo.webp);">
-  <div class="embedoverlaycont ">
-    <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-    </div>
-    
-    <h2 class="optinform">
-      Get all my latest content and exclusive offers direct to your inbox
-    </h2>
-    
-    <p class="optinform">
-      Just enter you email below
-    </p>
-    
-    <div class="embedform optinform">
-    </div>
-    
-    <p class="embedreturn">
-      <small>Go back to the video</small>
-    </p>
-  </div>
-</div>
-
-<div class="embedcont"style="width: 100%; text-align: center;">
-</div>
-
-<div style="display: inline-block; padding-right: 20px; font-weight: bold; color: red; vertical-align: top; padding-top: 12px;">
-  Subscribe To My Channel...
-</div>
-
-<div style="margin-top: 5px; display: inline-block">
-  <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-  </div>
-</div>
-
-<div id="embedcode" style="display: none;">
-</div>
-
-&nbsp;
+{% include video-embed.html videoID="TlR3bI7Azvk" %}
 
 [The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/10-ng-class/)
 
-<span style="font-weight: 400;">We will create another script in the factories directory and call it dataservice.js. We will start this in the exact same way we started the quizMetrics factory.</span>
+We will create another script in the factories directory and call it dataservice.js. We will start this in the exact same way we started the quizMetrics factory.
 
-<pre class="lang:js decode:true" title="Start of the dataservice factory">(function(){
+{% highlight javascript linenos%}
+(function(){
 
-    angular
-        .module("turtleFacts")
-        .factory("DataService", DataService);
+  angular
+    .module("turtleFacts")
+    .factory("DataService", DataService);
 
 
-    function DataService(){
-
-        var dataObj = {
-            // We will add properties to this object soon
-        };
-
-        return dataObj;
-    }
-
-})();</pre>
-
-Now we will add the object we will return and start adding in some of the data that we need. The turtlesData variable that contained the JSON from our list controller will be copied over into this factory and we will create a new variable to hold the JSON for the quiz questions.
-
-<pre class="lang:js decode:true" title="Adding the data to the object">function DataService(){
+  function DataService(){
 
     var dataObj = {
-        turtlesData: turtlesData,
-        quizQuestions: quizQuestions
+      // We will add properties to this object soon
     };
 
     return dataObj;
-}</pre>
+  }
+
+})();
+{% endhighlight %}
+
+Now we will add the object we will return and start adding in some of the data that we need. The turtlesData variable that contained the JSON from our list controller will be copied over into this factory and we will create a new variable to hold the JSON for the quiz questions.
+
+{% highlight javascript linenos%}
+function DataService(){
+
+  var dataObj = {
+    turtlesData: turtlesData,
+    quizQuestions: quizQuestions
+  };
+
+  return dataObj;
+}
+{% endhighlight %}
 
 We can see that we have created some entries in the dataObj which reference variables that contain JSON that we have copied into the script at the bottom. This is then returned from the factory so that our controllers can use this data.
 
 The turtlesData is the exact same JSON as we used before. The quizQuestions is new JSON which can be seen here:
 
-<pre class="height-set:true lang:js decode:true" title="QuizQuestions JSON">var quizQuestions  = [
+{: class="big-code-snippet"}
+{% highlight javascript linenos%}
+var quizQuestions  = [
+  {
+    type: "text",
+    text: "How much can a loggerhead weigh?",
+    possibilities: [
         {
-            type: "text",
-            text: "How much can a loggerhead weigh?",
-            possibilities: [
-                {
-                    answer: "Up to 20kg"
-                },
-                {
-                    answer: "Up to 115kg"
-                },
-                {
-                    answer: "Up to 220kg"
-                },
-                {
-                    answer: "Up to 500kg"
-                }
-            ],
-            selected: null,
-            correct: null
+            answer: "Up to 20kg"
         },
         {
-            type: "text",
-            text: "What is the typical lifespan of a Green Sea Turtle?",
-            possibilities: [
-                {
-                    answer: "150 years"
-                },
-                {
-                    answer: "10 years"
-                },
-                {
-                    answer: "80 years"
-                },
-                {
-                    answer: "40 years"
-                }
-            ],
-            selected: null,
-            correct: null
+            answer: "Up to 115kg"
         },
         {
-            type: "image",
-            text: "Which of these is the Alligator Snapping Turtle?",
-            possibilities: [
-                {
-                    answer: "https://c1.staticflickr.com/3/2182/2399413165_bcc8031cac_z.jpg?zz=1"
-                },
-                {
-                    answer: "http://images.nationalgeographic.com/wpf/media-live/photos/000/006/cache/ridley-sea-turtle_688_600x450.jpg"
-                },
-                {
-                    answer: "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/pictures/2011/8/13/1313246505515/Leatherback-turtle-007.jpg"
-                },
-                {
-                    answer: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Alligator_snapping_turtle_-_Geierschildkr%C3%B6te_-_Alligatorschildkr%C3%B6te_-_Macrochelys_temminckii_01.jpg"
-                }
-            ],
-            selected: null,
-            correct: null
+            answer: "Up to 220kg"
         },
         {
-            type: "image",
-            text: "Which of these is the Green Turtle?",
-            possibilities: [
-                {
-                    answer: "http://www.what-do-turtles-eat.com/wp-content/uploads/2014/10/Sea-Turtles-Habitat.jpg"
-                },
-                {
-                    answer: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Kemp's_Ridley_sea_turtle_nesting.JPG"
-                },
-                {
-                    answer: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Alligator_snapping_turtle_-_Geierschildkr%C3%B6te_-_Alligatorschildkr%C3%B6te_-_Macrochelys_temminckii_01.jpg"
-                },
-                {
-                    answer: "http://assets.worldwildlife.org/photos/163/images/carousel_small/SCR_290360hawskbill-why-matter-LG.jpg?1345565532"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "text",
-            text: "Where does the Kemp's Ridley Sea Turtle live?'",
-            possibilities: [
-                {
-                    answer: "Tropical waters all around the world"
-                },
-                {
-                    answer: "Eastern Australia"
-                },
-                {
-                    answer: "Coastal North Atlantic"
-                },
-                {
-                    answer: "South pacific islands"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "text",
-            text: "What is the most common turtle in US waters?",
-            possibilities: [
-                {
-                    answer: "Loggerhead turtle"
-                },
-                {
-                    answer: "Leatherback turtle"
-                },
-                {
-                    answer: "Hawksbill Turtle"
-                },
-                {
-                    answer: "Alligator Snapping Turtle"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "text",
-            text: "What is the largest sea turtle on earth?",
-            possibilities: [
-                {
-                    answer: "Eastern Snake Necked Turtle"
-                },
-                {
-                    answer: "Olive Ridley Sea Turtle"
-                },
-                {
-                    answer: "Kemp's Ridley Sea Turtle'"
-                },
-                {
-                    answer: "Leatherback"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "image",
-            text: "Which of these is the Olive Ridley Turtle?",
-            possibilities: [
-                {
-                    answer: "http://i.telegraph.co.uk/multimedia/archive/02651/loggerheadTurtle_2651448b.jpg"
-                },
-                {
-                    answer: "http://assets.worldwildlife.org/photos/163/images/carousel_small/SCR_290360hawskbill-why-matter-LG.jpg?1345565532"
-                },
-                {
-                    answer: "http://images.nationalgeographic.com/wpf/media-live/photos/000/006/cache/ridley-sea-turtle_688_600x450.jpg"
-                },
-                {
-                    answer: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Kemp's_Ridley_sea_turtle_nesting.JPG"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "text",
-            text: "How Heavy can a leatherback turtle be?",
-            possibilities: [
-                {
-                    answer: "900kg"
-                },
-                {
-                    answer: "40kg"
-                },
-                {
-                    answer: "110kg"
-                },
-                {
-                    answer: "300kg"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "text",
-            text: "Which of these turtles are herbivores?",
-            possibilities: [
-                {
-                    answer: "Loggerhead Turtle"
-                },
-                {
-                    answer: "Hawksbill Turtle"
-                },
-                {
-                    answer: "Leatherback Turtle"
-                },
-                {
-                    answer: "Green Turtle"
-                }
-            ],
-            selected: null,
-            correct: null
+            answer: "Up to 500kg"
         }
-    ];</pre>
+    ],
+    selected: null,
+    correct: null
+  },
+  {
+    type: "text",
+    text: "What is the typical lifespan of a Green Sea Turtle?",
+    possibilities: [
+        {
+            answer: "150 years"
+        },
+        {
+            answer: "10 years"
+        },
+        {
+            answer: "80 years"
+        },
+        {
+            answer: "40 years"
+        }
+    ],
+    selected: null,
+    correct: null
+  },
+  {
+    type: "image",
+    text: "Which of these is the Alligator Snapping Turtle?",
+    possibilities: [
+        {
+            answer: "https://c1.staticflickr.com/3/2182/2399413165_bcc8031cac_z.jpg?zz=1"
+        },
+        {
+            answer: "http://images.nationalgeographic.com/wpf/media-live/photos/000/006/cache/ridley-sea-turtle_688_600x450.jpg"
+        },
+        {
+            answer: "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/pictures/2011/8/13/1313246505515/Leatherback-turtle-007.jpg"
+        },
+        {
+            answer: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Alligator_snapping_turtle_-_Geierschildkr%C3%B6te_-_Alligatorschildkr%C3%B6te_-_Macrochelys_temminckii_01.jpg"
+        }
+    ],
+    selected: null,
+    correct: null
+  },
+  {
+    type: "image",
+    text: "Which of these is the Green Turtle?",
+    possibilities: [
+        {
+            answer: "http://www.what-do-turtles-eat.com/wp-content/uploads/2014/10/Sea-Turtles-Habitat.jpg"
+        },
+        {
+            answer: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Kemp's_Ridley_sea_turtle_nesting.JPG"
+        },
+        {
+            answer: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Alligator_snapping_turtle_-_Geierschildkr%C3%B6te_-_Alligatorschildkr%C3%B6te_-_Macrochelys_temminckii_01.jpg"
+        },
+        {
+            answer: "http://assets.worldwildlife.org/photos/163/images/carousel_small/SCR_290360hawskbill-why-matter-LG.jpg?1345565532"
+        }
+    ],
+    selected: null,
+    correct: null
+  },
+  {
+    type: "text",
+    text: "Where does the Kemp's Ridley Sea Turtle live?'",
+    possibilities: [
+        {
+            answer: "Tropical waters all around the world"
+        },
+        {
+            answer: "Eastern Australia"
+        },
+        {
+            answer: "Coastal North Atlantic"
+        },
+        {
+            answer: "South pacific islands"
+        }
+    ],
+    selected: null,
+    correct: null
+  },
+  {
+    type: "text",
+    text: "What is the most common turtle in US waters?",
+    possibilities: [
+        {
+            answer: "Loggerhead turtle"
+        },
+        {
+            answer: "Leatherback turtle"
+        },
+        {
+            answer: "Hawksbill Turtle"
+        },
+        {
+            answer: "Alligator Snapping Turtle"
+        }
+    ],
+    selected: null,
+    correct: null
+  },
+  {
+    type: "text",
+    text: "What is the largest sea turtle on earth?",
+    possibilities: [
+        {
+            answer: "Eastern Snake Necked Turtle"
+        },
+        {
+            answer: "Olive Ridley Sea Turtle"
+        },
+        {
+            answer: "Kemp's Ridley Sea Turtle'"
+        },
+        {
+            answer: "Leatherback"
+        }
+    ],
+    selected: null,
+    correct: null
+  },
+  {
+    type: "image",
+    text: "Which of these is the Olive Ridley Turtle?",
+    possibilities: [
+        {
+            answer: "http://i.telegraph.co.uk/multimedia/archive/02651/loggerheadTurtle_2651448b.jpg"
+        },
+        {
+            answer: "http://assets.worldwildlife.org/photos/163/images/carousel_small/SCR_290360hawskbill-why-matter-LG.jpg?1345565532"
+        },
+        {
+            answer: "http://images.nationalgeographic.com/wpf/media-live/photos/000/006/cache/ridley-sea-turtle_688_600x450.jpg"
+        },
+        {
+            answer: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Kemp's_Ridley_sea_turtle_nesting.JPG"
+        }
+    ],
+    selected: null,
+    correct: null
+  },
+  {
+    type: "text",
+    text: "How Heavy can a leatherback turtle be?",
+    possibilities: [
+        {
+            answer: "900kg"
+        },
+        {
+            answer: "40kg"
+        },
+        {
+            answer: "110kg"
+        },
+        {
+            answer: "300kg"
+        }
+    ],
+    selected: null,
+    correct: null
+  },
+  {
+    type: "text",
+    text: "Which of these turtles are herbivores?",
+    possibilities: [
+        {
+            answer: "Loggerhead Turtle"
+        },
+        {
+            answer: "Hawksbill Turtle"
+        },
+        {
+            answer: "Leatherback Turtle"
+        },
+        {
+            answer: "Green Turtle"
+        }
+    ],
+    selected: null,
+    correct: null
+  }
+];
+{% endhighlight %}
 
-<span style="font-weight: 400;">Taking a closer look at the JSON for each quiz question we see that it has a type (text, or image) which allows us to have different styles of questions, the text of the question itself, four possible answers and two flags called selected and correct which are initialised to null. We will discuss all of this more later.</span>
+Taking a closer look at the JSON for each quiz question we see that it has a type (text, or image) which allows us to have different styles of questions, the text of the question itself, four possible answers and two flags called selected and correct which are initialised to null. We will discuss all of this more later.
 
 ## Angular Factories leads to Dependency Injection
 
-<span style="font-weight: 400;">We have seen it all before. So we will just go back to our controllers and add the “dataservice” factory to the array of dependencies. Also adding it as an argument to the controller functions. </span>
+We have seen it all before. So we will just go back to our controllers and add the “dataservice” factory to the array of dependencies. Also adding it as an argument to the controller functions. </span>
 
 Here is the quiz controller:
 
-<pre class="lang:js decode:true" title="Quiz Controller">(function(){
+{% highlight javascript linenos%}
+(function(){
 
-    angular
-        .module("turtleFacts")
-        .controller("quizCtrl", QuizController);
+  angular
+    .module("turtleFacts")
+    .controller("quizCtrl", QuizController);
 
-    QuizController.$inject = ['quizMetrics', 'DataService'];
+  QuizController.$inject = ['quizMetrics', 'DataService'];
 
-    function QuizController(quizMetrics, DataService){
-        var vm = this;
+  function QuizController(quizMetrics, DataService){
+    var vm = this;
 
-        vm.quizMetrics = quizMetrics; 
-        vm.dataService = DataService;
-        
-    }
+    vm.quizMetrics = quizMetrics; 
+    vm.dataService = DataService;
+      
+  }
 
-})();</pre>
+})();
+{% endhighlight %}
 
 We also do the same in the list controller. While we are in there we can delete the turtlesData variable that we now have in the factory (if you haven’t already removed it).
 
-<pre class="lang:js decode:true" title="List Controller">(function(){
+{% highlight javascript linenos%}
+(function(){
 
-    angular
-        .module("turtleFacts")
-        .controller("listCtrl", ListController);
+  angular
+    .module("turtleFacts")
+    .controller("listCtrl", ListController);
 
-    ListController.$inject = ['quizMetrics', 'DataService'];
+  ListController.$inject = ['quizMetrics', 'DataService'];
 
-    function ListController(quizMetrics, DataService){
+  function ListController(quizMetrics, DataService){
 
-        var vm = this;
-        
-        vm.quizMetrics = quizMetrics;
-        vm.data = DataService.turtlesData; 
-        vm.activeTurtle = {}; 
-        vm.changeActiveTurtle = changeActiveTurtle; 
-        vm.activateQuiz = activateQuiz; 
-        vm.search = ""; 
+    var vm = this;
+    
+    vm.quizMetrics = quizMetrics;
+    vm.data = DataService.turtlesData; 
+    vm.activeTurtle = {}; 
+    vm.changeActiveTurtle = changeActiveTurtle; 
+    vm.activateQuiz = activateQuiz; 
+    vm.search = ""; 
 
-        function changeActiveTurtle(index){
-            vm.activeTurtle = index;
-        }
-
-        function activateQuiz(){
-            quizMetrics.changeState(true);
-        }
+    function changeActiveTurtle(index){
+      vm.activeTurtle = index;
     }
 
-})();</pre>
+    function activateQuiz(){
+      quizMetrics.changeState(true);
+    }
+  }
+
+})();
+{% endhighlight %}
 
 Notice that we previously had a line <span class="lang:js decode:true crayon-inline">vm.data = turtlesData</span>  but of course, the turtlesData variable doesn’t exist in the controller, it is now inside the dataservice factory. So we change that line to <span class="lang:js decode:true crayon-inline  ">vm.data = DataService.turtlesData</span> .
 
 Before we forget, we need to add the new dataservice factory script to the tags at the bottom of our HTML. The scripts area of the HTML now looks like this:
 
-<pre class="lang:xhtml decode:true" title="Application Scripts">&lt;script src="js/app.js"&gt;&lt;/script&gt;
-&lt;script src="js/controllers/list.js"&gt;&lt;/script&gt;
-&lt;script src="js/controllers/quiz.js"&gt;&lt;/script&gt;   
-&lt;script src="js/factories/quizMetrics.js"&gt;&lt;/script&gt;
-&lt;script src="js/factories/dataservice.js"&gt;&lt;/script&gt;</pre>
+{% highlight html linenos%}
+<script src="js/app.js"></script>
+<script src="js/controllers/list.js"></script>
+<script src="js/controllers/quiz.js"></script>   
+<script src="js/factories/quizMetrics.js"></script>
+<script src="js/factories/dataservice.js"></script>
+{% endhighlight %}
 
 ### Onwards And Upwards
 
-In <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/10-ng-class/" target="_blank">part 10</a> we will use the quiz JSON we now have access to and start creating the bootstrap markup for the quiz.
+In [part 10](https://hungryturtlecode.com/code-projects/angular-quiz-app/10-ng-class/) we will use the quiz JSON we now have access to and start creating the bootstrap markup for the quiz.
 
 See you over there.
 
 Adrian
 
-&nbsp;
-
 ### Check Out The Whole Course Index
 
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/1-build-angular-quiz-app-scratch/">Getting Started</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/2-ng-controller-scope/">Ng-controller directive and the (mis)use of $scope</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/3-ng-repeat-directive/">Looping around with the ng-repeat directive</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/4-bootstrap-modal/">Markup for the Bootstrap Modal</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/5-angular-filters/">Using Angular Filters to create real time search</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/6-ng-click-directive/">The powerful ng-click directive</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/7-angular-services/">Services in Angular make everything easier</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/8-dependency-injection/">What is this infamous dependency injection in Angular?</a>
-</li>
-<li style="font-weight: 400;">
-  <em>You are here</em>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/10-ng-class/">The ng-class directive</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/11-bootstrap-well/">More Bootstrap Markup &#8211; The Well</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/12-controller-logic/">Adding some logic to the controller</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/13-ng-if/">Making things disappear with ng-if</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/14-index-for-ng-repeat/">The $index property for ng-repeat</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/15-reusing-code/">Reusing code is always a good idea</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/16-bootstrap-alerts/">Using Bootstrap to help with styling error messages</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/17-final-prompt/">The final prompt after the quiz</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/18-marking-the-quiz/">Marking the quiz</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/19-angular-dependency-injection/">More dependency injection</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/20-familiar-bootstrap/">Reusing and slightly modifying some previous Bootstrap</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/21-function-with-ng-class/">More than one way to use ng-class</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/22-angular-number-filter/">Another Angular Filter</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/23-angular-ng-if/">More usage of Ng-if</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/24-finished-angular-project/">Finishing The App</a>
-</li>
+1. [Getting Started]({{site.url}}/code-projects/1-build-angular-quiz-app-scratch/)
+2. [Ng-Controller Directive and the (mis)use of $scope]({{site.url}}/code-projects/angular-quiz-app/2-ng-controller-scope/)
+3. [Looping around with the ng-repeat directive]({{site.url}}/code-projects/angular-quiz-app/3-ng-repeat-directive/)
+4. [Markup for the bootstrap modal]({{site.url}}/code-projects/angular-quiz-app/4-bootstrap-modal/)
+5. [Using Angular Filters to create real time search]({{site.url}}/code-projects/angular-quiz-app/5-angular-filters/)
+6. [The powerful ng-click directive]({{site.url}}/code-projects/angular-quiz-app/6-ng-click-directive/)
+7. [Services in Angular Make everything easier]({{site.url}}/code-projects/angular-quiz-app/7-angular-services/)
+8. [What is this infamous dependency injection in Angular?]({{site.url}}/code-projects/angular-quiz-app/8-dependency-injection/)
+9. *You Are Here*
+10. [The ng-class directive]({{site.url}}/code-projects/angular-quiz-app/10-ng-class/)
+11. [More Bootstrap Markup &#8211; The Well]({{site.url}}/code-projects/angular-quiz-app/11-bootstrap-well/)
+12. [Adding some logic to the controller]({{site.url}}/code-projects/angular-quiz-app/12-controller-logic/)
+13. [Making things disappear with ng-if]({{site.url}}/code-projects/angular-quiz-app/13-ng-if/)
+14. [The $index property for ng-repeat]({{site.url}}/code-projects/angular-quiz-app/14-index-for-ng-repeat/)
+15. [Reusing code is always a good idea]({{site.url}}/code-projects/angular-quiz-app/15-reusing-code/)
+16. [Using Bootstrap to help with styling error messages]({{site.url}}/code-projects/angular-quiz-app/16-bootstrap-alerts/)
+17. [The final prompt after the quiz]({{site.url}}/code-projects/angular-quiz-app/17-final-prompt/)
+18. [Marking the quiz]({{site.url}}/code-projects/angular-quiz-app/18-marking-the-quiz/)
+19. [More dependency injection]({{site.url}}/code-projects/angular-quiz-app/19-angular-dependency-injection/)
+20. [Reusing and slightly modifying some previous Bootstrap]({{site.url}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
+21. [More than one way to use ng-class]({{site.url}}/code-projects/angular-quiz-app/21-function-with-ng-class/)
+22. [Another Angular Filter]({{site.url}}/code-projects/angular-quiz-app/22-angular-number-filter/)
+23. [More usage of Ng-if]({{site.url}}/code-projects/angular-quiz-app/23-angular-ng-if/)
+24. [Finishing The App]({{site.url}}/code-projects/angular-quiz-app/24-finished-angular-project/)
+
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

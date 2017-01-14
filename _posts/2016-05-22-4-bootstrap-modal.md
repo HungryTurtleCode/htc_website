@@ -14,199 +14,153 @@ categories:
 
 We made a good start on our bootstrap markup in [last part](/3-ng-repeat-directive) but we did end up leaving a few little issues with the CSS most notably the image sizing was not consistent. <!--more-->So let&#8217;s kick things off this time by just fixing up those problems. Then we will start creating the bootstrap modal.
 
-If you want to see the app in action, <a href="/turtlefacts" target="_blank">check it out here.</a>
+If you want to see the app in action, [check it out here]({{site.url}}/turtlefacts){: target="_blank"}<!--_-->
 
-The git repo <a href="https://github.com/adiman9/HungryTurtleFactQuiz" target="_blank">can be found here</a>.
+The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 
 ### As Always &#8211; Video Or Text
 
 You can watch this full tutorial in video form below or you can continue reading past the video for a full written version.
 
-<div class="embedoverlay overlay" style="background: url(https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1457631072/AngularJS-Turtle-Quiz-App-4_cb4t0y.webp);">
-  <div class="embedoverlaycont ">
-    <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-    </div>
-    
-    <h2 class="optinform">
-      Get all my latest content and exclusive offers direct to your inbox
-    </h2>
-    
-    <p class="optinform">
-      Just enter you email below
-    </p>
-    
-    <div class="embedform optinform">
-    </div>
-    
-    <p class="embedreturn">
-      <small>Go back to the video</small>
-    </p>
-  </div>
-</div>
-
-<div class="embedcont"style="width: 100%; text-align: center;">
-</div>
-
-<div style="display: inline-block; padding-right: 20px; font-weight: bold; color: red; vertical-align: top; padding-top: 12px;">
-  Subscribe To My Channel...
-</div>
-
-<div style="margin-top: 5px; display: inline-block">
-  <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-  </div>
-</div>
-
-<div id="embedcode" style="display: none;">
-</div>
-
-&nbsp;
+{% include video-embed.html videoID="IW37XF2g7AU" %}
 
 [The next part can be found here.](https://hungryturtlecode.com/code-projects/angular-quiz-app/5-angular-filters/)
 
 ## Fixing Image Sizing Issues
 
-<img class="aligncenter wp-image-902" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464618858/image_sizing_issue_noibul.jpg" alt="fixing image sizing" width="800" height="431" />
+![fixing image sizing](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464618858/image_sizing_issue_noibul.jpg){: class="aligncenter" width="800" height="431"}
 
 We will get ourselves ready for resizing images by adding a class to each of the image tags in our HTML.
 
-<pre class="lang:xhtml decode:true" title="Adding well-image class">&lt;img ng-src="{{turtle.image_url}}" 
-     class="img-rounded img-responsive well-image"&gt;</pre>
+{% highlight html linenos%}
+<img ng-src="{{turtle.image_url}}" 
+     class="img-rounded img-responsive well-image">
+{% endhighlight %}
 
 The class we use here is well-image, but we could use anything that we want here. Now, inside our style.css file which lives in our CSS folder we can create some rules for our well-image class.
 
-<pre class="lang:css decode:true" title="well-image css rules">.well-image{
-    width: 100%;
-    height: 162px;
-}</pre>
+{% highlight css linenos%}
+.well-image{
+  width: 100%;
+  height: 162px;
+}
+{% endhighlight %}
 
-<span style="font-weight: 400;">We&#8217;ve given to the width of 100% just to ensure that the images always the full width of its container. The height could be any value that you choose I&#8217;ve just decided on 162 pixels due to some trial and error.</span>
+We&#8217;ve given to the width of 100% just to ensure that the images always the full width of its container. The height could be any value that you choose I&#8217;ve just decided on 162 pixels due to some trial and error.
 
 ## Let&#8217;s Make The Modal Pop Up!
 
-<span style="font-weight: 400;"><img class="aligncenter wp-image-903" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464618859/popup_modal_s7uu7k.jpg" alt="popup bootstrap modal" width="800" height="453" /></span>
+![popup bootstrap modal](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464618859/popup_modal_s7uu7k.jpg){: class="aligncenter" width="800" height="453"}
 
-<span style="font-weight: 400;">We want the <a href="https://www.sitepoint.com/understanding-bootstrap-modals/" target="_blank">modal</a> to pop up on the screen when the user clicks the ”Learn More” button for any one of the turtles. This will be achieved using some functionality that is built into bootstrap. We will also need to trigger some controller functionality when the button is clicked and we will do that with a new Angular directive called <a href="https://docs.angularjs.org/api/ng/directive/ngClick" target="_blank">ng-click.</a></span>
+We want the [modal](https://www.sitepoint.com/understanding-bootstrap-modals/){: target="_blank"}<!--_--> to pop up on the screen when the user clicks the ”Learn More” button for any one of the turtles. This will be achieved using some functionality that is built into bootstrap. We will also need to trigger some controller functionality when the button is clicked and we will do that with a new Angular directive called [ng-click](https://docs.angularjs.org/api/ng/directive/ngClick){: target="_blank"}<!--_-->
 
-We will add this new <a href="https://docs.angularjs.org/api/ng/directive/ngClick" target="_blank">ng-click</a> directive to the button along with the data-toggle and data-target attributes that we added in the previous part. Inside the quotes for the ng-click we give it the function that we want to trigger on the click event.
+We will add this new [ng-click](https://docs.angularjs.org/api/ng/directive/ngClick){: target="_blank"}<!--_--> directive to the button along with the data-toggle and data-target attributes that we added in the previous part. Inside the quotes for the ng-click we give it the function that we want to trigger on the click event.
 
-<pre class="lang:xhtml decode:true">&lt;button class="btn btn-primary pull-right" 
+{% highlight html linenos%}
+<button class="btn btn-primary pull-right" 
         data-toggle="modal" 
         data-target="#turtle-info" 
-        ng-click="list.changeActiveTurtle(turtle)"&gt;Learn More&lt;/button&gt;</pre>
+        ng-click="list.changeActiveTurtle(turtle)">Learn More>/button>
+{% endhighlight %}
 
 In this case we have called the function changeActiveTurtle, into which we pass turtle, which if you remember from the previous part is the alias given to each iteration of the ng-repeat.
 
 So what this means for us is that when we click on the learn more button on any one of the individual Turtles the function will be passed the data for that particular turtle.
 
-<span style="font-weight: 400;">The function will then use this turtle information passed to it by the ng-click event to manipulate a property on our controller which indicates the currently active turtle. </span>
+The function will then use this turtle information passed to it by the ng-click event to manipulate a property on our controller which indicates the currently active turtle.
 
-<span style="font-weight: 400;">It will then be the data associated to this currently active turtle property that we use to populate the modal with data. We will of course, have to create this function later.</span>
+It will then be the data associated to this currently active turtle property that we use to populate the modal with data. We will of course, have to create this function later.
 
 ### Inside the Angular Controller &#8211; Moar Properties
 
-<span style="font-weight: 400;">Before we create the function that manipulates the active turtle property we have to actually create that property on our controller. As there is nothing active when the application first loads we will just initialise this property to an empty object. </span>
+Before we create the function that manipulates the active turtle property we have to actually create that property on our controller. As there is nothing active when the application first loads we will just initialise this property to an empty object.
 
 We use an object because the property will eventually be set to one of the sets of turtle data in our JSON, which are obviously objects.
 
-<pre class="lang:js decode:true" title="Active Turtle Property">function ListController(){
-    var vm = this;
+{% highlight javascript linenos%}
+function ListController(){
+  var vm = this;
 
-    vm.data = turtlesData;
-    vm.activeTurtle = {}; // will be used in the view to hold the data of currently active turtle
-        
-}</pre>
+  vm.data = turtlesData;
+  vm.activeTurtle = {}; // will be used in the view to hold the data of currently active turtle
+
+}
+{% endhighlight %}
 
 Now I need to create a function that will manipulate this active turtle property. Again, it would be perfectly fine to declare this function and set it equal to an anonymous function something like this.
 
-<pre class="lang:js decode:true" title="Inline Anonymous Declaration">function ListController(){
-    var vm = this;
+{% highlight javascript linenos%}
+function ListController(){
+  var vm = this;
 
-    vm.data = turtlesData;
-    vm.activeTurtle = {}; // will be used in the view to hold the data of currently active turtle
-    
-    //This is one way you could declare the function, but not my preferred method
-    vm.changeActiveTurtle = function(){
-        // Code Here
-    }
+  vm.data = turtlesData;
+  vm.activeTurtle = {}; // will be used in the view to hold the data of currently active turtle
   
-}</pre>
+  //This is one way you could declare the function, but not my preferred method
+  vm.changeActiveTurtle = function(){
+    // Code Here
+  }
+  
+}
+{% endhighlight %}
 
 However, as you already know I prefer to declare the function by setting it a property equal to a named function and then declaring that named function further down in our controller. Something like this.
 
-<pre class="lang:js decode:true" title="My preferred function declaration ">function ListController(){
-    var vm = this;
+{% highlight javascript linenos%}
+function ListController(){
+  var vm = this;
 
-    vm.data = turtlesData;
-    vm.activeTurtle = {}; // will be used in the view to hold the data of currently active turtle
-    
-    // This is my preferred method
-    vm.changeActiveTurtle = changeActiveTurtle;
+  vm.data = turtlesData;
+  vm.activeTurtle = {}; // will be used in the view to hold the data of currently active turtle
+  
+  // This is my preferred method
+  vm.changeActiveTurtle = changeActiveTurtle;
 
-    function changeActiveTurtle(){
-        // Logic in here
-    }
+  function changeActiveTurtle(){
+    // Logic in here
+  }
 }</pre>
+{% endhighlight %}
 
 So now let&#8217;s create the logic inside the changeActiveTurtle function. When we called the function in the ng-click we pass today in the value of turtle which is the current index of the button that we clicked on and the data associated with that index. So we will need to give our functions in the controller some arguments.
 
 The actual logic inside the function is only a single line of code that grabs hold of the activeTurtle property from within our controller and set equal to the index data that we passed into the function.
 
-<pre class="lang:js decode:true" title="changeActiveTurtle Logic">function ListController(){
-    var vm = this;
+{% highlight javascript linenos%}
+function ListController(){
+  var vm = this;
 
-    vm.data = turtlesData;
-    vm.activeTurtle = {}; // will be used in the view to hold the data of currently active turtle
-    
-    // This is my preferred method
-    vm.changeActiveTurtle = changeActiveTurtle;
+  vm.data = turtlesData;
+  vm.activeTurtle = {}; // will be used in the view to hold the data of currently active turtle
+  
+  // This is my preferred method
+  vm.changeActiveTurtle = changeActiveTurtle;
 
-    function changeActiveTurtle(index){
-        vm.activeTurtle = index;
-    }
-}</pre>
-
-<div id="angularsociallockerbox" style="margin: 50px 0; border-radius: 30px; border: 3px solid #00BCD4; padding: 30px;">
-  <h3>
-    Download Commented Code And PDFs For This Entire Series
-  </h3>
-  
-  <p>
-    Get correct and fully commented code for the start of all 24 parts, plus the finished app. Also get a PDF with the entire 24 chapter tutorial in it, so you can learn anywhere!
-  </p>
-  
-  <p>
-    I will also throw in individual PDFs of all chapters, just to allow efficient learning of specific topics.
-  </p>
-  
-  <div class="onp-locker-call" style="display: none;" data-lock-id="onpLock717840">
-  </div>
-  
-  <p>
-    I don&#8217;t want to force you to share my stuff to get the real content (I really hate that too). So you will still get 100% of the content &#8211; these bonuses don&#8217;t have any new information in them that you don&#8217;t already have in these articles or on github.
-  </p>
-  
-  <p>
-    However, they do make things more convenient for you to learn. So if you want these bonuses and are willing to help me out, just give me a share using one of the buttons above. It is greatly appreciated. Thanks
-  </p>
-</div>
+  function changeActiveTurtle(index){
+    vm.activeTurtle = index;
+  }
+}
+{% endhighlight %}
 
 ## HTML Markup For The Bootstrap Modal
 
-<span style="font-weight: 400;">Now every time the learn more button is clicked the ng-click directive will trigger the changeActiveTurtle function which will set the active turtle to an object that contains all of the data associated with the turtle the user wants to learn more about.</span>
+Now every time the learn more button is clicked the ng-click directive will trigger the changeActiveTurtle function which will set the active turtle to an object that contains all of the data associated with the turtle the user wants to learn more about.
 
 We can now use this data in the modal. This allows us to create a generic modal with placeholders using the {{}} Angular syntax that will then just insert the active turtle data as and when a particular turtle is clicked on.
 
 So now it&#8217;s time to create HTML for this bootstrap modal and insert the angular bindings into it. We&#8217;ll start off by just creating a div for the modal and giving it the ID that we referenced in the  data-target attribute earlier &#8211; turtle-info. Along with this will also add a few more divs which are required by bootstrap to create a modal.
 
-<pre class="lang:xhtml decode:true" title="Basic Modal Bootstrap Markup">&lt;div class="modal" id="turtle-info"&gt;
-    &lt;div class="modal-dialog"&gt;
-        &lt;div class="modal-content"&gt;
-            &lt;div class="modal-header"&gt;
+{% highlight html linenos%}
+<div class="modal" id="turtle-info">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
 
-            &lt;/div&gt;            
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
+      </div>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
 
 ### A Little Reminder About The JSON
 
@@ -214,50 +168,55 @@ At the top of the modal area we want to display the name of the turtle that is b
 
 Because the active turtle object is just one of the objects inside the JSON which looks something like the below snippet. Using the dot operator on the activeTurtle object, we are able to grab hold of the type, the locations, the image_url etc.
 
-<pre class="lang:js decode:true">{
-    type: "text",
-    text: "Where does the Kemp's Ridley Sea Turtle live?'",
-    possibilities: [
-        {
-            answer: "Tropical waters all around the world"
-        },
-        {
-            answer: "Eastern Australia"
-        },
-        {
-            answer: "Coastal North Atlantic"
-        },
-        {
-            answer: "South pacific islands"
-        }
-    ],
-    selected: null,
-    correct: null
-}</pre>
+{% highlight javascript linenos%}
+{
+  type: "text",
+  text: "Where does the Kemp's Ridley Sea Turtle live?'",
+  possibilities: [
+    {
+      answer: "Tropical waters all around the world"
+    },
+    {
+      answer: "Eastern Australia"
+    },
+    {
+      answer: "Coastal North Atlantic"
+    },
+    {
+      answer: "South pacific islands"
+    }
+  ],
+  selected: null,
+  correct: null
+}
+{% endhighlight %}
 
 So now with the H2 added into our modal the code looks like this.
 
-<pre class="lang:xhtml decode:true" title="{{}} inside the h2">&lt;div class="modal-header"&gt;
-    &lt;h2&gt;{{list.activeTurtle.type}}&lt;/h2&gt;
-&lt;/div&gt;            
-</pre>
+{% highlight html linenos%}
+<div class="modal-header">
+  <h2>{{list.activeTurtle.type}}</h2>
+</div>
+{% endhighlight %}
 
-When I want some responsive code that will centre a large image of the turtle inside the mobile. We will make a div that is 8 columns (<a href="https://getbootstrap.com/examples/grid/" target="_blank">out of the possible 12</a>) wide and then offset it by two columns to give it to columns of space on each side to make up the full 12 and that the div is centred.
+When I want some responsive code that will centre a large image of the turtle inside the mobile. We will make a div that is 8 columns ([out of the possible 12](https://getbootstrap.com/examples/grid/){: target="_blank"}<!--_-->) wide and then offset it by two columns to give it to columns of space on each side to make up the full 12 and that the div is centred.
 
-<pre class="lang:xhtml decode:true" title="Centering the Image">&lt;div class="modal-content"&gt;
-    &lt;div class="modal-header"&gt;
-        &lt;h2&gt;{{list.activeTurtle.type}}&lt;/h2&gt;
-    &lt;/div&gt;  
+{% highlight html linenos%}
+<div class="modal-content">
+  <div class="modal-header">
+    <h2>{{list.activeTurtle.type}}</h2>
+  </div>
 
-    &lt;div class="model-body"&gt;
-        &lt;div class="row"&gt;
-            &lt;div class="col-xs-8 col-xs-offset-2"&gt;
-                &lt;img ng-src="{{list.activeTurtle.image_url}}" 
-                     class="img-rounded img-responsive"&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;   
-    &lt;/div&gt;          
-&lt;/div&gt;</pre>
+  <div class="model-body">
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2"> 
+        <img ng-src="{{list.activeTurtle.image_url}}" 
+            class="img-rounded img-responsive">
+      </div>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
 
 The code inside the ng-src is exactly the same as what we&#8217;ve seen earlier except we are referencing the image_url on the activeTurtle property instead.
 
@@ -265,45 +224,51 @@ The code inside the ng-src is exactly the same as what we&#8217;ve seen earlier 
 
 To finish off the modal markup we want to create the area that will hold all of the text data about our turtle. This code should look very familiar to you so I won&#8217;t explain it in depth.
 
-<pre class="lang:xhtml decode:true">&lt;div class="modal-content"&gt;
-    &lt;div class="modal-header"&gt;
-        &lt;h2&gt;{{list.activeTurtle.type}}&lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;div class="modal-body"&gt;
-        &lt;div class="row"&gt;
-            &lt;div class="col-xs-8 col-xs-offset-2"&gt;
-                &lt;img ng-src="{{list.activeTurtle.image_url}}" class="img-rounded img-responsive"&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class="row"&gt;
-            &lt;div class="col-md-6"&gt;
-                &lt;p&gt;&lt;strong&gt;Locations: &lt;/strong&gt;{{list.activeTurtle.locations}}&lt;/p&gt;
-                &lt;p&gt;&lt;strong&gt;Size: &lt;/strong&gt;{{list.activeTurtle.size}}&lt;/p&gt;
-                &lt;p&gt;&lt;strong&gt;Average Lifespan: &lt;/strong&gt;{{list.activeTurtle.lifespan}}&lt;/p&gt;
-                &lt;p&gt;&lt;strong&gt;Diet: &lt;/strong&gt;{{list.activeTurtle.diet}}&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;div class="col-xs-12"&gt;
-            &lt;p&gt;{{list.activeTurtle.description}}&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
+{% highlight html linenos%}
+<div class="modal-content">
+  <div class="modal-header">
+    <h2>{{list.activeTurtle.type}}</h2>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <img ng-src="{{list.activeTurtle.image_url}}" class="img-rounded img-responsive">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p><strong>Locations: </strong>{{list.activeTurtle.locations}}</p>
+        <p><strong>Size: </strong>{{list.activeTurtle.size}}</p>
+        <p><strong>Average Lifespan: </strong>{{list.activeTurtle.lifespan}}</p>
+        <p><strong>Diet: </strong>{{list.activeTurtle.diet}}</p>
+      </div>
+    <div class="col-xs-12">
+      <p>{{list.activeTurtle.description}}</p>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
 
 At this point the text to slightly too close to the image and the description is too close to the bullet point so we want to just add a bit of margin at the top of these areas just to make it look a bit nicer.
 
 We will add a class of top-buffer to the row contains all of the text currently. Then we will create this CSS rule.
 
-<pre class="lang:css decode:true">.top-buffer{
-    margin-top: 30px;
-}</pre>
+{% highlight css linenos%}
+.top-buffer{
+  margin-top: 30px;
+}
+{% endhighlight %}
 
 The final things to do in our model is to add the close button that will return us back to the list view. To do this will just create a simple button element and add some bootstrap classes to style it and float it right. A bootstrap attribute called data-dismiss is what will actually allow the button to exit the modal.
 
-<pre class="lang:xhtml decode:true ">&lt;div class="col-xs-12 top-buffer"&gt;
-    &lt;p&gt;{{list.activeTurtle.description}}&lt;/p&gt;
+{% highlight html linenos%}
+<div class="col-xs-12 top-buffer">
+  <p>{{list.activeTurtle.description}}</p>
     
-    &lt;button class="btn btn-danger pull-right" 
-            data-dismiss="modal"&gt;Close&lt;/button&gt;
-&lt;/div&gt;</pre>
+  <button class="btn btn-danger pull-right" 
+          data-dismiss="modal">Close</button>
+</div>
+{% endhighlight %}
 
 ### See You In The Next Part
 
@@ -317,79 +282,30 @@ So I will see you [over there in part 5](/code-projects/angular-quiz-app/5-angul
 
 ### Check Out The Whole Course Index
 
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/1-build-angular-quiz-app-scratch/">Getting Started</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/2-ng-controller-scope/">Ng-controller directive and the (mis)use of $scope</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/3-ng-repeat-directive/">Looping around with the ng-repeat directive</a>
-</li>
-<li style="font-weight: 400;">
-  <em>You are here</em>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/5-angular-filters/">Using Angular Filters to create real time search</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/6-ng-click-directive/">The powerful ng-click directive</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/7-angular-services/">Services in Angular Make everything easier</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/8-dependency-injection/">What is this infamous dependency injection in Angular?</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/9-angular-factories/">Let&#8217;s Build A Factory</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/10-ng-class/">The ng-class directive</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/11-bootstrap-well/">More Bootstrap Markup &#8211; The Well</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/12-controller-logic/">Adding some logic to the controller</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/13-ng-if/">Making things disappear with ng-if</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/14-index-for-ng-repeat/">The $index property for ng-repeat</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/15-reusing-code/">Reusing code is always a good idea</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/16-bootstrap-alerts/">Using Bootstrap to help with styling error messages</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/17-final-prompt/">The final prompt after the quiz</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/18-marking-the-quiz/">Marking the quiz</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/19-angular-dependency-injection/">More dependency injection</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/20-familiar-bootstrap/">Reusing and slightly modifying some previous Bootstrap</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/21-function-with-ng-class/">More than one way to use ng-class</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/22-angular-number-filter/">Another Angular Filter</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/23-angular-ng-if/">More usage of Ng-if</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/24-finished-angular-project/">Finishing The App</a>
-</li>
+1. [Getting Started]({{site.url}}/code-projects/1-build-angular-quiz-app-scratch/)
+2. [Ng-Controller Directive and the (mis)use of $scope]({{site.url}}/code-projects/angular-quiz-app/2-ng-controller-scope/)
+3. [Looping around with the ng-repeat directive]({{site.url}}/code-projects/angular-quiz-app/3-ng-repeat-directive/)
+4. *You Are Here*
+5. [Using Angular Filters to create real time search]({{site.url}}/code-projects/angular-quiz-app/5-angular-filters/)
+6. [The powerful ng-click directive]({{site.url}}/code-projects/angular-quiz-app/6-ng-click-directive/)
+7. [Services in Angular Make everything easier]({{site.url}}/code-projects/angular-quiz-app/7-angular-services/)
+8. [What is this infamous dependency injection in Angular?]({{site.url}}/code-projects/angular-quiz-app/8-dependency-injection/)
+9. [Let&#8217;s Build A Factory]({{site.url}}/code-projects/angular-quiz-app/9-angular-factories/)
+10. [The ng-class directive]({{site.url}}/code-projects/angular-quiz-app/10-ng-class/)
+11. [More Bootstrap Markup &#8211; The Well]({{site.url}}/code-projects/angular-quiz-app/11-bootstrap-well/)
+12. [Adding some logic to the controller]({{site.url}}/code-projects/angular-quiz-app/12-controller-logic/)
+13. [Making things disappear with ng-if]({{site.url}}/code-projects/angular-quiz-app/13-ng-if/)
+14. [The $index property for ng-repeat]({{site.url}}/code-projects/angular-quiz-app/14-index-for-ng-repeat/)
+15. [Reusing code is always a good idea]({{site.url}}/code-projects/angular-quiz-app/15-reusing-code/)
+16. [Using Bootstrap to help with styling error messages]({{site.url}}/code-projects/angular-quiz-app/16-bootstrap-alerts/)
+17. [The final prompt after the quiz]({{site.url}}/code-projects/angular-quiz-app/17-final-prompt/)
+18. [Marking the quiz]({{site.url}}/code-projects/angular-quiz-app/18-marking-the-quiz/)
+19. [More dependency injection]({{site.url}}/code-projects/angular-quiz-app/19-angular-dependency-injection/)
+20. [Reusing and slightly modifying some previous Bootstrap]({{site.url}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
+21. [More than one way to use ng-class]({{site.url}}/code-projects/angular-quiz-app/21-function-with-ng-class/)
+22. [Another Angular Filter]({{site.url}}/code-projects/angular-quiz-app/22-angular-number-filter/)
+23. [More usage of Ng-if]({{site.url}}/code-projects/angular-quiz-app/23-angular-ng-if/)
+24. [Finishing The App]({{site.url}}/code-projects/angular-quiz-app/24-finished-angular-project/)
 
-&nbsp;
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

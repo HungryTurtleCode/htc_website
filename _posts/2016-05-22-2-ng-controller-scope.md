@@ -12,7 +12,7 @@ categories:
 ---
 ## Using An Angular Controller To Add Content
 
-In the [last part](/1-build-angular-quiz-app-scratch) we wrote our first bits of <a href="https://docs.angularjs.org/api" target="_blank">Angular</a> code. One of those bits was the code that instantiates the controller for our list view. In this part we will take that Angular <a href="https://docs.angularjs.org/api/ng/directive/ngController" target="_blank">Controller</a> <!--more-->and use it to dynamically insert data into our HTML. This gives us great control over the content that is on our page.
+In the [last part](/1-build-angular-quiz-app-scratch) we wrote our first bits of [Angular](https://docs.angularjs.org/api){: target="_blank"}<!--_--> code. One of those bits was the code that instantiates the controller for our list view. In this part we will take that Angular [Controller](https://docs.angularjs.org/api/ng/directive/ngController){: target="_blank"}<!--_--> <!--more-->and use it to dynamically insert data into our HTML. This gives us great control over the content that is on our page.
 
 As the saying goes, there are many ways to skin a cat. What that means for us now is that there is more than one way that we can create properties on our controller and insert that data into our HTML.
 
@@ -20,70 +20,37 @@ In this article I will explain the two main methods of doing this and the pros a
 
 **If you want to see the app for yourself,** [check it out here.](/turtlefacts)
 
-The git repo <a href="https://github.com/adiman9/HungryTurtleFactQuiz" target="_blank">can be found here</a>.
+The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 
 ## Angular Controller Video Tutorial
 
 As always, the more visually inclined can just watch this video and you will receive all the same information as you would from the article. If you prefer to read just scroll down past the video.
 
-<div class="embedoverlay overlay" style="background: url(https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1457631043/AngularJS-Turtle-Quiz-App-2_ugllz2.webp);">
-  <div class="embedoverlaycont ">
-    <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-    </div>
-    
-    <h2 class="optinform">
-      Get all my latest content and exclusive offers direct to your inbox
-    </h2>
-    
-    <p class="optinform">
-      Just enter you email below
-    </p>
-    
-    <div class="embedform optinform">
-    </div>
-    
-    <p class="embedreturn">
-      <small>Go back to the video</small>
-    </p>
-  </div>
-</div>
+{% include video-embed.html videoID="mCDI3ZH3E58" %}
 
-<div class="embedcont"style="width: 100%; text-align: center;">
-</div>
-
-<div style="display: inline-block; padding-right: 20px; font-weight: bold; color: red; vertical-align: top; padding-top: 12px;">
-  Subscribe To My Channel...
-</div>
-
-<div style="margin-top: 5px; display: inline-block">
-  <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-  </div>
-</div>
-
-<div id="embedcode" style="display: none;">
-</div>
-
-&nbsp;
-
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/3-ng-repeat-directive/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/3-ng-repeat-directive/)
 
 ## Method 1: $scope Service
 
-The first method and the most commonly used method in beginners tutorials is using an Angular Service (more on what these are later in the course) call <a href="https://docs.angularjs.org/guide/scope" target="_blank">$scope</a>. Although it is the most common, in my opinion it is not the best method. But I will explain it anyway.
+The first method and the most commonly used method in beginners tutorials is using an Angular Service (more on what these are later in the course) call [$scope](https://docs.angularjs.org/guide/scope){: target="_blank"}<!--_-->. Although it is the most common, in my opinion it is not the best method. But I will explain it anyway.
 
 We start off inside the list controller that we created in the previous tutorial and into the function we pass <span class="lang:default decode:true crayon-inline ">$scope</span> . We can view $scope as simply an object that we are passing into our function. We can then attach properties onto that object and have access to those properties in our HTML.
 
 So for example we could attach a property called &#8220;dummyData&#8221; onto $scope like this:
 
-<pre class="lang:js decode:true" title="$scope syntax">function ListController($scope){
-    $scope.dummyData = "Hello  World";
-}</pre>
+{% highlight javascript linenos%}
+function ListController($scope){
+  $scope.dummyData = "Hello  World";
+}
+{% endhighlight %}
 
 Heading back into the HTML we could use that wonderful {{}} syntax to grab hold of that property like this:
 
-<pre class="lang:xhtml decode:true" title="Binding to our dummyData">&lt;div ng-controller="listCtrl"&gt;
-    {{dummyData}}
-&lt;/div&gt;</pre>
+{% highlight html linenos%}
+<div ng-controller="listCtrl">
+  {{dummyData}}
+</div>
+{% endhighlight %}
 
 This will display the text &#8220;Hello World&#8221; out inside the div. Fantastic.
 
@@ -97,44 +64,20 @@ This is where the next method of doing this comes in.
 
 ## Method 2: Controller As Syntax
 
-The next method removes the $scope from our function and instead we bind our properties onto the &#8220;<a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/this" target="_blank">this</a>&#8221; object inside our function.
+The next method removes the $scope from our function and instead we bind our properties onto the &#8220;[this](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/this){: target="_blank"}<!--_-->&#8221; object inside our function.
 
 To make this easier I usually set &#8220;this&#8221; equal to a variable at the start of the function and use that variable throughout. This saves some potential confusion later on.
 
-<pre class="lang:js decode:true" title="Controller As Syntax">function ListController(){
-    var vm = this;
-
-    vm.dummyData = "Hello World";
-}</pre>
+{% highlight javascript linenos%}
+function ListController(){
+  var vm = this;
+  vm.dummyData = "Hello World";
+}
+{% endhighlight %}
 
 I used the variable name &#8220;vm&#8221; which simply stands for &#8220;view model&#8221;. We are attaching these properties onto the view model &#8211; the view being our HTML.
 
 We then attached that same dummyData property onto vm like we did with $scope earlier.
-
-<div id="angularsociallockerbox" style="margin: 50px 0; border-radius: 30px; border: 3px solid #00BCD4; padding: 30px;">
-  <h3>
-    Download Commented Code And PDFs For This Entire Series
-  </h3>
-  
-  <p>
-    Get correct and fully commented code for the start of all 24 parts, plus the finished app. Also get a PDF with the entire 24 chapter tutorial in it, so you can learn anywhere!
-  </p>
-  
-  <p>
-    I will also throw in individual PDFs of all chapters, just to allow efficient learning of specific topics.
-  </p>
-  
-  <div class="onp-locker-call" style="display: none;" data-lock-id="onpLock615868">
-  </div>
-  
-  <p>
-    I don&#8217;t want to force you to share my stuff to get the real content (I really hate that too). So you will still get 100% of the content &#8211; these bonuses don&#8217;t have any new information in them that you don&#8217;t already have in these articles or on github.
-  </p>
-  
-  <p>
-    However, they do make things more convenient for you to learn. So if you want these bonuses and are willing to help me out, just give me a share using one of the buttons above. It is greatly appreciated. Thanks
-  </p>
-</div>
 
 ### Our Code Is Broken!
 
@@ -146,9 +89,11 @@ What we are doing here is creating an alias for our controller. Notice is is the
 
 Now inside the {{}} we can refer to the exact controller which the dummyData property is on:
 
-<pre class="lang:xhtml decode:true">&lt;div ng-controller="listCtrl as list"&gt;
-    {{list.dummyData}}
-&lt;/div&gt;</pre>
+{% highlight html linenos%}
+<div ng-controller="listCtrl as list">
+  {{list.dummyData}}
+</div>
+{% endhighlight %}
 
 Ahhhh! Yes! Everything is explicit now. No more potential confusion. When we see list.dummyData there is no doubt at all as to where the dummyData property is coming from. Just how we like it.
 
@@ -166,83 +111,34 @@ See you over [there](/code-projects/angular-quiz-app/3-ng-repeat-directive).
 
 Adrian
 
-&nbsp;
+
 
 ### Check Out The Whole Course Index
 
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/1-build-angular-quiz-app-scratch/">Getting Started</a>
-</li>
-<li style="font-weight: 400;">
-  <em>You are here</em>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/3-ng-repeat-directive/">Looping around with the ng-repeat directive</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/4-bootstrap-modal/">Markup for the bootstrap modal</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/5-angular-filters/">Using Angular Filters to create real time search</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/6-ng-click-directive/">The powerful ng-click directive</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/7-angular-services/">Services in Angular Make everything easier</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/8-dependency-injection/">What is this infamous dependency injection in Angular?</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/9-angular-factories/">Let&#8217;s Build A Factory</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/10-ng-class/">The ng-class directive</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/11-bootstrap-well/">More Bootstrap Markup &#8211; The Well</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/12-controller-logic/">Adding some logic to the controller</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/13-ng-if/">Making things disappear with ng-if</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/14-index-for-ng-repeat/">The $index property for ng-repeat</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/15-reusing-code/">Reusing code is always a good idea</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/16-bootstrap-alerts/">Using Bootstrap to help with styling error messages</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/17-final-prompt/">The final prompt after the quiz</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/18-marking-the-quiz/">Marking the quiz</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/19-angular-dependency-injection/">More dependency injection</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/20-familiar-bootstrap/">Reusing and slightly modifying some previous Bootstrap</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/21-function-with-ng-class/">More than one way to use ng-class</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/22-angular-number-filter/">Another Angular Filter</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/23-angular-ng-if/">More usage of Ng-if</a>
-</li>
-<li style="font-weight: 400;">
-  <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/24-finished-angular-project/">Finishing The App</a>
-</li>
+1. [Getting Started]({{site.url}}/code-projects/1-build-angular-quiz-app-scratch/)
+2. *You Are Here*
+3. [Looping around with the ng-repeat directive]({{site.url}}/code-projects/angular-quiz-app/3-ng-repeat-directive/)
+4. [Markup for the bootstrap modal]({{site.url}}/code-projects/angular-quiz-app/4-bootstrap-modal/)
+5. [Using Angular Filters to create real time search]({{site.url}}/code-projects/angular-quiz-app/5-angular-filters/)
+6. [The powerful ng-click directive]({{site.url}}/code-projects/angular-quiz-app/6-ng-click-directive/)
+7. [Services in Angular Make everything easier]({{site.url}}/code-projects/angular-quiz-app/7-angular-services/)
+8. [What is this infamous dependency injection in Angular?]({{site.url}}/code-projects/angular-quiz-app/8-dependency-injection/)
+9. [Let&#8217;s Build A Factory]({{site.url}}/code-projects/angular-quiz-app/9-angular-factories/)
+10. [The ng-class directive]({{site.url}}/code-projects/angular-quiz-app/10-ng-class/)
+11. [More Bootstrap Markup &#8211; The Well]({{site.url}}/code-projects/angular-quiz-app/11-bootstrap-well/)
+12. [Adding some logic to the controller]({{site.url}}/code-projects/angular-quiz-app/12-controller-logic/)
+13. [Making things disappear with ng-if]({{site.url}}/code-projects/angular-quiz-app/13-ng-if/)
+14. [The $index property for ng-repeat]({{site.url}}/code-projects/angular-quiz-app/14-index-for-ng-repeat/)
+15. [Reusing code is always a good idea]({{site.url}}/code-projects/angular-quiz-app/15-reusing-code/)
+16. [Using Bootstrap to help with styling error messages]({{site.url}}/code-projects/angular-quiz-app/16-bootstrap-alerts/)
+17. [The final prompt after the quiz]({{site.url}}/code-projects/angular-quiz-app/17-final-prompt/)
+18. [Marking the quiz]({{site.url}}/code-projects/angular-quiz-app/18-marking-the-quiz/)
+19. [More dependency injection]({{site.url}}/code-projects/angular-quiz-app/19-angular-dependency-injection/)
+20. [Reusing and slightly modifying some previous Bootstrap]({{site.url}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
+21. [More than one way to use ng-class]({{site.url}}/code-projects/angular-quiz-app/21-function-with-ng-class/)
+22. [Another Angular Filter]({{site.url}}/code-projects/angular-quiz-app/22-angular-number-filter/)
+23. [More usage of Ng-if]({{site.url}}/code-projects/angular-quiz-app/23-angular-ng-if/)
+24. [Finishing The App]({{site.url}}/code-projects/angular-quiz-app/24-finished-angular-project/)
 
-&nbsp;
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

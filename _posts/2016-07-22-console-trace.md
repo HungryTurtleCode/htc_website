@@ -13,13 +13,13 @@ categories:
 ---
 ## Little Known But Powerful Tool &#8211; console.trace()
 
-A while ago I released a post and a video about <a href="https://hungryturtlecode.com/tips-tricks/console-log-table/" target="_blank">using console.table</a> as part of your javascript debugging arsenal. I got a great reception from it and many people said they where shocked it wasn&#8217;t more well known. So now I shall continue that with console.trace.
+A while ago I released a post and a video about [using console.table]({{site.url}}/tips-tricks/console-log-table/){: target="_blank"}<!--_--> as part of your javascript debugging arsenal. I got a great reception from it and many people said they where shocked it wasn&#8217;t more well known. So now I shall continue that with console.trace.
 
-A few weeks ago, an <a href="https://medium.com/outsystems-experts/beyond-console-debugging-tricks-f7d0d7f5df4#.ghug71xq6" target="_blank">article popped up on Medium</a> that took a run through more of the console API &#8211; one of which was console.trace. It has gained a lot of traction and many people are talking about it. This has lead me into creating <a href="https://hungryturtlecode.com/tips-tricks/javascript-tips/" target="_blank">my own series</a> going over some more of the powerful tools at your disposal &#8211; much like I did with <a href="https://hungryturtlecode.com/tips-tricks/console-log-table/" target="_blank">console.table</a>.
+A few weeks ago, an [article popped up on Medium](https://medium.com/outsystems-experts/beyond-console-debugging-tricks-f7d0d7f5df4#.ghug71xq6){: target="_blank"}<!--_--> that took a run through more of the console API &#8211; one of which was console.trace. It has gained a lot of traction and many people are talking about it. This has lead me into creating [my own series](https://hungryturtlecode.com/tips-tricks/javascript-tips/){: target="_blank"}<!--_--> going over some more of the powerful tools at your disposal &#8211; much like I did with [console.table](https://hungryturtlecode.com/tips-tricks/console-log-table/){: target="_blank"}<!--_-->
 
 ### The First Of Many
 
-This post will be the start of a mini series that will be focusing on different <a href="https://hungryturtlecode.com/tips-tricks/javascript-tips/" target="_blank">tools that JavaScript developers can use</a> to speed up their debugging workflow.
+This post will be the start of a mini series that will be focusing on different [tools that JavaScript developers can use]({{site.url}}/tips-tricks/javascript-tips/){: target="_blank"}<!--_--> to speed up their debugging workflow.
 
 I wanted to start with console.trace because it is such a powerful tool that has a huge range of useful applications and I know it has certainly saved me a ton of time over my career.
 
@@ -27,60 +27,23 @@ I wanted to start with console.trace because it is such a powerful tool that has
 
 As always, there is an accompanying video to go along with this post, so pick your preferred method of getting the information.
 
-<div class="embedoverlay overlay" style="background: url(https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469796118/Youtube_Thumbnail2_wcggzw.jpg);">
-  <div class="embedoverlaycont ">
-    <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-    </div>
-    
-    <h2 class="optinform">
-      Get all my latest content and exclusive offers direct to your inbox
-    </h2>
-    
-    <p class="optinform">
-      Just enter you email below
-    </p>
-    
-    <div class="embedform optinform">
-    </div>
-    
-    <p class="embedreturn">
-      <small>Go back to the video</small>
-    </p>
-  </div>
-</div>
+{% include video-embed.html videoID="QuO0UDkW2rk" %}
 
-<div class="embedcont"style="width: 100%; text-align: center;">
-</div>
+Starting off, I just created a simple HTML structure that will allow us to call a [javascript]({{site.url}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> file. This isn&#8217;t interesting, but I&#8217;ll show you the code anyway.
 
-<div style="display: inline-block; padding-right: 20px; font-weight: bold; color: red; vertical-align: top; padding-top: 12px;">
-  Subscribe To My Channel...
-</div>
-
-<div style="margin-top: 5px; display: inline-block">
-  <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-  </div>
-</div>
-
-<div id="embedcode" style="display: none;">
-</div>
-
-&nbsp;
-
-Starting off, I just created a simple HTML structure that will allow us to call a <a href="https://hungryturtlecode.com/tutorials/javascript-tuts/" target="_blank">javascript</a> file. This isn&#8217;t interesting, but I&#8217;ll show you the code anyway.
-
-<pre class="lang:xhtml decode:true " title="HTML to get us started">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-	&lt;meta charset="UTF-8"&gt;
-	&lt;title&gt;Console.Trace&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-	&lt;h1&gt;Experimenting With console.trace()&lt;/h1&gt;
-
-	&lt;script src="script.js"&gt;&lt;/script&gt;
-	
-&lt;/body&gt;
-&lt;/html&gt;</pre>
+{% highlight html linenos%}
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+	<title>Console.Trace</title>
+</head>
+<body>
+  <h1>Experimenting With console.trace()</h1>
+  
+  <script src="script.js"></script>
+</body>
+</html>
+{% endhighlight %}
 
 Now for the interesting part&#8230;
 
@@ -88,24 +51,21 @@ Now for the interesting part&#8230;
 
 This is the javascript I am starting with.
 
-<pre class="lang:js decode:true" title="The Javascript">function app(){
+{% highlight javascript linenos%}
+function app(){
 	function doSomething(){
-		var a = 1;
+	  var a = 1;
 		var b = 2;
-
 		alert( sumFunction(a, b) );
 	}
-
 	function sumFunction(a, b){
-		
 		return a + b;
 	}
 
-	doSomething();
+  doSomething();
 }
-
-	
-app();</pre>
+app();
+{% endhighlight %}
 
 Of course this code is a bit contrived and not very useful in the real world, but it will serve our purpose just fine. The important part is that there are many functions that call other functions. This will create something that is called the call stack &#8211; a list of all the functions that have been called, in the order they were called.
 
@@ -115,7 +75,7 @@ The doSomething function is called at the bottom of the app function. doSomethin
 
 sumFunction just adds the two numbers together and returns the result, which is then alerted out.
 
-<img class="aligncenter wp-image-1063" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469198249/Selection_005_k6lyju.jpg" alt="Alert box" width="800" height="250" />
+![Alert Box](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469198249/Selection_005_k6lyju.jpg){: class="aligncenter" width="800" height="250"}
 
 ## What Exactly Does Console.trace do?
 
@@ -139,37 +99,37 @@ Of course, there is nothing wrong with this method &#8211; it works. But it does
 
 Instead, we can place a call to console.trace in the code at the point we want to trace back from. So in the javascript above we want to trace back from the sumFunction so we place the console.trace in there like this:
 
-<pre class="lang:js decode:true " title="console.trace with the sumFunction">function sumFunction(a, b){
+{% highlight javascript linenos%}
+function sumFunction(a, b){
+  console.trace("Our First Trace");
 
-    console.trace("Our First Trace");		
-
-    return a + b;
-}</pre>
+  return a + b;
+}
+{% endhighlight %}
 
 Notice we can pass it in an argument which will simply be the name of that particular stack trace. This allows us to have multiple different instances of console.trace and we can differentiate between them as they will all have unique names.
 
 Before we run this code, let&#8217;s take a look at the code again &#8211; this time with the call to console.trace &#8211; and think about what the stack trace should look like.
 
-<pre class="lang:default decode:true" title="Final javascript with console.trace">function app(){
-	function doSomething(){
-		var a = 1;
+{% highlight javascript linenos%}
+function app(){
+  function doSomething(){
+    var a = 1;
 		var b = 2;
 
 		alert( sumFunction(a, b) );
 	}
 
 	function sumFunction(a, b){
-		
-                console.trace("Our First Trace");
-
+    console.trace("Our First Trace");
 		return a + b;
 	}
 
 	doSomething();
 }
 
-	
-app();</pre>
+app();
+{% endhighlight %}
 
 For starters, the last function that was called before the console.trace was triggered was the sumFunction. So that will be the top of the call stack.
 
@@ -187,17 +147,17 @@ We still get the alert box showing in the window, just like we did before, but t
 
 This is the output into the console when we run the code.
 
-<img class="wp-image-1067 aligncenter" src="https://res.cloudinary.com/djxscnpzf/image/upload/v1469198249/Selection_006_y20o1i.jpg" alt="output from console.trace" width="640" height="386" />
+![output from console.trace](https://res.cloudinary.com/djxscnpzf/image/upload/v1469198249/Selection_006_y20o1i.jpg){: class="aligncenter" width="640" height="386"}
 
 Exactly what we expected except the bottom of the stack is (anonymous function) instead of global namespace. But the global namespace is just an unnamed function in javascript, so that is why it tells us it&#8217;s an anonymous function. But we know that it is just the global namespace.
 
 We are also shown what file each call was made from and what line in that file it was made from.
 
-<img class="aligncenter wp-image-1066" src="https://res.cloudinary.com/djxscnpzf/image/upload/v1469198249/Selection_007_mwbyrh.jpg" alt="file and line number info from console.trace" width="637" height="574" />
+![file and line number info from console.trace](https://res.cloudinary.com/djxscnpzf/image/upload/v1469198249/Selection_007_mwbyrh.jpg){: class="aligncenter" width="637" height="574"}
 
 These are interactive links too. We can click on the file name and line number next to the call from the doSomething function and it will take us to the sources tab in Chrome Dev Tools and straight to that line inside the doSomething function that calls the next function on the stack. In our case it will take us to line 6, where the sumFunction is called.
 
-<img class="aligncenter wp-image-1065" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469198249/Selection_009_hugfke.jpg" alt="Inside chrome dev tools" width="800" height="529" />
+![Inside chrome dev tools](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469198249/Selection_009_hugfke.jpg){: class="aligncenter" width="800" height="529"}
 
 Ultimately, that is all you need to know to use console.trace in your debugging workflow. It is instantly easier to clean up, as you have replaced many calls to console.log all over your javascript files with a single call to console.trace. Remove that one line and your code is back to being clean code ready for deployment.
 
@@ -211,7 +171,7 @@ Now we run that in the browser. Open up Chrome Dev Tools and navigate to the sou
 
 Inside the sources tab you can type code in, just like you can in your editor. Here is where you type the console.trace call. Like this:
 
-<img class="aligncenter wp-image-1068" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469198249/Selection_010_pluy18.jpg" alt="Inserting console.trace directly through dev tools" width="800" height="464" />
+![Inserting console.trace directly though dev tools](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469198249/Selection_010_pluy18.jpg){: class="aligncenter" width="800" height="464"}
 
 ### Breakpoint Or Call The Function Manually
 
@@ -219,7 +179,7 @@ Unfortunately, the code we are interested in has already run when we refreshed t
 
 For the sake of showing you, I will trigger the app function again in the console. This will again cause the console.trace to log out the call stack.
 
-<img class="aligncenter wp-image-1069" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469198249/Selection_011_xobja7.jpg" alt="Slightly different call stack from console.trace" width="800" height="340" />
+![Slightly different call stack from console.trace](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469198249/Selection_011_xobja7.jpg){: class="aligncenter" width="800" height="340"}
 
 Notice here that the call stack is slightly different. This is because we called the app function from the console so the call stack has to track back further to get to the first call as the console adds some magic in the background. But the top of the stack is still identical as it was before.
 
@@ -229,7 +189,7 @@ The benefit this time is that the console.trace was never actually in the javasc
 
 That&#8217;s all I have this time.
 
-I look forward to seeing you for the next part of this <a href="https://hungryturtlecode.com/tips-tricks/javascript-tips/" target="_blank">Javascript debugging tips series</a>.
+I look forward to seeing you for the next part of this [Javascript debugging tips series]({{site.url}}/tips-tricks/javascript-tips/){: target="_blank"}<!--_-->.
 
 But until then,
 
@@ -237,6 +197,6 @@ Stay hungry and keep coding,
 
 Adrian
 
-&nbsp;
+
 
 **Please tell your friends about this if you found it useful…**

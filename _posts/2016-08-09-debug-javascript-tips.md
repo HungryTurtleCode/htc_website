@@ -19,96 +19,63 @@ This post will be continuing with my Javascript debugging series. If this is the
 
 ### Videos Are Cool?
 
-<div class="embedoverlay overlay" style="background: url(http://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1470610513/Thumbnail_ekoild.jpg);">
-  <div class="embedoverlaycont ">
-    <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-    </div>
-    
-    <h2 class="optinform">
-      Get all my latest content and exclusive offers direct to your inbox
-    </h2>
-    
-    <p class="optinform">
-      Just enter you email below
-    </p>
-    
-    <div class="embedform optinform">
-    </div>
-    
-    <p class="embedreturn">
-      <small>Go back to the video</small>
-    </p>
-  </div>
-</div>
-
-<div class="embedcont"style="width: 100%; text-align: center;">
-</div>
-
-<div style="display: inline-block; padding-right: 20px; font-weight: bold; color: red; vertical-align: top; padding-top: 12px;">
-  Subscribe To My Channel...
-</div>
-
-<div style="margin-top: 5px; display: inline-block">
-  <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-  </div>
-</div>
-
-<div id="embedcode" style="display: none;">
-</div>
-
-&nbsp;
+{% include video-embed.html videoID="wRWVNCdygEY" %}
 
 This isn&#8217;t going to be a long one today. The debug method is a pretty simple one to get your head around.
 
 The HTML we are starting with is slightly different this time.
 
-<pre class="lang:xhtml decode:true " title="HTML To Use">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-	&lt;meta charset="UTF-8"&gt;
-	&lt;title&gt;Debug Method&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-	&lt;h1&gt;Experimenting With debug()&lt;/h1&gt;
+{% highlight html linenos%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Debug Method</title>
+</head>
+<body>
+  <h1>Experimenting With debug()</h1>
 
-	&lt;script src="script.js"&gt;&lt;/script&gt;
-	&lt;script src="script2.js"&gt;&lt;/script&gt;
-	&lt;script src="script3.js"&gt;&lt;/script&gt;
-	&lt;script src="script4.js"&gt;&lt;/script&gt;
-	&lt;script src="script5.js"&gt;&lt;/script&gt;
+  <script src="script.js"></script>
+  <script src="script2.js"></script>
+  <script src="script3.js"></script>
+  <script src="script4.js"></script>
+  <script src="script5.js"></script>
 	
-&lt;/body&gt;
-&lt;/html&gt;</pre>
+</body>
+</html>
+{% endhighlight %}
 
 We are starting with 5 different script files to illustrate the power of the debug method. Inside each of these files we have 10 functions. Each of which just output their number as an alert. Like this:
 
-<pre class="lang:js decode:true " title="First Javascript File">function function1(){
-	alert("1");
+{% highlight javascript linenos%}
+function function1(){
+  alert("1");
 }
 function function2(){
-	alert("2");
+  alert("2");
 }
 function function3(){
-	alert("3");
+  alert("3");
 }
 function function4(){
-	alert("4");
+  alert("4");
 }
 function function5(){
-	alert("5");
+  alert("5");
 }
 function function6(){
-	alert("6");
+  alert("6");
 }
 function function7(){
-	alert("7");
+  alert("7");
 }
 function function8(){
-	alert("8");
+  alert("8");
 }
 function function9(){
-	alert("9");
-}</pre>
+  alert("9");
+}
+{% endhighlight %}
 
 ### I Want To Find function23
 
@@ -120,11 +87,11 @@ Nothing happened!
 
 What is happening now, is the code is being monitored. Any time the function23 is called the code execution will stop and you will be jumped straight to the sources tab and taking into the code for function23. Pretty cool! Let&#8217;s try it by invoking function23 manually in the console.
 
-<img class="aligncenter wp-image-1101" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1470610824/Selection_001_ixcb48.jpg" alt="Manually calling function 23 with debug" width="800" height="592" />
+![Manually calling funciton 23 with debug](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1470610824/Selection_001_ixcb48.jpg){: class="aligncenter" width="800" height="592"}
 
 Straight away you can see that the execution of the code has been paused as soon as we called function23 manually from the console. Below you can also see where the code jumped to. Yep, function23 is highlighted, inside script3.js. No need to have to use ctrl+f to find that little rascal again!
 
-<img class="aligncenter wp-image-1102" src="https://res.cloudinary.com/djxscnpzf/image/upload/v1470610824/Selection_002_pmbdhy.jpg" alt="Taken into the sources tab to function23" width="577" height="479" />
+![Taken into the sources tab to function23](https://res.cloudinary.com/djxscnpzf/image/upload/v1470610824/Selection_002_pmbdhy.jpg){: class="aligncenter" width="577" height="479"}
 
 ### Code Paused Before The Function Runs
 
@@ -144,4 +111,4 @@ Stay hungry and keep coding,
 
 Adrian
 
-&nbsp;
+

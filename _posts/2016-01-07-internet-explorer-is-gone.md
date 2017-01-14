@@ -13,19 +13,19 @@ categories:
 ---
 ## Joy To The World!
 
-The day that many web developers have been waiting for is finally just around the corner. Microsoft is <a href="https://www.microsoft.com/en-us/WindowsForBusiness/End-of-IE-support" target="_blank">stopping all support</a> for Internet Explorer 8, 9 and 10 next week (January 12th 2016). Naturally, this is causing some hype in the web dev world and many are heralding it as the golden moment we have been waiting for.
+The day that many web developers have been waiting for is finally just around the corner. Microsoft is [stopping(https://www.microsoft.com/en-us/WindowsForBusiness/End-of-IE-support){: target="_blank"}<!--_--> all support] for Internet Explorer 8, 9 and 10 next week (January 12th 2016). Naturally, this is causing some hype in the web dev world and many are heralding it as the golden moment we have been waiting for.
 
 ## Is End of Life for IE the End of Our Woes?
 
 Honestly, I highly doubt it. This is far from the cross browser compatibility solution that many have been saying. It is not that suddenly on the 12th of January everyone will suddenly upgrade to IE11 or Microsoft edge. Microsoft are simply stopping support for older browsers.
 
-Fortunately, they will be displaying an &#8220;End of Life&#8221; notice to all users who are still using these old browsers in an attempt to get them to upgrade. This is actually a pretty huge cross section of overall IE users according to <a href="http://www.computerworld.com/article/3018786/web-browsers/last-chance-to-upgrade-ie-or-switch-browsers-as-microsofts-mandate-looms.html" target="_blank">computerworld</a>.
+Fortunately, they will be displaying an &#8220;End of Life&#8221; notice to all users who are still using these old browsers in an attempt to get them to upgrade. This is actually a pretty huge cross section of overall IE users according to [computerworld](http://www.computerworld.com/article/3018786/web-browsers/last-chance-to-upgrade-ie-or-switch-browsers-as-microsofts-mandate-looms.html){: target="_blank"}<!--_-->.
 
 I have a sneaky feeling that many people who are still using some of these legacy browsers will simply stick with what they know and ignore these notifications that their browsers are out of date.
 
 This is of course at their own risk as without continued support the already shaky security of these older IE browsers will now suddenly become a goldmine for malicious hackers.
 
-<img class="alignleft wp-image-197" src="https://res.cloudinary.com/djxscnpzf/image/upload/v1452202645/505_lseapg.jpg" alt="You are going to have a bad time if you are still using internet explorer" width="260" height="260" />
+![You are going to have a bad time if you are still using internet explorer](https://res.cloudinary.com/djxscnpzf/image/upload/v1452202645/505_lseapg.jpg){: width="260" height="260" class="alignleft"}
 
 ## What About Microsoft Edge?
 
@@ -41,7 +41,7 @@ Internet Explorer isn&#8217;t going anywhere. It is here for the long haul. Whet
 
 Admittedly, the notifications of end of life for Internet Explorer may make some people upgrade to IE11, I don&#8217;t think it will make a huge dent in the overall usage. Not for a few years anyway.
 
-<img class="alignright wp-image-194" src="https://res.cloudinary.com/djxscnpzf/image/upload/v1452202647/the-most-interesting-man-in-the-world-in-internet-explorer-photo-u1_u7cbkl.jpg" alt="I Don't Always Use Internet Explorer Meme" width="400" height="501" />
+![I Don't Always Use Internet Explorer Meme](https://res.cloudinary.com/djxscnpzf/image/upload/v1452202647/the-most-interesting-man-in-the-world-in-internet-explorer-photo-u1_u7cbkl.jpg){: class="alignright" width="400" height="501"}
 
 ## Business Continues as Normal?
 
@@ -49,7 +49,7 @@ I think so. As exciting as the end of life news for internet explorer sounds, it
 
 As far as the typical web developer goes, we will all still have to continue supporting these legacy browsers if our target demographic still falls into the section of people who use older IE browsers.
 
-Until next time, take a look at some of the [tutorials](https://hungryturtlecode.com/tutorials/), [tips](https://hungryturtlecode.com/tips-tricks/) or [projects](https://hungryturtlecode.com/code-projects/)
+Until next time, take a look at some of the [tutorials]({{site.url}}/tutorials/), [tips]({{site.url}}/tips-tricks/) or [projects]({{site.url}}/code-projects/)
 
 Stay hungry and keep coding,
 

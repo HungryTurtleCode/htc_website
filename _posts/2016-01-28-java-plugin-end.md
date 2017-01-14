@@ -12,9 +12,10 @@ categories:
 ---
 ## Oracle&#8217;s Java Browser Plugin Gets The Chop
 
-<img class="alignright wp-image-413" src="https://res.cloudinary.com/djxscnpzf/image/upload/v1454023468/53043053_nsyjop.jpg" alt="Java Browser Plugin Is At End Of Life" width="400" height="300" />Internet users rejoice, hackers despair and corporate IT departments are on suicide watch. Yep, that can only mean one thing! Oracle are finally pulling the plug on their troublesome Java browser plugin.
+![Java Browser Plugin Is At End Of Life](https://res.cloudinary.com/djxscnpzf/image/upload/v1454023468/53043053_nsyjop.jpg){: class="alignright" width="400" height="300"}
+Internet users rejoice, hackers despair and corporate IT departments are on suicide watch. Yep, that can only mean one thing! Oracle are finally pulling the plug on their troublesome Java browser plugin.
 
-So far, 2016 has been a big year for the modernisation of browsers. First Microsoft announce they will no longer provide support for <a href="https://hungryturtlecode.com/news/internet-explorer-is-gone/" target="_blank" data-cke-saved-href="https://hungryturtlecode.com/news/internet-explorer-is-gone/">old Internet Explorer</a> browsers. Now Oracle are deprecating their Java plugin.
+So far, 2016 has been a big year for the modernisation of browsers. First Microsoft announce they will no longer provide support for [old Internet Explorer]({{site.url}}/news/internet-explorer-is-gone/){: target="_blank"}<!--_--> browsers. Now Oracle are deprecating their Java plugin.
 
 This news is hardly a surprise though. Chrome stopped all support for plugin based technologies nearly a year ago. Chrome were not alone in this endeavour though. In fact most modern browsers had made similar move by the end of last year.
 
@@ -22,7 +23,7 @@ Removing this support meant embedding Silverlight, Flash or Java was no longer
 
 ### It&#8217;s Oracle Official!
 
-Fortunately, now it is official. Oracle have <a href="https://blogs.oracle.com/java-platform-group/entry/moving_to_a_plugin_free" target="_blank" data-cke-saved-href="https://blogs.oracle.com/java-platform-group/entry/moving_to_a_plugin_free">announced</a> that the plugin will be removed from JDK 9. It will no longer be in the future runtime environment in Java SE releases.
+Fortunately, now it is official. Oracle have [announced](https://blogs.oracle.com/java-platform-group/entry/moving_to_a_plugin_free){: target="_blank"}<!--_--> that the plugin will be removed from JDK 9. It will no longer be in the future runtime environment in Java SE releases.
 
 This is of course great news for pretty much everyone. The Java plugin has been a security risk in browsers for a long time. Hackers have gladly exploited those vulnerabilities for just as long.
 
@@ -34,7 +35,7 @@ In fairness, in recent times, even in older browsers, the newer versions of the 
 
 But now the final nail is in the coffin and developers are being forced to move away from the plugin system. Especially if they want to remain secure.
 
-Of course, developers will still want access to Java SE technology in the browser. Oracle are pointing you in the direction of <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/javaws/" target="_blank" data-cke-saved-href="http://docs.oracle.com/javase/8/docs/technotes/guides/javaws/">Java Web Start</a> which allows that, without plugins.
+Of course, developers will still want access to Java SE technology in the browser. Oracle are pointing you in the direction of [Java Web Start](http://docs.oracle.com/javase/8/docs/technotes/guides/javaws/){: target="_blank"}<!--_--> which allows that, without plugins.
 
 ### One Man&#8217;s Dream Is Another Man&#8217;s Nightmare
 

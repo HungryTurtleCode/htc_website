@@ -13,7 +13,7 @@ categories:
 ---
 ## What Is This Modular JavaScript You Speak Of?
 
-This is part 2 of this mini series recreating the &#8220;Other Side&#8221; video effect using jQuery keyboard events. If you haven&#8217;t seen [part 1](https://hungryturtlecode.com/tutorials/jquery-keyboard-events/), go take a look at that first.
+This is part 2 of this mini series recreating the &#8220;Other Side&#8221; video effect using jQuery keyboard events. If you haven&#8217;t seen [part 1]({{site.url}}/tutorials/jquery-keyboard-events/), go take a look at that first.
 
 In this tutorial we will take the exact code from the previous part and modularise it. What I mean by that is we don&#8217;t have everything in one place. We split the code out so that each part of the code only does one specific job.
 
@@ -23,56 +23,21 @@ What this does is makes everything easier to read and understand at a glance. Ra
 
 ## Video Tutorial. Text Tutorial Below.
 
-<div class="embedoverlay overlay" style="background: url(https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_775/v1452226499/fun_with_keyboard_events4_h4y1zr.jpg);">
-  <div class="embedoverlaycont ">
-    <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-    </div>
-    
-    <h2 class="optinform">
-      Get all my latest content and exclusive offers direct to your inbox
-    </h2>
-    
-    <p class="optinform">
-      Just enter you email below
-    </p>
-    
-    <div class="embedform optinform">
-    </div>
-    
-    <p class="embedreturn">
-      <small>Go back to the video</small>
-    </p>
-  </div>
-</div>
-
-<div class="embedcont"style="width: 100%; text-align: center;">
-</div>
-
-<div style="display: inline-block; padding-right: 20px; font-weight: bold; color: red; vertical-align: top; padding-top: 12px;">
-  Subscribe To My Channel...
-</div>
-
-<div style="margin-top: 5px; display: inline-block">
-  <div class="g-ytsubscribe" data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw" data-layout="default" data-count="default" data-onytevent="onYtEvent">
-  </div>
-</div>
-
-<div id="embedcode" style="display: none;">
-</div>
-
-&nbsp;
+{% include video-embed.html videoID="wzDXp0ekhZA" %}
 
 ### How Do We Go About Modularising?
 
-What a great question! I&#8217;m glad you asked. There are many ways to do it but one common way is to create a <a href="https://hungryturtlecode.com/tutorials/javascript-tuts/" target="_blank">JavaScript</a> object that has methods (similar to functions). Each of these methods then handles a specific task within your application and then calls other methods when other tasks are required.
+What a great question! I&#8217;m glad you asked. There are many ways to do it but one common way is to create a [Javascript]({{site.url}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> object that has methods (similar to functions). Each of these methods then handles a specific task within your application and then calls other methods when other tasks are required.
 
 **Don&#8217;t worry if you don&#8217;t understand objects and methods and all that fancy stuff.** Just follow along for now. We want to get you creating cool things for now. Worry about the rest later.
 
 To start with, we will create an object called doubleSided.
 
-<pre class="lang:js decode:true " title="A JavaScript Object">var doubleSided = {
+{% highlight javascript linenos %}
+var doubleSided = {
 
-};</pre>
+};
+{% endhighlight %}
 
 If you are thinking it looks kinda like declaring a variable, you would be correct.
 
@@ -94,15 +59,17 @@ Now next time we need that we can just reference the variable &#8220;cachedEleme
 
 Let&#8217;s now get back to the object we created earlier. Inside that object we want to create a method that will initialise our application &#8211; let&#8217;s call it init();
 
-Inside this method, we want to call all the methods we need to get our app started. Namely, we will need to call a method to cache the DOM and call a method to bind all these elements to the events we want to monitor (play, pause, keyup and keydown). I will also add a further method to set the volume like we did in the [previous part](https://hungryturtlecode.com/tutorials/jquery-keyboard-events/).
+Inside this method, we want to call all the methods we need to get our app started. Namely, we will need to call a method to cache the DOM and call a method to bind all these elements to the events we want to monitor (play, pause, keyup and keydown). I will also add a further method to set the volume like we did in the [previous part]({{site.url}}/tutorials/jquery-keyboard-events/).
 
-<pre class="lang:js decode:true" title="Our Object with Init method">var doubleSided = {
-    init: function(){
-        this.cacheDom();
-        this.setVolume();
-        this.bindEvents();
-    }
-};</pre>
+{% highlight javascript linenos %}
+var doubleSided = {
+  init: function(){
+    this.cacheDom();
+    this.setVolume();
+    this.bindEvents();
+  }
+};
+{% endhighlight %}
 
 To create methods, we simply type the name of the method followed by a colon &#8211; then the function you want. Note you can also create object properties (which are like variables within the object) in this same manner. <span class="lang:js decode:true crayon-inline ">property: &#8220;variable&#8221;</span> would be valid.
 
@@ -110,22 +77,24 @@ Within this init function we are calling three other methods from within the obj
 
 If we were to simply call cacheDom, JavaScript would look for a function called cacheDom **OUTSIDE** of the object. Using &#8220;this&#8221; tells it that is actually within the object.
 
-<pre class="lang:js decode:true" title="Some More Methods">var doubleSided = {
-    init: function(){
-        this.cacheDom();
-        this.setVolume();
-        this.bindEvents();
-    },
-    cacheDom: function(){
+{% highlight javascript linenos %}
+var doubleSided = {
+  init: function(){
+    this.cacheDom();
+    this.setVolume();
+    this.bindEvents();
+  },
+  cacheDom: function(){
 
-    },
-    bindEvents: function(){
+  },
+  bindEvents: function(){
 
-    },
-    setVolume: function(){
+  },
+  setVolume: function(){
 
-    }
-};</pre>
+  }
+};
+{% endhighlight %}
 
 ## Give Me Your Cache
 
@@ -133,13 +102,15 @@ Let&#8217;s actually add some code to these methods.
 
 Much like when we wanted to create methods that we can call from within the object using the &#8220;this&#8221; keyword, we can create variables, or properties that we can use elsewhere in the object using the &#8220;this&#8221; keyword.
 
-<pre class="lang:js decode:true " title="cacheDom Method">cacheDom: function(){
-    this.$lvid = $('#lightvid');
-    this.$dvid = $('#darkvid');
-    this.$lvidcont = $('#lightvidcont');
-    this.$vids = $('video');
-    this.$doc = $(document);
-},</pre>
+{% highlight javascript linenos %}
+cacheDom: function(){
+  this.$lvid = $('#lightvid');
+  this.$dvid = $('#darkvid');
+  this.$lvidcont = $('#lightvidcont');
+  this.$vids = $('video');
+  this.$doc = $(document);
+}
+{% endhighlight %}
 
 Here we have just taken all the jQuery DOM calls from part 1 and set them as properties within our object. This is our cacheDom method complete.
 
@@ -147,12 +118,14 @@ Here we have just taken all the jQuery DOM calls from part 1 and set them as pro
 
 Now let&#8217;s take all of those properties and bind them to the correct events.
 
-<pre class="lang:js decode:true" title="bindEvents Method">bindEvents: function(){
-    this.$doc.on('keydown', this.keydownFunc);
-    this.$doc.on('keyup', this.keyupFunc);
-    this.$vids.on('pause', this.pauseVid);
-    this.$vids.on('play', this.playVid);
-},</pre>
+{% highlight javascript linenos %}
+bindEvents: function(){
+  this.$doc.on('keydown', this.keydownFunc);
+  this.$doc.on('keyup', this.keyupFunc);
+  this.$vids.on('pause', this.pauseVid);
+  this.$vids.on('play', this.playVid);
+}
+{% endhighlight %}
 
 We are still using the <span class="lang:js decode:true crayon-inline ">.on()</span>  method, but this time instead of attaching that directly to a jQuery selector call, we attach it to the properties we cached. For the callback of each of these we are calling more methods from within the object that we will create next.
 
@@ -186,12 +159,14 @@ Fortunately, the wonderful developers of jQuery realised that this could potenti
 
 The way we do this is with the <span class="lang:js decode:true crayon-inline ">.bind()</span>  method.
 
-<pre class="lang:default decode:true ">bindEvents: function(){
-    this.$doc.on('keydown', this.keydownFunc.bind(this));
-    this.$doc.on('keyup', this.keyupFunc.bind(this));
-    this.$vids.on('pause', this.pauseVid.bind(this));
-    this.$vids.on('play', this.playVid.bind(this));
-},</pre>
+{% highlight javascript linenos%}
+bindEvents: function(){
+  this.$doc.on('keydown', this.keydownFunc.bind(this));
+  this.$doc.on('keyup', this.keyupFunc.bind(this));
+  this.$vids.on('pause', this.pauseVid.bind(this));
+  this.$vids.on('play', this.playVid.bind(this));
+}
+{% endhighlight %}
 
 Now we have added <span class="lang:js decode:true crayon-inline ">.bind(this)</span>  on to the end of our method calls.
 
@@ -203,99 +178,107 @@ So by passing &#8220;this&#8221; as the argument, the context inside the bindEve
 
 Set the volume quickly, before we move onto creating the last 4 methods.
 
-<pre class="lang:js decode:true" title="setVolume">setVolume: function(){
-    this.$lvid.prop('volume', 0.2);
-    this.$dvid.prop('volume', 0.2);
-},</pre>
+{% highlight javascript linenos %}
+setVolume: function(){
+  this.$lvid.prop('volume', 0.2);
+  this.$dvid.prop('volume', 0.2);
+}
+{% endhighlight %}
 
 The last 4 methods are keydownFunc, keyupFunc, pauseVid and playVid. Let&#8217;s start with keydownFunc.
 
 At this point it is as simple as taking the code from part 1 and just change the jQuery selector calls to our cached variables.
 
-<pre class="lang:default decode:true">keydownFunc: function(event){
-    if(event.keyCode === 82){
-         this.$lvidcont.css('top', -2000 + 'px');
-         this.$dvid.prop('muted', false);
-         this.$lvid.prop('muted', true);
-    }
-},</pre>
+{% highlight javascript linenos %}
+keydownFunc: function(event){
+  if(event.keyCode === 82){
+    this.$lvidcont.css('top', -2000 + 'px');
+    this.$dvid.prop('muted', false);
+    this.$lvid.prop('muted', true);
+  }
+}
+{% endhighlight %}
 
 Again, we pass the function an &#8220;event&#8221; argument. The rest is pretty self explanatory if you have seen part 1.
 
 The rest follows on pretty simply&#8230;
 
-<pre class="lang:js decode:true " title="Rest of the Methods">keyupFunc: function(e){
-    if(e.keyCode === 82){
-        this.$lvidcont.css('top', 0 + 'px');
-        this.$lvid.prop('muted', false);
-        this.$dvid.prop('muted', true);
-    }
+{% highlight javascript linenos %}
+keyupFunc: function(e){
+  if(e.keyCode === 82){
+    this.$lvidcont.css('top', 0 + 'px');
+    this.$lvid.prop('muted', false);
+    this.$dvid.prop('muted', true);
+  }
 },
 playVid: function(){
-    for(var i = 0; i &lt; 2; i++){
-        this.$vids.get(i).play();
-    }
+  for(var i = 0; i &lt; 2; i++){
+    this.$vids.get(i).play();
+  }
 },
 pauseVid: function(){
-    for(var i = 0; i &lt; 2; i++){
-        this.$vids.get(i).pause();
-    }
-}</pre>
+  for(var i = 0; i &lt; 2; i++){
+    this.$vids.get(i).pause();
+  }
+}
+{% endhighlight %}
 
 ## Putting It All Together
 
 Now we have written all the code, lets put it all together and see what we have.
 
-<pre class="lang:js decode:true" title="Final Modular Code">var doubleSided = {
-    init: function(){
-        this.cacheDom();
-        this.setVolume();
-        this.bindEvents();
-    },
-    cacheDom: function(){
-        this.$lvid = $('#lightvid');
-        this.$dvid = $('#darkvid');
-        this.$lvidcont = $('#lightvidcont');
-        this.$vids = $('video');
-        this.$doc = $(document);
-    },
-    bindEvents: function(){
-        this.$doc.on('keydown', this.keydownFunc.bind(this));
-        this.$doc.on('keyup', this.keyupFunc.bind(this));
-        this.$vids.on('pause', this.pauseVid.bind(this));
-        this.$vids.on('play', this.playVid.bind(this));
-    },
-    setVolume: function(){
-        this.$lvid.prop('volume', 0.2);
-        this.$dvid.prop('volume', 0.2);
-    },
-    keydownFunc: function(e){
-        if(e.keyCode === 82){
-            this.$lvidcont.css('top', -2000 + 'px');
-            this.$dvid.prop('muted', false);
-            this.$lvid.prop('muted', true);
-        }
-    },
-    keyupFunc: function(e){
-        if(e.keyCode === 82){
-            this.$lvidcont.css('top', 0 + 'px');
-            this.$lvid.prop('muted', false);
-            this.$dvid.prop('muted', true);
-        }
-    },
-    playVid: function(){
-        for(var i = 0; i &lt; 2; i++){
-            this.$vids.get(i).play();
-        }
-    },
-    pauseVid: function(){
-        for(var i = 0; i &lt; 2; i++){
-            this.$vids.get(i).pause();
-        }
+{% highlight javascript linenos %}
+var doubleSided = {
+  init: function(){
+    this.cacheDom();
+    this.setVolume();
+    this.bindEvents();
+  },
+  cacheDom: function(){
+    this.$lvid = $('#lightvid');
+    this.$dvid = $('#darkvid');
+    this.$lvidcont = $('#lightvidcont');
+    this.$vids = $('video');
+    this.$doc = $(document);
+  },
+  bindEvents: function(){
+    this.$doc.on('keydown', this.keydownFunc.bind(this));
+    this.$doc.on('keyup', this.keyupFunc.bind(this));
+    this.$vids.on('pause', this.pauseVid.bind(this));
+    this.$vids.on('play', this.playVid.bind(this));
+  },
+  setVolume: function(){
+    this.$lvid.prop('volume', 0.2);
+    this.$dvid.prop('volume', 0.2);
+  },
+  keydownFunc: function(e){
+    if(e.keyCode === 82){
+      this.$lvidcont.css('top', -2000 + 'px');
+      this.$dvid.prop('muted', false);
+      this.$lvid.prop('muted', true);
     }
+  },
+  keyupFunc: function(e){
+    if(e.keyCode === 82){
+      this.$lvidcont.css('top', 0 + 'px');
+      this.$lvid.prop('muted', false);
+      this.$dvid.prop('muted', true);
+    }
+  },
+  playVid: function(){
+    for(var i = 0; i &lt; 2; i++){
+      this.$vids.get(i).play();
+    }
+  },
+  pauseVid: function(){
+    for(var i = 0; i &lt; 2; i++){
+      this.$vids.get(i).pause();
+    }
+  }
 };
 
-doubleSided.init();</pre>
+doubleSided.init();
+{% endhighlight %}
 
 Ahhhhhh! So much better. It is much easier to read and see what is going on at a glance.
 
@@ -303,7 +286,7 @@ The only thing left to do is to call <span class="lang:js decode:true crayon-inl
 
 Writing code in this fashion has so many benefits such as increased security, increased efficiency, easier readability of code which leads to easier to maintain code &#8211; which of course makes everyone happy.
 
-Hope you enjoyed it! See you soon for <a href="https://hungryturtlecode.com/tutorials/" target="_blank">another tutorial</a>.
+Hope you enjoyed it! See you soon for [another tutorial]({{site.url}}/tutorials/){: target="_blank"}<!--_-->.
 
 Stay hungry and keep coding,
 

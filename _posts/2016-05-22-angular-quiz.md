@@ -9,4 +9,6 @@ excerpt: I’ve Learnt Some JavaScript! What Now? That may be something that pre
 categories:
   - Basic Angular Quiz App
 ---
-That may be something that pretty much all of us have said at some point or another. You have learnt some basic <a href="https://hungryturtlecode.com/best-programming-languages-to-learn-2016/" target="_blank">programming syntax</a>, but you now want to build something. In comes this <a href="https://docs.angularjs.org/api" target="_blank">AngularJS</a> Project.<!--more-->
+That may be something that pretty much all of us have said at some point or another. You have learnt some basic [programming syntax]({{site.url}}/best-programming-languages-to-learn-2016/){: target="_blank"}<!--_-->, but you now want to build something. In comes this [AngularJS](https://docs.angularjs.org/api){: target="_blank"}<!--_--> Project.<!--more-->
+
+
