@@ -12,9 +12,7 @@
       {{cat}}
     </a>
 
-    {% if forloop.index != include.data.categories.size  %}
-      <span>, </span>
-    {% endif %}
+    {% unless forloop.last  %},{% endunless %}
 
   {% endfor %}
 </strong>
