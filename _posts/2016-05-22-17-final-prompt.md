@@ -68,7 +68,10 @@ function finaliseAnswers(){
 }
 {% endhighlight %}
 
-Note that this is just the function itself. This will be inside the quiz controller and it will be added to the view model in the same way as before &#8211; using a named function &#8211; something like <span class="lang:default decode:true crayon-inline ">vm.finaliseAnswers = finaliseAnswers.</span>
+Note that this is just the function itself. This will be inside the quiz controller and it will be added to the view model in the same way as before &#8211; using a named function &#8211; something like 
+{% ihighlight javascript %}{% raw %}
+vm.finaliseAnswers = finaliseAnswers.
+{% endraw %}{% endihighlight %}
 
 The first three lines inside the function are pretty self explanatory &#8211; just resetting the properties to their default values.
 

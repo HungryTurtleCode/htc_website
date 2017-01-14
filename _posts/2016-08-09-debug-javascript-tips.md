@@ -81,7 +81,10 @@ function function9(){
 
 Let&#8217;s assume that we don&#8217;t know what file function23 is in, but we want to find it. We are inside the browser and open up the sources tab. We could open up all the script files and start with the trusty ctrl+f in all the files looking for function23.
 
-Or, we could use the debug method. All we need to do is pass the name of the function that we want to find into the debug method. In our case <span class="lang:js decode:true crayon-inline ">debug(function23)</span> . Run it in the console.
+Or, we could use the debug method. All we need to do is pass the name of the function that we want to find into the debug method. In our case 
+{% ihighlight javascript %}{% raw %}
+debug(function23)
+{% endraw %}{% endihighlight %}. Run it in the console.
 
 Nothing happened!
 

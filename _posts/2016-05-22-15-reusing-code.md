@@ -106,7 +106,10 @@ function setActiveQuestion(index){
 }
 {% endhighlight %}
 
-Using <span class="lang:js decode:true crayon-inline">index === undefined</span>  we can check if the function has been given an argument or not. Giving us the exact functionality we want. The else block here is also pretty self explanatory.
+Using 
+{% ihighlight javascript %}{% raw %}
+index === undefined
+{% endraw %}{% endihighlight %} we can check if the function has been given an argument or not. Giving us the exact functionality we want. The else block here is also pretty self explanatory.
 
 ### Onward and Upward&#8230;
 

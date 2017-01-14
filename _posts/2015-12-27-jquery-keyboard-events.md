@@ -109,17 +109,21 @@ When the key is released, the reverse occurs and the originally visible video is
 
 ## What Has This Got To Do With CSS?
 
-Well, the easiest way to move elements back and forth off the screen is <span class="lang:css decode:true crayon-inline">position: absolute;</span>and then programmatically change the position rules (top, bottom, left right).
+Well, the easiest way to move elements back and forth off the screen is {% ihighlight css %}{% raw %}position: absolute;{% endraw %}{% endihighlight %}and then programmatically change the position rules (top, bottom, left right).
 
 Easy! Right? We can simply reference the &#8220;vidcont&#8221; class, which references the respective containers for the two videos.
 
-{% highlight css linenos %}
+{% highlight css %}
 .vidcont{
   position: absolute;
 }
 {% endhighlight %}
 
-Unfortunately, as some of you may know, when you position an element absolutely the default frame of reference to position it to becomes the entire window. So if we were to set <span class="lang:default decode:true crayon-inline ">top: 0; left: 0;</span>  we would put the videos in the very top left of the window.
+Unfortunately, as some of you may know, when you position an element absolutely the default frame of reference to position it to becomes the entire window. So if we were to set 
+{% ihighlight css %}{% raw %}
+top: 0; left: 0;
+{% endraw %}{% endihighlight %}
+we would put the videos in the very top left of the window.
 
 This isn&#8217;t what we want. Instead, we want it to be positioned relative to our overall container (which has the convenient class of &#8220;container&#8221;).
 
@@ -127,9 +131,24 @@ This isn&#8217;t what we want. Instead, we want it to be positioned relative to 
 
 The way position absolute works is it needs a frame of reference. That frame of reference is &#8220;the nearest parent element that is positioned&#8221;.
 
-What is meant by &#8220;element that is positioned&#8221; is an element that is either <span class="lang:default decode:true crayon-inline ">position: relative;</span>  or <span class="lang:default decode:true crayon-inline">position: absolute;</span> . Any normal element you create is not positioned as the default for HTML elements is <span class="lang:default decode:true crayon-inline ">position: static;</span> .
+What is meant by &#8220;element that is positioned&#8221; is an element that is either 
+{% ihighlight css %}{% raw %}
+position: relative;
+{% endraw %}{% endihighlight %}
+or 
+{% ihighlight css %}{% raw %}
+position: absolute;
+{% endraw %}{% endihighlight %}
+. Any normal element you create is not positioned as the default for HTML elements is 
+{% ihighlight css %}{% raw %}
+position: static;
+{% endraw %}{% endihighlight %}.
 
-A simple way around this is to just give our <span class="lang:default decode:true crayon-inline "><div class=&#8221;container&#8221;> </span> the CSS rule of position relative. This won&#8217;t affect where on the page the element is unless we change the top, left etc rules.
+A simple way around this is to just give our 
+{% ihighlight html %}{% raw %}
+<div class="container"> 
+{% endraw %}{% endihighlight %}
+CSS rule of position relative. This won&#8217;t affect where on the page the element is unless we change the top, left etc rules.
 
 But it will now become the frame of reference for any absolutely positioned elements inside it.
 
@@ -150,7 +169,11 @@ h1{
 
 ## On To The JavaScript!
 
-To get us started &#8211; as we are using jQuery &#8211; we will throw in the obligatory <span class="lang:js decode:true crayon-inline ">$(document).ready();</span>  just to ensure that all the code we write only starts executing when the page has loaded.
+To get us started &#8211; as we are using jQuery &#8211; we will throw in the obligatory 
+{% ihighlight javascript %}{% raw %}
+$(document).ready();
+{% endraw %}{% endihighlight %}
+just to ensure that all the code we write only starts executing when the page has loaded.
 
 I use headphones a lot, so I like to just start by setting the volume on both videos to something low. Just to try reduce the risk of me doing something dumb (which is a lot) and blasting my ears.
 
@@ -217,7 +240,11 @@ So we now have to add a bit of logic that couples the playing and pausing of the
 
 We will start by invoking the trusty .on() method on our video and passing it the event of &#8220;play&#8221;. Inside the callback function we have many options as to how you can couple the playing of both videos.
 
-Bearing in mind that using <span class="lang:js decode:true crayon-inline">$(&#8216;video&#8217;).on(&#8216;play&#8217;&#8230;</span>  will trigger every time either video is played. So what I did to couple them is to simply loop through all videos on the page (only two here) and play them all. The ensures that regardless of which video is played, all videos will couple with it.
+Bearing in mind that using 
+{% ihighlight javascript %}{% raw %}
+$("video").on("play");
+{% endraw %}{% endihighlight %}
+will trigger every time either video is played. So what I did to couple them is to simply loop through all videos on the page (only two here) and play them all. The ensures that regardless of which video is played, all videos will couple with it.
 
 {% highlight javascript linenos %}
 $('video').on('play', function() {

@@ -103,7 +103,14 @@ On the div for the question, we can use ng-repeat to repeat itself for all four 
 </div>
 {% endhighlight %}
 
-So here we are referencing the possible answers using a long string similar to the one we created to get the question text, except this time we are referencing <span class="lang:default decode:true crayon-inline ">.possibilities</span>  instead of <span class="lang:default decode:true crayon-inline ">.text</span> . But we are still getting that by finding the activeQuestion index of the quizQuestions property on the dataService which we have access to in the quiz controller.
+So here we are referencing the possible answers using a long string similar to the one we created to get the question text, except this time we are referencing 
+{% ihighlight css %}{% raw %}
+.possibilities
+{% endraw %}{% endihighlight %}
+instead of 
+{% ihighlight css %}{% raw %}
+.text
+{% endraw %}{% endihighlight %}. But we are still getting that by finding the activeQuestion index of the quizQuestions property on the dataService which we have access to in the quiz controller.
 
 The ng-repeat has the alias of answer and the possibilities object that we are looping through each have a value of answer, which is the text of the possible answer. Just to jog your memory, here is a snippet of the JSON we are dealing with.
 

@@ -344,7 +344,13 @@ We also do the same in the list controller. While we are in there we can delete 
 })();
 {% endhighlight %}
 
-Notice that we previously had a line <span class="lang:js decode:true crayon-inline">vm.data = turtlesData</span>  but of course, the turtlesData variable doesn’t exist in the controller, it is now inside the dataservice factory. So we change that line to <span class="lang:js decode:true crayon-inline  ">vm.data = DataService.turtlesData</span> .
+Notice that we previously had a line 
+{% ihighlight javascript %}{% raw %}
+vm.data = turtlesData
+{% endraw %}{% endihighlight %} but of course, the turtlesData variable doesn’t exist in the controller, it is now inside the dataservice factory. So we change that line to 
+{% ihighlight javascript %}{% raw %}
+vm.data = DataService.turtlesData
+{% endraw %}{% endihighlight %}.
 
 Before we forget, we need to add the new dataservice factory script to the tags at the bottom of our HTML. The scripts area of the HTML now looks like this:
 

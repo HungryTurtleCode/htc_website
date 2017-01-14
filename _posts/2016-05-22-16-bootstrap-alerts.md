@@ -43,7 +43,10 @@ while(!breakOut){
 }
 {% endhighlight %}
 
-Notice inside the new conditional we reference <span class="lang:default decode:true crayon-inline ">vm.error</span> . We have yet to create this, so add it at the top of the controller where we declare all the other properties. This what the whole quiz controller looks like so far:
+Notice inside the new conditional we reference 
+{% ihighlight javascript %}{% raw %}
+vm.error
+{% endraw %}{% endihighlight %}. We have yet to create this, so add it at the top of the controller where we declare all the other properties. This what the whole quiz controller looks like so far:
 
 {% highlight javascript linenos%}
 (function(){
@@ -121,7 +124,10 @@ At the top of the row that holds the question area will be where we place the [b
 
 ![bootstrap alert error message](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464630703/bootstrap_alert_error_message_zeuyiz.jpg){: class="aligncenter" width="800" height="396"}
 
-The markup to create the alert box is simple. We just need to add the class of alert and the class of alert-danger to make it red. I also added a button with the class of close and the value of <span class="lang:default decode:true crayon-inline ">&times</span>  which will create a nice x to close the alert box.
+The markup to create the alert box is simple. We just need to add the class of alert and the class of alert-danger to make it red. I also added a button with the class of close and the value of 
+{% ihighlight html %}{% raw %}
+&times
+{% endraw %}{% endihighlight %} which will create a nice x to close the alert box.
 
 On this button is an ng-click directive that will change the error property back to false which will remove the error box when we click the x button. Instead of calling a function from the ng-click like we have been doing throughout this course, it is also possible to just make an assignment declaration.
 
@@ -154,7 +160,14 @@ if(DataService.quizQuestions[vm.activeQuestion].selected !== null){
 }
 {% endhighlight %}
 
-You may be wondering why we have the line <span class="lang:js decode:true crayon-inline">numQuestionsAnswered >= quizLength</span>  rather than simply <span class="lang:js decode:true crayon-inline">numQuestionsAnswered === quizLength.</span>  I mean, if all questions have been answered numQuestionsAnswered will be exactly equal to the length of the quiz. Right?
+You may be wondering why we have the line 
+{% ihighlight javascript %}{% raw %}
+numQuestionsAnswered >= quizLength
+{% endraw %}{% endihighlight %} rather than simply 
+{% ihighlight javascript %}{% raw %}
+numQuestionsAnswered === quizLength.
+{% endraw %}{% endihighlight %}
+I mean, if all questions have been answered numQuestionsAnswered will be exactly equal to the length of the quiz. Right?
 
 The problem is that we do not stop the user from clicking continue on the same answered question twice. For example, the user answers question 1 and clicks continue which will call the questionAnswered function and increment numQuestionsAnswered and move us to question two.
 

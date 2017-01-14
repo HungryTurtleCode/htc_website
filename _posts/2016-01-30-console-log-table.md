@@ -55,12 +55,20 @@ So here we have a happy group of turtles that we can print out in our table.
 
 ### How does console.log() output this?
 
-Just for reference, let&#8217;s print out this array in the console with <span class="lang:js decode:true crayon-inline ">console.log(turtles)</span>  :
+Just for reference, let&#8217;s print out this array in the console with 
+{% ihighlight javascript %}{% raw %}
+console.log(turtles)
+{% endraw %}{% endihighlight %}:
+
 ![console log debugging output](https://res.cloudinary.com/djxscnpzf/image/upload/v1454185790/console-log-turtles_uc5yv2.jpg){: class="aligncenter" width="302" height="298"}
 
 ### Now let&#8217;s make it better with console.table
 
-Here is the output when we use <span class="lang:js decode:true crayon-inline">console.table(turtles)</span> : 
+Here is the output when we use 
+{% ihighlight javascript %}{% raw %}
+console.table(turtles)
+{% endraw %}{% endihighlight %}: 
+
 ![console.table debugging output](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1454185828/console-table-turtles_ciu374.jpg){: class="aligncenter" width="800" height="112"}
 
 You can click on the headers of each column to sort that column. This is a great feature to get a quick overview of some data if you know where it should be.
@@ -91,10 +99,18 @@ var turtles = {
 
 This object is very much like our previous array except we have now added an age property to each turtle, the reason for this will become clearer shortly.
 
-Again, for reference here is the output from <span class="lang:js decode:true crayon-inline ">console.log(turtles)</span> : 
+Again, for reference here is the output from 
+{% ihighlight javascript %}{% raw %}
+console.log(turtles)
+{% endraw %}{% endihighlight %}: 
+
 ![console.log debugging output](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1454185811/console-log-turtles-object_qj8no9.jpg){: class="aligncenter" width="800" height="404"}
 
-And here is the glorious output from <span class="lang:js decode:true crayon-inline ">console.table(turtles)</span>  :
+And here is the glorious output from 
+{% ihighlight javascript %}{% raw %}
+console.table(turtles)
+{% endraw %}{% endihighlight %}:
+
 ![console.table debugging output](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1454185886/console-table-turtles-object_vcou1u.jpg){: class="aligncenter" width="800" height="111"}
 
 Notice here that instead of listing by the index number like it did for the array it will actually use the name assigned to each object as the index. This obviously provides another level of ease to looking through the data.
@@ -105,18 +121,25 @@ Of course, a problem can arise here if the object we are dealing with has a lot 
 
 Fortunately, the console.table API allows use to pass in an optional second argument which will specify the columns we are concerned with and only print those out.
 
-This could be done like this: <span class="lang:js decode:true crayon-inline ">console.table(turtles, &#8220;name&#8221;)</span>
+This could be done like this: 
+{% ihighlight javascript %}{% raw %}
+console.table(turtles, "name&")
+{% endraw %}{% endihighlight %}
 
 Which would produce this output:
+
 ![console.table additional arguments](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1454185844/console-table-turtles-name_n1shsk.jpg){: class="aligncenter" width="800" height="135"}
 
 If you require many columns, the second argument can be an array containing as many properties as you would like.
 
 Keeping with our turtles example, we may only want the name and age of each turtle (this is why I added a third property to the objects, to allow the selection of more than one column, without selecting them all).
 
-<span class="lang:js decode:true crayon-inline">console.table(turtles, [&#8220;name&#8221;, &#8220;age&#8221;]</span>
+{% ihighlight javascript %}{% raw %}
+console.table(turtles, ["name", "age"]
+{% endraw %}{% endihighlight %}
 
 Now we will see the following in the console:
+
 ![console.table additional debugging arguments](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1454185863/console-table-turtles-name-age_a216it.jpg){: class="aligncenter" width="800" height="138"}
 
 This is a very powerful part of the [console API](https://developer.mozilla.org/en/docs/Web/API/console){: target="_blank"}<!--_--> and I feel too few developers are aware of it. I hope you can take this knowledge and use it to become a better developer.

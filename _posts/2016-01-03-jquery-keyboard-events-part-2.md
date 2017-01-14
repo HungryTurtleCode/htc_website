@@ -43,7 +43,11 @@ If you are thinking it looks kinda like declaring a variable, you would be corre
 
 ## Efficiency!! GIVE ME MORE EFFICIENCY!!
 
-I briefly mentioned this in the first video. Every time you make a jQuery selector call like <span class="lang:js decode:true crayon-inline ">$(&#8216;.element&#8217;)</span> , jQuery will scan the entire document to find it. So if you are making multiple calls to the same element &#8211; for example, every time a key is pressed &#8211; you are wasting a lot of resources.
+I briefly mentioned this in the first video. Every time you make a jQuery selector call like 
+{% ihighlight javascript %}{% raw %}
+$(".element")
+{% endraw %}{% endihighlight %}
+, jQuery will scan the entire document to find it. So if you are making multiple calls to the same element &#8211; for example, every time a key is pressed &#8211; you are wasting a lot of resources.
 
 Why not just scan once for an element you know you will need a lot and then just save it? This would be smart! This is known as caching.
 
@@ -51,7 +55,10 @@ Being the clever JS developers that we all are, we decide to scan for everythin
 
 To cache a jQuery selector all we need to do is set it equal to a variable.
 
-<span class="lang:js decode:true crayon-inline ">var cachedElement = $(&#8216;.element&#8217;);</span>  scans to document once and finds all elements with the class of &#8220;element&#8221; then saves that into a variable.
+{% ihighlight javascript %}{% raw %}
+var cachedElement = $(".element");
+{% endraw %}{% endihighlight %}
+scans to document once and finds all elements with the class of &#8220;element&#8221; then saves that into a variable.
 
 Now next time we need that we can just reference the variable &#8220;cachedElement&#8221; instead of scanning the whole document again.
 
@@ -71,7 +78,11 @@ var doubleSided = {
 };
 {% endhighlight %}
 
-To create methods, we simply type the name of the method followed by a colon &#8211; then the function you want. Note you can also create object properties (which are like variables within the object) in this same manner. <span class="lang:js decode:true crayon-inline ">property: &#8220;variable&#8221;</span> would be valid.
+To create methods, we simply type the name of the method followed by a colon &#8211; then the function you want. Note you can also create object properties (which are like variables within the object) in this same manner. 
+{% ihighlight javascript %}{% raw %}
+property: "variable"
+{% endraw %}{% endihighlight %}
+would be valid.
 
 Within this init function we are calling three other methods from within the object (which we haven&#8217;t created yet). Notice that we use the keyword &#8220;this&#8221;. What that means is that we are telling javascript that we want to call a method, but it should look for that method inside _this_ object. ie. it is a method contained within the current object.
 
@@ -127,7 +138,11 @@ bindEvents: function(){
 }
 {% endhighlight %}
 
-We are still using the <span class="lang:js decode:true crayon-inline ">.on()</span>  method, but this time instead of attaching that directly to a jQuery selector call, we attach it to the properties we cached. For the callback of each of these we are calling more methods from within the object that we will create next.
+We are still using the 
+{% ihighlight javascript %}{% raw %}
+.on()
+{% endraw %}{% endihighlight %}
+method, but this time instead of attaching that directly to a jQuery selector call, we attach it to the properties we cached. For the callback of each of these we are calling more methods from within the object that we will create next.
 
 Notice how much more modular this approach is. We do not have the logic directly in the callback, we instead call a separate method &#8211; allowing us to keep everything clean.
 
@@ -143,13 +158,45 @@ So as I have explained previously, the this keyword tells JavaScript to look ins
 
 ### .on() Changes Everything
 
-Now when we call a method from within <span class="lang:js decode:true crayon-inline ">.on()</span> , the context within that method changes to the element that <span class="lang:js decode:true crayon-inline ">.on()</span>  is attached to.
+Now when we call a method from within 
+{% ihighlight javascript %}{% raw %}
+.on()
+{% endraw %}{% endihighlight %}
+the context within that method changes to the element that 
+{% ihighlight javascript %}{% raw %}
+.on()
+{% endraw %}{% endihighlight %}
+is attached to.
 
-For example, we call this.keydownFunc from within the on keydown method call. Now we skip forward to inside the keydownFunc method and we call <span class="lang:js decode:true crayon-inline ">this.$lvid</span> , we would expect our cached variable of $lvid to be found.
+For example, we call this.keydownFunc from within the on keydown method call. Now we skip forward to inside the keydownFunc method and we call 
+{% ihighlight javascript %}{% raw %}
+this.$lvid
+{% endraw %}{% endihighlight %}
+, we would expect our cached variable of $lvid to be found.
 
-But in this case, that call will return undefined! The reason for this is the context has changed. The <span class="lang:js decode:true crayon-inline ">.on()</span>  method that invoked the keydownFunc method was attached to our cached variable for the <span class="lang:js decode:true crayon-inline ">$(&#8216;document&#8217;)</span> , which means that the context within the keydownFunc method changes from our doubleSided object to the jQuery <span class="lang:js decode:true crayon-inline ">$(&#8216;document&#8217;)</span>  call.
+But in this case, that call will return undefined! The reason for this is the context has changed. The 
+{% ihighlight javascript %}{% raw %}
+.on()
+{% endraw %}{% endihighlight %}
+method that invoked the keydownFunc method was attached to our cached variable for the 
+{% ihighlight javascript  %}{% raw %}
+$("document")
+{% endraw %}{% endihighlight %}
+, which means that the context within the keydownFunc method changes from our doubleSided object to the jQuery 
+{% ihighlight javascript %}{% raw %}
+$("document")
+{% endraw %}{% endihighlight %}
+call.
 
-Calling <span class="lang:js decode:true crayon-inline ">this.$lvid</span>  from inside the keydownFunc is equivalent to calling <span class="lang:js decode:true crayon-inline ">$(&#8216;document&#8217;).$lvid</span>  which of course doesn&#8217;t exist.
+Calling 
+{% ihighlight javascript %}{% raw %}
+this.$lvid
+{% endraw %}{% endihighlight %}
+from inside the keydownFunc is equivalent to calling 
+{% ihighlight javascript %}{% raw %}
+$("document").$lvid
+{% endraw %}{% endihighlight %}
+which of course doesn&#8217;t exist.
 
 I know this may seem very complicated and confusing. I will do a full tutorial on context soon.
 
@@ -157,7 +204,11 @@ I know this may seem very complicated and confusing. I will do a full tutorial o
 
 Fortunately, the wonderful developers of jQuery realised that this could potentially be a problem and provided us a way to override the changing of context.
 
-The way we do this is with the <span class="lang:js decode:true crayon-inline ">.bind()</span>  method.
+The way we do this is with the 
+{% ihighlight javascript %}{% raw %}
+.bind()
+{% endraw %}{% endihighlight %}
+method.
 
 {% highlight javascript linenos%}
 bindEvents: function(){
@@ -168,9 +219,17 @@ bindEvents: function(){
 }
 {% endhighlight %}
 
-Now we have added <span class="lang:js decode:true crayon-inline ">.bind(this)</span>  on to the end of our method calls.
+Now we have added 
+{% ihighlight javascript %}{% raw %}
+.bind(this)
+{% endraw %}{% endihighlight %}
+on to the end of our method calls.
 
-What the <span class="lang:js decode:true crayon-inline ">.bind()</span>  method does is takes the argument passed into it and says to the method call it is attached to, &#8220;I want you to forget about the context you think you should have, I want you to use the context of the argument I have been given&#8221;.
+What the 
+{% ihighlight javascript %}{% raw %}
+.bind()
+{% endraw %}{% endihighlight %}
+method does is takes the argument passed into it and says to the method call it is attached to, &#8220;I want you to forget about the context you think you should have, I want you to use the context of the argument I have been given&#8221;.
 
 So by passing &#8220;this&#8221; as the argument, the context inside the bindEvents method (which of course, is our object) will become the context within all of the subsequent method calls. Solving our problem.
 
@@ -282,7 +341,11 @@ doubleSided.init();
 
 Ahhhhhh! So much better. It is much easier to read and see what is going on at a glance.
 
-The only thing left to do is to call <span class="lang:js decode:true crayon-inline ">doubleSided.init();</span>  from outside our object just to invoke all the code we have written.
+The only thing left to do is to call 
+{% ihighlight javascript %}{% raw %}
+doubleSided.init();
+{% endraw %}{% endihighlight %}
+from outside our object just to invoke all the code we have written.
 
 Writing code in this fashion has so many benefits such as increased security, increased efficiency, easier readability of code which leads to easier to maintain code &#8211; which of course makes everyone happy.
 

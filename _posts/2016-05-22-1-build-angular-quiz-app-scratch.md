@@ -137,11 +137,15 @@ Live-server is a node package that can be installed via [NPM](https://www.npmjs.
 
 Once you have node installed you can run the following command from cmd or terminal:
 
-<span class="lang:default decode:true crayon-inline">npm install -g live-server</span>
+{% ihighlight bash %}{% raw %}
+npm install -g live-server
+{% endraw %}{% endihighlight %}
 
 That will install live server globally on your machine. Once that is done navigate to your project&#8217;s directory in terminal and run the following line:
 
-<span class="lang:default decode:true crayon-inline ">live-server</span>
+{% ihighlight bash %}{% raw %}
+live-server
+{% endraw %}{% endihighlight %}
 
 Yep, it&#8217;s that simple. Live-server will now scan your files for changes and when it sees one it will refresh your browser so you don&#8217;t have to.
 
@@ -303,7 +307,11 @@ I like to be as explicit and clean as possible. So I find directly naming the fu
 
 The first thing I ever saw of Angular was a line of code in an HTML file that used the {% raw %}{{}}{% endraw %} syntax. This is used to tell Angular we are using some sort of expression and not a literal string as it would usually be in an HTML document.
 
-So something like <span class="lang:default decode:true crayon-inline ">{% raw %}{{2+4}}{% endraw %}</span>  will be evaluated as an expression by angular and the result will be the number 6 printed out to the screen.
+So something like 
+{% ihighlight javascript %}{% raw %}
+{{2+4}}
+{% endraw %}{% endihighlight %}
+will be evaluated as an expression by angular and the result will be the number 6 printed out to the screen.
 
 When inside our controller HTML we can take advantage of this {% raw %}{{}}{% endraw %} syntax to bind on to properties that we define in our controller.
 

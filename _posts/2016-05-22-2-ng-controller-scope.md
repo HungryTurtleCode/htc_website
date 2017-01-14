@@ -34,7 +34,10 @@ As always, the more visually inclined can just watch this video and you will rec
 
 The first method and the most commonly used method in beginners tutorials is using an Angular Service (more on what these are later in the course) call [$scope](https://docs.angularjs.org/guide/scope){: target="_blank"}<!--_-->. Although it is the most common, in my opinion it is not the best method. But I will explain it anyway.
 
-We start off inside the list controller that we created in the previous tutorial and into the function we pass <span class="lang:default decode:true crayon-inline ">$scope</span> . We can view $scope as simply an object that we are passing into our function. We can then attach properties onto that object and have access to those properties in our HTML.
+We start off inside the list controller that we created in the previous tutorial and into the function we pass 
+{% ihighlight javascript %}{% raw %}
+$scope
+{% endraw %}{% endihighlight %}. We can view $scope as simply an object that we are passing into our function. We can then attach properties onto that object and have access to those properties in our HTML.
 
 So for example we could attach a property called &#8220;dummyData&#8221; onto $scope like this:
 
@@ -83,7 +86,14 @@ We then attached that same dummyData property onto vm like we did with $scope ea
 
 If you now try to render the HTML using this controller code you will find the code no longer works. This is because we have to make a few changes in our HTML. This is where the name of the &#8220;Controller As&#8221; syntax will become apparent.
 
-We need to make a few small changes. The first of which is changing <span class="lang:xhtml decode:true crayon-inline">ng-controller=&#8221;listCtrl&#8221;</span>  to <span class="lang:xhtml decode:true crayon-inline">ng-controller=&#8221;listCtrl as list&#8221;</span> .
+We need to make a few small changes. The first of which is changing 
+{% ihighlight html %}{% raw %}
+ng-controller="listCtrl"
+{% endraw %}{% endihighlight %}
+to 
+{% ihighlight html %}{% raw %}
+ng-controller="listCtrl as list"
+{% endraw %}{% endihighlight %}.
 
 What we are doing here is creating an alias for our controller. Notice is is the name of the controller as before, then &#8220;as list&#8221;. So we are referring to our controller as list. In other words, when we use the name &#8220;list&#8221;, Angular will know we are referring to the listCtrl controller.
 

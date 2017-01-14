@@ -276,7 +276,7 @@ That about wraps it up for this tutorial so I hope to see you over in the [next 
 
 So I will see you [over there in part 5](/code-projects/angular-quiz-app/5-angular-filters/).
 
-<span style="font-weight: 400;">Adrian</span>
+Adrian
 
 &nbsp;
 
