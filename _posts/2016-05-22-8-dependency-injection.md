@@ -24,7 +24,7 @@ Watch the video, or read the article. Or both.
 
 {% include video-embed.html videoID="txzLabEIP_w" %}
 
-[The next part can be found here.](https://hungryturtlecode.com/code-projects/angular-quiz-app/9-angular-factories/)
+[The next part can be found here.]({{site.url}}/code-projects/angular-quiz-app/9-angular-factories/)
 
 First things first, injecting the factory into the controller. To do this we will make use of an Angular method called $inject. This is an explicit way for us to inject any dependencies into our controllers.
 
@@ -129,9 +129,9 @@ Now let’s add that function that we removed from the controller into the facto
 
 Now, you may notice a few things with that above snippet from our factory. Number one, we are again using named functions instead of inline anonymous functions. Again, this keeps things more explicit.
 
-But the second thing you may notice, especially if you are used to more traditional [programming languages](https://hungryturtlecode.com/best-programming-languages-to-learn-2016/){: target="_blank"}<!--_--> like C, is that we are declaring our functions at the bottom, below the return statement. This would be invalid code in many languages. So why do we do it here?
+But the second thing you may notice, especially if you are used to more traditional [programming languages]({{site.url}}/best-programming-languages-to-learn-2016/){: target="_blank"}<!--_--> like C, is that we are declaring our functions at the bottom, below the return statement. This would be invalid code in many languages. So why do we do it here?
 
-First of all, [JavaScript](https://hungryturtlecode.com/tutorials/javascript-tuts/){: target="_blank"}<!--_--> allows this syntax due to a concept called hoisting, which I won’t go into now. Just know that the code is valid. Secondly, because it is valid code, we do it this way to make things easier to read. To separate out the interface and the implementation.
+First of all, [JavaScript]({{site.url}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> allows this syntax due to a concept called hoisting, which I won’t go into now. Just know that the code is valid. Secondly, because it is valid code, we do it this way to make things easier to read. To separate out the interface and the implementation.
 
 So when you first see this factory, you will straight away see the object that is being returned. At a quick glance you can know exactly what the code is doing at a high level, without having to dig into the actual implementation. It just makes it easier for us developers to read. The computer doesn’t care.
 
@@ -191,9 +191,9 @@ Now we have access to the factory properties &#8211; including the quizActive pr
 
 ### Onwards To Part 9
 
-We are now well on our way to creating this full application. In the [next part](https://hungryturtlecode.com/code-projects/angular-quiz-app/9-angular-factories/) we will look at how we can separate the concerns out even further using the knowledge we now have. This will lead us nicely into creating the markup to display the questions in the quiz.
+We are now well on our way to creating this full application. In the [next part]({{site.url}}/code-projects/angular-quiz-app/9-angular-factories/) we will look at how we can separate the concerns out even further using the knowledge we now have. This will lead us nicely into creating the markup to display the questions in the quiz.
 
-I will see you in [part 9.](https://hungryturtlecode.com/code-projects/angular-quiz-app/9-angular-factories/)
+I will see you in [part 9.]({{site.url}}/code-projects/angular-quiz-app/9-angular-factories/)
 
 Adrian
 

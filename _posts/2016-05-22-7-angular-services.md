@@ -24,7 +24,7 @@ As always, you can read this article or you can watch the video below to get the
 
 {% include video-embed.html videoID="HrbkZO5Mt0g" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/8-dependency-injection/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/8-dependency-injection/)
 
 Below our list controller markup in the HTML we can create new controller div for our quiz. Just like we did with our list controller we will use the “controller as” syntax.
 
@@ -34,7 +34,7 @@ Below our list controller markup in the HTML we can create new controller div fo
 </div>
 {% endhighlight %}
 
-Of course, we will add this controller into another [JavaScript](https://hungryturtlecode.com/tutorials/javascript-tuts/){: target="_blank"}<!--_--> file in our controller directory. So we will need to reference that script in the HTML. So are application scripts at the bottom of our HTML looks like this now.
+Of course, we will add this controller into another [JavaScript]({{site.url}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> file in our controller directory. So we will need to reference that script in the HTML. So are application scripts at the bottom of our HTML looks like this now.
 
 {% highlight html linenos%}
 <script src="js/app.js"></script>
@@ -130,7 +130,7 @@ Don&#8217;t forget to add the script that references the factory to the end of t
 
 Now that we have the factory roughly built, we can start refactoring the list controller to remove the quizActive property and then inject the factory into the controller so we have access to the property again.
 
-I will see you over there in [part 8.](https://hungryturtlecode.com/code-projects/angular-quiz-app/8-dependency-injection/)
+I will see you over there in [part 8.]({{site.url}}/code-projects/angular-quiz-app/8-dependency-injection/)
 
 Adrian
 

@@ -256,7 +256,7 @@ The data-target bootstrap attribute tells bootstrap exactly which modal we want
 
 ### Moving On To Part 4
 
-That&#8217;s it for this part. In [part 4](https://hungryturtlecode.com/code-projects/angular-quiz-app/4-bootstrap-modal/) we will fix up the image sizing issues that we have with the images in our list and start creating the modal markup.
+That&#8217;s it for this part. In [part 4]({{site.url}}/code-projects/angular-quiz-app/4-bootstrap-modal/) we will fix up the image sizing issues that we have with the images in our list and start creating the modal markup.
 
 See you there&#8230;
 

@@ -12,7 +12,7 @@ categories:
 ---
 ## We Have Made It To The End, Friends
 
-There is only one small thing that we still have left to do before you have your finished Angular [project](https://hungryturtlecode.com/code-projects/){: target="_blank"}<!--_-->. That feature is just adding a button that will take us back to the start &#8211; the list page.
+There is only one small thing that we still have left to do before you have your finished Angular [project]({{site.url}}/code-projects/){: target="_blank"}<!--_-->. That feature is just adding a button that will take us back to the start &#8211; the list page.
 
 **If you want to see the app for yourself,** [check it out here]({{site.url}}/turtlefacts){: target="_blank"}<!--_-->
 
@@ -49,7 +49,7 @@ function reset(){
 
 ## Yay! A Finished Angular Project!
 
-Well done! You have completed an [Angular Project](https://hungryturtlecode.com/code-projects/javascript-projects/angularjs/){: target="_blank"}<!--_-->. If this is the first one you have ever made then extra congratulations to you. You have made a huge step; a step that many “developers” never make. They remain armchair developers and don’t actually write code. Which is no way to improve.
+Well done! You have completed an [Angular Project]({{site.url}}/code-projects/javascript-projects/angularjs/){: target="_blank"}<!--_-->. If this is the first one you have ever made then extra congratulations to you. You have made a huge step; a step that many “developers” never make. They remain armchair developers and don’t actually write code. Which is no way to improve.
 
 I really hope that you have enjoyed this series and that you have learnt a bit about Angular and see just how useful it can be. If you apply some of the knowledge learnt here to one of your own projects I would love to hear about it. Get hold of me via the contact me page on the site or on facebook or twitter.
 

@@ -24,7 +24,7 @@ You can watch this full tutorial in video form below or you can continue reading
 
 {% include video-embed.html videoID="IW37XF2g7AU" %}
 
-[The next part can be found here.](https://hungryturtlecode.com/code-projects/angular-quiz-app/5-angular-filters/)
+[The next part can be found here.]({{site.url}}/code-projects/angular-quiz-app/5-angular-filters/)
 
 ## Fixing Image Sizing Issues
 

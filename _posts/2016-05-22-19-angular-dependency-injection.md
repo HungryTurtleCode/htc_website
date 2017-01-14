@@ -12,7 +12,7 @@ categories:
 ---
 ## First Steps To Getting The Results
 
-We have finished the quiz controller so now it is time to start the results controller. In the [last part](https://hungryturtlecode.com/code-projects/angular-quiz-app/18-marking-the-quiz/) we created a property called resultsActive, which is what we will use to trigger the results area to show using an ng-show. We will also delve into some more angular dependency injection.
+We have finished the quiz controller so now it is time to start the results controller. In the [last part]({{site.url}}/code-projects/angular-quiz-app/18-marking-the-quiz/) we created a property called resultsActive, which is what we will use to trigger the results area to show using an ng-show. We will also delve into some more angular dependency injection.
 
 **If you want to see the app for yourself,** [check it out here]({{site.url}}/turtlefacts){: target="_blank"}<!--_-->
 
@@ -20,7 +20,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="N6N3KhkKk3o" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/20-familiar-bootstrap/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
 
 Before we can start showing the results area we need to create it. So in the HTML, under the quiz controller markup let’s create a new div with a new [ng-controller directive](https://docs.angularjs.org/api/ng/directive/ngController){: target="_blank"}<!--_-->. Again using the &#8220;controller as&#8221; syntax.
 
@@ -91,9 +91,9 @@ We need to amend this by changing the ng-hide on the list controller to hide whe
 
 ### On To The Next One, On To The Next One&#8230;
 
-With that done, we now have the results controller showing when it should be. The [next step](https://hungryturtlecode.com/code-projects/angular-quiz-app/20-familiar-bootstrap/) from here is to start populating the results controller with some content. That is what we will do in the [next part](https://hungryturtlecode.com/code-projects/angular-quiz-app/20-familiar-bootstrap/)
+With that done, we now have the results controller showing when it should be. The [next step]({{site.url}}/code-projects/angular-quiz-app/20-familiar-bootstrap/) from here is to start populating the results controller with some content. That is what we will do in the [next part]({{site.url}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
 
-See you in [part 20](https://hungryturtlecode.com/code-projects/angular-quiz-app/20-familiar-bootstrap/)
+See you in [part 20]({{site.url}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
 
 Adrian
 

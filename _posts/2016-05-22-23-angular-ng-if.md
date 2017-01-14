@@ -20,7 +20,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="xxH3dhPC5bY" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/24-finished-angular-project/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/24-finished-angular-project/)
 
 This time we want the images to display nicely but also want a border around the correct answer and if the user chose an incorrect answer, a border around the answer they selected. Both will provide feedback to the user.
 
@@ -102,7 +102,7 @@ Now the app is pretty much in its completed state. We just need to give the user
 
 I will see you in the final part where we add that button and logic.
 
-See you in [part 24](https://hungryturtlecode.com/code-projects/angular-quiz-app/24-finished-angular-project/)
+See you in [part 24]({{site.url}}/code-projects/angular-quiz-app/24-finished-angular-project/)
 
 Adrian
 

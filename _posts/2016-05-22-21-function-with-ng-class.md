@@ -12,7 +12,7 @@ categories:
 ---
 ## Deja Vu + A New Way To Use Ng-Class
 
-Much like the [previous part](https://hungryturtlecode.com/code-projects/angular-quiz-app/20-familiar-bootstrap/){: target="_blank"}<!--_-->, the markup in this part will be very similar to that of the markup in the quiz controller. But we will spice things up a bit by adding new elements and showing a different way of using ng-class &#8211; using a function with ng-class instead of an object with name:value pairs.
+Much like the [previous part]({{site.url}}/code-projects/angular-quiz-app/20-familiar-bootstrap/){: target="_blank"}<!--_-->, the markup in this part will be very similar to that of the markup in the quiz controller. But we will spice things up a bit by adding new elements and showing a different way of using ng-class &#8211; using a function with ng-class instead of an object with name:value pairs.
 
 **If you want to see the app for yourself,** [check it out here]({{site.url}}/turtlefacts){: target="_blank"}<!--_-->
 
@@ -20,7 +20,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="bGyvJMprAcg" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/22-angular-number-filter/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/22-angular-number-filter/)
 
 Below the row we created in the last part we will continue to create the markup for the question area of the results section.
 
@@ -157,9 +157,9 @@ We can have the else if simply check if the answer is the one the user gave and 
 
 ### End Of The Road For This Part
 
-There isn’t much left for us to do in the application. The [next thing](https://hungryturtlecode.com/code-projects/angular-quiz-app/22-angular-number-filter/) to do is to create the function that will allow the user to hop between questions using the buttons at the top.
+There isn’t much left for us to do in the application. The [next thing]({{site.url}}/code-projects/angular-quiz-app/22-angular-number-filter/) to do is to create the function that will allow the user to hop between questions using the buttons at the top.
 
-See you in [part 22](https://hungryturtlecode.com/code-projects/angular-quiz-app/22-angular-number-filter/) for that
+See you in [part 22]({{site.url}}/code-projects/angular-quiz-app/22-angular-number-filter/) for that
 
 Adrian
 

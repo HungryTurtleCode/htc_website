@@ -12,7 +12,7 @@ categories:
 ---
 ## No Quiz Is Complete Without It Being Marked
 
-In the [last part](https://hungryturtlecode.com/code-projects/angular-quiz-app/17-final-prompt/){: target="_blank"}<!--_--> we reference a function on the quizMetrics factory that we have not yet created. So it will be the task of this part to create that function &#8211; a function that will mark the answers to the quiz and calculate how many correct answers that user gave. Let&#8217;s get on with marking the quiz.
+In the [last part]({{site.url}}/code-projects/angular-quiz-app/17-final-prompt/){: target="_blank"}<!--_--> we reference a function on the quizMetrics factory that we have not yet created. So it will be the task of this part to create that function &#8211; a function that will mark the answers to the quiz and calculate how many correct answers that user gave. Let&#8217;s get on with marking the quiz.
 
 **If you want to see the app for yourself,** [check it out here]({{site.url}}/turtlefacts){: target="_blank"}<!--_-->
 
@@ -20,7 +20,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="mBDbwKr4DyQ" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/19-angular-dependency-injection/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/19-angular-dependency-injection/)
 
 Without wasting any time, jump into the quizMetrics factory and get started. The first thing we will need to mark the quiz is the correct answers to all the questions. The correct answers will be another piece of data in the dataService factory. Much like we have copy and pasted in the data for the list and the quiz, we will also paste in the data for the correct answers.
 
@@ -93,7 +93,7 @@ function markQuiz(){
 
 We have now finished the entire quiz controller and can move on to thinking about the implementation of the results controller.
 
-See you in [part 19](https://hungryturtlecode.com/code-projects/angular-quiz-app/19-angular-dependency-injection/).
+See you in [part 19]({{site.url}}/code-projects/angular-quiz-app/19-angular-dependency-injection/).
 
 Adrian
 

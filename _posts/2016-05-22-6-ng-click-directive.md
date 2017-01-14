@@ -24,7 +24,7 @@ Take your pick. You can watch the video below or you can read through this artic
 
 {% include video-embed.html videoID="ZKbPtYYbSOg" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/7-angular-services/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/7-angular-services/)
 
 As you can see from the [example application]({{site.url}}/turtlefacts){: target="_blank"}<!--_--> in the video the button is on the right hand side of the grey area where are search bar is. This is part of the same form in the HTML. So we will start by creating a button with some bootstrap classes to pull it to the right.
 
@@ -111,11 +111,11 @@ function activateQuiz(){
 
 ### Moving On To Part 7
 
-In [part 7](https://hungryturtlecode.com/code-projects/angular-quiz-app/7-angular-services/) of this series we will start diving deeper into Angular. We will be thinking about the problems that arise when we are trying to share information across controllers (the quizActive state between the list controller and the quiz controller).
+In [part 7]({{site.url}}/code-projects/angular-quiz-app/7-angular-services/) of this series we will start diving deeper into Angular. We will be thinking about the problems that arise when we are trying to share information across controllers (the quizActive state between the list controller and the quiz controller).
 
 Of course, we will solve these problems and introduce some new Angular features in the process &#8211; Services. We will also be kicking things off with our quiz controller. So lot&#8217;s to look forward to.
 
-See you over there in [part 7](https://hungryturtlecode.com/code-projects/angular-quiz-app/7-angular-services/).
+See you over there in [part 7]({{site.url}}/code-projects/angular-quiz-app/7-angular-services/).
 
 Adrian
 

@@ -20,7 +20,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="AxQcLIRoxYw" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/21-function-with-ng-class/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/21-function-with-ng-class/)
 
 I say that it is similar, the markup is almost identical with a few key differences. Mainly the colors used are no longer red and blue but are instead red and green to indicate correct or incorrect. The glyphicons used are also different &#8211; a tick and an x this time.
 
@@ -73,9 +73,9 @@ Also note that we do not have to say something like question.correct == true (al
 
 ### The Definition Of Short And Sweet
 
-This lesson really was short. I don’t want to get into the [next part](https://hungryturtlecode.com/code-projects/angular-quiz-app/21-function-with-ng-class/) in this article as it will then be way too long. So you will just have to click through to the <a href="https://hungryturtlecode.com/code-projects/angular-quiz-app/21-function-with-ng-class/">next part</a> to get all that wonderful goodness there.
+This lesson really was short. I don’t want to get into the [next part]({{site.url}}/code-projects/angular-quiz-app/21-function-with-ng-class/) in this article as it will then be way too long. So you will just have to click through to the <a href="{{site.url}}/code-projects/angular-quiz-app/21-function-with-ng-class/">next part</a> to get all that wonderful goodness there.
 
-See you in [part 21](https://hungryturtlecode.com/code-projects/angular-quiz-app/21-function-with-ng-class/)
+See you in [part 21]({{site.url}}/code-projects/angular-quiz-app/21-function-with-ng-class/)
 
 Adrian
 

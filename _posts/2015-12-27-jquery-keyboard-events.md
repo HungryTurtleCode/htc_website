@@ -47,7 +47,7 @@ I hate to discriminate, so I offer all my tutorials as both videos for us more v
 
 So I decided to split this tutorial into two separate parts. The first part (this part) will purely be focusing on just creating the effect as quickly as possible. Let&#8217;s just get some results!
 
-Part 2 can be found [here](https://hungryturtlecode.com/tutorials/jquery-keyboard-events-part-2/){: target="_blank"}<!--_-->.
+Part 2 can be found [here]({{site.url}}/tutorials/jquery-keyboard-events-part-2/){: target="_blank"}<!--_-->.
 
 The code written in this tutorial will be very much in the style of a typical [beginner JavaScript]({{site.url}}/tips-tricks/javascript-tips/){:target="_blank"}<!--_--> and specifically jQuery developer.
 

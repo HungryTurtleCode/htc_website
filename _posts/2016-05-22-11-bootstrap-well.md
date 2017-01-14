@@ -20,7 +20,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="UC8aWbE9_G4" %}
 
-[Here is the next part](https://hungryturtlecode.com/code-projects/angular-quiz-app/12-controller-logic/)
+[Here is the next part]({{site.url}}/code-projects/angular-quiz-app/12-controller-logic/)
 
 ![question area markup](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464630050/quiz_question_area_z87xpz.jpg){: class="aligncenter" width="800" height="278"}
 
@@ -48,7 +48,7 @@ So instead, what we will do is to create a property on our controller that indic
 
 ### Active Question
 
-First, we need to create the activeQuestion property inside the quiz controller. We will initialise this to 0. This is because we are starting from the first question, which of course, in [programming languages](https://hungryturtlecode.com/best-programming-languages-to-learn-2016/){: target="_blank"}<!--_--> tends to start from a 0 index.
+First, we need to create the activeQuestion property inside the quiz controller. We will initialise this to 0. This is because we are starting from the first question, which of course, in [programming languages]({{site.url}}/best-programming-languages-to-learn-2016/){: target="_blank"}<!--_--> tends to start from a 0 index.
 
 This is what our quiz controller looks like thus far.
 

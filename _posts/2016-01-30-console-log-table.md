@@ -121,7 +121,7 @@ Now we will see the following in the console:
 
 This is a very powerful part of the [console API](https://developer.mozilla.org/en/docs/Web/API/console){: target="_blank"}<!--_--> and I feel too few developers are aware of it. I hope you can take this knowledge and use it to become a better developer.
 
-Until next time, take a look at some more [javascript tips and tricks](https://hungryturtlecode.com/tips-tricks/javascript-tips/).
+Until next time, take a look at some more [javascript tips and tricks]({{site.url}}/tips-tricks/javascript-tips/).
 
 Stay hungry, keep coding.
 

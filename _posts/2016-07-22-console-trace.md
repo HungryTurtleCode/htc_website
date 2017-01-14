@@ -15,7 +15,7 @@ categories:
 
 A while ago I released a post and a video about [using console.table]({{site.url}}/tips-tricks/console-log-table/){: target="_blank"}<!--_--> as part of your javascript debugging arsenal. I got a great reception from it and many people said they where shocked it wasn&#8217;t more well known. So now I shall continue that with console.trace.
 
-A few weeks ago, an [article popped up on Medium](https://medium.com/outsystems-experts/beyond-console-debugging-tricks-f7d0d7f5df4#.ghug71xq6){: target="_blank"}<!--_--> that took a run through more of the console API &#8211; one of which was console.trace. It has gained a lot of traction and many people are talking about it. This has lead me into creating [my own series](https://hungryturtlecode.com/tips-tricks/javascript-tips/){: target="_blank"}<!--_--> going over some more of the powerful tools at your disposal &#8211; much like I did with [console.table](https://hungryturtlecode.com/tips-tricks/console-log-table/){: target="_blank"}<!--_-->
+A few weeks ago, an [article popped up on Medium](https://medium.com/outsystems-experts/beyond-console-debugging-tricks-f7d0d7f5df4#.ghug71xq6){: target="_blank"}<!--_--> that took a run through more of the console API &#8211; one of which was console.trace. It has gained a lot of traction and many people are talking about it. This has lead me into creating [my own series]({{site.url}}/tips-tricks/javascript-tips/){: target="_blank"}<!--_--> going over some more of the powerful tools at your disposal &#8211; much like I did with [console.table]({{site.url}}/tips-tricks/console-log-table/){: target="_blank"}<!--_-->
 
 ### The First Of Many
 

@@ -20,7 +20,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="kDQco9gfYmo" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/16-bootstrap-alerts/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/16-bootstrap-alerts/)
 
 Much like we did for the text questions, we will add an ng-class and ng-click directive onto the row that handles the images. Instead of giving it a bootstrap class though, we will give it a custom class that we will style ourselves. This is because a background would be useless for our image. Instead, we want a nice border.
 
@@ -110,9 +110,9 @@ Using <span class="lang:js decode:true crayon-inline">index === undefined</span>
 
 ### Onward and Upward&#8230;
 
-Moving swiftly on to [part 16](https://hungryturtlecode.com/code-projects/angular-quiz-app/16-bootstrap-alerts/) of this tutorial series. In the next part we will take a look at adding some basic error handling and the final parts of the quiz controller.
+Moving swiftly on to [part 16]({{site.url}}/code-projects/angular-quiz-app/16-bootstrap-alerts/) of this tutorial series. In the next part we will take a look at adding some basic error handling and the final parts of the quiz controller.
 
-See you in [part 16.](https://hungryturtlecode.com/code-projects/angular-quiz-app/16-bootstrap-alerts/)
+See you in [part 16.]({{site.url}}/code-projects/angular-quiz-app/16-bootstrap-alerts/)
 
 Adrian
 

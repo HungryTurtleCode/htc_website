@@ -22,7 +22,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="XamHS-0PiMM" %}
 
-[The next part can be found here.](https://hungryturtlecode.com/code-projects/angular-quiz-app/13-ng-if/)
+[The next part can be found here.]({{site.url}}/code-projects/angular-quiz-app/13-ng-if/)
 
 Let’s get started on the questionAnswered function to get this functionality working. So let’s first take an overview look at what this function will need to do.
 
@@ -184,9 +184,9 @@ If the question is unanswered then the code inside the conditional runs and we s
 
 ### Moving On To Part 13
 
-In the [next part](https://hungryturtlecode.com/code-projects/angular-quiz-app/13-ng-if/){: target="_blank"}<!--_--> we will fix some of the issues that you may have seen while flicking through the quiz in it’s current state &#8211; The image urls display instead of the images themselves for image based questions.
+In the [next part]({{site.url}}/code-projects/angular-quiz-app/13-ng-if/){: target="_blank"}<!--_--> we will fix some of the issues that you may have seen while flicking through the quiz in it’s current state &#8211; The image urls display instead of the images themselves for image based questions.
 
-See you over in [part 13](https://hungryturtlecode.com/code-projects/angular-quiz-app/13-ng-if/)
+See you over in [part 13]({{site.url}}/code-projects/angular-quiz-app/13-ng-if/)
 
 Adrian
 

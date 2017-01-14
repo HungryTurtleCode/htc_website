@@ -12,7 +12,7 @@ categories:
 ---
 ## Mocking An API Request With Angular Factories
 
-We have already covered how to build a basic factory when we built the quizMetrics factory in a [previous part](https://hungryturtlecode.com/code-projects/angular-quiz-app/8-dependency-injection/){: target="_blank"}<!--_-->. In this part, we will build another factory; this time to mock data coming from an API. Let&#8217;s continue using Angular factories to further separate concerns.
+We have already covered how to build a basic factory when we built the quizMetrics factory in a [previous part]({{site.url}}/code-projects/angular-quiz-app/8-dependency-injection/){: target="_blank"}<!--_-->. In this part, we will build another factory; this time to mock data coming from an API. Let&#8217;s continue using Angular factories to further separate concerns.
 
 Earlier, we mentioned that we won’t be using an actual API in this application but will instead copy and paste the JSON into the scripts. This is what we did for the list data in the list controller.
 
@@ -34,7 +34,7 @@ Ok, enough chat, let&#8217;s write some code.
 
 {% include video-embed.html videoID="TlR3bI7Azvk" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/10-ng-class/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/10-ng-class/)
 
 We will create another script in the factories directory and call it dataservice.js. We will start this in the exact same way we started the quizMetrics factory.
 
@@ -358,7 +358,7 @@ Before we forget, we need to add the new dataservice factory script to the tags 
 
 ### Onwards And Upwards
 
-In [part 10](https://hungryturtlecode.com/code-projects/angular-quiz-app/10-ng-class/) we will use the quiz JSON we now have access to and start creating the bootstrap markup for the quiz.
+In [part 10]({{site.url}}/code-projects/angular-quiz-app/10-ng-class/) we will use the quiz JSON we now have access to and start creating the bootstrap markup for the quiz.
 
 See you over there.
 

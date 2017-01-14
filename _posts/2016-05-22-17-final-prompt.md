@@ -20,7 +20,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="6uZfUfB4bN8" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/18-marking-the-quiz/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/18-marking-the-quiz/)
 
 The code for the little prompt is simple, it is just a [bootstrap well](http://www.tutorialspoint.com/bootstrap/bootstrap_wells.htm){: target="_blank"}<!--_--> with two buttons. We will place this markup at the end of the row that contains the well for the questions. This is the markup we will need.
 
@@ -135,9 +135,9 @@ Now the code is working again.
 
 ### The Quiz Needs To Be Marked!
 
-We called the markQuiz function but it is yet to be created. So in the [next part](https://hungryturtlecode.com/code-projects/angular-quiz-app/18-marking-the-quiz/) we will create that function inside the quizMetrics factory.
+We called the markQuiz function but it is yet to be created. So in the [next part]({{site.url}}/code-projects/angular-quiz-app/18-marking-the-quiz/) we will create that function inside the quizMetrics factory.
 
-See you in [part 18.](https://hungryturtlecode.com/code-projects/angular-quiz-app/18-marking-the-quiz/)
+See you in [part 18.]({{site.url}}/code-projects/angular-quiz-app/18-marking-the-quiz/)
 
 Adrian
 

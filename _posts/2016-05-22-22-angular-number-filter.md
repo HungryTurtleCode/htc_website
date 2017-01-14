@@ -20,7 +20,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="mWmfEtzGtRY" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/23-angular-ng-if/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/23-angular-ng-if/)
 
 ![results progress navigation buttons](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464631575/results_progress_button_navigation_rppnlx.jpg){: class="aligncenter" width="800" height="224"}
 
@@ -90,7 +90,7 @@ The standard \| is used to tell Angular we are going to use a filter and the fil
 
 There are only two things left for us to do. The first is to fix the image questions again &#8211; just like we did in the quiz controller and the final task is to add the “go back to quiz” button. Then we are done.
 
-In [part 23](https://hungryturtlecode.com/code-projects/angular-quiz-app/23-angular-ng-if/) we will tackle fixing up the image questions.
+In [part 23]({{site.url}}/code-projects/angular-quiz-app/23-angular-ng-if/) we will tackle fixing up the image questions.
 
 See you there
 

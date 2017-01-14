@@ -20,7 +20,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="lQ4lVuGC2F4" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/15-reusing-code/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/15-reusing-code/)
 
 Getting started on the text questions first we will go into the h4 that holds each possible answer. Here we will add an ng-class that will give it a blue (bg-info) background when the user selects that answer. Watch the video tutorial to see this in action.
 
@@ -89,9 +89,9 @@ So when the selected flag for each question changes it simultaneously and automa
 
 ### Enough $index, On To The Next Part
 
-Keeping it short and sweet. Let’s move onto [part 15](https://hungryturtlecode.com/code-projects/angular-quiz-app/15-reusing-code/) where we will finalise the quiz and then think about moving onto the results page.
+Keeping it short and sweet. Let’s move onto [part 15]({{site.url}}/code-projects/angular-quiz-app/15-reusing-code/) where we will finalise the quiz and then think about moving onto the results page.
 
-See you over in [part 15.](https://hungryturtlecode.com/code-projects/angular-quiz-app/15-reusing-code/)
+See you over in [part 15.]({{site.url}}/code-projects/angular-quiz-app/15-reusing-code/)
 
 Adrian
 

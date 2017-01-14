@@ -20,7 +20,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="doU9zxZBoXI" %}
 
-[The next part can be found here](https://hungryturtlecode.com/code-projects/angular-quiz-app/17-final-prompt/)
+[The next part can be found here]({{site.url}}/code-projects/angular-quiz-app/17-final-prompt/)
 
 As I mentioned, the error should display when the user is on the last question and continues. If you remember back to the code in the setActiveQuestion function, we have some logic that increments the active question unless it is on the last question, in which case it resets it to 0.
 
@@ -212,9 +212,9 @@ Using the finalise property that is set to true when all questions have been ans
 
 ### All Done Here, More In Part 17
 
-This is what we will tackle in the [next part](https://hungryturtlecode.com/code-projects/angular-quiz-app/17-final-prompt/). After that we will be able to create the third and final controller &#8211; the results controller.
+This is what we will tackle in the [next part]({{site.url}}/code-projects/angular-quiz-app/17-final-prompt/). After that we will be able to create the third and final controller &#8211; the results controller.
 
-See you in [part 17](https://hungryturtlecode.com/code-projects/angular-quiz-app/17-final-prompt/).
+See you in [part 17]({{site.url}}/code-projects/angular-quiz-app/17-final-prompt/).
 
 Adrian
 
