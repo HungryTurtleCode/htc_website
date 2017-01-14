@@ -8,13 +8,7 @@ permalink: /about-me/
 
 ## Who Am I? And What Is Hungry Turtle Code?
 
-<div id="attachment_471" style="width: 385px" class="wp-caption alignright">
-  <img class="wp-image-471" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_375/v1452546933/File_007_npha3t.webp" alt="Adrian Henry - Hungry Turtle Code" width="375" height="493" />
-  
-  <p class="wp-caption-text">
-    Adrian Henry
-  </p>
-</div>
+![Adrian Henry - Hungry Turtle Code](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_375/v1452546933/File_007_npha3t.webp){: class="alignright" width="375" height="493"}
 
 I will start with myself. My name is Adrian Henry and I founded Hungry Turtle Code. I am a 23 year old currently living in Ireland.
 
@@ -68,8 +62,6 @@ I certainly didn&#8217;t want a name like &#8220;Codrr&#8221; or something like 
 Hungry is also a nice word to use in an educational context as it implies desire and that is what sums up my aims for myself and everyone who uses this site.
 
 **Plus, Turtles are AMAZING!**
-
-&nbsp;
 
 Feel free to follow me on social media (Links in the sidebar and footer), I try to be as active as possible.
 
