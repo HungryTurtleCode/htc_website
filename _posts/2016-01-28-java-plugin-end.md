@@ -7,8 +7,9 @@ permalink: /news/java-plugin-end/
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1454023219/JavaPlugin_qxnh7o.jpg
 excerpt: Oracle’s Java Browser Plugin Gets The Chop Internet users rejoice, hackers despair and corporate IT departments are on suicide watch. Yep, that can only mean one thing! Oracle are finally pulling the plug on their troublesome Java browser plugin. So …
 categories:
-  - General Web
   - News
+tags:
+  - General Web
 ---
 ## Oracle&#8217;s Java Browser Plugin Gets The Chop
 

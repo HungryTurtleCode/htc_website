@@ -8,8 +8,9 @@ permalink: /news/internet-explorer-is-gone/
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1452200197/iedead_o7fs2w.jpg
 excerpt: Joy To The World! The day that many web developers have been waiting for is finally just around the corner. Microsoft is stopping all support for Internet Explorer 8, 9 and 10 next week (January 12th 2016). Naturally, this is …
 categories:
-  - General Web
   - News
+tags:
+  - General Web
 ---
 ## Joy To The World!
 

@@ -7,9 +7,10 @@ permalink: /tutorials/jquery-keyboard-events-part-2/
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1452201151/keyboardpart2_jyf4dm.jpg
 excerpt: What Is This Modular JavaScript You Speak Of? This is part 2 of this mini series recreating the “Other Side” video effect using jQuery keyboard events. If you haven’t seen part 1, go take a look at that first. In …
 categories:
-  - Javascript
-  - jQuery
   - Tutorials
+tags:
+  - jQuery
+  - Javascript
 ---
 ## What Is This Modular JavaScript You Speak Of?
 

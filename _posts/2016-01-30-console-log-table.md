@@ -7,8 +7,9 @@ permalink: /tips-tricks/console-log-table/
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1454187383/JavaScript-DebuggngTip_yremrj.jpg
 excerpt: Is console.log The Only Option? Like me, many of you probably use console.log() to debug your javascript code a lot of the time. The problem isn’t big enough to require the setting of breakpoints
 categories:
+  - 'Tips Tricks'
+tags:
   - Javascript
-  - 'Tips &amp; Tricks'
 ---
 ## Is console.log The Only Option?
 

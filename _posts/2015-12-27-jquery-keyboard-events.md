@@ -7,9 +7,10 @@ permalink: /tutorials/jquery-keyboard-events/
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1450671694/other-side-jquery-tutorial_ndl1kx.jpg
 excerpt: How do I track keystrokes with jQuery? I often hear people who are just getting into programming ask things like, “but how do I use this in the real world?”. It is all well and good understanding things from a …
 categories:
-  - Javascript
-  - jQuery
   - Tutorials
+tags:
+  - jQuery
+  - Javascript
 ---
 ## How do I track keystrokes with jQuery?
 
