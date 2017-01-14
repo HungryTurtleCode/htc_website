@@ -8,7 +8,7 @@ head-title: Debug() - Javascript Debugging
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1470611214/JavaScript_DebuggngTip_msy13l.jpg
 excerpt: Debug() – The Death Of Ctrl+f If you are anything like me, you have wasted countless hours of your life using ctrl+f to find functions inside your code. If you only have one file, ctrl+f is still going to be …
 categories:
-  - 'Tips Tricks'
+  - Tips / Tricks
 tags:
   - Javascript
 ---

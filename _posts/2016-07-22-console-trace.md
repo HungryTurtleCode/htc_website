@@ -8,7 +8,7 @@ head-title: Console.trace() - Javascript Debugging
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1469193480/JavaScript_DebuggngTip_1_tgpysg.jpg
 excerpt: Little Known But Powerful Tool – console.trace() A while ago I released a post and a video about using console.table as part of your javascript debugging arsenal. I got a great reception from it and many people said they where …
 categories:
-  - 'Tips Tricks'
+  - Tips / Tricks
 tags:
   - Javascript
 ---
