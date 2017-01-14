@@ -97,7 +97,7 @@ So to start off, this is the HTML structure we will need to get going.
 </html>
 {% endhighlight %}
 
-There isn&#8217;t anything fancy going on here. The key parts are the two videos and their containing divs. Of course, we only want to see and hear one video at any given time, so we mute the video inside <span class="lang:xhtml decode:true crayon-inline ">id="darkvidcont"</span> initially.
+There isn&#8217;t anything fancy going on here. The key parts are the two videos and their containing divs. Of course, we only want to see and hear one video at any given time, so we mute the video inside {% ihighlight html %}id="darkvidcont"{% endihighlight %} initially.
 
 Before we get started with the JavaScript there are a few little tricky things we have to take care of with the CSS.
 
