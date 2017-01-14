@@ -3,12 +3,12 @@ title: Console.time() – Javascript Debugging Tips
 date: 2016-07-29T14:08:37+00:00
 author: Adrian
 layout: post
-permalink: /tips-tricks/console-time/
+alias: /tips-tricks/console-time/
 head-title: Console.time() - Javascript Debugging
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1469797935/JavaScript_DebuggngTip_q5dxwx.jpg
 excerpt: Just In Time – Console.time I have seen some amazing ways of timing how long javascript code takes to run. Taking timestamps and comparing them is a common way. But console.time is method in the console API that allows you …
 categories:
-  - Tips / Tricks
+  - Tutorials
 tags:
   - Javascript
 ---
