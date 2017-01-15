@@ -6,31 +6,31 @@
 	<!-- Plain Description -->
 	<title>{%if page.head-title != nil %}{{ page.head-title }}{% elsif page.title != nil %}{{page.title}}{% else %}Home{% endif %} - Hungry Turtle Code</title>
 	<meta name="description" content="{% if page.excerpt %}{{page.excerpt}}{% else %}{{site.description}}{% endif %}">
-	<link rel="icon" type="image/png" href="{{site.url}}/favicon.png">
+	<link rel="icon" type="image/png" href="{{site.baseurl}}/favicon.png">
 
 	<!-- Google+ -->
 	<link rel="publisher" href="https://plus.google.com/{{site.googleplus}}"/>
 	<meta itemprop="name" content="{% if page.fulltitle %}{{page.fulltitle}}{% else %}{{page.title}} | {{ site.title }} {% endif %}">
 	<meta itemprop="description" content="{% if page.excerpt %}{{page.excerpt}}{% else %}{{site.description}}{% endif %}">
-	<meta itemprop="image" content="{% if page.image %}{{site.url}}{{page.image}}{% else %}{{site.url}}{{site.socialimg}}{% endif %}">
+	<meta itemprop="image" content="{% if page.image %}{{site.baseurl}}{{page.image}}{% else %}{{site.baseurl}}{{site.socialimg}}{% endif %}">
 
 	<!-- Facebook -->
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="{% if page.fulltitle %}{{page.fulltitle}}{% else %}{{page.title}} | {{ site.title }} {% endif %}"/>
 	<meta property="og:description" content="{% if page.excerpt %}{{page.excerpt}}{% else %}{{site.description}}{% endif %}"/>
-	<meta property="og:image" content="{% if page.image %}{{site.url}}{{page.image}}{% else %}{{site.url}}{{site.socialimg}}{% endif %}"/>
-	<meta property="og:url" content="{{site.url}}{{page.url}}"/>
+	<meta property="og:image" content="{% if page.image %}{{site.baseurl}}{{page.image}}{% else %}{{site.baseurl}}{{site.socialimg}}{% endif %}"/>
+	<meta property="og:url" content="{{site.baseurl}}{{page.url}}"/>
 	<meta property="og:site_name" content="{{ site.title }} "/>
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="{% if page.fulltitle %}{{page.fulltitle}}{% else %}{{page.title}} | {{ site.title }} {% endif %}">
 	<meta name="twitter:description" content="{% if page.excerpt %}{{page.excerpt}}{% else %}{{site.description}}{% endif %}">
-	<meta name="twitter:image" content="{{site.url}}{{site.socialimg}}">
-	<meta name="twitter:url" content="{{site.url}}{{page.url}}">
+	<meta name="twitter:image" content="{{site.baseurl}}{{site.socialimg}}">
+	<meta name="twitter:url" content="{{site.baseurl}}{{page.url}}">
 
 	<!-- CSS & fonts -->
-	<link rel="stylesheet" href="{{site.url}}/css/app.css">
+	<link rel="stylesheet" href="{{site.baseurl}}/css/app.css">
 	<!-- Put your fonts here -->
 
 </head>

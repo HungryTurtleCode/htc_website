@@ -21,8 +21,9 @@ description: > # this means to ignore newlines until "baseurl:"
   skill levels a bit more about code than they knew yesterday. Whether
   you are starting from scratch or just looking for that one new tip that
   will boost your workflow, there is probably something for you here.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://hungryturtlecode.com" # the base hostname & protocol for your site, e.g. http://example.com
+# url: "https://hungryturtlecode.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://hungry-turtle-code.firebaseapp.com/"
+baseurl: ""
 
 defaults:
   -

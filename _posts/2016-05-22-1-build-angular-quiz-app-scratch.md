@@ -16,11 +16,11 @@ tags:
 ---
 ## I&#8217;ve Learnt Some JavaScript! What Now?
 
-That may be something that pretty much all of us have said at some point or another. You have learnt some basic [programming syntax]({{site.url}}/best-programming-languages-to-learn-2016/){: target="_blank"}<!--_-->, but you now want to build something. <!--more-->In comes this 
+That may be something that pretty much all of us have said at some point or another. You have learnt some basic [programming syntax]({{site.baseurl}}/best-programming-languages-to-learn-2016/){: target="_blank"}<!--_-->, but you now want to build something. <!--more-->In comes this 
 
 [AngularJS](https://docs.angularjs.org/api){: target="_blank"}<!--_--> Project.
 
-A great way to continue your learning with [JavaScript]({{site.url}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> is to learn a [framework](https://en.wikipedia.org/wiki/List_of_JavaScript_libraries){: target="_blank"}<!--_-->. So in this course, we will be doing just that. The framework of choice this time is AngularJS.
+A great way to continue your learning with [JavaScript]({{site.baseurl}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> is to learn a [framework](https://en.wikipedia.org/wiki/List_of_JavaScript_libraries){: target="_blank"}<!--_-->. So in this course, we will be doing just that. The framework of choice this time is AngularJS.
 
 AngularJS is a framework that has been built by Google and is very widely used for web projects for small companies and huge ones alike.
 
@@ -30,7 +30,7 @@ By far the best way to learn anything is to just dive in and do it. So that is e
 
 This article and the below video are part one of a whole course that has been designed with beginners in mind. So it does not include a lot of heavy theory and ideas.
 
-Instead it tries to give you the minimum effective dose for Angular. Taking your existing [knowledge of Javascript]({{site.url}}/tips-tricks/javascript-tips/){: target="_blank"}<!--_--> and building on top of that with some new Angular code.
+Instead it tries to give you the minimum effective dose for Angular. Taking your existing [knowledge of Javascript]({{site.baseurl}}/tips-tricks/javascript-tips/){: target="_blank"}<!--_--> and building on top of that with some new Angular code.
 
 This results in some of the code not being perfect &#8220;Angular&#8221;. So if you have used Angular before you may want to tell me off, but it is done like this intentionally to help those beginners.
 
@@ -38,7 +38,7 @@ This results in some of the code not being perfect &#8220;Angular&#8221;. So if 
 
 Take a look at the video below (which is also a video version of this written tutorial) and you will see the application in action.
 
-[Or you can see the finished working application here.]({{site.url}}/turtlefacts){: target="_blank"}<!--_-->
+[Or you can see the finished working application here.]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The application itself is a quiz application with a little learning &#8220;Facts&#8221; area for users to swot up before they take the quiz. The user will then get their results when they are finished.
 
@@ -49,29 +49,29 @@ The application itself is a quiz application with a little learning &#8220;Facts
 Before we get going, here is an index of all the lessons in the course:
 
 1. *You Are Here*
-2. [Ng-Controller Directive and the (mis)use of $scope]({{site.url}}/code-projects/angular-quiz-app/2-ng-controller-scope/)
-3. [Looping around with the ng-repeat directive]({{site.url}}/code-projects/angular-quiz-app/3-ng-repeat-directive/)
-4. [Markup for the bootstrap modal]({{site.url}}/code-projects/angular-quiz-app/4-bootstrap-modal/)
-5. [Using Angular Filters to create real time search]({{site.url}}/code-projects/angular-quiz-app/5-angular-filters/)
-6. [The powerful ng-click directive]({{site.url}}/code-projects/angular-quiz-app/6-ng-click-directive/)
-7. [Services in Angular Make everything easier]({{site.url}}/code-projects/angular-quiz-app/7-angular-services/)
-8. [What is this infamous dependency injection in Angular?]({{site.url}}/code-projects/angular-quiz-app/8-dependency-injection/)
-9. [Let&#8217;s Build A Factory]({{site.url}}/code-projects/angular-quiz-app/9-angular-factories/)
-10. [The ng-class directive]({{site.url}}/code-projects/angular-quiz-app/10-ng-class/)
-11. [More Bootstrap Markup &#8211; The Well]({{site.url}}/code-projects/angular-quiz-app/11-bootstrap-well/)
-12. [Adding some logic to the controller]({{site.url}}/code-projects/angular-quiz-app/12-controller-logic/)
-13. [Making things disappear with ng-if]({{site.url}}/code-projects/angular-quiz-app/13-ng-if/)
-14. [The $index property for ng-repeat]({{site.url}}/code-projects/angular-quiz-app/14-index-for-ng-repeat/)
-15. [Reusing code is always a good idea]({{site.url}}/code-projects/angular-quiz-app/15-reusing-code/)
-16. [Using Bootstrap to help with styling error messages]({{site.url}}/code-projects/angular-quiz-app/16-bootstrap-alerts/)
-17. [The final prompt after the quiz]({{site.url}}/code-projects/angular-quiz-app/17-final-prompt/)
-18. [Marking the quiz]({{site.url}}/code-projects/angular-quiz-app/18-marking-the-quiz/)
-19. [More dependency injection]({{site.url}}/code-projects/angular-quiz-app/19-angular-dependency-injection/)
-20. [Reusing and slightly modifying some previous Bootstrap]({{site.url}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
-21. [More than one way to use ng-class]({{site.url}}/code-projects/angular-quiz-app/21-function-with-ng-class/)
-22. [Another Angular Filter]({{site.url}}/code-projects/angular-quiz-app/22-angular-number-filter/)
-23. [More usage of Ng-if]({{site.url}}/code-projects/angular-quiz-app/23-angular-ng-if/)
-24. [Finishing The App]({{site.url}}/code-projects/angular-quiz-app/24-finished-angular-project/)
+2. [Ng-Controller Directive and the (mis)use of $scope]({{site.baseurl}}/code-projects/angular-quiz-app/2-ng-controller-scope/)
+3. [Looping around with the ng-repeat directive]({{site.baseurl}}/code-projects/angular-quiz-app/3-ng-repeat-directive/)
+4. [Markup for the bootstrap modal]({{site.baseurl}}/code-projects/angular-quiz-app/4-bootstrap-modal/)
+5. [Using Angular Filters to create real time search]({{site.baseurl}}/code-projects/angular-quiz-app/5-angular-filters/)
+6. [The powerful ng-click directive]({{site.baseurl}}/code-projects/angular-quiz-app/6-ng-click-directive/)
+7. [Services in Angular Make everything easier]({{site.baseurl}}/code-projects/angular-quiz-app/7-angular-services/)
+8. [What is this infamous dependency injection in Angular?]({{site.baseurl}}/code-projects/angular-quiz-app/8-dependency-injection/)
+9. [Let&#8217;s Build A Factory]({{site.baseurl}}/code-projects/angular-quiz-app/9-angular-factories/)
+10. [The ng-class directive]({{site.baseurl}}/code-projects/angular-quiz-app/10-ng-class/)
+11. [More Bootstrap Markup &#8211; The Well]({{site.baseurl}}/code-projects/angular-quiz-app/11-bootstrap-well/)
+12. [Adding some logic to the controller]({{site.baseurl}}/code-projects/angular-quiz-app/12-controller-logic/)
+13. [Making things disappear with ng-if]({{site.baseurl}}/code-projects/angular-quiz-app/13-ng-if/)
+14. [The $index property for ng-repeat]({{site.baseurl}}/code-projects/angular-quiz-app/14-index-for-ng-repeat/)
+15. [Reusing code is always a good idea]({{site.baseurl}}/code-projects/angular-quiz-app/15-reusing-code/)
+16. [Using Bootstrap to help with styling error messages]({{site.baseurl}}/code-projects/angular-quiz-app/16-bootstrap-alerts/)
+17. [The final prompt after the quiz]({{site.baseurl}}/code-projects/angular-quiz-app/17-final-prompt/)
+18. [Marking the quiz]({{site.baseurl}}/code-projects/angular-quiz-app/18-marking-the-quiz/)
+19. [More dependency injection]({{site.baseurl}}/code-projects/angular-quiz-app/19-angular-dependency-injection/)
+20. [Reusing and slightly modifying some previous Bootstrap]({{site.baseurl}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
+21. [More than one way to use ng-class]({{site.baseurl}}/code-projects/angular-quiz-app/21-function-with-ng-class/)
+22. [Another Angular Filter]({{site.baseurl}}/code-projects/angular-quiz-app/22-angular-number-filter/)
+23. [More usage of Ng-if]({{site.baseurl}}/code-projects/angular-quiz-app/23-angular-ng-if/)
+24. [Finishing The App]({{site.baseurl}}/code-projects/angular-quiz-app/24-finished-angular-project/)
 
 ### Let&#8217;s Get Going!
 
@@ -121,7 +121,7 @@ This is the HTML markup that we will need to get going with the project.
 </html>
 {% endhighlight %}
 
-It is simply a bootstrap layout with [jQuery]({{site.url}}/tutorials/javascript-tuts/jquery-tuts/){: target="_blank"}<!--_--> and Angular added in. I have added some basic markup at the top of the container which will be present throughout the whole application.
+It is simply a bootstrap layout with [jQuery]({{site.baseurl}}/tutorials/javascript-tuts/jquery-tuts/){: target="_blank"}<!--_--> and Angular added in. I have added some basic markup at the top of the container which will be present throughout the whole application.
 
 ## Let Yourself Watch Your Code LIVE!
 
@@ -319,7 +319,7 @@ When inside our controller HTML we can take advantage of this {% raw %}{{}}{% en
 
 The great thing about this is that if we then change that property on our controller at some point during the lifetime of the application the value on the screen will automatically update without us having to do anything. This is part of the beauty of Angular data binding.
 
-In [part 2 of this series]({{site.url}}/code-projects/angular-quiz-app/2-ng-controller-scope/) we will take a look at how we can create a property on our controller and utilise that inside our HTML using this new syntax.
+In [part 2 of this series]({{site.baseurl}}/code-projects/angular-quiz-app/2-ng-controller-scope/) we will take a look at how we can create a property on our controller and utilise that inside our HTML using this new syntax.
 
 See you there
 

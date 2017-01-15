@@ -19,7 +19,7 @@ tags:
 
 It is no use to us to have a factory if we cannot use it inside our controller. In this part we will inject the factory into the list controller so we can use it. Then we will refactor the list controller to remove the now redundant quizActive code. Let&#8217;s dive into [some dependency injection](https://docs.angularjs.org/guide/di){: target="_blank"}<!--_-->.
 
-**If you want to see the app for yourself,** [check it out here.]({{site.url}}/turtlefacts){: target="_blank"}<!--_-->
+**If you want to see the app for yourself,** [check it out here.]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 
@@ -29,7 +29,7 @@ Watch the video, or read the article. Or both.
 
 {% include video-embed.html videoID="txzLabEIP_w" %}
 
-[The next part can be found here.]({{site.url}}/code-projects/angular-quiz-app/9-angular-factories/)
+[The next part can be found here.]({{site.baseurl}}/code-projects/angular-quiz-app/9-angular-factories/)
 
 First things first, injecting the factory into the controller. To do this we will make use of an Angular method called $inject. This is an explicit way for us to inject any dependencies into our controllers.
 
@@ -134,9 +134,9 @@ Now let’s add that function that we removed from the controller into the facto
 
 Now, you may notice a few things with that above snippet from our factory. Number one, we are again using named functions instead of inline anonymous functions. Again, this keeps things more explicit.
 
-But the second thing you may notice, especially if you are used to more traditional [programming languages]({{site.url}}/best-programming-languages-to-learn-2016/){: target="_blank"}<!--_--> like C, is that we are declaring our functions at the bottom, below the return statement. This would be invalid code in many languages. So why do we do it here?
+But the second thing you may notice, especially if you are used to more traditional [programming languages]({{site.baseurl}}/best-programming-languages-to-learn-2016/){: target="_blank"}<!--_--> like C, is that we are declaring our functions at the bottom, below the return statement. This would be invalid code in many languages. So why do we do it here?
 
-First of all, [JavaScript]({{site.url}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> allows this syntax due to a concept called hoisting, which I won’t go into now. Just know that the code is valid. Secondly, because it is valid code, we do it this way to make things easier to read. To separate out the interface and the implementation.
+First of all, [JavaScript]({{site.baseurl}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> allows this syntax due to a concept called hoisting, which I won’t go into now. Just know that the code is valid. Secondly, because it is valid code, we do it this way to make things easier to read. To separate out the interface and the implementation.
 
 So when you first see this factory, you will straight away see the object that is being returned. At a quick glance you can know exactly what the code is doing at a high level, without having to dig into the actual implementation. It just makes it easier for us developers to read. The computer doesn’t care.
 
@@ -196,38 +196,38 @@ Now we have access to the factory properties &#8211; including the quizActive pr
 
 ### Onwards To Part 9
 
-We are now well on our way to creating this full application. In the [next part]({{site.url}}/code-projects/angular-quiz-app/9-angular-factories/) we will look at how we can separate the concerns out even further using the knowledge we now have. This will lead us nicely into creating the markup to display the questions in the quiz.
+We are now well on our way to creating this full application. In the [next part]({{site.baseurl}}/code-projects/angular-quiz-app/9-angular-factories/) we will look at how we can separate the concerns out even further using the knowledge we now have. This will lead us nicely into creating the markup to display the questions in the quiz.
 
-I will see you in [part 9.]({{site.url}}/code-projects/angular-quiz-app/9-angular-factories/)
+I will see you in [part 9.]({{site.baseurl}}/code-projects/angular-quiz-app/9-angular-factories/)
 
 Adrian
 
 ### Check Out The Whole Course Index
 
-1. [Getting Started]({{site.url}}/code-projects/1-build-angular-quiz-app-scratch/)
-2. [Ng-Controller Directive and the (mis)use of $scope]({{site.url}}/code-projects/angular-quiz-app/2-ng-controller-scope/)
-3. [Looping around with the ng-repeat directive]({{site.url}}/code-projects/angular-quiz-app/3-ng-repeat-directive/)
-4. [Markup for the bootstrap modal]({{site.url}}/code-projects/angular-quiz-app/4-bootstrap-modal/)
-5. [Using Angular Filters to create real time search]({{site.url}}/code-projects/angular-quiz-app/5-angular-filters/)
-6. [The powerful ng-click directive]({{site.url}}/code-projects/angular-quiz-app/6-ng-click-directive/)
-7. [Services in Angular Make everything easier]({{site.url}}/code-projects/angular-quiz-app/7-angular-services/)
+1. [Getting Started]({{site.baseurl}}/code-projects/1-build-angular-quiz-app-scratch/)
+2. [Ng-Controller Directive and the (mis)use of $scope]({{site.baseurl}}/code-projects/angular-quiz-app/2-ng-controller-scope/)
+3. [Looping around with the ng-repeat directive]({{site.baseurl}}/code-projects/angular-quiz-app/3-ng-repeat-directive/)
+4. [Markup for the bootstrap modal]({{site.baseurl}}/code-projects/angular-quiz-app/4-bootstrap-modal/)
+5. [Using Angular Filters to create real time search]({{site.baseurl}}/code-projects/angular-quiz-app/5-angular-filters/)
+6. [The powerful ng-click directive]({{site.baseurl}}/code-projects/angular-quiz-app/6-ng-click-directive/)
+7. [Services in Angular Make everything easier]({{site.baseurl}}/code-projects/angular-quiz-app/7-angular-services/)
 8. *You Are Here*
-9. [Let&#8217;s Build A Factory]({{site.url}}/code-projects/angular-quiz-app/9-angular-factories/)
-10. [The ng-class directive]({{site.url}}/code-projects/angular-quiz-app/10-ng-class/)
-11. [More Bootstrap Markup &#8211; The Well]({{site.url}}/code-projects/angular-quiz-app/11-bootstrap-well/)
-12. [Adding some logic to the controller]({{site.url}}/code-projects/angular-quiz-app/12-controller-logic/)
-13. [Making things disappear with ng-if]({{site.url}}/code-projects/angular-quiz-app/13-ng-if/)
-14. [The $index property for ng-repeat]({{site.url}}/code-projects/angular-quiz-app/14-index-for-ng-repeat/)
-15. [Reusing code is always a good idea]({{site.url}}/code-projects/angular-quiz-app/15-reusing-code/)
-16. [Using Bootstrap to help with styling error messages]({{site.url}}/code-projects/angular-quiz-app/16-bootstrap-alerts/)
-17. [The final prompt after the quiz]({{site.url}}/code-projects/angular-quiz-app/17-final-prompt/)
-18. [Marking the quiz]({{site.url}}/code-projects/angular-quiz-app/18-marking-the-quiz/)
-19. [More dependency injection]({{site.url}}/code-projects/angular-quiz-app/19-angular-dependency-injection/)
-20. [Reusing and slightly modifying some previous Bootstrap]({{site.url}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
-21. [More than one way to use ng-class]({{site.url}}/code-projects/angular-quiz-app/21-function-with-ng-class/)
-22. [Another Angular Filter]({{site.url}}/code-projects/angular-quiz-app/22-angular-number-filter/)
-23. [More usage of Ng-if]({{site.url}}/code-projects/angular-quiz-app/23-angular-ng-if/)
-24. [Finishing The App]({{site.url}}/code-projects/angular-quiz-app/24-finished-angular-project/)
+9. [Let&#8217;s Build A Factory]({{site.baseurl}}/code-projects/angular-quiz-app/9-angular-factories/)
+10. [The ng-class directive]({{site.baseurl}}/code-projects/angular-quiz-app/10-ng-class/)
+11. [More Bootstrap Markup &#8211; The Well]({{site.baseurl}}/code-projects/angular-quiz-app/11-bootstrap-well/)
+12. [Adding some logic to the controller]({{site.baseurl}}/code-projects/angular-quiz-app/12-controller-logic/)
+13. [Making things disappear with ng-if]({{site.baseurl}}/code-projects/angular-quiz-app/13-ng-if/)
+14. [The $index property for ng-repeat]({{site.baseurl}}/code-projects/angular-quiz-app/14-index-for-ng-repeat/)
+15. [Reusing code is always a good idea]({{site.baseurl}}/code-projects/angular-quiz-app/15-reusing-code/)
+16. [Using Bootstrap to help with styling error messages]({{site.baseurl}}/code-projects/angular-quiz-app/16-bootstrap-alerts/)
+17. [The final prompt after the quiz]({{site.baseurl}}/code-projects/angular-quiz-app/17-final-prompt/)
+18. [Marking the quiz]({{site.baseurl}}/code-projects/angular-quiz-app/18-marking-the-quiz/)
+19. [More dependency injection]({{site.baseurl}}/code-projects/angular-quiz-app/19-angular-dependency-injection/)
+20. [Reusing and slightly modifying some previous Bootstrap]({{site.baseurl}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
+21. [More than one way to use ng-class]({{site.baseurl}}/code-projects/angular-quiz-app/21-function-with-ng-class/)
+22. [Another Angular Filter]({{site.baseurl}}/code-projects/angular-quiz-app/22-angular-number-filter/)
+23. [More usage of Ng-if]({{site.baseurl}}/code-projects/angular-quiz-app/23-angular-ng-if/)
+24. [Finishing The App]({{site.baseurl}}/code-projects/angular-quiz-app/24-finished-angular-project/)
 
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

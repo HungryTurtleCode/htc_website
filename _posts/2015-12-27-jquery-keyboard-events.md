@@ -16,7 +16,7 @@ tags:
 
 I often hear people who are just getting into programming ask things like, &#8220;but how do I use this in the real world?&#8221;. It is all well and good understanding things from a theoretical standpoint, but it&#8217;s all about actually using that knowledge to make something awesome.
 
-So today I am going to explain how you can build a pretty simple effect using [jQuery]({{site.url}}/tutorials/javascript-tuts/jquery-tuts/){:target="_blank"}<!--_--> by monitoring user keystrokes. 
+So today I am going to explain how you can build a pretty simple effect using [jQuery]({{site.baseurl}}/tutorials/javascript-tuts/jquery-tuts/){:target="_blank"}<!--_--> by monitoring user keystrokes. 
 
 ### But What Is This Awesome Effect?
 
@@ -48,11 +48,11 @@ I hate to discriminate, so I offer all my tutorials as both videos for us more v
 
 So I decided to split this tutorial into two separate parts. The first part (this part) will purely be focusing on just creating the effect as quickly as possible. Let&#8217;s just get some results!
 
-Part 2 can be found [here]({{site.url}}/tutorials/jquery-keyboard-events-part-2/){: target="_blank"}<!--_-->.
+Part 2 can be found [here]({{site.baseurl}}/tutorials/jquery-keyboard-events-part-2/){: target="_blank"}<!--_-->.
 
-The code written in this tutorial will be very much in the style of a typical [beginner JavaScript]({{site.url}}/tips-tricks/javascript-tips/){:target="_blank"}<!--_--> and specifically jQuery developer.
+The code written in this tutorial will be very much in the style of a typical [beginner JavaScript]({{site.baseurl}}/tips-tricks/javascript-tips/){:target="_blank"}<!--_--> and specifically jQuery developer.
 
-If just creating the effect is all you are after, this tutorial is probably all you need. If you are wanting to improve as a JS developer, then [part 2]({{site.url}}/tutorials/jquery-keyboard-events-part-2/){: target="_blank"}<!--_--> is right up your alley.
+If just creating the effect is all you are after, this tutorial is probably all you need. If you are wanting to improve as a JS developer, then [part 2]({{site.baseurl}}/tutorials/jquery-keyboard-events-part-2/){: target="_blank"}<!--_--> is right up your alley.
 
 In the next part we will take the code we have written in the part and refactor it into a much more modular style and get the code working a lot more efficiently with better general coding practices.
 
@@ -295,7 +295,7 @@ $(document).ready(function(){
 
 And that&#8217;s all there is to it. Of course, this is not necessarily the best way of doing this, but it is certainly one way of doing it.
 
-Now you can head over to [part 2]({{site.url}}/tutorials/jquery-keyboard-events-part-2/), where we will take this code and clean it up a bit and make it modular and easier to read.
+Now you can head over to [part 2]({{site.baseurl}}/tutorials/jquery-keyboard-events-part-2/), where we will take this code and clean it up a bit and make it modular and easier to read.
 
 See you there!
 

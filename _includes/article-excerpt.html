@@ -1,15 +1,15 @@
 <article class="article-excerpt">
-  <a href="{{site.url}}{{include.data.url}}" class="thumbnail">
+  <a href="{{site.baseurl}}{{include.data.url}}" class="thumbnail">
     <img class="post-summary-image" src="{{include.data.image}}" alt="Debug() – Javascript Debugging Tips">
   </a>
   <div class="summary">
-    <a href="{{site.url}}{{include.data.url}}">
+    <a href="{{site.baseurl}}{{include.data.url}}">
       <h2>{{include.data.title}}</h2>
     </a>
 
     {% include author-tag.html data=include.data %}
 
-    <a href="{{site.url}}{{include.data.url}}">
+    <a href="{{site.baseurl}}{{include.data.url}}">
       <p>{{post.excerpt}}</p>
     </a>
     {% include tags.html data=post %}

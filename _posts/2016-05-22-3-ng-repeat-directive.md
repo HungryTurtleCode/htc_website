@@ -23,7 +23,7 @@ Now armed with the ability to create controller properties with some data attach
 
 Of course, in any application some data is needed. This data is usually fetched from an [API](https://en.wikipedia.org/wiki/Application_programming_interface){: target="_blank"}<!--_--> on a backend server. However, for this tutorial we will just be focusing on the front end implementation of this application. As a result, we will need to simulate the data in some way.
 
-**If you want to check out the finished app,** [you can see it here]({{site.url}}/turtlefacts).
+**If you want to check out the finished app,** [you can see it here]({{site.baseurl}}/turtlefacts).
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 
@@ -33,7 +33,7 @@ As always, for those of you more visually inclined this full tutorial is in vide
 
 {% include video-embed.html videoID="iAX67gisQ2M" %}
 
-[The next part of the series can be found here.]({{site.url}}/code-projects/angular-quiz-app/4-bootstrap-modal/)
+[The next part of the series can be found here.]({{site.baseurl}}/code-projects/angular-quiz-app/4-bootstrap-modal/)
 
 The way we will simulate the API request in this application is to simply paste the [JSON data](url){: target="_blank"}<!--_--> we would normally get from a server, straight into our code as a variable. We will then attach that variable as a property on our controller which will give us access to all of that data inside our HTML.
 
@@ -177,7 +177,7 @@ This will print out the type property of each turtle in our data property. Using
 
 ## Bootstrapping Our App Markup With Bootstrap
 
-This course is not focused on Bootstrap so I will not spend a lot of time explaining the different elements used. However, if you want to learn more [let me know]({{site.url}}/contact-me/){: target="_blank"}<!--_--> and I may do a full course on Bootstrap. Especially with Bootstrap 4 looming just around the corner.
+This course is not focused on Bootstrap so I will not spend a lot of time explaining the different elements used. However, if you want to learn more [let me know]({{site.baseurl}}/contact-me/){: target="_blank"}<!--_--> and I may do a full course on Bootstrap. Especially with Bootstrap 4 looming just around the corner.
 
 Here is the start of the markup with the ng-repeat directive added in:
 
@@ -261,7 +261,7 @@ The data-target bootstrap attribute tells bootstrap exactly which modal we want
 
 ### Moving On To Part 4
 
-That&#8217;s it for this part. In [part 4]({{site.url}}/code-projects/angular-quiz-app/4-bootstrap-modal/) we will fix up the image sizing issues that we have with the images in our list and start creating the modal markup.
+That&#8217;s it for this part. In [part 4]({{site.baseurl}}/code-projects/angular-quiz-app/4-bootstrap-modal/) we will fix up the image sizing issues that we have with the images in our list and start creating the modal markup.
 
 See you there&#8230;
 
@@ -271,30 +271,30 @@ Adrian
 
 ### Check Out The Whole Course Index
 
-1. [Getting Started]({{site.url}}/code-projects/1-build-angular-quiz-app-scratch/)
-2. [Ng-Controller Directive and the (mis)use of $scope]({{site.url}}/code-projects/angular-quiz-app/2-ng-controller-scope/)
+1. [Getting Started]({{site.baseurl}}/code-projects/1-build-angular-quiz-app-scratch/)
+2. [Ng-Controller Directive and the (mis)use of $scope]({{site.baseurl}}/code-projects/angular-quiz-app/2-ng-controller-scope/)
 3. *You Are Here*
-4. [Markup for the bootstrap modal]({{site.url}}/code-projects/angular-quiz-app/4-bootstrap-modal/)
-5. [Using Angular Filters to create real time search]({{site.url}}/code-projects/angular-quiz-app/5-angular-filters/)
-6. [The powerful ng-click directive]({{site.url}}/code-projects/angular-quiz-app/6-ng-click-directive/)
-7. [Services in Angular Make everything easier]({{site.url}}/code-projects/angular-quiz-app/7-angular-services/)
-8. [What is this infamous dependency injection in Angular?]({{site.url}}/code-projects/angular-quiz-app/8-dependency-injection/)
-9. [Let&#8217;s Build A Factory]({{site.url}}/code-projects/angular-quiz-app/9-angular-factories/)
-10. [The ng-class directive]({{site.url}}/code-projects/angular-quiz-app/10-ng-class/)
-11. [More Bootstrap Markup &#8211; The Well]({{site.url}}/code-projects/angular-quiz-app/11-bootstrap-well/)
-12. [Adding some logic to the controller]({{site.url}}/code-projects/angular-quiz-app/12-controller-logic/)
-13. [Making things disappear with ng-if]({{site.url}}/code-projects/angular-quiz-app/13-ng-if/)
-14. [The $index property for ng-repeat]({{site.url}}/code-projects/angular-quiz-app/14-index-for-ng-repeat/)
-15. [Reusing code is always a good idea]({{site.url}}/code-projects/angular-quiz-app/15-reusing-code/)
-16. [Using Bootstrap to help with styling error messages]({{site.url}}/code-projects/angular-quiz-app/16-bootstrap-alerts/)
-17. [The final prompt after the quiz]({{site.url}}/code-projects/angular-quiz-app/17-final-prompt/)
-18. [Marking the quiz]({{site.url}}/code-projects/angular-quiz-app/18-marking-the-quiz/)
-19. [More dependency injection]({{site.url}}/code-projects/angular-quiz-app/19-angular-dependency-injection/)
-20. [Reusing and slightly modifying some previous Bootstrap]({{site.url}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
-21. [More than one way to use ng-class]({{site.url}}/code-projects/angular-quiz-app/21-function-with-ng-class/)
-22. [Another Angular Filter]({{site.url}}/code-projects/angular-quiz-app/22-angular-number-filter/)
-23. [More usage of Ng-if]({{site.url}}/code-projects/angular-quiz-app/23-angular-ng-if/)
-24. [Finishing The App]({{site.url}}/code-projects/angular-quiz-app/24-finished-angular-project/)
+4. [Markup for the bootstrap modal]({{site.baseurl}}/code-projects/angular-quiz-app/4-bootstrap-modal/)
+5. [Using Angular Filters to create real time search]({{site.baseurl}}/code-projects/angular-quiz-app/5-angular-filters/)
+6. [The powerful ng-click directive]({{site.baseurl}}/code-projects/angular-quiz-app/6-ng-click-directive/)
+7. [Services in Angular Make everything easier]({{site.baseurl}}/code-projects/angular-quiz-app/7-angular-services/)
+8. [What is this infamous dependency injection in Angular?]({{site.baseurl}}/code-projects/angular-quiz-app/8-dependency-injection/)
+9. [Let&#8217;s Build A Factory]({{site.baseurl}}/code-projects/angular-quiz-app/9-angular-factories/)
+10. [The ng-class directive]({{site.baseurl}}/code-projects/angular-quiz-app/10-ng-class/)
+11. [More Bootstrap Markup &#8211; The Well]({{site.baseurl}}/code-projects/angular-quiz-app/11-bootstrap-well/)
+12. [Adding some logic to the controller]({{site.baseurl}}/code-projects/angular-quiz-app/12-controller-logic/)
+13. [Making things disappear with ng-if]({{site.baseurl}}/code-projects/angular-quiz-app/13-ng-if/)
+14. [The $index property for ng-repeat]({{site.baseurl}}/code-projects/angular-quiz-app/14-index-for-ng-repeat/)
+15. [Reusing code is always a good idea]({{site.baseurl}}/code-projects/angular-quiz-app/15-reusing-code/)
+16. [Using Bootstrap to help with styling error messages]({{site.baseurl}}/code-projects/angular-quiz-app/16-bootstrap-alerts/)
+17. [The final prompt after the quiz]({{site.baseurl}}/code-projects/angular-quiz-app/17-final-prompt/)
+18. [Marking the quiz]({{site.baseurl}}/code-projects/angular-quiz-app/18-marking-the-quiz/)
+19. [More dependency injection]({{site.baseurl}}/code-projects/angular-quiz-app/19-angular-dependency-injection/)
+20. [Reusing and slightly modifying some previous Bootstrap]({{site.baseurl}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
+21. [More than one way to use ng-class]({{site.baseurl}}/code-projects/angular-quiz-app/21-function-with-ng-class/)
+22. [Another Angular Filter]({{site.baseurl}}/code-projects/angular-quiz-app/22-angular-number-filter/)
+23. [More usage of Ng-if]({{site.baseurl}}/code-projects/angular-quiz-app/23-angular-ng-if/)
+24. [Finishing The App]({{site.baseurl}}/code-projects/angular-quiz-app/24-finished-angular-project/)
 
 
 

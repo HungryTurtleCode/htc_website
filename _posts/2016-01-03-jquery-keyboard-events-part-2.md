@@ -14,7 +14,7 @@ tags:
 ---
 ## What Is This Modular JavaScript You Speak Of?
 
-This is part 2 of this mini series recreating the &#8220;Other Side&#8221; video effect using jQuery keyboard events. If you haven&#8217;t seen [part 1]({{site.url}}/tutorials/jquery-keyboard-events/), go take a look at that first.
+This is part 2 of this mini series recreating the &#8220;Other Side&#8221; video effect using jQuery keyboard events. If you haven&#8217;t seen [part 1]({{site.baseurl}}/tutorials/jquery-keyboard-events/), go take a look at that first.
 
 In this tutorial we will take the exact code from the previous part and modularise it. What I mean by that is we don&#8217;t have everything in one place. We split the code out so that each part of the code only does one specific job.
 
@@ -28,7 +28,7 @@ What this does is makes everything easier to read and understand at a glance. Ra
 
 ### How Do We Go About Modularising?
 
-What a great question! I&#8217;m glad you asked. There are many ways to do it but one common way is to create a [Javascript]({{site.url}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> object that has methods (similar to functions). Each of these methods then handles a specific task within your application and then calls other methods when other tasks are required.
+What a great question! I&#8217;m glad you asked. There are many ways to do it but one common way is to create a [Javascript]({{site.baseurl}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> object that has methods (similar to functions). Each of these methods then handles a specific task within your application and then calls other methods when other tasks are required.
 
 **Don&#8217;t worry if you don&#8217;t understand objects and methods and all that fancy stuff.** Just follow along for now. We want to get you creating cool things for now. Worry about the rest later.
 
@@ -67,7 +67,7 @@ Now next time we need that we can just reference the variable &#8220;cachedEleme
 
 Let&#8217;s now get back to the object we created earlier. Inside that object we want to create a method that will initialise our application &#8211; let&#8217;s call it init();
 
-Inside this method, we want to call all the methods we need to get our app started. Namely, we will need to call a method to cache the DOM and call a method to bind all these elements to the events we want to monitor (play, pause, keyup and keydown). I will also add a further method to set the volume like we did in the [previous part]({{site.url}}/tutorials/jquery-keyboard-events/).
+Inside this method, we want to call all the methods we need to get our app started. Namely, we will need to call a method to cache the DOM and call a method to bind all these elements to the events we want to monitor (play, pause, keyup and keydown). I will also add a further method to set the volume like we did in the [previous part]({{site.baseurl}}/tutorials/jquery-keyboard-events/).
 
 {% highlight javascript linenos %}
 var doubleSided = {
@@ -350,7 +350,7 @@ from outside our object just to invoke all the code we have written.
 
 Writing code in this fashion has so many benefits such as increased security, increased efficiency, easier readability of code which leads to easier to maintain code &#8211; which of course makes everyone happy.
 
-Hope you enjoyed it! See you soon for [another tutorial]({{site.url}}/tutorials/){: target="_blank"}<!--_-->.
+Hope you enjoyed it! See you soon for [another tutorial]({{site.baseurl}}/tutorials/){: target="_blank"}<!--_-->.
 
 Stay hungry and keep coding,
 

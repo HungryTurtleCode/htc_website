@@ -8,7 +8,7 @@
   <section class="recent-posts">
     <h2>Recent Posts</h2>
     {% for post in site.posts limit: 3 %}
-      <a href="{{site.url}}/{{post.permalink}}">
+      <a href="{{site.baseurl}}{{post.url}}">
         <div class="recent-item" style="background: url('{{post.image}}') no-repeat center; background-size: cover"></div>
       </a>
     {% endfor %}

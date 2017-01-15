@@ -16,7 +16,7 @@ tags:
 ![Java Browser Plugin Is At End Of Life](https://res.cloudinary.com/djxscnpzf/image/upload/v1454023468/53043053_nsyjop.jpg){: class="alignright" width="400" height="300"}
 Internet users rejoice, hackers despair and corporate IT departments are on suicide watch. Yep, that can only mean one thing! Oracle are finally pulling the plug on their troublesome Java browser plugin.
 
-So far, 2016 has been a big year for the modernisation of browsers. First Microsoft announce they will no longer provide support for [old Internet Explorer]({{site.url}}/news/internet-explorer-is-gone/){: target="_blank"}<!--_--> browsers. Now Oracle are deprecating their Java plugin.
+So far, 2016 has been a big year for the modernisation of browsers. First Microsoft announce they will no longer provide support for [old Internet Explorer]({{site.baseurl}}/news/internet-explorer-is-gone/){: target="_blank"}<!--_--> browsers. Now Oracle are deprecating their Java plugin.
 
 This news is hardly a surprise though. Chrome stopped all support for plugin based technologies nearly a year ago. Chrome were not alone in this endeavour though. In fact most modern browsers had made similar move by the end of last year.
 

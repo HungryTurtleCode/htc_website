@@ -2,12 +2,12 @@
 <header>
 
   <div class="header-container">
-    <a href="{{site.url}}">
+    <a href="{{site.baseurl}}">
       <img class="mascot"
-          src="{{site.url}}/img/mascot.png"
+          src="{{site.baseurl}}/img/mascot.png"
           alt="Hungry Turtle Code Logo">
       <img class="logo"
-          src="{{site.url}}/img/logo.png"
+          src="{{site.baseurl}}/img/logo.png"
           alt="Hungry Turtle Code Logo Text. Learn to write code, one line at a time">
     </a>
   </div>
@@ -16,7 +16,7 @@
     <ul>
       {% for nav in site.data.navigation.primary %}
       <li>
-        <a href="{{site.url}}{{nav.url}}">
+        <a href="{{site.baseurl}}{{nav.url}}">
           {{nav.title}}
         </a>
       </li>
