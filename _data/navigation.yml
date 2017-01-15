@@ -2,7 +2,7 @@ primary:
   # - title: News
     # url: /news/
   - title: Build Full Projects
-    url: /code-projects/
+    url: /projects/
   - title: Tutorials
     url: /tutorials/
   - title: About Me
