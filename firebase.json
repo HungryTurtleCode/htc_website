@@ -3,6 +3,21 @@
     "rules": "database.rules.bolt"
   },
   "hosting": {
-    "public": "_site"
+    "public": "_site",
+    "headers": [{
+      "source": "**/*.@(jpg|jpeg|gif|png)",
+      "headers": [{
+        "key": "Cache-Control",
+        "value": "max-age=30672000"
+      }]
+    },
+    {
+      "source": "**/*.@(css|js|html)",
+      "headers": [{
+        "key": "Cache-Control",
+        "value": "max-age=900"
+      }]
+    }
+    ]
   }
 }
