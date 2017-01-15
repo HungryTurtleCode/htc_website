@@ -3,7 +3,7 @@ title: AngularJS Quiz App Tutorial Part 18 – Marking The Quiz
 date: 2016-05-22T20:15:55+00:00
 author: Adrian
 layout: post
-permalink: /code-projects/angular-quiz-app/18-marking-the-quiz/
+alias: /code-projects/angular-quiz-app/18-marking-the-quiz/
 head-title: Part 18 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932371/Angular-quiz-part-18_eybezd.jpg
 excerpt: No Quiz Is Complete Without It Being Marked In the last part we reference a function on the quizMetrics factory that we have not yet created. So it will be the task of this part to create that function – …

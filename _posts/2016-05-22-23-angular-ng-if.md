@@ -3,7 +3,7 @@ title: AngularJS Quiz App Tutorial Part 23 – Ng-If (Again)
 date: 2016-05-22T20:13:37+00:00
 author: Adrian
 layout: post
-permalink: /code-projects/angular-quiz-app/23-angular-ng-if/
+alias: /code-projects/angular-quiz-app/23-angular-ng-if/
 head-title: Part 23 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932397/Angular-quiz-part-23_gxzkuu.jpg
 excerpt: Our Old Enemy – The Image Questions When we created the quiz controller we had the problem of the image urls displaying instead of the images themselves on image questions. We again face this problem in the results controller. Having …

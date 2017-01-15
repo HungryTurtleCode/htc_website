@@ -3,7 +3,7 @@ title: AngularJS Quiz App Tutorial Part 22 – Final Functions For RestultsCtrl
 date: 2016-05-22T20:14:46+00:00
 author: Adrian
 layout: post
-permalink: /code-projects/angular-quiz-app/22-angular-number-filter/
+alias: /code-projects/angular-quiz-app/22-angular-number-filter/
 head-title: Part 22 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932393/Angular-quiz-part-22_zw1ina.jpg
 excerpt: Last Two Functions For The ResultsCtrl In this part we will add the final two functions into the results controller. A function that will be similar to the setActiveQuestion in the quiz controller but not nearly as complex and the …

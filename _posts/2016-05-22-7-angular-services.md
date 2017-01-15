@@ -3,7 +3,7 @@ title: 'AngularJS Quiz App Tutorial Part 7 &#8211; Factories and Services'
 date: 2016-05-22T20:18:56+00:00
 author: Adrian
 layout: post
-permalink: /code-projects/angular-quiz-app/7-angular-services/
+alias: /code-projects/angular-quiz-app/7-angular-services/
 head-title: Part 7 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932298/Angular-quiz-part-7_hy22ev.jpg
 excerpt: Angular Services – Serving (Some) Of Your Needs Fully armed with the knowledge on how to hide and show HTML elements, we can now go ahead and create the quiz controller that we will show at the same time that …

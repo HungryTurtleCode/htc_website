@@ -4,7 +4,7 @@ head-title: Part 11 AngularJS Quiz App Tutorial
 date: 2016-05-22T20:17:31+00:00
 author: Adrian
 layout: post
-permalink: /code-projects/angular-quiz-app/11-bootstrap-well/
+alias: /code-projects/angular-quiz-app/11-bootstrap-well/
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932326/Angular-quiz-part-11_jxnkd4.jpg
 excerpt: Bootstrapping The Quiz Questions No waiting around here, let’s just jump straight into creating the markup for the questions in the quiz. The whole area will be surrounded in a bootstrap well and we will pull the questions from the …
 categories:
