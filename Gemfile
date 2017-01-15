@@ -23,3 +23,4 @@ group :jekyll_plugins do
 end
 gem "bourbon"
 gem 'jekyll-archives'
+gem 'jekyll-sitemap'
