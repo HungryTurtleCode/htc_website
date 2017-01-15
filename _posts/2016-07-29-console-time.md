@@ -16,7 +16,7 @@ tags:
 
 I have seen some amazing ways of timing how long javascript code takes to run. Taking timestamps and comparing them is a common way. But console.time is method in the console API that allows you to do exactly that with not other hassle.
 
-This isn&#8217;t the first [Javascript debugging tip]({{site.baseurl}}/tips-tricks/javascript-tips/){: target="_blank"}<!--_--> I have given. You can check out [console.table]({{site.baseurl}}/tips-tricks/console-log-table/){: target="_blank"}<!--_--> and [console.trace]({{site.baseurl}}/tips-tricks/console-trace/){: target="_blank"}<!--_-->, if you haven&#8217;t already.
+This isn&#8217;t the first Javascript debugging tip I have given. You can check out [console.table]({{site.baseurl}}/tutorials/console-log-table/){: target="_blank"}<!--_--> and [console.trace]({{site.baseurl}}/tutorials/console-trace/){: target="_blank"}<!--_-->, if you haven&#8217;t already.
 
 ### Video Tutorial
 

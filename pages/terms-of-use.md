@@ -5,9 +5,9 @@ author: Adrian
 layout: fullwidth
 permalink: /terms-of-use/
 ---
-**Last Revised: December 5, 2015**
+**Last Revised: January 15, 2017**
 
-These terms and conditions are subject to change by Hungry Turtle Marketing. (hereinafter “Company”) at any time and at our discretion without notice by updating this posting.
+These terms and conditions are subject to change by Hungry Turtle Code. (hereinafter “Company”) at any time and at our discretion without notice by updating this posting.
 
 These terms and conditions govern your use of this web site. By accessing this web site, you are acknowledging and accepting these terms and conditions.
 
@@ -49,7 +49,7 @@ COMPANY reserves the right to cooperate with law enforcement officials and court
 
 **CONTACTING US**
 
-If you need to contact us, you can email us at support@hungryturtledev.com or use the form located [here](http://hungryturtledev.com/contact-us/).
+If you need to contact us, you can email us at support@hungryturtlecode.com or use the form located [here]({{site.baseurl}}/contact-us/).
 
 **DISCLAIMER OF WARRANTIES**
 

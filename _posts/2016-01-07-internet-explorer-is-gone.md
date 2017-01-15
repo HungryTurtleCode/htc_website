@@ -50,7 +50,7 @@ I think so. As exciting as the end of life news for internet explorer sounds, it
 
 As far as the typical web developer goes, we will all still have to continue supporting these legacy browsers if our target demographic still falls into the section of people who use older IE browsers.
 
-Until next time, take a look at some of the [tutorials]({{site.baseurl}}/tutorials/), [tips]({{site.baseurl}}/tips-tricks/) or [projects]({{site.baseurl}}/code-projects/)
+Until next time, take a look at some of the [tutorials]({{site.baseurl}}/tutorials/) or [projects]({{site.baseurl}}/projects/)
 
 Stay hungry and keep coding,
 

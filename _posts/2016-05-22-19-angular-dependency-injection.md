@@ -17,7 +17,7 @@ tags:
 ---
 ## First Steps To Getting The Results
 
-We have finished the quiz controller so now it is time to start the results controller. In the [last part]({{site.baseurl}}/code-projects/angular-quiz-app/18-marking-the-quiz/) we created a property called resultsActive, which is what we will use to trigger the results area to show using an ng-show. We will also delve into some more angular dependency injection.
+We have finished the quiz controller so now it is time to start the results controller. In the [last part]({{site.baseurl}}/projects/angular-quiz-app/18-marking-the-quiz/) we created a property called resultsActive, which is what we will use to trigger the results area to show using an ng-show. We will also delve into some more angular dependency injection.
 
 **If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
@@ -25,7 +25,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 {% include video-embed.html videoID="N6N3KhkKk3o" %}
 
-[The next part can be found here]({{site.baseurl}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
+[The next part can be found here]({{site.baseurl}}/projects/angular-quiz-app/20-familiar-bootstrap/)
 
 Before we can start showing the results area we need to create it. So in the HTML, under the quiz controller markup let’s create a new div with a new [ng-controller directive](https://docs.angularjs.org/api/ng/directive/ngController){: target="_blank"}<!--_-->. Again using the &#8220;controller as&#8221; syntax.
 
@@ -96,9 +96,9 @@ We need to amend this by changing the ng-hide on the list controller to hide whe
 
 ### On To The Next One, On To The Next One&#8230;
 
-With that done, we now have the results controller showing when it should be. The [next step]({{site.baseurl}}/code-projects/angular-quiz-app/20-familiar-bootstrap/) from here is to start populating the results controller with some content. That is what we will do in the [next part]({{site.baseurl}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
+With that done, we now have the results controller showing when it should be. The [next step]({{site.baseurl}}/projects/angular-quiz-app/20-familiar-bootstrap/) from here is to start populating the results controller with some content. That is what we will do in the [next part]({{site.baseurl}}/projects/angular-quiz-app/20-familiar-bootstrap/)
 
-See you in [part 20]({{site.baseurl}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
+See you in [part 20]({{site.baseurl}}/projects/angular-quiz-app/20-familiar-bootstrap/)
 
 Adrian
 
@@ -106,29 +106,29 @@ Adrian
 
 ### Check Out The Whole Course Index
 
-1. [Getting Started]({{site.baseurl}}/code-projects/1-build-angular-quiz-app-scratch/)
-2. [Ng-Controller Directive and the (mis)use of $scope]({{site.baseurl}}/code-projects/angular-quiz-app/2-ng-controller-scope/)
-3. [Looping around with the ng-repeat directive]({{site.baseurl}}/code-projects/angular-quiz-app/3-ng-repeat-directive/)
-4. [Markup for the bootstrap modal]({{site.baseurl}}/code-projects/angular-quiz-app/4-bootstrap-modal/)
-5. [Using Angular Filters to create real time search]({{site.baseurl}}/code-projects/angular-quiz-app/5-angular-filters/)
-6. [The powerful ng-click directive]({{site.baseurl}}/code-projects/angular-quiz-app/6-ng-click-directive/)
-7. [Services in Angular Make everything easier]({{site.baseurl}}/code-projects/angular-quiz-app/7-angular-services/)
-8. [What is this infamous dependency injection in Angular?]({{site.baseurl}}/code-projects/angular-quiz-app/8-dependency-injection/)
-9. [Let&#8217;s Build A Factory]({{site.baseurl}}/code-projects/angular-quiz-app/9-angular-factories/)
-10. [The ng-class directive]({{site.baseurl}}/code-projects/angular-quiz-app/10-ng-class/)
-11. [More Bootstrap Markup &#8211; The Well]({{site.baseurl}}/code-projects/angular-quiz-app/11-bootstrap-well/)
-12. [Adding some logic to the controller]({{site.baseurl}}/code-projects/angular-quiz-app/12-controller-logic/)
-13. [Making things disappear with ng-if]({{site.baseurl}}/code-projects/angular-quiz-app/13-ng-if/)
-14. [The $index property for ng-repeat]({{site.baseurl}}/code-projects/angular-quiz-app/14-index-for-ng-repeat/)
-15. [Reusing code is always a good idea]({{site.baseurl}}/code-projects/angular-quiz-app/15-reusing-code/)
-16. [Using Bootstrap to help with styling error messages]({{site.baseurl}}/code-projects/angular-quiz-app/16-bootstrap-alerts/)
-17. [The final prompt after the quiz]({{site.baseurl}}/code-projects/angular-quiz-app/17-final-prompt/)
-18. [Marking the quiz]({{site.baseurl}}/code-projects/angular-quiz-app/18-marking-the-quiz/)
+1. [Getting Started]({{site.baseurl}}/projects/1-build-angular-quiz-app-scratch/)
+2. [Ng-Controller Directive and the (mis)use of $scope]({{site.baseurl}}/projects/angular-quiz-app/2-ng-controller-scope/)
+3. [Looping around with the ng-repeat directive]({{site.baseurl}}/projects/angular-quiz-app/3-ng-repeat-directive/)
+4. [Markup for the bootstrap modal]({{site.baseurl}}/projects/angular-quiz-app/4-bootstrap-modal/)
+5. [Using Angular Filters to create real time search]({{site.baseurl}}/projects/angular-quiz-app/5-angular-filters/)
+6. [The powerful ng-click directive]({{site.baseurl}}/projects/angular-quiz-app/6-ng-click-directive/)
+7. [Services in Angular Make everything easier]({{site.baseurl}}/projects/angular-quiz-app/7-angular-services/)
+8. [What is this infamous dependency injection in Angular?]({{site.baseurl}}/projects/angular-quiz-app/8-dependency-injection/)
+9. [Let&#8217;s Build A Factory]({{site.baseurl}}/projects/angular-quiz-app/9-angular-factories/)
+10. [The ng-class directive]({{site.baseurl}}/projects/angular-quiz-app/10-ng-class/)
+11. [More Bootstrap Markup &#8211; The Well]({{site.baseurl}}/projects/angular-quiz-app/11-bootstrap-well/)
+12. [Adding some logic to the controller]({{site.baseurl}}/projects/angular-quiz-app/12-controller-logic/)
+13. [Making things disappear with ng-if]({{site.baseurl}}/projects/angular-quiz-app/13-ng-if/)
+14. [The $index property for ng-repeat]({{site.baseurl}}/projects/angular-quiz-app/14-index-for-ng-repeat/)
+15. [Reusing code is always a good idea]({{site.baseurl}}/projects/angular-quiz-app/15-reusing-code/)
+16. [Using Bootstrap to help with styling error messages]({{site.baseurl}}/projects/angular-quiz-app/16-bootstrap-alerts/)
+17. [The final prompt after the quiz]({{site.baseurl}}/projects/angular-quiz-app/17-final-prompt/)
+18. [Marking the quiz]({{site.baseurl}}/projects/angular-quiz-app/18-marking-the-quiz/)
 19. *You Are Here*
-20. [Reusing and slightly modifying some previous Bootstrap]({{site.baseurl}}/code-projects/angular-quiz-app/20-familiar-bootstrap/)
-21. [More than one way to use ng-class]({{site.baseurl}}/code-projects/angular-quiz-app/21-function-with-ng-class/)
-22. [Another Angular Filter]({{site.baseurl}}/code-projects/angular-quiz-app/22-angular-number-filter/)
-23. [More usage of Ng-if]({{site.baseurl}}/code-projects/angular-quiz-app/23-angular-ng-if/)
-24. [Finishing The App]({{site.baseurl}}/code-projects/angular-quiz-app/24-finished-angular-project/)
+20. [Reusing and slightly modifying some previous Bootstrap]({{site.baseurl}}/projects/angular-quiz-app/20-familiar-bootstrap/)
+21. [More than one way to use ng-class]({{site.baseurl}}/projects/angular-quiz-app/21-function-with-ng-class/)
+22. [Another Angular Filter]({{site.baseurl}}/projects/angular-quiz-app/22-angular-number-filter/)
+23. [More usage of Ng-if]({{site.baseurl}}/projects/angular-quiz-app/23-angular-ng-if/)
+24. [Finishing The App]({{site.baseurl}}/projects/angular-quiz-app/24-finished-angular-project/)
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

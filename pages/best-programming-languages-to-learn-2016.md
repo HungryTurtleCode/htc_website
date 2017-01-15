@@ -15,7 +15,8 @@ What is the best programming language to learn in 2016? This isn&#8217;t an easy
 
 ### What is your motivation?
 
-<img class="alignright wp-image-1008" src="https://res.cloudinary.com/djxscnpzf/image/upload/v1466091030/motivation-meme_zha21a.jpg" alt="motivation to learn" width="400" height="300" />This plays a pretty huge role in the decision of what language you should start learning. If you want to be a professional developer of some kind you should learn languages that give you the best chance of finding a good job for example.
+![motivation to learn](https://res.cloudinary.com/djxscnpzf/image/upload/v1466091030/motivation-meme_zha21a.jpg){: class="alignright" width="400" height="300"}
+This plays a pretty huge role in the decision of what language you should start learning. If you want to be a professional developer of some kind you should learn languages that give you the best chance of finding a good job for example.
 
 Or maybe you would just like to learn how to make simple websites for yourself and your friends and family. In that case, you should obviously learn languages that are commonly used for websites.
 
@@ -76,13 +77,13 @@ Let&#8217;s take a run down some of the motivations I listed above and see what 
 
 **Language to learn: **jQuery along with HTML & CSS
 
-<img class="alignright wp-image-1009" src="https://res.cloudinary.com/djxscnpzf/image/upload/v1466091104/resized_winter-is-coming-meme-generator-new-website-is-coming-2679a7_f3efbi.jpg" alt="Building websites for friends" width="400" height="267" />
+![Building websites for friends](https://res.cloudinary.com/djxscnpzf/image/upload/v1466091104/resized_winter-is-coming-meme-generator-new-website-is-coming-2679a7_f3efbi.jpg){: class="alignright" width="400" height="267"}
 
 So I have listed HTML and CSS as part of the language to learn but they are not &#8220;programming languages&#8221; in the traditional sense. But they are crucial to be able to build websites from scratch &#8211; they are the building blocks for websites.
 
 Fortunately, learning the basics of HTML and CSS is extremely easy.
 
-The actual programming language you should learn is <a href="https://hungryturtlecode.com/tutorials/javascript-tuts/" target="_blank">JavaScript</a> &#8211; although you don&#8217;t need to dive right into JavaScript, so I recommend <a href="https://hungryturtlecode.com/tutorials/javascript-tuts/jquery-tuts/" target="_blank">learning jQuery</a>, which is a set of tools built with JavaScript.
+The actual programming language you should learn is <a href="{{site.baseurl}}/tags/javascript/" target="_blank">JavaScript</a> &#8211; although you don&#8217;t need to dive right into JavaScript, so I recommend <a href="{{site.baseurl}}/tags/jquery/" target="_blank">learning jQuery</a>, which is a set of tools built with JavaScript.
 
 Technically jQuery is not a programming language &#8211; it is simply an extension of JavaScript.
 
@@ -108,7 +109,8 @@ Most developers will specialise on either front-end or back-end development, but
 
 **Language to learn: **JavaScript
 
-<img class="alignleft wp-image-1010" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1466091155/javascript-javascript-everywhere_saack7.jpg" alt="Learning javascript" width="400" height="218" />This will be much like the person wanting to just build simple sites for friends and family, just a lot more in depth. Of course, HTML and CSS are also a must.
+![Learning javascript](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1466091155/javascript-javascript-everywhere_saack7.jpg){: class="alighleft" width="400" height="218"}
+This will be much like the person wanting to just build simple sites for friends and family, just a lot more in depth. Of course, HTML and CSS are also a must.
 
 At this point just using jQuery is not going to be enough. You will need to understand how everything is working. You will need to know how to implement these features from scratch on your own rather than relying on jQuery to do it for you.
 
@@ -124,7 +126,8 @@ Learning one of these frameworks will certainly stand you in good stead in your 
 
 **Language to learn: **PHP or Node.js
 
-<img class="wp-image-1018 alignright" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1466092246/bd2_6f5_636_330-1-original_kqf0ig.jpg" alt="learn php" width="400" height="225" />PHP is the most commonly used backend technology as it runs the <a href="https://wordpress.org/" target="_blank">wordpress platform</a> which is extremely common these days. So learning this will never be a bad choice as there will be a ton of jobs available.
+![learn php](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1466092246/bd2_6f5_636_330-1-original_kqf0ig.jpg){: class="alignright" width="400" height="225"}
+PHP is the most commonly used backend technology as it runs the <a href="https://wordpress.org/" target="_blank">wordpress platform</a> which is extremely common these days. So learning this will never be a bad choice as there will be a ton of jobs available.
 
 Admittedly, PHP has received a lot of criticism from many developers because it is a bit haphazard and potentially insecure. However, with the introduction of the newest version PHP 7, a lot of these issues have been fixed.
 
@@ -138,7 +141,8 @@ There are so many other languages used to build the back-end of websites that I 
 
 Python is a very versatile language and is often used to teach children how to code, while it is also a very powerful language used at the grandest of scales in technology.
 
-<img class="aligncenter wp-image-1011" src="https://res.cloudinary.com/djxscnpzf/image/upload/v1466091277/44978270_f4s42h.jpg" alt="Ruby on rails" width="500" height="375" />Ruby is a language and Rails is a framework built for Ruby. Ruby on Rails is extremely popular amongst tech startups so if that is you thing then ruby is your best bet.
+![Ruby on rails](https://res.cloudinary.com/djxscnpzf/image/upload/v1466091277/44978270_f4s42h.jpg){: class="aligncenter" width="500" height="375"}
+Ruby is a language and Rails is a framework built for Ruby. Ruby on Rails is extremely popular amongst tech startups so if that is you thing then ruby is your best bet.
 
 GoLang, or just Go, is a language that was created by Google and is very quickly gaining huge popularity &#8211; so it may be a good one to learn.
 
@@ -156,7 +160,7 @@ So with this in mind, it is better to start off by specialising and then moving 
 
 C is a very old programming language (first created between 1969 and 1973), but it has 100% stood the test of time. Many extremely powerful pieces of software are built in C, even today.
 
-<img class="aligncenter wp-image-1021" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1466092464/computers_gcypyn.jpg" alt="understanding computers" width="800" height="361" />
+![understanding computers](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1466092464/computers_gcypyn.jpg){: class="aligncenter" width="800" height="361"}
 
 The reason it is the best language to learn if you want to understand how computer&#8217;s work is because it is a very &#8220;low&#8221; level language &#8211; one of the lowest in fact.
 
@@ -178,7 +182,8 @@ On top of this, most programming languages have been built from the foundation l
 
 The problem with mobile development is that there is no one universal language that is just used for building mobile apps. The language you use is dependant on what platform you want the apps on.
 
-**<img class="aligncenter wp-image-1012" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1466091439/iphone-vs-android-820x4201_cdxefv.jpg" alt="Android vs Iphone" width="800" height="410" />iPhone and iPad**
+![Android vs Iphone](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1466091439/iphone-vs-android-820x4201_cdxefv.jpg){: class="aligncenter" width="800" height="410"}
+**iPhone and iPad**
 
 The iOS platform used to use a programming language called Objective-C but in the last few years Apple have released their own programming language called Swift which can also be used to make apps for Apple products.
 
@@ -194,7 +199,8 @@ Although, if you want to build apps for Android devices you are going to have to
 
 **What if I want to build apps for both iOS and Android?**
 
-<img class="alignleft wp-image-1023" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1466092564/PhoneGap_gwvonh.jpg" alt="phonegap" width="400" height="400" />This is a question that has been around ever since these platforms have been around. In a lot of cases if you wanted an app on both platforms you had to build the app twice &#8211; once in swift or objective-c for iOS and again in Java for Android.
+![phonegap](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1466092564/PhoneGap_gwvonh.jpg){: class="alignleft" width="400" height="400"}
+This is a question that has been around ever since these platforms have been around. In a lot of cases if you wanted an app on both platforms you had to build the app twice &#8211; once in swift or objective-c for iOS and again in Java for Android.
 
 Times are changing though and there are now ways in which you can build apps in much the same way you build a website &#8211; using HTML and JavaScript &#8211; then use free services to build those into apps for the respective platforms.
 
@@ -212,7 +218,8 @@ If you want to get really serious about app development for mobile devices then 
 
 **Language to learn:** Python
 
-<img class="alignright wp-image-1013" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1466091464/pythonlogo_leeybu.jpg" alt="python" width="400" height="270" />In my opinion there is no other language as powerful yet as easy to use as Python. It allows you to build pretty complex pieces of software quickly and easily once you have a small amount of experience.
+![python](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1466091464/pythonlogo_leeybu.jpg){: class="alignright" width="400" height="270"}
+In my opinion there is no other language as powerful yet as easy to use as Python. It allows you to build pretty complex pieces of software quickly and easily once you have a small amount of experience.
 
 Python can be used to create desktop applications and can also be used on the back end of web sites just as easily.
 
@@ -226,7 +233,8 @@ Python is also a language that is not restricted to a single platform. It will r
 
 **Language to learn:** C++, C# or Swift
 
-<img class="wp-image-1025 alignleft" src="https://res.cloudinary.com/djxscnpzf/image/upload/v1466092662/Apple_Swift_logo_u0ghec.jpg" alt="swift language" width="256" height="256" />This is another one that is totally dependant on the platform you want to built applications on.
+![swift language](https://res.cloudinary.com/djxscnpzf/image/upload/v1466092662/Apple_Swift_logo_u0ghec.jpg){: class="alignleft" width="256" height="256"}
+This is another one that is totally dependant on the platform you want to built applications on.
 
 If you want to get into developing for the Mac, much like developing for iOS, you should learn Apple&#8217;s programming language Swift.
 
@@ -244,7 +252,8 @@ Although, as a language to start with, it is way too complex and you will just g
 
 **Language to learn:** Assembly code and C/C++.
 
-<img class="alignleft wp-image-1014" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1466091581/8_relnja.jpg" width="400" height="350" />Computer security is an extremely large field and simply saying &#8220;learn assembly code and you will understand it&#8221; is a gross oversimplification. Although, having the ability to write assembly code will greatly help you on your journey to learning computer security.
+![computer security](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1466091581/8_relnja.jpg){: class="alignleft" width="400" height="350"}
+Computer security is an extremely large field and simply saying &#8220;learn assembly code and you will understand it&#8221; is a gross oversimplification. Although, having the ability to write assembly code will greatly help you on your journey to learning computer security.
 
 So what is assembly code? It is the lowest level programming language you can get before you start writing 1s and 0s directly into the computer. It is telling the computer exactly what to do with every single byte.
 
@@ -258,7 +267,7 @@ If you are interested in going down a security route then you can start off by l
 
 There are so many languages that are regularly used to create small indie games that you really can just take you pick. Python, C#, Java and JavaScript are commonly used by hobbyists to make small games.
 
-<img class="aligncenter wp-image-1028" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1466092856/gaymers_qgfm0d.jpg" alt="Making games" width="800" height="451" />
+![Making games](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1466092856/gaymers_qgfm0d.jpg){: class="aligncenter" width="800" height="451"}
 
 Big console games and computer games will typically have a lot of C++ and assembly code in them to take advantage of the extreme efficiency that is available with those languages.
 
@@ -288,7 +297,7 @@ There are obviously a lot more languages that will also get you a great job. C, 
 
 No. Really. Learn them all.
 
-<img class="alignright wp-image-1015" src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1466091618/9903c7c14add3fd0758b7b5b80c24d48101f296f13ce34736799a82c71f61bc2_rdacwx.jpg" alt="best programmer of all time" width="400" height="300" />
+![best programmer of all time](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1466091618/9903c7c14add3fd0758b7b5b80c24d48101f296f13ce34736799a82c71f61bc2_rdacwx.jpg){: class="alignright" width="400" height="300"}
 
 ### Learn the art of programming, not a given language
 

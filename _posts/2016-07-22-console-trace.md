@@ -14,13 +14,13 @@ tags:
 ---
 ## Little Known But Powerful Tool &#8211; console.trace()
 
-A while ago I released a post and a video about [using console.table]({{site.baseurl}}/tips-tricks/console-log-table/){: target="_blank"}<!--_--> as part of your javascript debugging arsenal. I got a great reception from it and many people said they where shocked it wasn&#8217;t more well known. So now I shall continue that with console.trace.
+A while ago I released a post and a video about [using console.table]({{site.baseurl}}/tutorials/console-log-table/){: target="_blank"}<!--_--> as part of your javascript debugging arsenal. I got a great reception from it and many people said they where shocked it wasn&#8217;t more well known. So now I shall continue that with console.trace.
 
-A few weeks ago, an [article popped up on Medium](https://medium.com/outsystems-experts/beyond-console-debugging-tricks-f7d0d7f5df4#.ghug71xq6){: target="_blank"}<!--_--> that took a run through more of the console API &#8211; one of which was console.trace. It has gained a lot of traction and many people are talking about it. This has lead me into creating [my own series]({{site.baseurl}}/tips-tricks/javascript-tips/){: target="_blank"}<!--_--> going over some more of the powerful tools at your disposal &#8211; much like I did with [console.table]({{site.baseurl}}/tips-tricks/console-log-table/){: target="_blank"}<!--_-->
+A few weeks ago, an [article popped up on Medium](https://medium.com/outsystems-experts/beyond-console-debugging-tricks-f7d0d7f5df4#.ghug71xq6){: target="_blank"}<!--_--> that took a run through more of the console API &#8211; one of which was console.trace. It has gained a lot of traction and many people are talking about it. This has lead me into creating [my own series]({{site.baseurl}}/tags/javascript/){: target="_blank"}<!--_--> going over some more of the powerful tools at your disposal &#8211; much like I did with [console.table]({{site.baseurl}}/tutorials/console-log-table/){: target="_blank"}<!--_-->
 
 ### The First Of Many
 
-This post will be the start of a mini series that will be focusing on different [tools that JavaScript developers can use]({{site.baseurl}}/tips-tricks/javascript-tips/){: target="_blank"}<!--_--> to speed up their debugging workflow.
+This post will be the start of a mini series that will be focusing on different tools that JavaScript developers can use to speed up their debugging workflow.
 
 I wanted to start with console.trace because it is such a powerful tool that has a huge range of useful applications and I know it has certainly saved me a ton of time over my career.
 
@@ -30,7 +30,7 @@ As always, there is an accompanying video to go along with this post, so pick yo
 
 {% include video-embed.html videoID="QuO0UDkW2rk" %}
 
-Starting off, I just created a simple HTML structure that will allow us to call a [javascript]({{site.baseurl}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> file. This isn&#8217;t interesting, but I&#8217;ll show you the code anyway.
+Starting off, I just created a simple HTML structure that will allow us to call a [javascript]({{site.baseurl}}/tags/javascript/){: target="_blank"}<!--_--> file. This isn&#8217;t interesting, but I&#8217;ll show you the code anyway.
 
 {% highlight html linenos%}
 <html lang="en">
@@ -190,7 +190,7 @@ The benefit this time is that the console.trace was never actually in the javasc
 
 That&#8217;s all I have this time.
 
-I look forward to seeing you for the next part of this [Javascript debugging tips series]({{site.baseurl}}/tips-tricks/javascript-tips/){: target="_blank"}<!--_-->.
+I look forward to seeing you for the next part of this Javascript debugging tips series.
 
 But until then,
 

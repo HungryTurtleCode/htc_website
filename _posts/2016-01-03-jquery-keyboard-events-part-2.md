@@ -28,7 +28,7 @@ What this does is makes everything easier to read and understand at a glance. Ra
 
 ### How Do We Go About Modularising?
 
-What a great question! I&#8217;m glad you asked. There are many ways to do it but one common way is to create a [Javascript]({{site.baseurl}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> object that has methods (similar to functions). Each of these methods then handles a specific task within your application and then calls other methods when other tasks are required.
+What a great question! I&#8217;m glad you asked. There are many ways to do it but one common way is to create a [Javascript]({{site.baseurl}}/tags/javascript/){: target="_blank"}<!--_--> object that has methods (similar to functions). Each of these methods then handles a specific task within your application and then calls other methods when other tasks are required.
 
 **Don&#8217;t worry if you don&#8217;t understand objects and methods and all that fancy stuff.** Just follow along for now. We want to get you creating cool things for now. Worry about the rest later.
 

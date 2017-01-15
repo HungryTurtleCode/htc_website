@@ -5,9 +5,9 @@ author: Adrian
 layout: fullwidth
 permalink: /privacy-policy/
 ---
-**Last Revised: December 5, 2015**
+**Last Revised: January 15, 2017**
 
-Welcome to http://www.hungryturtledev.com (the “Site”). We understand that privacy online is important to users of our Site, especially when conducting business. This statement governs our privacy policies with respect to those users of the Site (“Visitors”) who visit without transacting business and Visitors who register to transact business on the Site and make use of the various services offered by HungryTurtleDev.co.uk (collectively, “Services”) (“Authorized Customers”).
+Welcome to http://www.hungryturtlecode.com (the “Site”). We understand that privacy online is important to users of our Site, especially when conducting business. This statement governs our privacy policies with respect to those users of the Site (“Visitors”) who visit without transacting business and Visitors who register to transact business on the Site and make use of the various services offered by HungryTurtleDev.co.uk (collectively, “Services”) (“Authorized Customers”).
 
 **&#8220;Personally Identifiable Information&#8221;**
 
@@ -75,7 +75,7 @@ We will let our Visitors and Authorized Customers know about changes to our priv
 
 **Links:**
 
-http://www.hungryturtledev.com contains links to other web sites. Please note that when you click on one of these links, you are moving to another web site. We encourage you to read the privacy statements of these linked sites as their privacy policies may differ from ours.
+http://www.hungryturtlecode.com contains links to other web sites. Please note that when you click on one of these links, you are moving to another web site. We encourage you to read the privacy statements of these linked sites as their privacy policies may differ from ours.
 
 Registered office address 23 Woodvale Avenue, Omagh, County Tyrone, BT79 0AU, United Kingdom.
 

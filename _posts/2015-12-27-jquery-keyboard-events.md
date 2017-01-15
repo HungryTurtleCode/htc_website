@@ -16,7 +16,7 @@ tags:
 
 I often hear people who are just getting into programming ask things like, &#8220;but how do I use this in the real world?&#8221;. It is all well and good understanding things from a theoretical standpoint, but it&#8217;s all about actually using that knowledge to make something awesome.
 
-So today I am going to explain how you can build a pretty simple effect using [jQuery]({{site.baseurl}}/tutorials/javascript-tuts/jquery-tuts/){:target="_blank"}<!--_--> by monitoring user keystrokes. 
+So today I am going to explain how you can build a pretty simple effect using [jQuery]({{site.baseurl}}/tags/jquery/){:target="_blank"}<!--_--> by monitoring user keystrokes. 
 
 ### But What Is This Awesome Effect?
 
@@ -50,7 +50,7 @@ So I decided to split this tutorial into two separate parts. The first part (thi
 
 Part 2 can be found [here]({{site.baseurl}}/tutorials/jquery-keyboard-events-part-2/){: target="_blank"}<!--_-->.
 
-The code written in this tutorial will be very much in the style of a typical [beginner JavaScript]({{site.baseurl}}/tips-tricks/javascript-tips/){:target="_blank"}<!--_--> and specifically jQuery developer.
+The code written in this tutorial will be very much in the style of a typical [beginner JavaScript]({{site.baseurl}}/tags/javascript/){:target="_blank"}<!--_--> and specifically jQuery developer.
 
 If just creating the effect is all you are after, this tutorial is probably all you need. If you are wanting to improve as a JS developer, then [part 2]({{site.baseurl}}/tutorials/jquery-keyboard-events-part-2/){: target="_blank"}<!--_--> is right up your alley.
 

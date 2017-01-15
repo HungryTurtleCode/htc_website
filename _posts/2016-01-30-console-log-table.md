@@ -13,7 +13,7 @@ tags:
 ---
 ## Is console.log The Only Option?
 
-Like me, many of you probably use console.log() to debug your [javascript]({{site.baseurl}}/tutorials/javascript-tuts/){: target="_blank"}<!--_--> javascript</a> code a lot of the time. The problem isn&#8217;t big enough to require the setting of breakpoints <!--more-->but you don&#8217;t want something intrusive like alert().
+Like me, many of you probably use console.log() to debug your [javascript]({{site.baseurl}}/tags/javascript/){: target="_blank"}<!--_--> javascript</a> code a lot of the time. The problem isn&#8217;t big enough to require the setting of breakpoints <!--more-->but you don&#8217;t want something intrusive like alert().
 
 Console.log() is great for that. But is it always the best solution?
 
@@ -145,7 +145,7 @@ Now we will see the following in the console:
 
 This is a very powerful part of the [console API](https://developer.mozilla.org/en/docs/Web/API/console){: target="_blank"}<!--_--> and I feel too few developers are aware of it. I hope you can take this knowledge and use it to become a better developer.
 
-Until next time, take a look at some more [javascript tips and tricks]({{site.baseurl}}/tips-tricks/javascript-tips/).
+Until next time, take a look at some more [javascript tips and tricks]({{site.baseurl}}/tags/javascript/).
 
 Stay hungry, keep coding.
 
