@@ -7,6 +7,7 @@ alias: /code-projects/angular-quiz-app/20-familiar-bootstrap/
 head-title: Part 20 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932383/Angular-quiz-part-20_jtmhg5.jpg
 excerpt: Some Really Familiar Bootstrap Markup This lesson isn’t introducing anything new. Infact, you will have seen much of this code before. What we are tackling is the area at the top of the results controller that shows what questions the user …
+loop: false
 categories:
   - Projects
 tags:

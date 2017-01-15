@@ -7,6 +7,7 @@ alias: /code-projects/angular-quiz-app/17-final-prompt/
 head-title: Part 17 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932361/Angular-quiz-part-17_blwjwc.jpg
 excerpt: The End Of The Quiz Controller Is Near The only thing left for us to do with the quiz controller is just prompt the user when they have finished just to confirm they want to move onto the results page. …
+loop: false
 categories:
   - Projects
 tags:

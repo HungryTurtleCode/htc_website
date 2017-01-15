@@ -7,6 +7,7 @@ alias: /code-projects/angular-quiz-app/16-bootstrap-alerts/
 head-title: Part 16 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932356/Angular-quiz-part-16_nvilyd.jpg
 excerpt: Errors Must Be Handled In All Apps Handling errors is a critical part of the life of a software developer. If you cannot handle errors, you will create code that has a ton of bugs and just doesn’t function satisfactorily. …
+loop: false
 categories:
   - Projects
 tags:

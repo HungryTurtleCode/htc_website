@@ -7,7 +7,9 @@ layout: default
 <div id="page-container">
   <main>
     {% for post in site.posts %}
-      {% include article-excerpt.html data=post %}
+      {% unless post.loop == false %}
+        {% include article-excerpt.html data=post %}
+      {% endunless %}
     {% endfor %}
   </main>
 

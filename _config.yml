@@ -24,6 +24,14 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hungryturtlecode.com" # the base hostname & protocol for your site, e.g. http://example.com
 
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      loop: true
+
 jekyll-archives:
   enabled:
     - tags

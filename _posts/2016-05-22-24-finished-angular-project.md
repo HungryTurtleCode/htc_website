@@ -7,6 +7,7 @@ alias: /code-projects/angular-quiz-app/24-finished-angular-project/
 head-title: Part 24 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932403/Angular-quiz-part-24_l0q3sc.jpg
 excerpt: We Have Made It To The End, Friends There is only one small thing that we still have left to do before you have your finished Angular project. That feature is just adding a button that will take us back …
+loop: false
 categories:
   - Projects
 tags:

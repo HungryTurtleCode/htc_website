@@ -7,6 +7,7 @@ alias: /code-projects/angular-quiz-app/7-angular-services/
 head-title: Part 7 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932298/Angular-quiz-part-7_hy22ev.jpg
 excerpt: Angular Services – Serving (Some) Of Your Needs Fully armed with the knowledge on how to hide and show HTML elements, we can now go ahead and create the quiz controller that we will show at the same time that …
+loop: false
 categories:
   - Projects
 tags:

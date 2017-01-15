@@ -7,6 +7,7 @@ alias: /code-projects/angular-quiz-app/3-ng-repeat-directive/
 head-title: Part 3 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932269/Angular-quiz-part-3_tuziev.jpg
 excerpt: Ng-Repeat Directive Will Do Your Work For You Now armed with the ability to create controller properties with some data attached then inserting that data into our HTML we can move on to create something useful.
+loop: false
 categories:
   - Projects
 tags:
