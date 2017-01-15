@@ -16,11 +16,7 @@
 title: Hungry Turtle Code
 permalink: /:categories/:title
 email: adrian@hungryturtlecode.com
-description: > # this means to ignore newlines until "baseurl:"
-  Hungry Turtle Code is a site dedicated to teaching developers of all
-  skill levels a bit more about code than they knew yesterday. Whether
-  you are starting from scratch or just looking for that one new tip that
-  will boost your workflow, there is probably something for you here.
+description: Hungry Turtle Code is a site dedicated to teaching developers of all skill levels a bit more about code than they knew yesterday. Whether you are starting from scratch or just looking for that one new tip that will boost your workflow, there is probably something for you here.
 # url: "https://hungryturtlecode.com" # the base hostname & protocol for your site, e.g. http://example.com
 url: "https://hungry-turtle-code.firebaseapp.com/"
 baseurl: ""
