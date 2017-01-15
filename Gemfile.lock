@@ -25,6 +25,8 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
+    jekyll-archives (2.1.1)
+      jekyll (>= 2.4)
     jekyll-feed (0.8.0)
       jekyll (~> 3.3)
     jekyll-livereload (0.2.2)
@@ -60,6 +62,7 @@ PLATFORMS
 DEPENDENCIES
   bourbon
   jekyll (= 3.3.1)
+  jekyll-archives
   jekyll-feed (~> 0.6)
   jekyll-livereload
   neat

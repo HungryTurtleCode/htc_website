@@ -24,6 +24,15 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hungryturtlecode.com" # the base hostname & protocol for your site, e.g. http://example.com
 
+jekyll-archives:
+  enabled:
+    - tags
+    - categories
+  layout: post
+  permalinks:
+    tag: '/tag/:name/'
+    category: '/:name/'
+
 default_share_img: /img/social.jpg # Change this image to something actually useful
 twitter_username: hungryturtledev
 github_username:  adiman9
@@ -34,6 +43,7 @@ markdown: kramdown
 # markdown: redcarpet
 gems:
   - jekyll-feed
+  - jekyll-archives
 exclude:
   - Gemfile
   - Gemfile.lock

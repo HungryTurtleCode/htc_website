@@ -22,3 +22,4 @@ group :jekyll_plugins do
    gem "neat"
 end
 gem "bourbon"
+gem 'jekyll-archives'
