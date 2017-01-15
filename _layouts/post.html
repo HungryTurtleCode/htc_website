@@ -17,11 +17,45 @@ layout: default
 
     {{content}}
 
-    {% include share.html %}
+    <div id="content-end">
+      {% include share.html %}
 
-    {% include tags.html data=page %}
+      {% include tags.html data=page %}
+    </div>
+
+    <div id="scroll-indicator"></div>
 
   </main>
 
+
   {% include sidebar.html %}
 </div>
+
+<script>
+  var scrollIndicator = document.getElementById('scroll-indicator');
+  var contentEnd  = document.getElementById('content-end');
+  var winHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  var timer;
+
+  function scrollPercFunc(){
+    var scrollTop = document.body.scrollTop;
+    var rectTop = contentEnd.getBoundingClientRect().top;
+
+    var distanceToBottom = rectTop - winHeight;
+    var perc = scrollTop / (scrollTop + distanceToBottom) * 100
+
+    scrollIndicator.style.width = perc + "%";
+  }
+
+  function runOnScroll(){
+    if(timer){
+      clearTimeout(timer);
+    }
+
+    timer = setTimeout(scrollPercFunc, 10);
+  }
+
+  window.addEventListener("scroll", runOnScroll);
+
+
+</script>
