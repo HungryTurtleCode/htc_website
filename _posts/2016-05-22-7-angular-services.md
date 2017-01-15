@@ -29,7 +29,7 @@ As always, you can read this article or you can watch the video below to get the
 
 {% include video-embed.html videoID="HrbkZO5Mt0g" %}
 
-[The next part can be found here]({{site.baseurl}}/projects/angular-quiz-app/8-dependency-injection/)
+[The next part can be found here]({{site.baseurl}}/projects/8-dependency-injection/)
 
 Below our list controller markup in the HTML we can create new controller div for our quiz. Just like we did with our list controller we will use the “controller as” syntax.
 
@@ -135,7 +135,7 @@ Don&#8217;t forget to add the script that references the factory to the end of t
 
 Now that we have the factory roughly built, we can start refactoring the list controller to remove the quizActive property and then inject the factory into the controller so we have access to the property again.
 
-I will see you over there in [part 8.]({{site.baseurl}}/projects/angular-quiz-app/8-dependency-injection/)
+I will see you over there in [part 8.]({{site.baseurl}}/projects/8-dependency-injection/)
 
 Adrian
 
@@ -143,29 +143,29 @@ Adrian
 ### Check Out The Whole Course Index
 
 1. [Getting Started]({{site.baseurl}}/projects/1-build-angular-quiz-app-scratch/)
-2. [Ng-Controller Directive and the (mis)use of $scope]({{site.baseurl}}/projects/angular-quiz-app/2-ng-controller-scope/)
-3. [Looping around with the ng-repeat directive]({{site.baseurl}}/projects/angular-quiz-app/3-ng-repeat-directive/)
-4. [Markup for the bootstrap modal]({{site.baseurl}}/projects/angular-quiz-app/4-bootstrap-modal/)
-5. [Using Angular Filters to create real time search]({{site.baseurl}}/projects/angular-quiz-app/5-angular-filters/)
-6. [The powerful ng-click directive]({{site.baseurl}}/projects/angular-quiz-app/6-ng-click-directive/)
+2. [Ng-Controller Directive and the (mis)use of $scope]({{site.baseurl}}/projects/2-ng-controller-scope/)
+3. [Looping around with the ng-repeat directive]({{site.baseurl}}/projects/3-ng-repeat-directive/)
+4. [Markup for the bootstrap modal]({{site.baseurl}}/projects/4-bootstrap-modal/)
+5. [Using Angular Filters to create real time search]({{site.baseurl}}/projects/5-angular-filters/)
+6. [The powerful ng-click directive]({{site.baseurl}}/projects/6-ng-click-directive/)
 7. *You Are Here*
-8. [What is this infamous dependency injection in Angular?]({{site.baseurl}}/projects/angular-quiz-app/8-dependency-injection/)
-9. [Let&#8217;s Build A Factory]({{site.baseurl}}/projects/angular-quiz-app/9-angular-factories/)
-10. [The ng-class directive]({{site.baseurl}}/projects/angular-quiz-app/10-ng-class/)
-11. [More Bootstrap Markup &#8211; The Well]({{site.baseurl}}/projects/angular-quiz-app/11-bootstrap-well/)
-12. [Adding some logic to the controller]({{site.baseurl}}/projects/angular-quiz-app/12-controller-logic/)
-13. [Making things disappear with ng-if]({{site.baseurl}}/projects/angular-quiz-app/13-ng-if/)
-14. [The $index property for ng-repeat]({{site.baseurl}}/projects/angular-quiz-app/14-index-for-ng-repeat/)
-15. [Reusing code is always a good idea]({{site.baseurl}}/projects/angular-quiz-app/15-reusing-code/)
-16. [Using Bootstrap to help with styling error messages]({{site.baseurl}}/projects/angular-quiz-app/16-bootstrap-alerts/)
-17. [The final prompt after the quiz]({{site.baseurl}}/projects/angular-quiz-app/17-final-prompt/)
-18. [Marking the quiz]({{site.baseurl}}/projects/angular-quiz-app/18-marking-the-quiz/)
-19. [More dependency injection]({{site.baseurl}}/projects/angular-quiz-app/19-angular-dependency-injection/)
-20. [Reusing and slightly modifying some previous Bootstrap]({{site.baseurl}}/projects/angular-quiz-app/20-familiar-bootstrap/)
-21. [More than one way to use ng-class]({{site.baseurl}}/projects/angular-quiz-app/21-function-with-ng-class/)
-22. [Another Angular Filter]({{site.baseurl}}/projects/angular-quiz-app/22-angular-number-filter/)
-23. [More usage of Ng-if]({{site.baseurl}}/projects/angular-quiz-app/23-angular-ng-if/)
-24. [Finishing The App]({{site.baseurl}}/projects/angular-quiz-app/24-finished-angular-project/)
+8. [What is this infamous dependency injection in Angular?]({{site.baseurl}}/projects/8-dependency-injection/)
+9. [Let&#8217;s Build A Factory]({{site.baseurl}}/projects/9-angular-factories/)
+10. [The ng-class directive]({{site.baseurl}}/projects/10-ng-class/)
+11. [More Bootstrap Markup &#8211; The Well]({{site.baseurl}}/projects/11-bootstrap-well/)
+12. [Adding some logic to the controller]({{site.baseurl}}/projects/12-controller-logic/)
+13. [Making things disappear with ng-if]({{site.baseurl}}/projects/13-ng-if/)
+14. [The $index property for ng-repeat]({{site.baseurl}}/projects/14-index-for-ng-repeat/)
+15. [Reusing code is always a good idea]({{site.baseurl}}/projects/15-reusing-code/)
+16. [Using Bootstrap to help with styling error messages]({{site.baseurl}}/projects/16-bootstrap-alerts/)
+17. [The final prompt after the quiz]({{site.baseurl}}/projects/17-final-prompt/)
+18. [Marking the quiz]({{site.baseurl}}/projects/18-marking-the-quiz/)
+19. [More dependency injection]({{site.baseurl}}/projects/19-angular-dependency-injection/)
+20. [Reusing and slightly modifying some previous Bootstrap]({{site.baseurl}}/projects/20-familiar-bootstrap/)
+21. [More than one way to use ng-class]({{site.baseurl}}/projects/21-function-with-ng-class/)
+22. [Another Angular Filter]({{site.baseurl}}/projects/22-angular-number-filter/)
+23. [More usage of Ng-if]({{site.baseurl}}/projects/23-angular-ng-if/)
+24. [Finishing The App]({{site.baseurl}}/projects/24-finished-angular-project/)
 
 
 
