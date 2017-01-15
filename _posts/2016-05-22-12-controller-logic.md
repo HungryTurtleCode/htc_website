@@ -8,7 +8,11 @@ alias: /code-projects/angular-quiz-app/12-controller-logic/
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932332/Angular-quiz-part-12_sfbie2.jpg
 excerpt: Controller Logic Keeps Us Going We set ourselves up nicely in the last part. The ng-click calls a function on the quizController every time the “continue” button is clicked. This function will then need to change the activeQuestion property to …
 categories:
+  - Projects
+tags:
+  - AngularJS
   - Basic Angular Quiz App
+  - Javascript
 ---
 ## Controller Logic Keeps Us Going
 

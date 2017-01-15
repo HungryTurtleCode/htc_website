@@ -8,7 +8,11 @@ head-title: Part 21 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932387/Angular-quiz-part-21_vaxed8.jpg
 excerpt: Deja Vu + A New Way To Use Ng-Class Much like the previous part, the markup in this part will be very similar to that of the markup in the quiz controller. But we will spice things up a bit …
 categories:
+  - Projects
+tags:
+  - AngularJS
   - Basic Angular Quiz App
+  - Javascript
 ---
 ## Deja Vu + A New Way To Use Ng-Class
 

@@ -8,7 +8,11 @@ head-title: Part 23 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932397/Angular-quiz-part-23_gxzkuu.jpg
 excerpt: Our Old Enemy – The Image Questions When we created the quiz controller we had the problem of the image urls displaying instead of the images themselves on image questions. We again face this problem in the results controller. Having …
 categories:
+  - Projects
+tags:
+  - AngularJS
   - Basic Angular Quiz App
+  - Javascript
 ---
 ## Our Old Enemy &#8211; The Image Questions
 

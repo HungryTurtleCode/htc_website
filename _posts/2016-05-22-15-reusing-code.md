@@ -8,7 +8,11 @@ head-title: Part 15 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932350/Angular-quiz-part-15_xy7gaj.jpg
 excerpt: Custom CSS For Image Feedback + Code Reuse Having nice user feedback is great, but move forward to the image questions and you will find that it all breaks. There is no feedback whatsoever for the image questions. In this …
 categories:
+  - Projects
+tags:
+  - AngularJS
   - Basic Angular Quiz App
+  - Javascript
 ---
 ## Custom CSS For Image Feedback + Code Reuse
 

@@ -8,7 +8,11 @@ head-title: Part 19 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932376/Angular-quiz-part-19_f7ugae.jpg
 excerpt: First Steps To Getting The Results We have finished the quiz controller so now it is time to start the results controller. In the last part we created a property called resultsActive, which is what we will use to trigger …
 categories:
+  - Projects
+tags:
+  - AngularJS
   - Basic Angular Quiz App
+  - Javascript
 ---
 ## First Steps To Getting The Results
 

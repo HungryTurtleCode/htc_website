@@ -8,7 +8,11 @@ alias: /code-projects/angular-quiz-app/11-bootstrap-well/
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932326/Angular-quiz-part-11_jxnkd4.jpg
 excerpt: Bootstrapping The Quiz Questions No waiting around here, let’s just jump straight into creating the markup for the questions in the quiz. The whole area will be surrounded in a bootstrap well and we will pull the questions from the …
 categories:
+  - Projects
+tags:
+  - AngularJS
   - Basic Angular Quiz App
+  - Javascript
 ---
 ## Bootstrapping The Quiz Questions
 

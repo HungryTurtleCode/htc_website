@@ -8,7 +8,11 @@ head-title: Part 2 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932261/Angular-quiz-part-2_j1jjhy.jpg
 excerpt: Using An Angular Controller To Add Content In the last part we wrote our first bits of Angular code. One of those bits was the code that instantiates the controller for our list view. In this part we will take …
 categories:
+  - Projects
+tags:
+  - AngularJS
   - Basic Angular Quiz App
+  - Javascript
 ---
 ## Using An Angular Controller To Add Content
 

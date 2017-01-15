@@ -8,7 +8,11 @@ head-title: Part 6 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932292/Angular-quiz-part-6_njlvtc.jpg
 excerpt: Ng-Click Directive And Ng-Show / Ng-Hide We’re nearly in a position to move away from our list controller and start building out the quiz controller. But before we can do that we need to create the “start quiz” button, which …
 categories:
+  - Projects
+tags:
+  - AngularJS
   - Basic Angular Quiz App
+  - Javascript
 ---
 ## Ng-Click Directive And Ng-Show / Ng-Hide
 

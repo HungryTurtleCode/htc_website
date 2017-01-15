@@ -8,7 +8,11 @@ head-title: Part 5 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932282/Angular-quiz-part-5_qjajqt.jpg
 excerpt: Angular Filters Create A Magic Search! Ok, enough playing around, let’s really dig into the power of AngularJS. Creating search functionality from scratch can be notoriously hard, but in this tutorial we will see how easy it is to create …
 categories:
+  - Projects
+tags:
+  - AngularJS
   - Basic Angular Quiz App
+  - Javascript
 ---
 ## Angular Filters Create A Magic Search!
 

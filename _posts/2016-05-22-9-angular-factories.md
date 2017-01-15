@@ -8,7 +8,11 @@ head-title: Part 9 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932313/Angular-quiz-part-9_sjwfx2.jpg
 excerpt: Mocking An API Request With Angular Factories We have already covered how to build a basic factory when we built the quizMetrics factory in a previous part. In this part, we will build another factory; this time to mock data …
 categories:
+  - Projects
+tags:
+  - AngularJS
   - Basic Angular Quiz App
+  - Javascript
 ---
 ## Mocking An API Request With Angular Factories
 

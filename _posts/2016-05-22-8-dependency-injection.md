@@ -8,7 +8,11 @@ head-title: Part 8 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932306/Angular-quiz-part-8_imuigb.jpg
 excerpt: Make The Factory Useful – Dependency Injection It is no use to us to have a factory if we cannot use it inside our controller. In this part we will inject the factory into the list controller so we can …
 categories:
+  - Projects
+tags:
+  - AngularJS
   - Basic Angular Quiz App
+  - Javascript
 ---
 ## Make The Factory Useful &#8211; Dependency Injection
 

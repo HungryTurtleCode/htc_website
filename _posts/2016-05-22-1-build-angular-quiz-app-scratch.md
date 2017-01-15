@@ -1,7 +1,7 @@
 ---
 title: Build An Angular Quiz App From Scratch
 head-title: AngularJS Quiz App Tutorial Part 1
-date: 2016-05-22T00:37:50+00:00
+date: 2016-05-22T20:26:51+00:00
 author: Adrian
 layout: post
 alias: /code-projects/1-build-angular-quiz-app-scratch/
@@ -11,6 +11,7 @@ categories:
   - Projects
 tags:
   - AngularJS
+  - Basic Angular Quiz App
   - Javascript
 ---
 ## I&#8217;ve Learnt Some JavaScript! What Now?
