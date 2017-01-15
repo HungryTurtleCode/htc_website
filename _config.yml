@@ -14,11 +14,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Hungry Turtle Code
-permalink: /:categories/:title
+permalink: /:categories/:title/
 email: adrian@hungryturtlecode.com
 description: Hungry Turtle Code is a site dedicated to teaching developers of all skill levels a bit more about code than they knew yesterday. Whether you are starting from scratch or just looking for that one new tip that will boost your workflow, there is probably something for you here.
 # url: "https://hungryturtlecode.com" # the base hostname & protocol for your site, e.g. http://example.com
-url: "https://hungry-turtle-code.firebaseapp.com/"
+url: "https://hungry-turtle-code.firebaseapp.com"
 baseurl: ""
 
 defaults:
