@@ -28,7 +28,9 @@ jekyll-archives:
   enabled:
     - tags
     - categories
-  layout: post
+  layouts:
+    tag: tags
+    category: category
   permalinks:
     tag: '/tag/:name/'
     category: '/:name/'

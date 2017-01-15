@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div id="page-container">
+  <main class="post-page">
+
+    <h1>Awesome {{page.title}} Posts</h1>
+
+    {% for post in page.posts %}
+      {% include article-excerpt.html data=post %}
+    {% endfor %}
+  </main>
+
+  {% include sidebar.html %}
+</div>
