@@ -2,8 +2,11 @@ import firebase from 'firebase';
 import HTC from './htc';
 
 class Auth{
-  constructor() {
-    this.onAuthChange();
+  constuctor(){
+    // TODO inject a database service Sun 22 Jan 2017 22:50:31 UTC
+  }
+  anonymousSignIn(){
+    // TODO anon sign in Sun 22 Jan 2017 22:46:37 UTC
   }
   facebookSignIn(){
     let provider = new firebase.auth.FacebookAuthProvider();
@@ -17,24 +20,25 @@ class Auth{
     let provider = new firebase.auth.GithubAuthProvider();
     return this.signInWithRedirect(provider);
   }
-  signOut(){
-    return firebase.auth().signOut();
-  }
   signInWithRedirect(provider){
     firebase.auth().signInWithRedirect(provider);
 
     return firebase.auth().getRedirectResult()
       .then(result => {
-        console.log(result);
         return result;
       })
   }
-  onAuthChange(){
+  onAuthChange(fn){
     firebase.auth().onAuthStateChanged((user) => {
       if(user){
-        console.log(user);
+        if(fn){
+          fn(user);
+        }
       }
     });
+  }
+  signOut(){
+    return firebase.auth().signOut();
   }
 }
 
