@@ -1,12 +1,10 @@
 import config from './config';
 import Auth from './auth';
+import $ from './htcQuery';
 
 const htc_auth = new Auth();
 
-let buttonSignin = document.getElementById('fb_signin');
-let buttonSignout = document.getElementById('fb_signout');
-
-buttonSignin.addEventListener('click', () => {
+$('#fb_signin').click((event) => {
   htc_auth.facebookSignIn()
     .then((result) => {
       console.log('here');
@@ -14,9 +12,8 @@ buttonSignin.addEventListener('click', () => {
     });
 });
 
-buttonSignout.addEventListener('click', () => {
+$('#fb_signout').click((event) => {
   htc_auth.signOut()
     .then(() => console.log('signed out'))
     .catch((err) => console.log('error signing out', err));
 });
-
