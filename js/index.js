@@ -1,1 +1,3 @@
-console.log('hello world');
+import common from './common';
+import components from './components';
+
