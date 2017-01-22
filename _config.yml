@@ -21,6 +21,8 @@ description: Hungry Turtle Code is a site dedicated to teaching developers of al
 url: "https://hungry-turtle-code.firebaseapp.com"
 baseurl: ""
 
+source: jekyll
+
 defaults:
   -
     scope:
@@ -59,8 +61,8 @@ exclude:
   - .scss
   - node_modules
   - package.json
-  - webpack.config
+  - webpack.config.js
   - database.rules.bolt
   - firebase.json
 include:
-  - pages
+  - src/pages
