@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import HTC from './htc';
 
 class Auth{
   constructor() {
@@ -37,4 +38,6 @@ class Auth{
   }
 }
 
-export default Auth;
+Auth.$inject = [];
+
+HTC.module('AuthService', Auth);
