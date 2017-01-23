@@ -1,11 +1,11 @@
 <div class="login-modal-container">
   <div class="modal">
     <div class="header">
-      <button class="log-in-header-btn active">Log In</button>
-      <button class="log-in-header-btn">Sign Up</button>
+      <button class="log-in-header-btn active" for="log-in-box">Log In</button>
+      <button class="log-in-header-btn" for="sign-up-box">Sign Up</button>
     </div>
 
-    <div class="container log-in active">
+    <div class="container log-in active" id="log-in-box">
       <span>Log In With:</span>
       <button class="fb">Facebook</button>
       <button class="gl">Google</button>
@@ -18,13 +18,18 @@
         <a id="forgot-pass-btn">Forgotten Password</a>
       </div>
     </div>
-    <div class="container sign-up">
-      <button class="fb">Sign Up With Facebook</button>
-      <button class="gl">Sign Up With Google</button>
-      <button class="gh">Sign Up With Github</button>
-      <input type="text" placeholder="Email">
-      <input type="password" placeholder="Password">
-      <input type="password" placeholder="Repeat Password">
+    <div class="container sign-up" id="sign-up-box">
+      <span>Sign Up With:</span>
+      <button class="fb">Facebook</button>
+      <button class="gl">Google</button>
+      <button class="gh">Github</button>
+      <div class="user-pass">
+        <span>OR</span>
+        <input type="text" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Repeat Password">
+        <button id="sign-in-button">Sign Up</button>
+      </div>
     </div>
   </div>
 </div>

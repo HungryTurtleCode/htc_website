@@ -1,4 +1,5 @@
 import HTC from '../common/htc';
+import $ from '../common/htcQuery';
 
 class Auth_Handler{
   constructor(AuthService) {
@@ -25,12 +26,18 @@ class Auth_Handler{
   ghSignin(){
     this.AuthService.githubSignIn();
   }
-  setActive(e, btns){
-    btns.forEach(btn => {
+  setActive(e){
+    let active = $('.login-modal-container .active');
+    active.forEach(btn => {
       btn.removeClass('active');
     });
 
-    // TODO add active class to the button that was clicked Mon 23 Jan 2017 12:34:22 UTC
+    let el = $(e.target, true);
+
+    el.addClass('active');
+
+    let forItem = el.attr('for');
+    $('#' + forItem).addClass('active');
   }
   signOut(){
     this.AuthService.signOut()
