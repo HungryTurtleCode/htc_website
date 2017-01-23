@@ -42,6 +42,19 @@ HtcQuery.prototype.addClass = function(cl){
     }
   }
 }
+HtcQuery.prototype.hasClass = function(cl){
+  let classes = this.el.className.split(" ");
+
+  for(let i = 0; i < classes.length; i++) {
+    if(classes[i] === cl) {
+      return true;
+    }
+  }
+  return false;
+}
+HtcQuery.prototype.hide = function(){
+  this.el.style.display = 'none';
+}
 HtcQuery.prototype.indexOf = function(item){
   for(let i = 0; i < this.el.length; i++){
     if(this.el[i] == item){

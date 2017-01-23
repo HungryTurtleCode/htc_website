@@ -47,6 +47,15 @@ class Auth_Handler{
       })
       .catch((err) => console.log('error signing out', err));
   }
+  closeModal(e){
+    e.stopPropagation();
+
+    let el = $(e.target, true);
+    if(el.hasClass('login-modal-container')){
+      el.hide();
+    }
+
+  }
 }
 
 Auth_Handler.$inject = ['AuthService'];
