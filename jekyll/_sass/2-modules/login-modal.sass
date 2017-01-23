@@ -1,0 +1,118 @@
+$border-radius: 0.6em
+$border-color: $primary-color
+
+.login-modal-container
+  font-size: 1rem
+  +position(absolute, 0 0 0 0)
+  background: rgba(0,0,0,0.6)
+  display: flex
+  justify-content: center
+  align-items: center
+
+  .modal
+    background: white
+    border-radius: $border-radius
+    box-shadow: 5px 5px 25px #333
+    width: 500px
+    max-width: 100%
+
+    .header
+      border-bottom: 2px solid $border-color
+      display: flex
+
+      button
+        flex: 0 0 50%
+        padding: 0.6em 0
+        background: white
+        outline: none
+        border: none
+        cursor: pointer
+        transition: background 0.4s ease
+        color: #333
+
+        &:first-child
+          border-top-left-radius: $border-radius
+          border-right: 1px solid $border-color
+
+        &:last-child
+          border-top-right-radius: $border-radius
+          border-left: 1px solid $border-color
+
+        &:hover
+          background: #efefef
+
+        &.active
+          background: $border-color
+
+    .container
+      margin-bottom: 0.6em
+      display: none
+      padding: 1.2em
+
+      button, input
+        width: 100%
+        padding: 0.8em
+        border: 0
+        margin-bottom: 0.7em
+        border-radius: 0.3em
+        cursor: pointer
+        transition: background 0.3s ease
+
+        &.fb
+          background: $facebook
+          color: white
+
+          &:hover
+            background: shade($facebook, 10%)
+
+        &.gl
+          background: $google
+          color: white
+
+          &:hover
+            background: shade($google, 10%)
+
+        &.gh
+          background: #ddd
+
+          &:hover
+            background: shade(#ddd, 10%)
+
+      input
+        border: 1px solid #ddd
+
+      &.log-in
+
+      &.sign-up
+
+      &.active
+        display: block
+
+      .user-pass
+        text-align: center
+
+        span
+          display: inline-block
+          margin: 1em 0
+          font-weight: bold
+
+        button
+          background-color: $primary-color
+          width: 50%
+          float: right
+          cursor: pointer
+          margin-top: 0.5em
+          transition: all 0.3s ease
+
+          &:hover
+            background-color: shade($primary-color, 10%)
+
+        a
+          float: left
+          display: block
+          cursor: pointer
+          color: $secondary-color
+          font-size: 0.7em
+          margin-top: 3em
+
+
