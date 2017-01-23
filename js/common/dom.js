@@ -12,11 +12,18 @@ class Dom{
     this.registerEvents();
   }
   cacheDom(){
-    this.fbSignin = $('#fb_signin');
+    this.fbSignin = $('.log-in .fb');
+    this.glSignin = $('.log-in .gl');
+    this.ghSignin = $('.log-in .gh');
+    this.logInHeaderBtns = $('.log-in-header-btn');
+
     this.signOut = $('#signout');
   }
   registerEvents(){
     this.fbSignin.click(() => this.auth_handler.fbSignin());
+    this.glSignin.click(() => this.auth_handler.fbSignin());
+    this.ghSignin.click(() => this.auth_handler.fbSignin());
+    this.logInHeaderBtns.click(e => this.auth_handler.setActive(e, this.logInHeaderBtns))
     this.signOut.click(() => this.auth_handler.signOut());
   }
 }

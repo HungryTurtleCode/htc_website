@@ -19,6 +19,19 @@ class Auth_Handler{
   fbSignin(){
     this.AuthService.facebookSignIn();
   }
+  glSignin(){
+    this.AuthService.googleSignIn();
+  }
+  ghSignin(){
+    this.AuthService.githubSignIn();
+  }
+  setActive(e, btns){
+    btns.forEach(btn => {
+      btn.removeClass('active');
+    });
+
+    // TODO add active class to the button that was clicked Mon 23 Jan 2017 12:34:22 UTC
+  }
   signOut(){
     this.AuthService.signOut()
       .then(() => {
