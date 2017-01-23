@@ -56,7 +56,6 @@ HtcQuery.prototype.hide = function(){
   this.el.style.display = 'none';
 }
 HtcQuery.prototype.show = function(type){
-  console.log(this.el);
   for(let i = 0; i < this.el.length; i++){
     this.el[i].style.display = type || 'block';
   }

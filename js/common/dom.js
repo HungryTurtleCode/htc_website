@@ -22,13 +22,27 @@ class Dom{
     this.signOut = $('#signout');
   }
   registerEvents(){
-    this.fbSignin.click(() => this.auth_handler.fbSignin());
-    this.glSignin.click(() => this.auth_handler.fbSignin());
-    this.ghSignin.click(() => this.auth_handler.fbSignin());
-    this.logInHeaderBtns.click(e => this.auth_handler.setActive(e));
-    this.modal.click(e => this.auth_handler.closeModal(e));
-    this.signUpRegister.click(() => this.auth_handler.showModal(this.modal));
-    this.signOut.click(() => this.auth_handler.signOut());
+    this.fbSignin.click(() =>
+      this.auth_handler.fbSignin()
+    );
+    this.glSignin.click(() =>
+      this.auth_handler.fbSignin()
+    );
+    this.ghSignin.click(() =>
+      this.auth_handler.fbSignin()
+    );
+    this.logInHeaderBtns.click(e =>
+      this.auth_handler.setActive(e)
+    );
+    this.modal.click(e =>
+      this.auth_handler.closeModal(e)
+    );
+    this.signUpRegister.click(() =>
+      this.auth_handler.showModal(this.modal)
+    );
+    this.signOut.click(() =>
+      this.auth_handler.signOut()
+    );
   }
 }
 
