@@ -56,6 +56,9 @@ class Auth_Handler{
     }
 
   }
+  showModal(modal){
+    modal.show('flex');
+  }
 }
 
 Auth_Handler.$inject = ['AuthService'];

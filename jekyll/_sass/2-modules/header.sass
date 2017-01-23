@@ -13,6 +13,26 @@ header
     .logo
       margin-left: 220px
 
+    .header-panel
+      display: inline-block
+      vertical-align: top
+      height: 100px
+      float: right
+
+      #signin-btn
+        border: 0
+        background: $secondary-color
+        color: white
+        padding: 0.4em 1em
+        border-radius: 0.2em
+        cursor: pointer
+        transition: all 0.3s ease
+        outline: none
+
+        &:hover
+          background: shade($primary-color, 10%)
+
+
   nav
     background-color: $primary-color
 

@@ -17,6 +17,7 @@ class Dom{
     this.ghSignin = $('.log-in .gh');
     this.logInHeaderBtns = $('.log-in-header-btn');
     this.modal = $('.login-modal-container');
+    this.signUpRegister = $('#signin-btn');
 
     this.signOut = $('#signout');
   }
@@ -24,8 +25,9 @@ class Dom{
     this.fbSignin.click(() => this.auth_handler.fbSignin());
     this.glSignin.click(() => this.auth_handler.fbSignin());
     this.ghSignin.click(() => this.auth_handler.fbSignin());
-    this.logInHeaderBtns.click(e => this.auth_handler.setActive(e))
-    this.modal.click(e => this.auth_handler.closeModal(e))
+    this.logInHeaderBtns.click(e => this.auth_handler.setActive(e));
+    this.modal.click(e => this.auth_handler.closeModal(e));
+    this.signUpRegister.click(() => this.auth_handler.showModal(this.modal));
     this.signOut.click(() => this.auth_handler.signOut());
   }
 }

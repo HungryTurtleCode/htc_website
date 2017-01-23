@@ -55,6 +55,12 @@ HtcQuery.prototype.hasClass = function(cl){
 HtcQuery.prototype.hide = function(){
   this.el.style.display = 'none';
 }
+HtcQuery.prototype.show = function(type){
+  console.log(this.el);
+  for(let i = 0; i < this.el.length; i++){
+    this.el[i].style.display = type || 'block';
+  }
+}
 HtcQuery.prototype.indexOf = function(item){
   for(let i = 0; i < this.el.length; i++){
     if(this.el[i] == item){
