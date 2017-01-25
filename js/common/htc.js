@@ -103,7 +103,7 @@ class HTC{
   injector(Constructor){
     if(typeof Constructor === 'object') return Constructor;
 
-    let inject = Constructor.$inject;
+    let inject = Constructor.$inject || [];
 
     if(this.checkInjectables(inject, Constructor)){
       let args = this.getInjectables(inject);
