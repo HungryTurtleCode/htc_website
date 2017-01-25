@@ -1,5 +1,7 @@
 import $ from './htcQuery';
 
+let htcDirs = ['click', 'track'];
+
 class HTC{
   constructor() {
     this.modules = {};
@@ -57,6 +59,28 @@ class HTC{
       fn[el.attributes['htc-track'].value] = $(el, true);
     });
 
+    let allElems = el.querySelectorAll('*');
+
+    for(let i = 0; i < allElems.length; i++){
+      let attrs = allElems[i].attributes;
+      for(let y = 0; y < attrs.length; y++){
+        let name = attrs[y].name;
+        let htc = name.match(/htc-([^]+)/m);
+        if(htc && htc[1]){
+          let dir = htc[1];
+          if(htcDirs.indexOf(dir) === -1){
+            fn[dir] = fn[dir] || {};
+            fn[dir][attrs[y].value] = $(allElems[i], true);
+          }
+        }
+      }
+    }
+
+    Object.prototype.forEach = function(){
+      Object.keys(this).forEach(key => {
+        arguments[0](this[key])
+      });
+    }
   }
   initModules(){
     Object.keys(this.modules).forEach(key => {

@@ -1,8 +1,13 @@
 import HTC from '../common/htc';
 
 class ModalCtrl{
-  constructor() {
+  constructor() {}
 
+  toggleView(view){
+    this.authview.forEach(el => el.hide());
+    this['header-buttons'].forEach(el => el.removeClass('active'));
+    this['header-buttons'][view].addClass('active');
+    this.authview[view].show();
   }
   $onInit(){
     this.modalContainer.click((e) => {

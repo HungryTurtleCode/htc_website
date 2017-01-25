@@ -1,12 +1,12 @@
 <div class="login-modal-container" htc-controller="modalCtrl" htc-track="modalContainer">
   <div class="modal" htc-track="modal">
     <div class="header">
-      <button class="log-in-header-btn active" for="log-in-box">Log In</button>
-      <button class="log-in-header-btn" for="sign-up-box">Sign Up</button>
+      <button class="log-in-header-btn active" for="log-in-box" htc-click="$ctrl.toggleView('log-in')" htc-header-buttons="log-in">Log In</button>
+      <button class="log-in-header-btn" for="sign-up-box" htc-click="$ctrl.toggleView('sign-up')" htc-header-buttons="sign-up">Sign Up</button>
     </div>
 
-    <div class="container log-in active" id="log-in-box">
-      <span>Log In With:</span>
+    <div class="container log-in active" id="log-in-box" htc-authview="log-in">
+      <span htc-random="hello">Log In With:</span>
       <button class="fb">Facebook</button>
       <button class="gl">Google</button>
       <button class="gh">Github</button>
@@ -18,7 +18,7 @@
         <a id="forgot-pass-btn">Forgotten Password</a>
       </div>
     </div>
-    <div class="container sign-up" id="sign-up-box">
+    <div class="container sign-up" id="sign-up-box" htc-authview="sign-up">
       <span>Sign Up With:</span>
       <button class="fb">Facebook</button>
       <button class="gl">Google</button>
