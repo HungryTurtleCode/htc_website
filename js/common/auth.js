@@ -5,8 +5,12 @@ class Auth{
   constuctor(){
     // TODO inject a database service Sun 22 Jan 2017 22:50:31 UTC
   }
+  $onInit(){
+    this.onAuthChange(msg => console.log(msg));
+  }
   anonymousSignIn(){
-    // TODO anon sign in Sun 22 Jan 2017 22:46:37 UTC
+    firebase.auth().signInAnonymously()
+      .catch(err => console.error(err));
   }
   facebookSignIn(){
     let provider = new firebase.auth.FacebookAuthProvider();
@@ -34,6 +38,8 @@ class Auth{
         if(fn){
           fn(user);
         }
+      }else{
+        this.anonymousSignIn();
       }
     });
   }
