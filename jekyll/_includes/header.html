@@ -12,8 +12,12 @@
     </a>
 
     <div class="header-panel">
-      <div class="sign-in-register">
-        <button id="signin-btn" class="auth-button">Log In / Register</button>
+      <div class="sign-in-register" htc-controller="headerCtrl">
+        <button id="signin-btn"
+          htc-click="$ctrl.showModal()"
+          class="auth-button">
+            Log In / Register
+        </button>
       </div>
     </div>
   </div>
