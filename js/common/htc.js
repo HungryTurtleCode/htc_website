@@ -59,6 +59,18 @@ class HTC{
       fn[el.attributes['htc-track'].value] = $(el, true);
     });
 
+    const dictObj = function(name){
+      this.name = name;
+    }
+
+    dictObj.prototype.forEach = function(fn){
+      Object.keys(this).forEach(key => {
+        if(key !== 'name'){
+          fn(this[key])
+        }
+      });
+    }
+
     let allElems = el.querySelectorAll('*');
 
     for(let i = 0; i < allElems.length; i++){
@@ -69,18 +81,13 @@ class HTC{
         if(htc && htc[1]){
           let dir = htc[1];
           if(htcDirs.indexOf(dir) === -1){
-            fn[dir] = fn[dir] || {};
+            fn[dir] = fn[dir] || new dictObj(dir);
             fn[dir][attrs[y].value] = $(allElems[i], true);
           }
         }
       }
     }
 
-    Object.prototype.forEach = function(){
-      Object.keys(this).forEach(key => {
-        arguments[0](this[key])
-      });
-    }
   }
   initModules(){
     Object.keys(this.modules).forEach(key => {
