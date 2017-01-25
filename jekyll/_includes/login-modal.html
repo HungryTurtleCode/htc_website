@@ -7,9 +7,9 @@
 
     <div class="container log-in active" id="log-in-box" htc-authview="log-in">
       <span htc-random="hello">Log In With:</span>
-      <button class="fb">Facebook</button>
-      <button class="gl">Google</button>
-      <button class="gh">Github</button>
+      <button class="fb" htc-click="$ctrl.authService.facebookSignIn()">Facebook</button>
+      <button class="gl" htc-click="$ctrl.authService.googleSignIn()">Google</button>
+      <button class="gh" htc-click="$ctrl.authService.githubSignIn()">Github</button>
       <div class="user-pass">
         <span>OR</span>
         <input type="text" placeholder="Email">
@@ -20,9 +20,9 @@
     </div>
     <div class="container sign-up" id="sign-up-box" htc-authview="sign-up">
       <span>Sign Up With:</span>
-      <button class="fb">Facebook</button>
-      <button class="gl">Google</button>
-      <button class="gh">Github</button>
+      <button class="fb" htc-click="$ctrl.authService.facebookSignIn()">Facebook</button>
+      <button class="gl" htc-click="$ctrl.authService.googleSignIn()">Google</button>
+      <button class="gh" htc-click="$ctrl.authService.githubSignIn()">Github</button>
       <div class="user-pass">
         <span>OR</span>
         <input type="text" placeholder="Email">

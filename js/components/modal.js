@@ -1,8 +1,9 @@
 import HTC from '../common/htc';
 
 class ModalCtrl{
-  constructor() {}
-
+  constructor(authService) {
+    this.authService = authService;
+  }
   toggleView(view){
     this.authview.forEach(el => el.hide());
     this['header-buttons'].forEach(el => el.removeClass('active'));
@@ -19,6 +20,6 @@ class ModalCtrl{
   }
 }
 
-ModalCtrl.$inject = [];
+ModalCtrl.$inject = ['AuthService'];
 
 HTC.module('modalCtrl', ModalCtrl)
