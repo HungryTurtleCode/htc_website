@@ -9,15 +9,32 @@ class HtcQuery{
 }
 
 HtcQuery.prototype.forEach = function(fn){
-  this.el.forEach(el => {
-    el = new HtcQuery(el, true);
-    fn(el)
-  });
+  if(typeof this.el === 'object' && !this.el.length){
+    fn(this.el);
+  }else{
+    this.el.forEach(el => {
+      if(el instanceof HtcQuery){
+        fn(el.el)
+      }else{
+        el = new HtcQuery(el, true);
+        fn(el.el)
+      }
+    });
+  }
   return this;
 }
 
-HtcQuery.prototype.click = function(fn){
-  this.forEach(el => el.el.addEventListener('click', fn));
+HtcQuery.prototype.click = function(fn, stopProp){
+  let func = fn;
+  if(stopProp){
+    func = function(e){
+      e.stopPropagation();
+      if(e.target === this){
+        fn(e);
+      }
+    }
+  }
+  this.forEach(el => el.addEventListener('click', func));
   return this;
 }
 
@@ -53,9 +70,14 @@ HtcQuery.prototype.hasClass = function(cl){
   return false;
 }
 HtcQuery.prototype.hide = function(){
-  this.el.style.display = 'none';
+  this.forEach(el => {
+    el.style.display = 'none'
+  });
 }
 HtcQuery.prototype.show = function(type){
+  if(!this.el.length){
+    this.el = [this.el];
+  }
   for(let i = 0; i < this.el.length; i++){
     this.el[i].style.display = type || 'block';
   }
