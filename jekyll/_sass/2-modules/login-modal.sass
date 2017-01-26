@@ -1,5 +1,4 @@
-$border-radius: 0.6em
-$border-color: $primary-color
+$border-radius: 0em
 
 .login-modal-container
   z-index: 100
@@ -13,12 +12,11 @@ $border-color: $primary-color
   .modal
     background: white
     border-radius: $border-radius
-    box-shadow: 5px 5px 25px #333
+    box-shadow: 0 5px 15px rgba(0,0,0,.5)
     width: 500px
     max-width: 100%
 
     .header
-      border-bottom: 2px solid $border-color
       display: flex
 
       button
@@ -33,30 +31,40 @@ $border-color: $primary-color
 
         &:first-child
           border-top-left-radius: $border-radius
-          border-right: 1px solid $border-color
 
         &:last-child
           border-top-right-radius: $border-radius
-          border-left: 1px solid $border-color
 
         &:hover
           background: #efefef
 
         &.active
-          background: $border-color
+          background: $primary-color
+          color: white
+          font-weight: bold
 
     .container
       margin-bottom: 0.6em
       display: none
       padding: 1.2em
+      color: #999
+      text-align: center
+
+      h4
+        font-weight: normal
+        font-size: 1.5em
+        margin-top: 0.5em
+
+      button
+        cursor: pointer
 
       button, input
         width: 100%
         padding: 0.8em
         border: 0
         margin-bottom: 0.7em
-        border-radius: 0.3em
-        cursor: pointer
+        // border-radius: $border-radius/2
+        border-radius: 0.2em
         transition: background 0.3s ease
 
         &.fb
@@ -85,7 +93,6 @@ $border-color: $primary-color
       span
         display: inline-block
         margin: 1em 0
-        font-weight: bold
 
       &.log-in
 
@@ -97,6 +104,28 @@ $border-color: $primary-color
       .user-pass
         text-align: center
 
+        .divider
+          margin: 1.5em 0 2em 0
+          position: relative
+          text-transform: uppercase
+          z-index: 0
+
+          &:before
+            content: ""
+            position: absolute
+            left: 0
+            top: 12px
+            background: #e5e5e5
+            height: 1px
+            width: 100%
+            z-index: -1
+
+          span
+            margin: 0
+            background: white
+            padding: 0 0.6em
+            display: inline-block
+
         button
           background-color: $primary-color
           width: 50%
@@ -104,6 +133,9 @@ $border-color: $primary-color
           cursor: pointer
           margin-top: 0.5em
           transition: all 0.3s ease
+          margin-bottom: 2em
+          color: white
+          font-weight: bold
 
           &:hover
             background-color: shade($primary-color, 10%)

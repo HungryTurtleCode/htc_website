@@ -6,12 +6,14 @@
     </div>
 
     <div class="container log-in active" id="log-in-box" htc-authview="log-in">
-      <span htc-random="hello">Log In With:</span>
+      <h4>Log In</h4>
       <button class="fb" htc-click="$ctrl.authService.facebookSignIn()">Facebook</button>
       <button class="gl" htc-click="$ctrl.authService.googleSignIn()">Google</button>
       <button class="gh" htc-click="$ctrl.authService.githubSignIn()">Github</button>
       <div class="user-pass">
-        <span>OR</span>
+        <div class="divider">
+          <span>OR</span>
+        </div>
         <input type="text" placeholder="Email">
         <input type="password" placeholder="Password">
         <button id="sign-in-button">Log In</button>
@@ -19,12 +21,14 @@
       </div>
     </div>
     <div class="container sign-up" id="sign-up-box" htc-authview="sign-up">
-      <span>Sign Up With:</span>
+      <h4>Sign Up</h4>
       <button class="fb" htc-click="$ctrl.authService.facebookSignIn()">Facebook</button>
       <button class="gl" htc-click="$ctrl.authService.googleSignIn()">Google</button>
       <button class="gh" htc-click="$ctrl.authService.githubSignIn()">Github</button>
       <div class="user-pass">
-        <span>OR</span>
+        <div class="divider">
+          <span>OR</span>
+        </div>
         <input type="text" placeholder="Email">
         <input type="password" placeholder="Password">
         <input type="password" placeholder="Repeat Password">
