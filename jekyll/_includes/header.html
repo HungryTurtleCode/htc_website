@@ -13,10 +13,17 @@
 
     <div class="header-panel">
       <div class="sign-in-register" htc-controller="headerCtrl">
-        <button id="signin-btn"
+        <button
+          htc-track="header-signin-btn"
           htc-click="$ctrl.showModal()"
           class="auth-button">
             Log In / Register
+        </button>
+        <button
+          htc-track="header-logout"
+          htc-click="$ctrl.auth.signOut()"
+          class="auth-button signout">
+            Sign Out
         </button>
       </div>
     </div>

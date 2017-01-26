@@ -6,6 +6,7 @@ class Auth{
     // TODO inject a database service Sun 22 Jan 2017 22:50:31 UTC
   }
   $onInit(){
+    this.authSubs = [];
     this.onAuthChange(msg => console.log(msg));
   }
   anonymousSignIn(){
@@ -41,7 +42,13 @@ class Auth{
   forgottenPass(){
     // TODO flesh out this method to call firebase's api for forgotten password Wed 25 Jan 2017 05:31:45 UTC
   }
-  onAuthChange(fn){
+  subscribeAuthChange(fn){
+    this.authSubs.push(fn);
+    return () => {
+      this.authSubs.splice(fn);
+    }
+  }
+  onAuthChange(){
     return firebase.auth().onAuthStateChanged((user) => {
       if(user){
         if(user.isAnonymous){
@@ -51,9 +58,7 @@ class Auth{
           // TODO add user to active campaign and store a flag in firebase to show that email has been added to active campaign to avoid duplicate requests Wed 25 Jan 2017 05:30:20 UTC
           // TODO sync user data to firebase Wed 25 Jan 2017 05:27:21 UTC
         }
-        if(fn){
-          fn(user);
-        }
+        this.authSubs.forEach(sub => sub(user));
       }else{
         this.anonymousSignIn();
       }

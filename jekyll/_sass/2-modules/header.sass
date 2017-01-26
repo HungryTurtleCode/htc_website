@@ -19,7 +19,7 @@ header
       height: 100px
       float: right
 
-      #signin-btn
+      .auth-button
         border: 0
         background: $secondary-color
         color: white
@@ -31,6 +31,9 @@ header
 
         &:hover
           background: shade($primary-color, 10%)
+
+        &.signout
+          display: none
 
 
   nav
