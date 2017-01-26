@@ -22,12 +22,14 @@ $border-radius: 0em
       button
         flex: 0 0 50%
         padding: 0.6em 0
-        background: white
         outline: none
         border: none
         cursor: pointer
         transition: background 0.4s ease
-        color: #333
+        background: $primary-color
+        color: white
+        font-weight: bold
+        box-shadow: inset 2px -2px 10px rgba(0, 0, 0, 0.2)
 
         &:first-child
           border-top-left-radius: $border-radius
@@ -36,12 +38,13 @@ $border-radius: 0em
           border-top-right-radius: $border-radius
 
         &:hover
-          background: #efefef
+          background: shade($primary-color, 30%)
 
         &.active
-          background: $primary-color
-          color: white
-          font-weight: bold
+          box-shadow: none
+          font-weight: normal
+          background: white
+          color: #333
 
     .container
       margin-bottom: 0.6em
