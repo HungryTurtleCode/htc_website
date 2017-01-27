@@ -17,8 +17,8 @@ class HeaderCtrl{
       this['header-logout'].show();
     }
   }
-  showModal(){
-    this.modal.show();
+  showModal(modal){
+    this.modal.show(modal);
   }
 }
 

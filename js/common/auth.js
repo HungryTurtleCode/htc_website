@@ -7,7 +7,7 @@ class Auth{
   }
   $onInit(){
     this.authSubs = [];
-    this.onAuthChange(msg => console.log(msg));
+    this.onAuthChange();
   }
   anonymousSignIn(){
     firebase.auth().signInAnonymously()
