@@ -11,22 +11,24 @@ class ModalCtrl{
     this.authview[view].show();
   }
   $onInit(){
-    this['sign-in-modal'].click((e) => {
-      this.hide('sign-in-modal');
-    }, true);
-    this['sign-out-modal'].click((e) => {
-      this.hide('sign-out-modal');
-    }, true);
+    this.modals.forEach(modal => {
+      modal.click((e) => {
+        modal.hide();
+      }, true)
+    });
   }
   signOut(){
     this.authService.signOut();
-    this.hide('sign-out-modal');
+    this.hide('sign-out');
   }
   hide(modal){
-    this[modal].hide();
+    this.modals[modal].hide();
   }
   show(modal){
-    this[modal].show('flex');
+    this.modals.forEach(modal => {
+      modal.hide();
+    });
+    this.modals[modal].show('flex');
   }
 }
 
