@@ -14,23 +14,20 @@
     <div class="header-panel">
       <div class="sign-in-register" htc-controller="headerCtrl">
         <button
+          htc-if="!$ctrl.loggedIn"
           htc-track="header-signin-btn"
           htc-click="$ctrl.showModal('sign-in')"
           class="auth-button">
             Log In / Register
         </button>
         <button
+          htc-if="$ctrl.loggedIn"
           htc-track="header-logout"
           htc-click="$ctrl.showModal('sign-out')"
           class="auth-button signout">
             Sign Out
         </button>
 
-
-
-
-        <button htc-click="$ctrl.showText = false">Test</button>
-        <div htc-if="$ctrl.showText" style="color: red">HELLO</div>
       </div>
     </div>
   </div>

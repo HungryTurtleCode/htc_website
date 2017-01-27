@@ -9,15 +9,14 @@ class HeaderCtrl{
   }
   $onInit(){
     this.auth.subscribeAuthChange(this.onAuthChange.bind(this));
+    this.loggedIn = false;
+  }
+  toggle(){
+    this.showText = !this.showText;
   }
   onAuthChange(user){
-    if(user.isAnonymous){
-      this['header-signin-btn'].show();
-      this['header-logout'].hide();
-    }else{
-      this['header-signin-btn'].hide();
-      this['header-logout'].show();
-    }
+    this.loggedIn = !user.isAnonymous;
+    this.$digest();
   }
   showModal(modal){
     this.modal.show(modal);
