@@ -2,8 +2,8 @@ import firebase from 'firebase';
 import HTC from './htc';
 
 class Auth{
-  constuctor(){
-    // TODO inject a database service Sun 22 Jan 2017 22:50:31 UTC
+  constructor(db){
+    this.db = db;
   }
   $onInit(){
     this.authSubs = [];
@@ -69,6 +69,6 @@ class Auth{
   }
 }
 
-Auth.$inject = [];
+Auth.$inject = ['dbService'];
 
 HTC.module('AuthService', Auth);
