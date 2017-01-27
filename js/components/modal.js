@@ -17,6 +17,14 @@ class ModalCtrl{
       }, true)
     });
   }
+  resetPass(){
+    let email = this['reset-email'].el.value;
+
+    this.authService.forgottenPass(email);
+
+    this['forgot-cont'].hide();
+    this['forgot-success'].show();
+  }
   signOut(){
     this.authService.signOut();
     this.hide('sign-out');

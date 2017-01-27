@@ -39,7 +39,7 @@ class Auth{
 
     // TODO flesh out Wed 25 Jan 2017 05:32:38 UTC
   }
-  forgottenPass(){
+  forgottenPass(email){
     // TODO flesh out this method to call firebase's api for forgotten password Wed 25 Jan 2017 05:31:45 UTC
   }
   subscribeAuthChange(fn){
