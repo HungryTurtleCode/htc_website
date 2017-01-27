@@ -1,6 +1,6 @@
 import $ from './htcQuery';
 
-let htcDirs = ['click', 'track'];
+let htcDirs = ['click', 'track', 'controller'];
 
 class HTC{
   constructor() {
@@ -71,10 +71,8 @@ class HTC{
       });
     }
 
-    let allElems = el.querySelectorAll('*');
-
-    for(let i = 0; i < allElems.length; i++){
-      let attrs = allElems[i].attributes;
+    function bindAttrs(elem, fn){
+      let attrs = elem.attributes;
       for(let y = 0; y < attrs.length; y++){
         let name = attrs[y].name;
         let htc = name.match(/htc-([^]+)/m);
@@ -82,10 +80,19 @@ class HTC{
           let dir = htc[1];
           if(htcDirs.indexOf(dir) === -1){
             fn[dir] = fn[dir] || new dictObj(dir);
-            fn[dir][attrs[y].value] = $(allElems[i], true);
+            fn[dir][attrs[y].value] = $(elem, true);
           }
         }
       }
+    }
+
+
+    bindAttrs(el, fn);
+
+    let allElems = el.querySelectorAll('*');
+
+    for(let i = 0; i < allElems.length; i++){
+      bindAttrs(allElems[i], fn);
     }
 
   }
