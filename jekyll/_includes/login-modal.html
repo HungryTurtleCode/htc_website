@@ -1,4 +1,4 @@
-<div class="login-modal-container" htc-controller="modalCtrl" htc-track="sign-in-modal">
+<div class="login-modal-container" htc-controller="modalCtrl" htc-modals="sign-in">
   <div class="modal" htc-track="modal">
     <div class="header">
       <button class="log-in-header-btn active" for="log-in-box" htc-click="$ctrl.toggleView('log-in')" htc-header-buttons="log-in">Log In</button>
@@ -17,7 +17,7 @@
         <input type="text" placeholder="Email">
         <input type="password" placeholder="Password">
         <button id="sign-in-button">Log In</button>
-        <a id="forgot-pass-btn">Forgotten Password</a>
+        <a id="forgot-pass-btn" htc-click="$ctrl.show('forgot')">Forgotten Password</a>
       </div>
     </div>
     <div class="container sign-up" id="sign-up-box" htc-authview="sign-up">
