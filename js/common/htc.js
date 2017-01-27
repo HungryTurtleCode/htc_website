@@ -1,15 +1,25 @@
 import $ from './htcQuery';
+import Watch from './watch';
+import Digest from './digest';
 
-let htcDirs = ['click', 'track', 'controller'];
+let htcDirs = ['click', 'track', 'controller', 'if'];
 
 class HTC{
   constructor() {
     this.modules = {};
+    this.directives = {};
   }
   bootstrap(){
 
     Object.keys(this.modules).forEach(key => {
-      this.modules[key] = this.injector(this.modules[key]);
+      let fn;
+      this.modules[key] = fn = this.injector(this.modules[key]);
+      this.modules[key].$watch =
+          new (Function.prototype.bind.apply(Watch, [fn]))();
+      this.modules[key].$digest =
+          new (Function.prototype.bind.apply(Digest, [fn]))();
+
+      this.modules[key].$watchers = [];
     });
 
     this.setUpDom();
@@ -36,6 +46,21 @@ class HTC{
     });
   }
   bind(el, fn){
+
+    const evts = 'click dblclick mousedown mouseup mouseover mouseout mousemove mouseenter mouseleave keydown keyup keypress submit focus blur copy cut paste'.split(' ');
+
+    evts.forEach(e => {
+      el.addEventListener(e, function(e){
+        this.$digest();
+      }.bind(fn));
+    });
+
+
+
+
+
+
+
     let clickEl = el.querySelectorAll('[htc-click]');
     let clickFn = [];
 
@@ -71,7 +96,7 @@ class HTC{
       });
     }
 
-    function bindAttrs(elem, fn){
+    const bindAttrs = (elem, fn) => {
       let attrs = elem.attributes;
       for(let y = 0; y < attrs.length; y++){
         let name = attrs[y].name;
@@ -81,6 +106,9 @@ class HTC{
           if(htcDirs.indexOf(dir) === -1){
             fn[dir] = fn[dir] || new dictObj(dir);
             fn[dir][attrs[y].value] = $(elem, true);
+          }else if(dir === 'if'){
+            let dirFunc = this.directives['htc-if'];
+            dirFunc(fn, $(elem, true), elem.attributes)
           }
         }
       }
@@ -95,6 +123,9 @@ class HTC{
       bindAttrs(allElems[i], fn);
     }
 
+  }
+  directive(name, fn){
+    this.directives[name] = fn;
   }
   initModules(){
     Object.keys(this.modules).forEach(key => {

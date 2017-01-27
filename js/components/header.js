@@ -4,6 +4,8 @@ class HeaderCtrl{
   constructor(modal, auth) {
     this.modal = modal;
     this.auth = auth;
+
+    this.showText = true;
   }
   $onInit(){
     this.auth.subscribeAuthChange(this.onAuthChange.bind(this));
