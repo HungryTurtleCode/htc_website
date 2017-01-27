@@ -53,11 +53,12 @@ header
           font-weight: bold
           display: inline-block
           padding: 0.7em 1em
-          color: black
+          color: #040f0f
           text-decoration: none
           font-size: 0.9em
-          +transition(background-color 0.4s ease-in-out)
+          +transition(background-color 0.4s ease-in-out, color 0.4s ease-in-out)
 
           &:hover
-            background: tint($primary-color, 80%)
+            // background: tint($primary-color, 80%)
+            background: shade($primary-color, 10%)
             cursor: pointer
