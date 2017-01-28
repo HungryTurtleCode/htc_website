@@ -6,10 +6,21 @@ class UserData{
   }
   $onInit(){
     this.userId = null;
-    this.userData;
+    this.userMeta = null;
   }
-  setUserId(id){
+  cacheUserId(id){
     this.userId = id;
+  }
+  cacheUserMeta(userMeta){
+    this.userMeta = userMeta;
+  }
+  setUserBigData(data, user){
+    user = user || this.userId;
+    if(user){
+      return this.db.setUserData(data, user);
+    }
+    console.error('Can\'t set data for unknown user');
+    return Promise.reject('Can\'t set data for unknown user');
   }
   getUserData(id){
     let userId = id || this.userId;

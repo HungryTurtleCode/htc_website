@@ -99,28 +99,35 @@ class Auth{
   onAuthChange(){
     return firebase.auth().onAuthStateChanged((user) => {
       if(user){
-        if(user.isAnonymous){
-          localStorage.setItem('anon_user_id', user.uid);
-          this.userData.setUserId(user.uid);
-        }else{
-          console.log(user, 'REAL');
-          let anonUser = localStorage.getItem('anon_user_id');
-          if(anonUser){
+        this.userData.cacheUserId(user.uid);
 
-            console.log(anonUser, 'FETCHED');
+        let userInfo = {
+          email: user.email,
+          name: user.displayName,
+          image: user.photoURL,
+          provider: user.providerData[0] ? user.providerData[0].providerId : 'Anonymous',
+          user_id: user.uid
+        }
+
+        this.userData.cacheUserMeta(userInfo);
+
+        if(user.isAnonymous){
+          localStorage.setItem('anon_user_id', JSON.stringify(user.uid));
+        }else{
+          let anonUser = JSON.parse(localStorage.getItem('anon_user_id'));
+          if(anonUser){
             localStorage.setItem('anon_user_id', null);
 
             // transfer user data
-
             this.userData.getUserData(anonUser)
               .then(data => {
-                console.log(data);
+                data = data || {};
+                data.userInfo = userInfo;
+                this.userData.setUserBigData(data);
               })
               .catch(err => console.log(err));
-
           }
           // TODO add user to active campaign and store a flag in firebase to show that email has been added to active campaign to avoid duplicate requests Wed 25 Jan 2017 05:30:20 UTC
-          // TODO sync user data to firebase Wed 25 Jan 2017 05:27:21 UTC
         }
         this.authSubs.forEach(sub => sub(user));
       }else{

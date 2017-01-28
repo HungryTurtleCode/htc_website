@@ -7,6 +7,17 @@ class DatabaseService{
   $onInit(){
     this.ref = firebase.database().ref();
   }
+  setUserData(data, user){
+    return this.ref
+      .child('users')
+      .child(user)
+      .set(data)
+      .then(() => true)
+      .catch(err => {
+        console.error(err);
+        return err;
+      });
+  }
   getUserData(user){
     return this.ref
       .child('users')
