@@ -17,6 +17,14 @@ class ModalCtrl{
       }, true)
     });
   }
+  logIn(){
+    let email = this['login-email'].value();
+    let pass = this['login-pass'].value();
+
+    this.authService.signInWithUserAndPass(email, pass)
+      .then(() => this.hide('sign-in'))
+      .catch(err => console.log(err));
+  }
   signUp(){
     let email = this['signup-email'].value();
     let password = this['signup-pass'].value();

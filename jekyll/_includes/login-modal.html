@@ -14,9 +14,9 @@
         <div class="divider">
           <span>OR</span>
         </div>
-        <input type="text" placeholder="Email">
-        <input type="password" placeholder="Password">
-        <button id="sign-in-button">Log In</button>
+        <input type="text" placeholder="Email" htc-track="login-email">
+        <input type="password" placeholder="Password" htc-track="login-pass">
+        <button id="sign-in-button" htc-click="$ctrl.logIn()">Log In</button>
         <a id="forgot-pass-btn" htc-click="$ctrl.show('forgot')">Forgotten Password</a>
       </div>
     </div>

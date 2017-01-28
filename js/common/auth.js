@@ -26,6 +26,24 @@ class Auth{
     let provider = new firebase.auth.GithubAuthProvider();
     return this.signInWithRedirect(provider);
   }
+  signInWithUserAndPass(email, pass){
+    if(!this.validateEmail(email)){console.error('Invalid email'); return Promise.reject('Invalid Email')}
+
+    return firebase.auth().signInWithEmailAndPassword(email, pass)
+      .then(() => console.log('logged in'))
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode === 'auth/wrong-password') {
+          alert('Wrong password.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        return error;
+      });
+  }
   signInWithRedirect(provider){
     firebase.auth().signInWithRedirect(provider);
 
@@ -34,10 +52,14 @@ class Auth{
         return result;
       })
   }
+  validateEmail(email){
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
   createUserWithPass(email, pass, pass1){
     if(pass !== pass1){console.error('Passwords don\'t match'); return Promise.reject('Password\'s don\'t match')}
     if(pass.length < 8){console.error('password too short. Must be at least 8 characters'); return Promise.reject('password too short. Must be at least 8 characters')}
-    if(!validateEmail(email)){console.error('Invalid email'); return Promise.reject('Invalid Email')}
+    if(!this.validateEmail(email)){console.error('Invalid email'); return Promise.reject('Invalid Email')}
 
     return firebase.auth().createUserWithEmailAndPassword(email, pass)
       .then(() => {console.log('done')})
@@ -54,10 +76,6 @@ class Auth{
         return error;
       });
 
-    function validateEmail(email) {
-      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
-    }
   }
   forgottenPass(email){
     // TODO flesh out this method to call firebase's api for forgotten password Wed 25 Jan 2017 05:31:45 UTC
