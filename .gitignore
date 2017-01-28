@@ -1,5 +1,6 @@
 _site
 jekyll/scripts/bundle.js
+jekyll/scripts/account.js
 .DS_Store
 .jekyll
 .bundle
