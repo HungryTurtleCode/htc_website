@@ -1,2 +1,2 @@
-import common from './common';
-import components from './components/accountIndex';
+import firebase from 'firebase';
+import angular from 'angular';
