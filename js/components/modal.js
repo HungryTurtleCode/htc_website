@@ -17,6 +17,15 @@ class ModalCtrl{
       }, true)
     });
   }
+  signUp(){
+    let email = this['signup-email'].value();
+    let password = this['signup-pass'].value();
+    let passrepeat = this['signup-pass1'].value();
+
+    this.authService.createUserWithPass(email, password, passrepeat)
+      .then(() => this.hide('sign-in'))
+      .catch((err) => console.log(err))
+  }
   resetPass(){
     let email = this['reset-email'].el.value;
 

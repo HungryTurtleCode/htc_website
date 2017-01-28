@@ -23,6 +23,13 @@ HtcQuery.prototype.forEach = function(fn){
   }
   return this;
 }
+HtcQuery.prototype.value = function(){
+  if(this.el.value){
+    return this.el.value;
+  }else{
+    return false;
+  }
+}
 
 HtcQuery.prototype.click = function(fn, stopProp){
   let func = fn;
