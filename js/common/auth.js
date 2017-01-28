@@ -126,7 +126,8 @@ class Auth{
 
                 this.userData.getUserData(user.uid)
                 .then(existingData => {
-                  var newData = Object.assign(existingData, data)
+                  existingData = existingData || {};
+                  var newData = Object.assign(existingData, data);
                   this.userData.setUserBigData(newData)
                     .then(() => {
                       localStorage.setItem('anon_user_id', null);
