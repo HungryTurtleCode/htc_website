@@ -1,8 +1,11 @@
 module.exports = {
-  entry: "./js/index.js",
+  entry: {
+    'bundle': "./js/index.js",
+    'account': './js/account.js'
+  },
   output: {
     path: "jekyll/scripts/",
-    filename: "bundle.js"
+    filename: "[name].js"
   },
   module: {
     loaders: [
