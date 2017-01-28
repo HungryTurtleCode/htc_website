@@ -7,6 +7,15 @@ class DatabaseService{
   $onInit(){
     this.ref = firebase.database().ref();
   }
+  getUserData(user){
+    return this.ref
+      .child('users')
+      .child(user)
+      .once('value')
+      .then(snap => {
+        return snap.val();
+      });
+  }
 }
 
 DatabaseService.$inject = [];

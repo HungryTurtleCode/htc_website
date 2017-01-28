@@ -100,9 +100,25 @@ class Auth{
     return firebase.auth().onAuthStateChanged((user) => {
       if(user){
         if(user.isAnonymous){
-          // TODO store cookie with user uid Wed 25 Jan 2017 05:10:49 UTC
+          localStorage.setItem('anon_user_id', user.uid);
+          console.log(user.uid);
+
         }else{
-          // TODO check if there is anonymous cookie data. If there is transfer user data to new account. Delete cookie Wed 25 Jan 2017 05:11:07 UTC
+          console.log(user, 'REAL');
+          let anonUser = localStorage.getItem('anon_user_id');
+          if(anonUser){
+
+            console.log(anonUser, 'FETCHED');
+            localStorage.setItem('anon_user_id', null);
+
+            // transfer user data
+
+            this.db.getUserData(anonUser)
+              .then(data => {
+                console.log(data);
+              })
+
+          }
           // TODO add user to active campaign and store a flag in firebase to show that email has been added to active campaign to avoid duplicate requests Wed 25 Jan 2017 05:30:20 UTC
           // TODO sync user data to firebase Wed 25 Jan 2017 05:27:21 UTC
         }
