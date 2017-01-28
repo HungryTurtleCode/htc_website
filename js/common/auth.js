@@ -78,7 +78,17 @@ class Auth{
 
   }
   forgottenPass(email){
-    // TODO flesh out this method to call firebase's api for forgotten password Wed 25 Jan 2017 05:31:45 UTC
+
+    if(this.validateEmail(email)){
+      return firebase.auth().sendPasswordResetEmail(email)
+        .catch(err => {
+          console.error(err)
+          return err;
+        });
+    }
+
+    console.error('Invalid Email');
+    return Promise.reject('Invalid Email');
   }
   subscribeAuthChange(fn){
     this.authSubs.push(fn);

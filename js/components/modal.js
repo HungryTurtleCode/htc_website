@@ -35,12 +35,15 @@ class ModalCtrl{
       .catch((err) => console.log(err))
   }
   resetPass(){
-    let email = this['reset-email'].el.value;
+    let email = this['reset-email'].value();
 
-    this.authService.forgottenPass(email);
+    this.authService.forgottenPass(email)
+      .then(() => {
+        this['forgot-cont'].hide();
+        this['forgot-success'].show();
+      })
+      .catch(err => console.log(err));
 
-    this['forgot-cont'].hide();
-    this['forgot-success'].show();
   }
   signOut(){
     this.authService.signOut();
