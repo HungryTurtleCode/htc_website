@@ -123,7 +123,13 @@ class Auth{
               .then(data => {
                 data = data || {};
                 data.userInfo = userInfo;
-                this.userData.setUserBigData(data);
+
+                this.userData.getUserData(user.uid)
+                .then(existingData => {
+                  var newData = Object.assign(existingData, data)
+                  this.userData.setUserBigData(newData);
+                });
+
               })
               .catch(err => console.log(err));
           }
