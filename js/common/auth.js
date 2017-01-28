@@ -2,8 +2,8 @@ import firebase from 'firebase';
 import HTC from './htc';
 
 class Auth{
-  constructor(db){
-    this.db = db;
+  constructor(userData){
+    this.userData = userData;
   }
   $onInit(){
     this.authSubs = [];
@@ -101,8 +101,7 @@ class Auth{
       if(user){
         if(user.isAnonymous){
           localStorage.setItem('anon_user_id', user.uid);
-          console.log(user.uid);
-
+          this.userData.setUserId(user.uid);
         }else{
           console.log(user, 'REAL');
           let anonUser = localStorage.getItem('anon_user_id');
@@ -113,10 +112,11 @@ class Auth{
 
             // transfer user data
 
-            this.db.getUserData(anonUser)
+            this.userData.getUserData(anonUser)
               .then(data => {
                 console.log(data);
               })
+              .catch(err => console.log(err));
 
           }
           // TODO add user to active campaign and store a flag in firebase to show that email has been added to active campaign to avoid duplicate requests Wed 25 Jan 2017 05:30:20 UTC
@@ -133,6 +133,6 @@ class Auth{
   }
 }
 
-Auth.$inject = ['dbService'];
+Auth.$inject = ['userData'];
 
 HTC.module('AuthService', Auth);
