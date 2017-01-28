@@ -1,2 +1,1 @@
-import firebase from 'firebase';
-import angular from 'angular';
+import account from './account/';
