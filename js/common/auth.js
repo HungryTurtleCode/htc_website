@@ -116,7 +116,6 @@ class Auth{
         }else{
           let anonUser = JSON.parse(localStorage.getItem('anon_user_id'));
           if(anonUser){
-            localStorage.setItem('anon_user_id', null);
 
             // transfer user data
             this.userData.getUserData(anonUser)
@@ -127,7 +126,12 @@ class Auth{
                 this.userData.getUserData(user.uid)
                 .then(existingData => {
                   var newData = Object.assign(existingData, data)
-                  this.userData.setUserBigData(newData);
+                  this.userData.setUserBigData(newData)
+                    .then(() => {
+                      localStorage.setItem('anon_user_id', null);
+                      this.userData.setUserBigData(null, anonUser)
+                    })
+                    .catch(err => console.error(err));
                 });
 
               })
