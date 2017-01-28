@@ -113,6 +113,7 @@ class Auth{
 
         if(user.isAnonymous){
           localStorage.setItem('anon_user_id', JSON.stringify(user.uid));
+          this.userData.setUserBigData({userInfo: userInfo}, user.uid);
         }else{
           let anonUser = JSON.parse(localStorage.getItem('anon_user_id'));
           if(anonUser){
