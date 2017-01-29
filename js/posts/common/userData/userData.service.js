@@ -15,6 +15,9 @@ class userData{
       });
   }
   setComment(loc, text, isReply){
+    if(isReply){
+      loc = loc + isReply + '/replies/';
+    }
     return this.fb.setComment(
       loc,
       text,

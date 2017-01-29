@@ -51,6 +51,7 @@ class firebaseService{
     let comment = {
       text,
       user_name,
+      isReply,
       user_id,
       image,
       date: firebase.database.ServerValue.TIMESTAMP,

@@ -3,7 +3,8 @@ import controller from './comment.controller';
 const CommentComponent = {
   controller,
   bindings: {
-      data: '<',
+    data: '<',
+    refresh: '&'
   },
   template: `
     <div class="comment-cont" ng-class="{'reply': $ctrl.data.isReply}">
@@ -31,10 +32,21 @@ const CommentComponent = {
             ng-class="{'active': $ctrl.voted === 'down'}">
             Down
           </span>
-          <span class="reply">reply</span>
+          <span class="reply" ng-click="$ctrl.reply = true">reply</span>
         </div>
       </div>
     </div>
+    <comment-form
+      ng-if="$ctrl.reply"
+      refresh="$ctrl.refresh()"
+      is-reply="{{$ctrl.data.firebase_id}}">
+    </comment-form>
+
+    <comment
+      ng-repeat="comment in $ctrl.data.replies | orderBy:'-score'"
+      refresh="$ctrl.refresh()"
+      data="comment"
+    </comment>
   `
 };
 
