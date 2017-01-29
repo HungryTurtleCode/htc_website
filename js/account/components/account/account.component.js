@@ -4,11 +4,27 @@ const AccountComponent = {
   controller,
   template: `
     <title-block
-      title="My Account"
+      title="My Profile"
       subtitle="">
     </title-block>
     <div class="account-form-cont">
-      <h1>sfsdf</h1>
+      <form>
+        <label>Name</label>
+        <input type="text" placeholder="Name" ng-model="$ctrl.user.name">
+        <label>Profile Image</label>
+        <div class="upload-cont">
+          <div class="img-cont">
+            <img ng-src="{{$ctrl.user.image || $ctrl.defaultImage}}">
+          </div>
+          <label class="upload">
+            <input type="file"/>
+            <span>Upload</span>
+          </label>
+        </div>
+        <label>Email</label>
+        <input type="text" placeholder="Email" ng-model="$ctrl.user.email">
+        <button class="submit" ng-click="$ctrl.save()">Save</button>
+      </form>
     </div>
   `
 };
