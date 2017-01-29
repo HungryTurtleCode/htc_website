@@ -8,9 +8,15 @@ class commentController{
   }
   $onInit(){
     if(this.commentNesting){
-      this.loc = this.getPageLocations() + this.commentNesting + '/replies/';
+      this.commentNesting += this.data.isReply + '/replies/'
+      this.loc = this.getPageLocations() + this.commentNesting;
     }else{
-      this.loc = this.getPageLocations();
+      if(this.data.isReply){
+        this.commentNesting = this.data.isReply + '/replies/';
+        this.loc = this.getPageLocations() + this.commentNesting;
+      }else{
+        this.loc = this.getPageLocations();
+      }
     }
   }
   formattedName(){

@@ -4,7 +4,8 @@ const CommentFormComponent = {
   controller,
   bindings: {
     refresh: '&',
-    isReply: '@'
+    isReply: '@',
+    commentNesting: '<'
   },
   template: `
     <textarea ng-model="$ctrl.commentText"></textarea>

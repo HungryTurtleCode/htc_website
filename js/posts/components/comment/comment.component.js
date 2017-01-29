@@ -5,7 +5,7 @@ const CommentComponent = {
   bindings: {
     data: '<',
     refresh: '&',
-    commentNesting: '@'
+    commentNesting: '<'
   },
   template: `
     <div class="comment-cont" ng-class="{'reply': $ctrl.data.isReply}">
@@ -40,13 +40,14 @@ const CommentComponent = {
     <comment-form
       ng-if="$ctrl.reply"
       refresh="$ctrl.refresh()"
+      comment-nesting="$ctrl.commentNesting"
       is-reply="{{$ctrl.data.firebase_id}}">
     </comment-form>
 
     <comment
-      ng-repeat="comment in $ctrl.data.replies | orderBy:'-score'"
+      ng-repeat="comment in $ctrl.data.replies | orderBy:'date'"
       refresh="$ctrl.refresh()"
-      comment-nesting="{{$ctrl.commentNesting + comment.isReply}}"
+      comment-nesting="$ctrl.commentNesting"
       data="comment"
     </comment>
   `

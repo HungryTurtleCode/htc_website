@@ -9,7 +9,12 @@ class commentFormController{
   $onInit(){
     this.isReply = this.isReply || false;
 
-    this.pageLocations = this.getPageLocations() || '';
+    if(this.commentNesting){
+      this.pageLocations = this.getPageLocations() || '';
+      this.pageLocations += this.commentNesting;
+    }else{
+      this.pageLocations = this.getPageLocations() || '';
+    }
   }
   submitComment(text){
     if(text){
@@ -19,7 +24,6 @@ class commentFormController{
         this.isReply
       )
       .then(() => {
-        console.log('YES');
         this.refresh();
         // TODO success Sun 29 Jan 2017 19:48:40 UTC
       })
