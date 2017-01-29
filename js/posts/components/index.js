@@ -1,7 +1,11 @@
 import angular from 'angular';
 
+import comment from './comment';
+
 const ComponentModule = angular
-  .module('component.module', [])
+  .module('component.module', [
+    comment
+  ])
   .name;
 
 export default ComponentModule;
