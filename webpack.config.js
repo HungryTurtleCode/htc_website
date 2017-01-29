@@ -3,7 +3,8 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     'bundle': "./js/index.js",
-    'account': './js/account.js'
+    'account': './js/account.js',
+    'post': './js/post.js'
   },
   output: {
     path: "jekyll/scripts/",

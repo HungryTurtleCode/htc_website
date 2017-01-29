@@ -1,2 +1,2 @@
-import common from './common';
-import components from './components';
+import main from './main/';
+
