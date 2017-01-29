@@ -1,0 +1,84 @@
+$image-size: 50px
+.comment-cont
+  font-size: 0.9rem
+  // background: #f4f4f4
+  background: #fefefe
+  margin-top: 3em
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15)
+
+  &.reply
+    margin-top: 1em
+    margin-left: 3em
+
+  .header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-bottom: 1px solid #d2d2d2
+    padding: 1em
+    font-size: 0.8em
+    background: $default-dark-color
+    color: #c2c2c2
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+
+    .name
+      flex-grow: 1
+      display: inline-block
+      font-weight: bold
+      margin-left: 2em
+
+      .highlight-name
+        color: #fefefe
+
+      .accent-name
+        color: $secondary-color
+
+      .wrote
+        margin-left: 0.4em
+
+    .image-cont
+      width: $image-size
+      height: $image-size
+      display: inline-block
+      border-radius: 50%
+
+  .padding
+    padding: 1em
+    padding-top: 0
+
+  .body
+    font-weight: 300
+    padding: 1em 0.4em
+
+  .footer
+    +clearfix
+    border-top: 1px solid #d2d2d2
+    padding-top: 1em
+    font-size: 0.8em
+
+    .score
+      display: inline-block
+      margin-right: 0.5em
+
+    .reply
+      float: right
+      // color: $secondary-color
+      color: $primary-color
+      font-size: 1.3em
+      font-weight: bold
+      cursor: pointer
+
+    .up, .down
+      padding: 0 0.5em
+      transition: all 0.3s ease
+      cursor: pointer
+
+      &:hover
+        color: $secondary-color
+
+    .up
+      border-right: 1px solid #c2c2c2
+
+
+
+
