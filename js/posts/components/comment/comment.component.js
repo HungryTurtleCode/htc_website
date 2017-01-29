@@ -33,7 +33,16 @@ const CommentComponent = {
             ng-class="{'active': $ctrl.voted === 'down'}">
             Down
           </span>
-          <span class="reply" ng-click="$ctrl.reply = true">reply</span>
+          <span class="reply"
+            ng-click="$ctrl.reply = true"
+            ng-if="!$ctrl.reply">
+              reply
+          </span>
+          <span class="reply"
+            ng-click="$ctrl.reply = false"
+            ng-if="$ctrl.reply">
+              close reply box
+          </span>
         </div>
       </div>
     </div>
