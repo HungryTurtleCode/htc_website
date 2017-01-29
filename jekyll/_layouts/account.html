@@ -1,5 +1,6 @@
 <html>
 <head>
+  <base href="/account"/>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +9,7 @@
 	<title>My Account - Hungry Turtle Code</title>
 	<link rel="stylesheet" href="{{site.baseurl}}/css/app.css">
 </head>
-<body class="account-page">
+<body class="account-page" ng-app="htcaccount">
   <div class="account-sidebar">
     <div class="logo">
       <a href="/">
@@ -17,28 +18,16 @@
       </a>
     </div>
     <ul>
-      <li>My Courses</li>
-      <li>Completed</li>
-      <li>Bookmarked</li>
-      <li>Account Info</li>
+      <li ui-sref="myCourses">My Courses</li>
+      <li ui-sref="completed">Completed</li>
+      <li ui-sref="bookmarked">Bookmarked</li>
+      <li ui-sref="account">Account Info</li>
     </ul>
   </div>
   <div class="account-container">
-    <main ng-app="htcaccount">
+    <main>
 
-
-      <div class="titles">
-        <h1>Education Goodness</h1>
-        <h3>All the courses you can start watching right now</h3>
-      </div>
-      <div class="course-list">
-        <course-card></course-card>
-        <course-card></course-card>
-        <course-card></course-card>
-        <course-card></course-card>
-        <course-card></course-card>
-      </div>
-
+      <app></app>
 
     </main>
   </div>
