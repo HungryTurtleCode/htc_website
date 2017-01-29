@@ -7,6 +7,7 @@ const PostCompoonent = {
   },
   template: `
    <h1>Comments</h1>
+
    <comment></comment>
    <comment></comment>
    <comment></comment>

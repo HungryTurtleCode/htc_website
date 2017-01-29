@@ -23,7 +23,7 @@ class commentController{
     }else{
       name[0] = name[0] + '<span class="highlight-name wrote"> wrote:</span>'
     }
-    return this.$sce.trustAsHtml(name.join(' '));
+    return this.$sce.trustAsHtml(name.join('').toLowerCase());
   }
 }
 
