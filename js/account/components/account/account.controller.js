@@ -1,6 +1,6 @@
 class AccountController{
-  constructor() {
-    let a = 0;
+  constructor(userData) {
+    this.userData = userData;
     this.defaultImage = 'https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png';
   }
   // TODO use the directive from SS to get ng-model like behaviour with the image upload Sun 29 Jan 2017 03:26:53 UTC
@@ -9,5 +9,7 @@ class AccountController{
     console.log(this.user);
   }
 }
+
+AccountController.$inject = ['userData']
 
 export default AccountController;

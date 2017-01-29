@@ -2,6 +2,9 @@ import controller from './account.controller';
 
 const AccountComponent = {
   controller,
+  bindings: {
+    user: '<'
+  },
   template: `
     <title-block
       title="My Profile"
