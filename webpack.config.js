@@ -23,25 +23,25 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      // Don't beautify output (enable for neater output)
-      beautify: false,
-      // Eliminate comments
-      comments: false,
-      // Compression specific options
-      compress: {
-        warnings: false,
-        // Drop `console` statements
-        drop_console: true
-      },
-      mangle: {
-        except: ['$', 'webpackJsonp'],
-        screw_ie8 : true,
-        keep_fnames: false
-      }
-    })
+    // new webpack.NoErrorsPlugin(),
+    // new webpack.optimize.DedupePlugin(),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   // Don't beautify output (enable for neater output)
+    //   beautify: false,
+    //   // Eliminate comments
+    //   comments: false,
+    //   // Compression specific options
+    //   compress: {
+    //     warnings: false,
+    //     // Drop `console` statements
+    //     drop_console: false
+    //   },
+    //   mangle: {
+    //     except: ['$', 'webpackJsonp'],
+    //     screw_ie8 : true,
+    //     keep_fnames: false
+    //   }
+    // })
   ],
   resolve: {
     extensions: ['', '.js'],
