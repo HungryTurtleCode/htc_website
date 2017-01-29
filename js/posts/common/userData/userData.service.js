@@ -1,6 +1,8 @@
 class userData{
-  constructor(firebaseService) {
+  constructor(firebaseService, auth) {
     this.fb = firebaseService;
+    this.auth = auth;
+
     this.user = {
       user_name: 'Adrian',
       user_id: 'sdfs',
@@ -21,6 +23,6 @@ class userData{
   }
 }
 
-userData.$inject = ['firebaseService'];
+userData.$inject = ['firebaseService', 'auth'];
 
 export default userData;
