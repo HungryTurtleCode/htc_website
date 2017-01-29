@@ -3,6 +3,8 @@ class PostCommentController{
     this.firebaseService = firebaseService;
     this.$location = $location;
     this.$scope = $scope;
+
+    this.comments = [];
   }
   $onInit(){
     this.getComments();
@@ -23,6 +25,22 @@ class PostCommentController{
     let newArr = arr.splice(3);
 
     return newArr.join('/');
+  }
+  getNumComments(){
+    let num = this.comments.length;
+
+    loopReplies(this.comments);
+
+    return num;
+
+    function loopReplies(comments){
+      comments.forEach(item => {
+        if(item.replies){
+          num += item.replies.length;
+          loopReplies(item.replies);
+        }
+      });
+    }
   }
 }
 

@@ -6,7 +6,7 @@ const PostComponent = {
     <h3>Submit a comment</h3>
     <comment-form refresh="$ctrl.getComments()"></comment-form>
 
-    <h1>Comments</h1>
+    <h1>{{$ctrl.getNumComments()}} Comments</h1>
     <comment
       ng-repeat="comment in $ctrl.comments | orderBy:'-score'"
       data="comment"
