@@ -8,7 +8,8 @@ const CommentFormComponent = {
     commentNesting: '<'
   },
   template: `
-    <textarea ng-model="$ctrl.commentText"></textarea>
+    <textarea ng-model="$ctrl.commentText"
+      ng-class="{'reply': $ctrl.commentNesting}"></textarea>
     <button ng-click="$ctrl.submitComment($ctrl.commentText)">Submit Comment</button>
   `
 };
