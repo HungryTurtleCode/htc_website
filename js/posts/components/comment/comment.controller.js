@@ -4,7 +4,14 @@ class commentController{
     this.fb = firebaseService;
     this.$location = $location;
 
-    this.loc = this.getPageLocations();
+    // this.loc = this.getPageLocations();
+  }
+  $onInit(){
+    if(this.commentNesting){
+      this.loc = this.getPageLocations() + this.commentNesting + '/replies/';
+    }else{
+      this.loc = this.getPageLocations();
+    }
   }
   formattedName(){
     let name = this.data.user_name.split(' ');

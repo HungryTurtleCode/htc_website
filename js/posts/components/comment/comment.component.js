@@ -4,7 +4,8 @@ const CommentComponent = {
   controller,
   bindings: {
     data: '<',
-    refresh: '&'
+    refresh: '&',
+    commentNesting: '@'
   },
   template: `
     <div class="comment-cont" ng-class="{'reply': $ctrl.data.isReply}">
@@ -45,6 +46,7 @@ const CommentComponent = {
     <comment
       ng-repeat="comment in $ctrl.data.replies | orderBy:'-score'"
       refresh="$ctrl.refresh()"
+      comment-nesting="{{$ctrl.commentNesting + comment.isReply}}"
       data="comment"
     </comment>
   `
