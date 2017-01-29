@@ -20,7 +20,7 @@ const accountComponent = angular
 
             return new Promise(resolve => {
               firebase.auth().onAuthStateChanged((user) => {
-                if(user){
+                if(user && !user.isAnonymous){
                   userData.getUserMeta(user.uid)
                   .then(user => {
                     resolve(user);
