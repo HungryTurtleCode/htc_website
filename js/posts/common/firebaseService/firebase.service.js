@@ -26,6 +26,15 @@ class firebaseService{
         });
     }
   }
+  updateCommentScore(page, comment, score){
+    let loc = page + comment;
+
+    this.ref
+      .child('comments')
+      .child(loc)
+      .child('score')
+      .set(score)
+  }
   deepObjToArray(obj){
     return Object.keys(obj).map(key => {
       if(typeof obj[key] === 'object'){

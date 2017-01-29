@@ -1,6 +1,10 @@
 class commentController{
-  constructor($sce) {
+  constructor($sce, firebaseService, $location) {
     this.$sce = $sce;
+    this.fb = firebaseService;
+    this.$location = $location;
+
+    this.loc = this.getPageLocations();
   }
   formattedName(){
     let name = this.data.user_name.split(' ');
@@ -14,8 +18,42 @@ class commentController{
     }
     return this.$sce.trustAsHtml(name.join('').toLowerCase());
   }
+  vote(type){
+    if(this.voted === type){return;}
+
+    let score = this.data.score;
+
+    if(this.voted && this.voted !== type){
+      this.fb.updateCommentScore(
+        this.loc,
+        this.data.firebase_id,
+        score
+      );
+      return this.voted = null;
+    }
+
+    this.voted = type;
+    if(type === 'up'){
+      score++;
+    }else if(type === 'down'){
+      score--;
+    }
+
+    this.fb.updateCommentScore(
+      this.loc,
+      this.data.firebase_id,
+      score);
+  }
+  getPageLocations(){
+    let url = this.$location.absUrl();
+    let arr = url.split('/');
+
+    let newArr = arr.splice(3);
+
+    return newArr.join('/');
+  }
 }
 
-commentController.$inject = ['$sce'];
+commentController.$inject = ['$sce', 'firebaseService', '$location'];
 
 export default commentController;

@@ -3,7 +3,7 @@ import controller from './comment.controller';
 const CommentComponent = {
   controller,
   bindings: {
-      data: '<'
+      data: '<',
   },
   template: `
     <div class="comment-cont" ng-class="{'reply': $ctrl.data.isReply}">
@@ -21,10 +21,14 @@ const CommentComponent = {
           <span class="score">
             ({{$ctrl.data.score}})
           </span>
-          <span class="up">
+          <span class="up"
+            ng-click="$ctrl.vote('up')"
+            ng-class="{'active': $ctrl.voted === 'up'}">
             Up
           </span>
-          <span class="down">
+          <span class="down"
+            ng-click="$ctrl.vote('down')"
+            ng-class="{'active': $ctrl.voted === 'down'}">
             Down
           </span>
           <span class="reply">reply</span>
