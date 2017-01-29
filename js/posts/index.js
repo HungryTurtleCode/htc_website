@@ -5,11 +5,11 @@ import common from './common/';
 import components from './components';
 
 const postComponent = angular
-  .module('post', [
+  .module('post.module', [
     common,
     components
   ])
-  .component('post', post)
+  .component('postComment', post)
   .name;
 
 export default postComponent;

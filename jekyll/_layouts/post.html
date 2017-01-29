@@ -17,12 +17,14 @@ layout: default
 
     {{content}}
 
-    <div id="content-end">
+    <div id="content-end" ng-app="post.module">
       {% include tags.html data=page %}
 
       {% include share.html %}
 
       {% include related-posts.html %}
+
+      <post-comment></post-comment>
     </div>
 
     <div id="scroll-indicator"></div>
@@ -59,5 +61,6 @@ layout: default
 
   window.addEventListener("scroll", runOnScroll);
 
-
 </script>
+
+<script src="{{site.baseurl}}/scripts/post.js"></script>

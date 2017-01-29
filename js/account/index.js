@@ -1,4 +1,4 @@
-import config from '../common/config';
+import config from '../main/common/config';
 
 import angular from 'angular';
 
