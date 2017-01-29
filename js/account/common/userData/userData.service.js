@@ -11,6 +11,15 @@ class userData{
         return this.data = data;
       });
   }
+  setUserMeta(data){
+    if(!this.data.user_id){return Promise.reject('unknown user')}
+
+    return this.firebaseService.setUserMeta(this.data.user_id, data)
+      .then(() => {
+        this.data = data;
+        return true;
+      });
+  }
 }
 
 userData.$inject = ['firebaseService']

@@ -24,6 +24,16 @@ class FirebaseService{
         return snap.val();
       });
   }
+  setUserMeta(user, data){
+    return this.ref
+      .child('users')
+      .child(user)
+      .child('userInfo')
+      .set(data)
+      .then(snap => {
+        return true
+      });
+  }
 }
 
 export default FirebaseService;
