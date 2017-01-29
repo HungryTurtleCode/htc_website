@@ -1,10 +1,12 @@
 import angular from 'angular';
 
 import comment from './comment';
+import commentForm from './commentForm';
 
 const ComponentModule = angular
   .module('component.module', [
-    comment
+    comment,
+    commentForm
   ])
   .name;
 

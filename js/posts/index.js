@@ -1,4 +1,5 @@
 import angular from 'angular';
+import config from '../main/common/config';
 import post from './post.component';
 
 import common from './common/';
