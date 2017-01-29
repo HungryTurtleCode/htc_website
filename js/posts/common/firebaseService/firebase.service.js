@@ -5,6 +5,16 @@ class firebaseService{
     this.fb = firebase;
     this.ref = firebase.database().ref();
   }
+  getUserMeta(user){
+    return this.ref
+      .child('users')
+      .child(user)
+      .child('userInfo')
+      .once('value')
+      .then(snap => {
+        return snap.val();
+      });
+  }
   setComment(loc, text, isReply, user_name, user_id, image){
     let comment = {
       text,
