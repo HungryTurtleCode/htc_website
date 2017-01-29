@@ -3,7 +3,7 @@ import controller from './commentForm.controller';
 const CommentFormComponent = {
   controller,
   bindings: {
-    isReply: '<'
+    refresh: '&'
   },
   template: `
     <h3>Submit a comment</h3>

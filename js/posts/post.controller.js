@@ -5,6 +5,9 @@ class PostCommentController{
     this.$scope = $scope;
   }
   $onInit(){
+    this.getComments();
+  }
+  getComments(){
     let loc = this.getPageLocations() || '';
 
     this.firebaseService.getComments(loc)

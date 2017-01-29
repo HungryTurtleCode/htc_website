@@ -19,6 +19,7 @@ class commentFormController{
         this.isReply
       )
       .then(() => {
+        this.refresh();
         // TODO success Sun 29 Jan 2017 19:48:40 UTC
       })
       .catch(err => {

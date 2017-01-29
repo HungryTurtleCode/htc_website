@@ -3,7 +3,7 @@ import controller from './post.controller';
 const PostComponent = {
   controller,
   template: `
-    <comment-form></comment-form>
+    <comment-form refresh="$ctrl.getComments()"></comment-form>
 
     <h1>Comments</h1>
     <comment
