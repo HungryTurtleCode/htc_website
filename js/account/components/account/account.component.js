@@ -3,7 +3,13 @@ import controller from './account.controller';
 const AccountComponent = {
   controller,
   template: `
-    <h1>Account</h1>
+    <title-block
+      title="My Account"
+      subtitle="">
+    </title-block>
+    <div class="account-form-cont">
+      <h1>sfsdf</h1>
+    </div>
   `
 };
 

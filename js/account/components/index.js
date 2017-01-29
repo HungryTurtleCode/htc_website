@@ -4,6 +4,7 @@ import myCourses from './myCourses';
 import account from './account';
 import completed from './completed';
 import bookmarked from './bookmarked';
+import titleblock from './titleblock';
 
 const ComponentModule = angular
   .module('component.module', [
@@ -11,7 +12,8 @@ const ComponentModule = angular
     myCourses,
     account,
     completed,
-    bookmarked
+    bookmarked,
+    titleblock
   ])
   .name;
 
