@@ -1,19 +1,13 @@
 import controller from './post.controller';
 
-const PostCompoonent = {
+const PostComponent = {
   controller,
-  bindings: {
-      comments: '<'
-  },
   template: `
    <comment-form></comment-form>
 
    <h1>Comments</h1>
-   <comment></comment>
-   <comment></comment>
-   <comment></comment>
-   <comment></comment>
+   <comment ng-repeat="comment in $ctrl.comments | orderBy:'-score'" data="comment"></comment>
   `
 };
 
-export default PostCompoonent;
+export default PostComponent;

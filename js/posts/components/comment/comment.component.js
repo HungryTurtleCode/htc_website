@@ -10,7 +10,7 @@ const CommentComponent = {
       <div class="header">
         <div class="image-cont" style="background: url({{$ctrl.data.image}}); background-size: cover"></div>
         <span class="name" ng-bind-html="$ctrl.formattedName()"></span>
-        <span class="date">{{::$ctrl.data.date * 1000 | date}}</span>
+        <span class="date">{{::$ctrl.data.date | date}}</span>
 
       </div>
       <div class="padding">

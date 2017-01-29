@@ -1,7 +1,28 @@
 class PostCommentController{
-  constructor() {
-    let a = 0;
+  constructor(firebaseService, $location, $scope) {
+    this.firebaseService = firebaseService;
+    this.$location = $location;
+    this.$scope = $scope;
+  }
+  $onInit(){
+    let loc = this.getPageLocations() || '';
+
+    this.firebaseService.getComments(loc)
+      .then(comments => {
+        this.comments = comments || [];
+        this.$scope.$apply();
+      });
+  }
+  getPageLocations(){
+    let url = this.$location.absUrl();
+    let arr = url.split('/');
+
+    let newArr = arr.splice(3);
+
+    return newArr.join('/');
   }
 }
+
+PostCommentController.$inject = ['firebaseService', '$location', '$scope'];
 
 export default PostCommentController;

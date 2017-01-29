@@ -15,6 +15,29 @@ class firebaseService{
         return snap.val();
       });
   }
+  getComments(url){
+    if(url !== ''){
+      return this.ref
+        .child('comments')
+        .child(url)
+        .once('value')
+        .then(snap => {
+          return this.deepObjToArray(snap.val());
+        });
+    }
+  }
+  deepObjToArray(obj){
+    return Object.keys(obj).map(key => {
+      if(typeof obj[key] === 'object'){
+        Object.keys(obj[key]).forEach(newKey => {
+          if(typeof obj[key][newKey] === 'object'){
+            obj[key][newKey] = this.deepObjToArray(obj[key][newKey]);
+          }
+        })
+      }
+      return obj[key];
+    });
+  }
   setComment(loc, text, isReply, user_name, user_id, image){
     let comment = {
       text,
