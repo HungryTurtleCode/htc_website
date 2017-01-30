@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<div id="sales-container">
+  {% include breadcrumbs.html %}
+  <main class="sales-page">
+    <h1>{{ page.title  }}</h1>
+    <h2>{{ page.subtitle  }}</h2>
+
+    <section class="top">
+      <div class="video">
+      <iframe width="800" height="445" src="https://www.youtube.com/embed/Bua8k_CcnuI" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="side">
+        <button class="take-course">
+          Take This Course
+        </button>
+        <ul class="items">
+          <li><strong>Lessons:</strong> 1</li>
+          <li><strong>Skill Level:</strong> Beginner</li>
+          <li>
+            <strong>Languages Used:</strong>
+            <ul>
+              <li><a href="{{site.baseurl}}/tags/javascript">Javascript</a></li>
+              <li><a href="{{site.baseurl}}/tags/html-css">HTML & CSS</a></li>
+            </ul>
+          </li>
+          <li><strong>Frameworks:</strong>
+            <ul>
+              <li><a href="{{site.baseurl}}/tags/javascript">Javascript</a></li>
+              <li><a href="{{site.baseurl}}/tags/html-css">HTML & CSS</a></li>
+            </ul>
+          </li>
+          <li><strong>Topics Covered:</strong> 1</li>
+        </ul>
+      </div>
+    </section>
+
+
+
+    {{content}}
+
+  </main>
+</div>
