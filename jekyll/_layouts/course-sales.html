@@ -60,9 +60,14 @@ layout: default
       </div>
     </section>
 
-    {% include lesson-list.html %}
+    <div class="sales-main">
+      <div class="content">
+        <h2 class="top-header">A Bit About <span class="high">The</span> <span class="accent">Course</span></h2>
+        {{content}}
+        {% include lesson-list.html %}
+      </div>
 
-    {{content}}
+    </div>
 
   </main>
 </div>

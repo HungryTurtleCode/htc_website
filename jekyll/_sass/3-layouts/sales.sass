@@ -23,11 +23,14 @@
       font-weight: 300
 
     .top
-      margin: 0.5em 0 2em 0
+      margin: 1em 0 2em 0
       +clearfix
 
       .video
         +span-columns(8)
+
+        iframe
+          width: 100%
 
       .side
         +span-columns(4)
@@ -53,5 +56,32 @@
             li
               list-style: disc
 
+              a
+                cursor: pointer
+
+    .sales-main
+      +clearfix
+
+      .content
+        +span-columns(8)
+
+        h2
+          font-size: 1.4em
+          font-weight: bold
+          margin-top: 0
+          margin-bottom: 1.5em
+
+        .top-header
+          text-align: center
+          background: $default-dark-color
+          margin-top: 1em
+          padding: 0.4em
+          color: $logo-base-color
+
+          .high
+            color: $highlight-color
+
+          .accent
+            color: $secondary-color
 
 
