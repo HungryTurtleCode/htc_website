@@ -1,11 +1,26 @@
 {% for course in site.data.courses %}
   {% if course.name == page.title %}
+    <div id="lesson-list-cont">
+      <h2 class="lesson-list-title">List <span class="high">Of</span> <span class="accent">Lessons</span></h2>
 
-    {% for lesson in course.lessons %}
-      <p>{{lesson.length}}</p>
-      <p>{{lesson.name}}</p>
-      <p>{{lesson.url}}</p>
-    {% endfor %}
+      {% assign count = 0 %}
+      <ul class="lesson-list">
+        {% for section in course.sections %}
+          <li>
+            <h3>{{section.name}}</h3>
+            <ul class="section">
+              {% for lesson in section.lessons %}
+                <li>
+                  {% assign count = count | plus: 1 %}
+                  <p>{{count}}. {{lesson.name}}</p>
+                  <p class="length">{{lesson.length}}</p>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
 
   {% endif %}
 {% endfor %}
