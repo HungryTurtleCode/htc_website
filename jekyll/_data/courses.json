@@ -31,6 +31,116 @@
           }
         ]
 
+      },
+      {
+        "name": "Getting Started",
+
+        "lessons": [
+          {
+            "name": "Lesson 1",
+            "url": "lesson-1",
+            "length": "2:39"
+          },
+          {
+            "name": "Lesson 2",
+            "url": "lesson-2",
+            "length": "2:39"
+          }
+        ]
+
+      },
+
+      {
+        "name": "Beyond The Basics",
+
+        "lessons": [
+          {
+            "name": "Lesson 3",
+            "url": "lesson-3",
+            "length": "2:39"
+          }
+        ]
+
+      },
+      {
+        "name": "Getting Started",
+
+        "lessons": [
+          {
+            "name": "Lesson 1",
+            "url": "lesson-1",
+            "length": "2:39"
+          },
+          {
+            "name": "Lesson 2",
+            "url": "lesson-2",
+            "length": "2:39"
+          }
+        ]
+
+      },
+
+      {
+        "name": "Beyond The Basics",
+
+        "lessons": [
+          {
+            "name": "Lesson 3",
+            "url": "lesson-3",
+            "length": "2:39"
+          }
+        ]
+
+      },
+      {
+        "name": "Getting Started",
+
+        "lessons": [
+          {
+            "name": "Lesson 1",
+            "url": "lesson-1",
+            "length": "2:39"
+          },
+          {
+            "name": "Lesson 2",
+            "url": "lesson-2",
+            "length": "2:39"
+          },
+          {
+            "name": "Lesson 1",
+            "url": "lesson-1",
+            "length": "2:39"
+          },
+          {
+            "name": "Lesson 2",
+            "url": "lesson-2",
+            "length": "2:39"
+          },
+          {
+            "name": "Lesson 1",
+            "url": "lesson-1",
+            "length": "2:39"
+          },
+          {
+            "name": "Lesson 2",
+            "url": "lesson-2",
+            "length": "2:39"
+          }
+        ]
+
+      },
+
+      {
+        "name": "Beyond The Basics",
+
+        "lessons": [
+          {
+            "name": "Lesson 3",
+            "url": "lesson-3",
+            "length": "2:39"
+          }
+        ]
+
       }
     ]
   }
