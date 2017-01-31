@@ -1,0 +1,11 @@
+{% for course in site.data.courses %}
+  {% if course.name == page.title %}
+
+    {% for lesson in course.lessons %}
+      <p>{{lesson.length}}</p>
+      <p>{{lesson.name}}</p>
+      <p>{{lesson.url}}</p>
+    {% endfor %}
+
+  {% endif %}
+{% endfor %}
