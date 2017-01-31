@@ -17,22 +17,45 @@ layout: default
           Take This Course
         </button>
         <ul class="items">
-          <li><strong>Lessons:</strong> 1</li>
-          <li><strong>Skill Level:</strong> Beginner</li>
-          <li>
-            <strong>Languages Used:</strong>
-            <ul>
-              <li><a href="{{site.baseurl}}/tags/javascript">Javascript</a></li>
-              <li><a href="{{site.baseurl}}/tags/html-css">HTML & CSS</a></li>
-            </ul>
-          </li>
-          <li><strong>Frameworks:</strong>
-            <ul>
-              <li><a href="{{site.baseurl}}/tags/javascript">Javascript</a></li>
-              <li><a href="{{site.baseurl}}/tags/html-css">HTML & CSS</a></li>
-            </ul>
-          </li>
-          <li><strong>Topics Covered:</strong> 1</li>
+          {% if page.lessons %}
+            <li><strong>Lessons:</strong> {{page.lessons}}</li>
+          {% endif %}
+
+
+          {% if page.skill %}
+            <li><strong>Skill Level:</strong> {{page.skill}}</li>
+          {% endif %}
+
+          {% if page.languages %}
+            <li>
+              <strong>Languages Used:</strong>
+              <ul>
+                {% for lang in page.languages %}
+                  <li><a href="{{site.baseurl}}/tag/{{lang | slugify}}">{{lang}}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
+
+          {% if page.frameworks %}
+            <li><strong>Frameworks:</strong>
+              <ul>
+                {% for fw in page.frameworks %}
+                  <li><a href="{{site.baseurl}}/tag/{{fw | slugify}}">{{fw}}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
+
+          {% if page.topics %}
+            <li><strong>Topics Covered:</strong>
+              <ul>
+                {% for topic in page.topics %}
+                  <li><a href="{{site.baseurl}}/tag/{{topic | slugify}}">{{topic}}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
         </ul>
       </div>
     </section>
