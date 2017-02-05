@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently 'webpack -w' 'jekyll serve --livereload --drafts'",
-    "build": "webpack && jekyll build",
-    "deploy": "webpack && jekyll build && firebase deploy"
+    "start": "concurrently 'webpack -w' 'bundle exec jekyll serve --livereload --drafts'",
+    "build": "webpack && bundle exec jekyll build",
+    "deploy": "webpack && bundle exec jekyll build && firebase deploy"
   },
   "repository": {
     "type": "git",
