@@ -9,57 +9,10 @@
 	<title>Lesson - Hungry Turtle Code</title>
 	<link rel="stylesheet" href="{{site.baseurl}}/css/app.css">
 </head>
-<body>
-  <div id="lesson-container">
-    <div class="sidebar-container">
-      <div class="logo">
-        <a href="/">
-          <img src="{{site.baseurl}}/img/mascot.png"/>
-          <h4>hungry<span class="turtle">turtle</span><span class="code">code</span></h4>
-          <h6>A Sea Of Information</h6>
-        </a>
-      </div>
-    </div>
-    <div class="main-container">
-      <header class="top-nav">
-        <nav class="lesson-nav">
-          <ul>
-            <li>Home</li>
-            <li>My Account</li>
-            <li>Courses</li>
-          </ul>
-        </nav>
-      </header>
-      <main class="lesson-content">
-        <h1 class="lesson-title">Lesson Title</h1>
-        <h3 class="course-title">Course Title</h3>
-        <div class="video-container">
-          <div class="video">
-          </div>
-        </div>
-        <div class="bottom-container">
+<body ng-app="lesson">
 
-          <div class="tabs">
-            <ul>
-              <li class="active">Lesson Article</li>
-              <li>Discussion</li>
-              <li>Resources</li>
-            </ul>
-          </div>
+  <lesson></lesson>
 
-          <div class="tab-content">
-            <div class="article">
-            </div>
-            <div class="discussion">
-            </div>
-            <div class="resources">
-            </div>
-          </div>
-
-        </div>
-      </main>
-    </div>
-  </div>
   <script src="{{site.baseurl}}/scripts/lesson.js"></script>
 </body>
 </html>
