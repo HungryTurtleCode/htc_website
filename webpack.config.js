@@ -4,7 +4,8 @@ module.exports = {
   entry: {
     'bundle': "./js/index.js",
     'account': './js/account.js',
-    'post': './js/post.js'
+    'post': './js/post.js',
+    'lesson': './js/lesson.js'
   },
   output: {
     path: "jekyll/scripts/",
