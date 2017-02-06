@@ -13,7 +13,19 @@ const LessonComponent = {
           </a>
         </div>
 
-        <!-- Add a list of all lesson -->
+        <div class="lesson-list">
+          <ul>
+            <li ng-repeat="section in $ctrl.lessonList">
+              {{section.name}}
+              <ul>
+                <li ng-repeat="lesson in section.lessons">
+                  {{lesson}}
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
 
       </div>
       <div class="main-container">

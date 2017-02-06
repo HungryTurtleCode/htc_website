@@ -15,10 +15,16 @@ class LessonService{
       lesson: this.lesson
     }
   }
-  getLessonList(){
-    return this.fb.getLessonList(this.course)
+  getLessonList(course){
+    if(this.lessonList && course === this.course)
+      return Promise.resolve(this.lessonList);
+
+    let courseName = course || this.course;
+
+    return this.fb.getLessonList(courseName)
       .then(list => {
-        return this.deepObjToArray(list);
+        this.lessonList = this.deepObjToArray(list);
+        return this.lessonList;
       });
   }
   deepObjToArray(obj){
