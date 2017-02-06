@@ -2,6 +2,7 @@ _site
 jekyll/scripts/bundle.js
 jekyll/scripts/account.js
 jekyll/scripts/post.js
+jekyll/scripts/lesson.js
 .DS_Store
 .jekyll
 .bundle

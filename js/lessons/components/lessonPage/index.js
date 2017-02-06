@@ -15,18 +15,11 @@ const LessonPageComponent = angular
       url: '/:course/:lesson',
       template: '<lesson-page lesson-data="$resolve.getLesson"></lesson-page>',
       resolve: {
-        getLesson: ['$stateParams', ($stateParams) => {
-
-          return new Promise(resolve => {
-            let dbPath = `${$stateParams.course}/${$stateParams.lesson}`;
-            let ref = firebase.database().ref();
-            ref
-              .child('premium')
-              .child(dbPath)
-              .once('value', (snap) => {
-                resolve(snap.val())
-              });
-          })
+        getLesson: ['$stateParams', 'firebaseService', ($stateParams, firebaseService) => {
+          return firebaseService.getLessonContent(
+            $stateParams.course,
+            $stateParams.lesson
+          )
         }]
       }
     });
