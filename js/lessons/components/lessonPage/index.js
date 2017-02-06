@@ -1,4 +1,6 @@
 import angular from 'angular';
+import firebase from 'firebase';
+
 import uiRouter from 'angular-ui-router';
 import LessonPage from './lessonPage.component';
 
@@ -11,10 +13,20 @@ const LessonPageComponent = angular
     $stateProvider
     .state('lesson', {
       url: '/:course/:lesson',
-      template: '<lesson-page></lesson-page>',
+      template: '<lesson-page lesson-data="$resolve.getLesson"></lesson-page>',
       resolve: {
-        signIn: [() => {
-          console.log('resolve');
+        getLesson: ['$stateParams', ($stateParams) => {
+
+          return new Promise(resolve => {
+            let dbPath = `${$stateParams.course}/${$stateParams.lesson}`;
+            let ref = firebase.database().ref();
+            ref
+              .child('premium')
+              .child(dbPath)
+              .once('value', (snap) => {
+                resolve(snap.val())
+              });
+          })
         }]
       }
     });

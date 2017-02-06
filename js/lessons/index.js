@@ -1,3 +1,5 @@
+import config from '../main/common/config';
+
 import angular from 'angular';
 import lesson from './lesson.component';
 

@@ -1,6 +1,7 @@
 class LessonPageController{
-  constructor() {
-    let a = 0;
+  constructor() {}
+  $onInit(){
+    this.videoUrl = this.lessonData.video;
   }
 }
 
