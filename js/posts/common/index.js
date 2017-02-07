@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import firebaseService from './firebaseService';
+import firebaseService from '../../common/firebaseService/';
 import userData from './userData';
 import auth from './auth';
 

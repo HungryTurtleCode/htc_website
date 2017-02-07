@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import firebaseService from './firebaseService';
+import firebaseService from '../../common/firebaseService';
 import lessonService from './lessonService';
 
 const CommonComponent = angular

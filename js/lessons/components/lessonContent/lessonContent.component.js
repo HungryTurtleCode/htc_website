@@ -31,6 +31,7 @@ const LessonContent = {
         </div>
         <div class="discussion" ng-show="$ctrl.activeTab === 1">
           discussion
+          <post-comments></post-comments>
         </div>
         <div class="resources" ng-show="$ctrl.activeTab === 2">
           resources

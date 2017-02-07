@@ -1,8 +1,8 @@
 import firebase from 'firebase';
+import config from './config';
 
-class firebaseService{
+class FirebaseService{
   constructor() {
-    this.fb = firebase;
     this.ref = firebase.database().ref();
   }
   getUserMeta(user){
@@ -35,16 +35,30 @@ class firebaseService{
       .child('score')
       .set(score)
   }
-  deepObjToArray(obj){
-    return Object.keys(obj).map(key => {
-      if(typeof obj[key] === 'object'){
-        Object.keys(obj[key]).forEach(newKey => {
-          if(typeof obj[key][newKey] === 'object'){
-            obj[key][newKey] = this.deepObjToArray(obj[key][newKey]);
-          }
-        })
+  getLessonContent(course, lesson){
+    return new Promise((resolve, reject) => {
+      if(course && lesson){
+        let dbPath = `${course}/${lesson}`;
+        this.ref
+          .child('premium')
+          .child(dbPath)
+          .once('value', snap => {
+            resolve(snap.val());
+          });
+      }else{
+        reject('course and lesson not specified');
       }
-      return obj[key];
+    });
+  }
+  getLessonList(course){
+    return new Promise((resolve, reject) => {
+      this.ref
+        .child('courses')
+        .child(course)
+        .child('lessons')
+        .once('value', snap => {
+          resolve(this.deepObjToArray(snap.val()));
+        });
     });
   }
   setComment(loc, text, isReply, user_name, user_id, image){
@@ -72,6 +86,18 @@ class firebaseService{
         return err;
       });
   }
+  deepObjToArray(obj){
+    return Object.keys(obj).map(key => {
+      if(typeof obj[key] === 'object'){
+        Object.keys(obj[key]).forEach(newKey => {
+          if(typeof obj[key][newKey] === 'object'){
+            obj[key][newKey] = this.deepObjToArray(obj[key][newKey]);
+          }
+        })
+      }
+      return obj[key];
+    });
+  }
 }
 
-export default firebaseService;
+export default FirebaseService;
