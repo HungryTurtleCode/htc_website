@@ -3,7 +3,8 @@ import controller from './lessonContent.controller';
 const LessonContent = {
   controller,
   bindings: {
-    article: '<'
+    article: '<',
+    resources: '<'
   },
   template: `
     <div class="bottom-container">
@@ -33,7 +34,30 @@ const LessonContent = {
           <post-comment></post-comment>
         </div>
         <div class="resources" ng-show="$ctrl.activeTab === 2">
-          resources
+          <h3>Github:</h3>
+          <ul>
+            <li>
+              <a ng-href="{{$ctrl.resources.github}}">
+                {{$ctrl.resources.github}}
+              </a>
+            </li>
+          </ul>
+          <h3>Demo:</h3>
+          <ul>
+            <li>
+              <a ng-href="{{$ctrl.resources.demo}}">
+                {{$ctrl.resources.demo}}
+              </a>
+            </li>
+          </ul>
+          <h3>Additional Resources:</h3>
+          <ul>
+            <li ng-repeat="resource in $ctrl.resources.additional">
+              <a ng-href="{{resource}}">
+                {{resource}}
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
