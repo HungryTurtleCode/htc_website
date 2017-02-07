@@ -1,5 +1,5 @@
 import angular from 'angular';
-import userData from './userData';
+import userData from '../../common/userData';
 import firebaseService from '../../common/firebaseService';
 
 const CommonModule = angular

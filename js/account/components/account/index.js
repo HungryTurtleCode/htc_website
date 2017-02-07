@@ -2,12 +2,8 @@ import angular from 'angular';
 import firebase from 'firebase';
 import account from './account.component';
 
-import userData from '../../common/userData';
-
 const accountComponent = angular
-  .module('account', [
-    userData
-  ])
+  .module('account', [])
   .component('account', account)
   .config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
     $stateProvider
