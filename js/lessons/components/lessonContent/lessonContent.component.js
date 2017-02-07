@@ -26,7 +26,7 @@ const LessonContent = {
       </div>
 
       <div class="tab-content">
-        <div class="article" ng-show="$ctrl.activeTab === 0">
+        <div class="article post-page" ng-show="$ctrl.activeTab === 0">
           <div ng-bind-html="$ctrl.articleTrusted"></div>
         </div>
         <div class="discussion" ng-show="$ctrl.activeTab === 1">
