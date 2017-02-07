@@ -18,10 +18,12 @@ class userData{
     }else{
       this.auth.waitForAuth()
         .then(snap => {
-          this.fb.getUserMeta(snap.uid)
-            .then(user => {
-              this.user = user;
-            });
+          if(snap && snap.uid && snap.isAnonymous){
+            this.fb.getUserMeta(snap.uid)
+              .then(user => {
+                this.user = user;
+              });
+          }
         });
     }
   }

@@ -6,10 +6,10 @@ class Auth{
     this.onAuthChange();
   }
   waitForAuth(){
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       firebase.auth().onAuthStateChanged((user) => {
-        if(user && !user.isAnonymous){
-          resolve(user)
+        if(user){
+          resolve(user);
         }
       });
     });

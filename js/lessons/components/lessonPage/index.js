@@ -20,6 +20,16 @@ const LessonPageComponent = angular
             $stateParams.course,
             $stateParams.lesson
           )
+        }],
+        signIn: ['auth', 'userData', '$state', (auth, userData, $state) => {
+          return auth.waitForAuth()
+            .then(user => {
+              if(user && user.uid && !user.isAnonymous){
+                return true;
+              }else{
+                $state.go('signin');
+              }
+            })
         }]
       }
     });
