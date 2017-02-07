@@ -1,7 +1,11 @@
 class LessonPageController{
-  constructor() {}
+  constructor() {
+    this.videoUrl = '';
+  }
   $onInit(){
-    this.videoUrl = this.lessonData.video;
+    if(this.lessonData && this.lessonData.video){
+      this.videoUrl = this.lessonData.video;
+    }
   }
 }
 

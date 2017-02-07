@@ -1,8 +1,9 @@
 class LessonController{
-  constructor(firebaseService, $rootScope, lessonService) {
+  constructor(firebaseService, $rootScope, lessonService, $state) {
     this.fb = firebaseService;
     this.$rootScope = $rootScope;
     this.lessonService = lessonService;
+    this.$state = $state;
 
     this.lessonList = [];
   }
@@ -19,8 +20,14 @@ class LessonController{
       this.lessonService.setMeta(params.course, params.lesson)
     });
   }
+  goToLesson(lesson){
+    this.$state.go('lesson', {course: this.lessonService.course, lesson})
+  }
+  slugify(name){
+    return name.toLowerCase().split(' ').join('-');
+  }
 }
 
-LessonController.$inject = ['firebaseService', '$rootScope', 'lessonService'];
+LessonController.$inject = ['firebaseService', '$rootScope', 'lessonService', '$state'];
 
 export default LessonController;
