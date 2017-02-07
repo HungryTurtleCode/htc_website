@@ -4,6 +4,8 @@ class userData{
     this.auth = auth;
 
     this.user = {};
+
+    this.getUserMeta();
   }
   getUserMeta(id){
     if(this.user.name){return Promise.resolve(this.user)}
@@ -27,6 +29,7 @@ class userData{
     if(isReply){
       loc = loc + isReply + '/replies/';
     }
+
     return this.fb.setComment(
       loc,
       text,

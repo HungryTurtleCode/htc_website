@@ -30,8 +30,7 @@ const LessonContent = {
           <div ng-bind-html="$ctrl.articleTrusted"></div>
         </div>
         <div class="discussion" ng-show="$ctrl.activeTab === 1">
-          discussion
-          <post-comments></post-comments>
+          <post-comment></post-comment>
         </div>
         <div class="resources" ng-show="$ctrl.activeTab === 2">
           resources

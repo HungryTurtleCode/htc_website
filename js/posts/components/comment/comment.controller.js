@@ -61,7 +61,7 @@ class commentController{
     let url = this.$location.absUrl();
     let arr = url.split('/');
 
-    let newArr = arr.splice(3);
+    let newArr = [arr[arr.length - 2], arr[arr.length - 1]];
 
     return newArr.join('/');
   }

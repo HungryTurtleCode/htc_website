@@ -2,11 +2,13 @@ import angular from 'angular';
 
 import firebaseService from '../../common/firebaseService';
 import lessonService from './lessonService';
+import userData from '../../common/userData';
 
 const CommonComponent = angular
-  .module('common.module', [
+  .module('lessons.common.module', [
     firebaseService,
-    lessonService
+    lessonService,
+    userData
   ])
   .name;
 

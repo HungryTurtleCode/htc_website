@@ -1,9 +1,10 @@
 class LessonController{
-  constructor(firebaseService, $rootScope, lessonService, $state) {
+  constructor(firebaseService, $rootScope, lessonService, $state, userData) {
     this.fb = firebaseService;
     this.$rootScope = $rootScope;
     this.lessonService = lessonService;
     this.$state = $state;
+    this.userData = userData;
 
     this.lessonList = [];
   }
@@ -39,6 +40,6 @@ class LessonController{
   }
 }
 
-LessonController.$inject = ['firebaseService', '$rootScope', 'lessonService', '$state'];
+LessonController.$inject = ['firebaseService', '$rootScope', 'lessonService', '$state', 'userData'];
 
 export default LessonController;

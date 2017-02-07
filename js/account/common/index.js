@@ -3,7 +3,7 @@ import userData from '../../common/userData';
 import firebaseService from '../../common/firebaseService';
 
 const CommonModule = angular
-  .module('common.module', [
+  .module('account.common.module', [
     userData,
     firebaseService
   ])

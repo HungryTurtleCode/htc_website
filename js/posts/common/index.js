@@ -5,7 +5,7 @@ import userData from '../../common/userData';
 import auth from '../../common/auth';
 
 const CommonModule = angular
-  .module('common.module', [
+  .module('post.common.module', [
     firebaseService,
     userData,
     auth

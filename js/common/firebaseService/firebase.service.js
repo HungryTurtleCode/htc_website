@@ -41,7 +41,10 @@ class FirebaseService{
         .child(url)
         .once('value')
         .then(snap => {
-          return this.deepObjToArray(snap.val());
+          if(snap.val()){
+            return this.deepObjToArray(snap.val());
+          }
+          return false;
         });
     }
   }
