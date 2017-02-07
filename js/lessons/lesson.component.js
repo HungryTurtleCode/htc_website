@@ -16,8 +16,8 @@ const LessonComponent = {
         <div id="lesson-list-cont" class="u-fancy-scrollbar">
           <ul class="lesson-list">
             <li ng-repeat="section in $ctrl.lessonList">
-              <h3>{{section.name}}</h3>
-              <ul class="section">
+              <h3 ng-click="section.show = !section.show">{{section.name}}</h3>
+              <ul class="section" ng-if="section.show">
                 <a ui-sref="lesson({course: $ctrl.lessonService.course, lesson: $ctrl.slugify(lesson.name)})"
                   ng-repeat="lesson in section.lessons">
                   <li>
