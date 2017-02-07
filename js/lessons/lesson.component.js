@@ -13,7 +13,7 @@ const LessonComponent = {
           </a>
         </div>
 
-        <div id="lesson-list-cont">
+        <div id="lesson-list-cont" class="u-fancy-scrollbar">
           <ul class="lesson-list">
             <li ng-repeat="section in $ctrl.lessonList">
               <h3>{{section.name}}</h3>
