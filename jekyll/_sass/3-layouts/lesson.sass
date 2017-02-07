@@ -57,6 +57,17 @@
       cursor: pointer
       border-bottom: 1px solid #343434
 
+    .lesson-item
+      transition: background 0.3s ease-out, color 0.3s ease-out
+
+      &.active
+        background: $secondary-color
+        color: white
+        .length
+          color: #f4f4f4
+        svg
+          fill: #f8f8f8
+
     a
       text-decoration: none
       color: inherit

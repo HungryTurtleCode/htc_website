@@ -10,11 +10,22 @@ class LessonController{
   $onInit(){
     this.onStateChange();
   }
+  setActiveSection(){
+    this.lessonList.forEach(section => {
+      section.lessons.forEach(lesson => {
+        if(this.slugify(lesson.name) === this.lessonService.lesson){
+          section.show = true;
+          return;
+        }
+      });
+    });
+  }
   onStateChange(){
     this.$rootScope.$on('$stateChangeStart', (e, to, params) => {
       this.lessonService.getLessonList(params.course)
         .then(list => {
           this.lessonList = list
+          this.setActiveSection();
         });
 
       this.lessonService.setMeta(params.course, params.lesson)
