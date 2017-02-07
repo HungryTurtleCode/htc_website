@@ -1,5 +1,3 @@
-import config from '../main/common/config';
-
 import angular from 'angular';
 
 import common from './common/';

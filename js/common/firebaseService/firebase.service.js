@@ -15,6 +15,25 @@ class FirebaseService{
         return snap.val();
       });
   }
+  setUserMeta(user, data){
+    return this.ref
+      .child('users')
+      .child(user)
+      .child('userInfo')
+      .set(data)
+      .then(snap => {
+        return true
+      });
+  }
+  getUserData(user){
+    return this.ref
+      .child('users')
+      .child(user)
+      .once('value')
+      .then(snap => {
+        return snap.val();
+      });
+  }
   getComments(url){
     if(url !== ''){
       return this.ref
