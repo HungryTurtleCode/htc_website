@@ -8,7 +8,10 @@ const VideoComponent = {
   template: `
     <div class="video-container">
       <div class="video">
-        <videogular vg-theme="$ctrl.config.theme">
+        <videogular vg-theme="$ctrl.config.theme"
+          data-vg-player-ready="$ctrl.onPlayerReady($API)"
+          data-vg-update-time="$ctrl.checkTime($currentTime, $duration)"
+          data-vg-complete="$ctrl.nextVideo()">
           <vg-media
             vg-src="$ctrl.lessonVid">
           </vg-media>
