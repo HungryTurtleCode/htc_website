@@ -1,11 +1,15 @@
 class userData{
-  constructor(firebaseService, auth) {
+  constructor(firebaseService, auth, dataService) {
     this.fb = firebaseService;
     this.auth = auth;
+    this.dataService = dataService;
 
     this.user = {};
 
     this.getUserMeta();
+  }
+  getSignedVideoUrl(video){
+    return this.dataService.getSignedLessonVideo(this.user.user_id, video);
   }
   getUserMeta(id){
     if(this.user.name){return Promise.resolve(this.user)}
@@ -18,7 +22,7 @@ class userData{
     }else{
       this.auth.waitForAuth()
         .then(snap => {
-          if(snap && snap.uid && snap.isAnonymous){
+          if(snap && snap.uid && !snap.isAnonymous){
             this.fb.getUserMeta(snap.uid)
               .then(user => {
                 this.user = user;
@@ -54,6 +58,6 @@ class userData{
   }
 }
 
-userData.$inject = ['firebaseService', 'auth'];
+userData.$inject = ['firebaseService', 'auth', 'dataService'];
 
 export default userData;
