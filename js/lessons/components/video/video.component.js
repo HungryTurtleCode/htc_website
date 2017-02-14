@@ -13,7 +13,7 @@ const VideoComponent = {
             vg-src="$ctrl.lessonVid">
           </vg-media>
 
-          <vg-controls>
+          <vg-controls vg-autohide="$ctrl.autohide" vg-autohide-time="$ctrl.autohideTime">
             <vg-play-pause-button></vg-play-pause-button>
             <vg-time-display>{{currentTime | date:'mm:ss'}}</vg-time-display>
             <vg-scrub-bar>
@@ -29,7 +29,7 @@ const VideoComponent = {
           </vg-controls>
 
           <vg-overlay-play></vg-overlay-play>
-
+          <vg-poster vg-url="$ctrl.poster"></vg-poster>
 
         </videogular>
       </div>

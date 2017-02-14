@@ -32,6 +32,7 @@
     "firebase": "^3.6.6",
     "videogular": "^1.4.4",
     "videogular-controls": "^1.4.4",
-    "videogular-overlay-play": "^1.4.4"
+    "videogular-overlay-play": "^1.4.4",
+    "videogular-poster": "^1.4.4"
   }
 }

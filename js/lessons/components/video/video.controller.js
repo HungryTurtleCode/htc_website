@@ -6,6 +6,9 @@ class VideoController{
     this.config = {
       theme: '/css/videogular.min.css'
     }
+
+    this.autohide = true;
+    this.autohideTime = 4000;
   }
   $onChanges(change){
     if(this.videoSrc){
