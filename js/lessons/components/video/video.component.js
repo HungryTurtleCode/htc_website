@@ -9,6 +9,7 @@ const VideoComponent = {
     <div class="video-container">
       <div class="video">
         <videogular vg-theme="$ctrl.config.theme"
+          video-cursor
           data-vg-player-ready="$ctrl.onPlayerReady($API)"
           data-vg-update-time="$ctrl.checkTime($currentTime, $duration)"
           data-vg-complete="$ctrl.nextVideo()">
