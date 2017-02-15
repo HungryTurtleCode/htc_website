@@ -37,7 +37,7 @@ const LessonContent = {
           <h3>Github:</h3>
           <ul>
             <li>
-              <a ng-href="{{$ctrl.resources.github}}">
+              <a ng-href="{{$ctrl.resources.github}}" target="_blank">
                 {{$ctrl.resources.github}}
               </a>
             </li>
@@ -45,7 +45,7 @@ const LessonContent = {
           <h3>Demo:</h3>
           <ul>
             <li>
-              <a ng-href="{{$ctrl.resources.demo}}">
+              <a ng-href="{{$ctrl.resources.demo}}" target="_blank">
                 {{$ctrl.resources.demo}}
               </a>
             </li>
@@ -53,7 +53,7 @@ const LessonContent = {
           <h3>Additional Resources:</h3>
           <ul>
             <li ng-repeat="resource in $ctrl.resources.additional">
-              <a ng-href="{{resource}}">
+              <a ng-href="{{resource}}" target="_blank">
                 {{resource}}
               </a>
             </li>
