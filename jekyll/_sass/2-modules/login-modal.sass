@@ -1,6 +1,7 @@
 $border-radius: 0em
 
-.login-modal-container
+.login-modal-container,
+htc-sign-in-route
   z-index: 100
   font-size: 1rem
   +position(fixed, 0 0 0 0)
@@ -11,6 +12,7 @@ $border-radius: 0em
   align-items: center
 
   .modal
+    +clearfix
     background: white
     border-radius: $border-radius
     box-shadow: 0 5px 15px rgba(0,0,0,.5)
@@ -152,5 +154,22 @@ $border-radius: 0em
           color: $secondary-color
           font-size: 0.7em
           margin-top: 3em
+
+
+htc-sign-in-route
+  font-size: 0.8rem
+  position: absolute
+  top: 30
+  left: 225
+  z-index: 0
+  background: white
+  align-items: flex-start
+
+  .modal
+    width: 400px
+    box-shadow: 0 3px 10px rgba(0,0,0,.2)
+    margin-top: -1em
+    margin-bottom: 2em
+
 
 

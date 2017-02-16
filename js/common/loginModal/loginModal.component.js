@@ -7,9 +7,9 @@ const loginModal = {
   },
   template: `
 
-    <div class="login-modal-container"
+    <!--<div class="login-modal-container"
       ng-hide="$ctrl.hideModal"
-      ng-click="$ctrl.decideToHideModal($event)">
+      ng-click="$ctrl.decideToHideModal($event)">-->
       <div class="modal"
         ng-click="$ctrl.stopPropagation($event)">
 
@@ -97,7 +97,7 @@ const loginModal = {
               </div>
           </div>
         </div>
-    </div>
+    <!--</div>-->
   `
 };
 
