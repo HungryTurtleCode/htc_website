@@ -23,13 +23,15 @@ class LessonController{
   }
   onStateChange(){
     this.$rootScope.$on('$stateChangeStart', (e, to, params) => {
-      this.lessonService.getLessonList(params.course)
-        .then(list => {
-          this.lessonList = list
-          this.setActiveSection();
-        });
+      if(params.course){
+        this.lessonService.getLessonList(params.course)
+          .then(list => {
+            this.lessonList = list
+            this.setActiveSection();
+          });
 
-      this.lessonService.setMeta(params.course, params.lesson)
+        this.lessonService.setMeta(params.course, params.lesson)
+      }
     });
   }
   goToLesson(lesson){
