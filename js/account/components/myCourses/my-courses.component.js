@@ -2,17 +2,23 @@ import controller from './my-courses.controller';
 
 const myCourses = {
   controller,
+  bindings: {
+    courses: '<'
+  },
   template: `
     <title-block
       title="Education Goodness"
       subtitle="All the courses you can start watching right now">
     </title-block>
-    <div class="course-list">
+    <div class="course-list" ng-if="$ctrl.courses">
       <course-card></course-card>
       <course-card></course-card>
       <course-card></course-card>
       <course-card></course-card>
       <course-card></course-card>
+    </div>
+    <div ng-if="!$ctrl.courses">
+      <htc-sign-in></htc-sign-in>
     </div>
   `
 };
