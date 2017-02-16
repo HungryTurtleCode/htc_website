@@ -10,8 +10,8 @@ const Completed = {
       title="Completed"
       subtitle="Courses You Have Already Finished">
     </title-block>
-    <div ng-if="$ctrl.courses">
-      signed in
+    <div class="course-list" ng-if="$ctrl.courses">
+      <course-card ng-repeat="course in $ctrl.courses"></course-card>
     </div>
     <div ng-if="!$ctrl.courses">
       <htc-sign-in></htc-sign-in>

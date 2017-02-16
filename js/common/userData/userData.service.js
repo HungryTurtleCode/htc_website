@@ -5,8 +5,41 @@ class userData{
     this.dataService = dataService;
 
     this.user = {};
+    this.courses = [];
+    this.completed = [];
+    this.bookmarked = [];
 
     this.getUserMeta();
+  }
+  getUserEnrolledCourses(id){
+    if(this.courses.length){return Promise.resolve(this.courses)}
+
+    return this.fb.getUserEnrolledCourses(id)
+      .then(courses => {
+          return this.courses = Object.keys(courses).map(key => {
+            return courses[key];
+          });
+      });
+  }
+  getUserBookmarked(id){
+    if(this.bookmarked.length){return Promise.resolve(this.bookmarked)}
+
+    return this.fb.getUserBookmarked(id)
+      .then(courses => {
+        return this.bookmarked = Object.keys(courses).map(key => {
+          return courses[key];
+        });
+      });
+  }
+  getUserCompleted(id){
+    if(this.completed.length){return Promise.resolve(this.completed)}
+
+    return this.fb.getUserCompleted(id)
+      .then(courses => {
+        return this.completed = Object.keys(courses).map(key => {
+          return courses[key];
+        });
+      });
   }
   getSignedVideoUrl(video){
     return this.dataService.getSignedLessonVideo(this.user.user_id, video);

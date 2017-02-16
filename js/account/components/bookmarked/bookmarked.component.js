@@ -10,8 +10,8 @@ const Bookmarked = {
       title="Bookmarked"
       subtitle="The Watch List">
     </title-block>
-    <div ng-if="$ctrl.courses">
-      signed in
+    <div class="course-list" ng-if="$ctrl.courses">
+      <course-card ng-repeat="course in $ctrl.courses"></course-card>
     </div>
     <div ng-if="!$ctrl.courses">
       <htc-sign-in></htc-sign-in>

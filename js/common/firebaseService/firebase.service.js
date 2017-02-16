@@ -57,6 +57,51 @@ class FirebaseService{
       .child('score')
       .set(score)
   }
+  getUserEnrolledCourses(id){
+    return new Promise((resolve, reject) => {
+      if(id){
+        this.ref
+          .child('users')
+          .child(id)
+          .child('courses')
+          .once('value', snap => {
+            resolve(snap.val());
+          })
+      }else{
+        reject('Can\'t fetch courses for unknown user');
+      }
+    });
+  }
+  getUserBookmarked(id){
+    return new Promise((resolve, reject) => {
+      if(id){
+        this.ref
+          .child('users')
+          .child(id)
+          .child('bookmarked')
+          .once('value', snap => {
+            resolve(snap.val());
+          })
+      }else{
+        reject('Can\'t fetch courses for unknown user');
+      }
+    });
+  }
+  getUserCompleted(id){
+    return new Promise((resolve, reject) => {
+      if(id){
+        this.ref
+          .child('users')
+          .child(id)
+          .child('completed')
+          .once('value', snap => {
+            resolve(snap.val());
+          })
+      }else{
+        reject('Can\'t fetch courses for unknown user');
+      }
+    });
+  }
   getLessonMeta(course, lesson){
     return new Promise((resolve, reject) => {
       if(course && lesson){

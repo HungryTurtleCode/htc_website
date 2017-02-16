@@ -17,10 +17,9 @@ const bookmarkedComponent = angular
             return new Promise(resolve => {
               firebase.auth().onAuthStateChanged((user) => {
                 if(user && !user.isAnonymous){
-                  // TODO get courses user has bookmarked Thu 16 Feb 2017 17:09:56 GMT
-                  userData.getUserMeta(user.uid)
-                    .then(user => {
-                      resolve(user);
+                  userData.getUserBookmarked(user.uid)
+                    .then(courses => {
+                      resolve(courses);
                     });
                 }else{
                   resolve(false);
