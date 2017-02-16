@@ -10,6 +10,8 @@ class Auth{
       firebase.auth().onAuthStateChanged((user) => {
         if(user){
           resolve(user);
+        }else{
+          resolve(false);
         }
       });
     });
