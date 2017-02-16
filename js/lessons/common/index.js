@@ -4,6 +4,7 @@ import firebaseService from '../../common/firebaseService';
 import lessonService from './lessonService';
 import userData from '../../common/userData';
 import dataService from '../../common/dataService';
+import signinComponent from '../../common/signInComponent';
 import cursorDir from './cursorDirective';
 
 const CommonComponent = angular
@@ -12,7 +13,8 @@ const CommonComponent = angular
     lessonService,
     userData,
     dataService,
-    cursorDir
+    cursorDir,
+    signinComponent
   ])
   .name;
 
