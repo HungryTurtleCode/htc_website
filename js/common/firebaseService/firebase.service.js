@@ -57,6 +57,22 @@ class FirebaseService{
       .child('score')
       .set(score)
   }
+  getLessonMeta(course, lesson){
+    return new Promise((resolve, reject) => {
+      if(course && lesson){
+        this.ref
+          .child('courses')
+          .child(course)
+          .child('meta')
+          .child(lesson)
+          .once('value', snap => {
+            resolve(snap.val());
+          });
+      }else{
+        reject('course and lesson not specified');
+      }
+    });
+  }
   getLessonContent(course, lesson){
     return new Promise((resolve, reject) => {
       if(course && lesson){

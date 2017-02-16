@@ -9,12 +9,12 @@ const signInComponentComponent = angular
     loginModal,
     uiRouter
   ])
-  .component('htcSignInRoute', signInComponent)
+  .component('htcSignIn', signInComponent)
   .config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
     $stateProvider
       .state('signin', {
         url: '/signin',
-        template: '<htc-sign-in-route></htc-sign-in-route>'
+        template: '<htc-sign-in></htc-sign-in>'
       });
 
     $urlRouterProvider.otherwise('/');

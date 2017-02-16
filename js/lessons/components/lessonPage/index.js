@@ -13,21 +13,24 @@ const LessonPageComponent = angular
     $stateProvider
     .state('lesson', {
       url: '/:course/:lesson',
-      template: '<lesson-page lesson-data="$resolve.getLesson"></lesson-page>',
+      template: '<lesson-page lesson-meta-data="$resolve.getLessonMeta" lesson-data="$resolve.signIn"></lesson-page>',
       resolve: {
-        getLesson: ['$stateParams', 'firebaseService', ($stateParams, firebaseService) => {
-          return firebaseService.getLessonContent(
+        getLessonMeta: ['$stateParams', 'firebaseService', ($stateParams, firebaseService) => {
+          return firebaseService.getLessonMeta(
             $stateParams.course,
             $stateParams.lesson
           )
         }],
-        signIn: ['auth', 'userData', '$state', (auth, userData, $state) => {
+        signIn: ['auth', 'userData', '$stateParams', 'firebaseService', (auth, userData, $stateParams, firebaseService) => {
           return auth.waitForAuth()
             .then(user => {
               if(user && user.uid && !user.isAnonymous){
-                return true;
+                return firebaseService.getLessonContent(
+                  $stateParams.course,
+                  $stateParams.lesson
+                );
               }else{
-                $state.go('signin');
+                return false;
               }
             })
         }]
