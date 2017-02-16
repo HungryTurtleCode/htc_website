@@ -2,27 +2,29 @@ import angular from 'angular';
 import firebase from 'firebase';
 import account from './account.component';
 
+import signinComponent from '../../../common/signInComponent';
+
 const accountComponent = angular
-  .module('account', [])
+  .module('account', [
+    signinComponent
+  ])
   .component('account', account)
   .config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
     $stateProvider
       .state('account', {
         url: '/account',
         template: '<account user="$resolve.signin"></account>',
-        // TODO add a resolve to check wait for log in Sun 29 Jan 2017 02:24:09 UTC
         resolve: {
-          signin: ['userData', '$state', (userData, $state) => {
-
+          signin: ['userData', (userData) => {
             return new Promise(resolve => {
               firebase.auth().onAuthStateChanged((user) => {
                 if(user && !user.isAnonymous){
                   userData.getUserMeta(user.uid)
-                  .then(user => {
-                    resolve(user);
-                  });
+                    .then(user => {
+                      resolve(user);
+                    });
                 }else{
-                  $state.go('signin');
+                  resolve(false);
                 }
               });
             });

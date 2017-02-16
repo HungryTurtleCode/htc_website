@@ -10,7 +10,10 @@ const AccountComponent = {
       title="My Profile"
       subtitle="">
     </title-block>
-    <div class="account-form-cont">
+    <div ng-if="!$ctrl.user">
+      <htc-sign-in></htc-sign-in>
+    </div>
+    <div class="account-form-cont" ng-if="$ctrl.user">
       <form>
         <label>Name</label>
         <input type="text" placeholder="Name" ng-model="$ctrl.user.name">
