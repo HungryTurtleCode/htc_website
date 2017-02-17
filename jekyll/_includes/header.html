@@ -1,7 +1,7 @@
 <!-- Header.html -->
 <header>
 
-  <div class="header-container">
+  <div class="header-container" ng-app="htcheader">
     <a href="/">
       <img class="mascot"
           src="{{site.baseurl}}/img/mascot.png"
@@ -10,27 +10,7 @@
           src="{{site.baseurl}}/img/logo.png"
           alt="Hungry Turtle Code Logo Text. Learn to write code, one line at a time">
     </a>
-
-    <div class="header-panel">
-      <div class="sign-in-register" htc-controller="headerCtrl">
-        <a href="{{site.baseurl}}/account" htc-if="$ctrl.loggedIn" class="account auth-button">Account</a>
-        <button
-          htc-if="!$ctrl.loggedIn"
-          htc-track="header-signin-btn"
-          htc-click="$ctrl.showModal('sign-in')"
-          class="auth-button">
-            Log In / Register
-        </button>
-        <button
-          htc-if="$ctrl.loggedIn"
-          htc-track="header-logout"
-          htc-click="$ctrl.showModal('sign-out')"
-          class="auth-button signout">
-            Sign Out
-        </button>
-
-      </div>
-    </div>
+    <header-panel></header-panel>
   </div>
 
   <nav class="main-header-nav">
