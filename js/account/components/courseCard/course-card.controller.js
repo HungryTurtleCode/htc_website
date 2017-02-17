@@ -1,7 +1,5 @@
 class CourseCardController{
-  constructor() {
-    let a = 0;
-  }
+  constructor() {}
 }
 
 export default CourseCardController;

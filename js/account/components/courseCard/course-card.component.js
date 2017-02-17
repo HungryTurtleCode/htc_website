@@ -1,26 +1,30 @@
+import controller from './course-card.controller';
 
 const CourseCard = {
-  bindings: {},
+  controller,
+  bindings: {
+    courseData: '<'
+  },
   template: `
       <div class="img-cont">
-        <img src="https://images.stackcommerce.com/assets/productshot1-image/1123/1a35839a7f2e310651011b368e3e10a1de74c07a_main_hero_image.png"/>
+        <img ng-src="{{$ctrl.courseData.img}}"/>
       </div>
       <div class="info">
-        <h3>Python, Taking It To The Next Level</h3>
-        <p>This is the description of the amazing python course course</p>
+        <h3>{{$ctrl.courseData.title}}</h3>
+        <p>{{$ctrl.courseData.desc}}</p>
 
         <ul>
-          <li><strong>Languages used: </strong>Python</li>
-          <li><strong>Skill: </strong>Beginner</li>
-          <li><strong>Lessons: </strong>10</li>
+          <li><strong>Languages used: </strong>
+            <ul>
+              <li ng-repeat="lang in $ctrl.courseData.langs">{{lang}}</li>
+            </ul>
+          </li>
+          <li><strong>Skill: </strong>{{$ctrl.courseData.skill}}</li>
+          <li><strong>Lessons: </strong>{{$ctrl.courseData.lessons}}</li>
         </ul>
-
       </div>
       <div class="info-end">
-        <button>Learn More</button>
-
-        <div class="price">$87</div>
-
+        <a ng-href="/courses/{{$ctrl.courseData.slug}}">Learn More</a>
       </div>
   `
 };
