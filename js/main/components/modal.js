@@ -11,7 +11,13 @@ class ModalCtrl{
     this.authview[view].show();
   }
   $onInit(){
+    Object
+      .keys(this.modals)
+      .forEach(
+        modal => this.hide(modal));
+
     this.modals.forEach(modal => {
+      this.hide(modal);
       modal.click((e) => {
         modal.hide();
       }, true)
@@ -50,7 +56,9 @@ class ModalCtrl{
     this.hide('sign-out');
   }
   hide(modal){
-    this.modals[modal].hide();
+    if(typeof this.modals[modal] === 'object'){
+      this.modals[modal].hide();
+    }
   }
   show(modal){
     this.modals.forEach(modal => {
