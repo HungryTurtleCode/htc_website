@@ -6,6 +6,7 @@ class userData{
 
     this.user = {};
     this.courses = [];
+    this.cart = [];
     this.completed = [];
     this.bookmarked = [];
 
@@ -32,16 +33,35 @@ class userData{
       });
   }
   updateCart(items){
+    this.cart = items;
+
     return this.fb.updateCart(this.user.user_id, items);
+  }
+  addToCart(course){
+    return this.fb.getCourseMeta(course)
+      .then(courseData => {
+        if(courseData){
+          for(let i = 0; i < this.cart.length; i++){
+            if(this.cart[i].title === courseData.title){
+              return false;
+            }
+          }
+
+          return this.fb.addToCart(this.user.user_id, courseData)
+            .then(() => true);
+        }
+        return false;
+      });
   }
   getUserCart(){
     if(this.user.user_id){
       return this.fb.getUserCart(this.user.user_id)
         .then(cart => {
           if(cart){
-            return Object.keys(cart).map(key => {
+            this.cart = Object.keys(cart).map(key => {
               return cart[key];
             });
+            return this.cart;
           }
         });
     }else{
@@ -51,9 +71,10 @@ class userData{
             return this.fb.getUserCart(snap.uid)
               .then(cart => {
                 if(cart){
-                  return Object.keys(cart).map(key => {
+                  this.cart = Object.keys(cart).map(key => {
                     return cart[key];
                   });
+                  return this.cart;
                 }
               });
           }
@@ -88,6 +109,7 @@ class userData{
             this.fb.getUserMeta(snap.uid)
               .then(user => {
                 this.user = user;
+                this.getUserCart();
               });
           }
         });

@@ -75,6 +75,31 @@ class FirebaseService{
       .child('score')
       .set(score)
   }
+  getCourseMeta(course){
+    return new Promise((resolve, reject) => {
+      if(course){
+        this.ref
+          .child('courses')
+          .child(course)
+          .child('meta')
+          .child('course-meta-data')
+          .once('value', snap => {
+            resolve(snap.val());
+          });
+      }else{
+        reject('course not specified');
+      }
+    });
+  }
+  addToCart(user, data){
+    let item = this.ref
+      .child('users')
+      .child(user)
+      .child('cart')
+      .push();
+
+    return item.set(data);
+  }
   getUserEnrolledCourses(id){
     return new Promise((resolve, reject) => {
       if(id){

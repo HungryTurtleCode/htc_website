@@ -4,7 +4,7 @@ layout: default
 
 <div id="sales-container">
   {% include breadcrumbs.html %}
-  <main class="sales-page">
+  <main class="sales-page" ng-app="htcsalespage">
     <h1 class="h1">{{ page.title  }}</h1>
     <h2 class="h2">{{ page.subtitle  }}</h2>
 
@@ -16,9 +16,7 @@ layout: default
         <div class="price">
           <p class="amount">${{page.price}}</p>
         </div>
-        <button class="take-course">
-          Take This Course
-        </button>
+        <buy-button></buy-button>
         <ul class="items">
           {% if page.lessons %}
             <li><strong>Lessons:</strong> {{page.lessons}}</li>
@@ -79,3 +77,4 @@ layout: default
 
   </main>
 </div>
+<script src="{{site.baseurl}}/scripts/salespage.js"></script>
