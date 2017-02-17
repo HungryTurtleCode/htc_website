@@ -1,8 +1,11 @@
 import firebase from 'firebase';
 
 class Auth{
-  constructor() {
+  constructor($timeout) {
     this.loggedIn = false;
+    this.authSubs = [];
+    this.$timeout = $timeout;
+
     this.onAuthChange();
   }
   waitForAuth(){
@@ -17,11 +20,16 @@ class Auth{
     });
   }
   // TODO migrate data from anon account on auth change Thu 16 Feb 2017 10:26:18 GMT
+  // This will have to occur in the userData service by subscribing to authChanges. Otherwise
+  // there will be a circular dependency
   onAuthChange(){
     firebase.auth().onAuthStateChanged((user) => {
-      if(user && !user.isAnonymous){
-        this.loggedIn = true;
-      }
+      this.$timeout(() => {
+        if(user && !user.isAnonymous){
+          this.loggedIn = true;
+        }
+        this.authSubs.forEach(sub => sub(user));
+      });
     });
   }
   signInWithUserAndPass(email, pass){
@@ -87,6 +95,12 @@ class Auth{
         return result;
       })
   }
+  subscribeAuthChange(fn){
+    this.authSubs.push(fn);
+    return () => {
+      this.authSubs.splice(fn);
+    }
+  }
   signOut(){
     return firebase.auth().signOut();
   }
@@ -96,6 +110,6 @@ class Auth{
   }
 }
 
-Auth.$inject = [];
+Auth.$inject = ['$timeout'];
 
 export default Auth;

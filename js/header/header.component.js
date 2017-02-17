@@ -1,22 +1,23 @@
+import controller from './header.controller';
+
 const HeaderComponent = {
+  controller,
   template: `
     <div class="header-panel">
-      <div class="sign-in-register" htc-controller="headerCtrl">
+      <div class="sign-in-register">
 
-        <a href="{{site.baseurl}}/account" htc-if="$ctrl.loggedIn" class="account auth-button">Account</a>
+        <a href="{{site.baseurl}}/account" ng-if="$ctrl.loggedIn" class="account auth-button">Account</a>
 
         <button
-          htc-if="!$ctrl.loggedIn"
-          htc-track="header-signin-btn"
-          htc-click="$ctrl.showModal('sign-in')"
+          ng-if="!$ctrl.loggedIn && !$ctrl.loading"
+          ng-click="$ctrl.showModal('sign-in')"
           class="auth-button">
             Log In / Register
         </button>
 
         <button
-          htc-if="$ctrl.loggedIn"
-          htc-track="header-logout"
-          htc-click="$ctrl.showModal('sign-out')"
+          ng-if="$ctrl.loggedIn"
+          ng-click="$ctrl.showModal('sign-out')"
           class="auth-button signout">
             Sign Out
         </button>
