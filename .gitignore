@@ -4,6 +4,7 @@ jekyll/scripts/account.js
 jekyll/scripts/post.js
 jekyll/scripts/lesson.js
 jekyll/scripts/checkout.js
+jekyll/scripts/salespage.js
 .DS_Store
 .jekyll
 .bundle
