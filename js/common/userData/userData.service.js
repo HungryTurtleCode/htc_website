@@ -38,9 +38,11 @@ class userData{
     if(this.user.user_id){
       return this.fb.getUserCart(this.user.user_id)
         .then(cart => {
-          return Object.keys(cart).map(key => {
-            return cart[key];
-          });
+          if(cart){
+            return Object.keys(cart).map(key => {
+              return cart[key];
+            });
+          }
         });
     }else{
       return this.auth.waitForAuth()
@@ -48,9 +50,11 @@ class userData{
           if(snap && snap.uid && !snap.isAnonymous){
             return this.fb.getUserCart(snap.uid)
               .then(cart => {
-                return Object.keys(cart).map(key => {
-                  return cart[key];
-                });
+                if(cart){
+                  return Object.keys(cart).map(key => {
+                    return cart[key];
+                  });
+                }
               });
           }
         });
