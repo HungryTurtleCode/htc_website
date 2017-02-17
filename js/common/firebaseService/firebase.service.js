@@ -5,6 +5,24 @@ class FirebaseService{
   constructor() {
     this.ref = firebase.database().ref();
   }
+  getUserCart(id){
+    return this.ref
+      .child('users')
+      .child(id)
+      .child('cart')
+      .once('value')
+      .then(snap => {
+        return snap.val();
+      });
+  }
+  updateCart(user, items){
+    return this.ref
+      .child('users')
+      .child(user)
+      .child('cart')
+      .set(items)
+      .then(snap => true);
+  }
   getUserMeta(user){
     return this.ref
       .child('users')

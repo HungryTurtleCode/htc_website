@@ -31,6 +31,31 @@ class userData{
         });
       });
   }
+  updateCart(items){
+    return this.fb.updateCart(this.user.user_id, items);
+  }
+  getUserCart(){
+    if(this.user.user_id){
+      return this.fb.getUserCart(this.user.user_id)
+        .then(cart => {
+          return Object.keys(cart).map(key => {
+            return cart[key];
+          });
+        });
+    }else{
+      return this.auth.waitForAuth()
+        .then(snap => {
+          if(snap && snap.uid && !snap.isAnonymous){
+            return this.fb.getUserCart(snap.uid)
+              .then(cart => {
+                return Object.keys(cart).map(key => {
+                  return cart[key];
+                });
+              });
+          }
+        });
+    }
+  }
   getUserCompleted(id){
     if(this.completed.length){return Promise.resolve(this.completed)}
 

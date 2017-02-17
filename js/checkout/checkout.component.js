@@ -1,6 +1,6 @@
 const CheckoutComponent = {
   template: `
-    <h1>This is the template</h1>
+    <cart-list></cart-list>
   `
 };
 
