@@ -2,7 +2,8 @@ import angular from 'angular';
 import firebaseService from './firebase.service';
 
 const firebaseServiceComponent = angular
-  .module('firebaseService.module', [])
+  .module('firebaseService.module', [
+  ])
   .service('firebaseService', firebaseService)
   .name;
 

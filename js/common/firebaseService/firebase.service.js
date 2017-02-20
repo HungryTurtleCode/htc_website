@@ -2,7 +2,9 @@ import firebase from 'firebase';
 import config from './config';
 
 class FirebaseService{
-  constructor() {
+  constructor($state) {
+    this.$state = $state;
+
     this.ref = firebase.database().ref();
   }
   getUserCart(id){
@@ -165,9 +167,27 @@ class FirebaseService{
           .once('value', snap => {
             resolve(snap.val());
           });
+      }else if(course){
+        this.getFirstLessonName(course)
+          .then(name => {
+            this.$state.go('lesson', {course: course, lesson: name})
+          });
       }else{
         reject('course and lesson not specified');
       }
+    });
+  }
+  getFirstLessonName(course){
+    return new Promise((resolve, reject) => {
+      this.ref
+        .child('courses')
+        .child(course)
+        .child('meta')
+        .child('course-meta-data')
+        .child('first_lesson')
+        .once('value', snap => {
+          resolve(snap.val());
+        });
     });
   }
   getLessonContent(course, lesson){
@@ -179,6 +199,11 @@ class FirebaseService{
           .child(dbPath)
           .once('value', snap => {
             resolve(snap.val());
+          });
+      }else if(course){
+        this.getFirstLessonName(course)
+          .then(name => {
+            this.$state.go('lesson', {course: course, lesson: name})
           });
       }else{
         reject('course and lesson not specified');
@@ -234,5 +259,7 @@ class FirebaseService{
     });
   }
 }
+
+FirebaseService.$inject = ['$state'];
 
 export default FirebaseService;

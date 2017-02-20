@@ -24,7 +24,7 @@ const CourseCard = {
         </ul>
       </div>
       <div class="info-end">
-        <a ng-href="/courses/{{$ctrl.courseData.slug}}">Learn More</a>
+        <a ng-href="/lessons/#!/{{$ctrl.courseData.slug}}/">Learn More</a>
       </div>
   `
 };

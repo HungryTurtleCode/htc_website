@@ -24,7 +24,7 @@ const LessonPageComponent = angular
         signIn: ['auth', 'userData', '$stateParams', 'firebaseService', (auth, userData, $stateParams, firebaseService) => {
           return auth.waitForAuth()
             .then(user => {
-              if(user && user.uid && !user.isAnonymous){
+              if(user && user.uid && !user.isAnonymous && $stateParams.lesson){
                 return firebaseService.getLessonContent(
                   $stateParams.course,
                   $stateParams.lesson
