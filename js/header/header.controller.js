@@ -6,15 +6,23 @@ class HeaderController{
     this.loggedIn = false;
     this.loading = true;
     this.showSignIn = false;
+    this.showLogOut = false;
 
     this.auth.subscribeAuthChange(this.onAuthChange.bind(this));
   }
   onAuthChange(user){
     this.loading = false;
-    this.loggedIn = !user.isAnonymous;
+    if(user){
+      this.loggedIn = !user.isAnonymous;
+    }else{
+      this.loggedIn = false;
+    }
   }
   closeSignIn(){
     this.showSignIn = false;
+  }
+  closeLogOut(){
+    this.showLogOut = false;
   }
 }
 

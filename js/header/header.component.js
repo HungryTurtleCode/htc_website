@@ -17,7 +17,7 @@ const HeaderComponent = {
 
         <button
           ng-if="$ctrl.loggedIn"
-          ng-click="$ctrl.showModal('sign-out')"
+          ng-click="$ctrl.showLogOut = true"
           class="auth-button signout">
             Sign Out
         </button>
@@ -26,9 +26,14 @@ const HeaderComponent = {
     </div>
 
     <login-modal
-      ng-if="$ctrl.showSignIn === true"
+      ng-if="$ctrl.showSignIn"
       close-modal="$ctrl.closeSignIn()">
     </login-modal>
+
+    <logout-modal
+      ng-if="$ctrl.showLogOut"
+      close-modal="$ctrl.closeLogOut()">
+    </logout-modal>
   `
 };
 
