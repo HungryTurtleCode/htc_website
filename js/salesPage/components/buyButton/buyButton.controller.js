@@ -1,13 +1,20 @@
 class BuyButtonController{
-  constructor($location, userData) {
+  constructor($location, userData, $timeout) {
     this.$location = $location;
     this.userData = userData;
+    this.$timeout = $timeout;
+  }
+  $onInit(){
+    this.loading = true;
 
     let course = this.getCourseFromUrl();
     this.userData.getCourseMeta(course)
       .then(data => {
-        this.courseData = data;
-      })
+        this.$timeout(() => {
+          this.courseData = data;
+          this.loading = false;
+        });
+      });
   }
   takeCourse(){
     this.userData.addToCart(this.courseData)
@@ -29,6 +36,6 @@ class BuyButtonController{
   }
 }
 
-BuyButtonController.$inject = ['$location', 'userData'];
+BuyButtonController.$inject = ['$location', 'userData', '$timeout'];
 
 export default BuyButtonController;

@@ -6,7 +6,7 @@ import components from './components';
 import Checkout from './checkout.component';
 
 const CheckoutComponent = angular
-  .module('htccheckout', [
+  .module('htcapp', [
     common,
     components
   ])

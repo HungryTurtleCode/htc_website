@@ -7,8 +7,7 @@ module.exports = {
     'post': './js/post.js',
     'lesson': './js/lesson.js',
     'checkout': './js/checkout.js',
-    'salespage': './js/salespage.js',
-    'header': './js/header.js'
+    'salespage': './js/salespage.js'
   },
   output: {
     path: "jekyll/scripts/",

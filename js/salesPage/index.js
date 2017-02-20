@@ -4,7 +4,7 @@ import common from './common/';
 import components from './components';
 
 const SalesPageComponent = angular
-  .module('htcsalespage', [
+  .module('htcapp', [
     common,
     components
   ])

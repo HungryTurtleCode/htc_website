@@ -5,7 +5,7 @@ import common from './common/';
 import components from './components';
 
 const postComponent = angular
-  .module('post.module', [
+  .module('htcapp', [
     common,
     components
   ])
