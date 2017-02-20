@@ -1,6 +1,7 @@
 class HeaderController{
-  constructor(auth) {
+  constructor(auth, userData) {
     this.auth = auth;
+    this.userData = userData;
   }
   $onInit(){
     this.loggedIn = false;
@@ -26,6 +27,6 @@ class HeaderController{
   }
 }
 
-HeaderController.$inject = ['auth'];
+HeaderController.$inject = ['auth', 'userData'];
 
 export default HeaderController;

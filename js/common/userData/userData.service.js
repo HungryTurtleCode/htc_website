@@ -10,6 +10,7 @@ class userData{
     this.completed = [];
     this.bookmarked = [];
 
+    this.auth.subscribeAuthChange(this.cacheUser.bind(this));
     this.getUserMeta();
   }
   getUserEnrolledCourses(id){
@@ -52,6 +53,60 @@ class userData{
         }
         return false;
       });
+  }
+  cacheUser(user){
+    if(user){
+      let userInfo = {
+        email: user.email,
+        name: user.displayName,
+        image: user.photoURL,
+        provider: user.providerData[0] ? user.providerData[0].providerId : 'Anonymous',
+        user_id: user.uid
+      }
+      this.user = userInfo;
+
+      if(user.isAnonymous){
+        localStorage.setItem('anon_user_id', JSON.stringify(user.uid));
+        this.setUserMeta(userInfo);
+      }else{
+        this.migrateOldUser(userInfo);
+      }
+    }
+  }
+  migrateOldUser(userInfo){
+    let anonUser = JSON.parse(localStorage.getItem('anon_user_id'));
+    if(anonUser){
+      this.getUserData(anonUser)
+        .then(data => {
+          data = data || {};
+          data.userInfo = userInfo;
+
+          this.getUserData(userInfo.user_id)
+            .then(existingData => {
+              existingData = existingData || {};
+
+              var newData = Object.assign(existingData, data);
+
+              this.setUserData(newData)
+                .then(() => {
+                  localStorage.setItem('anon_user_id', null);
+                  this.fb.setUserData(anonUser, null);
+                })
+                .catch(err => console.error(err));
+            })
+            .catch(err => console.log(err));
+        })
+        .catch(err => console.log(err));
+        // TODO add user to active campaign and store a flag in firebase to show that email has been added to active campaign to avoid duplicate requests Wed 25 Jan 2017 05:30:20 UTC
+    }
+  }
+  getUserData(id){
+    let userId = id || this.user.user_id;
+    if(userId){
+      return this.fb.getUserData(userId);
+    }
+    console.error('Can\'t fetch data for unknown user');
+    return Promise.reject('Can\'t fetch data for unknown user');
   }
   getUserCart(){
     if(this.user.user_id){
@@ -130,6 +185,15 @@ class userData{
     )
     .then(() => true)
     .catch(err => err);
+  }
+  setUserData(data){
+    if(!this.user.user_id){return Promise.reject('unknown user')}
+
+    return this.fb.setUserData(this.user.user_id, data)
+      .then(() => {
+        this.user = data.userInfo;
+        return true;
+      });
   }
   setUserMeta(data){
     if(!this.user.user_id){return Promise.reject('unknown user')}

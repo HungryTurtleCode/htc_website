@@ -43,6 +43,15 @@ class FirebaseService{
         return true
       });
   }
+  setUserData(user, data){
+    return this.ref
+      .child('users')
+      .child(user)
+      .set(data)
+      .then(snap => {
+        return true;
+      });
+  }
   getUserData(user){
     return this.ref
       .child('users')
