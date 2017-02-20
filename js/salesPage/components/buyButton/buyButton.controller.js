@@ -2,11 +2,15 @@ class BuyButtonController{
   constructor($location, userData) {
     this.$location = $location;
     this.userData = userData;
+
+    let course = this.getCourseFromUrl();
+    this.userData.getCourseMeta(course)
+      .then(data => {
+        this.courseData = data;
+      })
   }
   takeCourse(){
-    let course = this.getCourseFromUrl();
-
-    this.userData.addToCart(course)
+    this.userData.addToCart(this.courseData)
       .then(added => {
         if(added){
           window.location.href = '/checkout';

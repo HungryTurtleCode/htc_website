@@ -38,21 +38,21 @@ class userData{
 
     return this.fb.updateCart(this.user.user_id, items);
   }
-  addToCart(course){
-    return this.fb.getCourseMeta(course)
-      .then(courseData => {
-        if(courseData){
-          for(let i = 0; i < this.cart.length; i++){
-            if(this.cart[i].title === courseData.title){
-              return false;
-            }
-          }
-
-          return this.fb.addToCart(this.user.user_id, courseData)
-            .then(() => true);
+  getCourseMeta(course){
+    return this.fb.getCourseMeta(course);
+  }
+  addToCart(courseData){
+    if(courseData){
+      for(let i = 0; i < this.cart.length; i++){
+        if(this.cart[i].title === courseData.title){
+          return false;
         }
-        return false;
-      });
+      }
+
+      return this.fb.addToCart(this.user.user_id, courseData)
+        .then(() => true);
+    }
+    return false;
   }
   cacheUser(user){
     if(user){
