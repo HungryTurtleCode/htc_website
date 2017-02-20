@@ -25,8 +25,12 @@ class Auth{
   onAuthChange(){
     firebase.auth().onAuthStateChanged((user) => {
       this.$timeout(() => {
-        if(user && !user.isAnonymous){
-          this.loggedIn = true;
+        if(user){
+          if(!user.isAnonymous){
+            this.loggedIn = true;
+          }
+        }else{
+          this.anonymousSignIn();
         }
         this.authSubs.forEach(sub => sub(user));
       });
