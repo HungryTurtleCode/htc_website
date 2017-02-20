@@ -4,7 +4,7 @@ class LoginModalController{
   }
   hideModalMarkup($event){
     $event.stopPropagation();
-    this.hideModal = true;
+    this.closeModal($event);
   }
 }
 

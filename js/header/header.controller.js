@@ -5,15 +5,16 @@ class HeaderController{
   $onInit(){
     this.loggedIn = false;
     this.loading = true;
+    this.showSignIn = false;
+
     this.auth.subscribeAuthChange(this.onAuthChange.bind(this));
   }
   onAuthChange(user){
     this.loading = false;
     this.loggedIn = !user.isAnonymous;
   }
-  showModal(modal){
-    console.log('actually show modals');
-    console.log(modal);
+  closeSignIn(){
+    this.showSignIn = false;
   }
 }
 

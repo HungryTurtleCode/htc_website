@@ -10,7 +10,7 @@ const HeaderComponent = {
 
         <button
           ng-if="!$ctrl.loggedIn && !$ctrl.loading"
-          ng-click="$ctrl.showModal('sign-in')"
+          ng-click="$ctrl.showSignIn = true"
           class="auth-button">
             Log In / Register
         </button>
@@ -24,6 +24,11 @@ const HeaderComponent = {
 
       </div>
     </div>
+
+    <login-modal
+      ng-if="$ctrl.showSignIn === true"
+      close-modal="$ctrl.closeSignIn()">
+    </login-modal>
   `
 };
 
