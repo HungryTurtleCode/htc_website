@@ -7,10 +7,14 @@ const CourseCard = {
   },
   template: `
       <div class="img-cont">
-        <img ng-src="{{$ctrl.courseData.img}}"/>
+        <a ng-href="/lessons/#!/{{$ctrl.courseData.slug}}/">
+          <img ng-src="{{$ctrl.courseData.img}}"/>
+        </a>
       </div>
       <div class="info">
-        <h3>{{$ctrl.courseData.title}}</h3>
+        <a ng-href="/lessons/#!/{{$ctrl.courseData.slug}}/">
+          <h3>{{$ctrl.courseData.title}}</h3>
+        </a>
         <p>{{$ctrl.courseData.desc}}</p>
 
         <ul>

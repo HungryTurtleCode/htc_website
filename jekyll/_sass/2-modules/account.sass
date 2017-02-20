@@ -144,6 +144,14 @@ $gutter: 15px
             h3
               margin-top: 0
               flex-grow: 1
+              transition: color 0.3s ease
+
+              &:hover
+                color: $primary-color
+
+            a
+              text-decoration: none
+              color: inherit
 
           p,ul
             font-size: 0.8em
@@ -154,18 +162,18 @@ $gutter: 15px
           .info-end
             padding: 0 1em 0.5em 1em
 
-          a
-            background: $primary-color
-            padding: 1em 2em
-            display: block
-            text-decoration: none
-            text-align: center
-            margin: 1em auto
-            border: none
-            outline: none
-            color: white
-            font-weight: bold
-            cursor: pointer
+            a
+              background: $primary-color
+              padding: 1em 2em
+              display: block
+              text-decoration: none
+              text-align: center
+              margin: 1em auto
+              border: none
+              outline: none
+              color: white
+              font-weight: bold
+              cursor: pointer
 
           .price
             font-size: 2em
