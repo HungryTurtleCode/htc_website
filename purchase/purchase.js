@@ -11,22 +11,17 @@ module.exports = function(req, res, next){
   
   req.on('end', function(){
     var request = JSON.parse(body);
-    var data = request.data;
+    var courses = request.courses;
     var user = request.user;
-    console.log(data);
-    console.log(user);
 
-    // if(checkUserCanViewVideo(request.user)){
-    //   var url = getSignedUrl(request.video);
+    courses.forEach(course => {
+        firebase.enrollUser(user, course);
+    });
 
-    //   var response = {
-    //     url: url
-    //   }
-    //   console.log(response);
+    var response = 'Success';
 
-    //   res.writeHead(200, {'Content-Type': 'text/json'});
-    //   res.write(JSON.stringify(response));
-    //   res.end();
-    // }
+    res.writeHead(200, {'Content-Type': 'text/json'});
+    res.write(response);
+    res.end();
   });
 }
