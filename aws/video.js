@@ -1,70 +1,7 @@
-var express = require('express');
+var firebase = require('../firebase/index.js');
 var cfsign = require('aws-cloudfront-sign');
 
-var app = express();
-
-var firebase = require('firebase');
-
-/* APP SETUP */
-app.use(setHeaders);
-
-/* Routes */
-app.post('/getVideo', videoAPI);
-app.get('/', gethandler)
-
-// Listen on port 80
-app.listen(80, function(){
-  console.log('Server running on port 80/');
-});
-
-/* Implementations */
-
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyCYYCrku-CpvJ56JyNfZJtXqlmbZnwEPpo",
-  authDomain: "hungry-turtle-code.firebaseapp.com",
-  databaseURL: "https://hungry-turtle-code.firebaseio.com",
-  storageBucket: "hungry-turtle-code.appspot.com",
-  messagingSenderId: "945246952572"
-};
-firebase.initializeApp(config);
-
-var database = firebase.database();
-var ref = database.ref();
-
-function gethandler(req, res, next){
-  var response = '';
-  var body = '';
-
-  req.on('data', function(data){
-    body += data;
-  });
-  
-  req.on('end', function(){
-    res.end();
-  });
-}
-
-function setHeaders(req, res, next){
-  // Website you wish to allow to connect
-  
-  if(req.get('origin') === 'http://localhost:4000' || req.get('origin') === 'https://hungryturtlecode.com'){
-    res.setHeader('Access-Control-Allow-Origin', req.get('origin'));
-  }
-  // Request methods you wish to allow
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-
-  // Request headers you wish to allow
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-  if(req.method === 'OPTIONS'){
-    res.sendStatus(200);
-  }else{
-    next();
-  }
-}
-
-function videoAPI(req, res, next){
+module.exports = function(req, res, next){
   var response = '';
   var body = '';
 
@@ -107,7 +44,7 @@ function getSignedUrl(file){
 
   var signingParams = {
     keypairId: 'APKAIWKJLWSYSQLVH77A',
-    privateKeyPath: '../aws-key/pk-APKAIWKJLWSYSQLVH77A.pem',
+    privateKeyPath: 'aws-key/pk-APKAIWKJLWSYSQLVH77A.pem',
     expireTime: expireTime
   }
 
