@@ -1,9 +1,9 @@
-import angular from 'angular';
-
-class CartListController{
-  constructor(userData, $scope) {
+class CheckoutController{
+  constructor(firebaseService, userData, $scope, dataService) {
+    this.fb = firebaseService;
     this.userData = userData;
     this.$scope = $scope;
+    this.dataService = dataService;
   }
   $onInit(){
     this.cart = [];
@@ -25,8 +25,15 @@ class CartListController{
         .then(() => console.log('updated cart'));
     }
   }
+  stripeBuy(){
+    this.userData.stripeBuy(this.cart)
+      .then(data => {
+        console.log(data);
+      })
+      .catch(err => console.error(err));
+  }
 }
 
-CartListController.$inject = ['userData', '$scope'];
+CheckoutController.$inject = ['firebaseService', 'userData', '$scope'];
 
-export default CartListController;
+export default CheckoutController;

@@ -45,14 +45,23 @@ class userData{
     if(courseData){
       for(let i = 0; i < this.cart.length; i++){
         if(this.cart[i].title === courseData.title){
-          return false;
+          return Promise.reject(false);
         }
       }
 
       return this.fb.addToCart(this.user.user_id, courseData)
         .then(() => true);
     }
-    return false;
+    return Promise.reject(false);
+  }
+  stripeBuy(data){
+    return this.dataService.stripeBuy(getCourseArray(data), this.user.user_id);
+
+    function getCourseArray(courses){
+      return courses.map(item => {
+        return item.course;
+      });
+    }
   }
   cacheUser(user){
     if(user){

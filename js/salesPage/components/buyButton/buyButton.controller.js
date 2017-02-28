@@ -22,7 +22,8 @@ class BuyButtonController{
         if(added){
           window.location.href = '/checkout';
         }
-      });
+      })
+      .catch(err => console.log(err));
   }
   getCourseFromUrl(){
     let url = this.$location.absUrl();
