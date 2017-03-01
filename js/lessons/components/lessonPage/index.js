@@ -25,10 +25,20 @@ const LessonPageComponent = angular
           return auth.waitForAuth()
             .then(user => {
               if(user && user.uid && !user.isAnonymous && $stateParams.lesson){
-                return firebaseService.getLessonContent(
-                  $stateParams.course,
-                  $stateParams.lesson
-                );
+
+                return userData.isEnrolled(user.uid, $stateParams.course)
+                  .then(enrolled => {
+                    if(enrolled){
+                      return firebaseService.getLessonContent(
+                        $stateParams.course,
+                        $stateParams.lesson
+                      );
+                    }else{
+                      console.log('not enrolled');
+                      return false;
+                    }
+                  });
+
               }else{
                 return false;
               }

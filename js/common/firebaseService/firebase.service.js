@@ -17,6 +17,17 @@ class FirebaseService{
         return snap.val();
       });
   }
+  isEnrolled(user, course){
+    return this.ref
+      .child('users')
+      .child(user)
+      .child('enrolled')
+      .child(course)
+      .once('value')
+      .then(snap => {
+        return snap.val();
+      });
+  }
   updateCart(user, items){
     return this.ref
       .child('users')

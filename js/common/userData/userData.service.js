@@ -13,6 +13,9 @@ class userData{
     this.auth.subscribeAuthChange(this.cacheUser.bind(this));
     this.getUserMeta();
   }
+  isEnrolled(user, course){
+    return this.fb.isEnrolled(user, course);
+  }
   getUserEnrolledCourses(id){
     if(this.courses.length){return Promise.resolve(this.courses)}
 
