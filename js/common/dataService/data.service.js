@@ -12,7 +12,7 @@ class DataService{
   stripeBuy(data, user){
     return this.$http.post(`${this.url}/stripeBuy`, {courses: data, user})
       .then(response => {
-        return response.data.url;
+        return response.data;
       });
   }
 }
