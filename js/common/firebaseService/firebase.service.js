@@ -209,7 +209,10 @@ class FirebaseService{
           .child('premium')
           .child(dbPath)
           .once('value', snap => {
-            resolve(snap.val());
+            let val = snap.val();
+            val.course = course;
+            val.lesson = lesson;
+            resolve(val);
           });
       }else if(course){
         this.getFirstLessonName(course)
@@ -220,6 +223,15 @@ class FirebaseService{
         reject('course and lesson not specified');
       }
     });
+  }
+  completeLesson(user, course, lesson){
+    return this.ref
+      .child('users')
+      .child(user)
+      .child('complete-lessons')
+      .child(course)
+      .child(lesson)
+      .set(true);
   }
   getLessonList(course){
     return new Promise((resolve, reject) => {

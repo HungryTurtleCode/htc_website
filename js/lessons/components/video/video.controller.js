@@ -28,13 +28,13 @@ class VideoController{
 
     if(currentTime >= duration * 0.9){
       // mark video as complete
+      this.lessonComplete();
     }
     // look into adding $analytics to track % complete
   }
   nextVideo(){
     //logic to move onto next video
   }
-  // TODO pull cursor logic from original ctrl into a custrom directive Tue 14 Feb 2017 17:38:00 GMT
 }
 
 export default VideoController;

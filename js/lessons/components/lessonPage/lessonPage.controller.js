@@ -11,6 +11,11 @@ class LessonPageController{
         .then(url => this.videoUrl = url);
     }
   }
+  lessonComplete(){
+    this.userData.completeLesson(
+              this.lessonData.course,
+              this.lessonData.lesson);
+  }
 }
 
 LessonPageController.$inject = ['userData'];

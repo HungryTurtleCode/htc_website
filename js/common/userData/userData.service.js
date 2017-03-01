@@ -16,6 +16,12 @@ class userData{
   isEnrolled(user, course){
     return this.fb.isEnrolled(user, course);
   }
+  completeLesson(course, lesson){
+    return this.fb.completeLesson(
+          this.user.user_id,
+          course,
+          lesson);
+  }
   getUserEnrolledCourses(id){
     if(this.courses.length){return Promise.resolve(this.courses)}
 

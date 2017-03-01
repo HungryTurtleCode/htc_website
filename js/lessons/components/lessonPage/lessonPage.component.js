@@ -10,7 +10,10 @@ const LessonPage = {
     <h1 class="lesson-title">{{::$ctrl.lessonMetaData.title}}</h1>
     <h3 class="course-title">{{::$ctrl.lessonMetaData.course}}</h3>
     <div ng-if="$ctrl.lessonData">
-      <lesson-video video-src="{{$ctrl.videoUrl}}"></lesson-video>
+      <lesson-video
+        video-src="{{$ctrl.videoUrl}}"
+        lesson-complete="$ctrl.lessonComplete()">
+      </lesson-video>
       <lesson-content article="$ctrl.lessonData.article" resources="$ctrl.lessonData.resources"></lesson-content>
     </div>
     <div ng-if="!$ctrl.lessonData">
