@@ -233,6 +233,16 @@ class FirebaseService{
       .child(lesson)
       .set(true);
   }
+  getCompleteLessons(user, course, callback){
+    this.ref
+      .child('users')
+      .child(user)
+      .child('complete-lessons')
+      .child(course)
+      .on('value', snap => {
+        callback(snap.val());
+      });
+  }
   getLessonList(course){
     return new Promise((resolve, reject) => {
       this.ref

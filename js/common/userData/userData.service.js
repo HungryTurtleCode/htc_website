@@ -22,6 +22,21 @@ class userData{
           course,
           lesson);
   }
+  getCompleteLessons(course, callback){
+    if(this.user.user_id){
+      this.fb.getCompleteLessons(this.user.user_id, course, callback);
+    }else{
+      this.auth.waitForAuth()
+        .then(snap => {
+          if(snap && snap.uid && !snap.isAnonymous){
+            return this.fb.getCompleteLessons(
+                            snap.uid,
+                            course,
+                            callback);
+          }
+        });
+    }
+  }
   getUserEnrolledCourses(id){
     if(this.courses.length){return Promise.resolve(this.courses)}
 

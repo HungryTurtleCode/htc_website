@@ -30,6 +30,13 @@ class LessonController{
             this.setActiveSection();
           });
 
+        this.userData.getCompleteLessons(
+                  params.course,
+                  lessons => {
+                    this.completeLessons = lessons;
+                  }
+                );
+
         this.lessonService.setMeta(params.course, params.lesson)
       }
     });
