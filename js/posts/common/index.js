@@ -5,13 +5,15 @@ import userData from '../../common/userData';
 import auth from '../../common/auth';
 
 import header from '../../common/header';
+import loginModal from '../../common/loginModal';
 
 const CommonModule = angular
   .module('post.common.module', [
     firebaseService,
     userData,
     auth,
-    header
+    header,
+    loginModal
   ])
   .name;
 

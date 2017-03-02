@@ -21,6 +21,11 @@ const CommentFormComponent = {
           Sign In To Comment
         </button>
     </div>
+
+    <login-modal
+      ng-if="$ctrl.showSignIn"
+      close-modal="$ctrl.closeSignIn()">
+    </login-modal>
   `
 };
 

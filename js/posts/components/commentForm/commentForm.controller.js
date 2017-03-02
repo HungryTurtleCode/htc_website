@@ -36,7 +36,10 @@ class commentFormController{
     this.commentText = '';
   }
   signIn(){
-    console.log('sign in');
+    this.showSignIn = true;
+  }
+  closeSignIn(){
+    this.showSignIn = false;
   }
   getPageLocations(){
     let url = this.$location.absUrl();
