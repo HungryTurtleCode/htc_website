@@ -5,6 +5,11 @@ class LessonContentController{
   $onInit(){
     this.activeTab = 0;
     this.articleTrusted = this.$sce.trustAsHtml(this.article);
+    this.completeText = 'Mark Lesson Complete';
+  }
+  complete(){
+    this.lessonComplete();
+    this.completeText = 'Completed';
   }
 }
 

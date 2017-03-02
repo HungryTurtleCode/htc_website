@@ -17,7 +17,7 @@ class LessonPageController{
               this.lessonData.course,
               this.lessonData.lesson);
   }
-  nextVideo(){
+  nextLesson(){
     this.lessonService.goToNextLesson(this.lessonData.lesson);
   }
 }

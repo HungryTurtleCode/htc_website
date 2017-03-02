@@ -12,10 +12,15 @@ const LessonPage = {
     <div ng-if="$ctrl.lessonData">
       <lesson-video
         video-src="{{$ctrl.videoUrl}}"
-        next-video="$ctrl.nextVideo()"
+        next-video="$ctrl.nextLesson()"
         lesson-complete="$ctrl.lessonComplete()">
       </lesson-video>
-      <lesson-content article="$ctrl.lessonData.article" resources="$ctrl.lessonData.resources"></lesson-content>
+      <lesson-content
+        article="$ctrl.lessonData.article"
+        resources="$ctrl.lessonData.resources"
+        next-lesson="$ctrl.nextLesson()"
+        lesson-complete="$ctrl.lessonComplete()">
+      </lesson-content>
     </div>
     <div ng-if="!$ctrl.lessonData">
       <htc-sign-in></htc-sign-in>
