@@ -34,7 +34,8 @@ const LessonPageComponent = angular
                         $stateParams.lesson
                       );
                     }else{
-                      console.log('not enrolled');
+                      // not enrolled
+                      window.location.href = `/courses/${$stateParams.course}`;
                       return false;
                     }
                   });
