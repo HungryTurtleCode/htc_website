@@ -10,9 +10,22 @@ const BuyButton = {
         </p>
       </div>
       <button class="take-course"
+        ng-class="{'disabled-btn': $ctrl.inCart || $ctrl.enrolled}"
         ng-click="$ctrl.takeCourse()">
-        Take This Course
+          {{$ctrl.buttonText}}
       </button>
+      <div class="goto"
+        ng-if="$ctrl.enrolled">
+          <a ng-href="/lessons/#!/{{$ctrl.courseData.course}}/">
+            Go To Course
+          </a>
+      </div>
+      <div class="goto"
+        ng-if="$ctrl.inCart">
+          <a href="/checkout">
+            Go To Cart
+          </a>
+      </div>
     </div>
     <div class="buy-button-loading" ng-show="$ctrl.loading">
       Loading...

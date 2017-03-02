@@ -38,7 +38,7 @@
 
         buy-button
           display: block
-          height: 115px
+          min-height: 115px
 
           .buy-button-loading
             padding-left: 50px
@@ -66,6 +66,16 @@
           outline: none
           padding: 1em 1.5em
           margin: 0.4em 0 1em 2em
+
+          &.disabled-btn
+            cursor: default
+            background: green
+
+        .goto
+          padding-left: 4.2em
+
+          a
+            cursor: pointer
 
         .items
           list-style: none

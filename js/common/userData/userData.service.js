@@ -186,6 +186,16 @@ class userData{
   getSignedVideoUrl(video){
     return this.dataService.getSignedLessonVideo(this.user.user_id, video);
   }
+  isInCart(item){
+    if(this.cart.length){
+      for(let i = 0; i < this.cart.length; i++){
+        if(this.cart[i].course === item){
+          return true
+        }
+      }
+    }
+    return false;
+  }
   getUserMeta(id){
     if(this.user.name){return Promise.resolve(this.user)}
 
