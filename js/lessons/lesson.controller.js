@@ -34,6 +34,7 @@ class LessonController{
                   params.course,
                   lessons => {
                     this.completeLessons = lessons;
+                    this.lessonService.completeLessons = lessons;
                   }
                 );
 

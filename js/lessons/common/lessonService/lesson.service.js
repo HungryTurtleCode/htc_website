@@ -19,6 +19,12 @@ class LessonService{
   slugify(name){
     return name.toLowerCase().split(' ').join('-');
   }
+  isLessonComplete(lesson){
+    if(this.completeLessons){
+      return this.completeLessons[this.slugify(lesson)];
+    }
+    return false;
+  }
   goToNextLesson(currentLesson){
     this.lessonList.forEach((section, secIndex) => {
       section.lessons.forEach((lesson, index) => {

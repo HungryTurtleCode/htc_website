@@ -19,6 +19,7 @@ const LessonPage = {
         article="$ctrl.lessonData.article"
         resources="$ctrl.lessonData.resources"
         next-lesson="$ctrl.nextLesson()"
+        lesson-is-complete="$ctrl.lessonService.isLessonComplete($ctrl.lessonData.lesson)"
         lesson-complete="$ctrl.lessonComplete()">
       </lesson-content>
     </div>

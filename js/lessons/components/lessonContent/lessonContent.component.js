@@ -5,8 +5,9 @@ const LessonContent = {
   bindings: {
     article: '<',
     resources: '<',
+    lessonIsComplete: '<',
     lessonComplete: '&',
-    nextLesson: '&'
+    nextLesson: '&',
   },
   template: `
     <div class="bottom-container">
@@ -31,8 +32,13 @@ const LessonContent = {
       <div class="tab-content">
         <div class="article post-page" ng-show="$ctrl.activeTab === 0">
           <div ng-bind-html="$ctrl.articleTrusted"></div>
-          <button ng-click="$ctrl.nextLesson()">Next Lesson</button>
-          <button ng-click="$ctrl.complete()">{{$ctrl.completeText}}</button>
+          <button ng-click="$ctrl.nextLesson()">
+            Next Lesson
+          </button>
+          <button
+            ng-click="$ctrl.complete()">
+              {{$ctrl.completeText}}
+          </button>
         </div>
         <div class="discussion" ng-show="$ctrl.activeTab === 1">
           <post-comment></post-comment>
