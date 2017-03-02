@@ -1,6 +1,7 @@
 class LessonPageController{
-  constructor(userData) {
+  constructor(userData, lessonService) {
     this.userData = userData;
+    this.lessonService = lessonService;
 
     this.videoUrl = '';
   }
@@ -16,8 +17,11 @@ class LessonPageController{
               this.lessonData.course,
               this.lessonData.lesson);
   }
+  nextVideo(){
+    this.lessonService.goToNextLesson(this.lessonData.lesson);
+  }
 }
 
-LessonPageController.$inject = ['userData'];
+LessonPageController.$inject = ['userData', 'lessonService'];
 
 export default LessonPageController;

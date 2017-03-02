@@ -32,9 +32,6 @@ class VideoController{
     }
     // look into adding $analytics to track % complete
   }
-  nextVideo(){
-    //logic to move onto next video
-  }
 }
 
 export default VideoController;

@@ -1,6 +1,7 @@
 class LessonService{
-  constructor(firebaseService) {
+  constructor(firebaseService, $state) {
     this.fb = firebaseService;
+    this.$state = $state;
 
     this.course = '';
     this.lesson = '';
@@ -14,6 +15,25 @@ class LessonService{
       course: this.course,
       lesson: this.lesson
     }
+  }
+  slugify(name){
+    return name.toLowerCase().split(' ').join('-');
+  }
+  goToNextLesson(currentLesson){
+    this.lessonList.forEach((section, secIndex) => {
+      section.lessons.forEach((lesson, index) => {
+        if(this.slugify(lesson.name) === currentLesson){
+          let nextLesson;
+          if(section.lessons[index + 1]){
+            nextLesson = this.slugify(section.lessons[index + 1].name);
+          }else{
+            nextLesson = this.slugify(this.lessonList[secIndex + 1].lessons[0].name);
+          }
+
+          this.$state.go('lesson', {course: this.course, lesson: nextLesson});
+        }
+      })
+    });
   }
   getLessonList(course){
     if(this.lessonList && course === this.course)
@@ -41,6 +61,6 @@ class LessonService{
   }
 }
 
-LessonService.$inject = ['firebaseService'];
+LessonService.$inject = ['firebaseService', '$state'];
 
 export default LessonService;

@@ -3,7 +3,8 @@ import controller from './video.controller';
 const VideoComponent = {
   bindings: {
     videoSrc: '@',
-    lessonComplete: '&'
+    lessonComplete: '&',
+    nextVideo: '&'
   },
   controller,
   template: `
