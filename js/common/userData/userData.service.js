@@ -13,8 +13,12 @@ class userData{
     this.auth.subscribeAuthChange(this.cacheUser.bind(this));
     this.getUserMeta();
   }
-  isEnrolled(user, course){
-    return this.fb.isEnrolled(user, course);
+  isEnrolled(course, user){
+    if(user){
+      return this.fb.isEnrolled(user, course);
+    }else if(this.user.user_id){
+      return this.fb.isEnrolled(this.user.user_id, course);
+    }
   }
   completeLesson(course, lesson){
     return this.fb.completeLesson(

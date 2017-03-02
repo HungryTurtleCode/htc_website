@@ -26,7 +26,7 @@ const LessonPageComponent = angular
             .then(user => {
               if(user && user.uid && !user.isAnonymous && $stateParams.lesson){
 
-                return userData.isEnrolled(user.uid, $stateParams.course)
+                return userData.isEnrolled($stateParams.course, user.uid)
                   .then(enrolled => {
                     if(enrolled){
                       return firebaseService.getLessonContent(
