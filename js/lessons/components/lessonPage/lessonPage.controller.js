@@ -15,7 +15,10 @@ class LessonPageController{
   lessonComplete(){
     this.userData.completeLesson(
               this.lessonData.course,
-              this.lessonData.lesson);
+              this.lessonData.lesson)
+      .then(() => {
+        this.lessonService.checkIfCourseComplete();
+      });
   }
   nextLesson(){
     this.lessonService.goToNextLesson(this.lessonData.lesson);

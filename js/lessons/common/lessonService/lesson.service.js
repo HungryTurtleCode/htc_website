@@ -1,7 +1,8 @@
 class LessonService{
-  constructor(firebaseService, $state) {
+  constructor(firebaseService, $state, userData) {
     this.fb = firebaseService;
     this.$state = $state;
+    this.userData = userData;
 
     this.course = '';
     this.lesson = '';
@@ -41,6 +42,18 @@ class LessonService{
       })
     });
   }
+  checkIfCourseComplete(){
+    let numCompleted = Object.keys(this.completeLessons).length;
+
+    let numLessons = 0;
+    this.lessonList.forEach(section => {
+      numLessons += section.lessons.length;
+    });
+
+    if(numCompleted === numLessons){
+      this.userData.markCourseComplete(this.course);
+    }
+  }
   getLessonList(course){
     if(this.lessonList && course === this.course)
       return Promise.resolve(this.lessonList);
@@ -67,6 +80,6 @@ class LessonService{
   }
 }
 
-LessonService.$inject = ['firebaseService', '$state'];
+LessonService.$inject = ['firebaseService', '$state', 'userData'];
 
 export default LessonService;

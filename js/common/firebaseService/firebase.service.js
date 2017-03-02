@@ -74,6 +74,17 @@ class FirebaseService{
         return snap.val();
       });
   }
+  markCourseComplete(user, course){
+    this.getCourseMeta(course)
+      .then(meta => {
+        this.ref
+          .child('users')
+          .child(user)
+          .child('completed')
+          .child(course)
+          .set(meta);
+      });
+  }
   getComments(url){
     if(url !== ''){
       return this.ref

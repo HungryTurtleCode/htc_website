@@ -20,6 +20,11 @@ class userData{
       return this.fb.isEnrolled(this.user.user_id, course);
     }
   }
+  markCourseComplete(course){
+    this.fb.markCourseComplete(
+                this.user.user_id,
+                course);
+  }
   completeLesson(course, lesson){
     return this.fb.completeLesson(
           this.user.user_id,
