@@ -25,6 +25,11 @@ class CheckoutController{
         .then(() => console.log('updated cart'));
     }
   }
+  getTotal(){
+    return this.cart.reduce((num, val) => {
+      return num + val.price;
+    }, 0);
+  }
   stripeBuy(){
     this.userData.stripeBuy(this.cart)
       .then(data => {

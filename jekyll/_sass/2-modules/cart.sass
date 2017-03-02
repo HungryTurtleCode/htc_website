@@ -1,27 +1,35 @@
-cart-list
+checkout
   font-size: 1rem
-  margin-bottom: 2em
-  display: block
 
-  .cart-item
-    display: flex
-    justify-content: space-between
-    align-items: center
-    padding: 1em 0
-    border-bottom: 1px solid #e3e3e3
+  cart-list
+    margin-bottom: 2em
+    display: block
 
-    .cart-img
-      width: 100px
-      border: none!important
+    .cart-item
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 1em 0
+      border-bottom: 1px solid #e3e3e3
 
-    a
-      font-size: 1.2em
-      text-decoration: none
-      color: inherit
-      transition: color 0.3s ease-in
+      .cart-img
+        width: 100px
+        border: none!important
 
-      &:hover
-        color: $secondary-color
+      a
+        font-size: 1.2em
+        text-decoration: none
+        color: inherit
+        transition: color 0.3s ease-in
 
-    .price
-      font-size: 2em
+        &:hover
+          color: $secondary-color
+
+      .price
+        font-size: 2em
+
+  .total-price
+    font-size: 1.5em
+    text-align: right
+    margin-bottom: 2em
+
