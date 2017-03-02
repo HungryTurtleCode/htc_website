@@ -110,6 +110,9 @@ class userData{
       }
     }
   }
+  isSignedIn(){
+    return this.auth.loggedIn;
+  }
   migrateOldUser(userInfo){
     let anonUser = JSON.parse(localStorage.getItem('anon_user_id'));
     if(anonUser){

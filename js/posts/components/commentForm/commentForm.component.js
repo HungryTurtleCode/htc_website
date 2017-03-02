@@ -9,8 +9,18 @@ const CommentFormComponent = {
   },
   template: `
     <textarea ng-model="$ctrl.commentText"
+      ng-if="$ctrl.userData.isSignedIn()"
       ng-class="{'reply': $ctrl.commentNesting}"></textarea>
-    <button ng-click="$ctrl.submitComment($ctrl.commentText)">Submit Comment</button>
+    <button
+      ng-if="$ctrl.userData.isSignedIn()"
+      ng-click="$ctrl.submitComment($ctrl.commentText)">Submit Comment</button>
+
+    <div class="not-signed-in-comment"
+      ng-if="!$ctrl.userData.isSignedIn()">
+        <button ng-click="$ctrl.signIn()">
+          Sign In To Comment
+        </button>
+    </div>
   `
 };
 

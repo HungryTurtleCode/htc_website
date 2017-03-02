@@ -1,9 +1,8 @@
 class commentFormController{
-  constructor(firebaseService, userData, $location, auth) {
+  constructor(firebaseService, userData, $location) {
     this.firebaseService = firebaseService;
     this.userData = userData;
     this.$location = $location;
-    this.auth = auth;
 
     this.commentText = '';
   }
@@ -36,6 +35,9 @@ class commentFormController{
     }
     this.commentText = '';
   }
+  signIn(){
+    console.log('sign in');
+  }
   getPageLocations(){
     let url = this.$location.absUrl();
     let arr = url.split('/');
@@ -52,6 +54,6 @@ class commentFormController{
   }
 }
 
-commentFormController.$inject = ['firebaseService', 'userData', '$location', 'auth'];
+commentFormController.$inject = ['firebaseService', 'userData', '$location'];
 
 export default commentFormController;
