@@ -18,7 +18,7 @@ const CommentFormComponent = {
     <div class="not-signed-in-comment"
       ng-if="!$ctrl.userData.isSignedIn()">
         <button ng-click="$ctrl.signIn()">
-          Sign In To Comment
+          Log In / Sign Up To Comment
         </button>
     </div>
 
