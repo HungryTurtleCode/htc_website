@@ -8,11 +8,11 @@ const CartList = {
       Loading...
     </div>
     <div ng-repeat="item in $ctrl.cart" class="cart-item">
-      <a ng-href="{{item.slug}}">
+      <a ng-href="/courses/{{item.slug}}">
         <img class="cart-img"
           ng-src="{{item.img}}"/>
       </a>
-      <a ng-href="{{item.slug}}">
+      <a ng-href="/courses/{{item.slug}}">
         {{item.title}}
       </a>
       <span class="price">{{item.price | currency:$:0}}</span>
