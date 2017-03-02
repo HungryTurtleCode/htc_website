@@ -1,8 +1,9 @@
 class commentFormController{
-  constructor(firebaseService, userData, $location) {
+  constructor(firebaseService, userData, $location, auth) {
     this.firebaseService = firebaseService;
     this.userData = userData;
     this.$location = $location;
+    this.auth = auth;
 
     this.commentText = '';
   }
@@ -39,12 +40,18 @@ class commentFormController{
     let url = this.$location.absUrl();
     let arr = url.split('/');
 
+    for(let i = arr.length-1; i >= 0; i--){
+      if(arr[i] === '' || arr[i] === '#!'){
+        arr.splice(i, 1);
+      }
+    }
+
     let newArr = [arr[arr.length - 2], arr[arr.length - 1]];
 
     return newArr.join('/');
   }
 }
 
-commentFormController.$inject = ['firebaseService', 'userData', '$location'];
+commentFormController.$inject = ['firebaseService', 'userData', '$location', 'auth'];
 
 export default commentFormController;
