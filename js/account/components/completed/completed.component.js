@@ -11,7 +11,9 @@ const Completed = {
       subtitle="Courses You Have Already Finished">
     </title-block>
     <div class="course-list" ng-if="$ctrl.courses">
-      <course-card ng-repeat="course in $ctrl.courses"></course-card>
+      <course-card ng-repeat="course in $ctrl.courses"
+        course-data="course">
+      </course-card>
     </div>
     <div ng-if="!$ctrl.courses">
       <htc-sign-in></htc-sign-in>
