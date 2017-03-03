@@ -51,7 +51,7 @@ class commentFormController{
       }
     }
 
-    let newArr = [arr[arr.length - 2], arr[arr.length - 1]];
+    let newArr = [arr[arr.length - 2], arr[arr.length - 1], ''];
 
     return newArr.join('/');
   }

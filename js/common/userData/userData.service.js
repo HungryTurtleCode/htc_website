@@ -229,6 +229,14 @@ class userData{
     if(isReply){
       loc = loc + isReply + '/replies/';
     }
+    let locArr = loc.split('/');
+
+    let replyChain = locArr.reduce((arr, val) => {
+      if(val.charAt(0) === '-'){
+        arr.push(val);
+      }
+      return arr;
+    }, []);
 
     return this.fb.setComment(
       loc,
@@ -238,8 +246,36 @@ class userData{
       this.user.user_id,
       this.user.image
     )
-    .then(() => true)
+    .then(key => {
+      if(replyChain.length){
+        this.setCommentNotifications(locArr.splice(0,2), key, replyChain);
+      }
+    })
     .catch(err => err);
+  }
+  setCommentNotifications(loc, replyKey, replyChain){
+    loc.push('');
+    loc = loc.join('/');
+
+    let ownersSet = new Set();
+    let count = 0;
+
+    replyChain.forEach((reply, index) => {
+      if(index > 0){
+        loc = loc + replyChain[index - 1] + '/replies/';
+      }
+      this.fb.getCommentOwner(loc, reply)
+        .then(owner => {
+          ownersSet.add(owner);
+          count++;
+
+          if(count === replyChain.length){
+            let newReplyLoc = loc + reply + '/replies/' + replyKey;
+            let ownersArr = Array.from(ownersSet);
+            this.fb.setCommentNotifications(ownersArr, newReplyLoc);
+          }
+        });
+    });
   }
   setUserData(data){
     if(!this.user.user_id){return Promise.reject('unknown user')}

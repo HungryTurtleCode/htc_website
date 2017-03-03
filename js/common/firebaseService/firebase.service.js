@@ -265,6 +265,42 @@ class FirebaseService{
         });
     });
   }
+  getCommentOwner(loc, comment){
+    return this.ref
+      .child('comments')
+      .child(loc)
+      .child(comment)
+      .child('user_id')
+      .once('value')
+      .then(snap => snap.val());
+  }
+  getSingleComment(loc){
+    return this.ref
+      .child('comments')
+      .child(loc)
+      .once('value')
+      .then(snap => snap.val());
+  }
+  setCommentNotifications(owners, replyLoc){
+    this.getSingleComment(replyLoc)
+      .then(comment => {
+        owners.forEach(owner => {
+
+          if(owner !== comment.user_id){
+            let commentReplies = this.ref
+                                  .child('users')
+                                  .child(owner)
+                                  .child('notifications');
+
+            let newReply = commentReplies.push();
+
+            comment.notification_type = 'comment_reply';
+
+            newReply.set(comment);
+          }
+        });
+      });
+  }
   setComment(loc, text, isReply, user_name, user_id, image){
     let comment = {
       text,
@@ -284,7 +320,7 @@ class FirebaseService{
     comment.firebase_id = newComment.key;
 
     return newComment.set(comment)
-      .then(data => true)
+      .then(data => newComment.key)
       .catch(err => {
         console.error(err)
         return err;
