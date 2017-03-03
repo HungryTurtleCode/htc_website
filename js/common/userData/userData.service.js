@@ -225,7 +225,7 @@ class userData{
         });
     }
   }
-  setComment(loc, text, isReply){
+  setComment(loc, text, isReply, lesson){
     if(isReply){
       loc = loc + isReply + '/replies/';
     }
@@ -248,12 +248,12 @@ class userData{
     )
     .then(key => {
       if(replyChain.length){
-        this.setCommentNotifications(locArr.splice(0,2), key, replyChain);
+        this.setCommentNotifications(locArr.splice(0,2), key, replyChain, lesson);
       }
     })
     .catch(err => err);
   }
-  setCommentNotifications(loc, replyKey, replyChain){
+  setCommentNotifications(loc, replyKey, replyChain, lesson){
     loc.push('');
     loc = loc.join('/');
 
@@ -272,7 +272,7 @@ class userData{
           if(count === replyChain.length){
             let newReplyLoc = loc + reply + '/replies/' + replyKey;
             let ownersArr = Array.from(ownersSet);
-            this.fb.setCommentNotifications(ownersArr, newReplyLoc);
+            this.fb.setCommentNotifications(ownersArr, newReplyLoc, lesson);
           }
         });
     });

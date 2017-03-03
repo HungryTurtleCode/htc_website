@@ -8,6 +8,7 @@ class commentFormController{
   }
   $onInit(){
     this.isReply = this.isReply || false;
+    this.isLesson = false;
 
     if(this.commentNesting){
       this.pageLocations = this.getPageLocations() || '';
@@ -21,7 +22,8 @@ class commentFormController{
       this.userData.setComment(
         this.pageLocations,
         text,
-        this.isReply
+        this.isReply,
+        this.isLesson
       )
       .then(() => {
         this.refresh();
@@ -46,6 +48,9 @@ class commentFormController{
     let arr = url.split('/');
 
     for(let i = arr.length-1; i >= 0; i--){
+      if(arr[i - 1] === 'lessons' && arr[i] === '#!'){
+        this.isLesson = true;
+      }
       if(arr[i] === '' || arr[i] === '#!'){
         arr.splice(i, 1);
       }

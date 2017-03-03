@@ -281,12 +281,12 @@ class FirebaseService{
       .once('value')
       .then(snap => snap.val());
   }
-  setCommentNotifications(owners, replyLoc){
+  setCommentNotifications(owners, replyLoc, lesson){
     this.getSingleComment(replyLoc)
       .then(comment => {
         owners.forEach(owner => {
 
-          if(owner !== comment.user_id){
+          if(owner === comment.user_id){
             let commentReplies = this.ref
                                   .child('users')
                                   .child(owner)
@@ -295,6 +295,13 @@ class FirebaseService{
             let newReply = commentReplies.push();
 
             comment.notification_type = 'comment_reply';
+            let slug = replyLoc.split('/').splice(0, 2);
+            if(lesson){
+              slug.unshift('lessons/#!')
+            }
+            slug.push('');
+            slug.unshift('');
+            comment.location = slug.join('/');
 
             newReply.set(comment);
           }
