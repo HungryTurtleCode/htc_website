@@ -13,7 +13,11 @@ class HeaderController{
 
     this.auth.subscribeAuthChange(this.onAuthChange.bind(this));
     this.userData.getNotifications(
-                  notifications => this.notifications = notifications);
+                  notifications =>
+                    this.$timeout(() => {
+                      this.notifications = notifications
+                    })
+                  );
 
     window.addEventListener('click', event => {
       this.$timeout(() => {
