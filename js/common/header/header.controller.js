@@ -50,10 +50,10 @@ class HeaderController{
   clickNotificationItem(item){
     // TODO clear the notification Mon 06 Mar 2017 17:05:01 UTC
 
-    // TODO add query params to allow other functionality Mon 06 Mar 2017 17:05:26 UTC
     console.log(item);
-    return;
-    window.location.href = item.location;
+    if(item.notification_type === 'comment_reply'){
+      window.location.href = item.location + '?comment=' + item.firebase_id;
+    }
   }
 }
 
