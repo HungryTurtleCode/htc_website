@@ -48,9 +48,7 @@ class HeaderController{
     this.showLogOut = false;
   }
   clickNotificationItem(item){
-    // TODO clear the notification Mon 06 Mar 2017 17:05:01 UTC
-
-    console.log(item);
+    this.userData.markNotificationRead(item.notif_id);
     if(item.notification_type === 'comment_reply'){
       window.location.href = item.location + '?comment=' + item.firebase_id;
     }

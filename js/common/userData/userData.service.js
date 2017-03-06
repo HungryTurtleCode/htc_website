@@ -13,6 +13,9 @@ class userData{
     this.auth.subscribeAuthChange(this.cacheUser.bind(this));
     this.getUserMeta();
   }
+  markNotificationRead(id){
+    this.fb.markNotificationRead(this.user.user_id, id);
+  }
   isEnrolled(course, user){
     if(user){
       return this.fb.isEnrolled(user, course);

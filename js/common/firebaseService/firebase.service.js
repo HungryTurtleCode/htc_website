@@ -318,11 +318,20 @@ class FirebaseService{
             slug.unshift('');
             comment.location = slug.join('/');
             comment.page_name = page_name.split('-').join(' ');
+            comment.notif_id = newReply.key;
 
             newReply.set(comment);
           }
         });
       });
+  }
+  markNotificationRead(user, id){
+    this.ref
+      .child('users')
+      .child(user)
+      .child('notifications')
+      .child(id)
+      .set(null);
   }
   setComment(loc, text, isReply, user_name, user_id, image){
     let comment = {
