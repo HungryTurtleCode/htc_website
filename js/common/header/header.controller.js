@@ -13,10 +13,11 @@ class HeaderController{
 
     this.auth.subscribeAuthChange(this.onAuthChange.bind(this));
     this.userData.getNotifications(
-                  notifications =>
-                    this.$timeout(() => {
-                      this.notifications = notifications
-                    })
+                    notifications => {
+                      this.$timeout(() => {
+                        this.notifications = notifications
+                      });
+                    }
                   );
 
     window.addEventListener('click', event => {
@@ -50,6 +51,8 @@ class HeaderController{
     // TODO clear the notification Mon 06 Mar 2017 17:05:01 UTC
 
     // TODO add query params to allow other functionality Mon 06 Mar 2017 17:05:26 UTC
+    console.log(item);
+    return;
     window.location.href = item.location;
   }
 }

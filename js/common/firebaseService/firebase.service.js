@@ -13,7 +13,7 @@ class FirebaseService{
       .child(user)
       .child('notifications')
       .on('value', snap => {
-        let obj = snap.val();
+        let obj = snap.val() || [];
         let arr = Object.keys(obj)
                     .map(key => {
                       return obj[key];

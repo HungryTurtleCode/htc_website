@@ -62,16 +62,18 @@ const HeaderComponent = {
                   <div class="top">
                     <img ng-src="{{notif.image}}">
                     <p class="reply-text">
-                      {{notif.user_name}} said something in a discussion you are involved in
+                      <span ng-if="notif.notification_type === 'comment_reply'">
+                        <strong>{{notif.user_name}}</strong> said something in a discussion you are involved in
+                      </span>
                     </p>
                   </div>
                   <div class="bottom">
                     <p class="date">{{notif.date | date}}</p>
                   </div>
-                  <!--<p>{{notif.text}}</p>
-                  <p>{{notif.firebase_id}}</p>
-                  <p>{{notif.notification_type}}</p>
-                  <p>{{notif.location}}</p>-->
+              </div>
+
+              <div ng-if="!$ctrl.notifications.length">
+                Nothing To Show
               </div>
           </div>
         </div>
