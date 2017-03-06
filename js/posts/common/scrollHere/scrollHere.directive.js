@@ -15,7 +15,7 @@ const scrollHere = ($timeout) => ({
 
     if($scope.scrollHere){
       $timeout(() => {
-        document.body.scrollTop = $element[0].getBoundingClientRect().top;
+        document.body.scrollTop = $element[0].getBoundingClientRect().top - 100;
       });
     }
   }
