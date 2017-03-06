@@ -313,7 +313,7 @@ class FirebaseService{
             if(lesson){
               slug.unshift('lessons/#!')
             }
-            slug.push('');
+            // slug.push('');
             slug.unshift('');
             comment.location = slug.join('/');
 
