@@ -313,9 +313,11 @@ class FirebaseService{
             if(lesson){
               slug.unshift('lessons/#!')
             }
+            let page_name = slug[slug.length - 1];
             // slug.push('');
             slug.unshift('');
             comment.location = slug.join('/');
+            comment.page_name = page_name.split('-').join(' ');
 
             newReply.set(comment);
           }
