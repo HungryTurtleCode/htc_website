@@ -14,29 +14,61 @@ header
       margin-left: 220px
 
     .header-panel
-      display: inline-block
       vertical-align: top
       height: 100px
       float: right
-      width: 400px
+      width: 200px
 
+      .sign-in-register
+        display: flex
+        justify-content: space-between
 
-      .auth-button
-        float: right
-        border: 0
+      .notification-btn,
+      .account
+        position: relative
         background: $secondary-color
-        color: white
-        padding: 0.4em 1em
-        border-radius: 0.2em
-        cursor: pointer
-        transition: all 0.3s ease
+        border: none
         outline: none
+        border-radius: 50%
+        cursor: pointer
 
-        &:hover
-          background: shade($primary-color, 10%)
+        svg
+          width: 20px
+          margin: 5px 0 2px 3px
+
+          path
+            fill: white
+
+        span
+          background: $primary-color
+          border-radius: 50%
+          color: black
+          width: 17px
+          height: 17px
+          text-align: center
+          padding-top: 1px
+          position: absolute
+          font-size: 0.7em
+          top: -5px
+          right: -5px
 
       .account
-        float: left
+        padding: 0 6px 0 4px
+
+      .auth-button
+        border: 0
+        text-decoration: none
+        background: none
+        color: $secondary-color
+        cursor: pointer
+        outline: none
+
+        &.signout
+          font-size: 0.8em
+
+        &:hover
+          text-decoration: underline
+        //   background: shade($primary-color, 10%)
 
 
   .main-header-nav

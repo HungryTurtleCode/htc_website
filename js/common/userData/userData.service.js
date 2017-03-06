@@ -115,6 +115,18 @@ class userData{
       }
     }
   }
+  getNotifications(callback){
+    if(this.user.user_id){
+      this.fb.getNotifications(this.user.user_id, callback);
+    }else{
+      this.auth.waitForAuth()
+        .then(snap => {
+          if(snap && snap.uid && !snap.isAnonymous){
+            this.fb.getNotifications(snap.uid, callback);
+          }
+        });
+    }
+  }
   isSignedIn(){
     return this.auth.loggedIn;
   }

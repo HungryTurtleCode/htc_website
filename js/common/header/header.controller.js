@@ -10,6 +10,8 @@ class HeaderController{
     this.showLogOut = false;
 
     this.auth.subscribeAuthChange(this.onAuthChange.bind(this));
+    this.userData.getNotifications(
+                  notifications => this.notifications = notifications);
   }
   onAuthChange(user){
     this.loading = false;

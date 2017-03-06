@@ -7,6 +7,20 @@ class FirebaseService{
 
     this.ref = firebase.database().ref();
   }
+  getNotifications(user, callback){
+    this.ref
+      .child('users')
+      .child(user)
+      .child('notifications')
+      .on('value', snap => {
+        let obj = snap.val();
+        let arr = Object.keys(obj)
+                    .map(key => {
+                      return obj[key];
+                    });
+        callback(arr);
+      });
+  }
   getUserCart(id){
     return this.ref
       .child('users')
