@@ -28,7 +28,10 @@ module.exports = {
   },
   plugins: [
     // new webpack.NoErrorsPlugin(),
-    // new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['manifest']
+    }),
     // new webpack.optimize.UglifyJsPlugin({
     //   // Don't beautify output (enable for neater output)
     //   beautify: false,
@@ -38,7 +41,7 @@ module.exports = {
     //   compress: {
     //     warnings: false,
     //     // Drop `console` statements
-    //     drop_console: false
+    //     drop_console: true
     //   },
     //   mangle: {
     //     except: ['$', 'webpackJsonp'],
