@@ -19,9 +19,6 @@ class Auth{
       });
     });
   }
-  // TODO migrate data from anon account on auth change Thu 16 Feb 2017 10:26:18 GMT
-  // This will have to occur in the userData service by subscribing to authChanges. Otherwise
-  // there will be a circular dependency
   onAuthChange(){
     firebase.auth().onAuthStateChanged((user) => {
       this.$timeout(() => {
@@ -77,6 +74,19 @@ class Auth{
   anonymousSignIn(){
     firebase.auth().signInAnonymously()
       .catch(err => console.error(err));
+  }
+  forgottenPass(email){
+
+    if(this.validateEmail(email)){
+      return firebase.auth().sendPasswordResetEmail(email)
+        .catch(err => {
+          console.error(err)
+          return err;
+        });
+    }
+
+    console.error('Invalid Email');
+    return Promise.reject('Invalid Email');
   }
   facebookSignIn(){
     let provider = new firebase.auth.FacebookAuthProvider();
