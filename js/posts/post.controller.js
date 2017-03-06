@@ -8,6 +8,10 @@ class PostCommentController{
   }
   $onInit(){
     this.getComments();
+
+    if(this.$location.search() && this.$location.search().comment){
+      this.highlight = this.$location.search().comment;
+    }
   }
   getComments(){
     let loc = this.getPageLocations() || '';

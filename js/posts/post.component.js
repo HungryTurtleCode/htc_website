@@ -10,6 +10,7 @@ const PostComponent = {
     <comment
       ng-repeat="comment in $ctrl.comments | orderBy:'-score'"
       data="comment"
+      highlight="$ctrl.highlight"
       refresh="$ctrl.getComments()"
     </comment>
   `

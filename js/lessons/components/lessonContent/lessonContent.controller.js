@@ -1,10 +1,15 @@
 class LessonContentController{
-  constructor($sce) {
+  constructor($sce, $location) {
     this.$sce = $sce;
+    this.$location = $location;
     this.completeText = 'Mark Lesson Complete';
   }
   $onInit(){
-    this.activeTab = 0;
+    if(this.$location.search().comment){
+      this.activeTab = 1;
+    }else{
+      this.activeTab = 0;
+    }
     this.articleTrusted = this.$sce.trustAsHtml(this.article);
   }
   $onChanges(change){
@@ -20,6 +25,6 @@ class LessonContentController{
   }
 }
 
-LessonContentController.$inject = ['$sce'];
+LessonContentController.$inject = ['$sce', '$location'];
 
 export default LessonContentController;
