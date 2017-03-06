@@ -6,6 +6,7 @@ jekyll/scripts/lesson.js
 jekyll/scripts/checkout.js
 jekyll/scripts/salespage.js
 jekyll/scripts/header.js
+jekyll/scripts/manifest.js
 .DS_Store
 .jekyll
 .bundle
