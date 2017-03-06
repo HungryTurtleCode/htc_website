@@ -17,7 +17,7 @@ class HeaderController{
 
     window.addEventListener('click', event => {
       this.$timeout(() => {
-        this.notificationClick(event);
+        this.notificationActive = false;
       });
     });
   }
