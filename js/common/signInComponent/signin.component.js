@@ -2,6 +2,9 @@ import controller from './signin.controller';
 
 const SignInComponent = {
   controller,
+  bindings: {
+    forgotPass: '&'
+  },
   template: `
     <div class="modal"
       ng-click="$ctrl.stopPropagation($event)">

@@ -7,8 +7,16 @@ const loginModal = {
   },
   template: `
     <div class="login-modal-container"
+      ng-if="!$ctrl.showForgotPass"
       ng-click="$ctrl.hideModalMarkup($event)">
-        <htc-sign-in></htc-sign-in>
+        <htc-sign-in
+          forgot-pass="$ctrl.forgotPass()">
+        </htc-sign-in>
+    </div>
+    <div class="login-modal-container"
+      ng-if="$ctrl.showForgotPass"
+      ng-click="$ctrl.hideModalMarkup($event)">
+        <htc-forgot-pass close-modal="$ctrl.closeModal()"></htc-forgot-pass>
     </div>
   `
 };

@@ -23,8 +23,7 @@ class SignInComponentController{
       .catch((err) => console.log(err))
   }
   showForgottenPassModal(){
-    // TODO create component from forgotten password modal Thu 16 Feb 2017 10:19:28 GMT
-    // TODO add logic to show forgotten password modal Thu 16 Feb 2017 10:19:09 GMT
+    this.forgotPass();
   }
   stopPropagation($event){
     $event.stopPropagation();
