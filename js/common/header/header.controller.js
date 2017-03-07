@@ -10,6 +10,7 @@ class HeaderController{
     this.showSignIn = false;
     this.showLogOut = false;
     this.notificationActive = false;
+    this.cart = [];
 
     this.auth.subscribeAuthChange(this.onAuthChange.bind(this));
     this.userData.getNotifications(
@@ -25,6 +26,11 @@ class HeaderController{
         this.notificationActive = false;
       });
     });
+
+    this.userData.getUserCart()
+      .then(cart => {
+        this.cart = cart;
+      });
   }
   notificationClick(e){
     this.stopPropagation(e);
@@ -46,6 +52,9 @@ class HeaderController{
   }
   closeLogOut(){
     this.showLogOut = false;
+  }
+  cartClick(){
+    window.location.href = '/checkout';
   }
   clickNotificationItem(item){
     this.userData.markNotificationRead(item.notif_id);
