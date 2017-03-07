@@ -90,6 +90,15 @@ class userData{
     }
     return Promise.reject(false);
   }
+  paypalBuy(data){
+    return this.dataService.paypalBuy(getCourseArray(data), this.user.user_id);
+
+    function getCourseArray(courses){
+      return courses.map(item => {
+        return item.course;
+      });
+    }
+  }
   stripeBuy(data){
     return this.dataService.stripeBuy(getCourseArray(data), this.user.user_id);
 

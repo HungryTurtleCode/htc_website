@@ -11,6 +11,7 @@ const CheckoutComponent = {
       Total: {{$ctrl.getTotal() | currency:$:0}}
     </div>
     <button ng-click="$ctrl.stripeBuy()">Buy</button>
+    <button ng-click="$ctrl.paypalBuy()">Paypal Buy</button>
   `
 };
 

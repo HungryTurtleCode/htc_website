@@ -30,6 +30,13 @@ class CheckoutController{
       return num + val.price;
     }, 0);
   }
+  paypalBuy(){
+    this.userData.paypalBuy(this.cart)
+      .then(data => {
+        console.log(data);
+      })
+      .catch(err => console.error(err));
+  }
   stripeBuy(){
     this.userData.stripeBuy(this.cart)
       .then(data => {

@@ -9,6 +9,12 @@ class DataService{
         return response.data.url;
       });
   }
+  paypalBuy(data, user){
+    return this.$http.post(`${this.url}/paypalBuy`, {courses: data, user})
+      .then(response => {
+        return response.data;
+      });
+  }
   stripeBuy(data, user){
     return this.$http.post(`${this.url}/stripeBuy`, {courses: data, user})
       .then(response => {
