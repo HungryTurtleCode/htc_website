@@ -10,6 +10,8 @@ const CheckoutComponent = {
       </cart-list>
       <div class="empty-cart" ng-if="!$ctrl.cart">
         Cart Is Empty
+        <br>
+        <a href="/courses/">Check out some courses here</a>
       </div>
       <div class="checkout-bottom" ng-if="$ctrl.cart.length">
         <div class="total-price">
@@ -18,7 +20,7 @@ const CheckoutComponent = {
       </div>
     </div>
 
-    <div class="pay-area">
+    <div class="pay-area" ng-if="$ctrl.cart.length">
       <h2>Pay With</h2>
       <div class="tabs">
         <ul>
