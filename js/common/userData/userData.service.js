@@ -197,7 +197,7 @@ class userData{
     }else{
       return this.auth.waitForAuth()
         .then(snap => {
-          if(snap && snap.uid && !snap.isAnonymous){
+          if(snap && snap.uid){
             return this.fb.getUserCart(snap.uid)
               .then(cart => {
                 if(cart){

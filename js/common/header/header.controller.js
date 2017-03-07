@@ -26,11 +26,6 @@ class HeaderController{
         this.notificationActive = false;
       });
     });
-
-    this.userData.getUserCart()
-      .then(cart => {
-        this.cart = cart;
-      });
   }
   notificationClick(e){
     this.stopPropagation(e);
