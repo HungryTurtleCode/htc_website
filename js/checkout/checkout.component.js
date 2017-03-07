@@ -3,6 +3,10 @@ import controller from './checkout.controller';
 const CheckoutComponent = {
   controller,
   template: `
+    <login-modal
+      ng-if="$ctrl.showModal"
+      close-modal="$ctrl.closeSignIn()">
+    </login-modal>
     <div class="list-area">
       <cart-list
         cart="$ctrl.cart"
@@ -22,7 +26,13 @@ const CheckoutComponent = {
 
     <div class="pay-area" ng-if="$ctrl.cart.length">
       <h2>Pay With</h2>
-      <div class="tabs">
+      <button
+        class="sign-in-btn"
+        ng-if="!$ctrl.userData.auth.loggedIn"
+        ng-click="$ctrl.showModal = true">
+          Log In / Register To Purchase
+      </button>
+      <div class="tabs" ng-if="$ctrl.userData.auth.loggedIn">
         <ul>
           <li ng-click="$ctrl.activePayment = 0" ng-class="{'active': $ctrl.activePayment === 0}">PayPal</li>
           <li ng-click="$ctrl.activePayment = 1" ng-class="{'active': $ctrl.activePayment === 1}">Card</li>
@@ -30,12 +40,12 @@ const CheckoutComponent = {
       </div>
 
       <div class="paypal-pay"
-        ng-if="$ctrl.activePayment === 0">
+        ng-if="$ctrl.userData.auth.loggedIn && $ctrl.activePayment === 0">
           <button ng-click="$ctrl.paypalBuy()">Go To PayPal</button>
       </div>
 
       <div class="stripe-pay"
-        ng-if="$ctrl.activePayment === 1">
+        ng-if="$ctrl.userData.auth.loggedIn && $ctrl.activePayment === 1">
           <div class="payment-field">
             <label>Name</label>
             <input ng-model="$ctrl.payment.name" type="text" placeholder="Name">

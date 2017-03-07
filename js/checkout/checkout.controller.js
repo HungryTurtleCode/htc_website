@@ -17,6 +17,9 @@ class CheckoutController{
         this.$scope.$apply();
       });
   }
+  closeSignIn(){
+    this.showModal = false;
+  }
   removeItem(item){
     let index = this.cart.indexOf(item);
     if(index > -1){
