@@ -26,9 +26,12 @@ class CheckoutController{
     }
   }
   getTotal(){
-    return this.cart.reduce((num, val) => {
-      return num + val.price;
-    }, 0);
+    if(this.cart){
+      return this.cart.reduce((num, val) => {
+        return num + val.price;
+      }, 0);
+    }
+    return 0;
   }
   paypalBuy(){
     this.userData.paypalBuy(this.cart)
