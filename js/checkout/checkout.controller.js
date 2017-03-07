@@ -7,6 +7,7 @@ class CheckoutController{
   }
   $onInit(){
     this.cart = [];
+    this.activePayment = 0;
     this.getCart();
   }
   getCart(){

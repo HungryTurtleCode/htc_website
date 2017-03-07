@@ -16,7 +16,11 @@ const CartList = {
         {{item.title}}
       </a>
       <span class="price">{{item.price | currency:$:0}}</span>
-      <button ng-click="$ctrl.removeItem({item})">X</button>
+      <button
+        class="remove-button"
+        ng-click="$ctrl.removeItem({item})">
+          X
+      </button>
     </div>
   `
 };

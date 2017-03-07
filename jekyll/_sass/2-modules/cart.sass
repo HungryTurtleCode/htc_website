@@ -1,35 +1,109 @@
 checkout
   font-size: 1rem
 
-  cart-list
-    margin-bottom: 2em
-    display: block
+  .list-area
+    +span-columns(8)
 
-    .cart-item
-      display: flex
-      justify-content: space-between
-      align-items: center
-      padding: 1em 0
-      border-bottom: 1px solid #e3e3e3
+    cart-list
+      margin-bottom: 2em
+      display: block
 
-      .cart-img
-        width: 100px
-        border: none!important
+      .cart-item
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 1em 0
+        border-bottom: 1px solid #e3e3e3
 
-      a
-        font-size: 1.2em
-        text-decoration: none
-        color: inherit
-        transition: color 0.3s ease-in
+        .cart-img
+          width: 100px
+          border: none!important
+
+        a
+          font-size: 1.2em
+          text-decoration: none
+          color: inherit
+          transition: color 0.3s ease-in
+
+          &:hover
+            color: $secondary-color
+
+        .price
+          font-size: 2em
+
+        .remove-button
+          background: transparent
+          border: none
+          outline: none
+          color: red
+          font-weight: bold
+          font-size: 1.3em
+          cursor: pointer
+
+    .checkout-bottom
+      .total-price
+        font-size: 1.5em
+        text-align: right
+        margin-bottom: 2em
+
+  .pay-area
+    +span-columns(4)
+    font-size: 0.8em
+
+    h2
+      text-align: center
+      margin: 0 0 0.5em 0
+      padding: 0
+
+    .tabs
+      text-align: center
+
+      ul
+        display: inline
+        padding: 0
+
+        li
+          display: inline-block
+          list-style: none
+          padding: 1em 2em
+          cursor: pointer
+
+          &.active
+            background: $primary-color
+
+    .paypal-pay,
+    .stripe-pay
+      text-align: center
+
+      button
+        margin-top: 2em
+        color: white
+        padding: 1em 3em
+        background: $secondary-color
+        border: none
+        outline: none
+        cursor: pointer
+        transition: background 0.3s ease
 
         &:hover
-          color: $secondary-color
+          background: shade($secondary-color, 20%)
 
-      .price
-        font-size: 2em
+      .payment-field
+        margin: 0.7em 0
 
-  .total-price
-    font-size: 1.5em
-    text-align: right
-    margin-bottom: 2em
+        label
+          width: 100%
+          margin: 0 auto
+          display: block
+          text-align: left
+
+        input
+          width: 100%
+          padding: 0.5em
+
+    .stripe-pay
+      padding: 0 2em
+
+
+
 
