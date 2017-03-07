@@ -67,9 +67,12 @@ class userData{
 
     return this.fb.getUserBookmarked(id)
       .then(courses => {
-        return this.bookmarked = Object.keys(courses).map(key => {
-          return courses[key];
-        });
+        if(courses){
+          return this.bookmarked = Object.keys(courses).map(key => {
+            return courses[key];
+          });
+        }
+        return [];
       });
   }
   updateCart(items){
