@@ -27,12 +27,12 @@ class PostCommentController{
     let arr = url.split('/');
 
     for(let i = arr.length-1; i >= 0; i--){
-      if(arr[i] === '' || arr[i] === '#!'){
-        arr.splice(i, 1);
-      }
       let matches = arr[i].match(/\?([^&]*)/);
       if(matches){
         arr[i] = arr[i].slice(0, matches.index);
+      }
+      if(arr[i] === '' || arr[i] === '#!'){
+        arr.splice(i, 1);
       }
     }
 

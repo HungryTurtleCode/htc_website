@@ -51,12 +51,12 @@ class commentFormController{
       if(arr[i - 1] === 'lessons' && arr[i] === '#!'){
         this.isLesson = true;
       }
-      if(arr[i] === '' || arr[i] === '#!'){
-        arr.splice(i, 1);
-      }
       let matches = arr[i].match(/\?([^&]*)/);
       if(matches){
         arr[i] = arr[i].slice(0, matches.index);
+      }
+      if(arr[i] === '' || arr[i] === '#!'){
+        arr.splice(i, 1);
       }
     }
 
