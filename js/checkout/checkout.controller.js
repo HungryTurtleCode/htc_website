@@ -1,9 +1,9 @@
 class CheckoutController{
-  constructor(firebaseService, userData, $scope, dataService) {
+  constructor(firebaseService, userData, $scope, stripe) {
     this.fb = firebaseService;
     this.userData = userData;
     this.$scope = $scope;
-    this.dataService = dataService;
+    this.stripe = stripe;
   }
   $onInit(){
     this.cart = [];
@@ -33,19 +33,28 @@ class CheckoutController{
   paypalBuy(){
     this.userData.paypalBuy(this.cart)
       .then(data => {
-        console.log(data);
+        if(data.success){
+          window.location.href = data.url;
+        }
       })
       .catch(err => console.error(err));
   }
   stripeBuy(){
-    this.userData.stripeBuy(this.cart)
-      .then(data => {
-        console.log(data);
-      })
-      .catch(err => console.error(err));
+    this.stripe.card.createToken(this.payment.card)
+      .then(response => {
+        console.log('token created for card ending in ', response.card.last4);
+
+        this.userData.stripeBuy(this.cart, response.id)
+          .then(data => {
+            if(data.success){
+              window.location.href = data.url;
+            }
+          })
+          .catch(err => console.error(err));
+      });
   }
 }
 
-CheckoutController.$inject = ['firebaseService', 'userData', '$scope'];
+CheckoutController.$inject = ['firebaseService', 'userData', '$scope', 'stripe'];
 
 export default CheckoutController;

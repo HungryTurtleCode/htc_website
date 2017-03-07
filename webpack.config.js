@@ -26,6 +26,9 @@ module.exports = {
       }
     ]
   },
+  externals: {
+    'stripe': 'Stripe'
+  },
   plugins: [
     // new webpack.NoErrorsPlugin(),
     new webpack.optimize.DedupePlugin(),

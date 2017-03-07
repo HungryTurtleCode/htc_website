@@ -15,8 +15,8 @@ class DataService{
         return response.data;
       });
   }
-  stripeBuy(data, user){
-    return this.$http.post(`${this.url}/stripeBuy`, {courses: data, user})
+  stripeBuy(data, user, token){
+    return this.$http.post(`${this.url}/stripeBuy`, {courses: data, user, token: token})
       .then(response => {
         return response.data;
       });

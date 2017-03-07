@@ -102,8 +102,8 @@ class userData{
       });
     }
   }
-  stripeBuy(data){
-    return this.dataService.stripeBuy(getCourseArray(data), this.user.user_id);
+  stripeBuy(data, token){
+    return this.dataService.stripeBuy(getCourseArray(data), this.user.user_id, token);
 
     function getCourseArray(courses){
       return courses.map(item => {
