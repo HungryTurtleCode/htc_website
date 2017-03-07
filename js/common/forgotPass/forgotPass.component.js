@@ -3,7 +3,8 @@ import controller from './forgotPass.controller';
 const forgotPass = {
   controller,
   bindings: {
-    closeModal: '&'
+    closeModal: '&',
+    text: '@'
   },
   template: `
     <div class="modal"
@@ -24,7 +25,7 @@ const forgotPass = {
         <div class="forgot-success"
           ng-if="$ctrl.forgotSuccess">
             <h3>Check Your Email For A Link To Reset Your Email</h3>
-            <button ng-click="$ctrl.closeModal()">Close</button>
+            <button ng-click="$ctrl.closeModal()">{{$ctrl.text || 'Close'}}</button>
         </div>
     </div>
   `

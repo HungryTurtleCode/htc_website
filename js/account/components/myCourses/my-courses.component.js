@@ -20,7 +20,17 @@ const myCourses = {
       </div>
     </div>
     <div ng-if="!$ctrl.courses">
-      <htc-sign-in></htc-sign-in>
+      <htc-sign-in
+        forgot-pass="$ctrl.forgotPass()"
+        ng-if="!$ctrl.forgotPassword">
+      </htc-sign-in>
+      <div class="forgot-container"
+        ng-if="$ctrl.forgotPassword">
+          <htc-forgot-pass
+            close-modal="$ctrl.closeForgot()"
+            text="Sign In">
+          </htc-forgot-pass>
+      </div>
     </div>
   `
 };

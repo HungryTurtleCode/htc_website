@@ -1,6 +1,12 @@
 class myCourseController{
   constructor() {
-    let a = 0;
+    this.forgotPassword = false;
+  }
+  forgotPass(){
+    this.forgotPassword = true;
+  }
+  closeForgot(){
+    this.forgotPassword = false;
   }
 }
 

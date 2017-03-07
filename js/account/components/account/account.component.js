@@ -11,7 +11,17 @@ const AccountComponent = {
       subtitle="">
     </title-block>
     <div ng-if="!$ctrl.user">
-      <htc-sign-in></htc-sign-in>
+      <htc-sign-in
+        forgot-pass="$ctrl.forgotPass()"
+        ng-if="!$ctrl.forgotPassword">
+      </htc-sign-in>
+      <div class="forgot-container"
+        ng-if="$ctrl.forgotPassword">
+          <htc-forgot-pass
+            close-modal="$ctrl.closeForgot()"
+            text="Sign In">
+          </htc-forgot-pass>
+      </div>
     </div>
     <div class="account-form-cont" ng-if="$ctrl.user">
       <form>
