@@ -54,9 +54,12 @@ class userData{
 
     return this.fb.getUserEnrolledCourses(id)
       .then(courses => {
-          return this.courses = Object.keys(courses).map(key => {
-            return courses[key];
-          });
+          if(courses){
+            return this.courses = Object.keys(courses).map(key => {
+              return courses[key];
+            });
+          }
+          return [];
       });
   }
   getUserBookmarked(id){
