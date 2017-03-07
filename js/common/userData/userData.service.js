@@ -216,9 +216,12 @@ class userData{
 
     return this.fb.getUserCompleted(id)
       .then(courses => {
-        return this.completed = Object.keys(courses).map(key => {
-          return courses[key];
-        });
+        if(courses){
+          return this.completed = Object.keys(courses).map(key => {
+            return courses[key];
+          });
+        }
+        return [];
       });
   }
   getSignedVideoUrl(video){
