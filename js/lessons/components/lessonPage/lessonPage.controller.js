@@ -2,15 +2,22 @@ class LessonPageController{
   constructor(userData, lessonService) {
     this.userData = userData;
     this.lessonService = lessonService;
-
-    this.videoUrl = '';
   }
   $onInit(){
+    this.videoUrl = '';
+    this.forgotPassword = false;
+
     if(this.lessonData && this.lessonData.video){
       this.userData
         .getSignedVideoUrl(this.lessonData.video)
         .then(url => this.videoUrl = url);
     }
+  }
+  forgotPass(){
+    this.forgotPassword = true;
+  }
+  closeForgot(){
+    this.forgotPassword = false;
   }
   lessonComplete(){
     this.userData.completeLesson(
