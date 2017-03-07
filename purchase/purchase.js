@@ -1,5 +1,8 @@
 var firebase = require('../firebase/index.js');
 var paypal = require('./paypal.js');
+var stripe = require('./stripe.js');
+
+var BASE_URL = 'http://localhost:4000';
 
 // Make a charge to a card using the stripe API using data from payment form
 exports.stripeCharge = function(req, res, next){
@@ -14,15 +17,34 @@ exports.stripeCharge = function(req, res, next){
     var request = JSON.parse(body);
     var courses = request.courses;
     var user = request.user;
+    var token = request.token;
 
-    firebase.enrollUser(user, courses)
-        .then(() => {
-            var response = 'Success';
+    firebase.getMetaForCourses(courses)
+        .then(meta => {
+            if(meta.length){
+                stripe.payment(token, meta)
+                    .then(charge => {
+                        firebase.enrollUser(user, courses)
+                            .then(() => {
+                                firebase.clearCart(user)
+                                    .then(() => {
+                                        var response = JSON.stringify({url: BASE_URL + '/account', success: true});
 
-            res.writeHead(200, {'Content-Type': 'text/json'});
-            res.write(response);
-            res.end();
-        });
+                                        res.writeHead(200, {'Content-Type': 'text/json'});
+                                        res.write(response);
+                                        res.end();
+                                    });
+                            });
+                    })
+                    .catch(err => {
+                        var response = JSON.stringify({error: err, success: false});
+
+                        res.writeHead(500, {'Content-Type': 'text/json'});
+                        res.write(response);
+                        res.end();
+                    });
+            }
+        })
 
   });
 }
@@ -76,12 +98,12 @@ exports.paypalExecute = function(req, res, next){
         paypal.execute(req.query.paymentId, req.query.PayerID)
             .then(data => {
                 firebase.enrollUser(req.query.user, courses)
-                .then(() => {
-                    firebase.clearCart(req.query.user)
-                        .then(() => {
-                            res.redirect('http://localhost:4000/account')
-                        });
-                });
+                    .then(() => {
+                        firebase.clearCart(req.query.user)
+                            .then(() => {
+                                res.redirect(BASE_URL + '/account');
+                            });
+                    });
 
             });
 
