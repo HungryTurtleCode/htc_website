@@ -17,10 +17,6 @@ We only build a stronger community when we all engage in conversation.
 
 Connect with me at any of the below:
 
-<div class="comment-social">
-  [et_social_follow icon_style=&#8221;slide&#8221; icon_shape=&#8221;rounded&#8221; icons_location=&#8221;top&#8221; col_number=&#8221;3&#8243; outer_color=&#8221;dark&#8221;]
-</div>
-
 &nbsp;
 
 Or maybe you would prefer I started the conversation with you instead? In that case, you can sign up for my newsletter and get all my latest articles, videos and special offers sent directly to you.
