@@ -21,6 +21,17 @@ class FirebaseService{
         callback(arr);
       });
   }
+  bookmarkCourse(user, course){
+    return this.getCourseMeta(course)
+      .then(meta => {
+        return this.ref
+          .child('users')
+          .child(user)
+          .child('bookmarks')
+          .child(course)
+          .set(meta);
+      });
+  }
   getUserCart(id){
     return this.ref
       .child('users')
