@@ -30,10 +30,10 @@ const AccountComponent = {
         <label>Profile Image</label>
         <div class="upload-cont">
           <div class="img-cont">
-            <img ng-src="{{$ctrl.user.image || $ctrl.defaultImage}}">
+            <img ng-src="{{$ctrl.profileImage[0] || $ctrl.user.image || $ctrl.defaultImage}}">
           </div>
           <label class="upload">
-            <input type="file"/>
+            <input type="file" accept="image" name="profile_image" fileread="$ctrl.profileImage"/>
             <span>Upload</span>
           </label>
         </div>

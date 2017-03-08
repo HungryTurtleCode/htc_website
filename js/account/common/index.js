@@ -4,13 +4,15 @@ import firebaseService from '../../common/firebaseService';
 
 import forgotPass from '../../common/forgotPass/';
 import bookmark from '../../common/bookmarkButton/';
+import upload from '../../common/upload/';
 
 const CommonModule = angular
   .module('account.common.module', [
     userData,
     firebaseService,
     forgotPass,
-    bookmark
+    bookmark,
+    upload
   ])
   .name;
 

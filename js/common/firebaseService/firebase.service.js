@@ -6,6 +6,7 @@ class FirebaseService{
     this.$state = $state;
 
     this.ref = firebase.database().ref();
+    this.storageRef = firebase.storage().ref();
   }
   getNotifications(user, callback){
     this.ref

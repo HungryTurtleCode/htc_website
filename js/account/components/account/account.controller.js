@@ -1,7 +1,8 @@
 class AccountController{
-  constructor(userData, $timeout) {
+  constructor(userData, $timeout, uploadService) {
     this.userData = userData;
     this.$timeout = $timeout;
+    this.upload = uploadService;
   }
   $onInit(){
     this.defaultImage = 'https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png';
@@ -14,9 +15,20 @@ class AccountController{
   closeForgot(){
     this.forgotPassword = false;
   }
-  // TODO use the directive from SS to get ng-model like behaviour with the image upload Sun 29 Jan 2017 03:26:53 UTC
   save(){
-    this.userData.setUserMeta(this.user)
+    if(this.profileImage){
+      this.upload
+        .uploadFile(this.profileImage[0], this.user.user_id, 'profile_image', 'Profile_Images')
+        .then(data => {
+          this.user.image = data;
+          this.postUserData(this.user);
+        });
+    }else{
+      this.postUserData(this.user);
+    }
+  }
+  postUserData(data){
+    this.userData.setUserMeta(data)
       .then(() => {
         this.$timeout(() => {
           this.feedbackText = 'Successfully Updated Profile';
@@ -31,6 +43,6 @@ class AccountController{
   }
 }
 
-AccountController.$inject = ['userData', '$timeout']
+AccountController.$inject = ['userData', '$timeout', 'uploadService']
 
 export default AccountController;
