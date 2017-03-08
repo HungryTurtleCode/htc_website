@@ -11,7 +11,10 @@ const Bookmarked = {
       subtitle="The Watch List">
     </title-block>
     <div class="course-list" ng-if="$ctrl.courses">
-      <course-card ng-repeat="course in $ctrl.courses"></course-card>
+      <course-card
+        ng-repeat="course in $ctrl.courses"
+        course-data="course">
+      </course-card>
       <div class="not-enrolled"
         ng-if="!$ctrl.courses.length">
           You don't have any courses bookmarked right now
