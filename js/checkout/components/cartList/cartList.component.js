@@ -5,7 +5,7 @@ const CartList = {
   },
   template: `
     <div ng-if="$ctrl.cart.length === 0">
-      Loading...
+      <htc-spinner></htc-spinner>
     </div>
     <div ng-repeat="item in $ctrl.cart" class="cart-item">
       <a ng-href="/courses/{{item.slug}}">

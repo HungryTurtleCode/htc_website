@@ -81,3 +81,15 @@ htc-spinner
     .loading-spinner
       margin: 0.5em auto
 
+$cart-loading-color: $default-dark-color
+cart-list
+  htc-spinner
+    font-size: 0.7em
+
+    .loading-spinner
+      color: $cart-loading-color
+      background: $cart-loading-color
+
+      &:before,
+      &:after
+        background: $cart-loading-color
