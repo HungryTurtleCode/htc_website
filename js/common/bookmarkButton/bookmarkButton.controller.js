@@ -10,8 +10,11 @@ class BookmarkButtonController{
   checkIsInBookmarks(){
     this.userData.isInBookmarks(this.course)
       .then(inBookmarks => {
+        console.log(inBookmarks);
         if(inBookmarks){
-          this.text = 'Added To Bookmarks';
+          this.$timeout(() => {
+            this.text = 'Remove From Bookmarks';
+          });
         }
       });
   }
@@ -20,7 +23,7 @@ class BookmarkButtonController{
       this.userData.bookmarkCourse(this.course)
         .then(() => {
           this.$timeout(() => {
-            this.text = 'Added To Bookmarks';
+            this.text = 'Remove From Bookmarks';
             console.log('Bookmarked');
           });
         });

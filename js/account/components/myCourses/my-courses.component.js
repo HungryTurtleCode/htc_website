@@ -14,8 +14,7 @@ const myCourses = {
       <course-card
         ng-repeat="course in $ctrl.courses"
         course-data="course"
-        show-bookmark="true"
-        bookmark="$ctrl.bookmark(course)">
+        show-bookmark="true">
       </course-card>
       <div class="not-enrolled"
         ng-if="!$ctrl.courses.length">
