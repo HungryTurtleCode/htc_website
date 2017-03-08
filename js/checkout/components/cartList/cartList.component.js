@@ -1,4 +1,7 @@
+import controller from './cartList.controller';
+
 const CartList = {
+  controller,
   bindings: {
     cart: '<',
     removeItem: '&'
@@ -18,8 +21,9 @@ const CartList = {
       <span class="price">{{item.price | currency:$:0}}</span>
       <button
         class="remove-button"
-        ng-click="$ctrl.removeItem({item})">
-          X
+        ng-click="$ctrl.remove(item)">
+          <span ng-if="!$ctrl.removeLoading">X</span>
+          <htc-spinner ng-if="$ctrl.removeLoading"></htc-spinner>
       </button>
     </div>
   `

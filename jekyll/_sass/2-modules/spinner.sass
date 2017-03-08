@@ -102,6 +102,19 @@ cart-list,
     .loading-spinner
       margin: 0 0 0 9em
 
+$remove-color: $primary-color
+.remove-button
+  htc-spinner
+    width: 3.4em
+    font-size: 0.2em
+
+    .loading-spinner
+      color: $remove-color
+      background: $remove-color
+
+      &:before,
+      &:after
+        background: $remove-color
 
 
 
