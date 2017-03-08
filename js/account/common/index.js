@@ -5,6 +5,7 @@ import firebaseService from '../../common/firebaseService';
 import forgotPass from '../../common/forgotPass/';
 import bookmark from '../../common/bookmarkButton/';
 import upload from '../../common/upload/';
+import spinner from '../../common/spinner/';
 
 const CommonModule = angular
   .module('account.common.module', [
@@ -12,7 +13,8 @@ const CommonModule = angular
     firebaseService,
     forgotPass,
     bookmark,
-    upload
+    upload,
+    spinner
   ])
   .name;
 

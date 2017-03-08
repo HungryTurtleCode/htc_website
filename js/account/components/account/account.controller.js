@@ -8,6 +8,7 @@ class AccountController{
     this.defaultImage = 'https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png';
     this.forgotPassword = false;
     this.error = false;
+    this.loading = false;
   }
   forgotPass(){
     this.forgotPassword = true;
@@ -16,6 +17,7 @@ class AccountController{
     this.forgotPassword = false;
   }
   save(){
+    this.loading = true;
     if(this.profileImage){
       this.upload
         .uploadFile(this.profileImage[0], this.user.user_id, 'profile_image', 'Profile_Images')
@@ -32,12 +34,14 @@ class AccountController{
       .then(() => {
         this.$timeout(() => {
           this.feedbackText = 'Successfully Updated Profile';
+          this.loading = false;
         });
       })
       .catch(err => {
         this.$timeout(() => {
           this.feedbackText = 'Something Went Wrong, try again later';
           this.error = true;
+          this.loading = false;
         });
       });
   }

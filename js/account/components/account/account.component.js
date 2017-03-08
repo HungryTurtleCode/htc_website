@@ -42,7 +42,10 @@ const AccountComponent = {
         <span class="feedback-text" ng-class="{'error': $ctrl.error}">
           {{$ctrl.feedbackText}}
         </span>
-        <button class="submit" ng-click="$ctrl.save()">Save</button>
+        <button class="submit" ng-click="$ctrl.save()">
+          <span ng-if="!$ctrl.loading">Save</span>
+          <htc-spinner ng-if="$ctrl.loading"></htc-spinner>
+        </button>
       </form>
     </div>
   `
