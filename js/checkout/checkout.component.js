@@ -41,7 +41,10 @@ const CheckoutComponent = {
 
       <div class="paypal-pay"
         ng-if="$ctrl.userData.auth.loggedIn && $ctrl.activePayment === 0">
-          <button ng-click="$ctrl.paypalBuy()">Go To PayPal</button>
+          <button ng-click="$ctrl.paypalBuy()">
+            <span ng-if="!$ctrl.paymentLoading">Go To PayPal</span>
+            <htc-spinner ng-if="$ctrl.paymentLoading"></htc-spinner>
+          </button>
       </div>
 
       <div class="stripe-pay"
@@ -66,7 +69,10 @@ const CheckoutComponent = {
             <label>Exp Year</label>
             <input ng-model="$ctrl.payment.card.exp_year" type="text" placeholder="Exp Year">
           </div>
-          <button ng-click="$ctrl.stripeBuy()">Buy</button>
+          <button ng-click="$ctrl.stripeBuy()">
+            <span ng-if="!$ctrl.paymentLoading">Buy</span>
+            <htc-spinner ng-if="$ctrl.paymentLoading"></htc-spinner>
+          </button>
       </div>
 
     </div>

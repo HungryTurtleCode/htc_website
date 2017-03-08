@@ -8,6 +8,7 @@ class CheckoutController{
   $onInit(){
     this.cart = [];
     this.activePayment = 0;
+    this.paymentLoading = false;
     this.getCart();
   }
   getCart(){
@@ -38,15 +39,18 @@ class CheckoutController{
     return 0;
   }
   paypalBuy(){
+    this.paymentLoading = true;
     this.userData.paypalBuy(this.cart)
       .then(data => {
         if(data.success){
+          this.paymentLoading = false;
           window.location.href = data.url;
         }
       })
       .catch(err => console.error(err));
   }
   stripeBuy(){
+    this.paymentLoading = true;
     this.stripe.card.createToken(this.payment.card)
       .then(response => {
         console.log('token created for card ending in ', response.card.last4);
@@ -54,6 +58,7 @@ class CheckoutController{
         this.userData.stripeBuy(this.cart, response.id)
           .then(data => {
             if(data.success){
+              this.paymentLoading = false;
               window.location.href = data.url;
             }
           })

@@ -4,12 +4,14 @@ import firebaseService from '../../common/firebaseService';
 import dataService from '../../common/dataService';
 
 import header from '../../common/header';
+import spinner from '../../common/spinner';
 
 const CommonModule = angular
   .module('checkout.common.module', [
     userData,
     firebaseService,
     header,
+    spinner,
     dataService
   ])
   .name;
