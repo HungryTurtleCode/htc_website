@@ -27,7 +27,7 @@ class FirebaseService{
         return this.ref
           .child('users')
           .child(user)
-          .child('bookmarks')
+          .child('bookmarked')
           .child(course)
           .set(meta);
       });

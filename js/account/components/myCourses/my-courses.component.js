@@ -11,7 +11,12 @@ const myCourses = {
       subtitle="All the courses you can start watching right now">
     </title-block>
     <div class="course-list" ng-if="$ctrl.courses">
-      <course-card ng-repeat="course in $ctrl.courses" course-data="course"></course-card>
+      <course-card
+        ng-repeat="course in $ctrl.courses"
+        course-data="course"
+        show-bookmark="true"
+        bookmark="$ctrl.bookmark(course)">
+      </course-card>
       <div class="not-enrolled"
         ng-if="!$ctrl.courses.length">
           You are not currently enrolled in any courses

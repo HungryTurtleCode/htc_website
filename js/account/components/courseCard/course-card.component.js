@@ -3,7 +3,9 @@ import controller from './course-card.controller';
 const CourseCard = {
   controller,
   bindings: {
-    courseData: '<'
+    courseData: '<',
+    bookmark: '&',
+    showBookmark: '<'
   },
   template: `
       <div class="img-cont">
@@ -30,6 +32,7 @@ const CourseCard = {
       <div class="info-end">
         <a ng-href="/lessons/#!/{{$ctrl.courseData.slug}}/">Learn More</a>
       </div>
+      <button ng-click="$ctrl.bookmark()" ng-if="$ctrl.showBookmark">Bookmark</button>
   `
 };
 
