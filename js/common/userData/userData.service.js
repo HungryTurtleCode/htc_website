@@ -83,8 +83,6 @@ class userData{
       });
   }
   getUserBookmarked(id){
-    if(this.bookmarked.length){return Promise.resolve(this.bookmarked)}
-
     return this.fb.getUserBookmarked(id)
       .then(courses => {
         if(courses){
