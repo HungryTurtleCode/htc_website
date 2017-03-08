@@ -39,6 +39,9 @@ const AccountComponent = {
         </div>
         <label>Email</label>
         <input type="text" placeholder="Email" ng-model="$ctrl.user.email">
+        <span class="feedback-text" ng-class="{'error': $ctrl.error}">
+          {{$ctrl.feedbackText}}
+        </span>
         <button class="submit" ng-click="$ctrl.save()">Save</button>
       </form>
     </div>

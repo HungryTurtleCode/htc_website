@@ -1,8 +1,12 @@
 class AccountController{
-  constructor(userData) {
+  constructor(userData, $timeout) {
     this.userData = userData;
+    this.$timeout = $timeout;
+  }
+  $onInit(){
     this.defaultImage = 'https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png';
     this.forgotPassword = false;
+    this.error = false;
   }
   forgotPass(){
     this.forgotPassword = true;
@@ -14,14 +18,19 @@ class AccountController{
   save(){
     this.userData.setUserMeta(this.user)
       .then(() => {
-        // TODO inform user of success Sun 29 Jan 2017 04:27:01 UTC
+        this.$timeout(() => {
+          this.feedbackText = 'Successfully Updated Profile';
+        });
       })
       .catch(err => {
-        // TODO error handling Sun 29 Jan 2017 04:24:40 UTC
+        this.$timeout(() => {
+          this.feedbackText = 'Something Went Wrong, try again later';
+          this.error = true;
+        });
       });
   }
 }
 
-AccountController.$inject = ['userData']
+AccountController.$inject = ['userData', '$timeout']
 
 export default AccountController;
