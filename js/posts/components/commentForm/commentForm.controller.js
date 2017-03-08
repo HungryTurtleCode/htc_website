@@ -9,6 +9,8 @@ class commentFormController{
   $onInit(){
     this.isReply = this.isReply || false;
     this.isLesson = false;
+    this.error = false;
+    this.submitLoading = false;
 
     if(this.commentNesting){
       this.pageLocations = this.getPageLocations() || '';
@@ -18,6 +20,7 @@ class commentFormController{
     }
   }
   submitComment(text){
+    this.submitLoading = true;
     if(text){
       this.userData.setComment(
         this.pageLocations,
@@ -27,13 +30,19 @@ class commentFormController{
       )
       .then(() => {
         this.refresh();
-        // TODO success Sun 29 Jan 2017 19:48:40 UTC
+        this.feedbackText = 'Comment Submitted Successfully'
+        this.error = false;
+        this.submitLoading = false;
       })
       .catch(err => {
-        // TODO fail Sun 29 Jan 2017 19:48:44 UTC
+        this.feedbackText = 'Something Went Wrong. Try Again Later'
+        this.error = true;
+        this.submitLoading = false;
       });
     }else{
-      console.error('comment is empty')
+      this.feedbackText = 'Comment is empty';
+      this.error = true;
+      this.submitLoading = false;
     }
     this.commentText = '';
   }

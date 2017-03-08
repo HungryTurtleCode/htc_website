@@ -8,11 +8,13 @@ import scroll from './scrollHere';
 
 import header from '../../common/header';
 import loginModal from '../../common/loginModal';
+import spinner from '../../common/spinner';
 
 const CommonModule = angular
   .module('post.common.module', [
     firebaseService,
     userData,
+    spinner,
     scroll,
     auth,
     header,

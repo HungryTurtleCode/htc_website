@@ -11,9 +11,15 @@ const CommentFormComponent = {
     <textarea ng-model="$ctrl.commentText"
       ng-if="$ctrl.userData.isSignedIn()"
       ng-class="{'reply': $ctrl.commentNesting}"></textarea>
+    <span class="comment-feedback" ng-class="{'error': $ctrl.error}">
+      {{$ctrl.feedbackText}}
+    </span>
     <button
       ng-if="$ctrl.userData.isSignedIn()"
-      ng-click="$ctrl.submitComment($ctrl.commentText)">Submit Comment</button>
+      ng-click="$ctrl.submitComment($ctrl.commentText)">
+        <span ng-if="!$ctrl.submitLoading">Submit Comment</span>
+        <htc-spinner ng-if="$ctrl.submitLoading"></htc-spinner>
+    </button>
 
     <div class="not-signed-in-comment"
       ng-if="!$ctrl.userData.isSignedIn()">
