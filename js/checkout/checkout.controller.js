@@ -25,6 +25,9 @@ class CheckoutController{
     let index = this.cart.indexOf(item);
     if(index > -1){
       this.cart.splice(index, 1);
+      if(!this.cart.length){
+        this.cart = null;
+      }
       this.userData.updateCart(
         angular.copy(this.cart))
         .then(() => console.log('updated cart'));
