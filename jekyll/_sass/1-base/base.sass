@@ -42,5 +42,29 @@ html
     +outer-container
     +clearfix
 
+.ng-hide-add,
+.ng-leave,
+.ng-if-add
+  transition: all 0s
 
+.ng-hide-remove,
+.ng-enter,
+.ng-if-remove
+  transition: all 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
+.ng-hide-add,
+.ng-if-add,
+.ng-leave,
+.ng-hide-remove.ng-hide-remove-active,
+.ng-if-remove.ng-if-remove-active,
+.ng-enter.ng-enter-active
+  opacity: 1
+
+.ng-hide-remove,
+.ng-if-remove,
+.ng-enter,
+.ng-hide-add.ng-hide-add-active,
+.ng-if-add.ng-if-add-active,
+.ng-leave.ng-leave-active
+  opacity: 0
 

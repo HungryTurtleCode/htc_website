@@ -3,7 +3,7 @@ import controller from './buyButton.controller';
 const BuyButton = {
   controller,
   template: `
-    <div ng-hide="$ctrl.loading">
+    <div class="hide-area" ng-hide="$ctrl.loading">
       <div class="price">
         <p class="amount">
           {{$ctrl.courseData.price | currency:"$":0}}

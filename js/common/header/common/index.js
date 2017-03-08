@@ -1,4 +1,6 @@
 import angular from 'angular';
+import ngAnimate from 'angular-animate';
+
 import userData from '../../userData';
 import firebaseService from '../../firebaseService';
 import auth from '../../auth';
@@ -8,6 +10,7 @@ import logoutModal from '../../logoutModal';
 const CommonModule = angular
   .module('header.common.module', [
     userData,
+    ngAnimate,
     firebaseService,
     auth,
     loginModal,

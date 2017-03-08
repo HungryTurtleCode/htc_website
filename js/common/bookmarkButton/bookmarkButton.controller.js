@@ -10,7 +10,6 @@ class BookmarkButtonController{
   checkIsInBookmarks(){
     this.userData.isInBookmarks(this.course)
       .then(inBookmarks => {
-        console.log(inBookmarks);
         if(inBookmarks){
           this.$timeout(() => {
             this.text = 'Remove From Bookmarks';

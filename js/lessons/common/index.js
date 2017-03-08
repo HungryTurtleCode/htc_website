@@ -1,4 +1,5 @@
 import angular from 'angular';
+import ngAnimate from 'angular-animate';
 
 import firebaseService from '../../common/firebaseService';
 import lessonService from './lessonService';
@@ -10,6 +11,7 @@ import cursorDir from './cursorDirective';
 const CommonComponent = angular
   .module('lessons.common.module', [
     firebaseService,
+    ngAnimate,
     lessonService,
     userData,
     dataService,
