@@ -82,7 +82,8 @@ htc-spinner
       margin: 0.5em auto
 
 $cart-loading-color: $default-dark-color
-cart-list
+cart-list,
+.buy-button-loading
   htc-spinner
     font-size: 0.7em
 
@@ -93,3 +94,14 @@ cart-list
       &:before,
       &:after
         background: $cart-loading-color
+
+.buy-button-loading
+  htc-spinner
+    font-size: 0.4em
+
+    .loading-spinner
+      margin: 0 0 0 9em
+
+
+
+

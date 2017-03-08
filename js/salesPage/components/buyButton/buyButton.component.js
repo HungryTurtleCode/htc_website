@@ -28,7 +28,7 @@ const BuyButton = {
       </div>
     </div>
     <div class="buy-button-loading" ng-show="$ctrl.loading">
-      Loading...
+      <htc-spinner></htc-spinner>
     </div>
   `
 };
