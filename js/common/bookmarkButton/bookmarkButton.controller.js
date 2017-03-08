@@ -24,6 +24,14 @@ class BookmarkButtonController{
             console.log('Bookmarked');
           });
         });
+    }else{
+      this.userData.removeBookmark(this.course)
+        .then(() => {
+          this.$timeout(() => {
+            this.text = 'Bookmark Course';
+            console.log('Removed Bookmark');
+          });
+        });
     }
   }
 }

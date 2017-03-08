@@ -32,6 +32,14 @@ class FirebaseService{
           .set(meta);
       });
   }
+  removeBookmark(user, course){
+    return this.ref
+      .child('users')
+      .child(user)
+      .child('bookmarked')
+      .child(course)
+      .set(null);
+  }
   isInBookmarks(user, course){
     return this.ref
       .child('users')

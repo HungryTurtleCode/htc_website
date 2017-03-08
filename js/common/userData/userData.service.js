@@ -26,6 +26,9 @@ class userData{
   bookmarkCourse(course){
     return this.fb.bookmarkCourse(this.user.user_id, course);
   }
+  removeBookmark(course){
+    return this.fb.removeBookmark(this.user.user_id, course);
+  }
   isInBookmarks(course){
     if(this.user.user_id){
       return this.fb.isInBookmarks(this.user.user_id, course);
