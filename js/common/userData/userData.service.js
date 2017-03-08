@@ -26,6 +26,20 @@ class userData{
   bookmarkCourse(course){
     return this.fb.bookmarkCourse(this.user.user_id, course);
   }
+  isInBookmarks(course){
+    if(this.user.user_id){
+      return this.fb.isInBookmarks(this.user.user_id, course);
+    }else{
+      return this.auth.waitForAuth()
+        .then(snap => {
+          if(snap && snap.uid && !snap.isAnonymous){
+            return this.fb.isInBookmarks(
+                                  snap.uid,
+                                  course);
+          }
+        });
+    }
+  }
   markCourseComplete(course){
     this.fb.markCourseComplete(
                 this.user.user_id,

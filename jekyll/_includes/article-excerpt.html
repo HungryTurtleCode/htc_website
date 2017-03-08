@@ -13,5 +13,12 @@
       <p>{{post.excerpt}}</p>
     </a>
     {% include tags.html data=post %}
+
+    {% if include.data.price > 0 %}
+      <!--<bookmark-button
+        course="'{{include.data.slug}}'">
+      </bookmark-button>-->
+    {% endif %}
+
   </div>
 </article>

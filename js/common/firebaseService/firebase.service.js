@@ -32,6 +32,18 @@ class FirebaseService{
           .set(meta);
       });
   }
+  isInBookmarks(user, course){
+    return this.ref
+      .child('users')
+      .child(user)
+      .child('bookmarked')
+      .child(course)
+      .child('course')
+      .once('value')
+      .then(snap => {
+        return snap.val();
+      });
+  }
   getUserCart(id){
     return this.ref
       .child('users')
