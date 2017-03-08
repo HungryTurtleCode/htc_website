@@ -11,7 +11,7 @@ const CommentFormComponent = {
     <textarea ng-model="$ctrl.commentText"
       ng-if="$ctrl.userData.isSignedIn()"
       ng-class="{'reply': $ctrl.commentNesting}"></textarea>
-    <span class="comment-feedback" ng-class="{'error': $ctrl.error}">
+    <span class="comment-feedback" ng-class="{'error': $ctrl.error, 'reply': $ctrl.commentNesting}">
       {{$ctrl.feedbackText}}
     </span>
     <button
