@@ -14,7 +14,7 @@ class LessonController{
   setActiveSection(){
     this.lessonList.forEach(section => {
       section.lessons.forEach(lesson => {
-        if(this.slugify(lesson.name) === this.lessonService.lesson){
+        if(this.slugify(lesson.title) === this.lessonService.lesson){
           section.show = true;
           return;
         }
