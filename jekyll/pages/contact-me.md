@@ -15,6 +15,8 @@ permalink: /contact-me/
     <input type="text" placeholder="Name" name="name"/>
     <label>Email Address:</label>
     <input type="text" placeholder="Email" name="email"/>
+    <label>Subject</label>
+    <input type="text" placeholder="Subject" name="subject"/>
     <label>Message:</label>
     <textarea></textarea>
     <button type="submit">Send Message</button>
