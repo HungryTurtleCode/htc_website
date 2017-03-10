@@ -1,6 +1,5 @@
 //contact
-// TODO GET MY OWN API KEY Fri 10 Mar 2017 11:38:00 PM UTC
-var sg = require('sendgrid')('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');
+var sg = require('sendgrid')('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');
 var helper = require('sendgrid').mail;
 
 module.exports = function(req, res, next){
