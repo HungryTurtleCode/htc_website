@@ -9,6 +9,7 @@
     "firebase": "^3.6.10",
     "paypal-rest-sdk": "^1.7.1",
     "pm2": "^2.4.1",
+    "sendgrid": "^4.8.0",
     "stripe": "^4.15.0"
   },
   "devDependencies": {},

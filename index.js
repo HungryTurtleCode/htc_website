@@ -1,6 +1,7 @@
 var common = require('./common/index.js');
 var videoAPI = require('./aws/video.js');
 var purchase = require('./purchase/purchase.js');
+var contact = require('./contact/contact.js');
 var express = require('express');
 
 var app = express();
@@ -10,6 +11,7 @@ app.use(common.setHeaders);
 
 /* Routes */
 app.post('/stripeBuy', purchase.stripeCharge);
+app.post('/contact', contact);
 app.post('/paypalBuy', purchase.paypalCharge);
 app.post('/getVideo', videoAPI);
 app.get('/paypal', purchase.paypalExecute);
