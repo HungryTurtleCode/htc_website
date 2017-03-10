@@ -10,15 +10,8 @@ permalink: /contact-me/
 
   Just submit the form below and I will get back to you as soon as I can.
 
-  <form class="contact-form" method="post" action="http://138.197.119.94/contact">
-    <label>Name:</label>
-    <input type="text" placeholder="Name" name="name"/>
-    <label>Email Address:</label>
-    <input type="text" placeholder="Email" name="email"/>
-    <label>Subject</label>
-    <input type="text" placeholder="Subject" name="subject"/>
-    <label>Message:</label>
-    <textarea></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  <contact-form></contact-form>
+
 </div>
+<script src="{{site.baseurl}}/scripts/manifest.js"></script>
+<script src="{{site.baseurl}}/scripts/contact.js"></script>

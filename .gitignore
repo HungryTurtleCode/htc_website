@@ -7,6 +7,7 @@ jekyll/scripts/checkout.js
 jekyll/scripts/salespage.js
 jekyll/scripts/header.js
 jekyll/scripts/manifest.js
+jekyll/scripts/contact.js
 .DS_Store
 .jekyll
 .bundle
