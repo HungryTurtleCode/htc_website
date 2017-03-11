@@ -1,6 +1,6 @@
 .lesson-content
   &.ng-enter
-    transition: opacity 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+    transition: opacity 0s
 
 
 #lesson-container
@@ -209,4 +209,34 @@
               transition: opacity 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940)
 
 
+.state-loading
+  position: fixed
+  top: 53px
+  left: 219px
+  background: rgba($default-dark-color,1)
+  width: 100%
+  height: 100vh
+  z-index: 100
+
+  &.ng-enter
+    transition: opacity 0.3s ease
+
+  &.ng-leave
+    transition: opacity 0.5s ease
+
+  $state-color: $default-dark-color
+  $state-color: $primary-color
+  // $state-color: $secondary-color
+  htc-spinner
+    width: 80%
+    margin-top: 30vh
+    font-size: 2em
+
+    .loading-spinner
+      color: $state-color
+      background: $state-color
+
+      &:before,
+      &:after
+        background: $state-color
 
