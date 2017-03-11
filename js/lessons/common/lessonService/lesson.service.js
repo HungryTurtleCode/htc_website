@@ -31,13 +31,27 @@ class LessonService{
       section.lessons.forEach((lesson, index) => {
         if(this.slugify(lesson.title) === currentLesson){
           let nextLesson;
-          if(section.lessons[index + 1]){
-            nextLesson = this.slugify(section.lessons[index + 1].title);
+          let currentPos = lesson.position;
+          if(currentPos === section.lessons.length - 1){
+            this.lessonList.forEach(newSection => {
+              if(newSection.position === section.position + 1){
+                newSection.lessons.forEach(lesson => {
+                  if(lesson.position === 0){
+                    nextLesson = this.slugify(lesson.title);
+                  }
+                });
+              }
+            });
           }else{
-            nextLesson = this.slugify(this.lessonList[secIndex + 1].lessons[0].title);
+            section.lessons.forEach(lesson => {
+              if(lesson.position === currentPos + 1){
+                nextLesson = this.slugify(lesson.title);
+              }
+            });
           }
-
-          this.$state.go('lesson', {course: this.course, lesson: nextLesson});
+          if(nextLesson){
+            this.$state.go('lesson', {course: this.course, lesson: nextLesson});
+          }
         }
       })
     });
