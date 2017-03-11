@@ -4,7 +4,8 @@ const VideoComponent = {
   bindings: {
     videoSrc: '@',
     lessonComplete: '&',
-    nextVideo: '&'
+    nextVideo: '&',
+    poster: '<'
   },
   controller,
   template: `

@@ -13,6 +13,7 @@ const LessonPage = {
       <state-change></state-change>
       <lesson-video
         video-src="{{$ctrl.videoUrl}}"
+        poster="$ctrl.lessonData.video_poster"
         next-video="$ctrl.nextLesson()"
         lesson-complete="$ctrl.lessonComplete()">
       </lesson-video>
