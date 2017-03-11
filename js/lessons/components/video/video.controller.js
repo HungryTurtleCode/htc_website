@@ -5,6 +5,8 @@ class VideoController{
     // this.poster = 'https://artfiles.alphacoders.com/365/36568.gif';
     // this.poster = 'http://www.freeiconspng.com/uploads/spinner-icon-0.gif';
     this.poster = 'http://zellox.com/wp-content/uploads/2016/05/animated-gif-wallpaper-3.gif';
+
+    this.posterLoaded = false;
   }
   $onInit(){
     this.config = {
@@ -13,7 +15,6 @@ class VideoController{
 
     this.autohide = true;
     this.autohideTime = 4000;
-    console.log('init');
   }
   $onChanges(change){
     if(this.videoSrc){
@@ -24,9 +25,10 @@ class VideoController{
         }
       ];
     }
-    if(change.poster.currentValue){
+    if(change.poster && change.poster.currentValue){
       this.poster = change.poster.currentValue;
-    }else{
+      this.posterLoaded = true;
+    }else if(!this.posterLoaded){
       this.poster = 'http://zellox.com/wp-content/uploads/2016/05/animated-gif-wallpaper-3.gif';
     }
   }
