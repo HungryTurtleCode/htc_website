@@ -8,6 +8,7 @@ const LessonContent = {
     lessonIsComplete: '<',
     lessonComplete: '&',
     nextLesson: '&',
+    checkIfLastLesson: '&'
   },
   template: `
     <div class="bottom-container">
@@ -32,7 +33,7 @@ const LessonContent = {
       <div class="tab-content">
         <div class="article post-page" ng-show="$ctrl.activeTab === 0">
           <div ng-bind-html="$ctrl.articleTrusted"></div>
-          <button ng-click="$ctrl.nextLesson()">
+          <button ng-click="$ctrl.nextLesson()" ng-if="!$ctrl.checkIfLastLesson()">
             Next Lesson
           </button>
           <button

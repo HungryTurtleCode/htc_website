@@ -56,6 +56,22 @@ class LessonService{
       })
     });
   }
+  checkIfLastLesson(lesson, section){
+    let isLast = false;
+
+    this.lessonList.forEach(item => {
+      if(item.name === section){
+        if(item.position === this.lessonList.length - 1){
+          item.lessons.forEach(les => {
+            if(les.slug === lesson){
+              isLast = true;
+            }
+          });
+        }
+      }
+    });
+    return isLast;
+  }
   checkIfCourseComplete(){
     let numCompleted = Object.keys(this.completeLessons).length;
 

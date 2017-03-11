@@ -30,6 +30,9 @@ class LessonPageController{
   nextLesson(){
     this.lessonService.goToNextLesson(this.lessonData.lesson);
   }
+  checkIfLastLesson(){
+    return this.lessonService.checkIfLastLesson(this.lessonData.lesson, this.lessonData.section);
+  }
 }
 
 LessonPageController.$inject = ['userData', 'lessonService'];
