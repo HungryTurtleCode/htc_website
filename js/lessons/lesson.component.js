@@ -15,12 +15,12 @@ const LessonComponent = {
 
         <div id="lesson-list-cont" class="u-fancy-scrollbar">
           <ul class="lesson-list">
-            <li ng-repeat="section in $ctrl.lessonList" class="section">
+            <li ng-repeat="section in $ctrl.lessonList | orderBy:'position'" class="section">
               <h3 ng-click="section.show = !section.show">{{section.name}}</h3>
               <ul class="section"
                 ng-if="section.show">
                   <a ui-sref="lesson({course: $ctrl.lessonService.course, lesson: $ctrl.slugify(lesson.title)})"
-                    ng-repeat="lesson in section.lessons">
+                    ng-repeat="lesson in section.lessons | orderBy:'position'">
                     <li class="lesson-item" ng-class="{active: $ctrl.slugify(lesson.title) === $ctrl.lessonService.lesson}">
                       <p>{{lesson.title}}</p>
                       <p class="length">
