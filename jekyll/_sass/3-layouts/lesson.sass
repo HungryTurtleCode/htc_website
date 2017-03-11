@@ -1,3 +1,8 @@
+.lesson-content
+  &.ng-enter
+    transition: opacity 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
+
 #lesson-container
   font-size: 1rem
 
@@ -52,6 +57,10 @@
     overflow: auto
     height: calc(100% - 180px)
     border-top: 1px solid #545454
+
+    .section
+      &.ng-enter
+        transition: opacity 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940)
 
     .lesson-list
       margin-bottom: 100px
@@ -195,5 +204,9 @@
           .resources
             margin: 0 auto
             width: 65.88078%
+
+            &.ng-hide-remove
+              transition: opacity 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
 
 

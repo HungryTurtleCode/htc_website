@@ -15,7 +15,7 @@ const LessonComponent = {
 
         <div id="lesson-list-cont" class="u-fancy-scrollbar">
           <ul class="lesson-list">
-            <li ng-repeat="section in $ctrl.lessonList">
+            <li ng-repeat="section in $ctrl.lessonList" class="section">
               <h3 ng-click="section.show = !section.show">{{section.name}}</h3>
               <ul class="section"
                 ng-if="section.show">
