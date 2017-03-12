@@ -26,7 +26,26 @@ layout: fullwidth-100
           {% for tag in post.tags %}
             '{{tag}}',
           {% endfor %}
-        ]
+        ],
+        price: parseInt('{{post.price}}'),
+        languages: [
+          {% for lang in post.languages%}
+            '{{lang}}',
+          {% endfor %}
+        ],
+        frameworks: [
+          {% for fw in post.frameworks %}
+            '{{fw}}',
+          {% endfor %}
+        ],
+        topics: [
+          {% for topic in post.topics %}
+            '{{topic}}',
+          {% endfor %}
+        ],
+        subtitle: '{{post.subtitle}}',
+        lessons: parseInt('{{post.lessons}}'),
+        skill: '{{post.skill}}'
       },
     {% endfor %}
 
