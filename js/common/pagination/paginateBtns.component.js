@@ -2,11 +2,8 @@ import controller from './paginateBtns.controller';
 
 const PaginateButtons = {
   controller,
-  bindings: {
-    totalItems: '<'
-  },
   template: `
-    <div class="pagination-btns">
+    <div class="pagination-btns" ng-if="$ctrl.paginationService.totalPages > 1">
       <button
         class="pagination-button prev"
         ng-disabled="$ctrl.paginationService.currentPage == 0"
@@ -22,7 +19,7 @@ const PaginateButtons = {
       </button>
       <button
         class="pagination-button next"
-        ng-disabled="$ctrl.paginationService.currentPage >= $ctrl.totalItems/$ctrl.paginationService.pageSize - 1"
+        ng-disabled="$ctrl.getNextDisabledState()"
         ng-click="$ctrl.paginationService.nextButton($ctrl.paginationService.totalItems)">
           Next
       </button>

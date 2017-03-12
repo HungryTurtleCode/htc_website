@@ -94,7 +94,7 @@ const ArchiveList = {
       </section>
     </div>
 
-    <paginate-buttons total-items="$ctrl.data.length"></paginate-buttons>
+    <paginate-buttons></paginate-buttons>
   `
 };
 

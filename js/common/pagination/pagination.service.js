@@ -8,9 +8,10 @@ class PaginationService{
     this.pageRange = [];
   }
   clickPaginationButton(index, length){
+    this.currentPage = index - 1;
+    this.getPageRange(length);
+
     if(index - 1 !== this.currentPage){
-      this.currentPage = index - 1;
-      this.getPageRange(length);
       this.pageChanged();
     }
   }
