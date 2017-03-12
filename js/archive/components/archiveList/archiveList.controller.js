@@ -3,6 +3,8 @@ class ArchiveListController {
     this.paginationService = paginationService;
 
     this.data = courseList;
+
+    this.search = '';
   }
   getStartFromData(){
     return this.paginationService.currentPage * this.paginationService.pageSize;
