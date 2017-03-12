@@ -1,6 +1,6 @@
 class PaginationService{
   constructor() {
-    this.currentPage = 0;
+    this.currentPage = -2;
     this.totalPages = 0;
     this.pageSize = 12;
     this.paginationLimit = 10;
@@ -8,9 +8,11 @@ class PaginationService{
     this.pageRange = [];
   }
   clickPaginationButton(index, length){
-    this.currentPage = index - 1;
-    this.getPageRange(length);
-    this.pageChanged();
+    if(index - 1 !== this.currentPage){
+      this.currentPage = index - 1;
+      this.getPageRange(length);
+      this.pageChanged();
+    }
   }
   previousButton(length){
     this.currentPage--;
@@ -62,6 +64,7 @@ class PaginationService{
   }
   pageChanged(){
     console.log('page has changed');
+    window.scrollTo(0, 0);
   }
 }
 
