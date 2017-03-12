@@ -4,8 +4,8 @@ class PaginationService{
     this.totalPages = 0;
     this.pageSize = 12;
     this.paginationLimit = 10;
-    totalItems = 0;
-    pageRange = [];
+    this.totalItems = 0;
+    this.pageRange = [];
   }
   clickPaginationButton(index, length){
     this.currentPage = index - 1;

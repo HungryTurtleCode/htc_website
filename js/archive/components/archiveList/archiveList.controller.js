@@ -1,7 +1,11 @@
 class ArchiveListController {
-  constructor() {
+  constructor(paginationService) {
+    this.paginationService = paginationService;
+
     this.data = courseList;
-    console.log(this.data);
+  }
+  getStartFromData(){
+    return this.paginationService.currentPage * this.paginationService.pageSize;
   }
   slugify(name){
     if(name){
@@ -11,5 +15,7 @@ class ArchiveListController {
     }
   }
 }
+
+ArchiveListController.$inject = ['paginationService'];
 
 export default ArchiveListController ;

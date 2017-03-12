@@ -3,7 +3,10 @@ import controller from './archiveList.controller';
 const ArchiveList = {
   controller,
   template: `
-    <div class="archive-item" ng-repeat="post in $ctrl.data">
+  <!--ng-repeat="course in list.courses | filter:list.search | filter:list.selectFramework | filter:list.selectLang | filter:list.enrolled | calcPage | startFrom:list.pagination.currentPage*list.pagination.pageSize | limitTo:list.pagination.pageSize | orderBy:list.orderParam">-->
+
+
+    <div class="archive-item" ng-repeat="post in $ctrl.data | calcPage | startFrom:$ctrl.getStartFromData() | limitTo: $ctrl.paginationService.pageSize">
       <section>
         <div class="item-image-cont">
           <a ng-href="{{post.url}}">
@@ -62,27 +65,29 @@ const ArchiveList = {
                 </span>
               </a>
             </div>
-            </div>
           </div>
+        </div>
 
-          <div class="button-cont">
-            <span class="price"
-              ng-if="post.price">
-                {{post.price | currency:$:0 }}
-            </span>
-            <span class="price free"
-              ng-if="!post.price">
-                Free
-            </span>
-            <a
-              ng-href="{{post.url}}"
-              class="learn-more">
-                Learn More
-            </a>
-          </div>
-        </section>
-      </div>
-    `
-  };
+        <div class="button-cont">
+          <span class="price"
+            ng-if="post.price">
+              {{post.price | currency:$:0 }}
+          </span>
+          <span class="price free"
+            ng-if="!post.price">
+              Free
+          </span>
+          <a
+            ng-href="{{post.url}}"
+            class="learn-more">
+              Learn More
+          </a>
+        </div>
+      </section>
+    </div>
 
-  export default ArchiveList;
+    <paginate-buttons total-items="$ctrl.data.length"></paginate-buttons>
+  `
+};
+
+export default ArchiveList;

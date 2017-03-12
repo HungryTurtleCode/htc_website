@@ -12,4 +12,4 @@ const CalcPageFilter = (paginationService) => {
 
 CalcPageFilter.$inject = ['paginationService'];
 
-export default CalcPage;
+export default CalcPageFilter;
