@@ -1,0 +1,64 @@
+archive-list
+  display: flex
+  flex-wrap: wrap
+  font-size: 1rem
+
+  .archive-item
+    +span-columns(6)
+    margin-bottom: 2em
+    padding: 1em
+    border: 1px solid rgba(#d4d4d4, 0.4)
+    box-shadow: 0 2px 5px rgba(0,0,0,.2)
+    display: flex
+    flex-direction: column
+
+    &:nth-child(2n)
+      margin-right: 0
+
+
+    h2
+      margin-top: 0
+
+      a
+        color: inherit
+        text-decoration: none
+        transition: color 0.3s ease-in-out
+
+        &:hover
+          color: $primary-color
+
+
+    section
+      +clearfix
+
+      &.bottom
+        flex-grow: 1
+        display: flex
+        flex-direction: column
+
+        .button-cont
+          display: flex
+          justify-content: flex-end
+          align-items: flex-end
+          flex-grow: 1
+
+          .learn-more
+            padding: 1em 2em
+            background: $primary-color
+            color: white
+            outline: none
+            border: none
+            cursor: pointer
+            transition: background 0.3s ease
+            text-decoration: none
+
+            &:hover
+              background: shade($primary-color, 20%)
+
+    .item-image-cont
+      +span-columns(6)
+      overflow: hidden
+
+      img
+        width: 100%
+        height: auto
