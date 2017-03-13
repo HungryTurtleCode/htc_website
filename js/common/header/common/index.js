@@ -6,11 +6,13 @@ import firebaseService from '../../firebaseService';
 import auth from '../../auth';
 import loginModal from '../../loginModal';
 import logoutModal from '../../logoutModal';
+import fbPixel from '../../facebookPixel';
 
 const CommonModule = angular
   .module('header.common.module', [
     userData,
     ngAnimate,
+    fbPixel,
     firebaseService,
     auth,
     loginModal,
