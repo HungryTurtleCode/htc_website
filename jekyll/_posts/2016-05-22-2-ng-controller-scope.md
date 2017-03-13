@@ -1,5 +1,5 @@
 ---
-title: 'AngularJS Quiz App Tutorial Part 2 &#8211; Controller Properties and $scope'
+title: 'AngularJS Quiz App Tutorial Part 2 - Controller Properties and $scope'
 date: 2016-05-22T20:25:51+00:00
 author: Adrian
 layout: post

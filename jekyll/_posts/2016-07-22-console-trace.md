@@ -1,5 +1,5 @@
 ---
-title: 'Console.trace() &#8211; Javascript Debugging Tips'
+title: 'Console.trace() - Javascript Debugging Tips'
 date: 2016-07-22T15:47:38+00:00
 author: Adrian
 layout: post

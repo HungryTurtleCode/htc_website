@@ -1,5 +1,5 @@
 ---
-title: 'AngularJS Quiz App Tutorial Part 9 &#8211; More About Factories'
+title: 'AngularJS Quiz App Tutorial Part 9 - More About Factories'
 date: 2016-05-22T20:18:05+00:00
 author: Adrian
 layout: post

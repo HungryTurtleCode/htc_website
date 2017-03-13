@@ -1,5 +1,5 @@
 ---
-title: 'AngularJS Quiz App Tutorial Part 5 &#8211; Ng-model and Angular Filters'
+title: 'AngularJS Quiz App Tutorial Part 5 - Ng-model and Angular Filters'
 date: 2016-05-22T20:24:08+00:00
 author: Adrian
 layout: post

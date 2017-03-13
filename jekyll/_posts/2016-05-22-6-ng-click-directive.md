@@ -1,5 +1,5 @@
 ---
-title: 'AngularJS Quiz App Tutorial Part 6 &#8211; Ng-click and ng-show directives'
+title: 'AngularJS Quiz App Tutorial Part 6 - Ng-click and ng-show directives'
 date: 2016-05-22T20:18:56+00:00
 author: Adrian
 layout: post

@@ -1,5 +1,5 @@
 ---
-title: 'Console.table() &#8211; Javascript Debugging Tips'
+title: 'Console.table() - Javascript Debugging Tips'
 date: 2016-01-30T20:40:06+00:00
 author: Adrian
 layout: post

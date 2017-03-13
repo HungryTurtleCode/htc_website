@@ -1,5 +1,5 @@
 ---
-title: 'AngularJS Quiz App Tutorial Part 3 &#8211; Ng-Repeat And Bootstrap'
+title: 'AngularJS Quiz App Tutorial Part 3 - Ng-Repeat And Bootstrap'
 date: 2016-05-22T20:24:13+00:00
 author: Adrian
 layout: post

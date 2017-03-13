@@ -1,5 +1,5 @@
 ---
-title: 'AngularJS Quiz App Tutorial Part 8 &#8211; Dependency Injection'
+title: 'AngularJS Quiz App Tutorial Part 8 - Dependency Injection'
 date: 2016-05-22T20:18:46+00:00
 author: Adrian
 layout: post

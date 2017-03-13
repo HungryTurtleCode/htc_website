@@ -1,5 +1,5 @@
 ---
-title: 'AngularJS Quiz App Tutorial Part 4 &#8211; Bootstrap Modal Functionality'
+title: 'AngularJS Quiz App Tutorial Part 4 - Bootstrap Modal Functionality'
 date: 2016-05-22T20:24:11+00:00
 author: Adrian
 layout: post
