@@ -4,7 +4,7 @@ class ArchiveListController {
 
     this.data = courseList;
 
-    this.search = '';
+    this.search = this.getParameterByName('search') || '';
   }
   getStartFromData(){
     return this.paginationService.currentPage * this.paginationService.pageSize;
