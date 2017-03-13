@@ -37,7 +37,8 @@ exports.stripeCharge = function(req, res, next){
                             });
                     })
                     .catch(err => {
-                        var response = JSON.stringify({error: err, success: false});
+                        console.log(err);
+                        var response = JSON.stringify({error: 'Something Went Wrong', success: false});
 
                         res.writeHead(500, {'Content-Type': 'text/json'});
                         res.write(response);
