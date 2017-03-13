@@ -258,6 +258,41 @@ class FirebaseService{
         });
     });
   }
+  makeFirebaseSafe(text){
+    text = text.split('.');
+    text = text.join('-');
+    text = text.split('$');
+    text = text.join('-');
+    text = text.split('/');
+    text = text.join('-');
+    text = text.split('[');
+    text = text.join('-');
+    text = text.split(']');
+    text = text.join('-');
+    return text;
+  }
+  markSubscribedAC(id, email){
+
+    email = this.makeFirebaseSafe(email);
+
+    let data = {}
+    data[email] = true;
+
+    this.ref
+      .child('active-campaign')
+      .child(id)
+      .set(data);
+  }
+  checkIfSubscribed(id, email){
+    email = this.makeFirebaseSafe(email);
+
+    return this.ref
+      .child('active-campaign')
+      .child(id)
+      .child(email)
+      .once('value')
+      .then(snap => snap.val())
+  }
   getLessonContent(course, lesson){
     return new Promise((resolve, reject) => {
       if(course && lesson){

@@ -1,10 +1,12 @@
 import firebase from 'firebase';
 
 class Auth{
-  constructor($timeout) {
+  constructor($timeout, firebaseService, dataService) {
     this.loggedIn = false;
     this.authSubs = [];
     this.$timeout = $timeout;
+    this.fb = firebaseService;
+    this.dataService = dataService;
 
     this.onAuthChange();
   }
@@ -25,6 +27,27 @@ class Auth{
         if(user){
           if(!user.isAnonymous){
             this.loggedIn = true;
+            this.fb.checkIfSubscribed(user.uid, user.email)
+              .then(subscribed => {
+
+                let name = user.displayName;
+                name = name.split(' ');
+                let first_name = name[0];
+                let last_name = name[1];
+                if(name.length > 2){
+                  name.splice(0,1);
+                  last_name = name.join(' ');
+                }
+
+                if(!subscribed || subscribed == 'false'){
+                  this.dataService.subscribeUser(user.email, first_name, last_name)
+                    .then(data => {
+                      if(data.success){
+                        this.fb.markSubscribedAC(user.uid, user.email);
+                      }
+                    })
+                }
+              });
           }
         }else{
           this.anonymousSignIn();
@@ -124,6 +147,6 @@ class Auth{
   }
 }
 
-Auth.$inject = ['$timeout'];
+Auth.$inject = ['$timeout', 'firebaseService', 'dataService'];
 
 export default Auth;
