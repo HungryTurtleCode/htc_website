@@ -72,6 +72,12 @@ const ArchiveList = {
     <div class="archive-item" ng-repeat="post in $ctrl.data | orderBy:$ctrl.orderParam | filter:$ctrl.search | calcPage | startFrom:$ctrl.getStartFromData() | limitTo: $ctrl.paginationService.pageSize">
       <section>
         <div class="item-image-cont">
+          <div ng-if="post.lessons" class="lessons">
+            <p>
+              {{post.lessons}}
+            </p>
+            <p class="text">Lessons</p>
+          </div>
           <a ng-href="{{post.url}}">
             <img ng-src="{{post.image}}"/>
           </a>
@@ -94,12 +100,6 @@ const ArchiveList = {
           <a ng-href="/{{::$ctrl.slugify(post.categories[0])}}">{{post.categories[0]}}</a>
         </div>
         <p>{{post.excerpt}}</p>
-        <div ng-if="post.lessons" class="lessons">
-          <p>
-            <strong>Lessons:</strong>
-            {{post.lessons}}
-          </p>
-        </div>
         <div class="tags">
           <div>
             <div ng-repeat="tag in post.tags" class="tag-cont">
