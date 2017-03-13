@@ -1,6 +1,6 @@
-import controller from './facebookPixel.controller';
+import controller from './trackingPixels.controller';
 
-const FacebookPixel = {
+const TrackingPixels = {
   controller,
   template: `
     <!-- Facebook Pixel Code -->
@@ -12,4 +12,4 @@ const FacebookPixel = {
   `
 };
 
-export default FacebookPixel;
+export default TrackingPixels;

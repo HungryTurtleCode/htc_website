@@ -1,4 +1,4 @@
-class FacebookPixelController{
+class TrackingPixelsController{
   constructor(auth, $timeout) {
     this.$timeout = $timeout;
 
@@ -9,6 +9,9 @@ class FacebookPixelController{
     });
   }
   $onInit(){
+    this.facebookPixel();
+  }
+  facebookPixel(){
     this.$timeout(() => {
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -20,12 +23,12 @@ class FacebookPixelController{
         em: this.email
       });
       fbq('track', 'PageView');
-    }, 4500);
+    }, 45000);
   }
 }
 
-FacebookPixelController.$inject = ['auth', '$timeout'];
+TrackingPixelsController.$inject = ['auth', '$timeout'];
 
-export default FacebookPixelController;
+export default TrackingPixelsController;
 
 
