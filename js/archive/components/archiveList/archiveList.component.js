@@ -3,7 +3,6 @@ import controller from './archiveList.controller';
 const ArchiveList = {
   controller,
   template: `
-  <!--ng-repeat="course in list.courses | filter:list.search | filter:list.selectFramework | filter:list.selectLang | filter:list.enrolled | calcPage | startFrom:list.pagination.currentPage*list.pagination.pageSize | limitTo:list.pagination.pageSize | orderBy:list.orderParam">-->
 
     <div class="filter-box">
       <input
@@ -12,9 +11,65 @@ const ArchiveList = {
         ng-model-options="{debounce: 500}"
         placeholder="Search..."
         type="text">
+
+      <div class="form-group">
+        <span class="fancyArrow">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve" data-inboxsdk-session-id="1489367182919-0.6727878747402856">
+          <g>
+            <g id="arrow-drop-down">
+                <polygon points="0,63.75 127.5,191.25 255,63.75   "/>
+                  </g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <head/></svg>
+        </span>
+        <!--<span>Sort By:</span>-->
+        <select id="frameworkSelect" ng-cloak ng-model="$ctrl.orderParam">
+          <option value="-timemark">Date Added: New First</option>
+          <option value="timemark">Date Added: Old First</option>
+          <option value="price">Price: low to high</option>
+          <option value="-price">Price: high to low</option>
+          <option value="difficultyNum">Difficulty: Beginner First</option>
+          <option value="-difficultyNum">Difficulty: Advanced First</option>
+          <option value="-lessons">Lessons: Most First</option>
+          <option value="lessons">Lessons: Least First</option>
+        </select>
+      </div>
+
     </div>
 
-    <div class="archive-item" ng-repeat="post in $ctrl.data | filter:$ctrl.search | calcPage | startFrom:$ctrl.getStartFromData() | limitTo: $ctrl.paginationService.pageSize">
+  <!--ng-repeat="course in list.courses | filter:list.search | filter:list.selectFramework | filter:list.selectLang | filter:list.enrolled | calcPage | startFrom:list.pagination.currentPage*list.pagination.pageSize | limitTo:list.pagination.pageSize | orderBy:list.orderParam">-->
+
+    <div class="archive-item" ng-repeat="post in $ctrl.data | orderBy:$ctrl.orderParam | filter:$ctrl.search | calcPage | startFrom:$ctrl.getStartFromData() | limitTo: $ctrl.paginationService.pageSize">
       <section>
         <div class="item-image-cont">
           <a ng-href="{{post.url}}">

@@ -45,7 +45,8 @@ layout: fullwidth-100
         subtitle: '{{post.subtitle}}',
         lessons: parseInt('{{post.lessons}}'),
         skill: '{{post.skill}}',
-        date: "{{post.date | date: '%B %d, %Y'}}"
+        date: "{{post.date | date: '%B %d, %Y'}}",
+        timemark: parseInt("{{post.date | date: '%Y%m%d%H%M'}}")
       },
     {% endfor %}
 

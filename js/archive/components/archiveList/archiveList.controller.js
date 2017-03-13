@@ -3,8 +3,25 @@ class ArchiveListController {
     this.paginationService = paginationService;
 
     this.data = courseList;
+    this.setupData(this.data);
+  }
+  setupData(){
+    let difficultyData = {
+      beginner: 1,
+      intermediate: 2,
+      advanced: 3
+    };
 
+    this.data = this.data.map(item => {
+      item.price = item.price || 0;
+      item.lessons = item.lessons || 0;
+      item.difficultyNum = difficultyData[item.skill.toLowerCase()] || 2;
+      return item;
+    });
+  }
+  $onInit(){
     this.search = this.getParameterByName('search') || '';
+    this.orderParam = '-timemark';
   }
   getStartFromData(){
     return this.paginationService.currentPage * this.paginationService.pageSize;

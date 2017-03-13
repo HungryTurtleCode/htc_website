@@ -24,6 +24,44 @@ archive-list
       outline: none
       border: none
 
+    .form-group
+      float: right
+      font-size: 1.2em
+      color: $primary-color
+      position: relative
+      display: inline-block
+
+      select
+        display: inline-block
+        height: 30px
+        width: 150px
+        outline: none
+        color: #74646e
+        border: 1px solid #C8BFC4
+        border-radius: 4px
+        box-shadow: inset 1px 1px 2px #ddd8dc
+        background: #fff
+        width: 240px
+
+      .fancyArrow
+        width: 23px
+        height: 28px
+        position: absolute
+        display: inline-block
+        top: 1px
+        right: 3px
+        pointer-events: none
+        background: white
+
+        svg
+          padding-top: 2px
+          fill: $secondary-color
+
+
+      @media screen and (min-width: 0\0)
+        .fancyArrow
+          display: none
+
   .archive-item
     +span-columns(4)
     margin-bottom: 2em
