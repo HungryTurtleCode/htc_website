@@ -21,6 +21,12 @@ class DataService{
         return response.data;
       });
   }
+  subscribeUser(email, first_name, last_name){
+    return this.$http.post(`${this.url}/acSubscribe`, {email: email, last_name: last_name || '', first_name: first_name || ''})
+      .then(response => {
+        return response.data;
+      });
+  }
 }
 
 DataService.$inject = ['$http'];
