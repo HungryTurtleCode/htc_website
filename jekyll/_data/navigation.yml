@@ -5,6 +5,8 @@ primary:
     url: /projects/
   - title: Tutorials
     url: /tutorials/
+  - title: Premium Courses
+    url: /courses/
   - title: About Me
     url: /about-me/
   - title: Contact Me
