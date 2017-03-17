@@ -5,7 +5,7 @@ class TrackingPixelsController{
     this.email = '';
 
     auth.subscribeAuthChange(user => {
-      this.email = user.email;
+      this.email = user.email || '';
     });
   }
   $onInit(){
@@ -26,7 +26,7 @@ class TrackingPixelsController{
         var trackcmp_h = document.getElementsByTagName("head");
         trackcmp_h.length && trackcmp_h[0].appendChild(trackcmp);
       }
-    }, 3000);
+    }, 10000);
   }
   facebookPixel(){
     this.$timeout(() => {
