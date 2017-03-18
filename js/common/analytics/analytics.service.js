@@ -7,9 +7,9 @@ class AnalyticsService{
 
     this.path = window.location.pathname;
   }
-  trackEvent(type, value, label){
+  trackEvent(type, action, label, value){
     label = label || this.path;
-    ga('send', 'event', type, value, label);
+    ga('send', 'event', type, action, label, value);
   }
 }
 
