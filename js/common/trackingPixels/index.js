@@ -1,5 +1,6 @@
 import angular from 'angular';
 import trackingPixels from './trackingPixels.component';
+import pixelService from './trackingPixels.service';
 
 import auth from '../auth';
 
@@ -8,6 +9,7 @@ const trackingPixelsComponent = angular
     auth
   ])
   .component('trackingPixels', trackingPixels)
+  .service('pixelService', pixelService)
   .name;
 
 export default trackingPixelsComponent;

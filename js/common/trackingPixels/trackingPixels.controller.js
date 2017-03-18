@@ -1,6 +1,7 @@
 class TrackingPixelsController{
-  constructor(auth, $timeout) {
+  constructor(auth, $timeout, pixelService) {
     this.$timeout = $timeout;
+    this.pixelService = pixelService;
 
     this.email = '';
 
@@ -22,6 +23,8 @@ class TrackingPixelsController{
 
     ga('create', 'UA-57008136-3', 'auto');
     ga('send', 'pageview');
+
+    this.pixelService.GAReady();
   }
   activeCampaign(){
     this.$timeout(() => {
@@ -55,7 +58,7 @@ class TrackingPixelsController{
   }
 }
 
-TrackingPixelsController.$inject = ['auth', '$timeout'];
+TrackingPixelsController.$inject = ['auth', '$timeout', 'pixelService'];
 
 export default TrackingPixelsController;
 
