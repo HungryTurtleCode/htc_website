@@ -7,9 +7,22 @@ const Analytics = (analyticsService, $location) => ({
   controller,
   link($scope, $el, $attrs, $ctrl) {
     $ctrl.trackDurationEvents();
-    $ctrl.trackCategory(getPageLocations());
+    $ctrl.trackCategory(getCategory());
+    $ctrl.analytics.trackNonInteraction('Reading', 'ArticleLoaded', getPageLocation());
 
-    function getPageLocations(){
+    function getPageLocation(){
+      let arr = getLocationArray();
+      let newArr = [arr[arr.length - 2], arr[arr.length - 1], ''];
+
+      return newArr.join('/');
+    }
+    function getCategory(){
+      let arr = getLocationArray();
+      let newArr = [arr[arr.length - 2]];
+
+      return newArr.join('/');
+    }
+    function getLocationArray(){
       let url = $location.absUrl();
       let arr = url.split('/');
 
@@ -22,10 +35,7 @@ const Analytics = (analyticsService, $location) => ({
           arr.splice(i, 1);
         }
       }
-
-      let newArr = [arr[arr.length - 2]];
-
-      return newArr.join('/');
+      return arr;
     }
   }
 });
