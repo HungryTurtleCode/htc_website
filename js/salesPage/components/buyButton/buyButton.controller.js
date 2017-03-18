@@ -1,8 +1,9 @@
 class BuyButtonController{
-  constructor($location, userData, $timeout) {
+  constructor($location, userData, $timeout, analytics) {
     this.$location = $location;
     this.userData = userData;
     this.$timeout = $timeout;
+    this.analytics = analytics;
 
     this.buttonText = 'Take This Course';
   }
@@ -37,10 +38,14 @@ class BuyButtonController{
   takeCourse(){
     if(this.inCart || this.enrolled){return false;}
 
+    this.analytics.trackEvent('AddToCart', this.courseData.title);
+
     this.userData.addToCart(this.courseData)
       .then(added => {
         if(added){
           window.location.href = '/checkout';
+        }else{
+          this.analytics.trackEvent('AddToCartFAILED', this.courseData.title);
         }
       })
       .catch(err => console.log(err));
@@ -57,6 +62,6 @@ class BuyButtonController{
   }
 }
 
-BuyButtonController.$inject = ['$location', 'userData', '$timeout'];
+BuyButtonController.$inject = ['$location', 'userData', '$timeout', 'analyticsService'];
 
 export default BuyButtonController;
