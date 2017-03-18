@@ -1,8 +1,9 @@
 class commentFormController{
-  constructor(firebaseService, userData, $location) {
+  constructor(firebaseService, userData, $location, analytics) {
     this.firebaseService = firebaseService;
     this.userData = userData;
     this.$location = $location;
+    this.analytics = analytics;
 
     this.commentText = '';
   }
@@ -29,12 +30,17 @@ class commentFormController{
         this.isLesson
       )
       .then(() => {
+        this.analytics.trackEvent('Comment', this.getPageLocations());
+        this.analytics.setDimension('Dimension3', 'Commenter');
+        this.analytics.setMetric('Metric5', 1);
+
         this.refresh();
         this.feedbackText = 'Comment Submitted Successfully'
         this.error = false;
         this.submitLoading = false;
       })
       .catch(err => {
+        console.error(err);
         this.feedbackText = 'Something Went Wrong. Try Again Later'
         this.error = true;
         this.submitLoading = false;
@@ -75,6 +81,6 @@ class commentFormController{
   }
 }
 
-commentFormController.$inject = ['firebaseService', 'userData', '$location'];
+commentFormController.$inject = ['firebaseService', 'userData', '$location', 'analyticsService'];
 
 export default commentFormController;
