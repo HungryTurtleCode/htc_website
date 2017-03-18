@@ -2,7 +2,9 @@ class AnalyticsController{
   constructor(analyticsService) {
     this.analytics = analyticsService;
   }
-
+  trackCategory(cat){
+    this.analytics.setDimension('Dimension2', cat);
+  }
   trackDurationEvents(){
     const trackDuration = () => {
       [15, 30, 60, 120].forEach(time => {
