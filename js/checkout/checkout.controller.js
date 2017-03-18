@@ -49,8 +49,15 @@ class CheckoutController{
     this.userData.paypalBuy(this.cart)
       .then(data => {
         if(data.success){
+          this.cart.forEach(item => {
+            this.analytics.trackEvent('Purchase', item.title, null, item.price);
+          });
           this.paymentLoading = false;
           window.location.href = data.url;
+        }else{
+          this.cart.forEach(item => {
+            this.analytics.trackEvent('PaypalFAIL', item.title, null, item.price);
+          });
         }
       })
       .catch(err => console.error(err));
@@ -64,8 +71,15 @@ class CheckoutController{
         this.userData.stripeBuy(this.cart, response.id)
           .then(data => {
             if(data.success){
+              this.cart.forEach(item => {
+                this.analytics.trackEvent('Purchase', item.title, null, item.price);
+              });
               this.paymentLoading = false;
               window.location.href = data.url;
+            }else{
+              this.cart.forEach(item => {
+                this.analytics.trackEvent('StripeFAIL', item.title, null, item.price);
+              });
             }
           })
           .catch(err => console.error(err));
