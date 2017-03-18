@@ -1,8 +1,12 @@
 import angular from 'angular';
 import auth from './auth.service';
 
+import analytics from '../analytics/';
+
 const authComponent = angular
-  .module('auth', [])
+  .module('auth', [
+    analytics
+  ])
   .service('auth', auth)
   .name;
 

@@ -1,12 +1,13 @@
 import firebase from 'firebase';
 
 class Auth{
-  constructor($timeout, firebaseService, dataService) {
+  constructor($timeout, firebaseService, dataService, analytics) {
     this.loggedIn = false;
     this.authSubs = [];
     this.$timeout = $timeout;
     this.fb = firebaseService;
     this.dataService = dataService;
+    this.analytics = analytics;
 
     this.onAuthChange();
   }
@@ -40,6 +41,7 @@ class Auth{
                 }
 
                 if(!subscribed || subscribed == 'false'){
+                  this.analytics.trackEvent('Register', user.displayName);
                   this.dataService.subscribeUser(user.email, first_name, last_name)
                     .then(data => {
                       if(data.success){
@@ -147,6 +149,6 @@ class Auth{
   }
 }
 
-Auth.$inject = ['$timeout', 'firebaseService', 'dataService'];
+Auth.$inject = ['$timeout', 'firebaseService', 'dataService', 'analyticsService'];
 
 export default Auth;
