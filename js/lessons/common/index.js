@@ -6,6 +6,8 @@ import lessonService from './lessonService';
 import userData from '../../common/userData';
 import dataService from '../../common/dataService';
 import signinComponent from '../../common/signInComponent';
+import analytics from '../../common/analytics';
+import trackingPixels from '../../common/trackingPixels';
 import cursorDir from './cursorDirective';
 
 const CommonComponent = angular
@@ -16,7 +18,9 @@ const CommonComponent = angular
     userData,
     dataService,
     cursorDir,
-    signinComponent
+    signinComponent,
+    trackingPixels,
+    analytics
   ])
   .name;
 

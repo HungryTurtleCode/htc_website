@@ -8,6 +8,7 @@ import forgotPass from '../../common/forgotPass/';
 import bookmark from '../../common/bookmarkButton/';
 import upload from '../../common/upload/';
 import spinner from '../../common/spinner/';
+import trackingPixel from '../../common/trackingPixels/';
 
 const CommonModule = angular
   .module('account.common.module', [
@@ -17,7 +18,8 @@ const CommonModule = angular
     forgotPass,
     bookmark,
     upload,
-    spinner
+    spinner,
+    trackingPixel
   ])
   .name;
 
