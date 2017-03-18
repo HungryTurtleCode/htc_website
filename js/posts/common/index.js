@@ -3,6 +3,7 @@ import angular from 'angular';
 import firebaseService from '../../common/firebaseService/';
 import userData from '../../common/userData';
 import auth from '../../common/auth';
+import analytics from '../../common/analytics';
 
 import scroll from './scrollHere';
 
@@ -18,7 +19,8 @@ const CommonModule = angular
     scroll,
     auth,
     header,
-    loginModal
+    loginModal,
+    analytics
   ])
   .name;
 
