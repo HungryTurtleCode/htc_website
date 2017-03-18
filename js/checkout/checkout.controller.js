@@ -1,9 +1,10 @@
 class CheckoutController{
-  constructor(firebaseService, userData, $scope, stripe) {
+  constructor(firebaseService, userData, $scope, stripe, analytics) {
     this.fb = firebaseService;
     this.userData = userData;
     this.$scope = $scope;
     this.stripe = stripe;
+    this.analytics = analytics;
   }
   $onInit(){
     this.cart = [];
@@ -24,6 +25,8 @@ class CheckoutController{
   removeItem(item){
     let index = this.cart.indexOf(item);
     if(index > -1){
+      this.analytics.trackEvent('RemoveFromCart', item.title);
+
       this.cart.splice(index, 1);
       if(!this.cart.length){
         this.cart = null;
@@ -70,6 +73,6 @@ class CheckoutController{
   }
 }
 
-CheckoutController.$inject = ['firebaseService', 'userData', '$scope', 'stripe'];
+CheckoutController.$inject = ['firebaseService', 'userData', '$scope', 'stripe', 'analyticsService'];
 
 export default CheckoutController;
