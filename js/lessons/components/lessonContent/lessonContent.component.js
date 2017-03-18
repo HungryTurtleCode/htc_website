@@ -31,7 +31,7 @@ const LessonContent = {
       </div>
 
       <div class="tab-content">
-        <div class="article post-page" ng-show="$ctrl.activeTab === 0" analytics>
+        <div class="article post-page" ng-show="$ctrl.activeTab === 0" analytics analytics-scroll>
           <div ng-bind-html="$ctrl.articleTrusted"></div>
           <button ng-click="$ctrl.nextLesson()" ng-if="!$ctrl.checkIfLastLesson()">
             Next Lesson

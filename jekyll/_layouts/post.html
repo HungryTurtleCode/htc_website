@@ -15,7 +15,9 @@ layout: default
 
     {% include share.html %}
 
-    {{content}}
+    <div analytics-scroll>
+      {{content}}
+    </div>
 
     <div id="content-end">
       {% include tags.html data=page %}
