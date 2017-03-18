@@ -1,18 +1,12 @@
 class AnalyticsService{
-  constructor(pixelService) {
-    this.ready = false;
-    pixelService.onGAReady(() => {
-      this.ready = true;
-    });
-
+  constructor() {
     this.path = window.location.pathname;
   }
-  trackEvent(type, action, label, value){
-    label = label || this.path;
+  trackEvent(type, action, label=this.path, value=null){
     ga('send', 'event', type, action, label, value);
   }
 }
 
-AnalyticsService.$inject = ['pixelService'];
+AnalyticsService.$inject = [];
 
 export default AnalyticsService;
