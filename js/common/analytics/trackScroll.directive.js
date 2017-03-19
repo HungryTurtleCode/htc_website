@@ -8,7 +8,15 @@ const TrackScroll = (analytics, $location) => ({
     let contentBottom = height + offsetTop;
     let startTime = new Date().getTime();
     let scrolled = false;
-    let timer;
+    let timer, scrollStart;
+    let contentFinished = false;
+    let scrollThrottle = 0;
+    let w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    winWidth = w.innerWidth || e.clientWidth || g.clientWidth,
+    winHeight = w.innerHeight|| e.clientHeight|| g.clientHeight;
 
     window.addEventListener('scroll', () => {
       if(timer){
@@ -19,12 +27,41 @@ const TrackScroll = (analytics, $location) => ({
     });
 
     function trackLoc(){
-      if(!scrolled){
-        let currentTime = new Date().getTime();
+      let scrollHeight = w.scrollTop || e.scrollTop || g.scrollTop;
+      let currentBottom = winHeight + scrollHeight;
+      let currentTime = new Date().getTime();
+
+      if(scrollHeight > 200 && !scrolled){
+        scrollStart = currentTime;
         let timeToScroll = Math.round((currentTime - startTime) / 1000);
         analytics.sendEventWithMetric('Reading', 'StartReading', getPageLocation(), 'metric1', timeToScroll);
         scrolled = true;
       }
+
+      if(currentBottom >= contentBottom && !contentFinished){
+        let timeToFinish = Math.round((currentTime - scrollStart) / 1000);
+
+        if(timeToFinish < 60){
+          analytics.setDimension('Dimension7', 'Scanner');
+        }else{
+          analytics.setDimension('Dimension7', 'Reader');
+        }
+        analytics.setMetric('Metric6', 1);
+        analytics.sendEventWithMetric('Reading', 'ContentBottom', getPageLocation(), 'Metric2', timeToFinish);
+
+        contentFinished = true;
+      }
+
+      [20, 40, 60, 80].forEach(perc => {
+        if(currentBottom >= contentBottom / 100 * perc && perc > scrollThrottle){
+          scrollThrottle = perc + 1;
+          let scroll = perc + '%';
+          analytics.trackEvent('Reading', scroll, getPageLocation());
+          if(perc > 50){
+            // TODO facebook page view Sun 19 Mar 2017 00:06:20 UTC
+          }
+        }
+      });
     }
     function getPageLocation(){
       let arr = getLocationArray();

@@ -9,7 +9,6 @@ class AnalyticsService{
     ga('send', 'event', type, action, label, null, {'nonInteraction': 1});
   }
   sendEventWithMetric(type, action, label=this.path, metric, metricValue){
-    console.log(type, action, label, metric, metricValue);
     ga('send', 'event', type, action, label, {metric: metricValue})
   }
   setMetric(metric, value){
