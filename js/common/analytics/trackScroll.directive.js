@@ -27,6 +27,9 @@ const TrackScroll = (analytics, $location) => ({
     });
 
     function trackLoc(){
+      height = $element[0].offsetHeight;
+      offsetTop = $element[0].offsetTop;
+      contentBottom = height + offsetTop;
       let scrollHeight = w.scrollTop || e.scrollTop || g.scrollTop;
       let currentBottom = winHeight + scrollHeight;
       let currentTime = new Date().getTime();
