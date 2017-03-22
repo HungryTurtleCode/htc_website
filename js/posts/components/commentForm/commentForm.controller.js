@@ -22,6 +22,10 @@ class commentFormController{
   }
   submitComment(text){
     this.submitLoading = true;
+    let loc = this.getPageLocations();
+    let type = loc.split('/');
+    type = type[0];
+
     if(text){
       this.userData.setComment(
         this.pageLocations,
@@ -30,9 +34,17 @@ class commentFormController{
         this.isLesson
       )
       .then(() => {
-        this.analytics.trackEvent('Comment', this.getPageLocations());
+        this.analytics.trackEvent('Comment', loc);
         this.analytics.setDimension('Dimension3', 'Commenter');
         this.analytics.setMetric('Metric5', 1);
+        this.analytics.fbTrackEvent(
+                                  'Comment',
+                                  {
+                                    content: loc,
+                                    content_type: type
+                                  },
+                                  'content'
+                                );
 
         this.refresh();
         this.feedbackText = 'Comment Submitted Successfully'
