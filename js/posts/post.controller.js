@@ -1,17 +1,35 @@
 class PostCommentController{
-  constructor(firebaseService, $location, $scope) {
+  constructor(firebaseService, $location, $scope, analytics) {
     this.firebaseService = firebaseService;
     this.$location = $location;
     this.$scope = $scope;
+    this.analytics = analytics;
 
     this.comments = [];
   }
   $onInit(){
     this.getComments();
+    this.triggerContentView();
 
     if(this.$location.search() && this.$location.search().comment){
       this.highlight = this.$location.search().comment;
     }
+  }
+  triggerContentView(){
+    let loc = this.getPageLocations() || '';
+    let type = loc.split('/');
+    type = type[0];
+
+    this.analytics.fbTrackEvent(
+                                'ViewContent',
+                                {
+                                  content_ids: [loc],
+                                  content_type: type,
+                                  value: 0.00,
+                                  currency: 'USD'
+                                },
+                                'content_type'
+                              );
   }
   getComments(){
     let loc = this.getPageLocations() || '';
@@ -58,6 +76,6 @@ class PostCommentController{
   }
 }
 
-PostCommentController.$inject = ['firebaseService', '$location', '$scope'];
+PostCommentController.$inject = ['firebaseService', '$location', '$scope', 'analyticsService'];
 
 export default PostCommentController;

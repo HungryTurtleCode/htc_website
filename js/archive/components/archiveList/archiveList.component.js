@@ -9,6 +9,7 @@ const ArchiveList = {
         class="search-input"
         ng-model="$ctrl.search"
         ng-model-options="{debounce: 500}"
+        ng-change="$ctrl.trackSearch($ctrl.search)"
         placeholder="Search..."
         type="text">
 

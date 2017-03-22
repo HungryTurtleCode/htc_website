@@ -1,6 +1,7 @@
 class AnalyticsService{
   constructor() {
     this.path = window.location.pathname;
+    this.FbEventBacklog = [];
   }
   trackEvent(type, action, label=this.path, value=null){
     ga('send', 'event', type, action, label, value);
@@ -16,6 +17,17 @@ class AnalyticsService{
   }
   setDimension(dimension, value){
     ga('set', dimension, value)
+  }
+  fbTrackEvent(eventType, data, key){
+    if(window.fbq){
+      fbq('track', eventType, data);
+    }else{
+      this.FbEventBacklog.push(() => {
+        if(data[key]){
+          fbq('track', eventType, data);
+        }
+      });
+    }
   }
 }
 

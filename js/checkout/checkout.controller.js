@@ -49,6 +49,16 @@ class CheckoutController{
     this.userData.paypalBuy(this.cart)
       .then(data => {
         if(data.success){
+          this.analytics.fbTrackEvent(
+                                      'Purchase',
+                                      {
+                                        content_ids: this.cart,
+                                        content_type: 'courses',
+                                        value: this.getTotal().toFixed(2),
+                                        currency: 'USD'
+                                      },
+                                      'content_type'
+                                    );
           this.cart.forEach(item => {
             this.analytics.trackEvent('Purchase', item.title, null, item.price);
           });

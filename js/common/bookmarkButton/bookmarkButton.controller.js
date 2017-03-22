@@ -1,7 +1,8 @@
 class BookmarkButtonController{
-  constructor(userData, $timeout) {
+  constructor(userData, $timeout, analyticsService) {
     this.userData = userData;
     this.$timeout = $timeout;
+    this.analytics = analyticsService;
   }
   $onInit(){
     this.text = 'Bookmark Course';
@@ -22,6 +23,17 @@ class BookmarkButtonController{
       this.userData.bookmarkCourse(this.course)
         .then(() => {
           this.$timeout(() => {
+            this.analytics.trackEvent('Bookmark', 'Add', this.course);
+            this.analytics.fbTrackEvent(
+                                        'AddToWishlist',
+                                        {
+                                          content_ids: [this.course],
+                                          content_type: 'courses',
+                                          value: 0.00,
+                                          currency: 'USD'
+                                        },
+                                        'content_type'
+                                      );
             this.text = 'Remove From Bookmarks';
             console.log('Bookmarked');
           });
@@ -30,6 +42,7 @@ class BookmarkButtonController{
       this.userData.removeBookmark(this.course)
         .then(() => {
           this.$timeout(() => {
+            this.analytics.trackEvent('Bookmark', 'Remove', this.course);
             this.text = 'Bookmark Course';
             console.log('Removed Bookmark');
           });
@@ -38,6 +51,6 @@ class BookmarkButtonController{
   }
 }
 
-BookmarkButtonController.$inject = ['userData', '$timeout'];
+BookmarkButtonController.$inject = ['userData', '$timeout', 'analyticsService'];
 
 export default BookmarkButtonController;

@@ -42,6 +42,8 @@ class Auth{
 
                 if(!subscribed || subscribed == 'false'){
                   this.analytics.trackEvent('Register', user.displayName);
+                  this.analytics.fbTrackEvent('CompleteRegistration', {value: 0.00, currency: 'USD'}, 'currency');
+
                   this.dataService.subscribeUser(user.email, first_name, last_name)
                     .then(data => {
                       if(data.success){

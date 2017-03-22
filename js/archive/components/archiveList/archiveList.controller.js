@@ -1,6 +1,7 @@
 class ArchiveListController {
-  constructor(paginationService) {
+  constructor(paginationService, analytics) {
     this.paginationService = paginationService;
+    this.analytics = analytics;
 
     this.data = courseList;
     this.setupData(this.data);
@@ -26,6 +27,15 @@ class ArchiveListController {
   getStartFromData(){
     return this.paginationService.currentPage * this.paginationService.pageSize;
   }
+  trackSearch(query){
+    this.analytics.fbTrackEvent(
+                            'Search',
+                            {
+                              search_string: query
+                            },
+                            'search_string'
+                          );
+  }
   slugify(name){
     if(name){
       let arr = name.split(' ');
@@ -45,6 +55,6 @@ class ArchiveListController {
   }
 }
 
-ArchiveListController.$inject = ['paginationService'];
+ArchiveListController.$inject = ['paginationService', 'analyticsService'];
 
 export default ArchiveListController ;
