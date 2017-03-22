@@ -43,7 +43,7 @@ jekyll-archives:
     tag: '/tag/:name/'
     category: '/:name/'
 
-default_share_img: /img/social.jpg # Change this image to something actually useful
+socialimg: /img/social.jpg # Change this image to something actually useful
 googleplus: u/0/b/102352442157148016670/+Hungryturtledev
 twitter_username: hungryturtledev
 github_username:  adiman9
