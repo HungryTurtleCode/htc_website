@@ -37,7 +37,7 @@ class commentFormController{
         this.analytics.trackEvent('Comment', loc);
         this.analytics.setDimension('Dimension3', 'Commenter');
         this.analytics.setMetric('Metric5', 1);
-        this.analytics.fbTrackEvent(
+        this.analytics.fbTrackCustom(
                                   'Comment',
                                   {
                                     content: loc,

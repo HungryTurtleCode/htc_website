@@ -47,6 +47,17 @@ class AnalyticsService{
       });
     }
   }
+  fbTrackCustom(eventType, data, key){
+    if(window.fbq){
+      fbq('trackCustom', eventType, data);
+    }else{
+      this.FbEventBacklog.push(() => {
+        if(data[key]){
+          fbq('trackCustom', eventType, data);
+        }
+      });
+    }
+  }
 }
 
 AnalyticsService.$inject = [];
