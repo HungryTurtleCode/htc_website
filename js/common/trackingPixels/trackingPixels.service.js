@@ -2,7 +2,7 @@ class PixelService{
   constructor(analytics, $timeout) {
     this.$timeout = $timeout;
 
-    this.GASubs = [];
+    this.GASubs = analytics.GaEventBacklog;
     this.FBSubs = analytics.FbEventBacklog;
     this.ACSubs = [];
   }
@@ -10,6 +10,7 @@ class PixelService{
     this.GASubs.forEach(sub => {
       sub();
     });
+    this.GASubs = [];
   }
   ACReady(){
     this.ACSubs.forEach(sub => {
