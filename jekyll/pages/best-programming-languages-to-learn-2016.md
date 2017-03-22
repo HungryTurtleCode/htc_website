@@ -6,6 +6,12 @@ author: Adrian
 layout: post
 permalink: /best-programming-languages-to-learn-2016/
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,h_150/v1452614939/5872169307_15b5d16087_o_nfril6.jpg
+
+excerpt: Knowing the best programming language to learn in 2016 is hard. There are so many out there to choose from! Let's take a look at your options...
+
+fbimg: /img/best-programming-lang-fb.jpg
+googleplusimg: /img/best-programming-lang-gp.jpg
+twitterimg: /img/best-programming-lang-twitter.jpg
 ---
 ## It&#8217;s time to learn a programming language!
 

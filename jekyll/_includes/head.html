@@ -12,22 +12,22 @@
 	<link rel="publisher" href="https://plus.google.com/{{site.googleplus}}"/>
 	<meta itemprop="name" content="{% if page.fulltitle %}{{page.fulltitle}}{% else %}{{page.title}} | {{ site.title }} {% endif %}">
 	<meta itemprop="description" content="{% if page.excerpt %}{{page.excerpt}}{% else %}{{site.description}}{% endif %}">
-	<meta itemprop="image" content="{% if page.image %}{{site.baseurl}}{{page.image}}{% else %}{{site.baseurl}}{{site.socialimg}}{% endif %}">
+	<meta itemprop="image" content="{% if page.googleplusimg %}{{site.produrl}}{{page.googleplusimg}}{% else %}{{site.produrl}}{{site.socialimg}}{% endif %}">
 
 	<!-- Facebook -->
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="{% if page.fulltitle %}{{page.fulltitle}}{% else %}{{page.title}} | {{ site.title }} {% endif %}"/>
 	<meta property="og:description" content="{% if page.excerpt %}{{page.excerpt}}{% else %}{{site.description}}{% endif %}"/>
-	<meta property="og:image" content="{% if page.image %}{{site.baseurl}}{{page.image}}{% else %}{{site.baseurl}}{{site.socialimg}}{% endif %}"/>
-	<meta property="og:url" content="{{site.baseurl}}{{page.url}}"/>
+	<meta property="og:image" content="{% if page.fbimg %}{{site.produrl}}{{page.fbimg}}{% else %}{{site.produrl}}{{site.socialimg}}{% endif %}"/>
+	<meta property="og:url" content="{{site.produrl}}{{page.url}}"/>
 	<meta property="og:site_name" content="{{ site.title }} "/>
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="{% if page.fulltitle %}{{page.fulltitle}}{% else %}{{page.title}} | {{ site.title }} {% endif %}">
 	<meta name="twitter:description" content="{% if page.excerpt %}{{page.excerpt}}{% else %}{{site.description}}{% endif %}">
-	<meta name="twitter:image" content="{{site.baseurl}}{{site.socialimg}}">
-	<meta name="twitter:url" content="{{site.baseurl}}{{page.url}}">
+	<meta name="twitter:image" content="{% if page.twitterimg %}{{site.produrl}}{{page.twitterimg}}{% else %}{{site.produrl}}{{site.socialimg}}{% endif %}"/>
+	<meta name="twitter:url" content="{{site.produrl}}{{page.url}}">
 
 	<!-- CSS & fonts -->
 	<link rel="stylesheet" href="{{site.baseurl}}/css/app.css">

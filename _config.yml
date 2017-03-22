@@ -19,6 +19,7 @@ email: adrian@hungryturtlecode.com
 description: Hungry Turtle Code is a site dedicated to teaching developers of all skill levels a bit more about code than they knew yesterday. Whether you are starting from scratch or just looking for that one new tip that will boost your workflow, there is probably something for you here.
 # url: "https://hungryturtlecode.com" # the base hostname & protocol for your site, e.g. http://example.com
 url: "https://hungry-turtle-code.firebaseapp.com"
+produrl: "https://hungryturtlecode.com"
 baseurl: ""
 
 source: jekyll
@@ -43,6 +44,7 @@ jekyll-archives:
     category: '/:name/'
 
 default_share_img: /img/social.jpg # Change this image to something actually useful
+googleplus: u/0/b/102352442157148016670/+Hungryturtledev
 twitter_username: hungryturtledev
 github_username:  adiman9
 github_org: HungryTurtleCode
