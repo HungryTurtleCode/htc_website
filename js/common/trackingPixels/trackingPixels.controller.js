@@ -40,6 +40,7 @@ class TrackingPixelsController{
         var trackcmp_h = document.getElementsByTagName("head");
         trackcmp_h.length && trackcmp_h[0].appendChild(trackcmp);
       }
+      this.pixelService.ACReady();
     }, 10000);
   }
   facebookPixel(){
@@ -54,6 +55,7 @@ class TrackingPixelsController{
         em: this.email
       });
       fbq('track', 'PageView');
+      this.pixelService.FBReady();
     }, 45000);
   }
 }
