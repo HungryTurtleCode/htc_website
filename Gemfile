@@ -24,3 +24,6 @@ end
 gem "bourbon"
 gem 'jekyll-archives'
 gem 'jekyll-sitemap'
+gem 'jekyll-assets'
+gem 'uglifier'
+gem 'sass'

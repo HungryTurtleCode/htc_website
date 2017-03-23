@@ -56,6 +56,8 @@ gems:
   - jekyll-feed
   - jekyll-archives
   - jekyll-sitemap
+  - jekyll-assets
+
 exclude:
   - Gemfile
   - Gemfile.lock

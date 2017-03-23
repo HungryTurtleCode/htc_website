@@ -12,7 +12,7 @@ module.exports = {
     'archive': './js/archive.js'
   },
   output: {
-    path: "jekyll/scripts/",
+    path: "jekyll/_assets/js",
     filename: "[name].js"
   },
   module: {

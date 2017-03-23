@@ -13,5 +13,5 @@ permalink: /contact-me/
   <contact-form></contact-form>
 
 </div>
-<script src="{{site.baseurl}}/scripts/manifest.js"></script>
-<script src="{{site.baseurl}}/scripts/contact.js"></script>
+{% javascript manifest %}
+{% javascript contact %}
