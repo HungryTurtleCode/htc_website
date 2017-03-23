@@ -13,5 +13,7 @@ jekyll/scripts/archive.js
 .jekyll
 .bundle
 .sass-cache
+.asset-cache
+jekyll/.asset-cache
 node_modules
 npm-debug.log
