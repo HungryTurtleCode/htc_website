@@ -8,6 +8,8 @@ head-title: Part 7 AngularJS Quiz App Tutorial
 image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932298/Angular-quiz-part-7_hy22ev.jpg
 excerpt: Angular Services – Serving (Some) Of Your Needs Fully armed with the knowledge on how to hide and show HTML elements, we can now go ahead and create the quiz controller that we will show at the same time that …
 loop: false
+
+course-index: angular-quiz
 categories:
   - Projects
 tags:
@@ -145,31 +147,6 @@ Adrian
 
 ### Check Out The Whole Course Index
 
-1. [Getting Started]({{site.baseurl}}/projects/1-build-angular-quiz-app-scratch/)
-2. [Ng-Controller Directive and the (mis)use of $scope]({{site.baseurl}}/projects/2-ng-controller-scope/)
-3. [Looping around with the ng-repeat directive]({{site.baseurl}}/projects/3-ng-repeat-directive/)
-4. [Markup for the bootstrap modal]({{site.baseurl}}/projects/4-bootstrap-modal/)
-5. [Using Angular Filters to create real time search]({{site.baseurl}}/projects/5-angular-filters/)
-6. [The powerful ng-click directive]({{site.baseurl}}/projects/6-ng-click-directive/)
-7. *You Are Here*
-8. [What is this infamous dependency injection in Angular?]({{site.baseurl}}/projects/8-dependency-injection/)
-9. [Let&#8217;s Build A Factory]({{site.baseurl}}/projects/9-angular-factories/)
-10. [The ng-class directive]({{site.baseurl}}/projects/10-ng-class/)
-11. [More Bootstrap Markup &#8211; The Well]({{site.baseurl}}/projects/11-bootstrap-well/)
-12. [Adding some logic to the controller]({{site.baseurl}}/projects/12-controller-logic/)
-13. [Making things disappear with ng-if]({{site.baseurl}}/projects/13-ng-if/)
-14. [The $index property for ng-repeat]({{site.baseurl}}/projects/14-index-for-ng-repeat/)
-15. [Reusing code is always a good idea]({{site.baseurl}}/projects/15-reusing-code/)
-16. [Using Bootstrap to help with styling error messages]({{site.baseurl}}/projects/16-bootstrap-alerts/)
-17. [The final prompt after the quiz]({{site.baseurl}}/projects/17-final-prompt/)
-18. [Marking the quiz]({{site.baseurl}}/projects/18-marking-the-quiz/)
-19. [More dependency injection]({{site.baseurl}}/projects/19-angular-dependency-injection/)
-20. [Reusing and slightly modifying some previous Bootstrap]({{site.baseurl}}/projects/20-familiar-bootstrap/)
-21. [More than one way to use ng-class]({{site.baseurl}}/projects/21-function-with-ng-class/)
-22. [Another Angular Filter]({{site.baseurl}}/projects/22-angular-number-filter/)
-23. [More usage of Ng-if]({{site.baseurl}}/projects/23-angular-ng-if/)
-24. [Finishing The App]({{site.baseurl}}/projects/24-finished-angular-project/)
-
-
+{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

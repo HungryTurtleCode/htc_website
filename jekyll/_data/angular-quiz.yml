@@ -1,0 +1,77 @@
+- title: Getting Started
+  url: /projects/1-build-angular-quiz-app-scratch/
+
+- title: Ng-Controller Directive and the (mis)use of $scope
+  url: /projects/2-ng-controller-scope/
+
+- title: Looping around the the ng-repeat directive
+  url: /projects/3-ng-repeat-directive/
+
+- title: Markup for the Bootstrap modal
+  url: /projects/4-bootstrap-modal/
+
+- title: Using Angular Filters to create real time search
+  url: /projects/5-angular-filters/
+
+- title: The powerful ng-clikc directive
+  url: /projects/6-ng-click-directive/
+
+- title: Services in Angular make everything easier
+  url: /projects/7-angular-services/
+
+- title: What is this infamous dependency injection in Angular?
+  url: /projects/8-dependency-injection/
+
+- title: Let's build a Factory
+  url: /projects/9-angular-factories/
+
+- title: The ng-class directive
+  url: /projects/10-ng-class/
+
+- title: More Bootstrap markup - The Well
+  url: /projects/11-bootstrap-well/
+
+- title: Adding some logic to the controller
+  url: /projects/12-controller-logic/
+
+- title: Making things disappear with ng-if
+  url: /projects/13-ng-if/
+
+- title: The $index property for ng-repeat
+  url: /projects/14-index-for-ng-repeat/
+
+- title: Reusing code is always a good idea
+  url: /projects/15-reusing-code/
+
+- title: Using Bootstrap to help with styling error messages
+  url: /projects/16-bootstrap-alerts/
+
+- title: The final prompt after the quiz
+  url: /projects/17-final-prompt/
+
+- title: Marking the quiz
+  url: /projects/18-marking-the-quiz/
+
+- title: More dependency injection
+  url: /projects/19-angular-dependency-injection/
+
+- title: Reusing and slightly modifying some previous Bootstrap
+  url: /projects/20-familiar-bootstrap/
+
+- title: More than one way to use ng-class
+  url: /projects/21-function-with-ng-class/
+
+- title: Another Angular filter
+  url: /projects/22-angular-number-filter/
+
+- title: More usage of Ng-if
+  url: /projects/23-angular-ng-if/
+
+- title: Finishing the app
+  url: /projects/24-finished-angular-project/
+
+
+
+
+
+

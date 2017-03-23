@@ -1,0 +1,10 @@
+{% if page.course-index %}
+  {% assign lessonIndex = site.data.[{{page.course-index}}] %}
+  {% for lesson in lessonIndex %}
+  {% if lesson.url == page.url %}
+  {{forloop.index}}. *You Are Here*
+  {% else %}
+  {{forloop.index}}. [{{lesson.title}}]({{site.baseurl}}{{lesson.url}})
+  {% endif %}
+  {% endfor %}
+{% endif %}
