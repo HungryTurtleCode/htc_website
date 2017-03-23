@@ -10,7 +10,7 @@ class VideoController{
   }
   $onInit(){
     this.config = {
-      theme: '/css/videogular.min.css'
+      theme: window.videogularCss
     }
 
     this.autohide = true;

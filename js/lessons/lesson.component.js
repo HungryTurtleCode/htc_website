@@ -7,7 +7,7 @@ const LessonComponent = {
       <div class="sidebar-container">
         <div class="logo">
           <a href="/">
-            <img src="/img/mascot.png"/>
+            <img ng-src="{{::$ctrl.mascotImg}}"/>
             <h4>hungry<span class="turtle">turtle</span><span class="code">code</span></h4>
             <h6>A Sea Of Information</h6>
           </a>

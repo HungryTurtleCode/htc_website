@@ -7,6 +7,7 @@ class LessonController{
     this.userData = userData;
 
     this.lessonList = [];
+    this.mascotImg = window.mascotImg;
   }
   $onInit(){
     this.onStateChange();
