@@ -6,6 +6,8 @@ layout: course-sales
 image: https://angular.io/resources/images/logos/angular2/angular.svg
 excerpt: This course will be the one that tests whether of not the system is going to work or not…
 
+salesVideoId: yordL7Yczes
+
 price: 44
 lessons: 54
 skill: Beginner
@@ -28,6 +30,7 @@ tags:
   - AngularJS
   - Objects
 ---
+
 **60%+** of people who try to learn how to program end up quitting.
 
 Why?

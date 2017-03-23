@@ -6,6 +6,8 @@ layout: course-sales
 image: https://angular.io/resources/images/logos/angular2/angular.svg
 excerpt: This is the excerpt for the first test course that is going to be listed on the site. Feel free to read this if you have literally nothing else to do …
 
+salesVideoId: Bua8k_CcnuI
+
 price: 58
 lessons: 54
 skill: Beginner
