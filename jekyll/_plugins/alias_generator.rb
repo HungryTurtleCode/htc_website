@@ -27,6 +27,8 @@
 # Site Source: http://github.com/tsmango/tsmango.github.com
 # Plugin License: MIT
 
+@@mtimes = {}
+
 module Jekyll
 
   class AliasGenerator < Generator
