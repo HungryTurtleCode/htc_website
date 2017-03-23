@@ -49,6 +49,12 @@ twitter_username: hungryturtledev
 github_username:  adiman9
 github_org: HungryTurtleCode
 
+assets:
+  autoprefixer:
+    browsers:
+      - "last 3 versions"
+      - "IE > 9"
+
 # Build settings
 markdown: kramdown
 # markdown: redcarpet
