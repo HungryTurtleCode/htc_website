@@ -1,0 +1,133 @@
+checkout
+  font-size: 1rem
+
+  .list-area
+    min-height: calc(100vh - 25.1em)
+    +span-columns(8)
+
+    .empty-cart
+      font-size: 1.1em
+
+      a
+        text-decoration: none
+        color: $secondary-color
+        display: inline-block
+        margin-top: 0.6em
+        margin-bottom: 350px
+
+    cart-list
+      margin-bottom: 2em
+      display: block
+
+      .cart-item
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 1em 0
+        border-bottom: 1px solid #e3e3e3
+
+        .cart-img
+          width: 100px
+          border: none!important
+
+        a
+          font-size: 1.2em
+          text-decoration: none
+          color: inherit
+          transition: color 0.3s ease-in
+
+          &:hover
+            color: $secondary-color
+
+        .price
+          font-size: 2em
+
+        .remove-button
+          background: transparent
+          border: none
+          outline: none
+          color: red
+          font-weight: bold
+          font-size: 1.3em
+          cursor: pointer
+
+    .checkout-bottom
+      .total-price
+        font-size: 1.5em
+        text-align: right
+        margin-bottom: 2em
+
+  .pay-area
+    +span-columns(4)
+    font-size: 0.8em
+
+    .sign-in-btn
+      cursor: pointer
+      background: $secondary-color
+      padding: 1em 2em
+      border: none
+      outline: none
+      color: white
+      margin: 0 auto
+      display: block
+
+    h2
+      text-align: center
+      margin: 0 0 0.5em 0
+      padding: 0
+
+    .tabs
+      text-align: center
+
+      ul
+        display: inline
+        padding: 0
+
+        li
+          display: inline-block
+          list-style: none
+          padding: 1em 2em
+          cursor: pointer
+
+          &.active
+            background: $primary-color
+
+    .paypal-pay,
+    .stripe-pay
+      text-align: center
+
+      &.ng-enter
+        transition: opacity 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
+      button
+        margin-top: 2em
+        color: white
+        padding: 1em 3em
+        background: $secondary-color
+        border: none
+        outline: none
+        cursor: pointer
+        transition: background 0.3s ease
+
+        &:hover
+          background: shade($secondary-color, 20%)
+
+      .payment-field
+        margin: 0.7em 0
+
+        label
+          width: 100%
+          margin: 0 auto
+          display: block
+          text-align: left
+
+        input
+          width: 100%
+          padding: 0.5em
+
+    .stripe-pay
+      padding: 0 2em
+
+
+
+

@@ -1,0 +1,125 @@
+#sales-container
+  width: 1200px
+  margin: 1em auto
+  font-size: 1rem
+
+  a
+    text-decoration: none
+    color: $secondary-color
+    padding: 0 0.2em
+
+  .breadcrumbs
+    font-size: 0.9em
+
+  .sales-page
+
+    .h1
+      font-size: 1.5em
+      margin: 0.3em 0
+
+    .h2
+      font-size: 0.8em
+      margin: 0.3em 0
+      font-weight: 300
+
+    .top
+      margin: 1em 0 2em 0
+      +clearfix
+
+      .video
+        +span-columns(8)
+
+        iframe
+          width: 100%
+
+      .side
+        +span-columns(4)
+        font-size: 0.9em
+
+        buy-button
+          display: block
+          min-height: 115px
+
+          .buy-button-loading
+            padding-left: 50px
+            padding-top: 40px
+
+        .price
+
+          p
+            margin: 0
+            padding: 0
+
+          .amount
+            margin: 0
+            padding: 0
+            font-size: 2em
+            padding-left: 1.2em
+            font-weight: bold
+
+        .take-course
+          color: white
+          background: $primary-color
+          font-weight: bold
+          cursor: pointer
+          border: none
+          outline: none
+          padding: 1em 1.5em
+          margin: 0.4em 0 1em 2em
+
+          &.disabled-btn
+            cursor: default
+            background: green
+
+        .goto
+          padding-left: 4.2em
+
+          a
+            cursor: pointer
+
+        .items
+          list-style: none
+          font-size: 0.8em
+
+          li
+            margin: 0.5em 0
+
+            li
+              list-style: disc
+
+              a
+                cursor: pointer
+
+    .sales-main
+      +clearfix
+
+      .content
+        +span-columns(8)
+
+        .article
+          padding: 0 1em
+
+
+        .top-header
+          font-size: 1.4em
+          font-weight: bold
+          margin-top: 0
+          margin-bottom: 1.5em
+          text-align: center
+          background: $default-dark-color
+          margin-top: 1em
+          padding: 0.4em
+          color: $logo-base-color
+
+          .high
+            color: $highlight-color
+
+          .accent
+            color: $secondary-color
+
+      .sidebar
+        padding-top: 5em
+        padding-left: 1em
+        +span-columns(4)
+
+

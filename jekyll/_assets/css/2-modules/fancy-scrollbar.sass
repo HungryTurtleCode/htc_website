@@ -1,0 +1,38 @@
+// CUSTOM SCROLL BAR
+.u-fancy-scrollbar,
+pre
+  -webkit-overflow-scrolling: touch
+  -webkit-transform: translate3d(0,0,0)
+
+.u-fancy-scrollbar::-webkit-scrollbar
+  height: 9px
+  width: 9px
+
+.u-fancy-scrollbar::-webkit-scrollbar-button:end:increment,
+.u-fancy-scrollbar::-webkit-scrollbar-button:start:decrement
+  background: 0 0
+  display: none
+
+.u-fancy-scrollbar::-webkit-scrollbar-track-piece
+  // background: #D6DADC
+  background: #eee
+
+.u-fancy-scrollbar::-webkit-scrollbar-track-piece:vertical:start
+  border-radius: 5px 5px 0 0
+
+.u-fancy-scrollbar::-webkit-scrollbar-track-piece:vertical:end
+  border-radius: 0 0 5px 5px
+
+.u-fancy-scrollbar::-webkit-scrollbar-track-piece:horizontal:start
+  border-radius: 5px 0 0 5px
+
+.u-fancy-scrollbar::-webkit-scrollbar-track-piece:horizontal:end
+  border-radius: 0 5px 5px 0
+
+.u-fancy-scrollbar::-webkit-scrollbar-thumb:horizontal,
+.u-fancy-scrollbar::-webkit-scrollbar-thumb:vertical
+  background: tint($default-dark-color, 20%)
+  border-radius: 5px
+  display: block
+  height: 50px
+

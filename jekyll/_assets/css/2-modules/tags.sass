@@ -1,0 +1,23 @@
+.tags
+  +margin(1em 0)
+  font-size: 0.6em
+
+  .tag-box
+    margin-right: 0.9em
+    color: $default-dark-color
+    font-weight: bold
+    display: inline-block
+    background: #ddd
+    +padding(0.5em 0.9em 0.3em 0.9em)
+    border-radius: 0.3em
+    transition: background 0.3s ease-in-out
+
+    &:hover
+      background: shade(#ddd, 10%)
+
+    .tag-name
+      vertical-align: top
+
+    .tag-icon
+      height: 1.5em
+      margin-right: 0.5em

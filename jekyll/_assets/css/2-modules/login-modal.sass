@@ -1,0 +1,176 @@
+$border-radius: 0em
+
+.login-modal-container,
+htc-sign-in
+  z-index: 100
+  font-size: 1rem
+  +position(fixed, 0 0 0 0)
+  background: rgba(0,0,0,0.6)
+  // display: none
+  display: flex
+  justify-content: center
+  align-items: center
+
+  htc-sign-in
+    background: none
+    font-size: 0.9em
+
+  .modal
+    +clearfix
+    background: white
+    border-radius: $border-radius
+    box-shadow: 0 5px 15px rgba(0,0,0,.5)
+    width: 500px
+    max-width: 100%
+
+    .header
+      display: flex
+
+      button
+        flex: 0 0 50%
+        padding: 0.6em 0
+        outline: none
+        border: none
+        cursor: pointer
+        transition: background 0.4s ease
+        background: $primary-color
+        color: white
+        font-weight: bold
+        box-shadow: inset 2px -2px 10px rgba(0, 0, 0, 0.2)
+        margin-top: 0
+
+        &:first-child
+          border-top-left-radius: $border-radius
+
+        &:last-child
+          border-top-right-radius: $border-radius
+
+        &:hover
+          background: shade($primary-color, 30%)
+
+        &.active
+          box-shadow: none
+          font-weight: normal
+          background: white
+          color: #333
+
+    .container
+      margin-bottom: 0.2em
+      display: none
+      padding: 0.8em
+      color: #999
+      text-align: center
+
+      h4
+        font-weight: normal
+        font-size: 1.5em
+        margin: 0.5em 0
+
+      button
+        cursor: pointer
+
+      button, input
+        width: 100%
+        padding: 0.8em
+        border: 0
+        margin-bottom: 0.7em
+        // border-radius: $border-radius/2
+        border-radius: 0.2em
+        transition: background 0.3s ease
+        position: relative
+        z-index: 1
+
+        &.fb
+          background: $facebook
+          color: white
+
+          &:hover
+            background: shade($facebook, 10%)
+
+        &.gl
+          background: $google
+          color: white
+
+          &:hover
+            background: shade($google, 10%)
+
+        &.gh
+          background: #ddd
+
+          &:hover
+            background: shade(#ddd, 10%)
+
+      input
+        border: 1px solid #ddd
+
+      span
+        display: inline-block
+        margin: 1em 0
+
+      &.active
+        display: block
+
+      .user-pass
+        text-align: center
+
+        .divider
+          // margin: 1.5em 0 2em 0
+          margin: 0.7em 0 1em 0
+          position: relative
+          text-transform: uppercase
+          z-index: 0
+
+          &:before
+            content: ""
+            position: absolute
+            left: 0
+            top: 12px
+            background: #e5e5e5
+            height: 1px
+            width: 100%
+            z-index: -1
+
+          span
+            margin: 0
+            background: white
+            padding: 0 0.6em
+            display: inline-block
+
+        button
+          background-color: $primary-color
+          width: 50%
+          float: right
+          cursor: pointer
+          margin-top: 0.5em
+          transition: all 0.3s ease
+          margin-bottom: 0.5em
+          color: white
+          font-weight: bold
+
+          &:hover
+            background-color: shade($primary-color, 10%)
+
+        a
+          float: left
+          display: block
+          cursor: pointer
+          color: $secondary-color
+          font-size: 0.7em
+          margin-top: 3em
+
+
+htc-sign-in
+  font-size: 0.8rem
+  position: static
+  background: transparent
+  align-items: flex-start
+
+  .modal
+    width: 400px
+    box-shadow: 0 3px 10px rgba(0,0,0,.4)
+    margin-top: 1em
+    margin-bottom: 2em
+
+
+
+

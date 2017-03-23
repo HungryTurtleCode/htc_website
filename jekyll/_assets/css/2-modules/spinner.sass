@@ -1,0 +1,126 @@
+htc-spinner
+  height: 6em
+  font-size: 4px
+  display: block
+
+  .loading-spinner,
+  .loading-spinner:before,
+  .loading-spinner:after,
+    background: #ffffff
+    -webkit-animation: load1 1s infinite ease-in-out
+    animation: load1 1s infinite ease-in-out
+    width: 1em
+    height: 4em
+
+  .loading-spinner
+    color: #ffffff
+    text-indent: -9999em
+    margin: 1.5em auto
+    position: relative
+    -webkit-transform: translateZ(0)
+    -ms-transform: translateZ(0)
+    transform: translateZ(0)
+    -webkit-animation-delay: -0.16s
+    animation-delay: -0.16s
+
+    &:before,
+    &:after
+      position: absolute
+      top: 0
+      content: ''
+
+    &:before
+      left: -1.5em
+      -webkit-animation-delay: -0.32s
+      animation-delay: -0.32s
+
+    &:after
+      left: 1.5em
+
+  @-webkit-keyframes load1
+    0%,
+    80%,
+    100%
+      box-shadow: 0 0
+      height: 4em
+
+    40%
+      box-shadow: 0 -2em
+      height: 5em
+
+
+  @keyframes load1
+    0%,
+    80%,
+    100%
+      box-shadow: 0 0
+      height: 4em
+
+    40%
+      box-shadow: 0 -2em
+      height: 5em
+
+.submit
+  htc-spinner
+    padding: 0 6em
+    height: 4.8em
+
+.paypal-pay
+  htc-spinner
+    padding: 0 11.8em
+    height: 3.9em
+
+    .loading-spinner
+      margin: 0.5em auto
+
+.stripe-pay
+  htc-spinner
+    padding: 0 2.9em
+    height: 3.9em
+
+    .loading-spinner
+      margin: 0.5em auto
+
+$cart-loading-color: $default-dark-color
+cart-list,
+.buy-button-loading
+  htc-spinner
+    font-size: 0.7em
+
+    .loading-spinner
+      color: $cart-loading-color
+      background: $cart-loading-color
+
+      &:before,
+      &:after
+        background: $cart-loading-color
+
+.buy-button-loading
+  htc-spinner
+    font-size: 0.4em
+
+    .loading-spinner
+      margin: 0 0 0 9em
+
+$remove-color: $primary-color
+.remove-button
+  htc-spinner
+    width: 3.4em
+    font-size: 0.2em
+
+    .loading-spinner
+      color: $remove-color
+      background: $remove-color
+
+      &:before,
+      &:after
+        background: $remove-color
+
+comment-form
+  htc-spinner
+    padding: 0 19.2em
+    height: 4.9em
+
+    .loading-spinner
+      margin: 0.7em auto
+
