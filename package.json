@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently 'webpack -w' 'bundle exec jekyll serve --livereload --drafts'",
-    "build": "webpack && bundle exec jekyll build",
-    "deploy": "webpack && bundle exec jekyll build && firebase deploy"
+    "start": "export JEKYLL_ENV=development && concurrently 'webpack -w' 'bundle exec jekyll serve --livereload --drafts'",
+    "build": "export JEKYLL_ENV=production && webpack && bundle exec jekyll build",
+    "deploy": "export JEKYLL_ENV=production && webpack && bundle exec jekyll build && firebase deploy"
   },
   "repository": {
     "type": "git",
