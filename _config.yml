@@ -55,6 +55,11 @@ assets:
       - "last 3 versions"
       - "IE > 9"
 
+image_optim:
+  archive_dir: "_image_optim_archive"
+  cache_file: "_image_optim_cache.yml"
+  image_glob: "jekyll/**/*.{gif,png,jpg,jpeg,svg}"
+
 # Build settings
 markdown: kramdown
 # markdown: redcarpet
