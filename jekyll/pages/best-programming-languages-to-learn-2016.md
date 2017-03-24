@@ -9,9 +9,9 @@ image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,h_150/v14526149
 
 excerpt: Knowing the best programming language to learn in 2016 is hard. There are so many out there to choose from! Let's take a look at your options...
 
-fbimg: /img/best-programming-lang-fb.jpg
-googleplusimg: /img/best-programming-lang-gp.jpg
-twitterimg: /img/best-programming-lang-twitter.jpg
+fbimg: /assets/best-programming-lang-fb.jpg
+googleplusimg: /assets/best-programming-lang-gp.jpg
+twitterimg: /assets/best-programming-lang-twitter.jpg
 ---
 ## It&#8217;s time to learn a programming language!
 

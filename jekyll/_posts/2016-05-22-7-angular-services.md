@@ -16,9 +16,9 @@ tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /img/ng-quiz-app-fb.jpg
-twitterimg: /img/ng-quiz-app-twitter.jpg
-googleplusimg: /img/ng-quiz-app-fb.jpg
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 ---
 ## Angular Services &#8211; Serving (Some) Of Your Needs
 
