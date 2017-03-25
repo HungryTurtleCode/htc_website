@@ -113,7 +113,7 @@ const HeaderComponent = {
         <button
           ng-if="!$ctrl.loggedIn && !$ctrl.loading"
           ng-click="$ctrl.showSignIn = true"
-          class="auth-button">
+          class="auth-button signin">
             Log In / Register
         </button>
 
