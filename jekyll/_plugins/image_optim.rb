@@ -9,6 +9,11 @@ module Jekyll
     ###########################################################################
     # Entry point for the plugin.
     def generate(site)
+
+      if Jekyll.env == 'development'
+        return false
+      end
+
       # Read configuration. Defaults first, then overrides from _config.yml.
       config = YAML::load_file "_config.yml"
       config = config["image_optim"] || {}

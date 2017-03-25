@@ -68,6 +68,7 @@ gems:
   - jekyll-archives
   - jekyll-sitemap
   - jekyll-assets
+  - jekyll-minifier
 
 exclude:
   - Gemfile
