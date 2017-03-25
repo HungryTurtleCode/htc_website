@@ -70,4 +70,6 @@ class ContactFormController{
   }
 }
 
+ContactFormController.$inject = ['$http'];
+
 export default ContactFormController;
