@@ -1,8 +1,9 @@
 class userData{
-  constructor(firebaseService, auth, dataService) {
+  constructor(firebaseService, auth, dataService, $timeout) {
     this.fb = firebaseService;
     this.auth = auth;
     this.dataService = dataService;
+    this.$timeout = $timeout;
 
     this.user = {};
     this.courses = [];
@@ -206,10 +207,12 @@ class userData{
       return this.fb.getUserCart(this.user.user_id)
         .then(cart => {
           if(cart){
-            this.cart = Object.keys(cart).map(key => {
-              return cart[key];
+            return this.$timeout(() => {
+              this.cart = Object.keys(cart).map(key => {
+                return cart[key];
+              });
+              return this.cart;
             });
-            return this.cart;
           }
         });
     }else{
@@ -219,10 +222,12 @@ class userData{
             return this.fb.getUserCart(snap.uid)
               .then(cart => {
                 if(cart){
-                  this.cart = Object.keys(cart).map(key => {
-                    return cart[key];
+                  return this.$timeout(() => {
+                    this.cart = Object.keys(cart).map(key => {
+                      return cart[key];
+                    });
+                    return this.cart;
                   });
-                  return this.cart;
                 }
               });
           }
@@ -348,6 +353,6 @@ class userData{
   }
 }
 
-userData.$inject = ['firebaseService', 'auth', 'dataService'];
+userData.$inject = ['firebaseService', 'auth', 'dataService','$timeout'];
 
 export default userData;

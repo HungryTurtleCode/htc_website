@@ -37308,12 +37308,13 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var userData = function () {
-	  function userData(firebaseService, auth, dataService) {
+	  function userData(firebaseService, auth, dataService, $timeout) {
 	    _classCallCheck(this, userData);
 
 	    this.fb = firebaseService;
 	    this.auth = auth;
 	    this.dataService = dataService;
+	    this.$timeout = $timeout;
 
 	    this.user = {};
 	    this.courses = [];
@@ -37561,10 +37562,12 @@
 	      if (this.user.user_id) {
 	        return this.fb.getUserCart(this.user.user_id).then(function (cart) {
 	          if (cart) {
-	            _this7.cart = Object.keys(cart).map(function (key) {
-	              return cart[key];
+	            return _this7.$timeout(function () {
+	              _this7.cart = Object.keys(cart).map(function (key) {
+	                return cart[key];
+	              });
+	              return _this7.cart;
 	            });
-	            return _this7.cart;
 	          }
 	        });
 	      } else {
@@ -37572,10 +37575,12 @@
 	          if (snap && snap.uid) {
 	            return _this7.fb.getUserCart(snap.uid).then(function (cart) {
 	              if (cart) {
-	                _this7.cart = Object.keys(cart).map(function (key) {
-	                  return cart[key];
+	                return _this7.$timeout(function () {
+	                  _this7.cart = Object.keys(cart).map(function (key) {
+	                    return cart[key];
+	                  });
+	                  return _this7.cart;
 	                });
-	                return _this7.cart;
 	              }
 	            });
 	          }
@@ -37726,7 +37731,7 @@
 	  return userData;
 	}();
 
-	userData.$inject = ['firebaseService', 'auth', 'dataService'];
+	userData.$inject = ['firebaseService', 'auth', 'dataService', '$timeout'];
 
 	exports.default = userData;
 
