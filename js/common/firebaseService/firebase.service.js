@@ -367,7 +367,7 @@ class FirebaseService{
       .then(comment => {
         owners.forEach(owner => {
 
-          if(owner === comment.user_id){
+          if(owner !== comment.user_id){
             let commentReplies = this.ref
                                   .child('users')
                                   .child(owner)
