@@ -33,13 +33,19 @@ const LessonContent = {
       <div class="tab-content">
         <div class="article post-page" ng-show="$ctrl.activeTab === 0" analytics analytics-scroll>
           <div ng-bind-html="$ctrl.articleTrusted"></div>
-          <button ng-click="$ctrl.nextLesson()" ng-if="!$ctrl.checkIfLastLesson()">
-            Next Lesson
-          </button>
-          <button
-            ng-click="$ctrl.complete()">
-              {{$ctrl.completeText}}
-          </button>
+          <div class="bottom-buttons">
+            <button
+              ng-click="$ctrl.nextLesson()"
+              ng-if="!$ctrl.checkIfLastLesson()"
+              class="next">
+                Next Lesson
+            </button>
+            <button
+              class="complete"
+              ng-click="$ctrl.complete()">
+                {{$ctrl.completeText}}
+            </button>
+          </div>
         </div>
         <div class="discussion" ng-show="$ctrl.activeTab === 1">
           <post-comment></post-comment>

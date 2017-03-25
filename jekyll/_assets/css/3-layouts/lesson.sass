@@ -205,8 +205,41 @@
             margin: 0 auto
             width: 65.88078%
 
+            @media screen and (min-width: 1500px)
+              width: 50%
+
             &.ng-hide-remove
               transition: opacity 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
+          .resources
+            a
+              color: $secondary-color
+              text-decoration: none
+              transition: color 0.3s ease-in
+
+              &:hover
+                color: shade($secondary-color, 20%)
+
+          .bottom-buttons
+            +clearfix
+            font-size: 0.7em
+            margin-top: 100px
+
+            .next
+              float: right
+              background: shade($primary-color, 20%)
+
+            .complete
+              float: left
+              background: green
+
+            .next,
+            .complete
+              color: white
+              padding: 1em 2em
+              border: none
+              outline: none
+              cursor: pointer
 
 
 .state-loading
