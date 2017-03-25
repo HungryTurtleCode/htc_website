@@ -8,7 +8,7 @@ permalink: /about-me/
 
 ## Who Am I? And What Is Hungry Turtle Code?
 
-![Adrian Henry - Hungry Turtle Code](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_375/v1452546933/File_007_npha3t.webp){: class="alignright" width="375" height="493"}
+![Adrian Henry - Hungry Turtle Code]({% asset_path adrian_portrait %}){: class="alignright" width="375" height="493"}
 
 I will start with myself. My name is Adrian Henry and I founded Hungry Turtle Code. I am a 23 year old currently living in Ireland.
 
