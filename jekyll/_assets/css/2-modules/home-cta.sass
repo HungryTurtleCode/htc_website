@@ -1,0 +1,17 @@
+$harm-primary: harmonious-mix($secondary-color, $primary-color)
+$neut1-primary: mix-neutral($harm-primary)
+$neut2-primary: lighten($neut1-primary, 40%)
+
+.cta
+  background: $neut2-primary
+  margin-bottom: 2em
+
+  .cont
+    width: 1200px
+    padding: 2em
+    margin: 0 auto
+
+  h1
+    color: pick-contrast($neut2-primary)
+    margin: 0
+    padding: 0
