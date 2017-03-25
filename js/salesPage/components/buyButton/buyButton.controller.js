@@ -68,7 +68,7 @@ class BuyButtonController{
                                   {
                                       content_ids: [loc],
                                       content_type: type,
-                                      value: this.courseData.price.toFixed(2),
+                                      value: parseInt(this.courseData.price).toFixed(2),
                                       currency: 'USD'
                                   },
                                   'content_type');
