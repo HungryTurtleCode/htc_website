@@ -1,11 +1,22 @@
 $border-radius: 0em
 
+login-modal
+  &.ng-enter
+    z-index: 100
+    display: block
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    transition: opacity 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
 .login-modal-container,
 htc-sign-in
   z-index: 100
   font-size: 1rem
   +position(fixed, 0 0 0 0)
-  background: rgba(0,0,0,0.6)
+  background: rgba(0,0,0,0.8)
   // display: none
   display: flex
   justify-content: center
