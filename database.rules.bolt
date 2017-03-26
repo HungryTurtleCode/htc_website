@@ -37,11 +37,11 @@ path /users/{id}/{data} {
   read() { isCurrentUser(id) }
 }
 path /users/{id}/cart {
-  read() { isCurrentUser(id) }
+  read() { isCurrentUser(id) || isNodeServer() }
+  write() { isNodeServer() }
 }
 path /users/{id}/cart/{item} {
   write() { isCurrentUser(id) }
-  read() { isCurrentUser(id) }
 }
 path /users/{id}/complete-lessons {
   read() { isCurrentUser(id) }
@@ -67,6 +67,14 @@ path /users/{id}/completed {
 path /users/{id}/completed/{data} {
   write() { isCurrentUser(id) }
 }
+path /users/{id}/courses/{data} {
+  read() { isNodeServer() || isCurrentUser(id) }
+  write() { isNodeServer() }
+}
+path /users/{id}/enrolled/{course} {
+  read() { isNodeServer() || isCurrentUser(id) }
+  write() { isNodeServer() }
+}
 
 /*
  * Helpers
@@ -76,4 +84,7 @@ isSignedIn() { auth != null }
 isAdmin() { isSignedIn() && root.admins[auth.uid] == true }
 isAdminWrite() { isSignedIn() && prior(root.admins[auth.uid] == true) }
 isEnrolled(course) { isSignedIn() && root.users[auth.uid].enrolled[course] == true }
+isNodeServer() { auth.uid == 'node-server' }
+
+
 
