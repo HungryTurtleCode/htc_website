@@ -83,7 +83,7 @@ exports.setCommentNotification = function(owners, replyLoc, lesson){
                     }
                     var page_name = slug[slug.length - 1];
                     slug.unshift('');
-                    comment.location = slug.join('');
+                    comment.location = slug.join('/');
                     comment.page_name = page_name.split('-').join(' ');
                     comment.notif_id = newReply.key;
 
