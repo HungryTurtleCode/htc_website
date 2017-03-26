@@ -3,6 +3,7 @@ var videoAPI = require('./aws/video.js');
 var purchase = require('./purchase/purchase.js');
 var contact = require('./contact/contact.js');
 var activeCampaign = require('./activeCampaign/ac.js');
+var user = require('./user/index.js');
 var express = require('express');
 
 var app = express();
@@ -16,6 +17,7 @@ app.post('/acSubscribe', activeCampaign.subscribe);
 app.post('/contact', contact);
 app.post('/paypalBuy', purchase.paypalCharge);
 app.post('/getVideo', videoAPI);
+app.post('/commentNotif', user.commentNotification);
 app.get('/paypal', purchase.paypalExecute);
 app.get('/', common.gethandler)
 
