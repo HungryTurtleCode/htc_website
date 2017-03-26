@@ -43,6 +43,12 @@ path /users/{id}/cart {
 path /users/{id}/cart/{item} {
   write() { isCurrentUser(id) }
 }
+path /users/{id}/notifications {
+  read() { isCurrentUser(id) || isNodeServer() }
+}
+path /users/{id}/notifications/{data} {
+  write() { isCurrentUser(id) || isNodeServer() }
+}
 path /users/{id}/complete-lessons {
   read() { isCurrentUser(id) }
 }
