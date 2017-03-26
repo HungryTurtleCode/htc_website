@@ -346,51 +346,12 @@ class FirebaseService{
         });
     });
   }
-  getCommentOwner(loc, comment){
-    return this.ref
-      .child('comments')
-      .child(loc)
-      .child(comment)
-      .child('user_id')
-      .once('value')
-      .then(snap => snap.val());
-  }
   getSingleComment(loc){
     return this.ref
       .child('comments')
       .child(loc)
       .once('value')
       .then(snap => snap.val());
-  }
-  setCommentNotifications(owners, replyLoc, lesson){
-    this.getSingleComment(replyLoc)
-      .then(comment => {
-        owners.forEach(owner => {
-
-          if(owner !== comment.user_id){
-            let commentReplies = this.ref
-                                  .child('users')
-                                  .child(owner)
-                                  .child('notifications');
-
-            let newReply = commentReplies.push();
-
-            comment.notification_type = 'comment_reply';
-            let slug = replyLoc.split('/').splice(0, 2);
-            if(lesson){
-              slug.unshift('lessons/#!')
-            }
-            let page_name = slug[slug.length - 1];
-            // slug.push('');
-            slug.unshift('');
-            comment.location = slug.join('/');
-            comment.page_name = page_name.split('-').join(' ');
-            comment.notif_id = newReply.key;
-
-            newReply.set(comment);
-          }
-        });
-      });
   }
   markNotificationRead(user, id){
     this.ref

@@ -3,6 +3,13 @@ class DataService{
     this.$http = $http;
     this.url = 'http://138.197.119.94';
   }
+  setCommentNotifications(loc, replyKey, replyChain, lesson){
+    return this.$http.post(`${this.url}/commentNotif`, {loc, replyKey, replyChain, lesson})
+      .then(response => {
+        console.log('DONE COMMENT NOTIF');
+        return response.data;
+      });
+  }
   getSignedLessonVideo(user, video){
     return this.$http.post(`${this.url}/getVideo`, {video, user})
       .then(response => {

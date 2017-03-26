@@ -313,25 +313,7 @@ class userData{
     loc.push('');
     loc = loc.join('/');
 
-    let ownersSet = new Set();
-    let count = 0;
-
-    replyChain.forEach((reply, index) => {
-      if(index > 0){
-        loc = loc + replyChain[index - 1] + '/replies/';
-      }
-      this.fb.getCommentOwner(loc, reply)
-        .then(owner => {
-          ownersSet.add(owner);
-          count++;
-
-          if(count === replyChain.length){
-            let newReplyLoc = loc + reply + '/replies/' + replyKey;
-            let ownersArr = Array.from(ownersSet);
-            this.fb.setCommentNotifications(ownersArr, newReplyLoc, lesson);
-          }
-        });
-    });
+    this.dataService.setCommentNotifications(loc, replyKey, replyChain, lesson);
   }
   setUserData(data){
     if(!this.user.user_id){return Promise.reject('unknown user')}
