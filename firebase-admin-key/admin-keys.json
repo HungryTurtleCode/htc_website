@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "hungry-turtle-code",
+    "private_key_id": "59780c095f2c917fa913e68f15b672c6ab2aaeef",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCzRV7M0Suj0epE\nyYcjI/04+66v1lqhkVAQKvXwVyKS1QK0a/AfptLxqMx3eRVwsNmZlKpIFNByY9/s\nLHucY1lrhmcZpAFFfIx8SPc2++XCCsc3RE0wxM9RYfMZKmD6E39D/Tdo6+VUTyVk\n5xZHwkKVWFAukN6f7/btUTNcwuYTU4HiounOkONCMdNcspLa760kv+OiQ5s8iwPY\nK3DVRkQ9tqP0CfdI/UOEWQLNXr4LorjJhO17GiUb0hTebIUZaToDJZavGb6X1yBa\nmvYoP+CcEb89IqmyqKXbOrW9KNc0nurXfmR3gDrEcFUVfDOsAONtRQYntlFyzWM2\nWhO6LlOBAgMBAAECggEAGBwmScl/4wJiTWoFILbAYZ+HuOJNQhl2+RWuCerOHY1E\nVduGadtX12RqS08fkQ5X1Y3m8NbLyfagsPSyky/RYOKsjwg9m4jKpBR0GxL5rYUh\nkc8/ymVNtJZFyYankDp7DTvK7fN73kDeuJlTp8b6iXddIUYeisgNH5GiJMGZi9Of\nkJkLJb7aIWvCeVvhlE+qdoA7lUIOW2WnIe7zOnaYCBOppodObVA1DOnmhIop0zHi\n+A2djCV98G5wf2puHAgGHwP68c5MPoeWnQkCK1m9vz39GvnevrUcFGIIgf7riWdx\n1bhWZRfG78DsJ8FjmYo0MgkhX+FzXi46fXDBsfKjuQKBgQDkXOxVqUt7QnAShjh4\nOyIoIVVyeGG92CXM8/5BA+pRY9t372XF/74jc6RKBdg6Z1RU5cWcGKnbDo8Y9VvV\np6IpmSHIlcwC+ogxEv1mBSRZ1czztjgeQ5XgmXrKvN/fhoaEOtZQ5pHFc+7bvnpC\nnwXovC7wgIUCjqO/SIpoEkF1HwKBgQDI934fiYiPqor6XzWIAEDN+AKTZJ8D3P0a\nUsa9zitfHDP/odyR0A29G0AnIvA58ewKQmqE29C3FnyjywGJrEUOPBAt5PyyWq9F\nlR4jU0QoPAYMYoYdvos5n+jJe5E+iirlNofGf3/pzB/FL1iDd5SEai2+fVgiOzE7\nB3NVX2uDXwKBgQCNKePuD/jY+PjOeqntqKA0rmZjnIbPFA5J44oIJqNyLIg+W35O\nJwkiYRntqC9B6x32XRMKqzRUdWt/wixCpp1XmZGIrRCvxq7ppxN9PTB7V+6ZuMp3\n6s97R2TgbmD1i/MbSkOxPtZdeIzuyZBKHoNImwtpIAkYy5PtaqokKyTLgQKBgER8\ng1DAD/fVyLL2S0njvDH0+Pu96KrqXp7f4rbAUeuBsv7E7GQMoQH3DW/I6lD07tm4\nNJC+UGx0j1lKT2XZfVcShPj+9lbZrK1r2e9z6uBDRFRoJwhv7QZgRnaTU7YaY+/l\nG3Q78x174L/UGLgEwmo1vQ0TrjtMLMTPDzDi6cLFAoGARIBuzFX3kkwSv2FEvMaW\nKW4WwGPEbo+bG/C+1NAfKB+DZAX3fUIDxAGRoWUHRYG6bTXjA1oEO7SJM7ADBrWm\nYIHxwIOWrOobP3BtLYgFITXrH3RClzo5/EPuYJ86eH2Px/Vylmv0r+RRMz5AWRSO\nzoLMCZKtr9y1GMGww9X5HIs=\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-wc1uq@hungry-turtle-code.iam.gserviceaccount.com",
+    "client_id": "101025503897133977655",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://accounts.google.com/o/oauth2/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-wc1uq%40hungry-turtle-code.iam.gserviceaccount.com"
+}

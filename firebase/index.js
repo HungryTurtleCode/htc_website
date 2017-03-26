@@ -1,11 +1,13 @@
-var firebase = require('firebase');
+var firebase = require('firebase-admin');
+
+var serviceAccount = require("../firebase-admin-key/admin-keys.json");
 
 var config = {
-  apiKey: "AIzaSyCYYCrku-CpvJ56JyNfZJtXqlmbZnwEPpo",
-  authDomain: "hungry-turtle-code.firebaseapp.com",
-  databaseURL: "https://hungry-turtle-code.firebaseio.com",
-  storageBucket: "hungry-turtle-code.appspot.com",
-  messagingSenderId: "945246952572"
+    credential: firebase.credential.cert(serviceAccount),
+    databaseURL: "https://hungry-turtle-code.firebaseio.com",
+    databaseAuthVariableOverride: {
+        uid: "node-server"
+    }
 };
 firebase.initializeApp(config);
 
