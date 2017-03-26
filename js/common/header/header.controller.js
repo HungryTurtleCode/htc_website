@@ -52,6 +52,7 @@ class HeaderController{
     window.location.href = '/checkout';
   }
   clickNotificationItem(item){
+    if(!item.location.includes('#!')) item.location += '/#!/';
     this.userData.markNotificationRead(item.notif_id);
     if(item.notification_type === 'comment_reply'){
       window.location.href = item.location + '?comment=' + item.firebase_id;
