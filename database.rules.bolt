@@ -1,4 +1,79 @@
 path / {
-  read() { true }
-  write() { true }
+  read() { isAdmin() }
+  write() { isAdminWrite() }
 }
+
+path /active-campaign/{id} {
+  read() { isCurrentUser(id) }
+}
+
+path /active-campaign/{id}/{email} {
+  write() { isCurrentUser(id) }
+}
+
+path /comments/{course}/{lesson} {
+  read() { true }
+}
+path /comments/{course}/{lesson}/{comment} {
+  create() { isSignedIn() }
+  update() { isSignedIn() }
+
+  // TODO validate the data
+}
+
+path /courses/{course}/lessons {
+  read() { true }
+}
+
+path /courses/{course}/meta/{data} {
+  read() { true }
+}
+
+path /premium/{course}/{lesson} {
+  read() { isEnrolled(course) }
+}
+
+path /users/{id}/{data} {
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/cart {
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/cart/{item} {
+  write() { isCurrentUser(id) }
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/complete-lessons {
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/complete-lessons/{course}/{lesson} {
+  write() { isCurrentUser(id) }
+}
+path /users/{id}/userInfo {
+  write() { isCurrentUser(id) }
+  read() { isCurrentUser(id) }
+
+  // TODO validate info
+}
+path /users/{id}/bookmarked {
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/bookmarked/{data} {
+  write() { isCurrentUser(id) }
+}
+path /users/{id}/completed {
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/completed/{data} {
+  write() { isCurrentUser(id) }
+}
+
+/*
+ * Helpers
+ */
+isCurrentUser(uid) { isSignedIn() && auth.uid == uid }
+isSignedIn() { auth != null }
+isAdmin() { isSignedIn() && root.admins[auth.uid] == true }
+isAdminWrite() { isSignedIn() && prior(root.admins[auth.uid] == true) }
+isEnrolled(course) { isSignedIn() && root.users[auth.uid].enrolled[course] == true }
+
