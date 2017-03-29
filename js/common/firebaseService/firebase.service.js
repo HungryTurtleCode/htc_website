@@ -2,9 +2,7 @@ import firebase from 'firebase';
 import config from './config';
 
 class FirebaseService{
-  constructor($state) {
-    this.$state = $state;
-
+  constructor() {
     this.ref = firebase.database().ref();
     this.storageRef = firebase.storage().ref();
   }
@@ -238,7 +236,8 @@ class FirebaseService{
       }else if(course){
         this.getFirstLessonName(course)
           .then(name => {
-            this.$state.go('lesson', {course: course, lesson: name})
+            // this.$state.go('lesson', {course: course, lesson: name})
+            window.location.href = '/lessons/#!/' + course + '/' + name;
           });
       }else{
         reject('course and lesson not specified');
@@ -309,7 +308,8 @@ class FirebaseService{
       }else if(course){
         this.getFirstLessonName(course)
           .then(name => {
-            this.$state.go('lesson', {course: course, lesson: name})
+            // this.$state.go('lesson', {course: course, lesson: name})
+            window.location.href = '/lessons/#!/' + course + '/' + name + '/';
           });
       }else{
         reject('course and lesson not specified');
@@ -400,6 +400,6 @@ class FirebaseService{
   }
 }
 
-FirebaseService.$inject = ['$state'];
+FirebaseService.$inject = [];
 
 export default FirebaseService;
