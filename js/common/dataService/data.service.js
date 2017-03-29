@@ -1,7 +1,8 @@
 class DataService{
   constructor($http) {
     this.$http = $http;
-    this.url = 'http://138.197.119.94';
+    // this.url = 'https://138.197.119.94';
+    this.url = 'https://api.hungryturtlecode.com';
   }
   setCommentNotifications(loc, replyKey, replyChain, lesson){
     return this.$http.post(`${this.url}/commentNotif`, {loc, replyKey, replyChain, lesson})
