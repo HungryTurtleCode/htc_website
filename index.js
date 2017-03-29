@@ -47,4 +47,14 @@ http.createServer((req, res) => {
 }).listen(80, () => console.log('running on port 80'));
 
 // HTTPS server
-https.createServer(options, app).listen(443, () => console.log('Secure SSL server running on port 443'));
+https.createServer(options, app).listen(443, err => {
+    if(err) console.log(err); 
+
+    // get uid of the user who envoked the script
+    var uid = parseInt(process.env.SUDO_UID);
+
+    // revert node's uid back to the orignal user so it no longer has sudo priviledges
+    if(uid) process.setuid(uid);
+
+    console.log('Secure SSL server running on port 443');
+});
