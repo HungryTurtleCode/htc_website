@@ -1,8 +1,9 @@
 class commentController{
-  constructor($sce, firebaseService, $location) {
+  constructor($sce, firebaseService, $location, userData) {
     this.$sce = $sce;
     this.fb = firebaseService;
     this.$location = $location;
+    this.userData = userData;
 
     // this.loc = this.getPageLocations();
   }
@@ -32,7 +33,8 @@ class commentController{
     return this.$sce.trustAsHtml(name.join('').toLowerCase());
   }
   vote(type){
-    if(this.voted === type){return;}
+    if(this.voted === type) return;
+    if(this.userData.user.user_id === this.data.user_id) return;
 
     let score = this.data.score;
 
@@ -78,6 +80,6 @@ class commentController{
   }
 }
 
-commentController.$inject = ['$sce', 'firebaseService', '$location'];
+commentController.$inject = ['$sce', 'firebaseService', '$location', 'userData'];
 
 export default commentController;
