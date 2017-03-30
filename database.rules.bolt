@@ -73,8 +73,11 @@ path /users/{id}/completed {
 path /users/{id}/completed/{data} {
   write() { isCurrentUser(id) }
 }
+path /users/{id}/courses {
+  read() { isCurrentUser(id) }
+}
 path /users/{id}/courses/{data} {
-  read() { isNodeServer() || isCurrentUser(id) }
+  read() { isNodeServer() }
   write() { isNodeServer() }
 }
 path /users/{id}/enrolled/{course} {
