@@ -1,16 +1,18 @@
 <!-- Header.html -->
-<header>
+<header class="{% if page.layout == 'post-sidebar' %}lesson-sidebar{% endif %}">
 
   <div class="header-container">
     <!--<a href="/">
       {% img mascot class:'mascot' alt:'Hungry Turtle Code Logo' %}
       {% img logo class:'logo' alt:'Hungry Turtle Code Logo Text. Learn to write code, one line at a time' %}
     </a>-->
-    <a href="/">
-      <h4>hungry<span class="turtle">turtle</span><span class="code">code</span>
-      </h4>
-      {% img mascot class:'mini-mascot' alt:'Hungry Turtle Code Logo' %}
-    </a>
+    {% if page.layout != 'post-sidebar' %}
+      <a href="/">
+        <h4>hungry<span class="turtle">turtle</span><span class="code">code</span>
+        </h4>
+        {% img mascot class:'mini-mascot' alt:'Hungry Turtle Code Logo' %}
+      </a>
+    {% endif %}
     <nav>
       <ul>
         {% for nav in site.data.navigation.primary %}
