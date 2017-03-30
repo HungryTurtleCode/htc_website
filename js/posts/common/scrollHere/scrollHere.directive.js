@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-const scrollHere = ($timeout) => ({
+const scrollHere = ($timeout, $location) => ({
   restrict: 'A',
   scope: {
     scrollHere: '<'
@@ -13,14 +13,18 @@ const scrollHere = ($timeout) => ({
     x  = w.innerWidth || de.clientWidth || db.clientWidth,
     y  = w.innerHeight|| de.clientHeight|| db.clientHeight;
 
-    if($scope.scrollHere){
-      $timeout(() => {
-        document.body.scrollTop = $element[0].getBoundingClientRect().top - 100;
-      });
-    }
+    $scope.$watch('scrollHere', newVal => {
+      if(newVal){
+        $location.search('comment', null);
+        $timeout(() => {
+          document.body.scrollTop = $element[0].getBoundingClientRect().top - 100;
+        });
+      }
+    });
+
   }
 });
 
-scrollHere.$inject = ['$timeout'];
+scrollHere.$inject = ['$timeout', '$location'];
 
 export default scrollHere;

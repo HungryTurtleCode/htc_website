@@ -14,6 +14,12 @@ class PostCommentController{
     if(this.$location.search() && this.$location.search().comment){
       this.highlight = this.$location.search().comment;
     }
+
+    this.$scope.$watch(() => this.$location.search(), (newVal, oldVal) => {
+      if(newVal.comment){
+        this.highlight = newVal.comment;
+      }
+    });
   }
   triggerContentView(){
     let loc = this.getPageLocations() || '';

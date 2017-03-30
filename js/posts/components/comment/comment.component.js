@@ -11,7 +11,7 @@ const CommentComponent = {
   template: `
     <div class="comment-cont" ng-class="{'reply': $ctrl.data.isReply, 'comment-highlight': $ctrl.highlight === $ctrl.data.firebase_id}" scroll-here="$ctrl.highlight === $ctrl.data.firebase_id">
       <div class="header">
-        <div class="image-cont" style="background: url({{$ctrl.data.image}}); background-size: cover"></div>
+        <div class="image-cont" style="background: url({{::$ctrl.data.image}}); background-size: cover"></div>
         <span class="name" ng-bind-html="$ctrl.formattedName()"></span>
         <span class="date">{{::$ctrl.data.date | date}}</span>
 
