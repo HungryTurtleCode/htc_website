@@ -4,6 +4,7 @@ import firebaseService from '../../common/firebaseService/';
 import userData from '../../common/userData';
 import auth from '../../common/auth';
 import analytics from '../../common/analytics';
+import lessonList from '../../common/lessonListSidebar';
 
 import scroll from './scrollHere';
 
@@ -14,6 +15,7 @@ import spinner from '../../common/spinner';
 const CommonModule = angular
   .module('post.common.module', [
     firebaseService,
+    lessonList,
     userData,
     spinner,
     scroll,
