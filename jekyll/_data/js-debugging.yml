@@ -1,5 +1,4 @@
 - name: Javascript Debugging
-  show: true
   lessons:
     - title: Debug() Method
       length: '4:52'
