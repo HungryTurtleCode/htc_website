@@ -2,25 +2,24 @@
 title: Console.time() – Javascript Debugging Tips
 date: 2016-07-29T14:08:37+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /tips-tricks/console-time/
 head-title: Console.time() - Javascript Debugging
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1469797935/JavaScript_DebuggngTip_q5dxwx.jpg
 excerpt: Just In Time – Console.time I have seen some amazing ways of timing how long javascript code takes to run. Taking timestamps and comparing them is a common way. But console.time is method in the console API that allows you …
+course-index: js-debugging
+videoID: h807oIC66BY
 categories:
   - Tutorials
 tags:
   - Javascript
+  - Debugging
 ---
 ## Just In Time &#8211; Console.time
 
 I have seen some amazing ways of timing how long javascript code takes to run. Taking timestamps and comparing them is a common way. But console.time is method in the console API that allows you to do exactly that with not other hassle.
 
 This isn&#8217;t the first Javascript debugging tip I have given. You can check out [console.table]({{site.baseurl}}/tutorials/console-log-table/){: target="_blank"}<!--_--> and [console.trace]({{site.baseurl}}/tutorials/console-trace/){: target="_blank"}<!--_-->, if you haven&#8217;t already.
-
-### Video Tutorial
-
-{% include video-embed.html videoID="h807oIC66BY" %}
 
 Starting off, here is the very boring HTML that I started with.
 

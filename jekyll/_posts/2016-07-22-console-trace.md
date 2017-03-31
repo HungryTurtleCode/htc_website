@@ -2,15 +2,18 @@
 title: 'Console.trace() - Javascript Debugging Tips'
 date: 2016-07-22T15:47:38+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /tips-tricks/console-trace/
 head-title: Console.trace() - Javascript Debugging
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1469193480/JavaScript_DebuggngTip_1_tgpysg.jpg
 excerpt: Little Known But Powerful Tool – console.trace() A while ago I released a post and a video about using console.table as part of your javascript debugging arsenal. I got a great reception from it and many people said they where …
+course-index: js-debugging
+videoID: QuO0UDkW2rk
 categories:
   - Tutorials
 tags:
   - Javascript
+  - Debugging
 ---
 ## Little Known But Powerful Tool &#8211; console.trace()
 
@@ -23,12 +26,6 @@ A few weeks ago, an [article popped up on Medium](https://medium.com/outsystems
 This post will be the start of a mini series that will be focusing on different tools that JavaScript developers can use to speed up their debugging workflow.
 
 I wanted to start with console.trace because it is such a powerful tool that has a huge range of useful applications and I know it has certainly saved me a ton of time over my career.
-
-## Video, As Always
-
-As always, there is an accompanying video to go along with this post, so pick your preferred method of getting the information.
-
-{% include video-embed.html videoID="QuO0UDkW2rk" %}
 
 Starting off, I just created a simple HTML structure that will allow us to call a [javascript]({{site.baseurl}}/tags/javascript/){: target="_blank"}<!--_--> file. This isn&#8217;t interesting, but I&#8217;ll show you the code anyway.
 

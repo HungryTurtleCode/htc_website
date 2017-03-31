@@ -2,14 +2,17 @@
 title: 'Console.table() - Javascript Debugging Tips'
 date: 2016-01-30T20:40:06+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /tips-tricks/console-log-table/
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1454187383/JavaScript-DebuggngTip_yremrj.jpg
 excerpt: Is console.log The Only Option? Like me, many of you probably use console.log() to debug your javascript code a lot of the time. The problem isn’t big enough to require the setting of breakpoints
+course-index: js-debugging
+videoID: zi9JA9LLIcM
 categories:
   - Tutorials
 tags:
   - Javascript
+  - Debugging
 ---
 ## Is console.log The Only Option?
 
@@ -23,11 +26,7 @@ Some of you may already know about console.log()&#8217;s lesser known brother, c
 
 I don&#8217;t really know why it is such an obscure thing because it is extremely useful.
 
-Below is a video tutorial where I go through using console.table(). As always, there will be a write up about it below, but I urge you to take a look at the video just to see it in action.
-
 ## Console.log Debugging Or Console.table()?
-
-{% include video-embed.html videoID="zi9JA9LLIcM" %}
 
 So this will just be a quick one today. As you may already know, or have already guessed, console.table allows you to print out arrays and objects to the console.
 
