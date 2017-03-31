@@ -3,6 +3,10 @@
   +margin(1.7em 0)
   padding: 0 1em
 
+  img
+    max-width: 100%
+    height: auto
+
   a
     color: $secondary-color
     text-decoration: none
@@ -17,13 +21,15 @@
 
   h1
     font-size: 1.5em
-    +margin(0.5em 0)
+    +margin(0.5em 0 0.4em 0)
 
   h2
     color: $primary-color
 
   .post-author-tag
     font-size: 0.7em
+    display: block
+    margin-bottom: 0.7em
 
     a
       font-weight: normal
@@ -72,6 +78,18 @@
 
     @media screen and (max-width: 800px)
       width: 95%
+
+    .lesson-content-article,
+    #content-end
+      margin: 0 auto
+      width: 70%
+
+      @media screen and (max-width: 1500px)
+        width: 90%
+        margin: 1.7em auto
+
+      @media screen and (max-width: 1200px)
+        width: 95%
 
 
 

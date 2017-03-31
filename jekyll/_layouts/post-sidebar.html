@@ -8,15 +8,17 @@ layout: default
 
       {% include breadcrumbs.html data=page %}
 
-      <h1>{{page.title}}</h1>
+      <h1>
+        {{page.title}}
+        {% include tags.html data=page %}
+      </h1>
 
       {% include author-tag.html data=page %}
 
-      {% include tags.html data=page %}
+      {% include video-embed.html videoID=page.videoID %}
 
-      {% include share.html %}
-
-      <div analytics-scroll>
+      <div analytics-scroll class="lesson-content-article">
+        {% include share.html %}
         {{content}}
       </div>
 

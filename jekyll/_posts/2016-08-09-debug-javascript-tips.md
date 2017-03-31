@@ -7,20 +7,19 @@ alias: /tips-tricks/debug-javascript-tips/
 head-title: Debug() - Javascript Debugging
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1470611214/JavaScript_DebuggngTip_msy13l.jpg
 excerpt: Debug() – The Death Of Ctrl+f If you are anything like me, you have wasted countless hours of your life using ctrl+f to find functions inside your code. If you only have one file, ctrl+f is still going to be …
+videoID: wRWVNCdygEY
 categories:
   - Tutorials
 tags:
   - Javascript
+  - Python
+  - Debugging
 ---
 ## Debug() &#8211; The Death Of Ctrl+f
 
 If you are anything like me, you have wasted countless hours of your life using ctrl+f to find functions inside your code. If you only have one file, ctrl+f is still going to be your best bet. But as soon as you start dealing with many files, the debug() method becomes a life saver!
 
 This post will be continuing with my Javascript debugging series. If this is the first one you are seeing, you may be interested in some of the others as well.
-
-### Videos Are Cool?
-
-{% include video-embed.html videoID="wRWVNCdygEY" %}
 
 This isn&#8217;t going to be a long one today. The debug method is a pretty simple one to get your head around.
 
