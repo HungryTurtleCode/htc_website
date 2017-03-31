@@ -15,8 +15,9 @@ const LessonList = {
       <ul class="lesson-list explore"
         ng-if="$ctrl.tags.length">
           <li class="section">
-            <h3 ng-click="$ctrl.showExplore = !$ctrl.showExplore">
-              Explore The Site
+            <h3 ng-click="$ctrl.showExplore = !$ctrl.showExplore" ng-class="{'active': $ctrl.showExplore}">
+              What Do You Want To Learn?
+              <span>+</span>
             </h3>
             <ul class="section" ng-if="$ctrl.showExplore">
               <a ng-href="{{tag.url}}"
@@ -29,8 +30,8 @@ const LessonList = {
           </li>
       </ul>
 
-      <h4 class="course-content" ng-if="$ctrl.lessonList.length">Course Contents</h4>
-      <ul class="lesson-list">
+      <!--<h4 class="course-content" ng-if="$ctrl.lessonList.length">Course Contents</h4>-->
+      <ul class="lesson-list" ng-if="$ctrl.lessonList.length">
         <li ng-repeat="section in $ctrl.lessonList | orderBy:'position'" class="section">
           <h3 ng-click="section.show = !section.show">{{section.name}}</h3>
           <ul class="section"

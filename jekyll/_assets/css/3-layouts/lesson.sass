@@ -66,10 +66,25 @@
       margin-bottom: 100px
 
       &.explore
-        margin-bottom: 0
+        margin-bottom: 40px
+        border-top: none
 
         h3
           font-size: 0.8em
+          position: relative
+          background: lighten($default-dark-color, 10%)
+
+          span
+            position: absolute
+            top: calc(50% - 0.6em)
+            right: 0.5em
+            font-size: 1.5em
+            font-weight: normal
+            transition: transform 0.3s ease
+
+          &.active
+            span
+              transform: rotate(135deg)
 
         .lesson-item
           color: $default-dark-color
