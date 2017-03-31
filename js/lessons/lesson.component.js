@@ -39,19 +39,22 @@ const LessonComponent = {
             </li>
           </ul>
         </div>
-
-
       </div>
-      <div class="main-container">
-        <header class="top-nav">
-          <nav class="lesson-nav">
+
+      <header class="lesson-sidebar">
+        <div class="header-container">
+          <nav>
             <ul>
               <li><a href="/">Home</a></li>
               <li><a href="/account">My Account</a></li>
               <li><a href="/courses">Courses</a></li>
             </ul>
           </nav>
-        </header>
+          <header-panel></header-panel>
+        </div>
+      </header>
+
+      <div class="main-container">
         <main class="lesson-content"
           ui-view>
         </main>
