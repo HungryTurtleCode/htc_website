@@ -12,7 +12,11 @@
     {% assign lessonIndex = site.data[{{page.course-index}}] %}
     <script>
       var lessonList = {{lessonIndex | jsonify}};
-      var sidebartags = {{site.data.navigation.sidebar | jsonify}}
+      var sidebartags = null;
+
+      if(!lessonList){
+        sidebartags = {{site.data.navigation.sidebar | jsonify}}
+      }
     </script>
 
     <sidebar-lesson-list
