@@ -1,12 +1,12 @@
 <!-- Header.html -->
-<header class="{% if page.layout == 'post-sidebar' %}lesson-sidebar{% endif %}">
+<header class="{% if page.layout == 'post-sidebar' %}lesson-sidebar{% elsif page.layout == 'category' or page.layout == 'tags' %}archive-sidebar{% endif %}">
 
   <div class="header-container">
     <!--<a href="/">
       {% img mascot class:'mascot' alt:'Hungry Turtle Code Logo' %}
       {% img logo class:'logo' alt:'Hungry Turtle Code Logo Text. Learn to write code, one line at a time' %}
     </a>-->
-    {% if page.layout != 'post-sidebar' %}
+    {% if page.layout != 'post-sidebar' and page.layout != 'category' and page.layout != 'tags'%}
       <a href="/">
         <h4>hungry<span class="turtle">turtle</span><span class="code">code</span>
         </h4>
