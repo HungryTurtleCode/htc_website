@@ -140,7 +140,8 @@
 
     main
       padding: 1em
-      margin-top: 50px
+      max-width: 1200px
+      margin: 50px auto 0 auto
 
       .lesson-title
         margin: 0
@@ -153,9 +154,10 @@
         font-size: 1em
 
       .video-container
-        width: 800px
+        // width: 800px
+        width: 80%
         max-width: 100%
-        padding-top: calc(800px * 0.5625)
+        padding-top: calc(80% * 0.5625)
         // padding-top: 56.25%
         display: block
         margin: 0 auto
@@ -163,12 +165,18 @@
         position: relative
         overflow: hidden
 
+        @media screen and (max-width: 1500px)
+          width: 65%
+          padding-top: calc(65% * 0.5625)
+          margin: 1.7em auto
+
         @media screen and (max-width: 1200px)
-          width: 600px
-          padding-top: calc(600px * 0.5625)
-        @media screen and (max-width: 900px)
-          width: 400px
-          padding-top: calc(400px * 0.5625)
+          width: 85%
+          padding-top: calc(85% * 0.5625)
+
+        @media screen and (max-width: 800px)
+          width: 95%
+          padding-top: calc(95% * 0.5625)
 
         .video
           width: 100%
@@ -183,7 +191,18 @@
             z-index: 0
 
       .bottom-container
-        margin-bottom: 3em
+        width: 80%
+        margin: 0 auto 3em auto
+
+        @media screen and (max-width: 1500px)
+          width: 65%
+          margin: 1.7em auto
+
+        @media screen and (max-width: 1200px)
+          width: 85%
+
+        @media screen and (max-width: 800px)
+          width: 95%
 
         .tabs
           width: 500px
@@ -222,13 +241,13 @@
           .discussion,
           .resources
             margin: 0 auto
-            width: 65.88078%
+            width: 70%
 
-            @media screen and (min-width: 1500px)
-              width: 50%
-
-            @media screen and (max-width: 1000px)
+            @media screen and (max-width: 1500px)
               width: 90%
+
+            @media screen and (max-width: 1200px)
+              width: 95%
 
             &.ng-hide-remove
               transition: opacity 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940)
@@ -241,18 +260,6 @@
 
               &:hover
                 color: shade($secondary-color, 20%)
-
-          .discussion
-            width: 35%
-
-            @media screen and (max-width: 1600px)
-              width: 45%
-
-            @media screen and (max-width: 1250px)
-              width: 60%
-
-            @media screen and (max-width: 1000px)
-              width: 90%
 
           .bottom-buttons
             +clearfix
