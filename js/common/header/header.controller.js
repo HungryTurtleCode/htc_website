@@ -27,7 +27,7 @@ class HeaderController{
       });
     });
   }
-  notificationClick(e){
+  notificationToggle(e){
     this.stopPropagation(e);
     this.notificationActive = !this.notificationActive;
   }
@@ -57,6 +57,7 @@ class HeaderController{
     if(item.notification_type === 'comment_reply'){
       window.location.href = item.location + '?comment=' + item.firebase_id;
     }
+    this.notificationActive = !this.notificationActive;
   }
 }
 

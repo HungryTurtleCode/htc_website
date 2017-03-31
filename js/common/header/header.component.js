@@ -33,7 +33,7 @@ const HeaderComponent = {
 
         <div class="relative">
           <button class="notification-btn"
-            ng-click="$ctrl.notificationClick($event)"
+            ng-click="$ctrl.notificationToggle($event)"
             ng-if="$ctrl.loggedIn && !$ctrl.loading">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 88.516 88.516" style="enable-background:new 0 0 88.516 88.516;" xml:space="preserve" data-inboxsdk-session-id="1488814308998-0.6025413539877926">
             <g>

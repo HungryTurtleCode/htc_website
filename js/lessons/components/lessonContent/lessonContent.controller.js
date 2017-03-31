@@ -1,9 +1,10 @@
 class LessonContentController{
-  constructor($sce, $location, analytics) {
+  constructor($sce, $location, analytics, $scope) {
     this.$sce = $sce;
     this.$location = $location;
     this.completeText = 'Mark Lesson Complete';
     this.analytics = analytics;
+    this.$scope = $scope;
   }
   $onInit(){
     if(this.$location.search().comment){
@@ -12,6 +13,10 @@ class LessonContentController{
       this.activeTab = 0;
     }
     this.articleTrusted = this.$sce.trustAsHtml(this.article);
+
+    this.$scope.$watch(() => this.$location.search().comment, newVal => {
+      if(newVal) this.activeTab = 1;
+    });
   }
   $onChanges(change){
     if(change.lessonIsComplete.currentValue){
@@ -51,6 +56,6 @@ class LessonContentController{
   }
 }
 
-LessonContentController.$inject = ['$sce', '$location', 'analyticsService'];
+LessonContentController.$inject = ['$sce', '$location', 'analyticsService', '$scope'];
 
 export default LessonContentController;
