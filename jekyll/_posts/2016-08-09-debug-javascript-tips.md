@@ -2,7 +2,7 @@
 title: Debug() – Javascript Debugging Tips
 date: 2016-08-09T14:39:30+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /tips-tricks/debug-javascript-tips/
 head-title: Debug() - Javascript Debugging
 image: https://res.cloudinary.com/djxscnpzf/image/upload/v1470611214/JavaScript_DebuggngTip_msy13l.jpg

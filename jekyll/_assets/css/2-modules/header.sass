@@ -2,6 +2,15 @@ header
   background-color: $default-dark-color
   font-size: 1rem
 
+  &.lesson-sidebar,
+  &.archive-sidebar
+    margin-left: 220px
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 100
+
   .header-container
     +outer-container
     +padding(10px 10px 3px 10px)
@@ -183,3 +192,7 @@ header
       .cart-icon
         svg
           margin: 5px 2px 2px 1px
+
+  &.archive-sidebar
+    .header-container
+      margin-left: 2em
