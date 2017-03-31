@@ -15,5 +15,9 @@ primary:
 sidebar:
   - title: Javascript
     url: /tag/javascript
-  - title: Python
-    url: /tag/python
+  - title: AngularJS
+    url: /tag/angularjs
+  - title: Debugging
+    url: /tag/debugging
+  - title: jQuery
+    url: /tag/jquery
