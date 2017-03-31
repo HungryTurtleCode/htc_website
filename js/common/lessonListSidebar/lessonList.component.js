@@ -11,6 +11,25 @@ const LessonList = {
   },
   template: `
     <div id="lesson-list-cont" class="u-fancy-scrollbar">
+
+      <ul class="lesson-list explore"
+        ng-if="$ctrl.tags.length">
+          <li class="section">
+            <h3 ng-click="$ctrl.showExplore = !$ctrl.showExplore">
+              Explore The Site
+            </h3>
+            <ul class="section" ng-if="$ctrl.showExplore">
+              <a ng-href="{{tag.url}}"
+                ng-repeat="tag in $ctrl.tags">
+                  <li class="lesson-item" ng-class="{active: $ctrl.slugify(tag.title) === $ctrl.activeTag}">
+                    <p>{{tag.title}}</p>
+                  </li>
+              </a>
+            </ul>
+          </li>
+      </ul>
+
+      <h4 class="course-content" ng-if="$ctrl.lessonList.length">Course Contents</h4>
       <ul class="lesson-list">
         <li ng-repeat="section in $ctrl.lessonList | orderBy:'position'" class="section">
           <h3 ng-click="section.show = !section.show">{{section.name}}</h3>
@@ -18,7 +37,7 @@ const LessonList = {
             ng-if="section.show">
               <a ng-href="{{::$ctrl.getLessonUrl(lesson.slug)}}"
                 ng-repeat="lesson in section.lessons | orderBy:'position'">
-                <li class="lesson-item" ng-class="{active: $ctrl.slugify(lesson.title) === $ctrl.lesson}">
+                <li class="lesson-item" ng-class="{active: lesson.slug === $ctrl.lesson}">
                   <p>{{lesson.title}}</p>
                   <p class="length">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" data-inboxsdk-session-id="1485829018686-0.44899969075421664">

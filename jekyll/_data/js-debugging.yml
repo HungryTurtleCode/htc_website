@@ -1,0 +1,18 @@
+- name: Javascript Debugging
+  show: true
+  lessons:
+    - title: Debug() Method
+      length: '4:52'
+      slug: debug-javascript-tips
+
+    - title: Console.table()
+      length: '5:53'
+      slug: console-log-table
+
+    - title: Stack Traces
+      length: '10:31'
+      slug: console-trace
+
+    - title: Timing Code Execution
+      length: '7:55'
+      slug: console-time
