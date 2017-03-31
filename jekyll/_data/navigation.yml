@@ -11,3 +11,9 @@ primary:
     url: /about-me/
   - title: Contact Me
     url: /contact-me/
+
+sidebar:
+  - title: Javascript
+    url: /tag/javascript
+  - title: Python
+    url: /tag/python

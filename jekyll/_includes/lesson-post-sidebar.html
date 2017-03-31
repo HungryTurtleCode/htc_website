@@ -11,9 +11,24 @@
 
     <div id="lesson-list-cont" class="u-fancy-scrollbar">
       <ul class="lesson-list">
+        <h3>Explore</h3>
+        <ul class="section">
+          {% for tag in site.data.navigation.sidebar %}
+            <a href="{{tag.url}}">
+              <li class="lesson-item">
+                <p>{{tag.title}}</p>
+              </li>
+            </a>
+          {% endfor %}
+        </ul>
+      </ul>
+    </div>
+
+    <div id="lesson-list-cont" class="u-fancy-scrollbar">
+      <ul class="lesson-list">
         <li class="section">
           <h3>{{section.name}}</h3>
-          <ul class="section"
+          <ul class="section">
             <a>
               <li class="lesson-item">
                 <p>{{lesson.title}}</p>
