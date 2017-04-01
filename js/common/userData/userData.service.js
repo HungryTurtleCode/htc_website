@@ -170,28 +170,11 @@ class userData{
   migrateOldUser(userInfo){
     let anonUser = JSON.parse(localStorage.getItem('anon_user_id'));
     if(anonUser){
-      this.getUserData(anonUser)
-        .then(data => {
-          data = data || {};
-          data.userInfo = userInfo;
 
-          this.getUserData(userInfo.user_id)
-            .then(existingData => {
-              existingData = existingData || {};
-
-              var newData = Object.assign(existingData, data);
-
-              this.setUserData(newData)
-                .then(() => {
-                  localStorage.setItem('anon_user_id', null);
-                  this.fb.setUserData(anonUser, null);
-                })
-                .catch(err => console.error(err));
-            })
-            .catch(err => console.log(err));
-        })
-        .catch(err => console.log(err));
-        // TODO add user to active campaign and store a flag in firebase to show that email has been added to active campaign to avoid duplicate requests Wed 25 Jan 2017 05:30:20 UTC
+      return this.dataService.migrateUser(userInfo.user_id, anonUser)
+        .then(res => {
+          localStorage.setItem('anon_user_id', null);
+        });
     }
   }
   getUserData(id){

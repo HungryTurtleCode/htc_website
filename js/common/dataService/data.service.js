@@ -35,6 +35,12 @@ class DataService{
         return response.data;
       });
   }
+  migrateUser(to, from){
+    return this.$http.post(`${this.url}/migrateUser`, {to_user: to, from_user: from})
+      .then(response => {
+        return response.data;
+      });
+  }
 }
 
 DataService.$inject = ['$http'];
