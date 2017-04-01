@@ -32,22 +32,25 @@ path /courses/{course}/meta/{data} {
 path /premium/{course}/{lesson} {
   read() { isEnrolled(course) }
 }
+path /users/{id} {
+  read() { isNodeServer() }
+  write() { isNodeServer() }
+}
 
 path /users/{id}/{data} {
   read() { isCurrentUser(id) }
 }
 path /users/{id}/cart {
-  read() { isCurrentUser(id) || isNodeServer() }
-  write() { isNodeServer() }
+  read() { isCurrentUser(id) }
 }
 path /users/{id}/cart/{item} {
   write() { isCurrentUser(id) }
 }
 path /users/{id}/notifications {
-  read() { isCurrentUser(id) || isNodeServer() }
+  read() { isCurrentUser(id) }
 }
 path /users/{id}/notifications/{data} {
-  write() { isCurrentUser(id) || isNodeServer() }
+  write() { isCurrentUser(id) }
 }
 path /users/{id}/complete-lessons {
   read() { isCurrentUser(id) }
@@ -76,13 +79,8 @@ path /users/{id}/completed/{data} {
 path /users/{id}/courses {
   read() { isCurrentUser(id) }
 }
-path /users/{id}/courses/{data} {
-  read() { isNodeServer() }
-  write() { isNodeServer() }
-}
 path /users/{id}/enrolled/{course} {
-  read() { isNodeServer() || isCurrentUser(id) }
-  write() { isNodeServer() }
+  read() { isCurrentUser(id) }
 }
 
 /*
