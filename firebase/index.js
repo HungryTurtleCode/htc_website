@@ -67,6 +67,19 @@ exports.getCommentOwner = function(loc, comment){
             .then(snap => snap.val());
 }
 
+exports.getUserData = function(user){
+    return ref.child('users')
+        .child(user)
+        .once('value')
+        .then(snap => snap.val());
+}
+
+exports.setUserData = function(user, data){
+    return ref.child('users')
+        .child(user)
+        .set(data);
+}
+
 exports.setCommentNotification = function(owners, replyLoc, lesson){
     getSingleComment(replyLoc)
         .then(comment => {

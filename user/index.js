@@ -43,3 +43,40 @@ exports.commentNotification = function(req, res, next){
         res.end();
     });
 }
+exports.migrate = function(req, res, next){
+    var response = '';
+    var body = '';
+
+    req.on('data', function(data){
+        body += data;
+    });
+
+    req.on('end', function(){
+        var request = JSON.parse(body);
+        var to_user = request.to_user;
+        var from_user = request.from_user;
+
+        firebase.getUserData(from_user)
+            .then(from_data => {
+                from_data = from_data || {};
+
+                firebase.getUserData(to_user)
+                    .then(to_data => {
+                        to_data = to_data || {};
+                        var newData = Object.assign(from_data, to_data);
+
+                        firebase.setUserData(to_user, newData)
+                            .then(() => {
+                                firebase.setUserData(from_user, null)
+                                    .then(() => {
+                                        var response = JSON.stringify({success: true});
+
+                                        res.writeHead(200, {'Content-Type': 'text/json'});
+                                        res.write(response);
+                                        res.end();
+                                    });
+                            });
+                    });
+            });
+    });
+}
