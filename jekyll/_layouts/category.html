@@ -2,7 +2,9 @@
 layout: fullwidth-100
 ---
 
-{% include lesson-post-sidebar.html %}
+{% if page.title != 'Courses' %}
+  {% include lesson-post-sidebar.html %}
+{% endif %}
 
 <archive-list></archive-list>
 

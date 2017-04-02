@@ -1,5 +1,5 @@
 <!-- Header.html -->
-<header class="{% if page.layout == 'post-sidebar' %}lesson-sidebar{% elsif page.layout == 'category' or page.layout == 'tags' %}archive-sidebar{% endif %}">
+<header class="{% if page.layout == 'post-sidebar' %}lesson-sidebar{% elsif page.layout == 'category' and page.title != 'Courses' %}archive-sidebar{% elsif page.layout == 'tags' %}archive-sidebar{% endif %}">
 
   <div class="header-container">
     <!--<a href="/">
@@ -7,6 +7,12 @@
       {% img logo class:'logo' alt:'Hungry Turtle Code Logo Text. Learn to write code, one line at a time' %}
     </a>-->
     {% if page.layout != 'post-sidebar' and page.layout != 'category' and page.layout != 'tags'%}
+      <a href="/">
+        <h4>hungry<span class="turtle">turtle</span><span class="code">code</span>
+        </h4>
+        {% img mascot class:'mini-mascot' alt:'Hungry Turtle Code Logo' %}
+      </a>
+    {% elsif page.layout == 'category' and page.title == 'Courses'%}
       <a href="/">
         <h4>hungry<span class="turtle">turtle</span><span class="code">code</span>
         </h4>
