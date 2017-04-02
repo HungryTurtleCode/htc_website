@@ -52,7 +52,7 @@ const TrackScroll = (analytics, $location, userData) => ({
         }
         analytics.setMetric('Metric6', 1);
         analytics.sendEventWithMetric('Reading', 'ContentBottom', getPageLocation(), 'Metric2', timeToFinish);
-        userData.trackEvent('ContentButtom', {page: getPageLocation, timeToFinish: timeToFinish});
+        userData.trackEvent('ContentButtom', {page: getPageLocation(), timeToFinish: timeToFinish});
 
         contentFinished = true;
       }
