@@ -40,7 +40,7 @@ class CheckoutController{
   getTotal(){
     if(this.cart){
       return this.cart.reduce((num, val) => {
-        return num + val.price;
+        return parseInt(num) + parseInt(val.price);
       }, 0);
     }
     return 0;
