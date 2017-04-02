@@ -15,7 +15,7 @@ const CartList = {
         <img class="cart-img"
           ng-src="{{item.img}}"/>
       </a>
-      <a ng-href="/courses/{{item.slug}}">
+      <a ng-href="/courses/{{item.slug}}" class="item-title">
         {{item.title}}
       </a>
       <span class="price">{{item.price | currency:$:0}}</span>
