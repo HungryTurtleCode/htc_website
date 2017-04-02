@@ -10,6 +10,7 @@ class CheckoutController{
     this.cart = [];
     this.activePayment = 0;
     this.paymentLoading = false;
+    this.feedbackText = '';
     this.getCart();
   }
   getCart(){
@@ -45,7 +46,10 @@ class CheckoutController{
     return 0;
   }
   paypalBuy(){
+    if(this.paymentLoading) return;
     this.paymentLoading = true;
+    this.feedbackText = '';
+
     this.userData.paypalBuy(this.cart)
       .then(data => {
         if(data.success){
@@ -70,10 +74,17 @@ class CheckoutController{
           });
         }
       })
-      .catch(err => console.error(err));
+    .catch(err => {
+      this.paymentLoading = false;
+      this.feedbackText = 'Something Went Wrong, try again later';
+      console.error(err)
+    });
   }
   stripeBuy(){
+    if(this.paymentLoading) return;
     this.paymentLoading = true;
+    this.feedbackText = '';
+
     this.stripe.card.createToken(this.payment.card)
       .then(response => {
         console.log('token created for card ending in ', response.card.last4);
@@ -92,7 +103,11 @@ class CheckoutController{
               });
             }
           })
-          .catch(err => console.error(err));
+          .catch(err => {
+            this.paymentLoading = false;
+            this.feedbackText = 'Something Went Wrong, try again later';
+            console.error(err)
+          });
       });
   }
 }

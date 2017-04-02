@@ -45,6 +45,7 @@ const CheckoutComponent = {
             <span ng-if="!$ctrl.paymentLoading">Go To PayPal</span>
             <htc-spinner ng-if="$ctrl.paymentLoading"></htc-spinner>
           </button>
+          <div class="purchase-feedback">{{$ctrl.feedbackText}}</div>
       </div>
 
       <div class="stripe-pay"
@@ -73,6 +74,7 @@ const CheckoutComponent = {
             <span ng-if="!$ctrl.paymentLoading">Buy</span>
             <htc-spinner ng-if="$ctrl.paymentLoading"></htc-spinner>
           </button>
+          <div class="purchase-feedback">{{$ctrl.feedbackText}}</div>
       </div>
 
     </div>
