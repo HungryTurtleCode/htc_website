@@ -1,10 +1,11 @@
 class LessonContentController{
-  constructor($sce, $location, analytics, $scope) {
+  constructor($sce, $location, analytics, $scope, userData) {
     this.$sce = $sce;
     this.$location = $location;
     this.completeText = 'Mark Lesson Complete';
     this.analytics = analytics;
     this.$scope = $scope;
+    this.userData = userData;
   }
   $onInit(){
     if(this.$location.search().comment){
@@ -32,6 +33,7 @@ class LessonContentController{
   resourceClick(resource){
     let loc = this.getPageLocations();
     this.analytics.trackEvent('Resource', resource, loc);
+    this.userData.trackEvent('Resource', {resource: resource, page: loc});
   }
   getPageLocations(){
     let url = this.$location.absUrl();
@@ -56,6 +58,6 @@ class LessonContentController{
   }
 }
 
-LessonContentController.$inject = ['$sce', '$location', 'analyticsService', '$scope'];
+LessonContentController.$inject = ['$sce', '$location', 'analyticsService', '$scope', 'userData'];
 
 export default LessonContentController;

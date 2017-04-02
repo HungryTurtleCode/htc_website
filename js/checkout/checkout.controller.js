@@ -27,6 +27,7 @@ class CheckoutController{
     let index = this.cart.indexOf(item);
     if(index > -1){
       this.analytics.trackEvent('RemoveFromCart', item.title);
+      this.userData.trackEvent('RemoveFromCart', {item: item.title, price: item.price});
 
       this.cart.splice(index, 1);
       if(!this.cart.length){
@@ -65,6 +66,7 @@ class CheckoutController{
                                     );
           this.cart.forEach(item => {
             this.analytics.trackEvent('Purchase', item.title, null, item.price);
+            this.userData.trackEvent('Purchase', {item: item.title, price: item.price});
           });
           this.paymentLoading = false;
           window.location.href = data.url;
@@ -94,6 +96,7 @@ class CheckoutController{
             if(data.success){
               this.cart.forEach(item => {
                 this.analytics.trackEvent('Purchase', item.title, null, item.price);
+                this.userData.trackEvent('Purchase', {item: item.title, price: item.price})
               });
               this.paymentLoading = false;
               window.location.href = data.url;

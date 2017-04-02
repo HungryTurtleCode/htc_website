@@ -1,7 +1,9 @@
 class ArchiveListController {
-  constructor(paginationService, analytics) {
+  constructor(paginationService, analytics, userData, $location) {
     this.paginationService = paginationService;
     this.analytics = analytics;
+    this.userData = userData;
+    this.$location = $location;
 
     this.data = courseList;
     this.setupData(this.data);
@@ -35,6 +37,7 @@ class ArchiveListController {
                             },
                             'search_string'
                           );
+    this.userData.trackEvent('Search', {query: query, page: this.getPageLocations()});
   }
   slugify(name){
     if(name){
@@ -53,8 +56,29 @@ class ArchiveListController {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
+  getPageLocations(){
+    let url = this.$location.absUrl();
+    let arr = url.split('/');
+
+    for(let i = arr.length-1; i >= 0; i--){
+      if(arr[i - 1] === 'lessons' && arr[i] === '#!'){
+        this.isLesson = true;
+      }
+      let matches = arr[i].match(/\?([^&]*)/);
+      if(matches){
+        arr[i] = arr[i].slice(0, matches.index);
+      }
+      if(arr[i] === '' || arr[i] === '#!'){
+        arr.splice(i, 1);
+      }
+    }
+
+    let newArr = [arr[arr.length - 1]];
+
+    return newArr.join('/');
+  }
 }
 
-ArchiveListController.$inject = ['paginationService', 'analyticsService'];
+ArchiveListController.$inject = ['paginationService', 'analyticsService', 'userData', '$location'];
 
 export default ArchiveListController ;

@@ -24,6 +24,7 @@ class BookmarkButtonController{
         .then(() => {
           this.$timeout(() => {
             this.analytics.trackEvent('Bookmark', 'Add', this.course);
+            this.userData.trackEvent('Bookmark', {course: this.course, type: 'Courses'});
             this.analytics.fbTrackEvent(
                                         'AddToWishlist',
                                         {
@@ -43,6 +44,7 @@ class BookmarkButtonController{
         .then(() => {
           this.$timeout(() => {
             this.analytics.trackEvent('Bookmark', 'Remove', this.course);
+            this.userData.trackEvent('RemoveBookmark', {course: this.course, type: 'Courses'});
             this.text = 'Bookmark Course';
             console.log('Removed Bookmark');
           });

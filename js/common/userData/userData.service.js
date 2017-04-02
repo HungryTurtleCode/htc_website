@@ -12,10 +12,15 @@ class userData{
     this.bookmarked = [];
 
     this.auth.subscribeAuthChange(this.cacheUser.bind(this));
+    this.auth.subscribeRegister(this.onRegister.bind(this));
     this.getUserMeta();
   }
   markNotificationRead(id){
     this.fb.markNotificationRead(this.user.user_id, id);
+  }
+  trackEvent(type, data){
+    data.user = data.user || this.user.user_id;
+    console.log('tracking event', type, data);
   }
   isEnrolled(course, user){
     if(user){
@@ -151,6 +156,9 @@ class userData{
         this.migrateOldUser(userInfo);
       }
     }
+  }
+  onRegister(user){
+    this.trackEvent('Register', {user: user});
   }
   getNotifications(callback){
     if(this.user.user_id){

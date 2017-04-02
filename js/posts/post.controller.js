@@ -1,9 +1,10 @@
 class PostCommentController{
-  constructor(firebaseService, $location, $scope, analytics) {
+  constructor(firebaseService, $location, $scope, analytics, userData) {
     this.firebaseService = firebaseService;
     this.$location = $location;
     this.$scope = $scope;
     this.analytics = analytics;
+    this.userData = userData;
 
     this.comments = [];
   }
@@ -36,6 +37,7 @@ class PostCommentController{
                                 },
                                 'content_type'
                               );
+    this.userData.trackEvent('ViewContent', {type: type, page: loc});
   }
   getComments(){
     let loc = this.getPageLocations() || '';
@@ -82,6 +84,6 @@ class PostCommentController{
   }
 }
 
-PostCommentController.$inject = ['firebaseService', '$location', '$scope', 'analyticsService'];
+PostCommentController.$inject = ['firebaseService', '$location', '$scope', 'analyticsService', 'userData'];
 
 export default PostCommentController;

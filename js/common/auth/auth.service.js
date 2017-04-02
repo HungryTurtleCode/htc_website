@@ -4,6 +4,7 @@ class Auth{
   constructor($timeout, firebaseService, dataService, analytics) {
     this.loggedIn = false;
     this.authSubs = [];
+    this.registerSubs = [];
     this.$timeout = $timeout;
     this.fb = firebaseService;
     this.dataService = dataService;
@@ -43,6 +44,7 @@ class Auth{
                 if(!subscribed || subscribed == 'false'){
                   this.analytics.trackEvent('Register', user.displayName);
                   this.analytics.fbTrackEvent('CompleteRegistration', {value: 0.00, currency: 'USD'}, 'currency');
+                  this.registerSubs.forEach(sub => sub(user));
 
                   this.dataService.subscribeUser(user.email, first_name, last_name)
                     .then(data => {
@@ -135,6 +137,12 @@ class Auth{
       .then(result => {
         return result;
       })
+  }
+  subscribeRegister(fn){
+    this.registerSubs.push(fn);
+    return () => {
+      this.registerSubs.splice(fn);
+    }
   }
   subscribeAuthChange(fn){
     this.authSubs.push(fn);
