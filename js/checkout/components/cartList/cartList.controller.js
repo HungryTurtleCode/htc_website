@@ -1,9 +1,6 @@
 class CartListController{
-  $onInit(){
-    this.removeLoading = false;
-  }
   remove(item){
-    this.removeLoading = true;
+    item.removeLoading = true;
     this.removeItem({item});
   }
 }

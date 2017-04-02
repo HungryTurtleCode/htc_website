@@ -23,7 +23,7 @@ const CartList = {
         class="remove-button"
         ng-click="$ctrl.remove(item)">
           <span ng-if="!$ctrl.removeLoading">X</span>
-          <htc-spinner ng-if="$ctrl.removeLoading"></htc-spinner>
+          <htc-spinner ng-if="item.removeLoading"></htc-spinner>
       </button>
     </div>
   `
