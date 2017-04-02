@@ -10,8 +10,13 @@ class userData{
     this.cart = [];
     this.completed = [];
     this.bookmarked = [];
+    this.eventQueue = [];
 
     this.auth.subscribeAuthChange(this.cacheUser.bind(this));
+    this.auth.subscribeAuthChange(user => {
+      this.eventQueue.forEach(sub => sub(user.uid));
+      this.eventQueue = [];
+    });
     this.auth.subscribeRegister(this.onRegister.bind(this));
     this.getUserMeta();
   }
@@ -19,8 +24,15 @@ class userData{
     this.fb.markNotificationRead(this.user.user_id, id);
   }
   trackEvent(type, data){
+    if(!this.user.user_id){
+      this.eventQueue.push(id => {
+        data.user = data.user || id;
+        this.fb.trackUserEvent(data.user, type, data);
+      });
+      return;
+    }
     data.user = data.user || this.user.user_id;
-    console.log('tracking event', type, data);
+    this.fb.trackUserEvent(data.user, type, data);
   }
   isEnrolled(course, user){
     if(user){

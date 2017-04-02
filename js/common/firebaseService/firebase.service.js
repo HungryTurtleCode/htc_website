@@ -192,6 +192,27 @@ class FirebaseService{
       }
     });
   }
+  trackUserEvent(user, type, data){
+    return new Promise((resolve, reject) => {
+      if(user){
+        this.ref
+          .child('allAnalytics')
+          .child(type)
+          .push()
+          .set(data);
+
+        this.ref
+          .child('userAnalytics')
+          .child(user)
+          .child(type)
+          .push()
+          .set(data)
+          .then(snap => resolve(snap));
+      }else{
+        reject('Can\'t set analytics for unknown user');
+      }
+    });
+  }
   getUserBookmarked(id){
     return new Promise((resolve, reject) => {
       if(id){
