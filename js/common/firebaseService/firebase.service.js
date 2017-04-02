@@ -193,6 +193,8 @@ class FirebaseService{
     });
   }
   trackUserEvent(user, type, data){
+    data.time = firebase.database.ServerValue.TIMESTAMP;
+
     return new Promise((resolve, reject) => {
       if(user){
         this.ref
