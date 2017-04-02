@@ -5,7 +5,7 @@ date: 2016-05-22T20:26:51+00:00
 author: Adrian
 layout: post
 alias: /code-projects/1-build-angular-quiz-app-scratch/
-image: https://res.cloudinary.com/djxscnpzf/image/upload/v1463876657/Angular-Quiz-App_kifpk9.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-Quiz-App_kifpk9.jpg?alt=media&token=8a4e0a51-43c6-4abb-9731-86e1d8aedaf0 
 excerpt: I’ve Learnt Some JavaScript! What Now? That may be something that pretty much all of us have said at some point or another. You have learnt some basic programming syntax, but you now want to build something.
 
 course-index: angular-quiz

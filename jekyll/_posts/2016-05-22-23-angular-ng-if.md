@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/23-angular-ng-if/
 head-title: Part 23 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932397/Angular-quiz-part-23_gxzkuu.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-23_gxzkuu.jpg?alt=media&token=298261de-b7e5-4418-833e-61ca3a111e2b
 excerpt: Our Old Enemy – The Image Questions When we created the quiz controller we had the problem of the image urls displaying instead of the images themselves on image questions. We again face this problem in the results controller. Having …
 loop: false
 
@@ -34,7 +34,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 This time we want the images to display nicely but also want a border around the correct answer and if the user chose an incorrect answer, a border around the answer they selected. Both will provide feedback to the user.
 
-![images not displaying correctly](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464631777/results_images_not_displaying_viluf4.jpg){: class="aligncenter" width="800" height="266"}
+![images not displaying correctly]({% asset_path results_images_not_displaying %}){: class="aligncenter" width="800" height="266"}
 
 Like we did in the quiz controller we just duplicate the row that contains the text questions and modify it slightly to house the image questions.
 
@@ -68,7 +68,7 @@ Add the following to your stylesheet.
 }
 {% endhighlight %}
 
-![results image feedback border](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464631777/results_image_feedback_pbhiu1.jpg){: class="aligncenter" width="800" height="545"}
+![results image feedback border]({% asset_path results_image_feedback %}){: class="aligncenter" width="800" height="545"}
 
 ## Return Of The Angular Ng-If Directive
 

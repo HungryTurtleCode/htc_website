@@ -5,7 +5,7 @@ author: Adrian
 layout: post-sidebar
 alias: /tips-tricks/console-trace/
 head-title: Console.trace() - Javascript Debugging
-image: https://res.cloudinary.com/djxscnpzf/image/upload/v1469193480/JavaScript_DebuggngTip_1_tgpysg.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FJavaScript_DebuggngTip_1_tgpysg.jpg?alt=media&token=ed01815f-4744-4641-a593-c5b68801ec76
 excerpt: Little Known But Powerful Tool – console.trace() A while ago I released a post and a video about using console.table as part of your javascript debugging arsenal. I got a great reception from it and many people said they where …
 course-index: js-debugging
 videoID: QuO0UDkW2rk
@@ -73,7 +73,7 @@ The doSomething function is called at the bottom of the app function. doSomethin
 
 sumFunction just adds the two numbers together and returns the result, which is then alerted out.
 
-![Alert Box](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469198249/Selection_005_k6lyju.jpg){: class="aligncenter" width="800" height="250"}
+![Alert Box]({% asset_path console_trace_alert %}){: class="aligncenter" width="800" height="250"}
 
 ## What Exactly Does Console.trace do?
 
@@ -145,17 +145,17 @@ We still get the alert box showing in the window, just like we did before, but t
 
 This is the output into the console when we run the code.
 
-![output from console.trace](https://res.cloudinary.com/djxscnpzf/image/upload/v1469198249/Selection_006_y20o1i.jpg){: class="aligncenter" width="640" height="386"}
+![output from console.trace]({% asset_path console_trace_output %}){: class="aligncenter" width="640" height="386"}
 
 Exactly what we expected except the bottom of the stack is (anonymous function) instead of global namespace. But the global namespace is just an unnamed function in javascript, so that is why it tells us it&#8217;s an anonymous function. But we know that it is just the global namespace.
 
 We are also shown what file each call was made from and what line in that file it was made from.
 
-![file and line number info from console.trace](https://res.cloudinary.com/djxscnpzf/image/upload/v1469198249/Selection_007_mwbyrh.jpg){: class="aligncenter" width="637" height="574"}
+![file and line number info from console.trace]({% asset_path console_trace_file_num %}){: class="aligncenter" width="637" height="574"}
 
 These are interactive links too. We can click on the file name and line number next to the call from the doSomething function and it will take us to the sources tab in Chrome Dev Tools and straight to that line inside the doSomething function that calls the next function on the stack. In our case it will take us to line 6, where the sumFunction is called.
 
-![Inside chrome dev tools](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469198249/Selection_009_hugfke.jpg){: class="aligncenter" width="800" height="529"}
+![Inside chrome dev tools]({% asset_path console_trace_dev_tools %}){: class="aligncenter" width="800" height="529"}
 
 Ultimately, that is all you need to know to use console.trace in your debugging workflow. It is instantly easier to clean up, as you have replaced many calls to console.log all over your javascript files with a single call to console.trace. Remove that one line and your code is back to being clean code ready for deployment.
 
@@ -169,7 +169,7 @@ Now we run that in the browser. Open up Chrome Dev Tools and navigate to the sou
 
 Inside the sources tab you can type code in, just like you can in your editor. Here is where you type the console.trace call. Like this:
 
-![Inserting console.trace directly though dev tools](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469198249/Selection_010_pluy18.jpg){: class="aligncenter" width="800" height="464"}
+![Inserting console.trace directly though dev tools]({% asset_path console_trace_dev_tools2 %}){: class="aligncenter" width="800" height="464"}
 
 ### Breakpoint Or Call The Function Manually
 
@@ -177,7 +177,7 @@ Unfortunately, the code we are interested in has already run when we refreshed t
 
 For the sake of showing you, I will trigger the app function again in the console. This will again cause the console.trace to log out the call stack.
 
-![Slightly different call stack from console.trace](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1469198249/Selection_011_xobja7.jpg){: class="aligncenter" width="800" height="340"}
+![Slightly different call stack from console.trace]({% asset_path console_trace_stack %}){: class="aligncenter" width="800" height="340"}
 
 Notice here that the call stack is slightly different. This is because we called the app function from the console so the call stack has to track back further to get to the first call as the console adds some magic in the background. But the top of the stack is still identical as it was before.
 

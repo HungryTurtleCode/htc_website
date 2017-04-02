@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/15-reusing-code/
 head-title: Part 15 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932350/Angular-quiz-part-15_xy7gaj.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-15_xy7gaj.jpg?alt=media&token=faacff61-45bf-451c-bc9f-679e8fdd1573
 excerpt: Custom CSS For Image Feedback + Code Reuse Having nice user feedback is great, but move forward to the image questions and you will find that it all breaks. There is no feedback whatsoever for the image questions. In this …
 loop: false
 
@@ -34,7 +34,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 Much like we did for the text questions, we will add an ng-class and ng-click directive onto the row that handles the images. Instead of giving it a bootstrap class though, we will give it a custom class that we will style ourselves. This is because a background would be useless for our image. Instead, we want a nice border.
 
-![image question border feedback](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464630497/image_question_feedback_qqh29a.jpg){: class="aligncenter" width="800" height="423"}
+![image question border feedback]({% asset_path image_question_feedback %}){: class="aligncenter" width="800" height="423"}
 
 {% highlight html linenos%}{% raw %}
 <div class="row"
@@ -69,7 +69,7 @@ The css required for this is extremely simple. All we need to do is add a border
 
 We have spoken about how the buttons in the progress area will be used to allow the user to navigate to specific questions in the quiz. Currently though, clicking on these buttons will not do anything. So let’s fix that by adding the functionality required.
 
-![results progress navigation](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464630496/Progress_button_navigation_ayjwlo.jpg){: class="aligncenter" width="800" height="234"}
+![results progress navigation]({% asset_path progress_button_navigation %}){: class="aligncenter" width="800" height="234"}
 
 ### Reusing Code Is Good Right?
 

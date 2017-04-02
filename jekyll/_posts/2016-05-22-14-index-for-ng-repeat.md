@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/14-index-for-ng-repeat/
 head-title: Part 14 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932344/Angular-quiz-part-14_swngy0.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-14_swngy0.jpg?alt=media&token=01ff7799-c3a7-4acf-add9-5a53ff857548
 excerpt: Index For Ng-Repeat Will Help User Feedback We now have the questions all displaying nicely in the quiz. The problem we face now is that when the user selects an answer there is no visual feedback to let them know …
 loop: false
 
@@ -34,7 +34,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 Getting started on the text questions first we will go into the h4 that holds each possible answer. Here we will add an ng-class that will give it a blue (bg-info) background when the user selects that answer. Watch the video tutorial to see this in action.
 
-![Quiz question answer feedback](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464630377/answer_feedback_wzalvk.jpg){: class="aligncenter" width="800" height="357"}
+![Quiz question answer feedback]({% asset_path answer_feedback %}){: class="aligncenter" width="800" height="357"}
 
 But how do we use ng-class to only add the background when the user clicks on that answer? Well, we simply combine the efforts of ng-click and ng-class into one.
 

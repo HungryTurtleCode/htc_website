@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/3-ng-repeat-directive/
 head-title: Part 3 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932269/Angular-quiz-part-3_tuziev.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-3_tuziev.jpg?alt=media&token=ce33aa8b-ba5f-408a-923e-b5bf84a965b9
 excerpt: Ng-Repeat Directive Will Do Your Work For You Now armed with the ability to create controller properties with some data attached then inserting that data into our HTML we can move on to create something useful.
 loop: false
 
@@ -140,7 +140,7 @@ function ListController(){
 
 Now that we have access to the information about all of our turtles we can start thinking about how to create all of our markup.
 
-![ng-repeat for turtle data](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464618638/ng-repeat_for_turtle_data_xj4hdb.jpg){: class="aligncenter" width="800" height="415"}
+![ng-repeat for turtle data]({% asset_path ng-repeat_for_turtle_data %}){: class="aligncenter" width="800" height="415"}
 
 The old fashioned way of doing that would be to hard code all of the HTML for each of our turtles individually. Of course this results in a lot of repeated code and waaaaaay too much typing for us to do. We are lazy remember!
 

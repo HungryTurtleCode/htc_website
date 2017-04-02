@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/17-final-prompt/
 head-title: Part 17 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932361/Angular-quiz-part-17_blwjwc.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-17_blwjwc.jpg?alt=media&token=8bb7a5e3-615b-4127-8ca1-741f4577285b
 excerpt: The End Of The Quiz Controller Is Near The only thing left for us to do with the quiz controller is just prompt the user when they have finished just to confirm they want to move onto the results page. …
 loop: false
 
@@ -34,7 +34,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 The code for the little prompt is simple, it is just a [bootstrap well](http://www.tutorialspoint.com/bootstrap/bootstrap_wells.htm){: target="_blank"}<!--_--> with two buttons. We will place this markup at the end of the row that contains the well for the questions. This is the markup we will need.
 
-![end of quiz prompt](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464630890/final_prompt_ofyoe2.jpg){: class="aligncenter" width="800" height="290"}
+![end of quiz prompt]({% asset_path final_prompt %}){: class="aligncenter" width="800" height="290"}
 
 {% highlight html linenos%}
 <div class="well well-sm" ng-show="quiz.finalise">
@@ -54,7 +54,7 @@ Each of the buttons both have an ng-click directive attached onto them. The no b
 
 The yes button contains a function we will need to create. This function will reset all the properties and variables that we have been using throughout the course of the life of the quiz.
 
-![prompt not displaying how we want](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464630890/prompt_not_displaying_correctly_hdirnl.jpg){: class="aligncenter" width="800" height="354"}
+![prompt not displaying how we want]({% asset_path prompt_not_displaying_correctly %}){: class="aligncenter" width="800" height="354"}
 
 You may have noticed that the prompt simply displays under the quiz questions at the minute. This isn’t exactly what we want. Instead, we want the questions to hide while the prompt is showing just to avoid possible confusion. This way the user is in no doubt what they have to do. We do this by adding an ng-hide to the question well div.
 

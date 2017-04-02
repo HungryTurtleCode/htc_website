@@ -5,7 +5,7 @@ date: 2016-05-22T20:17:31+00:00
 author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/11-bootstrap-well/
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932326/Angular-quiz-part-11_jxnkd4.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-11_jxnkd4.jpg?alt=media&token=5cc5fd19-bb21-49c6-bdc0-8e937f4efb1b
 excerpt: Bootstrapping The Quiz Questions No waiting around here, let’s just jump straight into creating the markup for the questions in the quiz. The whole area will be surrounded in a bootstrap well and we will pull the questions from the …
 loop: false
 
@@ -32,7 +32,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 [Here is the next part]({{site.baseurl}}/projects/12-controller-logic/)
 
-![question area markup](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464630050/quiz_question_area_z87xpz.jpg){: class="aligncenter" width="800" height="278"}
+![question area markup]({% asset_path quiz_question_area %}){: class="aligncenter" width="800" height="278"}
 
 The base of the HTML shouldn’t be new to you, so I will just show you the code with the bootstrap well and the foundation of the question markup.
 

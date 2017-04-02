@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/22-angular-number-filter/
 head-title: Part 22 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932393/Angular-quiz-part-22_zw1ina.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-22_zw1ina.jpg?alt=media&token=481d5545-ef32-4a19-831a-47e01f4a09ca
 excerpt: Last Two Functions For The ResultsCtrl In this part we will add the final two functions into the results controller. A function that will be similar to the setActiveQuestion in the quiz controller but not nearly as complex and the …
 loop: false
 
@@ -32,7 +32,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 [The next part can be found here]({{site.baseurl}}/projects/23-angular-ng-if/)
 
-![results progress navigation buttons](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464631575/results_progress_button_navigation_rppnlx.jpg){: class="aligncenter" width="800" height="224"}
+![results progress navigation buttons]({% asset_path results_progress_button_navigation %}){: class="aligncenter" width="800" height="224"}
 
 The last thing we said in the last part was that clicking the buttons in the results area does nothing. So here we will create a function that allows the user to click any of those buttons and get taken to the corresponding question to see how they did.
 
@@ -56,7 +56,7 @@ You may by now realise that we could get rid of this function and just add the c
 
 The final area to add to the results page is the bit in between the buttons and the question which shows the percentage score the user got. In the HTML, between the buttons and question we will add the following HTML markup.
 
-![score and percentage](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464631575/percentage_score_area_kbddbv.jpg){: class="aligncenter" width="800" height="316"}
+![score and percentage]({% asset_path percentage_score_area %}){: class="aligncenter" width="800" height="316"}
 
 {% highlight html linenos%}{% raw %}
 <div class="row">

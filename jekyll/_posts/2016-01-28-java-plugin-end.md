@@ -4,7 +4,7 @@ date: 2016-01-28T23:40:59+00:00
 author: Adrian
 layout: post
 permalink: /news/java-plugin-end/
-image: https://res.cloudinary.com/djxscnpzf/image/upload/v1454023219/JavaPlugin_qxnh7o.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2Fno_more_java.jpg?alt=media&token=262012f9-9171-47be-8b1f-bc7950be2ec8 
 excerpt: Oracle’s Java Browser Plugin Gets The Chop Internet users rejoice, hackers despair and corporate IT departments are on suicide watch. Yep, that can only mean one thing! Oracle are finally pulling the plug on their troublesome Java browser plugin. So …
 categories:
   - News
@@ -13,7 +13,7 @@ tags:
 ---
 ## Oracle&#8217;s Java Browser Plugin Gets The Chop
 
-![Java Browser Plugin Is At End Of Life](https://res.cloudinary.com/djxscnpzf/image/upload/v1454023468/53043053_nsyjop.jpg){: class="alignright" width="400" height="300"}
+![Java Browser Plugin Is At End Of Life]({% asset_path install_java %}){: class="alignright" width="400" height="300"}
 Internet users rejoice, hackers despair and corporate IT departments are on suicide watch. Yep, that can only mean one thing! Oracle are finally pulling the plug on their troublesome Java browser plugin.
 
 So far, 2016 has been a big year for the modernisation of browsers. First Microsoft announce they will no longer provide support for [old Internet Explorer]({{site.baseurl}}/news/internet-explorer-is-gone/){: target="_blank"}<!--_--> browsers. Now Oracle are deprecating their Java plugin.

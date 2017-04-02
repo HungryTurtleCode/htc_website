@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/6-ng-click-directive/
 head-title: Part 6 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932292/Angular-quiz-part-6_njlvtc.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-6_njlvtc.jpg?alt=media&token=bc80f7d0-71e2-42c3-80c0-c1504ef05af1
 excerpt: Ng-Click Directive And Ng-Show / Ng-Hide We’re nearly in a position to move away from our list controller and start building out the quiz controller. But before we can do that we need to create the “start quiz” button, which …
 loop: false
 
@@ -38,7 +38,7 @@ Take your pick. You can watch the video below or you can read through this artic
 
 As you can see from the [example application]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_--> in the video the button is on the right hand side of the grey area where are search bar is. This is part of the same form in the HTML. So we will start by creating a button with some bootstrap classes to pull it to the right.
 
-![start quiz button](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464629514/start_quiz_button_te7jts.jpg){: class="aligncenter" width="800" height="148"}
+![start quiz button]({% asset_path start_quiz_button %}){: class="aligncenter" width="800" height="148"}
 
 {% highlight html linenos%}
 <form class="form-inline well well-sm clearfix">

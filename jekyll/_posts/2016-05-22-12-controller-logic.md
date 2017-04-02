@@ -5,7 +5,7 @@ date: 2016-05-22T20:17:27+00:00
 author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/12-controller-logic/
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932332/Angular-quiz-part-12_sfbie2.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-12_sfbie2.jpg?alt=media&token=4d8f3cd5-2d1f-4296-a5bc-94dea8c292e5
 excerpt: Controller Logic Keeps Us Going We set ourselves up nicely in the last part. The ng-click calls a function on the quizController every time the “continue” button is clicked. This function will then need to change the activeQuestion property to …
 loop: false
 

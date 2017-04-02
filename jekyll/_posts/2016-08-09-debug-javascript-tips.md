@@ -5,7 +5,7 @@ author: Adrian
 layout: post-sidebar
 alias: /tips-tricks/debug-javascript-tips/
 head-title: Debug() - Javascript Debugging
-image: https://res.cloudinary.com/djxscnpzf/image/upload/v1470611214/JavaScript_DebuggngTip_msy13l.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FJavaScript_Debug_method.jpg?alt=media&token=41860161-c0bd-4ad3-aa56-cdf800aac5d6
 excerpt: Debug() – The Death Of Ctrl+f If you are anything like me, you have wasted countless hours of your life using ctrl+f to find functions inside your code. If you only have one file, ctrl+f is still going to be …
 videoID: wRWVNCdygEY
 course-index: js-debugging
@@ -90,11 +90,11 @@ Nothing happened!
 
 What is happening now, is the code is being monitored. Any time the function23 is called the code execution will stop and you will be jumped straight to the sources tab and taking into the code for function23. Pretty cool! Let&#8217;s try it by invoking function23 manually in the console.
 
-![Manually calling funciton 23 with debug](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1470610824/Selection_001_ixcb48.jpg){: class="aligncenter" width="800" height="592"}
+![Manually calling funciton 23 with debug]({% asset_path manual_debug %}){: class="aligncenter" width="800" height="592"}
 
 Straight away you can see that the execution of the code has been paused as soon as we called function23 manually from the console. Below you can also see where the code jumped to. Yep, function23 is highlighted, inside script3.js. No need to have to use ctrl+f to find that little rascal again!
 
-![Taken into the sources tab to function23](https://res.cloudinary.com/djxscnpzf/image/upload/v1470610824/Selection_002_pmbdhy.jpg){: class="aligncenter" width="577" height="479"}
+![Taken into the sources tab to function23]({% asset_path debug_sources_tab %}){: class="aligncenter" width="577" height="479"}
 
 ### Code Paused Before The Function Runs
 

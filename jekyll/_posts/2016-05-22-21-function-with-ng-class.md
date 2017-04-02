@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/21-function-with-ng-class/
 head-title: Part 21 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932387/Angular-quiz-part-21_vaxed8.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-21_vaxed8.jpg?alt=media&token=da4b2142-1fac-41cc-ab94-2353473bd0ad
 excerpt: Deja Vu + A New Way To Use Ng-Class Much like the previous part, the markup in this part will be very similar to that of the markup in the quiz controller. But we will spice things up a bit …
 loop: false
 
@@ -98,8 +98,8 @@ Now that that&#8217;s done we can write the code into that h4. It will be much l
 ### Adding More Feedback To Each Answer
 
 If you have seen the [final application]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->, you will notice that the answers in the results section display “correct answer” and if you gave a different answer it will display “your answer” on that on to let you know what answer you gave and what the actual correct answer was.
-
-![results question additonal feedback](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464631351/results_question_additional_feedback_hwcbiu.jpg){: class="aligncenter" width="800" height="262"}
+ 
+![results question additonal feedback]({% asset_path results_question_additional_feedback %}){: class="aligncenter" width="800" height="262"}
 
 To implement that we need to create the two sets of text and ng-show then depending on the conditions of each possible answer.
 

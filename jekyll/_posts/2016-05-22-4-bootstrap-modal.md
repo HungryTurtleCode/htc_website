@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/4-bootstrap-modal/
 head-title: Part 4 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932276/Angular-quiz-part-4_xidsve.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-4_xidsve.jpg?alt=media&token=e4ecadcc-e7ee-406b-90f7-291b6e15651c
 excerpt: Bootstrap Modal Markup And Other CSS We made a good start on our bootstrap markup in last part but we did end up leaving a few little issues with the CSS most notably the image sizing was not consistent.
 loop: false
 
@@ -38,7 +38,7 @@ You can watch this full tutorial in video form below or you can continue reading
 
 ## Fixing Image Sizing Issues
 
-![fixing image sizing](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464618858/image_sizing_issue_noibul.jpg){: class="aligncenter" width="800" height="431"}
+![fixing image sizing]({% asset_path image_sizing_issue %}){: class="aligncenter" width="800" height="431"}
 
 We will get ourselves ready for resizing images by adding a class to each of the image tags in our HTML.
 
@@ -60,7 +60,7 @@ We&#8217;ve given to the width of 100% just to ensure that the images always the
 
 ## Let&#8217;s Make The Modal Pop Up!
 
-![popup bootstrap modal](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464618859/popup_modal_s7uu7k.jpg){: class="aligncenter" width="800" height="453"}
+![popup bootstrap modal]({% asset_path popup_modal %}){: class="aligncenter" width="800" height="453"}
 
 We want the [modal](https://www.sitepoint.com/understanding-bootstrap-modals/){: target="_blank"}<!--_--> to pop up on the screen when the user clicks the ”Learn More” button for any one of the turtles. This will be achieved using some functionality that is built into bootstrap. We will also need to trigger some controller functionality when the button is clicked and we will do that with a new Angular directive called [ng-click](https://docs.angularjs.org/api/ng/directive/ngClick){: target="_blank"}<!--_-->
 

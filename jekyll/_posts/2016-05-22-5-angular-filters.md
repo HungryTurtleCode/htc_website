@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/5-angular-filters/
 head-title: Part 5 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932282/Angular-quiz-part-5_qjajqt.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-5_qjajqt.jpg?alt=media&token=68ed969d-f1ae-4ad6-ab0a-a6fbdd901a9d
 excerpt: Angular Filters Create A Magic Search! Ok, enough playing around, let’s really dig into the power of AngularJS. Creating search functionality from scratch can be notoriously hard, but in this tutorial we will see how easy it is to create …
 loop: false
 
@@ -38,7 +38,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 Getting straight into it, will start off by creating an HTML form which will style with some bootstrap classes. We will add this code right at the top of the HTML markup for our list controller, as we want the search form to be at the top of the page.
 
-![search area with bootstrap well](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464629293/search_area_fo9mpa.jpg){: class="aligncenter" width="800" height="191"}
+![search area with bootstrap well]({% asset_path search_area %}){: class="aligncenter" width="800" height="191"}
 
 This area is the whole grey box at the top of the page that will contain the search box as well as the start quiz button that we will create later. Right now we will focus on creating the search box by adding the icon and the text input area. The icon will be a [gylphicon](http://getbootstrap.com/components/){: target="_blank"}<!--_--> which comes bundled with Bootstrap these days.
 

@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/24-finished-angular-project/
 head-title: Part 24 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932403/Angular-quiz-part-24_l0q3sc.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-24_l0q3sc.jpg?alt=media&token=f85a27b6-2bf8-453d-9184-b5d138eb61ed
 excerpt: We Have Made It To The End, Friends There is only one small thing that we still have left to do before you have your finished Angular project. That feature is just adding a button that will take us back …
 loop: false
 
@@ -32,7 +32,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 Right underneath the well that holds the questions we will add a large button to take the user back to the facts page. This button will have an ng-click that will call a function that will reset all the data in the application and allow the user to repeat the quiz again without any of the data from their first attempt interfering.
 
-![go back to facts button](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464632017/go_back_to_facts_button_jbyhci.jpg){: class="aligncenter" width="800" height="435"}
+![go back to facts button]({% asset_path go_back_to_facts_button %}){: class="aligncenter" width="800" height="435"}
 
 {% highlight html linenos%}
 <button class="btn btn-primary btn-lg" ng-click="results.reset()">

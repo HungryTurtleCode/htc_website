@@ -5,7 +5,7 @@ author: Adrian
 layout: post-sidebar
 alias: /tips-tricks/console-time/
 head-title: Console.time() - Javascript Debugging
-image: https://res.cloudinary.com/djxscnpzf/image/upload/v1469797935/JavaScript_DebuggngTip_q5dxwx.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2Fconsole.time.jpg?alt=media&token=927e21eb-44ab-42e8-964b-8d0f8e4f3689
 excerpt: Just In Time – Console.time I have seen some amazing ways of timing how long javascript code takes to run. Taking timestamps and comparing them is a common way. But console.time is method in the console API that allows you …
 course-index: js-debugging
 videoID: h807oIC66BY
@@ -73,7 +73,7 @@ for(var i = 0; i &lt; 100000000; i++){
 
 If you check the console once this code has been executed you will see this:
 
-![console output](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1469796843/Selection_001_puxuoj.jpg){: class="alignleft" width="400" height="198"}
+![console output]({% asset_path console_time_output %}){: class="alignleft" width="400" height="198"}
 
 It looped through 100 million times and made a conditional check on each one, all in 0.315secs. I find that pretty amazing. Computers eh?
 
@@ -93,7 +93,7 @@ setTimeout(function(){
 
 Running all this code inside the browser we see this:
 
-![second timer console output](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_400/v1469796843/Selection_002_tao5uh.jpg){: class="aligncenter" width="400" height="232"}
+![second timer console output]({% asset_path console_time_output2 %}){: class="aligncenter" width="400" height="232"}
 
 The first timer runs the same as it did but then we get the second call to console.time. Notice it too slightly more than the 2000 that we set in the timeout. This will be the overhead of actually calling the functions involved in the code.
 
@@ -120,7 +120,7 @@ setTimeout(function(){
 
 Running this in the browser we get three timer values. The first two are the same as we have seen in the past. Then we also get the third one which is the first timeout of 2000ms plus the second period of 3000ms, totalling 5000ms plus a bit of overhead as before.
 
-![Third timer console output](https://res.cloudinary.com/djxscnpzf/image/upload/v1469797184/Selection_004_hvlyuz.jpg){: class="aligncenter" width="630" height="388"}
+![Third timer console output]({% asset_path console_time_output3 %}){: class="aligncenter" width="630" height="388"}
 
 There you go. That is about all there is to say about console.time. Go out and use this in your own projects and make your code a bit more efficient by learning where your bottlenecks are.
 

@@ -4,7 +4,7 @@ date: 2016-01-30T20:40:06+00:00
 author: Adrian
 layout: post-sidebar
 alias: /tips-tricks/console-log-table/
-image: https://res.cloudinary.com/djxscnpzf/image/upload/v1454187383/JavaScript-DebuggngTip_yremrj.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2Fconsole_table.jpg?alt=media&token=5ff492d9-f393-45b8-8acb-02f94c51e497 
 excerpt: Is console.log The Only Option? Like me, many of you probably use console.log() to debug your javascript code a lot of the time. The problem isn’t big enough to require the setting of breakpoints
 course-index: js-debugging
 videoID: zi9JA9LLIcM
@@ -60,7 +60,7 @@ Just for reference, let&#8217;s print out this array in the console with
 console.log(turtles)
 {% endraw %}{% endihighlight %}:
 
-![console log debugging output](https://res.cloudinary.com/djxscnpzf/image/upload/v1454185790/console-log-turtles_uc5yv2.jpg){: class="aligncenter" width="302" height="298"}
+![console log debugging output]({% asset_path console_log_turtle %}){: class="aligncenter" width="302" height="298"}
 
 ### Now let&#8217;s make it better with console.table
 
@@ -69,7 +69,7 @@ Here is the output when we use
 console.table(turtles)
 {% endraw %}{% endihighlight %}: 
 
-![console.table debugging output](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1454185828/console-table-turtles_ciu374.jpg){: class="aligncenter" width="800" height="112"}
+![console.table debugging output]({% asset_path console_table_turtle %}){: class="aligncenter" width="800" height="112"}
 
 You can click on the headers of each column to sort that column. This is a great feature to get a quick overview of some data if you know where it should be.
 
@@ -104,14 +104,14 @@ Again, for reference here is the output from
 console.log(turtles)
 {% endraw %}{% endihighlight %}: 
 
-![console.log debugging output](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1454185811/console-log-turtles-object_qj8no9.jpg){: class="aligncenter" width="800" height="404"}
+![console.log debugging output]({% asset_path console_log_turtle2 %}){: class="aligncenter" width="800" height="404"}
 
 And here is the glorious output from 
 {% ihighlight javascript %}{% raw %}
 console.table(turtles)
 {% endraw %}{% endihighlight %}:
 
-![console.table debugging output](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1454185886/console-table-turtles-object_vcou1u.jpg){: class="aligncenter" width="800" height="111"}
+![console.table debugging output]({% asset_path console_table_turtle2 %}){: class="aligncenter" width="800" height="111"}
 
 Notice here that instead of listing by the index number like it did for the array it will actually use the name assigned to each object as the index. This obviously provides another level of ease to looking through the data.
 
@@ -128,7 +128,7 @@ console.table(turtles, "name&")
 
 Which would produce this output:
 
-![console.table additional arguments](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1454185844/console-table-turtles-name_n1shsk.jpg){: class="aligncenter" width="800" height="135"}
+![console.table additional arguments]({% asset_path console_table_turtle_name %}){: class="aligncenter" width="800" height="135"}
 
 If you require many columns, the second argument can be an array containing as many properties as you would like.
 
@@ -140,7 +140,7 @@ console.table(turtles, ["name", "age"]
 
 Now we will see the following in the console:
 
-![console.table additional debugging arguments](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1454185863/console-table-turtles-name-age_a216it.jpg){: class="aligncenter" width="800" height="138"}
+![console.table additional debugging arguments]({% asset_path console_table_turtle_name_age %}){: class="aligncenter" width="800" height="138"}
 
 This is a very powerful part of the [console API](https://developer.mozilla.org/en/docs/Web/API/console){: target="_blank"}<!--_--> and I feel too few developers are aware of it. I hope you can take this knowledge and use it to become a better developer.
 

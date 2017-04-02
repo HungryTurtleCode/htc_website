@@ -5,7 +5,7 @@ date: 2016-01-07T04:26:03+00:00
 author: Adrian
 layout: post
 permalink: /news/internet-explorer-is-gone/
-image: https://res.cloudinary.com/djxscnpzf/image/upload/v1452200197/iedead_o7fs2w.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2Fdead_ie.jpg?alt=media&token=35f32f96-8b1b-41b1-bee2-437cce04455d 
 excerpt: Joy To The World! The day that many web developers have been waiting for is finally just around the corner. Microsoft is stopping all support for Internet Explorer 8, 9 and 10 next week (January 12th 2016). Naturally, this is …
 categories:
   - News
@@ -26,7 +26,7 @@ I have a sneaky feeling that many people who are still using some of these legac
 
 This is of course at their own risk as without continued support the already shaky security of these older IE browsers will now suddenly become a goldmine for malicious hackers.
 
-![You are going to have a bad time if you are still using internet explorer](https://res.cloudinary.com/djxscnpzf/image/upload/v1452202645/505_lseapg.jpg){: width="260" height="260" class="alignleft"}
+![You are going to have a bad time if you are still using internet explorer]({% asset_path ie_bad_time %}){: width="260" height="260" class="alignleft"}
 
 ## What About Microsoft Edge?
 
@@ -42,7 +42,7 @@ Internet Explorer isn&#8217;t going anywhere. It is here for the long haul. Whet
 
 Admittedly, the notifications of end of life for Internet Explorer may make some people upgrade to IE11, I don&#8217;t think it will make a huge dent in the overall usage. Not for a few years anyway.
 
-![I Don't Always Use Internet Explorer Meme](https://res.cloudinary.com/djxscnpzf/image/upload/v1452202647/the-most-interesting-man-in-the-world-in-internet-explorer-photo-u1_u7cbkl.jpg){: class="alignright" width="400" height="501"}
+![I Don't Always Use Internet Explorer Meme]({% asset_path dont_always_ie %}){: class="alignright" width="400" height="501"}
 
 ## Business Continues as Normal?
 

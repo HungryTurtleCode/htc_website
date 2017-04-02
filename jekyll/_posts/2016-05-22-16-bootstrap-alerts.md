@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/16-bootstrap-alerts/
 head-title: Part 16 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932356/Angular-quiz-part-16_nvilyd.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-16_nvilyd.jpg?alt=media&token=746bda3d-9a59-4b5e-a714-c0f2ac4750a1
 excerpt: Errors Must Be Handled In All Apps Handling errors is a critical part of the life of a software developer. If you cannot handle errors, you will create code that has a ton of bugs and just doesn’t function satisfactorily. …
 loop: false
 
@@ -132,7 +132,7 @@ vm.error
 
 At the top of the row that holds the question area will be where we place the [bootstrap alerts](http://www.tutorialspoint.com/bootstrap/bootstrap_alerts.htm){: target="_blank"}<!--_--> Just above the <h3>Question:</h3>.
 
-![bootstrap alert error message](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464630703/bootstrap_alert_error_message_zeuyiz.jpg){: class="aligncenter" width="800" height="396"}
+![bootstrap alert error message]({% asset_path bootstrap_alert_error_message %}){: class="aligncenter" width="800" height="396"}
 
 The markup to create the alert box is simple. We just need to add the class of alert and the class of alert-danger to make it red. I also added a button with the class of close and the value of 
 {% ihighlight html %}{% raw %}

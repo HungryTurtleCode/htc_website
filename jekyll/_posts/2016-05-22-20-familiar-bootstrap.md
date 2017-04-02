@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/20-familiar-bootstrap/
 head-title: Part 20 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932383/Angular-quiz-part-20_jtmhg5.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-20_jtmhg5.jpg?alt=media&token=07629e87-bb51-4d29-bcec-9b0b88ae939b
 excerpt: Some Really Familiar Bootstrap Markup This lesson isn’t introducing anything new. Infact, you will have seen much of this code before. What we are tackling is the area at the top of the results controller that shows what questions the user …
 loop: false
 
@@ -34,7 +34,7 @@ The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz
 
 I say that it is similar, the markup is almost identical with a few key differences. Mainly the colors used are no longer red and blue but are instead red and green to indicate correct or incorrect. The glyphicons used are also different &#8211; a tick and an x this time.
 
-![results progress area](https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_800/v1464631239/results_progress_area_wx6nqj.jpg){: class="aligncenter" width="800" height="187"}
+![results progress area]({% asset_path results_progress_area %}){: class="aligncenter" width="800" height="187"}
 
 Other than those differences the code is identical. So I will not bore you by explaining every line of the markup. Instead, I will just show you what we have.
 

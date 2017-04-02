@@ -5,7 +5,7 @@ author: Adrian
 layout: post
 alias: /code-projects/angular-quiz-app/18-marking-the-quiz/
 head-title: Part 18 AngularJS Quiz App Tutorial
-image: https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_180/v1463932371/Angular-quiz-part-18_eybezd.jpg
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-18_eybezd.jpg?alt=media&token=70cb5428-d3fe-4394-88f4-1625ac3033d8
 excerpt: No Quiz Is Complete Without It Being Marked In the last part we reference a function on the quizMetrics factory that we have not yet created. So it will be the task of this part to create that function – …
 loop: false
 

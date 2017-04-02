@@ -17,6 +17,6 @@ To do this, you will usually just have to right click and mark as &#8220;Not jun
 
 In Gmail you can <span style="color: #ff0000;">drag the email from the Promotions folder into your Primary folder.</span>
 
-<img class="aligncenter wp-image-1044" src="https://res.cloudinary.com/djxscnpzf/image/upload/v1468443204/primary1_ui2kup.jpg" alt="Making email as not spam in gmail" width="750" height="267" />
+<img class="aligncenter wp-image-1044" src="{% asset_path gmail_signup %}" alt="Making email as not spam in gmail" width="750" height="267" />
 
 Thanks again and I look forward to speaking to you again soon 🙂
