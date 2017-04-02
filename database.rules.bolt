@@ -80,6 +80,18 @@ path /users/{id}/courses {
 path /users/{id}/enrolled/{course} is Boolean {
   read() { isCurrentUser(id) }
 }
+path /userAnalytics {
+  read() { isNodeServer() || isAdmin() }
+}
+path /allAnalytics {
+  read() { isNodeServer() || isAdmin() }
+}
+path /userAnalytics/{user}/{type}/{hit} {
+  write() { isCurrentUser(user) && createOnly(this) }
+}
+path /allAnalytics/{type}/{hit} {
+  write() { isCurrentUser(this.user) && createOnly(this) }
+}
 
 /*
  * Helpers
@@ -90,6 +102,7 @@ isAdmin() { isSignedIn() && root.admins[auth.uid] == true }
 isAdminWrite() { isSignedIn() && prior(root.admins[auth.uid] == true) }
 isEnrolled(course) { isSignedIn() && root.users[auth.uid].enrolled[course] == true }
 isNodeServer() { auth.uid == 'node-server' }
+createOnly(value) { prior(value) == null && value != null  }
 
 /*
  * Types
