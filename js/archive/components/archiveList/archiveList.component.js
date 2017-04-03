@@ -143,6 +143,7 @@ const ArchiveList = {
           </span>
           <a
             ng-href="{{post.url}}"
+            analytics-click="archive-card"
             class="learn-more">
               Learn More
           </a>
