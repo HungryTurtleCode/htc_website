@@ -15,7 +15,8 @@ const VideoComponent = {
           video-cursor
           data-vg-player-ready="$ctrl.onPlayerReady($API)"
           data-vg-update-time="$ctrl.checkTime($currentTime, $duration)"
-          data-vg-complete="$ctrl.nextVideo()">
+          data-vg-update-state="$ctrl.checkPlayPause($state)"
+          data-vg-complete="$ctrl.videoEnd()">
           <vg-media
             vg-src="$ctrl.lessonVid">
           </vg-media>
