@@ -197,17 +197,20 @@ class FirebaseService{
 
     return new Promise((resolve, reject) => {
       if(user){
-        this.ref
+        let allRef = this.ref
           .child('allAnalytics')
           .child(type)
-          .push()
-          .set(data);
+          .push();
+
+        data.firebase_id = allRef.key;
+
+        allRef.set(data);
 
         this.ref
           .child('userAnalytics')
           .child(user)
           .child(type)
-          .push()
+          .child(data.firebase_id)
           .set(data)
           .then(snap => resolve(snap));
       }else{
