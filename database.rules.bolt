@@ -16,7 +16,7 @@ path /active-campaign/{id}/{email} is Boolean {
 path /comments/{course}/{lesson} {
   read() { true }
 }
-path /comments/{course}/{lesson}/{comment} is Comment {
+path /comments/{course}/{lesson}/{comment} {
   create() { isSignedIn() }
   update() { isSignedIn() }
 }
