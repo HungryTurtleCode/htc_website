@@ -1,6 +1,8 @@
 class ContactFormController{
-  constructor($http) {
+  constructor($http, analytics, userData) {
     this.$http = $http;
+    this.analytics = analytics;
+    this.userData = userData;
   }
   $onInit(){
     this.error = false;
@@ -16,6 +18,10 @@ class ContactFormController{
     }
 
     if(this.validate(data)){
+      this.analytics.trackEvent('Contact', data.name);
+      this.userData.trackEvent('Contact', data);
+      this.analytics.fbTrackCustom('Contact', data, 'subject');
+
       this.$http.post('http://138.197.119.94/contact', data)
         .then(response => {
           if(response.data.success){
@@ -70,6 +76,6 @@ class ContactFormController{
   }
 }
 
-ContactFormController.$inject = ['$http'];
+ContactFormController.$inject = ['$http', 'analyticsService', 'userData'];
 
 export default ContactFormController;
