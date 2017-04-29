@@ -3,6 +3,8 @@ class AnalyticsService{
     this.path = window.location.pathname;
     this.FbEventBacklog = [];
     this.GaEventBacklog = [];
+
+    window.analytics = this;
   }
   trackEvent(type, action, label=this.path, value=null){
     this.gaBacklogWrapper(() => {

@@ -12,6 +12,8 @@ class userData{
     this.bookmarked = [];
     this.eventQueue = [];
 
+    window.trackUserEvent = this.trackEvent.bind(this);
+
     this.auth.subscribeAuthChange(this.cacheUser.bind(this));
     this.auth.subscribeAuthChange(user => {
       this.eventQueue.forEach(sub => sub(user.uid));

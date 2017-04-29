@@ -327,6 +327,16 @@
 
     var videoUrl = window.location.pathname;
     var _ga = window.GoogleAnalyticsObject;
+    var analytics = window.analytics;
+    var userEvent = window.trackUserEvent;
+
+    let data = {
+      type: state,
+      video: videoUrl
+    }
+
+    analytics.fbTrackCustom('Video', data, 'video');
+    userEvent('Video', data)
 
     if( typeof window[ dataLayerName ] !== 'undefined' && !_config.forceSyntax ) {
 
