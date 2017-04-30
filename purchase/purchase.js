@@ -29,7 +29,7 @@ exports.stripeCharge = function(req, res, next){
                         firebase.enrollUser(user, courses)
                             .then(() => {
 
-                                ac.addTag(email, courses)
+                                ac.addTag(email, courses, 'Course')
 
                                 firebase.clearCart(user)
                                     .then(() => {

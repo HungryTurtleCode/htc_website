@@ -32,6 +32,7 @@ app.post('/contact', contact);
 app.post('/paypalBuy', purchase.paypalCharge);
 app.post('/getVideo', videoAPI);
 app.post('/migrateUser', user.migrate);
+app.post('/tagSearch', activeCampaign.tagSearch);
 app.post('/commentNotif', user.commentNotification);
 app.get('/paypal', purchase.paypalExecute);
 app.get('/', common.gethandler)

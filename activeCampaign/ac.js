@@ -48,9 +48,36 @@ exports.subscribe = function(req, res, next){
     });
 }
 
-exports.addTag = function(email, tags){
+exports.tagSearch = function(req, res, next){
+    var response = '';
+    var body = '';
+
+    req.on('data', function(data){
+        body += data;
+    });
+
+    // TODO add tags according to the event data here? Sun 30 Apr 2017 12:32:45 AM UTC
+  
+    req.on('end', function(){
+        var request = JSON.parse(body);
+        var email = request.email;
+        var query = request.query
+
+        addTag(email, query, 'Search')
+
+        var response = JSON.stringify({success: true});
+
+        res.writeHead(200, {'Content-Type': 'text/json'});
+        res.write(response);
+        res.end();
+    });
+}
+
+var addTag = exports.addTag = function(email, tags, type){
+    if(!Array.isArray(tags)) tags = [tags];
+
     tags = tags.forEach(tag => {
-        tag = '[Course] ' + tag;
+        tag = '[' + type +'] ' + tag;
         let data = {
             email,
             tags: tag
@@ -92,6 +119,5 @@ exports.trackEvent = function(req, res, next){
         }, function(error, response, body){
             console.log(response);
         });
-
     });
 }
