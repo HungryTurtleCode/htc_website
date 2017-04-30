@@ -2,15 +2,17 @@
 title: Fun with jQuery Keyboard Events Part 2
 date: 2016-01-03T01:55:46+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 permalink: /tutorials/jquery-keyboard-events-part-2/
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2Fother_side_2.jpg?alt=media&token=d94618c9-82b3-4a31-9554-2d8e65ba9d3a 
 excerpt: What Is This Modular JavaScript You Speak Of? This is part 2 of this mini series recreating the “Other Side” video effect using jQuery keyboard events. If you haven’t seen part 1, go take a look at that first. In …
+course-index: jquery-keyboard
 categories:
   - Tutorials
 tags:
   - jQuery
   - Javascript
+videoID: wzDXp0ekhZA
 ---
 ## What Is This Modular JavaScript You Speak Of?
 
@@ -21,10 +23,6 @@ In this tutorial we will take the exact code from the previous part and modulari
 For example you don&#8217;t check if the key is pressed then have the code to handle what happens when the code is pressed together. You separate them out.
 
 What this does is makes everything easier to read and understand at a glance. Rather than having to read the code line by line to get an understanding of what is going on.
-
-## Video Tutorial. Text Tutorial Below.
-
-{% include video-embed.html videoID="wzDXp0ekhZA" %}
 
 ### How Do We Go About Modularising?
 
@@ -350,7 +348,7 @@ from outside our object just to invoke all the code we have written.
 
 Writing code in this fashion has so many benefits such as increased security, increased efficiency, easier readability of code which leads to easier to maintain code &#8211; which of course makes everyone happy.
 
-Hope you enjoyed it! See you soon for [another tutorial]({{site.baseurl}}/tutorials/){: target="_blank"}<!--_-->.
+Hope you enjoyed it! See you soon for [another tutorial]({{site.baseurl}}/tutorials/)
 
 Stay hungry and keep coding,
 

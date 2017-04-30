@@ -2,15 +2,18 @@
 title: Fun with jQuery Keyboard Events
 date: 2015-12-27T12:02:02+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 permalink: /tutorials/jquery-keyboard-events/
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2Fother_side.jpg?alt=media&token=fa9d3ef7-eda1-4216-815a-b43b2e3dc9c0 
 excerpt: How do I track keystrokes with jQuery? I often hear people who are just getting into programming ask things like, “but how do I use this in the real world?”. It is all well and good understanding things from a …
+course-index: jquery-keyboard
+videoID: zi9JA9LLIcM
 categories:
   - Tutorials
 tags:
   - jQuery
   - Javascript
+videoID: 9NzKTSLceTc
 ---
 ## How do I track keystrokes with jQuery?
 
@@ -33,14 +36,6 @@ By pressing and releasing the &#8220;r&#8221; key, you can switch back and forth
 ### You Talk Too Much; Show Me Some Code!
 
 Head over to the [Github repo](https://github.com/adiman9/hondadoubleside){:target="_blank"}<!--_--> and you will be able to get the video assets you need. You can also take a look at the code from the tutorial.
-
-### Video or Text Tutorial? Pick Your Side.
-
-I hate to discriminate, so I offer all my tutorials as both videos for us more visually inclined learners and as a full text based tutorial for those of you lovely people that prefer to read. Or maybe you want to read the tutorial then solidify that by watching the video? Or maybe you just want to leave now. Whatever floats your boat.
-
-## &#8220;Other Side&#8221; jQuery Video Tutorial
-
-{% include video-embed.html videoID="9NzKTSLceTc" %}
 
 ### Reading is cool though&#8230;
 
