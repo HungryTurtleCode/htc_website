@@ -42,8 +42,6 @@ path /users/{id}/{data} {
 }
 path /users/{id}/cart {
   read() { isCurrentUser(id) }
-}
-path /users/{id}/cart/{item} {
   write() { isCurrentUser(id) }
 }
 path /users/{id}/notifications {
