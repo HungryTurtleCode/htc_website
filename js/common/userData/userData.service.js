@@ -39,7 +39,9 @@ class userData{
   }
   trackSearch(query, page){
     this.trackEvent('Search', {query, page});
-    this.dataService.tagSearch(this.user.email, query);
+    if(this.user && this.user.email){
+      this.dataService.tagSearch(this.user.email, query);
+    }
   }
   isEnrolled(course, user){
     if(user){
