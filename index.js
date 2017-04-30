@@ -27,6 +27,7 @@ app.use(common.setHeaders);
 /* Routes */
 app.post('/stripeBuy', purchase.stripeCharge);
 app.post('/acSubscribe', activeCampaign.subscribe);
+app.post('/acEvent', activeCampaign.trackEvent);
 app.post('/contact', contact);
 app.post('/paypalBuy', purchase.paypalCharge);
 app.post('/getVideo', videoAPI);

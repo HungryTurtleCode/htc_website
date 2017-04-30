@@ -1,6 +1,7 @@
 var firebase = require('../firebase/index.js');
 var paypal = require('./paypal.js');
 var stripe = require('./stripe.js');
+var ac = require('../activeCampaign/ac.js');
 
 var BASE_URL = 'http://localhost:4000';
 
@@ -17,6 +18,7 @@ exports.stripeCharge = function(req, res, next){
     var request = JSON.parse(body);
     var courses = request.courses;
     var user = request.user;
+    var email = request.email;
     var token = request.token;
 
     firebase.getMetaForCourses(courses)
@@ -26,6 +28,9 @@ exports.stripeCharge = function(req, res, next){
                     .then(charge => {
                         firebase.enrollUser(user, courses)
                             .then(() => {
+
+                                ac.addTag(email, courses)
+
                                 firebase.clearCart(user)
                                     .then(() => {
                                         var response = JSON.stringify({url: BASE_URL + '/account', success: true});
