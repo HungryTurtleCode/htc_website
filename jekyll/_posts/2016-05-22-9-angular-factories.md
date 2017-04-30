@@ -2,7 +2,7 @@
 title: 'AngularJS Quiz App Tutorial Part 9 - More About Factories'
 date: 2016-05-22T20:18:05+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/9-angular-factories/
 head-title: Part 9 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-9_sjwfx2.jpg?alt=media&token=c34f617a-69e0-4452-a0a1-dcd91f546d6b
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: TlR3bI7Azvk
 ---
 ## Mocking An API Request With Angular Factories
 
@@ -38,13 +39,11 @@ We don’t have to completely refactor the entire codebase to allow API calls, w
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 
+[The next part can be found here]({{site.baseurl}}/projects/10-ng-class/)
+
 ### Get On With It!
 
 Ok, enough chat, let&#8217;s write some code.
-
-{% include video-embed.html videoID="TlR3bI7Azvk" %}
-
-[The next part can be found here]({{site.baseurl}}/projects/10-ng-class/)
 
 We will create another script in the factories directory and call it dataservice.js. We will start this in the exact same way we started the quizMetrics factory.
 
@@ -379,9 +378,5 @@ In [part 10]({{site.baseurl}}/projects/10-ng-class/) we will use the quiz JSON w
 See you over there.
 
 Adrian
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

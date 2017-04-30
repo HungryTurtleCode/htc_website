@@ -2,7 +2,7 @@
 title: 'AngularJS Quiz App Tutorial Part 2 - Controller Properties and $scope'
 date: 2016-05-22T20:25:51+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/2-ng-controller-scope/
 head-title: Part 2 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-2_j1jjhy.jpg?alt=media&token=5132e829-c4a4-4b95-9bf5-29f80e43f17f
@@ -19,7 +19,9 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: mCDI3ZH3E58
 ---
+
 ## Using An Angular Controller To Add Content
 
 In the [last part](/1-build-angular-quiz-app-scratch) we wrote our first bits of [Angular](https://docs.angularjs.org/api){: target="_blank"}<!--_--> code. One of those bits was the code that instantiates the controller for our list view. In this part we will take that Angular [Controller](https://docs.angularjs.org/api/ng/directive/ngController){: target="_blank"}<!--_--> <!--more-->and use it to dynamically insert data into our HTML. This gives us great control over the content that is on our page.
@@ -31,12 +33,6 @@ In this article I will explain the two main methods of doing this and the pros a
 **If you want to see the app for yourself,** [check it out here.](/turtlefacts)
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-## Angular Controller Video Tutorial
-
-As always, the more visually inclined can just watch this video and you will receive all the same information as you would from the article. If you prefer to read just scroll down past the video.
-
-{% include video-embed.html videoID="mCDI3ZH3E58" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/3-ng-repeat-directive/)
 
@@ -131,10 +127,5 @@ See you over [there](/projects/3-ng-repeat-directive).
 
 Adrian
 
-
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

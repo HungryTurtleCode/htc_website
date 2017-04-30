@@ -2,7 +2,7 @@
 title: AngularJS Quiz App Tutorial Part 16 – Error Handling With Bootstrap Alerts
 date: 2016-05-22T20:16:29+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/16-bootstrap-alerts/
 head-title: Part 16 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-16_nvilyd.jpg?alt=media&token=746bda3d-9a59-4b5e-a714-c0f2ac4750a1
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: doU9zxZBoXI
 ---
 ## Errors Must Be Handled In All Apps
 
@@ -27,8 +28,6 @@ Handling errors is a critical part of the life of a software developer. If you c
 **If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-{% include video-embed.html videoID="doU9zxZBoXI" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/17-final-prompt/)
 
@@ -240,9 +239,5 @@ This is what we will tackle in the [next part]({{site.baseurl}}/projects/17-fina
 See you in [part 17]({{site.baseurl}}/projects/17-final-prompt/).
 
 Adrian
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

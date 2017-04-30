@@ -2,7 +2,7 @@
 title: AngularJS Quiz App Tutorial Part 22 – Final Functions For RestultsCtrl
 date: 2016-05-22T20:14:46+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/22-angular-number-filter/
 head-title: Part 22 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-22_zw1ina.jpg?alt=media&token=481d5545-ef32-4a19-831a-47e01f4a09ca
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: mWmfEtzGtRY
 ---
 ## Last Two Functions For The ResultsCtrl
 
@@ -27,8 +28,6 @@ In this part we will add the final two functions into the results controller. A 
 **If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-{% include video-embed.html videoID="mWmfEtzGtRY" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/23-angular-ng-if/)
 
@@ -105,9 +104,5 @@ In [part 23]({{site.baseurl}}/projects/23-angular-ng-if/) we will tackle fixing 
 See you there
 
 Adrian
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

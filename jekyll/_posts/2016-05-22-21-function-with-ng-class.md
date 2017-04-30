@@ -2,7 +2,7 @@
 title: AngularJS Quiz App Tutorial Part 21 – A New Way To Use Ng-Class
 date: 2016-05-22T20:15:10+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/21-function-with-ng-class/
 head-title: Part 21 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-21_vaxed8.jpg?alt=media&token=da4b2142-1fac-41cc-ab94-2353473bd0ad
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: bGyvJMprAcg
 ---
 ## Deja Vu + A New Way To Use Ng-Class
 
@@ -27,8 +28,6 @@ Much like the [previous part]({{site.baseurl}}/projects/20-familiar-bootstrap/){
 **If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-{% include video-embed.html videoID="bGyvJMprAcg" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/22-angular-number-filter/)
 
@@ -172,9 +171,5 @@ There isn’t much left for us to do in the application. The [next thing]({{site
 See you in [part 22]({{site.baseurl}}/projects/22-angular-number-filter/) for that
 
 Adrian
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

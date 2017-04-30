@@ -2,7 +2,7 @@
 title: AngularJS Quiz App Tutorial Part 19 – More Dependency Injection
 date: 2016-05-22T20:15:37+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/19-angular-dependency-injection/
 head-title: Part 19 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-19_f7ugae.jpg?alt=media&token=d824b20e-e6a5-43eb-b3af-9e7b00ced4e5
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: N6N3KhkKk3o
 ---
 ## First Steps To Getting The Results
 
@@ -27,8 +28,6 @@ We have finished the quiz controller so now it is time to start the results cont
 **If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-{% include video-embed.html videoID="N6N3KhkKk3o" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/20-familiar-bootstrap/)
 
@@ -108,9 +107,5 @@ See you in [part 20]({{site.baseurl}}/projects/20-familiar-bootstrap/)
 Adrian
 
 &nbsp;
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

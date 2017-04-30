@@ -2,7 +2,7 @@
 title: 'AngularJS Quiz App Tutorial Part 7 - Factories and Services'
 date: 2016-05-22T20:18:56+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/7-angular-services/
 head-title: Part 7 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-7_hy22ev.jpg?alt=media&token=91a09386-dfd1-4cc3-a34c-f6394b732d4f
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: HrbkZO5Mt0g
 ---
 ## Angular Services &#8211; Serving (Some) Of Your Needs
 
@@ -27,12 +28,6 @@ Fully armed with the knowledge on how to hide and show HTML elements, we can now
 **If you want to see the app for yourself,** [check it out here.]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-### Pick Your Poison &#8211; Text Or Video
-
-As always, you can read this article or you can watch the video below to get the same information.
-
-{% include video-embed.html videoID="HrbkZO5Mt0g" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/8-dependency-injection/)
 
@@ -144,9 +139,5 @@ I will see you over there in [part 8.]({{site.baseurl}}/projects/8-dependency-in
 
 Adrian
 
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

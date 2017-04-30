@@ -2,7 +2,7 @@
 title: AngularJS Quiz App Tutorial Part 20 – Familiar Bootstrap Markup
 date: 2016-05-22T20:15:33+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/20-familiar-bootstrap/
 head-title: Part 20 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-20_jtmhg5.jpg?alt=media&token=07629e87-bb51-4d29-bcec-9b0b88ae939b
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: AxQcLIRoxYw
 ---
 ## Some Really Familiar Bootstrap Markup
 
@@ -27,8 +28,6 @@ This lesson isn’t introducing anything new. Infact, you will have seen much of
 **If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-{% include video-embed.html videoID="AxQcLIRoxYw" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/21-function-with-ng-class/)
 
@@ -88,9 +87,5 @@ This lesson really was short. I don’t want to get into the [next part]({{site.
 See you in [part 21]({{site.baseurl}}/projects/21-function-with-ng-class/)
 
 Adrian
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

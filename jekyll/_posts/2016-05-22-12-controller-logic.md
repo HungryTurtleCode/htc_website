@@ -3,7 +3,7 @@ title: AngularJS Quiz App Tutorial Part 12 – Controller Logic
 head-title: Part 12 AngularJS Quiz App Tutorial
 date: 2016-05-22T20:17:27+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/12-controller-logic/
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-12_sfbie2.jpg?alt=media&token=4d8f3cd5-2d1f-4296-a5bc-94dea8c292e5
 excerpt: Controller Logic Keeps Us Going We set ourselves up nicely in the last part. The ng-click calls a function on the quizController every time the “continue” button is clicked. This function will then need to change the activeQuestion property to …
@@ -19,7 +19,9 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: XamHS-0PiMM
 ---
+
 ## Controller Logic Keeps Us Going
 
 We set ourselves up nicely in the last part. The ng-click calls a function on the quizController every time the “continue” button is clicked. This function will then need to change the activeQuestion property to the next available unanswered question in the quiz. So follow along with the article or the video as we build this controller logic.
@@ -27,10 +29,6 @@ We set ourselves up nicely in the last part. The ng-click calls a function on th
 **If you want to see the app for yourself,** [check it out here.]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-### Video Tutorial, For The More Visually Inclined
-
-{% include video-embed.html videoID="XamHS-0PiMM" %}
 
 [The next part can be found here.]({{site.baseurl}}/projects/13-ng-if/)
 
@@ -199,10 +197,5 @@ In the [next part]({{site.baseurl}}/projects/13-ng-if/){: target="_blank"}<!--_-
 See you over in [part 13]({{site.baseurl}}/projects/13-ng-if/)
 
 Adrian
-
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

@@ -2,7 +2,7 @@
 title: 'AngularJS Quiz App Tutorial Part 3 - Ng-Repeat And Bootstrap'
 date: 2016-05-22T20:24:13+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/3-ng-repeat-directive/
 head-title: Part 3 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-3_tuziev.jpg?alt=media&token=ce33aa8b-ba5f-408a-923e-b5bf84a965b9
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: iAX67gisQ2M
 ---
 ## Ng-Repeat Directive Will Do Your Work For You
 
@@ -31,12 +32,6 @@ Of course, in any application some data is needed. This data is usually fetched 
 **If you want to check out the finished app,** [you can see it here]({{site.baseurl}}/turtlefacts).
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-### Angular Video Tutorial Goodness
-
-As always, for those of you more visually inclined this full tutorial is in video form below. For the rest of you continue reading below the video for the same content in written form.
-
-{% include video-embed.html videoID="iAX67gisQ2M" %}
 
 [The next part of the series can be found here.]({{site.baseurl}}/projects/4-bootstrap-modal/)
 
@@ -273,9 +268,5 @@ See you there&#8230;
 Adrian
 
 &nbsp;
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

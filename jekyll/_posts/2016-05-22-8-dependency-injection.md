@@ -2,7 +2,7 @@
 title: 'AngularJS Quiz App Tutorial Part 8 - Dependency Injection'
 date: 2016-05-22T20:18:46+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/8-dependency-injection/
 head-title: Part 8 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-8_imuigb.jpg?alt=media&token=fbcbdb21-7e4d-49f8-ae0b-fb1e9da4c909
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: txzLabEIP_w
 ---
 ## Make The Factory Useful &#8211; Dependency Injection
 
@@ -27,12 +28,6 @@ It is no use to us to have a factory if we cannot use it inside our controller. 
 **If you want to see the app for yourself,** [check it out here.]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-### You Know The Drill.
-
-Watch the video, or read the article. Or both.
-
-{% include video-embed.html videoID="txzLabEIP_w" %}
 
 [The next part can be found here.]({{site.baseurl}}/projects/9-angular-factories/)
 
@@ -206,9 +201,5 @@ We are now well on our way to creating this full application. In the [next part]
 I will see you in [part 9.]({{site.baseurl}}/projects/9-angular-factories/)
 
 Adrian
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

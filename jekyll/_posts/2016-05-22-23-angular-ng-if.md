@@ -2,7 +2,7 @@
 title: AngularJS Quiz App Tutorial Part 23 – Ng-If (Again)
 date: 2016-05-22T20:13:37+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/23-angular-ng-if/
 head-title: Part 23 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-23_gxzkuu.jpg?alt=media&token=298261de-b7e5-4418-833e-61ca3a111e2b
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: xxH3dhPC5bY
 ---
 ## Our Old Enemy &#8211; The Image Questions
 
@@ -27,8 +28,6 @@ When we created the quiz controller we had the problem of the image urls display
 **If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-{% include video-embed.html videoID="xxH3dhPC5bY" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/24-finished-angular-project/)
 
@@ -115,9 +114,5 @@ I will see you in the final part where we add that button and logic.
 See you in [part 24]({{site.baseurl}}/projects/24-finished-angular-project/)
 
 Adrian
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

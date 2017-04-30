@@ -2,7 +2,7 @@
 title: 'AngularJS Quiz App Tutorial Part 4 - Bootstrap Modal Functionality'
 date: 2016-05-22T20:24:11+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/4-bootstrap-modal/
 head-title: Part 4 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-4_xidsve.jpg?alt=media&token=e4ecadcc-e7ee-406b-90f7-291b6e15651c
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: IW37XF2g7AU
 ---
 ## Bootstrap Modal Markup And Other CSS
 
@@ -27,12 +28,6 @@ We made a good start on our bootstrap markup in [last part](/3-ng-repeat-directi
 If you want to see the app in action, [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-### As Always &#8211; Video Or Text
-
-You can watch this full tutorial in video form below or you can continue reading past the video for a full written version.
-
-{% include video-embed.html videoID="IW37XF2g7AU" %}
 
 [The next part can be found here.]({{site.baseurl}}/projects/5-angular-filters/)
 
@@ -289,9 +284,5 @@ So I will see you [over there in part 5](/projects/5-angular-filters/).
 Adrian
 
 &nbsp;
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

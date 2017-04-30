@@ -2,7 +2,7 @@
 title: AngularJS Quiz App Tutorial Part 14 – index for Ng-Repeat
 date: 2016-05-22T20:16:58+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/14-index-for-ng-repeat/
 head-title: Part 14 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-14_swngy0.jpg?alt=media&token=01ff7799-c3a7-4acf-add9-5a53ff857548
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: lQ4lVuGC2F4
 ---
 ## Index For Ng-Repeat Will Help User Feedback
 
@@ -27,8 +28,6 @@ We now have the questions all displaying nicely in the quiz. The problem we face
 **If you want to see the app for yourself,** [check it out here.](/turtlefacts)
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-{% include video-embed.html videoID="lQ4lVuGC2F4" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/15-reusing-code/)
 
@@ -106,9 +105,5 @@ See you over in [part 15.]({{site.baseurl}}/projects/15-reusing-code/)
 Adrian
 
 &nbsp;
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

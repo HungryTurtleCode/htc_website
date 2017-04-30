@@ -2,7 +2,7 @@
 title: 'AngularJS Quiz App Tutorial Part 5 - Ng-model and Angular Filters'
 date: 2016-05-22T20:24:08+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/5-angular-filters/
 head-title: Part 5 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-5_qjajqt.jpg?alt=media&token=68ed969d-f1ae-4ad6-ab0a-a6fbdd901a9d
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: zisGjJySdLA
 ---
 ## Angular Filters Create A Magic Search!
 
@@ -29,10 +30,6 @@ Using Angular filters in this way is definitely one of my favourite features of 
 If you want to take a look at this search functionality in action, it can be seen in the video below or [check out the app here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->. As always this video is exactly the same as this article just to give you some options of how you want your information.
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-### Video Killed The Radio Stars
-
-{% include video-embed.html videoID="zisGjJySdLA" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/6-ng-click-directive/)
 
@@ -125,9 +122,5 @@ So I&#8217;ll see you over there in [part 6]({{site.baseurl}}/projects/6-ng-clic
 
 Adrian
 
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

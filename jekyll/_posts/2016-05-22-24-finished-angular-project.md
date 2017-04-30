@@ -2,7 +2,7 @@
 title: AngularJS Quiz App Tutorial Part 24 – The Finished App
 date: 2016-05-22T19:42:30+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/24-finished-angular-project/
 head-title: Part 24 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-24_l0q3sc.jpg?alt=media&token=f85a27b6-2bf8-453d-9184-b5d138eb61ed
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: EEOMwWO0lhg
 ---
 ## We Have Made It To The End, Friends
 
@@ -27,8 +28,6 @@ There is only one small thing that we still have left to do before you have your
 **If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-{% include video-embed.html videoID="EEOMwWO0lhg" %}
 
 Right underneath the well that holds the questions we will add a large button to take the user back to the facts page. This button will have an ng-click that will call a function that will reset all the data in the application and allow the user to repeat the quiz again without any of the data from their first attempt interfering.
 
@@ -72,9 +71,5 @@ Until my next course, why not check out some of the other content that I have cr
 Stay hungry, and keep coding!
 
 Adrian
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

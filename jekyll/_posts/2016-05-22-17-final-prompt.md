@@ -2,7 +2,7 @@
 title: AngularJS Quiz App Tutorial Part 17 – Final Prompt Before Results
 date: 2016-05-22T20:16:04+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/17-final-prompt/
 head-title: Part 17 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-17_blwjwc.jpg?alt=media&token=8bb7a5e3-615b-4127-8ca1-741f4577285b
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: 6uZfUfB4bN8
 ---
 ## The End Of The Quiz Controller Is Near
 
@@ -27,8 +28,6 @@ The only thing left for us to do with the quiz controller is just prompt the use
 **If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-{% include video-embed.html videoID="6uZfUfB4bN8" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/18-marking-the-quiz/)
 
@@ -153,10 +152,6 @@ We called the markQuiz function but it is yet to be created. So in the [next par
 See you in [part 18.]({{site.baseurl}}/projects/18-marking-the-quiz/)
 
 Adrian
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.
 

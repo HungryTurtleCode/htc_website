@@ -3,10 +3,11 @@ title: Build An Angular Quiz App From Scratch
 head-title: AngularJS Quiz App Tutorial Part 1
 date: 2016-05-22T20:26:51+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/1-build-angular-quiz-app-scratch/
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-Quiz-App_kifpk9.jpg?alt=media&token=8a4e0a51-43c6-4abb-9731-86e1d8aedaf0 
 excerpt: I’ve Learnt Some JavaScript! What Now? That may be something that pretty much all of us have said at some point or another. You have learnt some basic programming syntax, but you now want to build something.
+videoID: yordL7Yczes
 
 course-index: angular-quiz
 categories:
@@ -50,15 +51,7 @@ The application itself is a quiz application with a little learning &#8220;Facts
 
 [Check out the git repo for this project](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->
 
-### Course Index
-
-Before we get going, here is an index of all the lessons in the course:
-
-{% include course-index.html %}
-
 ### Let&#8217;s Get Going!
-
-{% include video-embed.html videoID="yordL7Yczes" %}
 
 So for those of you that prefer to read the tutorial. Let&#8217;s get started.
 

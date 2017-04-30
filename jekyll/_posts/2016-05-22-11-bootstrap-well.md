@@ -3,7 +3,7 @@ title: AngularJS Quiz App Tutorial Part 11 – More Bootstrap
 head-title: Part 11 AngularJS Quiz App Tutorial
 date: 2016-05-22T20:17:31+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/11-bootstrap-well/
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-11_jxnkd4.jpg?alt=media&token=5cc5fd19-bb21-49c6-bdc0-8e937f4efb1b
 excerpt: Bootstrapping The Quiz Questions No waiting around here, let’s just jump straight into creating the markup for the questions in the quiz. The whole area will be surrounded in a bootstrap well and we will pull the questions from the …
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: UC8aWbE9_G4
 ---
 ## Bootstrapping The Quiz Questions
 
@@ -27,8 +28,6 @@ No waiting around here, let’s just jump straight into creating the markup for 
 **If you want to see the app for yourself,** [check it out here.]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-{% include video-embed.html videoID="UC8aWbE9_G4" %}
 
 [Here is the next part]({{site.baseurl}}/projects/12-controller-logic/)
 
@@ -192,9 +191,5 @@ So I will see you there, in [part 12]({{site.baseurl}}/projects/12-controller-lo
 Adrian
 
 &nbsp;
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

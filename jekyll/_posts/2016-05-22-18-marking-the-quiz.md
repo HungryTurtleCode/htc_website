@@ -2,7 +2,7 @@
 title: AngularJS Quiz App Tutorial Part 18 – Marking The Quiz
 date: 2016-05-22T20:15:55+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/18-marking-the-quiz/
 head-title: Part 18 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-18_eybezd.jpg?alt=media&token=70cb5428-d3fe-4394-88f4-1625ac3033d8
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: mBDbwKr4DyQ
 ---
 ## No Quiz Is Complete Without It Being Marked
 
@@ -27,8 +28,6 @@ In the [last part]({{site.baseurl}}/projects/17-final-prompt/){: target="_blank"
 **If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-{% include video-embed.html videoID="mBDbwKr4DyQ" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/19-angular-dependency-injection/)
 
@@ -107,9 +106,5 @@ See you in [part 19]({{site.baseurl}}/projects/19-angular-dependency-injection/)
 
 Adrian
 
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

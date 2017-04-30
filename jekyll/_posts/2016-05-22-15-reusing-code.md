@@ -2,7 +2,7 @@
 title: AngularJS Quiz App Tutorial Part 15 – Reusing Code
 date: 2016-05-22T20:16:34+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/15-reusing-code/
 head-title: Part 15 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-15_xy7gaj.jpg?alt=media&token=faacff61-45bf-451c-bc9f-679e8fdd1573
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: kDQco9gfYmo
 ---
 ## Custom CSS For Image Feedback + Code Reuse
 
@@ -27,8 +28,6 @@ Having nice user feedback is great, but move forward to the image questions and 
 **If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-{% include video-embed.html videoID="kDQco9gfYmo" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/16-bootstrap-alerts/)
 
@@ -128,9 +127,5 @@ Moving swiftly on to [part 16]({{site.baseurl}}/projects/16-bootstrap-alerts/) o
 See you in [part 16.]({{site.baseurl}}/projects/16-bootstrap-alerts/)
 
 Adrian
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.

@@ -2,7 +2,7 @@
 title: 'AngularJS Quiz App Tutorial Part 6 - Ng-click and ng-show directives'
 date: 2016-05-22T20:18:56+00:00
 author: Adrian
-layout: post
+layout: post-sidebar
 alias: /code-projects/angular-quiz-app/6-ng-click-directive/
 head-title: Part 6 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-6_njlvtc.jpg?alt=media&token=bc80f7d0-71e2-42c3-80c0-c1504ef05af1
@@ -19,6 +19,7 @@ tags:
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
 googleplusimg: /assets/ng-quiz-app-fb.jpg
+videoID: ZKbPtYYbSOg
 ---
 ## Ng-Click Directive And Ng-Show / Ng-Hide
 
@@ -27,12 +28,6 @@ We&#8217;re nearly in a position to move away from our list controller and start
 **If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
-
-### Video Or Text Tutorial?
-
-Take your pick. You can watch the video below or you can read through this article to get the same information.
-
-{% include video-embed.html videoID="ZKbPtYYbSOg" %}
 
 [The next part can be found here]({{site.baseurl}}/projects/7-angular-services/)
 
@@ -128,9 +123,5 @@ Of course, we will solve these problems and introduce some new Angular features 
 See you over there in [part 7]({{site.baseurl}}/projects/7-angular-services/).
 
 Adrian
-
-### Check Out The Whole Course Index
-
-{% include course-index.html %}
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.
