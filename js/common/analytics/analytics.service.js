@@ -1,8 +1,9 @@
 class AnalyticsService{
-  constructor() {
+  constructor(dataService) {
     this.path = window.location.pathname;
     this.FbEventBacklog = [];
     this.GaEventBacklog = [];
+    this.dataService = dataService;
 
     window.analytics = this;
   }
@@ -10,6 +11,25 @@ class AnalyticsService{
     this.gaBacklogWrapper(() => {
       ga('send', 'event', type, action, label, value);
     });
+    this.trackAcEvent(type, action, label, value)
+  }
+  setUserData(data){
+    this.user = data;
+  }
+  trackAcEvent(type, action, label, value, email){
+    console.log(type);
+    let data = {
+      event: type,
+      eventdata: {
+        action,
+        label,
+        value
+      },
+      visit: {
+        email: this.user ? this.user.email : ''
+      }
+    };
+    this.dataService.trackAcEvent(data);
   }
   trackNonInteraction(type, action, label=this.path){
     this.gaBacklogWrapper(() => {
@@ -62,6 +82,6 @@ class AnalyticsService{
   }
 }
 
-AnalyticsService.$inject = [];
+AnalyticsService.$inject = ['dataService'];
 
 export default AnalyticsService;

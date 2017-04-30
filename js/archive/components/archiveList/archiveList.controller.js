@@ -37,7 +37,8 @@ class ArchiveListController {
                             },
                             'search_string'
                           );
-    this.userData.trackEvent('Search', {query: query, page: this.getPageLocations()});
+    this.userData.trackSearch(query, this.getPageLocations());
+    // this.userData.trackEvent('Search', {query: query, page: this.getPageLocations()});
   }
   slugify(name){
     if(name){

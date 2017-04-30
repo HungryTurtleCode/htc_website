@@ -48,10 +48,10 @@ class Auth{
 
                   this.dataService.subscribeUser(user.email, first_name, last_name)
                     .then(data => {
-                      if(data.success){
+                      if(data.success || data.error === 'duplicate'){
                         this.fb.markSubscribedAC(user.uid, user.email);
                       }
-                    })
+                    });
                 }
               });
           }

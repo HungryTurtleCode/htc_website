@@ -1,9 +1,10 @@
 class userData{
-  constructor(firebaseService, auth, dataService, $timeout) {
+  constructor(firebaseService, auth, dataService, $timeout, analytics) {
     this.fb = firebaseService;
     this.auth = auth;
     this.dataService = dataService;
     this.$timeout = $timeout;
+    this.analytics = analytics;
 
     this.user = {};
     this.courses = [];
@@ -35,6 +36,10 @@ class userData{
     }
     data.user = data.user || this.user.user_id;
     this.fb.trackUserEvent(data.user, type, data);
+  }
+  trackSearch(query, page){
+    this.trackEvent('Search', {query, page});
+    this.dataService.tagSearch(this.user.email, query);
   }
   isEnrolled(course, user){
     if(user){
@@ -135,7 +140,7 @@ class userData{
     return Promise.reject(false);
   }
   paypalBuy(data){
-    return this.dataService.paypalBuy(getCourseArray(data), this.user.user_id);
+    return this.dataService.paypalBuy(getCourseArray(data), this.user);
 
     function getCourseArray(courses){
       return courses.map(item => {
@@ -144,7 +149,7 @@ class userData{
     }
   }
   stripeBuy(data, token){
-    return this.dataService.stripeBuy(getCourseArray(data), this.user.user_id, token);
+    return this.dataService.stripeBuy(getCourseArray(data), this.user, token);
 
     function getCourseArray(courses){
       return courses.map(item => {
@@ -162,6 +167,7 @@ class userData{
         user_id: user.uid
       }
       this.user = userInfo;
+      this.analytics.setUserData(this.user);
 
       if(user.isAnonymous){
         localStorage.setItem('anon_user_id', JSON.stringify(user.uid));
@@ -172,7 +178,7 @@ class userData{
     }
   }
   onRegister(user){
-    this.trackEvent('Register', {user: user});
+    this.trackEvent('Register', {id: user.uid});
   }
   getNotifications(callback){
     if(this.user.user_id){
@@ -340,6 +346,6 @@ class userData{
   }
 }
 
-userData.$inject = ['firebaseService', 'auth', 'dataService','$timeout'];
+userData.$inject = ['firebaseService', 'auth', 'dataService','$timeout', 'analyticsService'];
 
 export default userData;

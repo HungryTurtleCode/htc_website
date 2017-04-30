@@ -300,13 +300,11 @@ class FirebaseService{
 
     email = this.makeFirebaseSafe(email);
 
-    let data = {}
-    data[email] = true;
-
     this.ref
       .child('active-campaign')
       .child(id)
-      .set(data);
+      .child(email)
+      .set(true);
   }
   checkIfSubscribed(id, email){
     email = this.makeFirebaseSafe(email);
