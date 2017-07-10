@@ -1,0 +1,117 @@
+---
+layout: default
+---
+
+<div id="sales-container">
+  {% include breadcrumbs.html %}
+  <main class="sales-page">
+    <h1 class="h1">{{ page.title  }}</h1>
+    <h2 class="h2">{{ page.subtitle  }}</h2>
+
+    <section class="top">
+      <div class="video">
+        <div class="youtube" data-embed="{{page.salesVideoId}}">
+          <div class="play-button"></div>
+        </div>
+
+        <script>
+          var yt = document.querySelectorAll('.youtube');
+
+          for(var i = 0; i < yt.length; i++){
+            var source = "https://img.youtube.com/vi/"+ yt[i].dataset.embed +"/sddefault.jpg";
+            // Load the image asynchronously
+            var image = new Image();
+            image.src = source;
+            image.addEventListener("load", function() {
+              yt[i].appendChild(image);
+            }(i));
+
+            yt[i].addEventListener("click", function(){
+
+              var iframe = document.createElement("iframe");
+              addYtTrackingScript();
+
+              iframe.setAttribute("frameborder", "0");
+              iframe.setAttribute("allowfullscreen", "");
+              iframe.setAttribute("src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1");
+
+              this.innerHTML = "";
+              this.appendChild(iframe);
+            });
+          }
+          function addYtTrackingScript(){
+            var apiScript = document.createElement("script");
+            var node = document.getElementsByTagName('script')[0];
+            apiScript.async = 1;
+            apiScript.src = '{% asset_path youtubeembedtracking %}';
+            node.parentNode.insertBefore(apiScript, node);
+          }
+        </script>
+      </div>
+      <div class="side">
+        <buy-button></buy-button>
+        <ul class="items">
+          {% if page.lessons %}
+            <li><strong>Lessons:</strong> {{page.lessons}}</li>
+          {% endif %}
+
+
+          {% if page.skill %}
+            <li><strong>Skill Level:</strong> {{page.skill}}</li>
+          {% endif %}
+
+          {% if page.languages %}
+            <li>
+              <strong>Languages Used:</strong>
+              <ul>
+                {% for lang in page.languages %}
+                  <li><a href="{{site.baseurl}}/tag/{{lang | slugify}}">{{lang}}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
+
+          {% if page.frameworks %}
+            <li><strong>Frameworks:</strong>
+              <ul>
+                {% for fw in page.frameworks %}
+                  <li><a href="{{site.baseurl}}/tag/{{fw | slugify}}">{{fw}}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
+
+          {% if page.topics %}
+            <li><strong>Topics Covered:</strong>
+              <ul>
+                {% for topic in page.topics %}
+                  <li><a href="{{site.baseurl}}/tag/{{topic | slugify}}">{{topic}}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
+        </ul>
+        <bookmark-button
+          course="'{{page.slug}}'">
+        </bookmark-button>
+      </div>
+    </section>
+
+    <div class="sales-main">
+      <div class="content">
+        <h2 class="top-header">A Bit About <span class="high">The</span> <span class="accent">Course</span></h2>
+        <div class="article">
+          {{content}}
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <sidebar-lesson-list></sidebar-lesson-list>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+{% javascript manifest %}
+{% javascript salespage %}

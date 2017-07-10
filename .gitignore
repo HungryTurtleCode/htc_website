@@ -35,3 +35,24 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+_image_optim_archive
+_image_optim_cache.yml
+_site
+jekyll/_assets/js/bundle.js
+jekyll/_assets/js/account.js
+jekyll/_assets/js/post.js
+jekyll/_assets/js/lesson.js
+jekyll/_assets/js/checkout.js
+jekyll/_assets/js/salespage.js
+jekyll/_assets/js/header.js
+jekyll/_assets/js/manifest.js
+jekyll/_assets/js/contact.js
+jekyll/_assets/js/archive.js
+.DS_Store
+.jekyll
+.bundle
+.sass-cache
+.asset-cache
+jekyll/.asset-cache
+node_modules
+npm-debug.log

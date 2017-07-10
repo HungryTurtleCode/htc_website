@@ -1,0 +1,82 @@
+<div class="video-embed-container">
+
+  <div class="youtube" data-embed="{{include.videoID}}">
+    <div class="play-button"></div>
+  </div>
+
+  <script>
+    var yt = document.querySelectorAll('.youtube');
+
+    for(var i = 0; i < yt.length; i++){
+      var source = "https://img.youtube.com/vi/"+ yt[i].dataset.embed +"/sddefault.jpg";
+      // Load the image asynchronously
+      var image = new Image();
+      image.src = source;
+      image.addEventListener("load", function() {
+        yt[i].appendChild(image);
+      }(i));
+
+      yt[i].addEventListener("click", function(){
+
+        var iframe = document.createElement("iframe");
+        addYtTrackingScript();
+        addAPIScript();
+        updateSubscribeText();
+
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allowfullscreen", "");
+        iframe.setAttribute("src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1");
+
+        this.innerHTML = "";
+        this.appendChild(iframe);
+      });
+    }
+    function addYtTrackingScript(){
+      var apiScript = document.createElement("script");
+      var node = document.getElementsByTagName('script')[0];
+      apiScript.async = 1;
+      apiScript.src = '{% asset_path youtubeembedtracking %}';
+      node.parentNode.insertBefore(apiScript, node);
+    }
+    function addAPIScript(){
+      var apiScript = document.createElement("script");
+      var node = document.getElementsByTagName('script')[0];
+      apiScript.async = 1;
+      apiScript.src = "https://apis.google.com/js/platform.js";
+      node.parentNode.insertBefore(apiScript, node);
+    }
+    function updateSubscribeText(){
+      var node = document.querySelectorAll('.subscribe-prompt');
+      node[0].children[0].classList += ' show';
+    }
+  </script>
+
+  <div class="subscribe-prompt">
+    <div class="text">
+      Subscribe To My Channel...
+    </div>
+
+    <div
+      class="g-ytsubscribe"
+      data-channelid="UC7Vxnf06GP6w42Lg3TQLXSw"
+      data-layout="full"
+      data-count="hidden"
+      data-onytevent="onYtEvent">
+    </div>
+  </div>
+
+</div>
+
+<script>
+function onYtEvent(payload) {
+  if (payload.eventType == 'subscribe') {
+    // Add code to handle subscribe event.
+  } else if (payload.eventType == 'unsubscribe') {
+    // Add code to handle unsubscribe event.
+  }
+  if (window.console) { // for debugging only
+    window.console.log('YT event: ', payload);
+  }
+}
+</script>
+

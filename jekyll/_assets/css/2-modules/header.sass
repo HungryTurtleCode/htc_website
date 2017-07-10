@@ -1,0 +1,201 @@
+header
+  background-color: $default-dark-color
+  font-size: 1rem
+
+  &.lesson-sidebar,
+  &.archive-sidebar
+    margin-left: 220px
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 100
+
+  .header-container
+    +outer-container
+    +padding(10px 10px 3px 10px)
+    +position(relative)
+
+    a
+      text-decoration: none
+
+    h4
+      display: inline-block
+      margin: 0
+      padding: 0
+      color: #c2c2c2
+
+      .turtle
+        color: #fefefe
+      .code
+        color: $secondary-color
+
+    nav
+      display: inline-block
+      font-size: 0.8em
+
+      ul
+        display: inline
+        padding-left: 1em
+
+        li
+          display: inline
+          list-style: none
+          border-right: 1px solid rgba(#ebebeb, 0.4)
+
+          &:last-child
+            border-right: none
+
+          a
+            display: inline-block
+            padding: 0.8em 1em 1em 1em
+            // color: #c4c4c4
+            color: pick-contrast($default-dark-color)
+            text-decoration: none
+            font-size: 0.9em
+            +transition(color 0.4s ease-in-out, color 0.4s ease-in-out)
+            cursor: pointer
+
+            &:hover
+              color: $secondary-color
+
+    .mini-mascot
+      width: auto
+      height: 30px
+      vertical-align: middle
+
+    .mascot
+      +position(absolute, 10px null null 0)
+
+    .header-panel
+      vertical-align: top
+      // height: 100px
+      float: right
+      width: 200px
+      padding-top: 3px
+
+      .sign-in-register
+        display: flex
+        justify-content: space-between
+
+      .relative
+        position: relative
+        display: inline-block
+
+        .popover
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)
+          position: absolute
+          top: 43px
+          width: 350px
+          right: 0px
+          background: white
+          padding: 1em
+          border-radius: 0.1em
+          z-index: 100
+
+          &.ng-enter
+            transition: all 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
+          .arrow
+            width: 0
+            height: 0
+            border-left: 10px solid transparent
+            border-right: 10px solid transparent
+            border-bottom: 10px solid white
+            position: absolute
+            right: 7px
+            top: -10px
+
+          .notification-item
+            border-bottom: 1px solid #d4d4d4
+            padding-bottom: 0.5em
+            margin-bottom: 1em
+            cursor: pointer
+
+            .top
+              img
+                height: 50px
+                width: 50px
+
+              .reply-text
+                display: inline-block
+                width: 250px
+                vertical-align: top
+                margin: 0
+                font-size: 0.7em
+                padding: 0 0 0 0.5em
+
+                strong
+                  text-transform: capitalize
+
+            .bottom
+              +clearfix
+
+              .date
+                display: inline-block
+                font-size: 0.6em
+                margin: 0
+                float: right
+
+
+      .notification-btn,
+      .account
+        position: relative
+        // background: $secondary-color
+        background: transparent
+        border: none
+        outline: none
+        border-radius: 50%
+        cursor: pointer
+
+        svg
+          width: 15px
+          height: 15px
+          margin: 5px 0 2px 3px
+
+          path
+            fill: white
+
+        span
+          background: $primary-color
+          border-radius: 50%
+          color: black
+          width: 15px
+          height: 15px
+          text-align: center
+          padding-top: 1px
+          position: absolute
+          font-size: 0.7em
+          top: -5px
+          right: -5px
+
+      .account
+        padding: 0 6px 0 4px
+
+      .auth-button
+        border: 0
+        text-decoration: none
+        background: none
+        color: darken(harmonious-mix($default-dark-color, $secondary-color), 5%)
+        // color: $secondary-color
+        cursor: pointer
+        outline: none
+        font-size: 0.8em
+
+        &.signin
+          color: lighten($secondary-color, 5%)
+
+        &:hover
+          text-decoration: underline
+        //   background: shade($primary-color, 10%)
+
+      .cart-icon
+        svg
+          margin: 5px 2px 2px 1px
+
+  &.archive-sidebar,
+  &.lesson-sidebar
+    .header-container
+      padding-left: 128px
+      padding-right: 128px
+

@@ -1,0 +1,42 @@
+<html>
+<head>
+  <base href="{{page.url}}"/>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Plain Description -->
+	<title>My Account - Hungry Turtle Code</title>
+  {% css app %}
+</head>
+<body class="account-page" ng-app="htcaccount">
+  <div class="account-sidebar">
+    <div class="logo">
+      <a href="/">
+        {% img mascot %}
+        <h4>hungry<span class="turtle">turtle</span><span class="code">code</span></h4>
+        <h6>A Sea Of Information</h6>
+      </a>
+    </div>
+    <ul>
+      <li ui-sref="myCourses">My Courses</li>
+      <hr>
+      <li ui-sref="completed">Completed</li>
+      <hr>
+      <li ui-sref="bookmarked">Bookmarked</li>
+      <hr>
+      <li ui-sref="account">Profile</li>
+    </ul>
+  </div>
+  <div class="account-container">
+    <main>
+      <tracking-pixels></tracking-pixels>
+
+      <app></app>
+
+    </main>
+  </div>
+  {% javascript manifest %}
+  {% javascript account %}
+</body>
+</html>

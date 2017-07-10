@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+{% include lesson-post-sidebar.html %}
+<div id="page-container-sidebar">
+  <div class="main-cont">
+    <main class="post-page" analytics>
+
+      {% include breadcrumbs.html data=page %}
+
+      <h1>
+        {{page.title}}
+        {% include tags.html data=page %}
+      </h1>
+
+      {% include author-tag.html data=page %}
+
+      {% include video-embed.html videoID=page.videoID %}
+
+      <div analytics-scroll class="lesson-content-article">
+        {% include share.html %}
+        {{content}}
+      </div>
+
+      <div id="content-end">
+        {% include tags.html data=page %}
+
+        {% include share.html %}
+
+        {% include related-posts.html %}
+
+        <post-comment></post-comment>
+      </div>
+
+      <div id="scroll-indicator"></div>
+
+    </main>
+  </div>
+
+
+</div>
+
+<script>
+  var scrollIndicator = document.getElementById('scroll-indicator');
+  var contentEnd  = document.getElementById('content-end');
+  var winHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  var timer;
+
+  function scrollPercFunc(){
+    var scrollTop = document.body.scrollTop;
+    var rectTop = contentEnd.getBoundingClientRect().top;
+
+    var distanceToBottom = rectTop - winHeight;
+    var perc = scrollTop / (scrollTop + distanceToBottom) * 100
+
+    scrollIndicator.style.width = perc + "%";
+  }
+
+  function runOnScroll(){
+    if(timer){
+      clearTimeout(timer);
+    }
+
+    timer = setTimeout(scrollPercFunc, 10);
+  }
+
+  window.addEventListener("scroll", runOnScroll);
+
+</script>
+
+{% javascript manifest %}
+{% javascript post %}
+

@@ -1,0 +1,97 @@
+.post-page
+  font-size: 1rem
+  +margin(1.7em 0)
+  padding: 0 1em
+
+  img
+    border: 1px solid #d4d4d4
+    max-width: 100%
+    height: auto
+
+  a
+    color: $secondary-color
+    text-decoration: none
+    transition: all 0.3s ease-in-out
+
+    &:hover
+      color: shade($secondary-color, 10%)
+      cursor: pointer
+
+  .breadcrumbs
+    font-size: 0.9em
+
+  h1
+    font-size: 1.5em
+    +margin(0.5em 0 0.4em 0)
+
+  h2
+    color: $primary-color
+
+  .post-author-tag
+    font-size: 0.7em
+    display: block
+    margin-bottom: 0.7em
+
+    a
+      font-weight: normal
+
+  .pleaseshare
+    span
+      color: $primary-color
+
+  ol
+    li
+      margin-bottom: 0.3em
+      p
+        margin: 0
+        padding: 0
+
+  .big-code-snippet
+    max-height: 600px
+    overflow: auto
+
+  #scroll-indicator
+    height: 5px
+    position: fixed
+    bottom: 0
+    left: 0
+    background-color: $secondary-color
+
+#page-container-sidebar
+  padding-left: 220px
+  +clearfix
+  margin-top: calc(55px + 1.7em)
+
+  .main-cont
+    max-width: 1200px
+    margin: 0 auto
+
+  .post-page
+    width: 80%
+    margin-left: 2em
+
+    @media screen and (max-width: 1500px)
+      width: 65%
+      margin: 1.7em auto
+
+    @media screen and (max-width: 1200px)
+      width: 85%
+
+    @media screen and (max-width: 800px)
+      width: 95%
+
+    .lesson-content-article,
+    #content-end
+      margin: 0 auto
+      width: 70%
+
+      @media screen and (max-width: 1500px)
+        width: 90%
+        margin: 1.7em auto
+
+      @media screen and (max-width: 1200px)
+        width: 95%
+
+
+
+

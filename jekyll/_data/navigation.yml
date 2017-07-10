@@ -1,0 +1,23 @@
+primary:
+  # - title: News
+    # url: /news/
+  - title: Build Projects
+    url: /projects/
+  - title: Tutorials
+    url: /tutorials/
+  - title: Premium Courses
+    url: /courses/
+  - title: About Me
+    url: /about-me/
+  - title: Contact Me
+    url: /contact-me/
+
+sidebar:
+  - title: Javascript
+    url: /tag/javascript
+  - title: AngularJS
+    url: /tag/angularjs
+  - title: Debugging
+    url: /tag/debugging
+  - title: jQuery
+    url: /tag/jquery

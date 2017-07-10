@@ -1,0 +1,31 @@
+bookmark-button
+  display: inline-block
+
+  button
+    color: white
+    background: $primary-color
+    outline: none
+    border: none
+    padding: 1em 2em
+    margin-top: 2em
+    margin-left: 3em
+    cursor: pointer
+    font-weight: bold
+    transition: background 0.3s ease
+
+    &:hover
+      background: shade($primary-color, 20%)
+
+course-card
+  bookmark-button
+    button
+      margin-left: 0
+      margin-top: 0.5em
+      width: 100%
+      font-size: 0.7em
+      background: $secondary-color
+
+      &:hover
+        background: shade($secondary-color, 20%)
+
+

@@ -1,0 +1,9 @@
+- name: jQuery Keyboard Events
+  lessons:
+    - title: Keys And Videos
+      length: '13:31'
+      slug: jquery-keyboard-events
+
+    - title: Modular jQuery
+      length: '22:55'
+      slug: jquery-keyboard-events-part-2

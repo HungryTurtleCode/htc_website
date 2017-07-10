@@ -1,0 +1,24 @@
+<html>
+<head>
+  <base href="{{page.url}}"/>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Plain Description -->
+	<title>Lesson - Hungry Turtle Code</title>
+  {% css app %}
+  <script>
+    var videogularCss = '{% asset_path videogular.min %}';
+    var mascotImg = '{% asset_path mascot %}'
+  </script>
+</head>
+<body ng-app="lesson">
+  <tracking-pixels></tracking-pixels>
+
+  <lesson></lesson>
+
+  {% javascript manifest %}
+  {% javascript lesson %}
+</body>
+</html>

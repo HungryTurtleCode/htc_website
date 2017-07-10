@@ -1,0 +1,85 @@
+// helpers
+@function is-cool-color($color) {
+  @return hue($color) < 300 and hue($color) > 120;
+}
+@function is-high-key-value($color) {
+  @return hue($color) > 30 and hue($color) < 140;
+}
+
+// harmoniously mix two colors
+@function harmonious-mix($mix, $base) {
+  @if (is-cool-color($mix)){
+    @if is-high-key-value($base) {
+      @return mix($mix, $base, 11%);
+    }
+    @else {
+      @return mix($mix, $base, 16%);
+    }
+  }
+  @else {
+    @if is-high-key-value($base) {
+      @return mix($mix, $base, 13%);
+    }
+    @else {
+      @return mix($mix, $base, 23%);
+    }
+  }
+}
+
+// creates a neutral color based on a color passed in
+// create more my lightening and darkening the
+// resulting neutral color
+@function mix-neutral($color) {
+  @if (is-highest-key-value($color)) {
+    @if is-high-key-value(complement($color)) {
+      @return mix(complement($color), $color, 19%);
+    }
+    @else {
+      @return mix(complement($color), $color, 13%);
+    }
+  }
+  @else if (is-high-key-value($color)) {
+    @if is-high-key-value(complement($color)) {
+      @return mix(complement($color), $color, 31%);
+    }
+    @else {
+      @return mix(complement($color), $color, 23%);
+    }
+  }
+  @else {
+    @if is-highest-key-value(complement($color)) {
+      @return mix(complement($color), $color, 31%);
+    }
+    @if is-high-key-value(complement($color)) {
+      @return mix(complement($color), $color, 26%);
+    }
+    @else {
+      @return mix(complement($color), $color, 23%);
+    }
+  }
+}
+// Picks a good contrast color for the color passed in
+@function pick-contrast($color) {
+  @if is-high-key-value($color){
+    @if lightness($color) < 30% {
+      @return lighten(complement($color), 86);
+    }
+    @else if lightness($color) > 70% {
+      @return darken(complement($color), 68);
+    }
+    @else {
+      @return darken(complement($color), 53);
+    }
+  }
+  @else {
+    @if lightness($color) < 30% {
+      @return lighten(complement($color), 86);
+    }
+    @else if lightness($color) > 70% {
+      @return darken(complement($color), 68);
+    }
+    @else {
+      @return lighten(complement($color), 53);
+    }
+  }
+}

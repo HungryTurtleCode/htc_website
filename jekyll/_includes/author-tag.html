@@ -1,0 +1,18 @@
+<strong class="post-author-tag">
+  By
+  <a href="{{site.baseurl}}/about-me">
+    {{include.data.author}}
+  </a>
+
+  on {{include.data.date | date: '%B %d, %Y'}} in
+
+  {% for cat in include.data.categories %}
+
+    <a href="{{site.baseurl}}/{{cat | slugify}}">
+      {{cat}}
+    </a>
+
+    {% unless forloop.last  %},{% endunless %}
+
+  {% endfor %}
+</strong>

@@ -1,0 +1,119 @@
+path / {
+  read() { isAdmin() }
+  write() { isAdminWrite() }
+}
+
+path /active-campaign/{id} {
+  read() { isCurrentUser(id) }
+}
+
+path /admin/{id} is Boolean;
+
+path /active-campaign/{id}/{email} is Boolean {
+  write() { isCurrentUser(id) }
+}
+
+path /comments/{course}/{lesson} {
+  read() { true }
+}
+path /comments/{course}/{lesson}/{comment} {
+  create() { isSignedIn() }
+  update() { isSignedIn() }
+}
+
+path /courses/{course}/lessons {
+  read() { true }
+}
+
+path /courses/{course}/meta/{data} {
+  read() { true }
+}
+
+path /premium/{course}/{lesson} {
+  read() { isEnrolled(course) }
+}
+path /users/{id} {
+  read() { isNodeServer() }
+  write() { isNodeServer() }
+}
+
+path /users/{id}/{data} {
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/cart {
+  read() { isCurrentUser(id) }
+  write() { isCurrentUser(id) }
+}
+path /users/{id}/notifications {
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/notifications/{data} {
+  write() { isCurrentUser(id) }
+}
+path /users/{id}/complete-lessons {
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/complete-lessons/{course}/{lesson} is Boolean {
+  write() { isCurrentUser(id) }
+}
+path /users/{id}/userInfo {
+  write() { isCurrentUser(id) }
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/bookmarked {
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/bookmarked/{data} {
+  write() { isCurrentUser(id) }
+}
+path /users/{id}/completed {
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/completed/{data} {
+  write() { isCurrentUser(id) }
+}
+path /users/{id}/courses {
+  read() { isCurrentUser(id) }
+}
+path /users/{id}/enrolled/{course} is Boolean {
+  read() { isCurrentUser(id) }
+}
+path /userAnalytics {
+  read() { isNodeServer() || isAdmin() }
+}
+path /allAnalytics {
+  read() { isNodeServer() || isAdmin() }
+}
+path /userAnalytics/{user}/{type}/{hit} {
+  write() { isCurrentUser(user) && createOnly(this) }
+}
+path /allAnalytics/{type}/{hit} {
+  write() { isCurrentUser(this.user) && createOnly(this) }
+}
+
+/*
+ * Helpers
+ */
+isCurrentUser(uid) { isSignedIn() && auth.uid == uid }
+isSignedIn() { auth != null }
+isAdmin() { isSignedIn() && root.admins[auth.uid] == true }
+isAdminWrite() { isSignedIn() && prior(root.admins[auth.uid] == true) }
+isEnrolled(course) { isSignedIn() && root.users[auth.uid].enrolled[course] == true }
+isNodeServer() { auth.uid == 'node-server' }
+createOnly(value) { prior(value) == null && value != null  }
+
+/*
+ * Types
+ */
+type Comment {
+  date: Number,
+  firebase_id: String,
+  image: String,
+  isReply: Boolean,
+  score: Number,
+  text: String,
+  user_id: String,
+  user_name: String
+}
+
+

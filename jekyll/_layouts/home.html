@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+{% include home-cta.html %}
+
+<div id="page-container">
+  <main>
+    {% for post in site.posts %}
+      {% unless post.loop == false %}
+        {% include article-excerpt.html data=post %}
+      {% endunless %}
+    {% endfor %}
+  </main>
+
+  {% include sidebar.html %}
+
+</div>
+{% javascript manifest %}
+{% javascript bundle %}

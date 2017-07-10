@@ -1,0 +1,36 @@
+logout-modal
+  &.ng-enter
+    z-index: 100
+    display: block
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    transition: opacity 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
+  .logout-cont
+    font-size: 1rem
+    padding: 1em
+
+    h3
+      margin-top: 0.3em
+
+    .buttons
+      +clearfix
+
+      button
+        padding: 0.5em 2em
+        border: none
+        outline: none
+        cursor: pointer
+        color: white
+        font-weight: bold
+
+      .yes
+        float: right
+        background: $primary-color
+
+      .no
+        float: left
+        background: $secondary-color

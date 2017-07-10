@@ -1,0 +1,40 @@
+{
+  "name": "hungryturtlecode",
+  "version": "1.0.0",
+  "description": "This is the site that is available at [https://hungryturtlecode.com](https://hungryturtlecode.com)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "export JEKYLL_ENV=development && concurrently 'webpack -w' 'bundle exec jekyll serve --livereload --drafts'",
+    "build": "rm -r _site && export JEKYLL_ENV=production && webpack && bundle exec jekyll build --config _config.prod.yml",
+    "deploy": "rm -r _site && export JEKYLL_ENV=production && webpack && bundle exec jekyll build --config _config.prod.yml && firebase deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adiman9/HungryTurtleCodeSite.git"
+  },
+  "author": "Adrian Henry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adiman9/HungryTurtleCodeSite/issues"
+  },
+  "homepage": "https://github.com/adiman9/HungryTurtleCodeSite#readme",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "concurrently": "^3.1.0",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "angular": "1.6.1",
+    "angular-animate": "1.6.1",
+    "angular-stripe": "^4.2.12",
+    "angular-ui-router": "^0.4.2",
+    "firebase": "^3.6.6",
+    "videogular": "^1.4.4",
+    "videogular-controls": "^1.4.4",
+    "videogular-overlay-play": "^1.4.4",
+    "videogular-poster": "^1.4.4"
+  }
+}

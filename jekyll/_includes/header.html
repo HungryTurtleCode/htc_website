@@ -1,0 +1,49 @@
+<!-- Header.html -->
+<header class="{% if page.layout == 'post-sidebar' %}lesson-sidebar{% elsif page.layout == 'category' and page.title != 'Courses' %}archive-sidebar{% elsif page.layout == 'tags' %}archive-sidebar{% endif %}">
+
+  <div class="header-container">
+    <!--<a href="/">
+      {% img mascot class:'mascot' alt:'Hungry Turtle Code Logo' %}
+      {% img logo class:'logo' alt:'Hungry Turtle Code Logo Text. Learn to write code, one line at a time' %}
+    </a>-->
+    {% if page.layout != 'post-sidebar' and page.layout != 'category' and page.layout != 'tags'%}
+      <a href="/">
+        <h4>hungry<span class="turtle">turtle</span><span class="code">code</span>
+        </h4>
+        {% img mascot class:'mini-mascot' alt:'Hungry Turtle Code Logo' %}
+      </a>
+    {% elsif page.layout == 'category' and page.title == 'Courses'%}
+      <a href="/">
+        <h4>hungry<span class="turtle">turtle</span><span class="code">code</span>
+        </h4>
+        {% img mascot class:'mini-mascot' alt:'Hungry Turtle Code Logo' %}
+      </a>
+    {% endif %}
+    <nav>
+      <ul>
+        {% for nav in site.data.navigation.primary %}
+        <li>
+          <a href="{{site.baseurl}}{{nav.url}}">
+            {{nav.title}}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <header-panel></header-panel>
+  </div>
+
+  <!-- <nav class="main-header-nav"> -->
+  <!--   <ul> -->
+  <!--     {% for nav in site.data.navigation.primary %} -->
+  <!--     <li> -->
+  <!--       <a href="{{site.baseurl}}{{nav.url}}"> -->
+  <!--         {{nav.title}} -->
+  <!--       </a> -->
+  <!--     </li> -->
+  <!--     {% endfor %} -->
+  <!--   </ul> -->
+  <!-- </nav> -->
+
+</header>

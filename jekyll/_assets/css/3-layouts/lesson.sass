@@ -1,0 +1,357 @@
+.lesson-content
+  &.ng-enter
+    transition: opacity 0s
+
+
+#lesson-container
+  font-size: 1rem
+
+  .sidebar-container
+    width: 220px
+    height: 100%
+    position: fixed
+    left: 0
+    top: 0
+    border-right: 1px solid #e9e9e9
+    background: $default-dark-color
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2)
+    z-index: 1
+
+    .logo
+      width: 80%
+      margin: 1em auto
+      text-align: center
+
+      a
+        text-decoration: none
+
+      img
+        max-width: 100%
+        height: auto
+
+      h4
+        color: #c2c2c2
+        font-weight: bold
+        font-size: 1.1em
+        margin-top: 0.6em
+        margin-bottom: 0
+
+        .turtle
+          // color: $primary-color
+          // color: $secondary-color
+          color: #fefefe
+        .code
+          // color: $primary-color
+          color: $secondary-color
+          // color: #a2a3a3
+
+      h6
+        margin: 1em 0
+        margin-top: 0.3em
+        color: #aaa
+        font-weight: 300
+        font-size: 0.8em
+
+  #lesson-list-cont
+    margin-top: 0
+    overflow: auto
+    height: calc(100% - 180px)
+    border-top: 1px solid #545454
+
+    .section
+      &.ng-enter
+        transition: opacity 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
+    .lesson-list
+      margin-bottom: 100px
+
+      &.explore
+        margin-bottom: 40px
+
+        h3
+          font-size: 0.8em
+          position: relative
+          // background: lighten($default-dark-color, 10%)
+
+          span
+            position: absolute
+            top: calc(50% - 0.6em)
+            right: 0.5em
+            font-size: 1.5em
+            font-weight: normal
+            transition: transform 0.3s ease
+
+          &.active
+            span
+              transform: rotate(135deg)
+
+        .lesson-item
+          color: $default-dark-color
+          background: #d4d4d4
+          transition: background 0.4s ease
+
+          &:hover
+            background: darken(#d4d4d4, 10%)
+            cursor: pointer
+
+          &.active
+            background: darken(#d4d4d4, 15%)
+
+    h3
+      cursor: pointer
+      border-bottom: 1px solid #343434
+      font-size: 0.9em
+
+    .course-content
+      color: #d4d4d4
+      margin: 0
+      margin-top: 1em
+      padding: 0.3em 1em
+      border-bottom: 1px solid white
+      border-top: 1px solid white
+
+    .lesson-item
+      transition: background 0.3s ease-out, color 0.3s ease-out
+      position: relative
+
+      .complete-mark
+        width: 30px
+        position: absolute
+        right: 1em
+        top: calc(50% - 15px)
+
+      &.active
+        background: $secondary-color
+        color: white
+        .length
+          color: #f4f4f4
+        svg
+          fill: #f8f8f8
+
+    a
+      text-decoration: none
+      color: inherit
+
+  .main-container
+    padding-left: 220px
+    position: relative
+
+    .top-nav
+      background-color: $default-dark-color
+      color: #c4c4c4
+      padding: 1em
+      font-size: 0.8em
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2)
+      position: fixed
+      z-index: 1
+      top: 0
+      left: 220px
+      width: 100%
+      border-bottom: 1px solid #545454
+
+      .lesson-nav
+        background-color: $default-dark-color
+        margin-left: 50px
+
+        ul
+          margin: 0
+          padding: 0
+          display: inline-block
+
+          li
+            display: inline-block
+            list-style: none
+            padding: 0 2em
+            border-right: 1px solid #ebebeb
+
+            a
+              text-decoration: none
+              color: #c4c4c4
+              transition: color 0.3s ease-out
+
+              &:hover
+                color: $secondary-color
+
+            &:first-child
+              padding-left: 0
+
+            &:last-child
+              border-right: none
+
+
+    main
+      padding: 1em
+      max-width: 1200px
+      margin: 50px auto 0 auto
+
+      .lesson-title
+        margin: 0
+        font-size: 1.5em
+        text-align: center
+
+      .course-title
+        text-align: center
+        margin: 0.5em 0
+        font-size: 1em
+
+      .video-container
+        // width: 800px
+        width: 80%
+        max-width: 100%
+        padding-top: calc(80% * 0.5625)
+        // padding-top: 56.25%
+        display: block
+        margin: 0 auto
+        margin-bottom: 1em
+        position: relative
+        overflow: hidden
+
+        @media screen and (max-width: 1500px)
+          width: 65%
+          padding-top: calc(65% * 0.5625)
+          margin: 1.7em auto
+
+        @media screen and (max-width: 1200px)
+          width: 85%
+          padding-top: calc(85% * 0.5625)
+
+        @media screen and (max-width: 800px)
+          width: 95%
+          padding-top: calc(95% * 0.5625)
+
+        .video
+          width: 100%
+          height: 100%
+          position: absolute
+          background: black
+          display: block
+          top: 0
+          left: 0
+
+          videogular
+            z-index: 0
+
+      .bottom-container
+        width: 80%
+        margin: 0 auto 3em auto
+
+        @media screen and (max-width: 1500px)
+          width: 65%
+          margin: 1.7em auto
+
+        @media screen and (max-width: 1200px)
+          width: 85%
+
+        @media screen and (max-width: 800px)
+          width: 95%
+
+        .tabs
+          width: 500px
+          margin: 0 auto
+          padding: 0 1em
+          background: $default-dark-color
+          color: #c4c4c4
+
+          ul
+            margin: 0
+            text-align: center
+            padding: 0
+            display: block
+
+            li
+              margin: 0
+              padding: 1em
+              display: inline-block
+              list-style: none
+              cursor: pointer
+              transition: color 0.3s ease-out, background-color 0.3s ease
+              box-sizing: border-box
+
+              &:hover
+                color: $secondary-color
+
+              &.active
+                background: $secondary-color
+                color: white
+
+        .tab-content
+          padding: 1em
+          margin: 1em 0
+
+          .article,
+          .discussion,
+          .resources
+            margin: 0 auto
+            width: 70%
+
+            @media screen and (max-width: 1500px)
+              width: 90%
+
+            @media screen and (max-width: 1200px)
+              width: 95%
+
+            &.ng-hide-remove
+              transition: opacity 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
+          .resources
+            a
+              color: $secondary-color
+              text-decoration: none
+              transition: color 0.3s ease-in
+
+              &:hover
+                color: shade($secondary-color, 20%)
+
+          .bottom-buttons
+            +clearfix
+            font-size: 0.7em
+            margin-top: 100px
+
+            .next
+              float: right
+              background: shade($primary-color, 20%)
+
+            .complete
+              float: left
+              background: green
+
+            .next,
+            .complete
+              color: white
+              padding: 1em 2em
+              border: none
+              outline: none
+              cursor: pointer
+
+
+.state-loading
+  position: fixed
+  top: 53px
+  left: 219px
+  background: rgba($default-dark-color,1)
+  width: 100%
+  height: 100vh
+  z-index: 100
+
+  &.ng-enter
+    transition: opacity 0.3s ease
+
+  &.ng-leave
+    transition: opacity 0.5s ease
+
+  $state-color: $default-dark-color
+  $state-color: $primary-color
+  // $state-color: $secondary-color
+  htc-spinner
+    width: 80%
+    margin-top: 30vh
+    font-size: 2em
+
+    .loading-spinner
+      color: $state-color
+      background: $state-color
+
+      &:before,
+      &:after
+        background: $state-color
+
