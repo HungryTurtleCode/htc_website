@@ -2,7 +2,11 @@ class DataService{
   constructor($http) {
     this.$http = $http;
     // this.url = 'https://138.197.119.94';
-    this.url = 'https://api.hungryturtlecode.com';
+    if(window.location.hostname === 'localhost'){
+      this.url = 'http://localhost:8080';
+    } else {
+      this.url = 'https://api.hungryturtlecode.com';
+    }
   }
   trackAcEvent(data){
     return this.$http.post(`${this.url}/acEvent`, data)
