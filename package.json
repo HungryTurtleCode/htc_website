@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "export JEKYLL_ENV=development && concurrently 'webpack -w' 'bundle exec jekyll serve --livereload --drafts' 'npm start --prefix api/'",
+    "noreload": "export JEKYLL_ENV=development && concurrently 'webpack -w' 'bundle exec jekyll serve --drafts' 'npm start --prefix api/'",
+    "api": "npm start --prefix api/",
     "build": "rm -r _site && export JEKYLL_ENV=production && webpack && bundle exec jekyll build --config _config.prod.yml",
     "deploy": "rm -r _site && export JEKYLL_ENV=production && webpack && bundle exec jekyll build --config _config.prod.yml && firebase deploy"
   },
