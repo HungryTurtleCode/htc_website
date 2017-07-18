@@ -3,7 +3,7 @@ title: Test Course
 subtitle: A course that will help you become the best developer you possibly can be.
 author: Adrian
 layout: course-sales
-image: https://angular.io/resources/images/logos/angular2/angular.svg
+image: https://www.w3schools.com/angular/pic_angular.jpg
 excerpt: This is the excerpt for the first test course that is going to be listed on the site. Feel free to read this if you have literally nothing else to do …
 
 salesVideoId: Bua8k_CcnuI

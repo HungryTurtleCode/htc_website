@@ -3,7 +3,7 @@ title: This is the course to test the system
 subtitle: A course that will test the system.
 author: Adrian
 layout: course-sales
-image: https://angular.io/resources/images/logos/angular2/angular.svg
+image: https://www.w3schools.com/angular/pic_angular.jpg
 excerpt: This course will be the one that tests whether of not the system is going to work or not…
 
 salesVideoId: yordL7Yczes
