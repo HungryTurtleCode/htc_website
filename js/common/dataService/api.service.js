@@ -23,12 +23,12 @@ class ApiService{
       .then(res => res.data)
       .catch(err => console.error(err));
   }
-  put() {
+  put(url, data) {
     return this.$http.put(this.url + url, data)
       .then(res => res.data)
       .catch(err => console.error(err));
   }
-  delete() {
+  delete(url) {
     return this.$http.delete(this.url + url)
       .then(res => res.data)
       .catch(err => console.error(err));
