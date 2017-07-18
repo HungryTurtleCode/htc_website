@@ -20,13 +20,13 @@ class AnalyticsService{
   trackUserEvent(type, data) {
     if(!this.user.user_id){
       this.userEventQueue.push(id => {
-        data.user = data.user || id;
-        this.fb.trackUserEvent(data.user, type, data);
+        data.user_id = data.user || id;
+        this.fb.trackUserEvent(type, data);
       });
       return;
     }
-    data.user = data.user || this.user.user_id;
-    this.fb.trackUserEvent(data.user, type, data);
+    data.user_id = data.user || this.user.user_id;
+    this.fb.trackUserEvent(type, data);
   }
   setUserData(data){
     this.user = data;
