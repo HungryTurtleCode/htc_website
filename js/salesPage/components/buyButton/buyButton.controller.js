@@ -52,7 +52,7 @@ class BuyButtonController{
                                 },
                                 'content_type'
                               );
-    this.analytics.trackUserEvent('ViewContent', {page: loc, type: type});
+    this.analytics.trackUserEvent('ViewContent', {location: loc, value: type});
   }
   takeCourse(){
     if(this.inCart || this.enrolled){return false;}
@@ -64,7 +64,7 @@ class BuyButtonController{
         type = type[0];
 
         this.analytics.trackEvent('AddToCart', this.courseData.title);
-        this.analytics.trackUserEvent('AddToCart', {course: this.courseData.title, price: parseInt(this.courseData.price).toFixed(2)});
+        this.analytics.trackUserEvent('AddToCart', {location: this.courseData.title, value: parseInt(this.courseData.price).toFixed(2)});
         this.analytics.fbTrackEvent(
                                   'AddToCart',
                                   {

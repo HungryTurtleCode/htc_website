@@ -18,7 +18,9 @@ class ContactFormController{
 
     if(this.validate(data)){
       this.analytics.trackEvent('Contact', data.name);
-      this.analytics.trackUserEvent('Contact', data);
+
+      // TODO track contact events on the server Tue 18 Jul 2017 19:19:33 UTC
+      // this.analytics.trackUserEvent('Contact', data);
       this.analytics.fbTrackCustom('Contact', data, 'subject');
 
       this.$http.post('http://138.197.119.94/contact', data)

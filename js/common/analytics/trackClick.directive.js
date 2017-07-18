@@ -5,7 +5,7 @@ const TrackClick = (analytics, $location) => ({
   link($scope, $element, $attrs) {
     $element.bind('click', () => {
       analytics.trackEvent('Click', $attrs.analyticsClick);
-      analytics.trackUserEvent('Click', {clickOn: $attrs.analyticsClick, page: getPageLocation()});
+      analytics.trackUserEvent('Click', {value: $attrs.analyticsClick, location: getPageLocation()});
     });
 
     function getPageLocation(){

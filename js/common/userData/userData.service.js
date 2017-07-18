@@ -25,7 +25,7 @@ class userData{
     this.fb.markNotificationRead(this.user.user_id, id);
   }
   trackSearch(query, page){
-    this.analytics.trackUserEvent('Search', {query, page});
+    this.analytics.trackUserEvent('Search', {event: query, location: page});
     if(this.user && this.user.email){
       this.dataService.tagSearch(this.user.email, query);
     }

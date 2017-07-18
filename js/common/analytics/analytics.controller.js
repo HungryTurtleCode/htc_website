@@ -5,7 +5,7 @@ class AnalyticsController{
   }
   trackCategory(cat){
     this.analytics.setDimension('Dimension2', cat);
-    this.analytics.trackUserEvent('CategoryView', {category: cat});
+    this.analytics.trackUserEvent('CategoryView', {value: cat});
   }
   trackDurationEvents(){
     const trackDuration = () => {
@@ -15,7 +15,7 @@ class AnalyticsController{
 
         setTimeout(() => {
           this.analytics.trackEvent('Time', text);
-          this.analytics.trackUserEvent('Time', {page: this.getPageLocation(), time: text});
+          this.analytics.trackUserEvent('Time', {location: this.getPageLocation(), value: text});
         }, delay);
       });
       window.removeEventListener('scroll', trackDuration);

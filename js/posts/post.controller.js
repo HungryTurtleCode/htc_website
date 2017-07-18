@@ -36,7 +36,7 @@ class PostCommentController{
                                 },
                                 'content_type'
                               );
-    this.analytics.trackUserEvent('ViewContent', {type: type, page: loc});
+    this.analytics.trackUserEvent('ViewContent', {value: type, location: loc});
   }
   getComments(){
     let loc = this.getPageLocations() || '';

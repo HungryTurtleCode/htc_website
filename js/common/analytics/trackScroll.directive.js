@@ -38,7 +38,7 @@ const TrackScroll = (analytics, $location) => ({
         scrollStart = currentTime;
         let timeToScroll = Math.round((currentTime - startTime) / 1000);
         analytics.sendEventWithMetric('Reading', 'StartReading', getPageLocation(), 'metric1', timeToScroll);
-        analytics.trackUserEvent('StartReading', {page: getPageLocation(), timeToStart: timeToScroll});
+        analytics.trackUserEvent('StartReading', {location: getPageLocation(), value: timeToScroll});
         scrolled = true;
       }
 
@@ -52,7 +52,7 @@ const TrackScroll = (analytics, $location) => ({
         }
         analytics.setMetric('Metric6', 1);
         analytics.sendEventWithMetric('Reading', 'ContentBottom', getPageLocation(), 'Metric2', timeToFinish);
-        analytics.trackUserEvent('ContentButtom', {page: getPageLocation(), timeToFinish: timeToFinish});
+        analytics.trackUserEvent('ContentButtom', {location: getPageLocation(), value: timeToFinish});
 
         contentFinished = true;
       }
@@ -62,7 +62,7 @@ const TrackScroll = (analytics, $location) => ({
           scrollThrottle = perc + 1;
           let scroll = perc + '%';
           analytics.trackEvent('Reading', scroll, getPageLocation());
-          analytics.trackUserEvent('ScrollPerc', {perc: scroll, page: getPageLocation()});
+          analytics.trackUserEvent('ScrollPerc', {value: scroll, location: getPageLocation()});
           if(perc > 50){
             // TODO facebook page view Sun 19 Mar 2017 00:06:20 UTC
           }

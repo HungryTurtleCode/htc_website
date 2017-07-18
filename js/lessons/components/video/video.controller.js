@@ -45,12 +45,12 @@ class VideoController{
     if(state === 'play' && this.videoPlayed === false){
       this.videoPlayed = true;
       this.analytics.trackEvent('PremiumVideo', 'Start')
-      this.analytics.trackUserEvent('StartPremiumVideo', {video: this.getPageLocations()});
+      this.analytics.trackUserEvent('StartPremiumVideo', {location: this.getPageLocations()});
     }
   }
   videoEnd(){
     this.analytics.trackEvent('PremiumVideo', 'End');
-    this.analytics.trackUserEvent('EndPremiumVideo', {video: this.getPageLocations()});
+    this.analytics.trackUserEvent('EndPremiumVideo', {location: this.getPageLocations()});
     this.nextVideo();
   }
   checkTime(time, duration){
@@ -66,7 +66,7 @@ class VideoController{
         this.analyticsCount = this.analyticsCheckpoints[i];
         let text = perc * 100 + '%';
         this.analytics.trackEvent('PremiumVideo', text);
-        this.analytics.trackUserEvent('PremiumVideoProgress', {video: this.getPageLocations(), progress: text});
+        this.analytics.trackUserEvent('PremiumVideoProgress', {location: this.getPageLocations(), value: text});
       }
     }
   }

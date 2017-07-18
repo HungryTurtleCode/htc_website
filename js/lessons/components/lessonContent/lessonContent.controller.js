@@ -32,7 +32,7 @@ class LessonContentController{
   resourceClick(resource){
     let loc = this.getPageLocations();
     this.analytics.trackEvent('Resource', resource, loc);
-    this.analytics.trackUserEvent('Resource', {resource: resource, page: loc});
+    this.analytics.trackUserEvent('Resource', {value: resource, location: loc});
   }
   getPageLocations(){
     let url = this.$location.absUrl();
