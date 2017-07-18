@@ -1,11 +1,11 @@
 import angular from 'angular';
 
-const TrackClick = (analytics, userData, $location) => ({
+const TrackClick = (analytics, $location) => ({
   restrict: 'A',
   link($scope, $element, $attrs) {
     $element.bind('click', () => {
       analytics.trackEvent('Click', $attrs.analyticsClick);
-      userData.trackEvent('Click', {clickOn: $attrs.analyticsClick, page: getPageLocation()});
+      analytics.trackUserEvent('Click', {clickOn: $attrs.analyticsClick, page: getPageLocation()});
     });
 
     function getPageLocation(){
@@ -32,6 +32,6 @@ const TrackClick = (analytics, userData, $location) => ({
   }
 });
 
-TrackClick.$inject = ['analyticsService', 'userData', '$location'];
+TrackClick.$inject = ['analyticsService', '$location'];
 
 export default TrackClick ;

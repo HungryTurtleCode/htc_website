@@ -13,8 +13,6 @@ class userData{
     this.bookmarked = [];
     this.eventQueue = [];
 
-    window.trackUserEvent = this.trackEvent.bind(this);
-
     this.auth.subscribeAuthChange(this.cacheUser.bind(this));
     this.auth.subscribeAuthChange(user => {
       this.eventQueue.forEach(sub => sub(user.uid));
@@ -26,19 +24,8 @@ class userData{
   markNotificationRead(id){
     this.fb.markNotificationRead(this.user.user_id, id);
   }
-  trackEvent(type, data){
-    if(!this.user.user_id){
-      this.eventQueue.push(id => {
-        data.user = data.user || id;
-        this.fb.trackUserEvent(data.user, type, data);
-      });
-      return;
-    }
-    data.user = data.user || this.user.user_id;
-    this.fb.trackUserEvent(data.user, type, data);
-  }
   trackSearch(query, page){
-    this.trackEvent('Search', {query, page});
+    this.analytics.trackUserEvent('Search', {query, page});
     if(this.user && this.user.email){
       this.dataService.tagSearch(this.user.email, query);
     }
@@ -180,7 +167,7 @@ class userData{
     }
   }
   onRegister(user){
-    this.trackEvent('Register', {id: user.uid});
+    this.analytics.trackUserEvent('Register', {id: user.uid});
   }
   getNotifications(callback){
     if(this.user.user_id){
@@ -207,6 +194,8 @@ class userData{
         });
     }
   }
+
+  // TODO don't think this is needed anymore
   getUserData(id){
     let userId = id || this.user.user_id;
     if(userId){
@@ -328,6 +317,8 @@ class userData{
 
     this.dataService.setCommentNotifications(loc, replyKey, replyChain, lesson);
   }
+
+  // TODO don't think this is needed anymore
   setUserData(data){
     if(!this.user.user_id){return Promise.reject('unknown user')}
 

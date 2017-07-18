@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-const TrackScroll = (analytics, $location, userData) => ({
+const TrackScroll = (analytics, $location) => ({
   restrict: 'A',
   link($scope, $element, $attrs) {
     let height = $element[0].offsetHeight;
@@ -38,7 +38,7 @@ const TrackScroll = (analytics, $location, userData) => ({
         scrollStart = currentTime;
         let timeToScroll = Math.round((currentTime - startTime) / 1000);
         analytics.sendEventWithMetric('Reading', 'StartReading', getPageLocation(), 'metric1', timeToScroll);
-        userData.trackEvent('StartReading', {page: getPageLocation(), timeToStart: timeToScroll});
+        analytics.trackUserEvent('StartReading', {page: getPageLocation(), timeToStart: timeToScroll});
         scrolled = true;
       }
 
@@ -52,7 +52,7 @@ const TrackScroll = (analytics, $location, userData) => ({
         }
         analytics.setMetric('Metric6', 1);
         analytics.sendEventWithMetric('Reading', 'ContentBottom', getPageLocation(), 'Metric2', timeToFinish);
-        userData.trackEvent('ContentButtom', {page: getPageLocation(), timeToFinish: timeToFinish});
+        analytics.trackUserEvent('ContentButtom', {page: getPageLocation(), timeToFinish: timeToFinish});
 
         contentFinished = true;
       }
@@ -62,7 +62,7 @@ const TrackScroll = (analytics, $location, userData) => ({
           scrollThrottle = perc + 1;
           let scroll = perc + '%';
           analytics.trackEvent('Reading', scroll, getPageLocation());
-          userData.trackEvent('ScrollPerc', {perc: scroll, page: getPageLocation()});
+          analytics.trackUserEvent('ScrollPerc', {perc: scroll, page: getPageLocation()});
           if(perc > 50){
             // TODO facebook page view Sun 19 Mar 2017 00:06:20 UTC
           }
@@ -93,6 +93,6 @@ const TrackScroll = (analytics, $location, userData) => ({
   }
 });
 
-TrackScroll .$inject = ['analyticsService', '$location', 'userData'];
+TrackScroll .$inject = ['analyticsService', '$location'];
 
 export default TrackScroll ;

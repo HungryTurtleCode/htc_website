@@ -1,11 +1,15 @@
 class AnalyticsService{
-  constructor(dataService) {
+  constructor(dataService, firebaseService) {
     this.path = window.location.pathname;
     this.FbEventBacklog = [];
     this.GaEventBacklog = [];
+    this.userEventQueue = [];
     this.dataService = dataService;
+    this.fb = firebaseService;
+    this.user = {};
 
     window.analytics = this;
+    window.trackUserEvent = this.trackUserEvent.bind(this);
   }
   trackEvent(type, action, label=this.path, value=null){
     this.gaBacklogWrapper(() => {
@@ -13,11 +17,24 @@ class AnalyticsService{
     });
     this.trackAcEvent(type, action, label, value)
   }
+  trackUserEvent(type, data) {
+    if(!this.user.user_id){
+      this.userEventQueue.push(id => {
+        data.user = data.user || id;
+        this.fb.trackUserEvent(data.user, type, data);
+      });
+      return;
+    }
+    data.user = data.user || this.user.user_id;
+    this.fb.trackUserEvent(data.user, type, data);
+  }
   setUserData(data){
     this.user = data;
+    this.userEventQueue.forEach(sub => sub(data.user_id));
+    this.userEventQueue = [];
   }
   trackAcEvent(type, action, label, value, email){
-    console.log(type);
+    // TODO server should deal with ensuring data stucture.
     let data = {
       event: type,
       eventdata: {
@@ -82,6 +99,6 @@ class AnalyticsService{
   }
 }
 
-AnalyticsService.$inject = ['dataService'];
+AnalyticsService.$inject = ['dataService', 'firebaseService'];
 
 export default AnalyticsService;

@@ -1,12 +1,11 @@
 class AnalyticsController{
-  constructor(analyticsService, userData, $location) {
+  constructor(analyticsService, $location) {
     this.analytics = analyticsService;
-    this.userData = userData;
     this.$location = $location;
   }
   trackCategory(cat){
     this.analytics.setDimension('Dimension2', cat);
-    this.userData.trackEvent('CategoryView', {category: cat});
+    this.analytics.trackUserEvent('CategoryView', {category: cat});
   }
   trackDurationEvents(){
     const trackDuration = () => {
@@ -16,7 +15,7 @@ class AnalyticsController{
 
         setTimeout(() => {
           this.analytics.trackEvent('Time', text);
-          this.userData.trackEvent('Time', {page: this.getPageLocation(), time: text});
+          this.analytics.trackUserEvent('Time', {page: this.getPageLocation(), time: text});
         }, delay);
       });
       window.removeEventListener('scroll', trackDuration);
@@ -47,6 +46,6 @@ class AnalyticsController{
   }
 }
 
-AnalyticsController.$inject = ['analyticsService', 'userData', '$location'];
+AnalyticsController.$inject = ['analyticsService', '$location'];
 
 export default AnalyticsController;

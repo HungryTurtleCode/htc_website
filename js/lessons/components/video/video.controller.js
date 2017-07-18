@@ -1,7 +1,6 @@
 class VideoController{
-  constructor(analytics, userData, $location) {
+  constructor(analytics, $location) {
     this.analytics = analytics;
-    this.userData = userData;
     this.$location = $location;
     this.lessonVid = [];
 
@@ -46,12 +45,12 @@ class VideoController{
     if(state === 'play' && this.videoPlayed === false){
       this.videoPlayed = true;
       this.analytics.trackEvent('PremiumVideo', 'Start')
-      this.userData.trackEvent('StartPremiumVideo', {video: this.getPageLocations()});
+      this.analytics.trackUserEvent('StartPremiumVideo', {video: this.getPageLocations()});
     }
   }
   videoEnd(){
     this.analytics.trackEvent('PremiumVideo', 'End');
-    this.userData.trackEvent('EndPremiumVideo', {video: this.getPageLocations()});
+    this.analytics.trackUserEvent('EndPremiumVideo', {video: this.getPageLocations()});
     this.nextVideo();
   }
   checkTime(time, duration){
@@ -67,7 +66,7 @@ class VideoController{
         this.analyticsCount = this.analyticsCheckpoints[i];
         let text = perc * 100 + '%';
         this.analytics.trackEvent('PremiumVideo', text);
-        this.userData.trackEvent('PremiumVideoProgress', {video: this.getPageLocations(), progress: text});
+        this.analytics.trackUserEvent('PremiumVideoProgress', {video: this.getPageLocations(), progress: text});
       }
     }
   }
@@ -94,7 +93,7 @@ class VideoController{
   }
 }
 
-VideoController.$inject = ['analyticsService', 'userData', '$location'];
+VideoController.$inject = ['analyticsService', '$location'];
 
 export default VideoController;
 
