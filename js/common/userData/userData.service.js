@@ -31,11 +31,8 @@ class userData{
     }
   }
   isEnrolled(course, user){
-    if(user){
-      return this.fb.isEnrolled(user, course);
-    }else if(this.user.user_id){
-      return this.fb.isEnrolled(this.user.user_id, course);
-    }
+    user = user || this.user.user_id;
+    return this.fb.isEnrolled(user, course);
   }
   bookmarkCourse(course){
     return this.fb.bookmarkCourse(this.user.user_id, course);
@@ -107,10 +104,14 @@ class userData{
         return [];
       });
   }
+  removeFromCart(item) {
+    return this.fb.removeFromCart(this.user.user_id, item);
+  }
+  // TODO refactor this so that the this.cart gets updated on the remove. Does this service even need to hold the cart?
   updateCart(items){
     this.cart = items;
 
-    return this.fb.updateCart(this.user.user_id, items);
+    // return this.fb.updateCart(this.user.user_id, items);
   }
   getCourseMeta(course){
     return this.fb.getCourseMeta(course);

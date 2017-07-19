@@ -35,6 +35,8 @@ class CheckoutController{
       if(!this.cart.length){
         this.cart = null;
       }
+      // FIXME no need to do the splicing etc, just use userData.removeFromCart. userData needs to be refactored before it can change though
+      this.userData.removeFromCart(item);
       this.userData.updateCart(
         angular.copy(this.cart))
         .then(() => console.log('updated cart'));

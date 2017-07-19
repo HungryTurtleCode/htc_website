@@ -36,28 +36,31 @@ class commentController{
     if(this.voted === type) return;
     if(this.userData.user.user_id === this.data.user_id) return;
 
-    let score = this.data.score;
+    // TODO
+    // FIXME will need to implement a system that avoids user's voting on comments they have already voted for
+    // let score = this.data.score;
 
-    if(this.voted && this.voted !== type){
-      this.fb.updateCommentScore(
-        this.loc,
-        this.data.firebase_id,
-        score
-      );
-      return this.voted = null;
-    }
+    // if(this.voted && this.voted !== type){
+    //   this.fb.updateCommentScore(
+    //     this.loc,
+    //     this.data.firebase_id,
+    //     score
+    //   );
+    //   return this.voted = null;
+    // }
 
     this.voted = type;
     if(type === 'up'){
-      score++;
+      // TODO refactor the id in the comment to be id and not firebase_id
+      this.fb.upvoteComment(this.data.id)
     }else if(type === 'down'){
-      score--;
+      this.fb.downvoteComment(this.data.id)
     }
 
-    this.fb.updateCommentScore(
-      this.loc,
-      this.data.firebase_id,
-      score);
+    // this.fb.updateCommentScore(
+    //   this.loc,
+    //   this.data.firebase_id,
+    //   score);
   }
   getPageLocations(){
     let url = this.$location.absUrl();

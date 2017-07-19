@@ -12,13 +12,13 @@ class BuyButtonController{
     this.loading = true;
     this.triggerContentView();
 
+    // TODO refactor this. It no longer requires multiple round trips Tue 18 Jul 2017 22:00:31 UTC
     let course = this.getCourseFromUrl();
     this.userData.getCourseMeta(course)
       .then(data => {
         this.$timeout(() => {
           this.courseData = data;
           this.loading = false;
-
           this.userData.isEnrolled(data.course)
             .then(enrolled => {
               this.$timeout(() => {
@@ -33,7 +33,8 @@ class BuyButtonController{
                   }
                 }
               });
-            });
+            })
+            .catch(err => console.error('No user available'));
         });
       });
   }
