@@ -27,8 +27,13 @@ class FirebaseService{
     });
   }
 
+  logOut() {
+    return this.api.delete('/auth')
+      .then(res => res.success);
+  }
   isLoggedIn() {
-    return this.api.get('/auth');
+    return this.api.get('/auth')
+      .then(res => res.loggedIn);
   }
   userLogin(username, password) {
     const obj = {

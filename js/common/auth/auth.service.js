@@ -18,8 +18,14 @@ class Auth{
   isLoggedIn() {
     this.fb.isLoggedIn()
       .then(res => {
-        this.loggedIn = res.loggedIn;
+        this.loggedIn = res;
         return this.loggedIn;
+      });
+  }
+  signOut() {
+    this.fb.logOut()
+      .then(res => {
+        this.loggedIn = false;
       });
   }
 
@@ -162,9 +168,9 @@ class Auth{
       this.authSubs.splice(fn);
     }
   }
-  signOut(){
-    return firebase.auth().signOut();
-  }
+  // signOut(){
+  //   return firebase.auth().signOut();
+  // }
   validateEmail(email){
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
