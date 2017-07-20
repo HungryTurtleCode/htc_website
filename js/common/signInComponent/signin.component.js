@@ -3,7 +3,8 @@ import controller from './signin.controller';
 const SignInComponent = {
   controller,
   bindings: {
-    forgotPass: '&'
+    forgotPass: '&',
+    hide: '&'
   },
   template: `
     <div class="modal"
@@ -26,29 +27,33 @@ const SignInComponent = {
           ng-class="{active: $ctrl.activeTab === 0}"
           id="log-in-box">
             <h4>Log In</h4>
-            <button class="fb"
-              ng-click="$ctrl.authService.facebookSignIn()">
-                Facebook
-            </button>
-            <button class="gl"
-              ng-click="$ctrl.authService.googleSignIn()">
-                Google
-            </button>
-            <button class="gh"
-              ng-click="$ctrl.authService.githubSignIn()">
-                Github
-            </button>
+            <a class="fb authbtn" ng-href="{{$ctrl.fbAuthURL}}">
+              Facebook
+            </a>
+            <a class="gl authbtn" ng-href="{{$ctrl.glAuthURL}}">
+              Google
+            </a>
+            <a class="tw authbtn" ng-href="{{$ctrl.twAuthURL}}">
+              Twitter
+            </a>
+            <a class="gh authbtn" ng-href="{{$ctrl.ghAuthURL}}">
+              Github
+            </a>
             <div class="user-pass">
               <div class="divider">
                 <span>OR</span>
               </div>
+              <div class="error-msg">
+                {{$ctrl.errors.login}}
+              </div>
               <input type="text"
                 placeholder="Email"
-                ng-model="loginEmail">
+                ng-model="$ctrl.loginEmail">
               <input type="password"
                 placeholder="Password"
-                ng-model="loginPass">
+                ng-model="$ctrl.loginPass">
               <button id="sign-in-button"
+                class="authbtn"
                 ng-click="$ctrl.logIn()">
                   Log In
               </button>
@@ -61,32 +66,45 @@ const SignInComponent = {
         <div class="container sign-up" id="sign-up-box"
           ng-class="{active: $ctrl.activeTab === 1}">
             <h4>Sign Up</h4>
-            <button class="fb"
-              ng-click="$ctrl.authService.facebookSignIn()">
+            <a class="fb authbtn" ng-href="{{$ctrl.fbAuthURL}}">
                 Facebook
-            </button>
-            <button class="gl"
-              ng-click="$ctrl.authService.googleSignIn()">
+            </a>
+            <a class="gl authbtn" ng-href="{{$ctrl.glAuthURL}}">
                 Google
-            </button>
-            <button class="gh"
-              ng-click="$ctrl.authService.githubSignIn()">
+            </a>
+            <a class="tw authbtn" ng-href="{{$ctrl.twAuthURL}}">
+              Twitter
+            </a>
+            <a class="gh authbtn" ng-href="{{$ctrl.ghAuthURL}}">
                 Github
-            </button>
+            </a>
             <div class="user-pass">
               <div class="divider">
                 <span>OR</span>
               </div>
+              <div class="error-msg">
+                {{$ctrl.errors.email}}
+              </div>
               <input type="text"
+                ng-class="{'error': $ctrl.errors.email}"
                 placeholder="Email"
-                ng-model="signupEmail">
+                ng-model="$ctrl.signupEmail">
+              <div class="error-msg">
+                {{$ctrl.errors.password}}
+              </div>
               <input type="password"
+                ng-class="{'error': $ctrl.errors.password}"
                 placeholder="Password"
-                ng-model="signupPass">
+                ng-model="$ctrl.signupPass">
+              <div class="error-msg">
+                {{$ctrl.errors.password2}}
+              </div>
               <input type="password"
+                ng-class="{'error': $ctrl.errors.password2}"
                 placeholder="Repeat Password"
-                ng-model="signupPass1">
+                ng-model="$ctrl.signupPass1">
               <button id="sign-in-button"
+                class="authbtn"
                 ng-click="$ctrl.signUp()">
                   Sign Up
               </button>

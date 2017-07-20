@@ -27,6 +27,23 @@ class FirebaseService{
     });
   }
 
+
+  userLogin(username, password) {
+    const obj = {
+      username,
+      password
+    }
+    return this.api.post(`/auth/login`, obj);
+  }
+  userRegister(email, password, password2) {
+    const obj = {
+      email,
+      password,
+      password2
+    }
+    return this.api.post(`/auth/register`, obj);
+  }
+
   trackUserEvent(event, data) {
     data = Object.assign({}, data, {
       event,
