@@ -56,7 +56,7 @@ class FirebaseService{
       event,
       location: data.location || this.getPageLocations()
     });
-    return this.api.post(`/analytics/${data.user_id}`, {data})
+    return this.api.post(`/analytics`, {data})
       .then(res => res.success);
   }
   isInBookmarks(user_id, course) {
@@ -72,7 +72,7 @@ class FirebaseService{
       .then(res => res.success);
   }
   getCourseMeta(course){
-    return this.api.get(`/courses/${course}/meta`)
+    return this.api.get(`/courses/${course}`)
       .then(res => res.meta);
   }
   isEnrolled(user, course){
@@ -98,8 +98,9 @@ class FirebaseService{
       .then(res => res.cart);
   }
   // TODO add a isInCart func and api endpoint Tue 18 Jul 2017 22:29:33 UTC
-  getNotifications(user, callback){
-    return this.api.get(`/notifications/${user}`)
+  getNotifications(callback){
+    // TODO refactor all the calls to getNotifications to fit the new arg footprint Thu 20 Jul 2017 23:10:08 UTC
+    return this.api.get(`/notifications`)
       .then(res => callback(res.notifs));
   }
   // TODO refactore user out of all the call to this func as it's not needed Tue 18 Jul 2017 22:35:20 UTC
@@ -122,7 +123,8 @@ class FirebaseService{
   }
   // TODO the lesson passed in here is the url. I think the api expects an id. Refactor needed Tue 18 Jul 2017 23:16:38 UTC
   getLessonContent(course, lesson){
-    return this.api.get(`/courses/lessons/${lesson}`)
+    // TODO probably need to make the lesson url safe here too Thu 20 Jul 2017 23:05:53 UTC
+    return this.api.get(`/lessons/${lesson}/content`)
       .then(res => console.log(res))
   }
   getUserCompleted(user_id){
@@ -132,7 +134,7 @@ class FirebaseService{
   }
   getLessonMeta(course, lesson){
     console.log('get lesson meta');
-    return this.api.get(`/courses/lessons/${lesson}/meta`)
+    return this.api.get(`/lessons/${lesson}`)
       .then(res => console.log(res));
   }
   completeLesson(user, course, lesson){
@@ -172,9 +174,9 @@ class FirebaseService{
     return this.api.get(`/comments/single/${comment_id}`)
       .then(res => console.log(res));
   }
-  getAllNotifications(user_id) {
+  getAllNotifications() {
     console.log('get all notifications');
-    return this.api.get(`/notifications/all/${user_id}`)
+    return this.api.get(`/notifications/all`)
       .then(res => console.log(res));
   }
   upvoteComment(comment) {
