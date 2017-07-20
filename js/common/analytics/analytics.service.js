@@ -3,7 +3,6 @@ class AnalyticsService{
     this.path = window.location.pathname;
     this.FbEventBacklog = [];
     this.GaEventBacklog = [];
-    this.userEventQueue = [];
     this.dataService = dataService;
     this.fb = firebaseService;
     this.user = {};
@@ -18,20 +17,8 @@ class AnalyticsService{
     this.trackAcEvent(type, action, label, value)
   }
   trackUserEvent(type, data) {
-    if(!this.user.user_id){
-      this.userEventQueue.push(id => {
-        data.user_id = data.user || id;
-        this.fb.trackUserEvent(type, data);
-      });
-      return;
-    }
-    data.user_id = data.user || this.user.user_id;
+    // TODO no need to use the queue anymore. Just call the method Thu 20 Jul 2017 22:03:50 UTC
     this.fb.trackUserEvent(type, data);
-  }
-  setUserData(data){
-    this.user = data;
-    this.userEventQueue.forEach(sub => sub(data.user_id));
-    this.userEventQueue = [];
   }
   trackAcEvent(type, action, label, value, email){
     // TODO server should deal with ensuring data stucture.
