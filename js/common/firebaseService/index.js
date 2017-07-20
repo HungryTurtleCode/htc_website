@@ -5,6 +5,9 @@ const firebaseServiceComponent = angular
   .module('firebaseService.module', [
   ])
   .service('firebaseService', firebaseService)
+  .config(['$httpProvider', ($httpProvider) => {
+    $httpProvider.defaults.withCredentials = true;
+  }])
   .name;
 
 export default firebaseServiceComponent;
