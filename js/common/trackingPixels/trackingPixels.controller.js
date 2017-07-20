@@ -1,12 +1,14 @@
 class TrackingPixelsController{
-  constructor(auth, pixelService) {
+  constructor(userData, pixelService) {
     this.pixelService = pixelService;
 
     this.email = '';
 
-    auth.subscribeAuthChange(user => {
-      this.email = user.email || '';
-    });
+    userData.getUserMeta()
+      .then(meta => {
+        if(meta && meta.email)
+          this.email = meta.email;
+      });
   }
   $onInit(){
     this.pixelService.googleAnalytics(0);
@@ -15,7 +17,7 @@ class TrackingPixelsController{
   }
 }
 
-TrackingPixelsController.$inject = ['auth', 'pixelService'];
+TrackingPixelsController.$inject = ['userData', 'pixelService'];
 
 export default TrackingPixelsController;
 

@@ -1,8 +1,9 @@
 class SignInComponentController{
-  constructor(auth, firebaseService) {
+  constructor(auth, firebaseService, analytics) {
     this.activeTab = 0;
-    this.authService = auth;
+    this.auth = auth;
     this.fb = firebaseService;
+    this.analytics = analytics;
 
     // TODO probably fetch the url from the API service Thu 20 Jul 2017 19:19:32 UTC
     if(window.location.hostname === 'localhost'){
@@ -27,15 +28,10 @@ class SignInComponentController{
             login: res.error
           }
         } else if(res.success) {
-          // TODO also check auth with auth service Thu 20 Jul 2017 19:58:45 UTC
+          this.auth.isLoggedIn();
           this.hide();
         }
       });
-
-    // TODO fix logic in the then block Thu 16 Feb 2017 10:22:40 GMT
-    // this.authService.signInWithUserAndPass(email, pass)
-    //   .then(() => this.hide('sign-in'))
-    //   .catch(err => console.log(err));
   }
   signUp(){
     let email = this.signupEmail;
@@ -47,18 +43,22 @@ class SignInComponentController{
         if(res.errors) {
           this.handleErrors(res.errors);
         } else if(res.success) {
-          // TODO also check auth with auth service Thu 20 Jul 2017 19:58:45 UTC
+          this.analytics.trackEvent('Register', user.displayName);
+          this.analytics.fbTrackEvent(
+            'CompleteRegistration',
+            {
+              value: 0.00,
+              currency: 'USD'
+            },
+            'currency'
+          );
+          this.auth.isLoggedIn();
           this.hide();
         }
       })
       .catch(err => {
         console.error(err);
       });
-
-    // TODO fix logic in the then block Thu 16 Feb 2017 10:22:40 GMT
-    // this.authService.createUserWithPass(email, password, passrepeat)
-    //   .then(() => this.hide('sign-in'))
-    //   .catch((err) => console.log(err))
   }
   handleErrors(errors) {
     this.errors = {};
@@ -74,6 +74,6 @@ class SignInComponentController{
   }
 }
 
-SignInComponentController.$inject = ['auth', 'firebaseService'];
+SignInComponentController.$inject = ['auth', 'firebaseService', 'analyticsService'];
 
 export default SignInComponentController;

@@ -12,7 +12,11 @@ class HeaderController{
     this.notificationActive = false;
     this.cart = [];
 
-    this.auth.subscribeAuthChange(this.onAuthChange.bind(this));
+    this.auth.subscribeAuthChange(res => {
+      this.loggedIn = res;
+      this.loading = false;
+    });
+
     this.userData.getNotifications(
                     notifications => {
                       this.$timeout(() => {
@@ -33,14 +37,6 @@ class HeaderController{
   }
   stopPropagation(e){
     e.stopPropagation();
-  }
-  onAuthChange(user){
-    this.loading = false;
-    if(user){
-      this.loggedIn = !user.isAnonymous;
-    }else{
-      this.loggedIn = false;
-    }
   }
   closeSignIn(){
     this.showSignIn = false;

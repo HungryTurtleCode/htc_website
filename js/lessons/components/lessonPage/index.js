@@ -22,28 +22,16 @@ const LessonPageComponent = angular
           )
         }],
         signIn: ['auth', 'userData', '$stateParams', 'firebaseService', (auth, userData, $stateParams, firebaseService) => {
-          return auth.waitForAuth()
-            .then(user => {
-              if(user && user.uid && !user.isAnonymous && $stateParams.lesson){
 
-                return userData.isEnrolled($stateParams.course, user.uid)
-                  .then(enrolled => {
-                    if(enrolled){
-                      return firebaseService.getLessonContent(
-                        $stateParams.course,
-                        $stateParams.lesson
-                      );
-                    }else{
-                      // not enrolled
-                      window.location.href = `/courses/${$stateParams.course}`;
-                      return false;
-                    }
-                  });
-
-              }else{
-                return false;
-              }
-            })
+          // TODO update args footprint Thu 20 Jul 2017 21:26:32 UTC
+          return firebaseService.getLessonContent(
+            $stateParams.course,
+            $stateParams.lesson
+          )
+          .then(con => {
+            console.log('got lesson content');
+            console.log(con);
+          });
         }]
       }
     });

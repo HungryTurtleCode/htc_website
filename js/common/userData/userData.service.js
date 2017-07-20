@@ -11,14 +11,7 @@ class userData{
     this.cart = [];
     this.completed = [];
     this.bookmarked = [];
-    this.eventQueue = [];
 
-    this.auth.subscribeAuthChange(this.cacheUser.bind(this));
-    this.auth.subscribeAuthChange(user => {
-      this.eventQueue.forEach(sub => sub(user.uid));
-      this.eventQueue = [];
-    });
-    this.auth.subscribeRegister(this.onRegister.bind(this));
     this.getUserMeta();
   }
   markNotificationRead(id){
@@ -41,18 +34,11 @@ class userData{
     return this.fb.removeBookmark(this.user.user_id, course);
   }
   isInBookmarks(course){
-    if(this.user.user_id){
-      return this.fb.isInBookmarks(this.user.user_id, course);
-    }else{
-      return this.auth.waitForAuth()
-        .then(snap => {
-          if(snap && snap.uid && !snap.isAnonymous){
-            return this.fb.isInBookmarks(
-                                  snap.uid,
-                                  course);
-          }
-        });
-    }
+    // TODO update args to correct footprint once api has been normalised Thu 20 Jul 2017 21:06:46 UTC
+    return this.fb.isInBookmarks('FIXME', course)
+      .then(res => {
+        console.log(res);
+      });
   }
   markCourseComplete(course){
     this.fb.markCourseComplete(
@@ -66,19 +52,11 @@ class userData{
           lesson);
   }
   getCompleteLessons(course, callback){
-    if(this.user.user_id){
-      this.fb.getCompleteLessons(this.user.user_id, course, callback);
-    }else{
-      this.auth.waitForAuth()
-        .then(snap => {
-          if(snap && snap.uid && !snap.isAnonymous){
-            return this.fb.getCompleteLessons(
-                            snap.uid,
-                            course,
-                            callback);
-          }
-        });
-    }
+    // TODO update args to correct footprint once api has been normalised Thu 20 Jul 2017 21:06:46 UTC
+    return this.fb.getCompleteLessons('FIXME', course, callback)
+      .then(res => {
+        console.log(res);
+      });
   }
   getUserEnrolledCourses(id){
     if(this.courses.length){return Promise.resolve(this.courses)}
@@ -147,101 +125,30 @@ class userData{
       });
     }
   }
-  cacheUser(user){
-    if(user){
-      let userInfo = {
-        email: user.email,
-        name: user.displayName,
-        image: user.photoURL,
-        provider: user.providerData[0] ? user.providerData[0].providerId : 'Anonymous',
-        user_id: user.uid
-      }
-      this.user = userInfo;
-      this.analytics.setUserData(this.user);
-
-      if(user.isAnonymous){
-        localStorage.setItem('anon_user_id', JSON.stringify(user.uid));
-        this.setUserMeta(userInfo);
-      }else{
-        this.migrateOldUser(userInfo);
-      }
-    }
-  }
-  onRegister(user){
-    this.analytics.trackUserEvent('Register', {id: user.uid});
-  }
   getNotifications(callback){
-    if(this.user.user_id){
-      this.fb.getNotifications(this.user.user_id, callback);
-    }else{
-      this.auth.waitForAuth()
-        .then(snap => {
-          if(snap && snap.uid && !snap.isAnonymous){
-            this.fb.getNotifications(snap.uid, callback);
-          }
-        });
-    }
+    // TODO update args to correct footprint once api has been normalised Thu 20 Jul 2017 21:06:46 UTC
+    return this.fb.getNotifications('FIXME', callback)
+      .then(res => {
+        console.log(res);
+      });
   }
   isSignedIn(){
     return this.auth.loggedIn;
   }
-  migrateOldUser(userInfo){
-    let anonUser = JSON.parse(localStorage.getItem('anon_user_id'));
-    if(anonUser){
 
-      return this.dataService.migrateUser(userInfo.user_id, anonUser)
-        .then(res => {
-          localStorage.setItem('anon_user_id', null);
-        });
-    }
-  }
-
-  // TODO don't think this is needed anymore
-  getUserData(id){
-    let userId = id || this.user.user_id;
-    if(userId){
-      return this.fb.getUserData(userId);
-    }
-    console.error('Can\'t fetch data for unknown user');
-    return Promise.reject('Can\'t fetch data for unknown user');
-  }
   getUserCart(){
-    if(this.user.user_id){
-      return this.fb.getUserCart(this.user.user_id)
-        .then(cart => {
-          if(cart){
-            return this.$timeout(() => {
-              this.cart = Object.keys(cart).map(key => {
-                return cart[key];
-              });
-              return this.cart;
-            });
-          }
-        });
-    }else{
-      return this.auth.waitForAuth()
-        .then(snap => {
-          if(snap && snap.uid){
-            return this.fb.getUserCart(snap.uid)
-              .then(cart => {
-                if(cart){
-                  return this.$timeout(() => {
-                    this.cart = Object.keys(cart).map(key => {
-                      return cart[key];
-                    });
-                    return this.cart;
-                  });
-                }
-              });
-          }
-        });
-    }
+    // TODO update args to correct footprint once api has been normalised Thu 20 Jul 2017 21:06:46 UTC
+    return this.fb.getUserCart('FIXME')
+      .then(res => {
+        console.log(res);
+      });
   }
   getUserCompleted(id){
     if(this.completed.length){return Promise.resolve(this.completed)}
 
     return this.fb.getUserCompleted(id)
       .then(courses => {
+        // TODO take a look at the actual results returned Thu 20 Jul 2017 22:00:01 UTC
         if(courses){
           return this.completed = Object.keys(courses).map(key => {
             return courses[key];
@@ -266,23 +173,13 @@ class userData{
   getUserMeta(id){
     if(this.user.name){return Promise.resolve(this.user)}
 
-    if(id){
-      return this.fb.getUserMeta(id)
-        .then(user => {
-          return this.user = user;
-        });
-    }else{
-      this.auth.waitForAuth()
-        .then(snap => {
-          if(snap && snap.uid && !snap.isAnonymous){
-            this.fb.getUserMeta(snap.uid)
-              .then(user => {
-                this.user = user;
-                this.getUserCart();
-              });
-          }
-        });
-    }
+    // TODO update args to correct footprint once api has been normalised Thu 20 Jul 2017 21:06:46 UTC
+    return this.fb.getUserMeta('FIXME')
+      .then(meta => {
+        console.log(meta);
+        this.user = meta;
+      });
+      // TODO fetch cart Thu 20 Jul 2017 21:21:01 UTC
   }
   setComment(loc, text, isReply, lesson){
     if(isReply){
@@ -312,6 +209,8 @@ class userData{
     })
     .catch(err => err);
   }
+
+  // TODO do on server Thu 20 Jul 2017 22:00:35 UTC
   setCommentNotifications(loc, replyKey, replyChain, lesson){
     loc.push('');
     loc = loc.join('/');
@@ -319,16 +218,6 @@ class userData{
     this.dataService.setCommentNotifications(loc, replyKey, replyChain, lesson);
   }
 
-  // TODO don't think this is needed anymore
-  setUserData(data){
-    if(!this.user.user_id){return Promise.reject('unknown user')}
-
-    return this.fb.setUserData(this.user.user_id, data)
-      .then(() => {
-        this.user = data.userInfo;
-        return true;
-      });
-  }
   setUserMeta(data){
     if(!this.user.user_id){return Promise.reject('unknown user')}
 
