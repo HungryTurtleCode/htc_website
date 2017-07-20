@@ -11,6 +11,9 @@ login-modal
     left: 0
     transition: opacity 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940)
 
+.login-modal-container
+  padding-top: calc(((100vh - 620px) / 2) - 30px)
+
 .login-modal-container,
 htc-sign-in
   z-index: 100
@@ -20,7 +23,7 @@ htc-sign-in
   // display: none
   display: flex
   justify-content: center
-  align-items: center
+  // align-items: center
 
   htc-sign-in
     background: none
@@ -72,15 +75,21 @@ htc-sign-in
       color: #999
       text-align: center
 
+      .error
+        border: 2px solid red
+      .error-msg
+        color: red
+
       h4
         font-weight: normal
         font-size: 1.5em
         margin: 0.5em 0
 
-      button
+      .authbtn
         cursor: pointer
 
-      button, input
+      .authbtn, input
+        display: block
         width: 100%
         padding: 0.8em
         border: 0
@@ -105,8 +114,16 @@ htc-sign-in
           &:hover
             background: shade($google, 10%)
 
+        &.tw
+          background: #1DA1F2
+          color: white
+
+          &:hover
+            background: shade(#1DA1F2, 10%)
+
         &.gh
           background: #ddd
+          color: #333
 
           &:hover
             background: shade(#ddd, 10%)
@@ -147,7 +164,8 @@ htc-sign-in
             padding: 0 0.6em
             display: inline-block
 
-        button
+        .authbtn
+          display: block
           background-color: $primary-color
           width: 50%
           float: right
@@ -168,6 +186,8 @@ htc-sign-in
           color: $secondary-color
           font-size: 0.7em
           margin-top: 3em
+
+
 
 
 htc-sign-in
