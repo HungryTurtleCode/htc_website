@@ -10,8 +10,20 @@ class Auth{
     this.dataService = dataService;
     this.analytics = analytics;
 
+    this.loggedIn = false;
+
     this.onAuthChange();
+    this.isLoggedIn();
   }
+  isLoggedIn() {
+    this.fb.isLoggedIn()
+      .then(res => {
+        this.loggedIn = res.loggedIn;
+        return this.loggedIn;
+      });
+  }
+
+
   waitForAuth(){
     return new Promise((resolve, reject) => {
       firebase.auth().onAuthStateChanged((user) => {

@@ -27,7 +27,9 @@ class FirebaseService{
     });
   }
 
-
+  isLoggedIn() {
+    return this.api.get('/auth');
+  }
   userLogin(username, password) {
     const obj = {
       username,
