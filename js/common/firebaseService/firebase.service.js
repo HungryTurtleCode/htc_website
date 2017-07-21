@@ -43,17 +43,17 @@ class FirebaseService{
     return this.api.post(`/analytics`, {data})
       .then(res => res.success);
   }
-  isInBookmarks(user_id, course) {
+  isInBookmarks(course) {
     // TODO make course id safe Thu 20 Jul 2017 23:56:15 UTC
     return this.api.get(`/bookmarks/${course}`)
       .then(res => res.isBookmarked);
   }
-  bookmarkCourse(user_id, course) {
+  bookmarkCourse(course) {
     // TODO make course id safe Thu 20 Jul 2017 23:56:15 UTC
     return this.api.post(`/bookmarks/${course}`)
       .then(res => res.success);
   }
-  removeBookmark(user_id, course){
+  removeBookmark(course){
     // TODO make course id safe Thu 20 Jul 2017 23:56:15 UTC
     return this.api.delete(`/bookmarks/${course}`)
       .then(res => res.success);
@@ -62,8 +62,7 @@ class FirebaseService{
     return this.api.get(`/courses/${course}`)
       .then(res => res.meta);
   }
-  isEnrolled(user, course){
-    // TODO no need to pass user into here. just use the user attached to the session on the server Tue 18 Jul 2017 22:10:03 UTC
+  isEnrolled(course){
     return this.api.get(`/courses/${course}/enrolled`)
       .then(res => res.success);
   }
@@ -72,31 +71,29 @@ class FirebaseService{
     return this.api.get(`/courses/${course}/tree`)
       .then(res => res.tree);
   }
-  addToCart(user, data){
+  addToCart(data){
     // TODO make course id safe Thu 20 Jul 2017 23:56:15 UTC
     return this.api.post(`/cart/${data.id}`)
       .then(res => res.success);
   }
-  getUserMeta(user){
+  getUserMeta(){
     return this.api.get(`/user`)
       .then(res => res.userMeta);
   }
-  getUserCart(user_id){
+  getUserCart(){
     return this.api.get(`/cart`)
       .then(res => res.cart);
   }
   // TODO add a isInCart func and api endpoint Tue 18 Jul 2017 22:29:33 UTC
   getNotifications(callback){
-    // TODO refactor all the calls to getNotifications to fit the new arg footprint Thu 20 Jul 2017 23:10:08 UTC
     return this.api.get(`/notifications`)
       .then(res => callback(res.notifs));
   }
-  // TODO refactore user out of all the call to this func as it's not needed Tue 18 Jul 2017 22:35:20 UTC
-  markNotificationRead(user, id){
+  markNotificationRead(id){
     return this.api.put(`/notifications/${id}`)
       .then(res => res.success);
   }
-  setUserMeta(user, data){
+  setUserMeta(data){
     return this.api.put(`/user`, data)
       .then(res => console.log(res));
   }
@@ -105,33 +102,33 @@ class FirebaseService{
     return this.api.get(`/comments/${url}`)
       .then(res => res.comments);
   }
-  getUserBookmarked(user_id){
+  getUserBookmarked(){
     return this.api.get(`/bookmarks`)
       .then(res => res.bookmarks);
   }
   // TODO the lesson passed in here is the url. I think the api expects an id. Refactor needed Tue 18 Jul 2017 23:16:38 UTC
-  getLessonContent(course, lesson){
+  getLessonContent(lesson){
     // TODO probably need to make the lesson url safe here too Thu 20 Jul 2017 23:05:53 UTC
     return this.api.get(`/lessons/${lesson}/content`)
       .then(res => console.log(res))
   }
-  getUserCompleted(user_id){
+  getUserCompleted(){
     console.log('get user completed');
     return this.api.get(`/courses/complete`)
       .then(res => console.log(res));
   }
-  getLessonMeta(course, lesson){
+  getLessonMeta(lesson){
     console.log('get lesson meta');
     return this.api.get(`/lessons/${lesson}`)
       .then(res => console.log(res));
   }
-  completeLesson(user, course, lesson){
+  completeLesson(lesson){
     console.log('complete lesson');
     return this.api.put(`/lessons/${lesson}/complete`)
       .then(res => console.log(res));
   }
   // TODO refactor out the user name and image from this and all calls to this Wed 19 Jul 2017 15:12:31 UTC
-  setComment(loc, text, is_reply, user_name, user_id, image){
+  setComment(loc, text, is_reply){
     // TODO fix the weird recursive reply thing in the comment component Wed 19 Jul 2017 15:17:42 UTC
     console.log('set comment');
     const data = {
@@ -142,17 +139,17 @@ class FirebaseService{
     return this.api.post(`/comments/${loc}`, data)
       .then(res => console.log(res));
   }
-  markCourseComplete(user, course){
+  markCourseComplete(course){
     console.log('mark course complete');
     return this.api.put(`/courses/${course}/complete`)
       .then(res => console.log(res));
   }
-  getCompleteLessons(user, course, callback){
+  getCompleteLessons(course, callback){
     console.log('get completed lessons');
     return this.api.get(`/courses/${course}/completedlessons`)
       .then(res => console.log(res))
   }
-  getUserEnrolledCourses(user_id){
+  getUserEnrolledCourses(){
     console.log('get user enrolled courses');
     return this.api.get(`/user/enrollments`)
       .then(res => console.log(res));
@@ -175,7 +172,7 @@ class FirebaseService{
     return this.api.put(`/comments/downvote/${comment}`)
       .then(res => console.log(res));
   }
-  removeFromCart(user, item){
+  removeFromCart(item){
     // TODO make item safe ie no slashes Fri 21 Jul 2017 00:07:35 UTC
     return this.api.delete(`/cart/${item}`)
       .then(res => console.log(res));

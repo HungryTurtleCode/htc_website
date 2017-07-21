@@ -16,18 +16,10 @@ const accountComponent = angular
         template: '<account user="$resolve.signin"></account>',
         resolve: {
           signin: ['userData', (userData) => {
-            return new Promise(resolve => {
-              firebase.auth().onAuthStateChanged((user) => {
-                if(user && !user.isAnonymous){
-                  userData.getUserMeta(user.uid)
-                    .then(user => {
-                      resolve(user);
-                    });
-                }else{
-                  resolve(false);
-                }
+            return userData.getUserMeta()
+              .then(user => {
+                resolve(user);
               });
-            });
           }]
         }
       });

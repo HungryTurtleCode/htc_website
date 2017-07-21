@@ -14,18 +14,10 @@ const bookmarkedComponent = angular
         // TODO add a resolve to check wait for log in Sun 29 Jan 2017 02:24:09 UTC
         resolve: {
           signin: ['userData', (userData) => {
-            return new Promise(resolve => {
-              firebase.auth().onAuthStateChanged((user) => {
-                if(user && !user.isAnonymous){
-                  userData.getUserBookmarked(user.uid)
-                    .then(courses => {
-                      resolve(courses);
-                    });
-                }else{
-                  resolve(false);
-                }
+            return userData.getUserBookmarked()
+              .then(courses => {
+                resolve(courses);
               });
-            });
           }]
         }
       });

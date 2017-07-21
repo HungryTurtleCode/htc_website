@@ -36,6 +36,8 @@ class CheckoutController{
         this.cart = null;
       }
       // FIXME no need to do the splicing etc, just use userData.removeFromCart. userData needs to be refactored before it can change though
+      //
+      // this.cart exists in the checkout as well as the userData Service. This needs to be fixed
       this.userData.removeFromCart(item);
       this.userData.updateCart(
         angular.copy(this.cart))

@@ -15,7 +15,7 @@ class userData{
     this.getUserMeta();
   }
   markNotificationRead(id){
-    this.fb.markNotificationRead(this.user.user_id, id);
+    this.fb.markNotificationRead(id);
   }
   trackSearch(query, page){
     this.analytics.trackUserEvent('Search', {event: query, location: page});
@@ -23,46 +23,40 @@ class userData{
       this.dataService.tagSearch(this.user.email, query);
     }
   }
-  isEnrolled(course, user){
-    user = user || this.user.user_id;
-    return this.fb.isEnrolled(user, course);
+  isEnrolled(course){
+    return this.fb.isEnrolled(course);
   }
   bookmarkCourse(course){
-    return this.fb.bookmarkCourse(this.user.user_id, course);
+    return this.fb.bookmarkCourse(course);
   }
   removeBookmark(course){
-    return this.fb.removeBookmark(this.user.user_id, course);
+    return this.fb.removeBookmark(course);
   }
   isInBookmarks(course){
-    // TODO update args to correct footprint once api has been normalised Thu 20 Jul 2017 21:06:46 UTC
-    return this.fb.isInBookmarks('FIXME', course)
+    return this.fb.isInBookmarks(course)
       .then(res => {
         console.log(res);
       });
   }
   markCourseComplete(course){
-    this.fb.markCourseComplete(
-                this.user.user_id,
-                course);
+    this.fb.markCourseComplete(course);
   }
-  completeLesson(course, lesson){
-    return this.fb.completeLesson(
-          this.user.user_id,
-          course,
-          lesson);
+  completeLesson(lesson){
+    return this.fb.completeLesson(lesson);
   }
   getCompleteLessons(course, callback){
-    // TODO update args to correct footprint once api has been normalised Thu 20 Jul 2017 21:06:46 UTC
-    return this.fb.getCompleteLessons('FIXME', course, callback)
+    // TODO why is a callback used here and not a promise? Fri 21 Jul 2017 00:47:57 UTC
+    return this.fb.getCompleteLessons(course, callback)
       .then(res => {
         console.log(res);
       });
   }
-  getUserEnrolledCourses(id){
+  getUserEnrolledCourses(){
     if(this.courses.length){return Promise.resolve(this.courses)}
 
-    return this.fb.getUserEnrolledCourses(id)
+    return this.fb.getUserEnrolledCourses()
       .then(courses => {
+        // TODO check actual returned data Fri 21 Jul 2017 00:50:09 UTC
           if(courses){
             return this.courses = Object.keys(courses).map(key => {
               return courses[key];
@@ -71,9 +65,10 @@ class userData{
           return [];
       });
   }
-  getUserBookmarked(id){
-    return this.fb.getUserBookmarked(id)
+  getUserBookmarked(){
+    return this.fb.getUserBookmarked()
       .then(courses => {
+        // TODO check what is returned from api. Massagin may not be neccessary Fri 21 Jul 2017 00:35:20 UTC
         if(courses){
           return this.bookmarked = Object.keys(courses).map(key => {
             return courses[key];
@@ -83,7 +78,7 @@ class userData{
       });
   }
   removeFromCart(item) {
-    return this.fb.removeFromCart(this.user.user_id, item);
+    return this.fb.removeFromCart(item);
   }
   // TODO refactor this so that the this.cart gets updated on the remove. Does this service even need to hold the cart?
   updateCart(items){
@@ -102,7 +97,7 @@ class userData{
         }
       }
 
-      return this.fb.addToCart(this.user.user_id, courseData)
+      return this.fb.addToCart(courseData)
         .then(() => true);
     }
     return Promise.reject(false);
@@ -126,27 +121,25 @@ class userData{
     }
   }
   getNotifications(callback){
-    // TODO update args to correct footprint once api has been normalised Thu 20 Jul 2017 21:06:46 UTC
-    return this.fb.getNotifications('FIXME', callback)
+    return this.fb.getNotifications(callback)
       .then(res => {
         console.log(res);
       });
   }
+  // TODO refactor all calls to this function to use auth.isLoggedIn instead Fri 21 Jul 2017 00:29:02 UTC
   isSignedIn(){
     return this.auth.loggedIn;
   }
-
   getUserCart(){
-    // TODO update args to correct footprint once api has been normalised Thu 20 Jul 2017 21:06:46 UTC
-    return this.fb.getUserCart('FIXME')
+    return this.fb.getUserCart()
       .then(res => {
         console.log(res);
       });
   }
-  getUserCompleted(id){
+  getUserCompleted(){
     if(this.completed.length){return Promise.resolve(this.completed)}
 
-    return this.fb.getUserCompleted(id)
+    return this.fb.getUserCompleted()
       .then(courses => {
         // TODO take a look at the actual results returned Thu 20 Jul 2017 22:00:01 UTC
         if(courses){
@@ -170,23 +163,23 @@ class userData{
     }
     return false;
   }
-  getUserMeta(id){
+  getUserMeta(){
     if(this.user.name){return Promise.resolve(this.user)}
 
-    // TODO update args to correct footprint once api has been normalised Thu 20 Jul 2017 21:06:46 UTC
-    return this.fb.getUserMeta('FIXME')
+    return this.fb.getUserMeta()
       .then(meta => {
         console.log(meta);
         this.user = meta;
       });
       // TODO fetch cart Thu 20 Jul 2017 21:21:01 UTC
   }
-  setComment(loc, text, isReply, lesson){
+  setComment(loc, text, isReply){
     if(isReply){
       loc = loc + isReply + '/replies/';
     }
     let locArr = loc.split('/');
 
+    // TODO sort this crazy nesting thing with the comments Fri 21 Jul 2017 00:43:29 UTC
     let replyChain = locArr.reduce((arr, val) => {
       if(val.charAt(0) === '-'){
         arr.push(val);
@@ -197,32 +190,19 @@ class userData{
     return this.fb.setComment(
       loc,
       text,
-      isReply,
-      this.user.name,
-      this.user.user_id,
-      this.user.image
+      isReply
     )
     .then(key => {
-      if(replyChain.length){
-        this.setCommentNotifications(locArr.splice(0,2), key, replyChain, lesson);
-      }
+      console.log(key);
+      return key;
     })
     .catch(err => err);
   }
 
-  // TODO do on server Thu 20 Jul 2017 22:00:35 UTC
-  setCommentNotifications(loc, replyKey, replyChain, lesson){
-    loc.push('');
-    loc = loc.join('/');
-
-    this.dataService.setCommentNotifications(loc, replyKey, replyChain, lesson);
-  }
-
   setUserMeta(data){
-    if(!this.user.user_id){return Promise.reject('unknown user')}
-
-    return this.fb.setUserMeta(this.user.user_id, data)
+    return this.fb.setUserMeta(data)
       .then(() => {
+        // TODO make sure api does actually return a user object Fri 21 Jul 2017 00:33:21 UTC
         this.user = data;
         return true;
       });

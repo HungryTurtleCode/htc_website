@@ -30,8 +30,7 @@ class commentFormController{
       this.userData.setComment(
         this.pageLocations,
         text,
-        this.isReply,
-        this.isLesson
+        this.isReply
       )
       .then(() => {
         this.analytics.trackEvent('Comment', loc);

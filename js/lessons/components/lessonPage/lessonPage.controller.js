@@ -20,9 +20,7 @@ class LessonPageController{
     this.forgotPassword = false;
   }
   lessonComplete(){
-    this.userData.completeLesson(
-              this.lessonData.course,
-              this.lessonData.lesson)
+    this.userData.completeLesson(this.lessonData.lesson)
       .then(() => {
         this.lessonService.checkIfCourseComplete();
       });
