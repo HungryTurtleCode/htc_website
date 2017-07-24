@@ -7,11 +7,8 @@ class LessonPageController{
     this.videoUrl = '';
     this.forgotPassword = false;
 
-    if(this.lessonData && this.lessonData.video){
-      this.userData
-        .getSignedVideoUrl(this.lessonData.video)
-        .then(url => this.videoUrl = url);
-    }
+    // TODO this.videoUrl isn't set Mon 24 Jul 2017 16:16:14 UTC
+    // the video url now exists on lesson-data object
   }
   forgotPass(){
     this.forgotPassword = true;

@@ -147,9 +147,6 @@ class userData{
         return [];
       });
   }
-  getSignedVideoUrl(video){
-    return this.dataService.getSignedLessonVideo(this.user.user_id, video);
-  }
   isInCart(item){
     if(this.cart.length){
       for(let i = 0; i < this.cart.length; i++){
