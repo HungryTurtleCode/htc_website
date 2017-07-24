@@ -12,21 +12,12 @@ class DataService{
       this.url = 'https://api.hungryturtlecode.com/v0';
     }
   }
-  // TODO need to add api endpoint for this
   trackAcEvent(data){
-    return this.$http.post(`${this.url}/acEvent`, data)
+    return this.$http.post(`${this.url}/analytics/activecampaign`, {data})
       .then(response => {
-        return response.data;
+        return response.data.success;
       });
   }
-  // TODO need to add api endpoint for this
-  tagSearch(email, query){
-    return this.$http.post(`${this.url}/tagSearch`, {email, query})
-      .then(response => {
-        return response.data;
-      });
-  }
-
 
   // TODO refactor calls to this to use the correct arg footprint Mon 24 Jul 2017 15:11:58 UTC
   paypalBuy(data, user){
@@ -38,6 +29,7 @@ class DataService{
         return response.data;
       });
   }
+
   // TODO update the arg footprint on all calls Mon 24 Jul 2017 15:14:03 UTC
   stripeBuy(data, user, token){
     return this.$http.post(`${this.url}/purchase/stripe`, {courses: data, token: token})
@@ -83,6 +75,14 @@ class DataService{
         return response.data.url;
       });
   }
+  // DONE
+  // tagSearch(email, query){
+  //   return this.$http.post(`${this.url}/tagSearch`, {email, query})
+  //     .then(response => {
+  //       return response.data;
+  //     });
+  // }
+
 }
 
 DataService.$inject = ['$http'];

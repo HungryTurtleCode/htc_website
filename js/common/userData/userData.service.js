@@ -19,9 +19,6 @@ class userData{
   }
   trackSearch(query, page){
     this.analytics.trackUserEvent('Search', {event: query, location: page});
-    if(this.user && this.user.email){
-      this.dataService.tagSearch(this.user.email, query);
-    }
   }
   isEnrolled(course){
     return this.fb.isEnrolled(course);
