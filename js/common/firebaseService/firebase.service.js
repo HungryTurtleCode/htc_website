@@ -139,6 +139,7 @@ class FirebaseService{
     return this.api.post(`/comments/${loc}`, data)
       .then(res => console.log(res));
   }
+  // TODO do this on the server when all lessons are marked completed. Mon 24 Jul 2017 16:34:21 UTC
   markCourseComplete(course){
     console.log('mark course complete');
     return this.api.put(`/courses/${course}/complete`)
