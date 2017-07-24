@@ -100,8 +100,9 @@ class userData{
     return Promise.reject(false);
   }
   paypalBuy(data){
-    return this.dataService.paypalBuy(getCourseArray(data), this.user);
+    return this.dataService.paypalBuy(getCourseArray(data));
 
+    // TODO check if this is needed Mon 24 Jul 2017 16:22:01 UTC
     function getCourseArray(courses){
       return courses.map(item => {
         return item.course;
@@ -109,8 +110,9 @@ class userData{
     }
   }
   stripeBuy(data, token){
-    return this.dataService.stripeBuy(getCourseArray(data), this.user, token);
+    return this.dataService.stripeBuy(getCourseArray(data), token);
 
+    // TODO check if this is needed Mon 24 Jul 2017 16:22:01 UTC
     function getCourseArray(courses){
       return courses.map(item => {
         return item.course;

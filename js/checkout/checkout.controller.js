@@ -72,11 +72,14 @@ class CheckoutController{
                                     );
           this.cart.forEach(item => {
             this.analytics.trackEvent('Purchase', item.title, null, item.price);
+            // TODO track purchase analytics on the server not here Mon 24 Jul 2017 16:26:12 UTC
             this.analytics.trackUserEvent('Purchase', {location: item.title, value: item.price});
           });
           this.paymentLoading = false;
           window.location.href = data.url;
         }else{
+          this.paymentLoading = false;
+          this.feedbackText = 'Something Went Wrong, try again later';
           this.cart.forEach(item => {
             this.analytics.trackEvent('PaypalFAIL', item.title, null, item.price);
           });
@@ -85,6 +88,9 @@ class CheckoutController{
     .catch(err => {
       this.paymentLoading = false;
       this.feedbackText = 'Something Went Wrong, try again later';
+      this.cart.forEach(item => {
+        this.analytics.trackEvent('PaypalFAIL', item.title, null, item.price);
+      });
       console.error(err)
     });
   }
@@ -102,11 +108,14 @@ class CheckoutController{
             if(data.success){
               this.cart.forEach(item => {
                 this.analytics.trackEvent('Purchase', item.title, null, item.price);
+                // TODO track purchase analytics on the server not here Mon 24 Jul 2017 16:26:12 UTC
                 this.analytics.trackUserEvent('Purchase', {location: item.title, value: item.price})
               });
               this.paymentLoading = false;
               window.location.href = data.url;
             }else{
+              this.paymentLoading = false;
+              this.feedbackText = 'Something Went Wrong, try again later';
               this.cart.forEach(item => {
                 this.analytics.trackEvent('StripeFAIL', item.title, null, item.price);
               });
@@ -115,6 +124,9 @@ class CheckoutController{
           .catch(err => {
             this.paymentLoading = false;
             this.feedbackText = 'Something Went Wrong, try again later';
+            this.cart.forEach(item => {
+              this.analytics.trackEvent('StripeFAIL', item.title, null, item.price);
+            });
             console.error(err)
           });
       });

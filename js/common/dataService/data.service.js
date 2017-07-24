@@ -18,9 +18,7 @@ class DataService{
         return response.data.success;
       });
   }
-
-  // TODO refactor calls to this to use the correct arg footprint Mon 24 Jul 2017 15:11:58 UTC
-  paypalBuy(data, user){
+  paypalBuy(data){
     return this.$http.post(`${this.url}/purchase/paypal`, {courses: data})
       .then(response => {
         // TODO check actual return value Mon 24 Jul 2017 15:12:38 UTC
@@ -29,9 +27,7 @@ class DataService{
         return response.data;
       });
   }
-
-  // TODO update the arg footprint on all calls Mon 24 Jul 2017 15:14:03 UTC
-  stripeBuy(data, user, token){
+  stripeBuy(data, token){
     return this.$http.post(`${this.url}/purchase/stripe`, {courses: data, token: token})
       .then(response => {
         // TODO check actual return value Mon 24 Jul 2017 15:12:38 UTC
