@@ -43,41 +43,42 @@ class DataService{
 
 
 
+  // TODO remove all calls to the below funcs Mon 24 Jul 2017 16:07:04 UTC
 
 
 
-  // TODO done on server
-  subscribeUser(email, first_name, last_name){
-    return this.$http.post(`${this.url}/acSubscribe`, {email: email, last_name: last_name || '', first_name: first_name || ''})
-      .then(response => {
-        return response.data;
-      });
-  }
-  // TODO done on server
-  migrateUser(to, from){
-    return this.$http.post(`${this.url}/migrateUser`, {to_user: to, from_user: from})
-      .then(response => {
-        return response.data;
-      });
-  }
-  // TODO done on the server
-  setCommentNotifications(loc, replyKey, replyChain, lesson){
-    return this.$http.post(`${this.url}/commentNotif`, {loc, replyKey, replyChain, lesson})
-      .then(response => {
-        console.log('DONE COMMENT NOTIF');
-        return response.data;
-      });
-  }
-  // TODO done on the server
-  getSignedLessonVideo(user, video){
-    return this.$http.post(`${this.url}/getVideo`, {video, user})
-      .then(response => {
-        return response.data.url;
-      });
-  }
+  // DONE
+  // migrateUser(to, from){
+  //   return this.$http.post(`${this.url}/migrateUser`, {to_user: to, from_user: from})
+  //     .then(response => {
+  //       return response.data;
+  //     });
+  // }
+  // DONE
+  // setCommentNotifications(loc, replyKey, replyChain, lesson){
+  //   return this.$http.post(`${this.url}/commentNotif`, {loc, replyKey, replyChain, lesson})
+  //     .then(response => {
+  //       console.log('DONE COMMENT NOTIF');
+  //       return response.data;
+  //     });
+  // }
+  // DONE
+  // getSignedLessonVideo(user, video){
+  //   return this.$http.post(`${this.url}/getVideo`, {video, user})
+  //     .then(response => {
+  //       return response.data.url;
+  //     });
+  // }
   // DONE
   // tagSearch(email, query){
   //   return this.$http.post(`${this.url}/tagSearch`, {email, query})
+  //     .then(response => {
+  //       return response.data;
+  //     });
+  // }
+  // DONE
+  // subscribeUser(email, first_name, last_name){
+  //   return this.$http.post(`${this.url}/acSubscribe`, {email: email, last_name: last_name || '', first_name: first_name || ''})
   //     .then(response => {
   //       return response.data;
   //     });
