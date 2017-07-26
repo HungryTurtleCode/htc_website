@@ -53,26 +53,6 @@ class userData{
   }
 
 
-  paypalBuy(data){
-    return this.fb.paypalBuy(getCourseArray(data));
-
-    // TODO check if this is needed Mon 24 Jul 2017 16:22:01 UTC
-    function getCourseArray(courses){
-      return courses.map(item => {
-        return item.course;
-      });
-    }
-  }
-  stripeBuy(data, token){
-    return this.fb.stripeBuy(getCourseArray(data), token);
-
-    // TODO check if this is needed Mon 24 Jul 2017 16:22:01 UTC
-    function getCourseArray(courses){
-      return courses.map(item => {
-        return item.course;
-      });
-    }
-  }
   getUserMeta(){
     if(this.user.name){return Promise.resolve(this.user)}
 

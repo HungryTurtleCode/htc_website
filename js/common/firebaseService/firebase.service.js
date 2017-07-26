@@ -18,7 +18,7 @@ class FirebaseService{
       });
   }
   paypalBuy(data){
-    return this.api.post(`/purchase/paypal`, {courses: data})
+    return this.api.post(`/purchase/paypal`, {courses: this.getCourseArray(data)})
       .then(response => {
         // TODO check actual return value Mon 24 Jul 2017 15:12:38 UTC
 
@@ -27,7 +27,7 @@ class FirebaseService{
       });
   }
   stripeBuy(data, token){
-    return this.api.post(`/purchase/stripe`, {courses: data, token: token})
+    return this.api.post(`/purchase/stripe`, {courses: this.getCourseArray(data), token: token})
       .then(response => {
         // TODO check actual return value Mon 24 Jul 2017 15:12:38 UTC
         // TODO if the caller of this func redirects then look into reconciling that with server redirects instead.
@@ -236,6 +236,11 @@ class FirebaseService{
     let newArr = [arr[arr.length - 2], arr[arr.length - 1], ''];
 
     return newArr.join('/');
+  }
+  getCourseArray(courses){
+    return courses.map(item => {
+      return item.course;
+    });
   }
 }
 
