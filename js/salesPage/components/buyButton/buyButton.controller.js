@@ -1,7 +1,7 @@
 class BuyButtonController{
-  constructor($location, userData, $timeout, analytics, pixels, fb) {
+  constructor($location, cart, $timeout, analytics, pixels, fb) {
     this.$location = $location;
-    this.userData = userData;
+    this.cart = cart;
     this.$timeout = $timeout;
     this.analytics = analytics;
     this.pixels = pixels;
@@ -27,7 +27,7 @@ class BuyButtonController{
                   this.enrolled = true;
                   this.buttonText = 'Already Enrolled';
                 }else{
-                  let isInCart = this.userData.isInCart(this.courseData.course);
+                  let isInCart = this.cart.isInCart(this.courseData.course);
                   if(isInCart){
                     this.inCart = true;
                     this.buttonText = 'Already In Cart';
@@ -77,7 +77,7 @@ class BuyButtonController{
                                   },
                                   'content_type');
 
-        this.userData.addToCart(this.courseData)
+        this.cart.addToCart(this.courseData)
           .then(added => {
             if(added){
               window.location.href = '/checkout';
@@ -118,6 +118,6 @@ class BuyButtonController{
   }
 }
 
-BuyButtonController.$inject = ['$location', 'userData', '$timeout', 'analyticsService', 'pixelService', 'firebaseService'];
+BuyButtonController.$inject = ['$location', 'cartService', '$timeout', 'analyticsService', 'pixelService', 'firebaseService'];
 
 export default BuyButtonController;

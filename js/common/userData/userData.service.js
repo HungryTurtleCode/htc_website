@@ -56,35 +56,6 @@ class userData{
   }
 
 
-  // TODO refactor this so that the this.cart gets updated on the remove. Does this service even need to hold the cart?
-  updateCart(items){
-    this.cart = items;
-
-    // return this.fb.updateCart(this.user.user_id, items);
-  }
-  isInCart(item){
-    if(this.cart.length){
-      for(let i = 0; i < this.cart.length; i++){
-        if(this.cart[i].course === item){
-          return true
-        }
-      }
-    }
-    return false;
-  }
-  addToCart(courseData){
-    if(courseData){
-      for(let i = 0; i < this.cart.length; i++){
-        if(this.cart[i].title === courseData.title){
-          return Promise.reject(false);
-        }
-      }
-
-      return this.fb.addToCart(courseData)
-        .then(() => true);
-    }
-    return Promise.reject(false);
-  }
   paypalBuy(data){
     return this.fb.paypalBuy(getCourseArray(data));
 

@@ -1,10 +1,10 @@
 class CheckoutController{
-  constructor(firebaseService, userData, $scope, stripe, analytics) {
-    this.fb = firebaseService;
+  constructor(userData, $scope, stripe, analytics, cart) {
     this.userData = userData;
     this.$scope = $scope;
     this.stripe = stripe;
     this.analytics = analytics;
+    this.cart = cart;
   }
   $onInit(){
     this.cart = [];
@@ -14,8 +14,9 @@ class CheckoutController{
     this.getCart();
   }
   getCart(){
-    return this.fb.getUserCart()
+    return this.cart.getCart()
       .then(cart => {
+        // TODO does the component need cart or can it come directly from cartService Wed 26 Jul 2017 13:02:46 UTC
         this.cart = cart;
         this.$scope.$apply();
       });
@@ -35,15 +36,11 @@ class CheckoutController{
       if(!this.cart.length){
         this.cart = null;
       }
-      // FIXME no need to do the splicing etc, just use fb.removeFromCart. userData needs to be refactored before it can change though
+      // FIXME no need to do the splicing etc, just use cart.removeFromCart. userData needs to be refactored before it can change though
       //
       // this.cart exists in the checkout as well as the userData Service. This needs to be fixed
       //
-      // TODO create a cartService?
-      this.fb.removeFromCart(item);
-      this.userData.updateCart(
-        angular.copy(this.cart))
-        .then(() => console.log('updated cart'));
+      this.cart.removeFromCart(item);
     }
   }
   getTotal(){
@@ -135,6 +132,6 @@ class CheckoutController{
   }
 }
 
-CheckoutController.$inject = ['firebaseService', 'userData', '$scope', 'stripe', 'analyticsService'];
+CheckoutController.$inject = ['userData', '$scope', 'stripe', 'analyticsService', 'cartService'];
 
 export default CheckoutController;

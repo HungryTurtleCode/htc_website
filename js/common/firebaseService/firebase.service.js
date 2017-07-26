@@ -197,11 +197,6 @@ class FirebaseService{
     return this.api.put(`/comments/downvote/${comment}`)
       .then(res => console.log(res));
   }
-  removeFromCart(item){
-    // TODO make item safe ie no slashes Fri 21 Jul 2017 00:07:35 UTC
-    return this.api.delete(`/cart/${item}`)
-      .then(res => console.log(res));
-  }
 
 
   /*
