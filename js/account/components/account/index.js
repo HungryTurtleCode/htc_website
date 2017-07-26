@@ -17,7 +17,8 @@ const accountComponent = angular
           signin: ['userData', (userData) => {
             return userData.getUserMeta()
               .then(user => {
-                resolve(user);
+                // TODO check value before resolving Wed 26 Jul 2017 14:41:05 UTC
+                return user;
               });
           }]
         }

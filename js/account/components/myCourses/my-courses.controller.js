@@ -16,6 +16,6 @@ class myCourseController{
   }
 }
 
-myCourseController.$inject = ['fb'];
+myCourseController.$inject = ['firebaseService'];
 
 export default myCourseController;

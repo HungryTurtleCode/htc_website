@@ -18,16 +18,13 @@ class AccountController{
   }
   save(){
     this.loading = true;
+
     if(this.profileImage){
-      this.uploadService
-        .dataURItoBlob(this.profileImage[0])
-        .then(data => {
-          this.user.image = data;
-          this.postUserData(this.user);
-        });
-    }else{
-      this.postUserData(this.user);
+      this.user.image = this.uploadService
+        .dataURItoBlob(this.profileImage[0]);
     }
+
+    this.postUserData(this.user);
   }
   postUserData(data){
     this.userData.setUserMeta(data)
