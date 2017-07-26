@@ -1,5 +1,3 @@
-import config from './config';
-
 class FirebaseService{
   constructor(apiService, $location) {
     this.api = apiService;

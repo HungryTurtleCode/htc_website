@@ -1,5 +1,4 @@
 import angular from 'angular';
-import firebase from 'firebase';
 import completed from './completed.component';
 
 const completedComponent = angular

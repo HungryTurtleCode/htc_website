@@ -1,5 +1,4 @@
 import angular from 'angular';
-import firebase from 'firebase';
 
 import uiRouter from 'angular-ui-router';
 import LessonPage from './lessonPage.component';

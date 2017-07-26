@@ -1,5 +1,4 @@
 import angular from 'angular';
-import firebase from 'firebase';
 import myCourses from './my-courses.component';
 
 import uiRouter from 'angular-ui-router';

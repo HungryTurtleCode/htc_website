@@ -1,5 +1,4 @@
 import angular from 'angular';
-import firebase from 'firebase';
 import account from './account.component';
 
 import signinComponent from '../../../common/signInComponent';
