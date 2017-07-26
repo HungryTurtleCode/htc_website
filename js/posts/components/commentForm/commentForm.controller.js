@@ -1,6 +1,6 @@
 class commentFormController{
-  constructor(firebaseService, userData, $location, analytics, auth) {
-    this.firebaseService = firebaseService;
+  constructor(firebaseService, $location, analytics, auth) {
+    this.fb = firebaseService;
     this.userData = userData;
     this.$location = $location;
     this.analytics = analytics;
@@ -21,6 +21,31 @@ class commentFormController{
       this.pageLocations = this.getPageLocations() || '';
     }
   }
+  setComment(loc, text, isReply){
+    if(isReply){
+      loc = loc + isReply + '/replies/';
+    }
+    let locArr = loc.split('/');
+
+    // TODO sort this crazy nesting thing with the comments Fri 21 Jul 2017 00:43:29 UTC
+    let replyChain = locArr.reduce((arr, val) => {
+      if(val.charAt(0) === '-'){
+        arr.push(val);
+      }
+      return arr;
+    }, []);
+
+    return this.fb.setComment(
+      loc,
+      text,
+      isReply
+    )
+    .then(key => {
+      console.log(key);
+      return key;
+    })
+    .catch(err => err);
+  }
   submitComment(text){
     this.submitLoading = true;
     let loc = this.getPageLocations();
@@ -28,7 +53,7 @@ class commentFormController{
     type = type[0];
 
     if(text){
-      this.userData.setComment(
+      this.setComment(
         this.pageLocations,
         text,
         this.isReply
@@ -94,6 +119,6 @@ class commentFormController{
   }
 }
 
-commentFormController.$inject = ['firebaseService', 'userData', '$location', 'analyticsService', 'auth'];
+commentFormController.$inject = ['firebaseService', '$location', 'analyticsService', 'auth'];
 
 export default commentFormController;

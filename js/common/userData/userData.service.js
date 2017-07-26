@@ -1,13 +1,10 @@
 class userData{
-  constructor(firebaseService, auth, $timeout, analytics) {
+  constructor(firebaseService, analytics) {
     this.fb = firebaseService;
-    this.auth = auth;
-    this.$timeout = $timeout;
     this.analytics = analytics;
 
     this.user = {};
     this.courses = [];
-    this.cart = [];
     this.completed = [];
     this.bookmarked = [];
 
@@ -94,35 +91,8 @@ class userData{
         return true;
       });
   }
-
-  setComment(loc, text, isReply){
-    if(isReply){
-      loc = loc + isReply + '/replies/';
-    }
-    let locArr = loc.split('/');
-
-    // TODO sort this crazy nesting thing with the comments Fri 21 Jul 2017 00:43:29 UTC
-    let replyChain = locArr.reduce((arr, val) => {
-      if(val.charAt(0) === '-'){
-        arr.push(val);
-      }
-      return arr;
-    }, []);
-
-    return this.fb.setComment(
-      loc,
-      text,
-      isReply
-    )
-    .then(key => {
-      console.log(key);
-      return key;
-    })
-    .catch(err => err);
-  }
-
 }
 
-userData.$inject = ['firebaseService', 'auth','$timeout', 'analyticsService'];
+userData.$inject = ['firebaseService', 'analyticsService'];
 
 export default userData;
