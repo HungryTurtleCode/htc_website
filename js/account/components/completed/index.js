@@ -12,10 +12,11 @@ const completedComponent = angular
         template: '<completed courses="$resolve.signin"></completed>',
         // TODO add a resolve to check wait for log in Sun 29 Jan 2017 02:24:09 UTC
         resolve: {
-          signin: ['userData', (userData) => {
-            return userData.getUserCompleted()
+          signin: ['accountService', (account) => {
+            return account.getUserCompleted()
               .then(courses => {
-                resolve(courses);
+                // TODO check value before returning Wed 26 Jul 2017 13:47:10 UTC
+                return courses;
               });
           }]
         }

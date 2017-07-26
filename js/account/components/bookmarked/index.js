@@ -11,12 +11,12 @@ const bookmarkedComponent = angular
       .state('bookmarked', {
         url: '/bookmarked',
         template: '<bookmarked courses="$resolve.signin"></bookmarked>',
-        // TODO add a resolve to check wait for log in Sun 29 Jan 2017 02:24:09 UTC
         resolve: {
-          signin: ['userData', (userData) => {
-            return userData.getUserBookmarked()
+          signin: ['accountService', (account) => {
+            return account.getUserBookmarked()
               .then(courses => {
-                resolve(courses);
+                // TODO check the value here is valid before successfully returning from resolve Wed 26 Jul 2017 13:46:08 UTC
+                return courses;
               });
           }]
         }

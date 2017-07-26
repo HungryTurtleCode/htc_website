@@ -3,6 +3,7 @@ import ngAnimate from 'angular-animate';
 
 import userData from '../../common/userData';
 import firebaseService from '../../common/firebaseService';
+import account from './account.service';
 
 import forgotPass from '../../common/forgotPass/';
 import bookmark from '../../common/bookmarkButton/';
@@ -21,6 +22,7 @@ const CommonModule = angular
     spinner,
     trackingPixel
   ])
+  .service('accountService', account)
   .name;
 
 export default CommonModule;

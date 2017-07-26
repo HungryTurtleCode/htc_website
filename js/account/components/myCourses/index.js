@@ -16,10 +16,11 @@ const myCoursesComponent = angular
         template: '<my-courses courses="$resolve.signin"></my-courses>',
         // TODO add a resolve to check wait for log in Sun 29 Jan 2017 02:24:09 UTC
         resolve: {
-          signin: ['userData', (userData) => {
-            return userData.getUserEnrolledCourses()
+          signin: ['accountService', (account) => {
+            return account.getUserEnrolledCourses()
               .then(courses => {
-                resolve(courses);
+                // TODO check return before resolving Wed 26 Jul 2017 13:48:39 UTC
+                return courses;
               });
           }]
         }
