@@ -20,8 +20,9 @@ class AccountController{
     this.loading = true;
 
     if(this.profileImage){
-      this.user.image = this.uploadService
-        .dataURItoBlob(this.profileImage[0]);
+      // this.user.image = this.uploadService
+      //   .dataURItoBlob(this.profileImage[0]);
+      this.user.image = this.profileImage[0];
     }
 
     this.postUserData(this.user);
