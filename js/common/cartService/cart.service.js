@@ -34,6 +34,14 @@ class CartService{
     }
     return Promise.reject(false);
   }
+  getTotal(){
+    if(this.cart){
+      return this.cart.reduce((num, val) => {
+        return parseInt(num) + parseInt(val.price);
+      }, 0);
+    }
+    return 0;
+  }
   removeFromCart(item){
     // TODO make item safe ie no slashes Fri 21 Jul 2017 00:07:35 UTC
     return this.api.delete(`/cart/${item}`)

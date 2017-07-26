@@ -18,15 +18,6 @@ class CheckoutController{
   removeItem(item){
     this.cart.removeFromCart(item);
   }
-  getTotal(){
-    // TODO move to cart service Wed 26 Jul 2017 13:30:23 UTC
-    if(this.cart){
-      return this.cart.reduce((num, val) => {
-        return parseInt(num) + parseInt(val.price);
-      }, 0);
-    }
-    return 0;
-  }
   paypalBuy(){
     if(this.paymentLoading) return;
     this.paymentLoading = true;
