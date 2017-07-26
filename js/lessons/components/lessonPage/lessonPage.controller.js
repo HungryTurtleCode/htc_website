@@ -1,6 +1,6 @@
 class LessonPageController{
-  constructor(userData, lessonService) {
-    this.userData = userData;
+  constructor(fb, lessonService) {
+    this.fb = fb;
     this.lessonService = lessonService;
   }
   $onInit(){
@@ -17,7 +17,7 @@ class LessonPageController{
     this.forgotPassword = false;
   }
   lessonComplete(){
-    this.userData.completeLesson(this.lessonData.lesson)
+    this.fb.completeLesson(this.lessonData.lesson)
       .then(() => {
         this.lessonService.checkIfCourseComplete();
       });
@@ -30,6 +30,6 @@ class LessonPageController{
   }
 }
 
-LessonPageController.$inject = ['userData', 'lessonService'];
+LessonPageController.$inject = ['firebaseService', 'lessonService'];
 
 export default LessonPageController;

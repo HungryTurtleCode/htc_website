@@ -63,7 +63,9 @@ class FirebaseService{
       location: data.location || this.getPageLocations()
     });
     return this.api.post(`/analytics`, {data})
-      .then(res => res.success);
+      .then(res => {
+        return res.success
+      });
   }
   isInBookmarks(course) {
     // TODO make course id safe Thu 20 Jul 2017 23:56:15 UTC

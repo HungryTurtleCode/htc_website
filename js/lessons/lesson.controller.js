@@ -1,10 +1,9 @@
 class LessonController{
-  constructor(firebaseService, $rootScope, lessonService, $state, userData) {
+  constructor(firebaseService, $rootScope, lessonService, $state) {
     this.fb = firebaseService;
     this.$rootScope = $rootScope;
     this.lessonService = lessonService;
     this.$state = $state;
-    this.userData = userData;
 
     this.lessonList = [];
     this.mascotImg = window.mascotImg;
@@ -20,7 +19,8 @@ class LessonController{
             this.lessonList = list
           });
 
-        this.userData.getCompleteLessons(
+        // TODO why is a callback used here and not a promise? Fri 21 Jul 2017 00:47:57 UTC
+        this.fb.getCompleteLessons(
                   params.course,
                   lessons => {
                     this.completeLessons = lessons;
@@ -40,6 +40,6 @@ class LessonController{
   }
 }
 
-LessonController.$inject = ['firebaseService', '$rootScope', 'lessonService', '$state', 'userData'];
+LessonController.$inject = ['firebaseService', '$rootScope', 'lessonService', '$state'];
 
 export default LessonController;

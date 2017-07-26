@@ -1,9 +1,10 @@
 class commentFormController{
-  constructor(firebaseService, userData, $location, analytics) {
+  constructor(firebaseService, userData, $location, analytics, auth) {
     this.firebaseService = firebaseService;
     this.userData = userData;
     this.$location = $location;
     this.analytics = analytics;
+    this.auth = auth;
 
     this.commentText = '';
   }
@@ -93,6 +94,6 @@ class commentFormController{
   }
 }
 
-commentFormController.$inject = ['firebaseService', 'userData', '$location', 'analyticsService'];
+commentFormController.$inject = ['firebaseService', 'userData', '$location', 'analyticsService', 'auth'];
 
 export default commentFormController;

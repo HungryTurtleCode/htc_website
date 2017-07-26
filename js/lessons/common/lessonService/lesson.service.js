@@ -1,8 +1,8 @@
 class LessonService{
-  constructor(firebaseService, $state, userData) {
+  constructor(firebaseService, $state, fb) {
     this.fb = firebaseService;
     this.$state = $state;
-    this.userData = userData;
+    this.fb = fb;
 
     this.course = '';
     this.lesson = '';
@@ -81,7 +81,7 @@ class LessonService{
     });
 
     if(numCompleted === numLessons){
-      this.userData.markCourseComplete(this.course);
+      this.fb.markCourseComplete(this.course);
     }
   }
   getLessonList(course){
@@ -110,6 +110,6 @@ class LessonService{
   }
 }
 
-LessonService.$inject = ['firebaseService', '$state', 'userData'];
+LessonService.$inject = ['firebaseService', '$state', 'firebaseService'];
 
 export default LessonService;

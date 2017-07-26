@@ -1,7 +1,7 @@
 class HeaderController{
-  constructor(auth, userData, $timeout) {
+  constructor(auth, $timeout, firebaseService) {
     this.auth = auth;
-    this.userData = userData;
+    this.fb = firebaseService;
     this.$timeout = $timeout;
   }
   $onInit(){
@@ -15,16 +15,17 @@ class HeaderController{
     this.auth.subscribeAuthChange(res => {
       this.loggedIn = res;
       this.loading = false;
-    });
 
-    // TODO why does this use a callback and not a promise? Fri 21 Jul 2017 00:30:56 UTC
-    this.userData.getNotifications(
-                    notifications => {
-                      this.$timeout(() => {
-                        this.notifications = notifications
-                      });
-                    }
-                  );
+      if(this.loggedIn) {
+        // TODO why does this use a callback and not a promise? Fri 21 Jul 2017 00:30:56 UTC
+        this.fb.getNotifications(
+          notifications => {
+            this.$timeout(() => {
+              this.notifications = notifications
+            });
+          });
+      }
+    });
 
     window.addEventListener('click', event => {
       this.$timeout(() => {
@@ -50,7 +51,7 @@ class HeaderController{
   }
   clickNotificationItem(item){
     if(!item.location.includes('#!')) item.location += '/#!/';
-    this.userData.markNotificationRead(item.notif_id);
+    this.fb.markNotificationRead(item.notif_id);
     if(item.notification_type === 'comment_reply'){
       window.location.href = item.location + '?comment=' + item.firebase_id;
     }
@@ -58,6 +59,6 @@ class HeaderController{
   }
 }
 
-HeaderController.$inject = ['auth', 'userData', '$timeout'];
+HeaderController.$inject = ['auth', '$timeout', 'firebaseService'];
 
 export default HeaderController;

@@ -1,10 +1,11 @@
 class BuyButtonController{
-  constructor($location, userData, $timeout, analytics, pixels) {
+  constructor($location, userData, $timeout, analytics, pixels, fb) {
     this.$location = $location;
     this.userData = userData;
     this.$timeout = $timeout;
     this.analytics = analytics;
     this.pixels = pixels;
+    this.fb = fb;
 
     this.buttonText = 'Take This Course';
   }
@@ -14,12 +15,12 @@ class BuyButtonController{
 
     // TODO refactor this. It no longer requires multiple round trips Tue 18 Jul 2017 22:00:31 UTC
     let course = this.getCourseFromUrl();
-    this.userData.getCourseMeta(course)
+    this.fb.getCourseMeta(course)
       .then(data => {
         this.$timeout(() => {
           this.courseData = data;
           this.loading = false;
-          this.userData.isEnrolled(data.course)
+          this.fb.isEnrolled(data.course)
             .then(enrolled => {
               this.$timeout(() => {
                 if(enrolled){
@@ -117,6 +118,6 @@ class BuyButtonController{
   }
 }
 
-BuyButtonController.$inject = ['$location', 'userData', '$timeout', 'analyticsService', 'pixelService'];
+BuyButtonController.$inject = ['$location', 'userData', '$timeout', 'analyticsService', 'pixelService', 'firebaseService'];
 
 export default BuyButtonController;

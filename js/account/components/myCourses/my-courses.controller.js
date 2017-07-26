@@ -1,11 +1,11 @@
 class myCourseController{
-  constructor(userData) {
-    this.userData = userData;
+  constructor(fb) {
+    this.fb = fb;
 
     this.forgotPassword = false;
   }
   bookmark(course){
-    this.userData.bookmarkCourse(course.course)
+    this.fb.bookmarkCourse(course.course)
       .then(() => console.log('bookmarked'));
   }
   forgotPass(){
@@ -16,6 +16,6 @@ class myCourseController{
   }
 }
 
-myCourseController.$inject = ['userData'];
+myCourseController.$inject = ['fb'];
 
 export default myCourseController;

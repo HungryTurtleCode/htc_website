@@ -1,8 +1,7 @@
 class ArchiveListController {
-  constructor(paginationService, analytics, userData, $location) {
+  constructor(paginationService, analytics, $location) {
     this.paginationService = paginationService;
     this.analytics = analytics;
-    this.userData = userData;
     this.$location = $location;
 
     this.data = courseList;
@@ -31,13 +30,19 @@ class ArchiveListController {
   }
   trackSearch(query){
     this.analytics.fbTrackEvent(
-                            'Search',
-                            {
-                              search_string: query
-                            },
-                            'search_string'
-                          );
-    this.userData.trackSearch(query, this.getPageLocations());
+      'Search',
+      {
+        search_string: query
+      },
+      'search_string'
+    );
+    this.analytics.trackUserEvent(
+      'Search',
+      {
+        event: query,
+        location: this.getPageLocations()
+      }
+    );
   }
   slugify(name){
     if(name){
@@ -79,6 +84,6 @@ class ArchiveListController {
   }
 }
 
-ArchiveListController.$inject = ['paginationService', 'analyticsService', 'userData', '$location'];
+ArchiveListController.$inject = ['paginationService', 'analyticsService', '$location'];
 
 export default ArchiveListController ;

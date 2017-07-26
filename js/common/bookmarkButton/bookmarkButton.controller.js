@@ -1,6 +1,6 @@
 class BookmarkButtonController{
-  constructor(userData, $timeout, analyticsService) {
-    this.userData = userData;
+  constructor(fb, $timeout, analyticsService) {
+    this.fb = fb;
     this.$timeout = $timeout;
     this.analytics = analyticsService;
   }
@@ -9,7 +9,7 @@ class BookmarkButtonController{
     this.checkIsInBookmarks();
   }
   checkIsInBookmarks(){
-    this.userData.isInBookmarks(this.course)
+    this.fb.isInBookmarks(this.course)
       .then(inBookmarks => {
         if(inBookmarks){
           this.$timeout(() => {
@@ -20,7 +20,7 @@ class BookmarkButtonController{
   }
   bookmark(){
     if(this.text === 'Bookmark Course'){
-      this.userData.bookmarkCourse(this.course)
+      this.fb.bookmarkCourse(this.course)
         .then(() => {
           this.$timeout(() => {
             this.analytics.trackEvent('Bookmark', 'Add', this.course);
@@ -40,7 +40,7 @@ class BookmarkButtonController{
           });
         });
     }else{
-      this.userData.removeBookmark(this.course)
+      this.fb.removeBookmark(this.course)
         .then(() => {
           this.$timeout(() => {
             this.analytics.trackEvent('Bookmark', 'Remove', this.course);
@@ -53,6 +53,6 @@ class BookmarkButtonController{
   }
 }
 
-BookmarkButtonController.$inject = ['userData', '$timeout', 'analyticsService'];
+BookmarkButtonController.$inject = ['firebaseService', '$timeout', 'analyticsService'];
 
 export default BookmarkButtonController;

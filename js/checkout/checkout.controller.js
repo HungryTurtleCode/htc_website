@@ -14,7 +14,7 @@ class CheckoutController{
     this.getCart();
   }
   getCart(){
-    return this.userData.getUserCart()
+    return this.fb.getUserCart()
       .then(cart => {
         this.cart = cart;
         this.$scope.$apply();
@@ -35,10 +35,12 @@ class CheckoutController{
       if(!this.cart.length){
         this.cart = null;
       }
-      // FIXME no need to do the splicing etc, just use userData.removeFromCart. userData needs to be refactored before it can change though
+      // FIXME no need to do the splicing etc, just use fb.removeFromCart. userData needs to be refactored before it can change though
       //
       // this.cart exists in the checkout as well as the userData Service. This needs to be fixed
-      this.userData.removeFromCart(item);
+      //
+      // TODO create a cartService?
+      this.fb.removeFromCart(item);
       this.userData.updateCart(
         angular.copy(this.cart))
         .then(() => console.log('updated cart'));
