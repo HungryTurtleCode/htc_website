@@ -1,9 +1,8 @@
 import firebase from 'firebase';
 
 class Auth{
-  constructor(firebaseService, dataService, analytics) {
+  constructor(firebaseService, analytics) {
     this.fb = firebaseService;
-    this.dataService = dataService;
     this.analytics = analytics;
 
     this.authSubs = [];
@@ -37,6 +36,6 @@ class Auth{
   }
 }
 
-Auth.$inject = ['firebaseService', 'dataService', 'analyticsService'];
+Auth.$inject = ['firebaseService', 'analyticsService'];
 
 export default Auth;

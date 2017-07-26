@@ -1,9 +1,8 @@
 class AnalyticsService{
-  constructor(dataService, firebaseService) {
+  constructor(firebaseService) {
     this.path = window.location.pathname;
     this.FbEventBacklog = [];
     this.GaEventBacklog = [];
-    this.dataService = dataService;
     this.fb = firebaseService;
     this.user = {};
 
@@ -33,7 +32,7 @@ class AnalyticsService{
         email: this.user ? this.user.email : ''
       }
     };
-    this.dataService.trackAcEvent(data);
+    this.fb.trackAcEvent(data);
   }
   trackNonInteraction(type, action, label=this.path){
     this.gaBacklogWrapper(() => {
@@ -86,6 +85,6 @@ class AnalyticsService{
   }
 }
 
-AnalyticsService.$inject = ['dataService', 'firebaseService'];
+AnalyticsService.$inject = ['firebaseService'];
 
 export default AnalyticsService;

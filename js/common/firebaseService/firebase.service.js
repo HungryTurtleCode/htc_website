@@ -11,7 +11,29 @@ class FirebaseService{
   getFirstLessonName(course){
     console.log('get first lesson name');
   }
+  trackAcEvent(data){
+    return this.api.post(`/analytics/activecampaign`, {data})
+      .then(response => {
+        return response.data.success;
+      });
+  }
+  paypalBuy(data){
+    return this.api.post(`/purchase/paypal`, {courses: data})
+      .then(response => {
+        // TODO check actual return value Mon 24 Jul 2017 15:12:38 UTC
 
+        // TODO if the caller of this func redirects then look into reconciling that with server redirects instead.
+        return response.data;
+      });
+  }
+  stripeBuy(data, token){
+    return this.api.post(`/purchase/stripe`, {courses: data, token: token})
+      .then(response => {
+        // TODO check actual return value Mon 24 Jul 2017 15:12:38 UTC
+        // TODO if the caller of this func redirects then look into reconciling that with server redirects instead.
+        return response.data;
+      });
+  }
   logOut() {
     return this.api.delete('/auth')
       .then(res => res.success);

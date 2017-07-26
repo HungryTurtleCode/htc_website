@@ -1,8 +1,7 @@
 class userData{
-  constructor(firebaseService, auth, dataService, $timeout, analytics) {
+  constructor(firebaseService, auth, $timeout, analytics) {
     this.fb = firebaseService;
     this.auth = auth;
-    this.dataService = dataService;
     this.$timeout = $timeout;
     this.analytics = analytics;
 
@@ -100,7 +99,7 @@ class userData{
     return Promise.reject(false);
   }
   paypalBuy(data){
-    return this.dataService.paypalBuy(getCourseArray(data));
+    return this.fb.paypalBuy(getCourseArray(data));
 
     // TODO check if this is needed Mon 24 Jul 2017 16:22:01 UTC
     function getCourseArray(courses){
@@ -110,7 +109,7 @@ class userData{
     }
   }
   stripeBuy(data, token){
-    return this.dataService.stripeBuy(getCourseArray(data), token);
+    return this.fb.stripeBuy(getCourseArray(data), token);
 
     // TODO check if this is needed Mon 24 Jul 2017 16:22:01 UTC
     function getCourseArray(courses){
@@ -205,6 +204,6 @@ class userData{
   }
 }
 
-userData.$inject = ['firebaseService', 'auth', 'dataService','$timeout', 'analyticsService'];
+userData.$inject = ['firebaseService', 'auth','$timeout', 'analyticsService'];
 
 export default userData;
