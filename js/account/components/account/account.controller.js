@@ -2,7 +2,7 @@ class AccountController{
   constructor(userData, $timeout, uploadService) {
     this.userData = userData;
     this.$timeout = $timeout;
-    this.upload = uploadService;
+    this.uploadService = uploadService;
   }
   $onInit(){
     this.defaultImage = 'https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png';
@@ -19,8 +19,8 @@ class AccountController{
   save(){
     this.loading = true;
     if(this.profileImage){
-      this.upload
-        .uploadFile(this.profileImage[0], this.user.user_id, 'profile_image', 'Profile_Images')
+      this.uploadService
+        .dataURItoBlob(this.profileImage[0])
         .then(data => {
           this.user.image = data;
           this.postUserData(this.user);
