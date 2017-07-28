@@ -43,7 +43,7 @@ class SignInComponentController{
         if(res.errors) {
           this.handleErrors(res.errors);
         } else if(res.success) {
-          this.analytics.trackEvent('Register', user.displayName);
+          this.analytics.trackEvent('Register', res.name);
           this.analytics.fbTrackEvent(
             'CompleteRegistration',
             {
