@@ -9,10 +9,13 @@ class FirebaseService{
   getFirstLessonName(course){
     console.log('get first lesson name');
   }
+  contactMsg(data) {
+    return this.api.post(`/contact`, data);
+  }
   trackAcEvent(data){
     return this.api.post(`/analytics/activecampaign`, {data})
       .then(response => {
-        return response.data.success;
+        return response.success;
       });
   }
   paypalBuy(data){
@@ -21,7 +24,7 @@ class FirebaseService{
         // TODO check actual return value Mon 24 Jul 2017 15:12:38 UTC
 
         // TODO if the caller of this func redirects then look into reconciling that with server redirects instead.
-        return response.data;
+        return response;
       });
   }
   stripeBuy(data, token){
@@ -29,7 +32,7 @@ class FirebaseService{
       .then(response => {
         // TODO check actual return value Mon 24 Jul 2017 15:12:38 UTC
         // TODO if the caller of this func redirects then look into reconciling that with server redirects instead.
-        return response.data;
+        return response;
       });
   }
   logOut() {
