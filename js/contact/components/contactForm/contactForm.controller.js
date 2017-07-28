@@ -1,6 +1,6 @@
 class ContactFormController{
-  constructor($http, analytics) {
-    this.$http = $http;
+  constructor(fb, analytics) {
+    this.fb = fb;
     this.analytics = analytics;
   }
   $onInit(){
@@ -23,9 +23,9 @@ class ContactFormController{
       // this.analytics.trackUserEvent('Contact', data);
       this.analytics.fbTrackCustom('Contact', data, 'subject');
 
-      this.$http.post('http://138.197.119.94/contact', data)
+      this.fb.contactMsg(data)
         .then(response => {
-          if(response.data.success){
+          if(response.success){
             this.feedbackText = 'Message Sent Successfully';
             this.error = false;
             this.resetData();
@@ -77,6 +77,6 @@ class ContactFormController{
   }
 }
 
-ContactFormController.$inject = ['$http', 'analyticsService'];
+ContactFormController.$inject = ['firebaseService', 'analyticsService'];
 
 export default ContactFormController;

@@ -3,7 +3,7 @@ import controller from './contactForm.controller';
 const ContactForm = {
   controller,
   template: `
-    <form class="contact-form" action="">
+    <form class="contact-form">
       <label>Name:</label>
       <input
         type="text"
