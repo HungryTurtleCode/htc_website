@@ -10,7 +10,10 @@ const ResetComponent = {
           {{$ctrl.infoMessage}}
       </div>
     </div>
-    <div class="reset-cont">
+    <div ng-if="$ctrl.infoType === 'success'">
+      Redirecting home...
+    </div>
+    <div class="reset-cont" ng-if="$ctrl.infoType !== 'success'">
       <label>Password:</label>
       <input type="password"
         class="space"

@@ -38,6 +38,9 @@ class ResetController{
           this.infoMessage = 'Password successfully changed';
           this.password = '';
           this.password2 = '';
+          setTimeout(() => {
+            window.location.replace('/');
+          }, 2000);
         });
     }
   }
