@@ -2,12 +2,10 @@ import angular from 'angular';
 import loginModal from './loginModal.component';
 
 import signIn from '../signInComponent/';
-import forgotPass from '../forgotPass/';
 
 const loginModalComponent = angular
   .module('loginModal', [
-    signIn,
-    forgotPass
+    signIn
   ])
   .component('loginModal', loginModal)
   .name;

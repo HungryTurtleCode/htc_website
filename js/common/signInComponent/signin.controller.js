@@ -66,9 +66,6 @@ class SignInComponentController{
       this.errors[err.param] = err.msg;
     });
   }
-  showForgottenPassModal(){
-    this.forgotPass();
-  }
   stopPropagation($event){
     $event.stopPropagation();
   }

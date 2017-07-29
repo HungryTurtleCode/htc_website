@@ -47,9 +47,11 @@ const SignInComponent = {
                 {{$ctrl.errors.login}}
               </div>
               <input type="text"
+                name="email"
                 placeholder="Email"
                 ng-model="$ctrl.loginEmail">
               <input type="password"
+                name="password"
                 placeholder="Password"
                 ng-model="$ctrl.loginPass">
               <button id="sign-in-button"
@@ -58,7 +60,7 @@ const SignInComponent = {
                   Log In
               </button>
               <a id="forgot-pass-btn"
-                ng-click="$ctrl.showForgottenPassModal()">
+                href="/forgot">
                   Forgotten Password
               </a>
             </div>
