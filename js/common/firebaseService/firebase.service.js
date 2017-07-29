@@ -9,6 +9,12 @@ class FirebaseService{
   getFirstLessonName(course){
     console.log('get first lesson name');
   }
+  resetPassword(password, password2, token) {
+    return this.api.post(`/auth/reset/${token}`, {password, password2});
+  }
+  checkResetToken(token) {
+    return this.api.get(`/auth/reset/${token}`);
+  }
   sendResetEmail(email) {
     return this.api.post(`/auth/reset`, {email});
   }

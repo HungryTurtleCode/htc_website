@@ -48,6 +48,8 @@ jekyll/_assets/js/header.js
 jekyll/_assets/js/manifest.js
 jekyll/_assets/js/contact.js
 jekyll/_assets/js/archive.js
+jekyll/_assets/js/forgot.js
+jekyll/_assets/js/reset.js
 .DS_Store
 .jekyll
 .bundle

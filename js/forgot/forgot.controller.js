@@ -8,11 +8,14 @@ class forgotController{
     this.error = false;
     this.infoMessage = '';
     this.infoType = '';
+    this.submitted = false;
   }
   submit() {
-    if(this.isEmailValid()) {
+    if(!this.submitted && this.isEmailValid()) {
+      this.submitted = true;
       this.fb.sendResetEmail(this.email)
         .then(res => {
+          this.submitted = false;
           if(res.success) {
             this.infoType = 'success';
             this.infoMessage = `An email has been sent to ${this.email} if it is a valid user email.`;

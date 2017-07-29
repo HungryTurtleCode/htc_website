@@ -4,7 +4,9 @@ layout: default
 
 <div id="page-container-100" {% if page.title == 'Courses' %}class="courses-page"{% endif %}>
   <main>
-    <h1>{{page.title}}</h1>
+    {% if page.hideTitle != true %}
+      <h1>{{page.title}}</h1>
+    {% endif %}
     {{content}}
   </main>
 </div>

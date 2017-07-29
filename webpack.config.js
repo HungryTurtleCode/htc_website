@@ -10,7 +10,8 @@ module.exports = {
     'salespage': './js/salespage.js',
     'contact': './js/contact.js',
     'archive': './js/archive.js',
-    'forgot': './js/forgot.js'
+    'forgot': './js/forgot.js',
+    'reset': './js/reset.js'
   },
   output: {
     path: "jekyll/_assets/js",
