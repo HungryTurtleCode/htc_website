@@ -9,6 +9,9 @@ class FirebaseService{
   getFirstLessonName(course){
     console.log('get first lesson name');
   }
+  sendResetEmail(email) {
+    return this.api.post(`/auth/reset`, {email});
+  }
   contactMsg(data) {
     return this.api.post(`/contact`, data);
   }
