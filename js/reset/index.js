@@ -18,11 +18,21 @@ const accountComponent = angular
         url: '/:token',
         template: '<reset-pass></reset-pass>',
         resolve: {
-          signin: ['firebaseService', '$stateParams', (fb, params) => {
+          validToken: ['firebaseService', '$stateParams', (fb, params) => {
             return fb.checkResetToken(params.token)
               .then(valid => {
                 if(valid.error) {
                   window.location.replace('/forgot');
+                  return Promise.reject();
+                }
+              });
+          }],
+          signin: ['firebaseService', (fb) => {
+            return fb.isLoggedIn()
+              .then(isLoggedIn => {
+                if(isLoggedIn) {
+                  // Not allowed on this page if logged in
+                  window.location.replace('/');
                   return Promise.reject();
                 }
               });
