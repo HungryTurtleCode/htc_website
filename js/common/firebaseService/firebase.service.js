@@ -255,7 +255,9 @@ class FirebaseService{
   }
   getCourseArray(courses){
     return courses.map(item => {
-      return item.course;
+      return {
+        id: item.id
+      }
     });
   }
 }

@@ -23,24 +23,23 @@ class CheckoutController{
     if(this.paymentLoading) return;
     this.paymentLoading = true;
     this.feedbackText = '';
-
     this.fb.paypalBuy(this.cart.cart)
       .then(data => {
-        if(data.success){
+        if(data.url){
           this.analytics.fbTrackEvent(
                                       'Purchase',
                                       {
                                         content_ids: this.cart.cart,
                                         content_type: 'courses',
-                                        value: this.getTotal().toFixed(2),
+                                        value: this.cart.getTotal().toFixed(2),
                                         currency: 'USD'
                                       },
                                       'content_type'
                                     );
           this.cart.cart.forEach(item => {
-            this.analytics.trackEvent('Purchase', item.title, null, item.price);
+            this.analytics.trackEvent('Purchase', item.name, null, item.price);
             // TODO track purchase analytics on the server not here Mon 24 Jul 2017 16:26:12 UTC
-            this.analytics.trackUserEvent('Purchase', {location: item.title, value: item.price});
+            this.analytics.trackUserEvent('Purchase', {location: item.name, value: item.price});
           });
           this.paymentLoading = false;
           window.location.href = data.url;
@@ -48,7 +47,7 @@ class CheckoutController{
           this.paymentLoading = false;
           this.feedbackText = 'Something Went Wrong, try again later';
           this.cart.cart.forEach(item => {
-            this.analytics.trackEvent('PaypalFAIL', item.title, null, item.price);
+            this.analytics.trackEvent('PaypalFAIL', item.name, null, item.price);
           });
         }
       })
@@ -56,7 +55,7 @@ class CheckoutController{
       this.paymentLoading = false;
       this.feedbackText = 'Something Went Wrong, try again later';
       this.cart.cart.forEach(item => {
-        this.analytics.trackEvent('PaypalFAIL', item.title, null, item.price);
+        this.analytics.trackEvent('PaypalFAIL', item.name, null, item.price);
       });
       console.error(err)
     });
@@ -74,9 +73,9 @@ class CheckoutController{
           .then(data => {
             if(data.success){
               this.cart.cart.forEach(item => {
-                this.analytics.trackEvent('Purchase', item.title, null, item.price);
+                this.analytics.trackEvent('Purchase', item.name, null, item.price);
                 // TODO track purchase analytics on the server not here Mon 24 Jul 2017 16:26:12 UTC
-                this.analytics.trackUserEvent('Purchase', {location: item.title, value: item.price})
+                this.analytics.trackUserEvent('Purchase', {location: item.name, value: item.price})
               });
               this.paymentLoading = false;
               window.location.href = data.url;
@@ -84,7 +83,7 @@ class CheckoutController{
               this.paymentLoading = false;
               this.feedbackText = 'Something Went Wrong, try again later';
               this.cart.cart.forEach(item => {
-                this.analytics.trackEvent('StripeFAIL', item.title, null, item.price);
+                this.analytics.trackEvent('StripeFAIL', item.name, null, item.price);
               });
             }
           })
@@ -92,7 +91,7 @@ class CheckoutController{
             this.paymentLoading = false;
             this.feedbackText = 'Something Went Wrong, try again later';
             this.cart.cart.forEach(item => {
-              this.analytics.trackEvent('StripeFAIL', item.title, null, item.price);
+              this.analytics.trackEvent('StripeFAIL', item.name, null, item.price);
             });
             console.error(err)
           });
