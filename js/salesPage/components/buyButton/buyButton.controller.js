@@ -17,17 +17,18 @@ class BuyButtonController{
     let course = this.getCourseFromUrl();
     this.fb.getCourseMeta(course)
       .then(data => {
+        if(!data.id) return;
         this.$timeout(() => {
           this.courseData = data;
           this.loading = false;
-          this.fb.isEnrolled(data.course)
+          this.fb.isEnrolled(data.id)
             .then(enrolled => {
               this.$timeout(() => {
                 if(enrolled){
                   this.enrolled = true;
                   this.buttonText = 'Already Enrolled';
                 }else{
-                  let isInCart = this.cart.isInCart(this.courseData.course);
+                  let isInCart = this.cart.isInCart(this.courseData.id);
                   if(isInCart){
                     this.inCart = true;
                     this.buttonText = 'Already In Cart';
@@ -79,6 +80,7 @@ class BuyButtonController{
 
         this.cart.addToCart(this.courseData)
           .then(added => {
+            return;
             if(added){
               window.location.href = '/checkout';
             }else{

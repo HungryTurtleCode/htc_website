@@ -8,6 +8,9 @@ class SidebarLessonListController{
 
     this.fb.getLessonList(course)
       .then(list => {
+        console.log(list);
+        if(!list) return;
+
         this.sort(list)
 
         let count = 1;

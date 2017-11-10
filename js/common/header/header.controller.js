@@ -1,8 +1,9 @@
 class HeaderController{
-  constructor(auth, $timeout, firebaseService) {
+  constructor(auth, $timeout, firebaseService, cartService) {
     this.auth = auth;
     this.fb = firebaseService;
     this.$timeout = $timeout;
+    this.cartSvc = cartService;
   }
   $onInit(){
     this.loggedIn = false;
@@ -10,7 +11,8 @@ class HeaderController{
     this.showSignIn = false;
     this.showLogOut = false;
     this.notificationActive = false;
-    this.cart = [];
+
+    this.cartSvc.getCart();
 
     this.auth.subscribeAuthChange(res => {
       this.loggedIn = res;
@@ -59,6 +61,6 @@ class HeaderController{
   }
 }
 
-HeaderController.$inject = ['auth', '$timeout', 'firebaseService'];
+HeaderController.$inject = ['auth', '$timeout', 'firebaseService', 'cartService'];
 
 export default HeaderController;

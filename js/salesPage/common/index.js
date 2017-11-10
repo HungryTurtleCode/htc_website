@@ -4,6 +4,7 @@ import userData from '../../common/userData/';
 import firebaseService from '../../common/firebaseService/';
 import analytics from '../../common/analytics/';
 import trackingPixels from '../../common/trackingPixels/';
+import cartService from '../../common/cartService/';
 
 import header from '../../common/header/';
 import bookmark from '../../common/bookmarkButton/';
@@ -13,6 +14,7 @@ const CommonModule = angular
   .module('sales.common.module', [
     userData,
     ngAnimate,
+    cartService,
     firebaseService,
     header,
     bookmark,

@@ -13,7 +13,7 @@ class CartService{
   isInCart(item){
     if(this.cart.length){
       for(let i = 0; i < this.cart.length; i++){
-        if(this.cart[i].course === item){
+        if(this.cart[i].id === item){
           return true
         }
       }
@@ -24,7 +24,7 @@ class CartService{
   addToCart(courseData){
     if(courseData){
       for(let i = 0; i < this.cart.length; i++){
-        if(this.cart[i].title === courseData.title){
+        if(this.cart[i].id === courseData.id){
           return Promise.reject(false);
         }
       }

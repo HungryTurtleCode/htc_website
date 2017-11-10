@@ -101,14 +101,15 @@ class FirebaseService{
       .then(res => res.success);
   }
   getLessonList(course){
-    // TODO ensure that what is returned from here actually renders in the sales page sidebar. Tue 18 Jul 2017 22:13:54 UTC
     return this.api.get(`/courses/${course}/tree`)
       .then(res => res.tree);
   }
   addToCart(data){
     // TODO make course id safe Thu 20 Jul 2017 23:56:15 UTC
     return this.api.post(`/cart/${data.id}`)
-      .then(res => res.success);
+      .then(res => {
+        console.log(res);
+      });
   }
   getUserMeta(){
     return this.api.get(`/user`)
