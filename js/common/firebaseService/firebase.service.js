@@ -111,6 +111,11 @@ class FirebaseService{
         console.log(res);
       });
   }
+  removeFromCart(data){
+    // TODO make course id safe Thu 20 Jul 2017 23:56:15 UTC
+    return this.api.delete(`/cart/${data.id}`)
+      .then(res => res.success);
+  }
   getUserMeta(){
     return this.api.get(`/user`)
       .then(res => res.userMeta);

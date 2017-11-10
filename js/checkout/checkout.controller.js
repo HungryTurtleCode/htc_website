@@ -1,10 +1,11 @@
 class CheckoutController{
-  constructor($scope, stripe, analytics, cart, fb) {
+  constructor($scope, stripe, analytics, cart, fb, auth) {
     this.$scope = $scope;
     this.stripe = stripe;
     this.analytics = analytics;
     this.cart = cart;
     this.fb = fb;
+    this.auth = auth;
   }
   $onInit(){
     this.activePayment = 0;
@@ -99,6 +100,6 @@ class CheckoutController{
   }
 }
 
-CheckoutController.$inject = ['$scope', 'stripe', 'analyticsService', 'cartService', 'firebaseService'];
+CheckoutController.$inject = ['$scope', 'stripe', 'analyticsService', 'cartService', 'firebaseService', 'auth'];
 
 export default CheckoutController;

@@ -80,7 +80,6 @@ class BuyButtonController{
 
         this.cart.addToCart(this.courseData)
           .then(added => {
-            return;
             if(added){
               window.location.href = '/checkout';
             }else{

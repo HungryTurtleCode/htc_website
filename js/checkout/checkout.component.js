@@ -9,30 +9,26 @@ const CheckoutComponent = {
     </login-modal>
     <div class="list-area">
       <cart-list
-        cart="$ctrl.cart"
-        remove-item="$ctrl.removeItem(item)">
+        cart="$ctrl.cart.cart"
+        remove-item="$ctrl.removeItem(item)"
+        loading-cart="$ctrl.cart.loading">
       </cart-list>
-      <div class="empty-cart" ng-if="!$ctrl.cart">
-        Cart Is Empty
-        <br>
-        <a href="/courses/">Check out some courses here</a>
-      </div>
-      <div class="checkout-bottom" ng-if="$ctrl.cart.length">
+      <div class="checkout-bottom" ng-if="$ctrl.cart.cart.length">
         <div class="total-price">
-          Total: <strong>{{$ctrl.getTotal() | currency:$:0}}</strong>
+          Total: <strong>{{$ctrl.cart.getTotal() | currency:$:0}}</strong>
         </div>
       </div>
     </div>
 
-    <div class="pay-area" ng-if="$ctrl.cart.length">
+    <div class="pay-area" ng-if="$ctrl.cart.cart.length">
       <h2>Pay With</h2>
       <button
         class="sign-in-btn"
-        ng-if="!$ctrl.userData.auth.loggedIn"
+        ng-if="!$ctrl.auth.loggedIn"
         ng-click="$ctrl.showModal = true">
           Log In / Register To Purchase
       </button>
-      <div class="tabs" ng-if="$ctrl.userData.auth.loggedIn">
+      <div class="tabs" ng-if="$ctrl.auth.loggedIn">
         <ul>
           <li ng-click="$ctrl.activePayment = 0" ng-class="{'active': $ctrl.activePayment === 0}">PayPal</li>
           <li ng-click="$ctrl.activePayment = 1" ng-class="{'active': $ctrl.activePayment === 1}">Card</li>
@@ -40,7 +36,7 @@ const CheckoutComponent = {
       </div>
 
       <div class="paypal-pay"
-        ng-if="$ctrl.userData.auth.loggedIn && $ctrl.activePayment === 0">
+        ng-if="$ctrl.auth.loggedIn && $ctrl.activePayment === 0">
           <button ng-click="$ctrl.paypalBuy()">
             <span ng-if="!$ctrl.paymentLoading">Go To PayPal</span>
             <htc-spinner ng-if="$ctrl.paymentLoading"></htc-spinner>
@@ -49,7 +45,7 @@ const CheckoutComponent = {
       </div>
 
       <div class="stripe-pay"
-        ng-if="$ctrl.userData.auth.loggedIn && $ctrl.activePayment === 1">
+        ng-if="$ctrl.auth.loggedIn && $ctrl.activePayment === 1">
           <div class="payment-field">
             <label>Name</label>
             <input ng-model="$ctrl.payment.name" type="text" placeholder="Name">

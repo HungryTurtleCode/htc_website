@@ -3,10 +3,13 @@ class CartService{
     this.fb = firebaseService;
 
     this.cart = [];
+    this.loading = false;
   }
   getCart() {
+    this.loading = true;
     this.fb.getUserCart()
       .then(cart => {
+        this.loading = false;
         this.cart = cart;
       });
   }
@@ -43,12 +46,17 @@ class CartService{
     return 0;
   }
   removeFromCart(item){
-    // TODO make item safe ie no slashes Fri 21 Jul 2017 00:07:35 UTC
-    return this.api.delete(`/cart/${item}`)
-      .then(res => {
-        // TODO what is returned here? Wed 26 Jul 2017 13:04:32 UTC
-        // TODO update the cart with the return value Wed 26 Jul 2017 13:04:45 UTC
-        console.log(res);
+    return this.fb.removeFromCart(item)
+      .then(success => {
+        if(success) {
+          let index = this.cart.indexOf(item);
+          if(index > -1) {
+            this.cart.splice(index, 1);
+          }
+          // TODO update the cart Fri 10 Nov 2017 15:08:31 UTC
+        } else {
+          // TODO display error Fri 10 Nov 2017 15:07:51 UTC
+        }
       });
   }
 }
