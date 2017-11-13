@@ -14,7 +14,6 @@ const completedComponent = angular
           signin: ['accountService', (account) => {
             return account.getUserCompleted()
               .then(courses => {
-                // TODO check value before returning Wed 26 Jul 2017 13:47:10 UTC
                 return courses;
               });
           }]

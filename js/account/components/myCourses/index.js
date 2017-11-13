@@ -18,7 +18,6 @@ const myCoursesComponent = angular
           signin: ['accountService', (account) => {
             return account.getUserEnrolledCourses()
               .then(courses => {
-                // TODO check return before resolving Wed 26 Jul 2017 13:48:39 UTC
                 return courses;
               });
           }]

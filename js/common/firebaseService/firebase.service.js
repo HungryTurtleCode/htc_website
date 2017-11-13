@@ -135,7 +135,7 @@ class FirebaseService{
   }
   setUserMeta(data){
     return this.api.put(`/user`, data)
-      .then(res => console.log(res));
+      .then(res => res);
   }
   getComments(url){
     url = this.makeUrlSafe(url);
@@ -153,24 +153,20 @@ class FirebaseService{
       .then(res => console.log(res))
   }
   getUserCompleted(){
-    console.log('get user completed');
     return this.api.get(`/courses/complete`)
-      .then(res => console.log(res));
+      .then(res => res.courses);
   }
   getLessonMeta(lesson){
-    console.log('get lesson meta');
     return this.api.get(`/lessons/${lesson}`)
       .then(res => console.log(res));
   }
   completeLesson(lesson){
-    console.log('complete lesson');
     return this.api.put(`/lessons/${lesson}/complete`)
       .then(res => console.log(res));
   }
   // TODO refactor out the user name and image from this and all calls to this Wed 19 Jul 2017 15:12:31 UTC
   setComment(loc, text, is_reply){
     // TODO fix the weird recursive reply thing in the comment component Wed 19 Jul 2017 15:17:42 UTC
-    console.log('set comment');
 
     loc = this.makeUrlSafe(loc);
     // loc = loc.split('/');
@@ -201,9 +197,8 @@ class FirebaseService{
       .then(res => console.log(res))
   }
   getUserEnrolledCourses(){
-    console.log('get user enrolled courses');
     return this.api.get(`/user/enrollments`)
-      .then(res => console.log(res));
+      .then(res => res.courses);
   }
   getSingleComment(comment_id){
     console.log('get single comment');

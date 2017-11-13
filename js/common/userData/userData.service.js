@@ -30,8 +30,10 @@ class userData{
   }
   setUserMeta(data){
     return this.fb.setUserMeta(data)
-      .then(() => {
-        // TODO make sure api does actually return a user object Fri 21 Jul 2017 00:33:21 UTC
+      .then((res) => {
+        if(res.errors) {
+          throw res.errors;
+        }
         this.user = data;
         return true;
       });

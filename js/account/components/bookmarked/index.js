@@ -14,7 +14,6 @@ const bookmarkedComponent = angular
           signin: ['accountService', (account) => {
             return account.getUserBookmarked()
               .then(courses => {
-                // TODO check the value here is valid before successfully returning from resolve Wed 26 Jul 2017 13:46:08 UTC
                 return courses;
               });
           }]

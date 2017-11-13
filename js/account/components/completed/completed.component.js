@@ -12,6 +12,7 @@ const Completed = {
     </title-block>
     <div class="course-list" ng-if="$ctrl.courses">
       <course-card ng-repeat="course in $ctrl.courses"
+        show-bookmark="true"
         course-data="course">
       </course-card>
       <div class="not-enrolled"
