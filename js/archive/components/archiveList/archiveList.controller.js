@@ -73,7 +73,7 @@ class ArchiveListController {
       if(matches){
         arr[i] = arr[i].slice(0, matches.index);
       }
-      if(arr[i] === '' || arr[i] === '#!'){
+      if(arr[i] === '' || arr[i].charAt(0) === '#'){
         arr.splice(i, 1);
       }
     }

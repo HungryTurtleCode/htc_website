@@ -139,7 +139,6 @@ class FirebaseService{
   }
   getComments(url){
     url = this.makeUrlSafe(url);
-    console.log(url);
     return this.api.get(`/comments/${url}`)
       .then(res => res.comments);
   }
@@ -235,6 +234,9 @@ class FirebaseService{
     text = text.split('$');
     text = text.join('-');
     text = text.split('/');
+    if(text[text.length - 1].charAt(0) === '#') {
+      text.splice(text.length - 1, 1);
+    }
     text = text.join('-');
     text = text.split('[');
     text = text.join('-');
@@ -255,7 +257,7 @@ class FirebaseService{
       if(matches){
         arr[i] = arr[i].slice(0, matches.index);
       }
-      if(arr[i] === '' || arr[i] === '#!'){
+      if(arr[i] === '' || arr[i].charAt(0) === '#'){
         arr.splice(i, 1);
       }
     }
