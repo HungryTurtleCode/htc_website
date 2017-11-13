@@ -16,7 +16,7 @@ const BuyButton = {
       </button>
       <div class="goto"
         ng-if="$ctrl.enrolled">
-          <a ng-href="/lessons/#!/{{$ctrl.courseData.course}}/">
+          <a ng-href="/lessons/#!/{{$ctrl.courseData.id}}/">
             Go To Course
           </a>
       </div>
