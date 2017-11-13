@@ -87,8 +87,8 @@ const HeaderComponent = {
                   <div class="top">
                     <img ng-src="{{notif.image}}">
                     <p class="reply-text">
-                      <span ng-if="notif.notification_type === 'comment_reply'">
-                        <strong>{{notif.user_name}}</strong> said something in a discussion you are involved in on <strong>{{notif.page_name}}</strong>
+                      <span ng-if="notif.type === 'comment'">
+                        <strong>{{notif.from_name}}</strong> said something in a discussion you are involved in on <strong>{{notif.page_name}}</strong>
                       </span>
                     </p>
                   </div>

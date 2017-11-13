@@ -50,10 +50,8 @@ const CommentComponent = {
     <comment-form
       ng-if="$ctrl.reply"
       refresh="$ctrl.refresh()"
-      is-reply="{{$ctrl.data.id}}"
-      comment-nesting="{{$ctrl.data.is_reply}}">
+      is-reply="{{$ctrl.replyTo || $ctrl.data.id}}">
     </comment-form>
-
     <comment
       ng-repeat="comment in $ctrl.data.replies | orderBy:'date'"
       refresh="$ctrl.refresh()"

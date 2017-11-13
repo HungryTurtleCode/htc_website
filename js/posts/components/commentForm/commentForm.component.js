@@ -5,13 +5,12 @@ const CommentFormComponent = {
   bindings: {
     refresh: '&',
     isReply: '@',
-    commentNesting: '@'
   },
   template: `
     <textarea ng-model="$ctrl.commentText"
       ng-if="$ctrl.auth.loggedIn"
-      ng-class="{'reply': $ctrl.commentNesting}"></textarea>
-    <span class="comment-feedback" ng-class="{'error': $ctrl.error, 'reply': $ctrl.commentNesting}">
+      ng-class="{'reply': $ctrl.isReply}"></textarea>
+    <span class="comment-feedback" ng-class="{'error': $ctrl.error, 'reply': $ctrl.isReply}">
       {{$ctrl.feedbackText}}
     </span>
     <button
