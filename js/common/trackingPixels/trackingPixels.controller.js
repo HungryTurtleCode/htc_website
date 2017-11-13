@@ -11,6 +11,8 @@ class TrackingPixelsController{
       });
   }
   $onInit(){
+    // Trigger the pixels firing after a delay.
+    // This will ensure better quality leads
     this.pixelService.googleAnalytics(0);
     this.pixelService.facebookPixel(45000);
     this.pixelService.activeCampaign(10000);

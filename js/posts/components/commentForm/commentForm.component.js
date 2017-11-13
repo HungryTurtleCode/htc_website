@@ -5,24 +5,24 @@ const CommentFormComponent = {
   bindings: {
     refresh: '&',
     isReply: '@',
-    commentNesting: '<'
+    commentNesting: '@'
   },
   template: `
     <textarea ng-model="$ctrl.commentText"
-      ng-if="$ctrl.auth.isSignedIn"
+      ng-if="$ctrl.auth.loggedIn"
       ng-class="{'reply': $ctrl.commentNesting}"></textarea>
     <span class="comment-feedback" ng-class="{'error': $ctrl.error, 'reply': $ctrl.commentNesting}">
       {{$ctrl.feedbackText}}
     </span>
     <button
-      ng-if="$ctrl.auth.isSignedIn"
+      ng-if="$ctrl.auth.loggedIn"
       ng-click="$ctrl.submitComment($ctrl.commentText)">
         <span ng-if="!$ctrl.submitLoading">Submit Comment</span>
         <htc-spinner ng-if="$ctrl.submitLoading"></htc-spinner>
     </button>
 
     <div class="not-signed-in-comment"
-      ng-if="!$ctrl.auth.isSignedIn">
+      ng-if="!$ctrl.auth.loggedIn">
         <button ng-click="$ctrl.signIn()">
           Log In / Sign Up To Comment
         </button>

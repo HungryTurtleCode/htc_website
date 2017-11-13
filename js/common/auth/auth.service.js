@@ -27,11 +27,6 @@ class Auth{
   subscribeAuthChange(fn) {
     this.authSubs.push(fn);
   }
-
-  // TODO will have to update Thu 20 Jul 2017 21:55:25 UTC
-  forgottenPass(email){
-    console.log('forgotten password');
-  }
 }
 
 Auth.$inject = ['firebaseService', 'analyticsService'];

@@ -139,6 +139,7 @@ class FirebaseService{
   }
   getComments(url){
     url = this.makeUrlSafe(url);
+    console.log(url);
     return this.api.get(`/comments/${url}`)
       .then(res => res.comments);
   }
@@ -171,8 +172,18 @@ class FirebaseService{
   setComment(loc, text, is_reply){
     // TODO fix the weird recursive reply thing in the comment component Wed 19 Jul 2017 15:17:42 UTC
     console.log('set comment');
+
+    loc = this.makeUrlSafe(loc);
+    // loc = loc.split('/');
+    // for(let i = loc.length - 1; i >= 0; i--) {
+    //   if(loc[i]) {
+    //     loc = loc[i];
+    //     break;
+    //   }
+    // }
+    // TODO is_reply should be the id of the comment being replied to Fri 10 Nov 2017 17:37:42 UTC
+
     const data = {
-      user_id,
       is_reply,
       text
     }
@@ -206,7 +217,7 @@ class FirebaseService{
       .then(res => console.log(res));
   }
   upvoteComment(comment) {
-    return this.api.put(`/comments/upvote${comment}`)
+    return this.api.put(`/comments/upvote/${comment}`)
       .then(res => console.log(res));
   }
   downvoteComment(comment) {

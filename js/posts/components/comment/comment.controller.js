@@ -5,23 +5,10 @@ class commentController{
     this.$location = $location;
     this.userData = userData;
 
-    // this.loc = this.getPageLocations();
-  }
-  $onInit(){
-    if(this.commentNesting){
-      this.commentNesting += this.data.isReply + '/replies/'
-      this.loc = this.getPageLocations() + this.commentNesting;
-    }else{
-      if(this.data.isReply){
-        this.commentNesting = this.data.isReply + '/replies/';
-        this.loc = this.getPageLocations() + this.commentNesting;
-      }else{
-        this.loc = this.getPageLocations();
-      }
-    }
+    this.loc = this.getPageLocations();
   }
   formattedName(){
-    let name = this.data.user_name.split(' ');
+    let name = this.data.name.split(' ');
     if(name[2]){
       name[1] = '<span class="highlight-name">' + name[1] + '</span>';
       name[2] = '<span class="accent-name">' + name[2] + '</span> <span class="wrote">wrote:</span>';
@@ -38,16 +25,6 @@ class commentController{
 
     // TODO
     // FIXME will need to implement a system that avoids user's voting on comments they have already voted for
-    // let score = this.data.score;
-
-    // if(this.voted && this.voted !== type){
-    //   this.fb.updateCommentScore(
-    //     this.loc,
-    //     this.data.firebase_id,
-    //     score
-    //   );
-    //   return this.voted = null;
-    // }
 
     this.voted = type;
     if(type === 'up'){
@@ -56,11 +33,6 @@ class commentController{
     }else if(type === 'down'){
       this.fb.downvoteComment(this.data.id)
     }
-
-    // this.fb.updateCommentScore(
-    //   this.loc,
-    //   this.data.firebase_id,
-    //   score);
   }
   getPageLocations(){
     let url = this.$location.absUrl();

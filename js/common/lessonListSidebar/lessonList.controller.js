@@ -25,7 +25,6 @@ class LessonListController{
   }
   setActiveSection(){
     this.lessonList.forEach(section => {
-      console.log(section);
       section.lessons.forEach(lesson => {
         if(lesson.slug === this.lesson){
           section.show = true;

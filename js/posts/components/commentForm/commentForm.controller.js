@@ -1,7 +1,6 @@
 class commentFormController{
   constructor(firebaseService, $location, analytics, auth) {
     this.fb = firebaseService;
-    this.userData = userData;
     this.$location = $location;
     this.analytics = analytics;
     this.auth = auth;
@@ -13,35 +12,14 @@ class commentFormController{
     this.isLesson = false;
     this.error = false;
     this.submitLoading = false;
-
-    if(this.commentNesting){
-      this.pageLocations = this.getPageLocations() || '';
-      this.pageLocations += this.commentNesting;
-    }else{
-      this.pageLocations = this.getPageLocations() || '';
-    }
   }
   setComment(loc, text, isReply){
-    if(isReply){
-      loc = loc + isReply + '/replies/';
-    }
-    let locArr = loc.split('/');
-
-    // TODO sort this crazy nesting thing with the comments Fri 21 Jul 2017 00:43:29 UTC
-    let replyChain = locArr.reduce((arr, val) => {
-      if(val.charAt(0) === '-'){
-        arr.push(val);
-      }
-      return arr;
-    }, []);
-
     return this.fb.setComment(
       loc,
       text,
       isReply
     )
     .then(key => {
-      console.log(key);
       return key;
     })
     .catch(err => err);
@@ -54,7 +32,7 @@ class commentFormController{
 
     if(text){
       this.setComment(
-        this.pageLocations,
+        loc,
         text,
         this.isReply
       )
@@ -113,7 +91,7 @@ class commentFormController{
       }
     }
 
-    let newArr = [arr[arr.length - 2], arr[arr.length - 1], ''];
+    let newArr = [arr[arr.length - 2], arr[arr.length - 1]];
 
     return newArr.join('/');
   }

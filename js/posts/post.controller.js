@@ -44,7 +44,6 @@ class PostCommentController{
     this.firebaseService.getComments(loc)
       .then(comments => {
         this.comments = comments || [];
-        this.$scope.$apply();
       });
   }
   getPageLocations(){

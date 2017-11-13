@@ -5,14 +5,14 @@ const CommentComponent = {
   bindings: {
     data: '<',
     refresh: '&',
-    commentNesting: '<',
-    highlight: '<'
+    highlight: '<',
+    replyTo: '@'
   },
   template: `
-    <div class="comment-cont" ng-class="{'reply': $ctrl.data.isReply, 'comment-highlight': $ctrl.highlight === $ctrl.data.firebase_id}" scroll-here="$ctrl.highlight === $ctrl.data.firebase_id">
+    <div class="comment-cont" ng-class="{'reply': $ctrl.data.is_reply, 'comment-highlight': $ctrl.highlight === $ctrl.data.id}" scroll-here="$ctrl.highlight === $ctrl.data.id">
       <div class="header">
         <div class="image-cont" style="background: url({{::$ctrl.data.image}}); background-size: cover"></div>
-        <span class="name" ng-bind-html="$ctrl.formattedName()"></span>
+        <span class="name" ng-bind-html="::$ctrl.formattedName()"></span>
         <span class="date">{{::$ctrl.data.date | date}}</span>
 
       </div>
@@ -50,16 +50,16 @@ const CommentComponent = {
     <comment-form
       ng-if="$ctrl.reply"
       refresh="$ctrl.refresh()"
-      comment-nesting="$ctrl.commentNesting"
-      is-reply="{{$ctrl.data.firebase_id}}">
+      is-reply="{{$ctrl.data.id}}"
+      comment-nesting="{{$ctrl.data.is_reply}}">
     </comment-form>
 
     <comment
       ng-repeat="comment in $ctrl.data.replies | orderBy:'date'"
       refresh="$ctrl.refresh()"
-      comment-nesting="$ctrl.commentNesting"
       data="comment"
       highlight="$ctrl.highlight"
+      reply-to="{{$ctrl.replyTo || $ctrl.data.id}}"
     </comment>
   `
 };
