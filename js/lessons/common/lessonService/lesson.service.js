@@ -6,6 +6,7 @@ class LessonService{
 
     this.course = '';
     this.lesson = '';
+    this.completeLessons = [];
   }
   setMeta(course, lesson){
     this.course = course;
@@ -20,16 +21,27 @@ class LessonService{
   slugify(name){
     return name.toLowerCase().split(' ').join('-');
   }
+  getCompleteLessons(course) {
+    this.fb.getCompleteLessons(
+      course
+    )
+    .then(lessons => {
+      this.completeLessons = lessons.reduce((arr, les) => {
+        arr[les.lesson_id] = true;
+        return arr;
+      }, {});
+    });
+  }
   isLessonComplete(lesson){
     if(this.completeLessons){
-      return this.completeLessons[this.slugify(lesson)];
+      return this.completeLessons[lesson];
     }
     return false;
   }
   goToNextLesson(currentLesson){
     this.lessonList.forEach((section, secIndex) => {
       section.lessons.forEach((lesson, index) => {
-        if(this.slugify(lesson.title) === currentLesson){
+        if(lesson.id === currentLesson){
           let nextLesson;
           let currentPos = lesson.position;
           if(currentPos === section.lessons.length - 1){
@@ -37,7 +49,7 @@ class LessonService{
               if(newSection.position === section.position + 1){
                 newSection.lessons.forEach(lesson => {
                   if(lesson.position === 0){
-                    nextLesson = this.slugify(lesson.title);
+                    nextLesson = lesson.id;
                   }
                 });
               }
@@ -45,7 +57,7 @@ class LessonService{
           }else{
             section.lessons.forEach(lesson => {
               if(lesson.position === currentPos + 1){
-                nextLesson = this.slugify(lesson.title);
+                nextLesson = lesson.id;
               }
             });
           }
@@ -60,10 +72,10 @@ class LessonService{
     let isLast = false;
 
     this.lessonList.forEach(item => {
-      if(item.name === section){
+      if(item.id === section){
         if(item.position === this.lessonList.length - 1){
           item.lessons.forEach(les => {
-            if(les.slug === lesson){
+            if(les.id === lesson){
               isLast = true;
             }
           });
@@ -72,11 +84,14 @@ class LessonService{
     });
     return isLast;
   }
+  // TODO do this on the server Thu 16 Nov 2017 13:58:19 UTC
   checkIfCourseComplete(){
+    if(!this.completeLessons) return;
     let numCompleted = Object.keys(this.completeLessons).length;
 
     let numLessons = 0;
     this.lessonList.forEach(section => {
+      console.log(section);
       numLessons += section.lessons.length;
     });
 
@@ -96,6 +111,7 @@ class LessonService{
         return this.lessonList;
       });
   }
+
   deepObjToArray(obj){
     return Object.keys(obj).map(key => {
       if(typeof obj[key] === 'object'){

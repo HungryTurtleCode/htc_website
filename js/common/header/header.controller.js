@@ -22,7 +22,6 @@ class HeaderController{
         // TODO why does this use a callback and not a promise? Fri 21 Jul 2017 00:30:56 UTC
         this.fb.getNotifications(
           notifications => {
-            console.log(notifications);
             this.$timeout(() => {
               this.notifications = notifications
             });

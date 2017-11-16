@@ -17,16 +17,16 @@ class LessonPageController{
     this.forgotPassword = false;
   }
   lessonComplete(){
-    this.fb.completeLesson(this.lessonData.lesson)
+    this.fb.completeLesson(this.lessonData.id)
       .then(() => {
         this.lessonService.checkIfCourseComplete();
       });
   }
   nextLesson(){
-    this.lessonService.goToNextLesson(this.lessonData.lesson);
+    this.lessonService.goToNextLesson(this.lessonData.id);
   }
   checkIfLastLesson(){
-    return this.lessonService.checkIfLastLesson(this.lessonData.lesson, this.lessonData.section);
+    return this.lessonService.checkIfLastLesson(this.lessonData.id, this.lessonData.section_id);
   }
 }
 

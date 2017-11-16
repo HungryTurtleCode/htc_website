@@ -54,24 +54,24 @@ const LessonContent = {
           <h3>Github:</h3>
           <ul>
             <li>
-              <a ng-href="{{$ctrl.resources.github}}" target="_blank" ng-click="$ctrl.resourceClick($ctrl.resources.github)">
-                {{$ctrl.resources.github}}
+              <a ng-href="{{$ctrl.resources.github.resource}}" target="_blank" ng-click="$ctrl.resourceClick($ctrl.resources.github)">
+                {{$ctrl.resources.github.resource}}
               </a>
             </li>
           </ul>
           <h3>Demo:</h3>
           <ul>
             <li>
-              <a ng-href="{{$ctrl.resources.demo}}" target="_blank" ng-click="$ctrl.resourceClick($ctrl.resources.demo)">
-                {{$ctrl.resources.demo}}
+              <a ng-href="{{$ctrl.resources.demo.resource}}" target="_blank" ng-click="$ctrl.resourceClick($ctrl.resources.demo)">
+                {{$ctrl.resources.demo.resource}}
               </a>
             </li>
           </ul>
           <h3>Additional Resources:</h3>
           <ul>
             <li ng-repeat="resource in $ctrl.resources.additional">
-              <a ng-href="{{resource}}" target="_blank" ng-click="$ctrl.resourceClick(resource)">
-                {{resource}}
+              <a ng-href="{{resource.resource}}" target="_blank" ng-click="$ctrl.resourceClick(resource)">
+                {{resource.resource}}
               </a>
             </li>
           </ul>

@@ -146,11 +146,10 @@ class FirebaseService{
     return this.api.get(`/bookmarks`)
       .then(res => res.bookmarks);
   }
-  // TODO the lesson passed in here is the url. I think the api expects an id. Refactor needed Tue 18 Jul 2017 23:16:38 UTC
   getLessonContent(lesson){
     // TODO probably need to make the lesson url safe here too Thu 20 Jul 2017 23:05:53 UTC
     return this.api.get(`/lessons/${lesson}/content`)
-      .then(res => console.log(res))
+      .then(res => res.content);
   }
   getUserCompleted(){
     return this.api.get(`/courses/complete`)
@@ -158,26 +157,16 @@ class FirebaseService{
   }
   getLessonMeta(lesson){
     return this.api.get(`/lessons/${lesson}`)
-      .then(res => console.log(res));
+      .then(res => res.meta);
   }
   completeLesson(lesson){
     return this.api.put(`/lessons/${lesson}/complete`)
-      .then(res => console.log(res));
+      .then(res => res.success);
   }
   // TODO refactor out the user name and image from this and all calls to this Wed 19 Jul 2017 15:12:31 UTC
   setComment(loc, text, is_reply){
-    // TODO fix the weird recursive reply thing in the comment component Wed 19 Jul 2017 15:17:42 UTC
 
     loc = this.makeUrlSafe(loc);
-    // loc = loc.split('/');
-    // for(let i = loc.length - 1; i >= 0; i--) {
-    //   if(loc[i]) {
-    //     loc = loc[i];
-    //     break;
-    //   }
-    // }
-    // TODO is_reply should be the id of the comment being replied to Fri 10 Nov 2017 17:37:42 UTC
-
     const data = {
       is_reply,
       text
@@ -192,9 +181,8 @@ class FirebaseService{
       .then(res => console.log(res));
   }
   getCompleteLessons(course, callback){
-    console.log('get completed lessons');
     return this.api.get(`/courses/${course}/completedlessons`)
-      .then(res => console.log(res))
+      .then(res => res.lessons)
   }
   getUserEnrolledCourses(){
     return this.api.get(`/user/enrollments`)

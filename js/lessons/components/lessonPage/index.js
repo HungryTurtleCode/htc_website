@@ -17,17 +17,16 @@ const LessonPageComponent = angular
       resolve: {
         getLessonMeta: ['$stateParams', 'firebaseService', ($stateParams, firebaseService) => {
           return firebaseService.getLessonMeta(
-            $stateParams.lesson
+            $stateParams.lesson || $stateParams.course
           )
         }],
         signIn: ['auth', 'userData', '$stateParams', 'firebaseService', (auth, userData, $stateParams, firebaseService) => {
 
           return firebaseService.getLessonContent(
-            $stateParams.lesson
+            $stateParams.lesson || $stateParams.course
           )
           .then(con => {
-            console.log('got lesson content');
-            console.log(con);
+            return con;
           });
         }]
       }

@@ -19,14 +19,7 @@ class LessonController{
             this.lessonList = list
           });
 
-        // TODO why is a callback used here and not a promise? Fri 21 Jul 2017 00:47:57 UTC
-        this.fb.getCompleteLessons(
-                  params.course,
-                  lessons => {
-                    this.completeLessons = lessons;
-                    this.lessonService.completeLessons = lessons;
-                  }
-                );
+        this.lessonService.getCompleteLessons(params.course);
 
         this.lessonService.setMeta(params.course, params.lesson)
       }

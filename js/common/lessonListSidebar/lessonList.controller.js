@@ -1,6 +1,6 @@
 class LessonListController{
-  constructor() {
-    let a = 0;
+  constructor(lessonService) {
+    this.lessonService = lessonService;
   }
   $onInit(){
     this.activeTag = window.activeTag || null;
@@ -16,7 +16,9 @@ class LessonListController{
     if(change.lessonList && change.lessonList.currentValue){
       this.setActiveSection();
       this.showExplore = false;
-    }else{
+    } else if(change.lesson) {
+      this.setActiveSection();
+    } else{
       this.showExplore = true;
     }
   }
@@ -24,9 +26,10 @@ class LessonListController{
     return name.toLowerCase().split(' ').join('-');
   }
   setActiveSection(){
+    if(!this.lesson) return;
     this.lessonList.forEach(section => {
       section.lessons.forEach(lesson => {
-        if(lesson.slug === this.lesson){
+        if(lesson.id === this.lesson){
           section.show = true;
           return;
         }
@@ -41,5 +44,6 @@ class LessonListController{
     }
   }
 }
+LessonListController.$inject = ['lessonService'];
 
 export default LessonListController;

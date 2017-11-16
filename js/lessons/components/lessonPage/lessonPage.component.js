@@ -22,7 +22,7 @@ const LessonPage = {
         resources="$ctrl.lessonData.resources"
         next-lesson="$ctrl.nextLesson()"
         check-if-last-lesson="$ctrl.checkIfLastLesson()"
-        lesson-is-complete="$ctrl.lessonService.isLessonComplete($ctrl.lessonData.lesson)"
+        lesson-is-complete="$ctrl.lessonService.isLessonComplete($ctrl.lessonData.id)"
         lesson-complete="$ctrl.lessonComplete()">
       </lesson-content>
     </div>
