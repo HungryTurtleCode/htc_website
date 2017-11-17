@@ -36,9 +36,9 @@ const LessonList = {
           <h3 ng-click="section.show = !section.show">{{section.name}}</h3>
           <ul class="section"
             ng-if="section.show">
-              <a ng-href="{{::$ctrl.getLessonUrl(lesson.id)}}"
+              <a ng-href="{{::$ctrl.getLessonUrl(lesson.id || lesson.slug)}}"
                 ng-repeat="lesson in section.lessons | orderBy:'position'">
-                <li class="lesson-item" ng-class="{active: lesson.id === $ctrl.lesson || (!$ctrl.lesson && $index === 0 && $parent.$index === 0)}">
+                <li class="lesson-item" ng-class="{active: lesson.id === $ctrl.lesson || (!$ctrl.lesson && $index === 0 && $parent.$index === 0) || lesson.slug === $ctrl.lesson}">
                   <p>{{lesson.title}}</p>
                   <p class="length">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" data-inboxsdk-session-id="1485829018686-0.44899969075421664">
