@@ -27,6 +27,7 @@ class LessonService{
       course
     )
     .then(lessons => {
+      lessons = lessons || [];
       this.completeLessons = lessons.reduce((arr, les) => {
         arr[les.lesson_id] = true;
         return arr;

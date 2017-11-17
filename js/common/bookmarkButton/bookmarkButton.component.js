@@ -6,7 +6,7 @@ const BookmarkButton = {
     course: '<'
   },
   template: `
-    <button ng-click="$ctrl.bookmark()">
+    <button ng-if="$ctrl.auth.loggedIn" ng-click="$ctrl.bookmark()">
       {{$ctrl.text}}
     </button>
   `
