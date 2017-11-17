@@ -107,9 +107,7 @@ class FirebaseService{
   addToCart(data){
     // TODO make course id safe Thu 20 Jul 2017 23:56:15 UTC
     return this.api.post(`/cart/${data.id}`)
-      .then(res => {
-        console.log(res);
-      });
+      .then(res => res);
   }
   removeFromCart(data){
     // TODO make course id safe Thu 20 Jul 2017 23:56:15 UTC
@@ -174,13 +172,12 @@ class FirebaseService{
       text
     }
     return this.api.post('/comments', data)
-      .then(res => console.log(res));
+      .then(res => res);
   }
   // TODO do this on the server when all lessons are marked completed. Mon 24 Jul 2017 16:34:21 UTC
   markCourseComplete(course){
-    console.log('mark course complete');
     return this.api.put(`/courses/${course}/complete`)
-      .then(res => console.log(res));
+      .then(res => res);
   }
   getCompleteLessons(course, callback){
     return this.api.get(`/courses/${course}/completedlessons`)
@@ -191,22 +188,20 @@ class FirebaseService{
       .then(res => res.courses);
   }
   getSingleComment(comment_id){
-    console.log('get single comment');
     return this.api.get(`/comments/single/${comment_id}`)
-      .then(res => console.log(res));
+      .then(res => res.comment);
   }
   getAllNotifications() {
-    console.log('get all notifications');
     return this.api.get(`/notifications/all`)
-      .then(res => console.log(res));
+      .then(res => res.notifs);
   }
   upvoteComment(comment) {
     return this.api.put(`/comments/upvote/${comment}`)
-      .then(res => console.log(res));
+      .then(res => res);
   }
   downvoteComment(comment) {
     return this.api.put(`/comments/downvote/${comment}`)
-      .then(res => console.log(res));
+      .then(res => res);
   }
 
 
