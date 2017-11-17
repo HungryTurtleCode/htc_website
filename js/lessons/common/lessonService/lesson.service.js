@@ -7,6 +7,7 @@ class LessonService{
     this.course = '';
     this.lesson = '';
     this.completeLessons = [];
+    this.lessonList = [];
   }
   setMeta(course, lesson){
     this.course = course;
@@ -70,6 +71,7 @@ class LessonService{
   }
   checkIfLastLesson(lesson, section){
     let isLast = false;
+    if(!this.lessonList.length) return;
 
     this.lessonList.forEach(item => {
       if(item.id === section){
@@ -86,6 +88,7 @@ class LessonService{
   }
   // TODO do this on the server Thu 16 Nov 2017 13:58:19 UTC
   checkIfCourseComplete(){
+    if(!this.lessonList.length) return;
     if(!this.completeLessons) return;
     let numCompleted = Object.keys(this.completeLessons).length;
 
@@ -100,7 +103,7 @@ class LessonService{
     }
   }
   getLessonList(course){
-    if(this.lessonList && course === this.course)
+    if(this.lessonList.length && course === this.course)
       return Promise.resolve(this.lessonList);
 
     let courseName = course || this.course;

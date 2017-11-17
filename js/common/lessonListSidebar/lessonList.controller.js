@@ -26,7 +26,12 @@ class LessonListController{
     return name.toLowerCase().split(' ').join('-');
   }
   setActiveSection(){
-    if(!this.lessonList) return;
+    if(!this.lesson) {
+      if(this.lessonList.length) {
+        this.lessonList[0].show = true;
+      }
+      return;
+    };
     this.lessonList.forEach(section => {
       section.lessons.forEach(lesson => {
         if(lesson.id === this.lesson){
