@@ -26,7 +26,7 @@ class LessonListController{
     return name.toLowerCase().split(' ').join('-');
   }
   setActiveSection(){
-    if(!this.lesson) return;
+    if(!this.lessonList) return;
     this.lessonList.forEach(section => {
       section.lessons.forEach(lesson => {
         if(lesson.id === this.lesson){

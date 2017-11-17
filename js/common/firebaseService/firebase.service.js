@@ -131,14 +131,15 @@ class FirebaseService{
   }
   markNotificationRead(id){
     return this.api.put(`/notifications/${id}`)
-      .then(res => res.success);
+      .then(res => res);
   }
   setUserMeta(data){
     return this.api.put(`/user`, data)
       .then(res => res);
   }
   getComments(url){
-    url = this.makeUrlSafe(url);
+    // url = this.makeUrlSafe(url);
+    url = btoa(url);
     return this.api.get(`/comments/${url}`)
       .then(res => res.comments);
   }
@@ -166,12 +167,13 @@ class FirebaseService{
   // TODO refactor out the user name and image from this and all calls to this Wed 19 Jul 2017 15:12:31 UTC
   setComment(loc, text, is_reply){
 
-    loc = this.makeUrlSafe(loc);
+    // loc = this.makeUrlSafe(loc);
     const data = {
+      slug: loc,
       is_reply,
       text
     }
-    return this.api.post(`/comments/${loc}`, data)
+    return this.api.post('/comments', data)
       .then(res => console.log(res));
   }
   // TODO do this on the server when all lessons are marked completed. Mon 24 Jul 2017 16:34:21 UTC
@@ -229,25 +231,26 @@ class FirebaseService{
   }
 
   getPageLocations(){
-    let url = this.$location.absUrl();
-    let arr = url.split('/');
+    return window.location.pathname + window.location.hash.split('?')[0];
+    // let url = this.$location.absUrl();
+    // let arr = url.split('/');
 
-    for(let i = arr.length-1; i >= 0; i--){
-      if(arr[i - 1] === 'lessons' && arr[i] === '#!'){
-        this.isLesson = true;
-      }
-      let matches = arr[i].match(/\?([^&]*)/);
-      if(matches){
-        arr[i] = arr[i].slice(0, matches.index);
-      }
-      if(arr[i] === '' || arr[i].charAt(0) === '#'){
-        arr.splice(i, 1);
-      }
-    }
+    // for(let i = arr.length-1; i >= 0; i--){
+    //   if(arr[i - 1] === 'lessons' && arr[i] === '#!'){
+    //     this.isLesson = true;
+    //   }
+    //   let matches = arr[i].match(/\?([^&]*)/);
+    //   if(matches){
+    //     arr[i] = arr[i].slice(0, matches.index);
+    //   }
+    //   if(arr[i] === '' || arr[i].charAt(0) === '#'){
+    //     arr.splice(i, 1);
+    //   }
+    // }
 
-    let newArr = [arr[arr.length - 2], arr[arr.length - 1], ''];
+    // let newArr = [arr[arr.length - 2], arr[arr.length - 1], ''];
 
-    return newArr.join('/');
+    // return newArr.join('/');
   }
   getCourseArray(courses){
     return courses.map(item => {

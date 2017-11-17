@@ -35,23 +35,24 @@ class commentController{
     }
   }
   getPageLocations(){
-    let url = this.$location.absUrl();
-    let arr = url.split('/');
+    return window.location.pathname + window.location.hash.split('?')[0];
+    // let url = this.$location.absUrl();
+    // let arr = url.split('/');
 
-    for(let i = arr.length-1; i >= 0; i--){
-      let matches = arr[i].match(/\?([^&]*)/);
-      if(matches){
-        arr[i] = arr[i].slice(0, matches.index);
-      }
-      if(arr[i] === '' || arr[i].charAt(0) === '#'){
-        arr.splice(i, 1);
-      }
-    }
+    // for(let i = arr.length-1; i >= 0; i--){
+    //   let matches = arr[i].match(/\?([^&]*)/);
+    //   if(matches){
+    //     arr[i] = arr[i].slice(0, matches.index);
+    //   }
+    //   if(arr[i] === '' || arr[i].charAt(0) === '#'){
+    //     arr.splice(i, 1);
+    //   }
+    // }
 
-    let newArr = [arr[arr.length - 2], arr[arr.length - 1]];
-    newArr.push('');
+    // let newArr = [arr[arr.length - 2], arr[arr.length - 1]];
+    // newArr.push('');
 
-    return newArr.join('/');
+    // return newArr.join('/');
   }
 }
 

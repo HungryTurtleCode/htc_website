@@ -42,13 +42,13 @@ class commentFormController{
         this.analytics.setMetric('Metric5', 1);
         this.analytics.trackUserEvent('Comment', {location: loc, value: text});
         this.analytics.fbTrackCustom(
-                                  'Comment',
-                                  {
-                                    content: loc,
-                                    content_type: type
-                                  },
-                                  'content'
-                                );
+          'Comment',
+          {
+            content: loc,
+            content_type: type
+          },
+          'content'
+        );
 
         this.refresh();
         this.feedbackText = 'Comment Submitted Successfully'
@@ -75,25 +75,27 @@ class commentFormController{
     this.showSignIn = false;
   }
   getPageLocations(){
-    let url = this.$location.absUrl();
-    let arr = url.split('/');
+    return window.location.pathname + window.location.hash.split('?')[0];
+    // let url = this.$location.absUrl();
+    // let arr = url.split('/');
 
-    for(let i = arr.length-1; i >= 0; i--){
-      if(arr[i - 1] === 'lessons' && arr[i] === '#!'){
-        this.isLesson = true;
-      }
-      let matches = arr[i].match(/\?([^&]*)/);
-      if(matches){
-        arr[i] = arr[i].slice(0, matches.index);
-      }
-      if(arr[i] === '' || arr[i].charAt(0) === '#'){
-        arr.splice(i, 1);
-      }
-    }
+    // for(let i = arr.length-1; i >= 0; i--){
+    //   if(arr[i - 1] === 'lessons' && arr[i] === '#!'){
+    //     this.isLesson = true;
+    //   }
+    //   let matches = arr[i].match(/\?([^&]*)/);
+    //   if(matches){
+    //     arr[i] = arr[i].slice(0, matches.index);
+    //   }
+    //   if(arr[i] === '' || arr[i].charAt(0) === '#'){
+    //     arr.splice(i, 1);
+    //   }
+    // }
 
-    let newArr = [arr[arr.length - 2], arr[arr.length - 1]];
+    // let newArr = [arr[arr.length - 2], arr[arr.length - 1]];
+    // console.log(newArr);
 
-    return newArr.join('/');
+    // return newArr.join('/');
   }
 }
 
