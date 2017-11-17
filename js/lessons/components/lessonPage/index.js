@@ -31,7 +31,9 @@ const LessonPageComponent = angular
         }]
       }
     });
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise(function(){
+      window.location.href = '/account';
+    });
   }])
   .name;
 
