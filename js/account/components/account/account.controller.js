@@ -36,12 +36,20 @@ class AccountController{
         });
       })
       .catch(err => {
-        // TODO do something with the err object to display better messages Mon 13 Nov 2017 15:47:46 UTC
-        this.$timeout(() => {
-          this.feedbackText = 'Something Went Wrong, try again later';
-          this.error = true;
-          this.loading = false;
-        });
+
+        if(err.length) {
+          this.$timeout(() => {
+            this.feedbackText = err[0].msg;
+            this.error = true;
+            this.loading = false;
+          });
+        } else {
+          this.$timeout(() => {
+            this.feedbackText = 'Something Went Wrong, try again later';
+            this.error = true;
+            this.loading = false;
+          });
+        }
       });
   }
 }
