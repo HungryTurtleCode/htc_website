@@ -1,1 +1,1 @@
-import sales from './salesPage';
+import sales from './salesPage/';
