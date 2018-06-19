@@ -58,3 +58,4 @@ jekyll/_assets/js/reset.js
 jekyll/.asset-cache
 node_modules
 npm-debug.log
+api/aws-key/*

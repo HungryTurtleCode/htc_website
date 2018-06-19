@@ -12,7 +12,7 @@ const LessonPage = {
     <div ng-if="$ctrl.lessonData">
       <state-change></state-change>
       <lesson-video
-        video-src="{{$ctrl.videoUrl}}"
+        video-src="{{$ctrl.lessonData.video}}"
         poster="$ctrl.lessonData.video_poster"
         next-video="$ctrl.nextLesson()"
         lesson-complete="$ctrl.lessonComplete()">
