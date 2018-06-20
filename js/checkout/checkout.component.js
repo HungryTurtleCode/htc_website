@@ -18,6 +18,9 @@ const CheckoutComponent = {
           Total: <strong>{{$ctrl.cart.getTotal() | currency:$:0}}</strong>
         </div>
       </div>
+      <div class="empty-cart">
+        <a href="/courses/">Check out some more courses here</a>
+      </div>
     </div>
 
     <div class="pay-area" ng-if="$ctrl.cart.cart.length">

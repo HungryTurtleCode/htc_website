@@ -30,7 +30,6 @@ const CartList = {
     <div class="empty-cart" ng-if="!$ctrl.loadingCart && !$ctrl.cart.length">
       Cart Is Empty
       <br>
-      <a href="/courses/">Check out some courses here</a>
     </div>
   `
 };
