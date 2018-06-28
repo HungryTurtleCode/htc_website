@@ -59,3 +59,5 @@ jekyll/.asset-cache
 node_modules
 npm-debug.log
 api/aws-key/*
+
+.env
