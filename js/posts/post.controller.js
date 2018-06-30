@@ -47,8 +47,8 @@ class PostCommentController{
       });
   }
   getPageLocations(){
-    return window.location.pathname + window.location.hash.split('?')[0];
-    // let url = this.$location.absUrl();
+    const hashend = window.location.hash.replace('#!', '');
+    return window.location.pathname + hashend.split('?')[0];
     // let arr = url.split('/');
 
     // for(let i = arr.length-1; i >= 0; i--){

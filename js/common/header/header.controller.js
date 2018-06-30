@@ -58,7 +58,7 @@ class HeaderController{
         this.notifications = res.notifs || [];
         if(item.type === 'comment'){
           // TODO this shouldn't be item.reply_to Mon 13 Nov 2017 14:29:34 UTC
-          window.location.href = item.location + '?comment=' + item.reply_to;
+          window.location.href = item.location + '#!?comment=' + item.reply_to;
         }
       });
     this.notificationActive = !this.notificationActive;

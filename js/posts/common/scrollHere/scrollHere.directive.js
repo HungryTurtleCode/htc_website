@@ -17,7 +17,7 @@ const scrollHere = ($timeout, $location) => ({
       if(newVal){
         $location.search('comment', null);
         $timeout(() => {
-          document.body.scrollTop = $element[0].getBoundingClientRect().top - 100;
+          document.documentElement.scrollTop = $element[0].getBoundingClientRect().top - 100;
         });
       }
     });
