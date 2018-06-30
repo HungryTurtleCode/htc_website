@@ -71,7 +71,8 @@ class VideoController{
     }
   }
   getPageLocations(){
-    return window.location.pathname + window.location.hash.split('?')[0];
+    const hashend = window.location.hash.replace('#!', '');
+    return window.location.pathname + hashend.split('?')[0];
     // let url = this.$location.absUrl();
     // let arr = url.split('/');
 
