@@ -18,15 +18,11 @@ class HeaderController{
       this.loggedIn = res;
       this.loading = false;
 
-      if(this.loggedIn) {
-        // TODO why does this use a callback and not a promise? Fri 21 Jul 2017 00:30:56 UTC
-        this.fb.getNotifications(
-          notifications => {
-            this.$timeout(() => {
-              this.notifications = notifications
-            });
-          });
-      }
+      this.getNotifications();
+
+      this.$timeout(() => {
+        this.getNotifications();
+      }, 30000) ;
     });
 
     window.addEventListener('click', event => {
@@ -34,6 +30,18 @@ class HeaderController{
         this.notificationActive = false;
       });
     });
+  }
+  getNotifications() {
+    if(this.loggedIn) {
+      // TODO why does this use a callback and not a promise? Fri 21 Jul 2017 00:30:56 UTC
+      this.fb.getNotifications(
+        notifications => {
+          // TODO maybe show a toast or something? Sat 30 Jun 19:57:12 2018
+          this.$timeout(() => {
+            this.notifications = notifications
+          })
+        });
+    }
   }
   notificationToggle(e){
     this.stopPropagation(e);
