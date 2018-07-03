@@ -56,6 +56,9 @@ module.exports = {
     //     keep_fnames: false
     //   }
     // })
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
   ],
   resolve: {
     extensions: ['', '.js'],

@@ -7,7 +7,15 @@ import components from './components';
 
 import Checkout from './checkout.component';
 
-// TODO pull the key below from config based on the env we are working in Sun  1 Jul 00:50:32 2018
+let stripeKey;
+if (process.env.NODE_ENV === 'production') {
+  console.log('Using production stripe key');
+  stripeKey = 'pk_live_8AiJNP3D2ikErsRc1nlDsIpd';
+} else {
+  console.log('Using development stripe key');
+  stripeKey = 'pk_test_Bpwo13jPYFDQVWrppyb02I4E';
+}
+
 const CheckoutComponent = angular
   .module('htcapp', [
     ngStripe,
@@ -15,7 +23,7 @@ const CheckoutComponent = angular
     components
   ])
   .component('checkout', Checkout)
-  .config(['stripeProvider', stripeProvider => stripeProvider.setPublishableKey('pk_test_Bpwo13jPYFDQVWrppyb02I4E')])
+  .config(['stripeProvider', stripeProvider => stripeProvider.setPublishableKey(stripeKey)])
   .name;
 
 export default CheckoutComponent;
