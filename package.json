@@ -5,11 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "export JEKYLL_ENV=development && concurrently 'NODE_ENV=development webpack -w' 'bundle exec jekyll serve --livereload --drafts' 'npm start --prefix api/'",
-    "noreload": "export JEKYLL_ENV=development && concurrently 'webpack -w' 'bundle exec jekyll serve --drafts' 'npm start --prefix api/'",
+    "start": "export JEKYLL_ENV=development && concurrently 'yarn dev' 'bundle exec jekyll serve --livereload --drafts' 'npm start --prefix api/'",
+    "noreload": "export JEKYLL_ENV=development && concurrently 'yarn dev' 'bundle exec jekyll serve --drafts' 'npm start --prefix api/'",
     "api": "npm start --prefix api/",
-    "build": "rm -r _site && export JEKYLL_ENV=production && NODE_ENV=production webpack && bundle exec jekyll build --config _config.prod.yml",
-    "deploy": "rm -r _site && export JEKYLL_ENV=production && NODE_ENV=production webpack && bundle exec jekyll build --config _config.prod.yml && firebase deploy"
+    "build": "yarn webpack -- --env.env=prod",
+    "deploy": "rm -r _site && export JEKYLL_ENV=production && yarn build && bundle exec jekyll build --config _config.prod.yml && firebase deploy",
+    "webpack-defaults": "webpack-defaults",
+    "dev": "yarn webpack:watch -- --env.env=dev",
+    "dev:analyse": "yarn dev -- --env.addons=bundleanalyse",
+    "build:analyse": "yarn build -- --env.addons=bundleanalyse",
+    "build:buddy": "yarn build -- --env.addons=bundlebuddy",
+    "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js",
+    "webpack": "node ./node_modules/webpack/bin/webpack.js",
+    "webpack:watch": "yarn webpack -- -w",
+    "webpack-dev-server": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --port=9000 --hot",
+    "lint": "eslint js"
   },
   "repository": {
     "type": "git",
@@ -24,8 +34,20 @@
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.22.0",
-    "concurrently": "^3.1.0"
+    "bundle-buddy-webpack-plugin": "^0.3.0",
+    "chalk": "^2.4.1",
+    "compression-webpack-plugin": "^1.1.11",
+    "concurrently": "^3.1.0",
+    "eslint": "^5.0.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-merge": "^4.1.3",
+    "webpack": "3.x"
   },
   "dependencies": {
     "angular": "^1.6.5",
@@ -38,7 +60,6 @@
     "videogular": "^1.4.4",
     "videogular-controls": "^1.4.4",
     "videogular-overlay-play": "^1.4.4",
-    "videogular-poster": "^1.4.4",
-    "webpack": "1.x"
+    "videogular-poster": "^1.4.4"
   }
 }
