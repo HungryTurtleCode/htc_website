@@ -13,11 +13,12 @@ class commentFormController{
     this.error = false;
     this.submitLoading = false;
   }
-  setComment(loc, text, isReply){
+  setComment(loc, text, isReply, title){
     return this.fb.setComment(
       loc,
       text,
-      isReply
+      isReply,
+      title
     )
     .then(key => {
       return key;
@@ -34,7 +35,8 @@ class commentFormController{
       this.setComment(
         loc,
         text,
-        this.isReply
+        this.isReply,
+        window.pageTitle
       )
       .then(() => {
         this.analytics.trackEvent('Comment', loc);

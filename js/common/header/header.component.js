@@ -88,8 +88,8 @@ const HeaderComponent = {
                     <img ng-src="{{notif.image}}">
                     <p class="reply-text">
                       <span ng-if="notif.type === 'comment'">
-                        <!--<strong>{{notif.from_name}}</strong> said something in a discussion you are involved in on <strong>{{notif.page_name}}</strong>-->
-                        <strong>{{notif.from_name}}</strong> said something in a discussion you are involved in</strong>
+                        <strong>{{notif.from_name}}</strong> said something in a discussion you are involved in on <strong>{{notif.page_name}}</strong>
+                        <!--<strong>{{notif.from_name}}</strong> said something in a discussion you are involved in</strong>-->
                       </span>
                     </p>
                   </div>

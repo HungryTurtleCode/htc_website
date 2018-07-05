@@ -163,13 +163,14 @@ class FirebaseService{
       .then(res => res.success);
   }
   // TODO refactor out the user name and image from this and all calls to this Wed 19 Jul 2017 15:12:31 UTC
-  setComment(loc, text, is_reply){
+  setComment(loc, text, is_reply, page_name){
 
     // loc = this.makeUrlSafe(loc);
     const data = {
       slug: loc,
       is_reply,
-      text
+      text,
+      page_name
     }
     return this.api.post('/comments', data)
       .then(res => res);
