@@ -17,7 +17,10 @@ class BuyButtonController{
     let course = this.getCourseFromUrl();
     this.fb.getCourseMeta(course)
       .then(data => {
-        if(!data.id) return;
+        if(!data.id) {
+          window.location.href = '/';
+          return;
+        }
         this.$timeout(() => {
           this.courseData = data;
           this.loading = false;
