@@ -5,6 +5,7 @@ class CheckoutController{
   }
   $onInit() {
     this.cart.getCart();
+    this.checkoutStage = 0;
   }
   showSignIn() {
     this.showModal = true;
@@ -14,6 +15,12 @@ class CheckoutController{
   }
   removeItem(item) {
     this.cart.removeFromCart(item);
+  }
+  goToPayment() {
+    this.checkoutStage = 1;
+  }
+  goToCartList() {
+    this.checkoutStage = 0;
   }
 }
 

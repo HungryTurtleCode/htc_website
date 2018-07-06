@@ -1,9 +1,25 @@
 checkout
   font-size: 1rem
 
+  .cart-nav
+    color: white
+    padding: 0.5em 1.2em
+    background: $secondary-color
+    border: none
+    outline: none
+    cursor: pointer
+    transition: background 0.3s ease
+
   .list-area
     min-height: calc(100vh - 25.1em)
     +span-columns(8)
+
+    .left
+      float: left
+
+    .clear
+      display: block
+      clear: both
 
     .empty-cart
       font-size: 1.1em
@@ -13,7 +29,6 @@ checkout
         color: $secondary-color
         display: inline-block
         margin-top: 0.6em
-        margin-bottom: 350px
 
     cart-list
       margin-bottom: 2em
@@ -22,12 +37,13 @@ checkout
       .cart-item
         display: flex
         justify-content: space-between
-        align-items: center
-        padding: 1em 0
+        // align-items: center
+        padding: 0.2em 0
         border-bottom: 1px solid #e3e3e3
+        padding-right: 10px
 
         .cart-img
-          width: 100px
+          width: 70px
           border: none!important
 
         a
@@ -36,25 +52,33 @@ checkout
           color: inherit
           transition: color 0.3s ease-in
 
-          &:hover
-            color: $secondary-color
+          // &:hover
+          //   color: $secondary-color
 
         .item-title
           flex: 1
-          text-align: center
+          padding: 2px 15px
+          // text-align: center
+          color: #29303b
+          line-height: 1.2
+          font-weight: 700
+          font-size: 18px
 
         .price
-          font-size: 2em
+          font-size: 1.3em
           padding: 0 0.5em
 
         .remove-button
           background: transparent
           border: none
           outline: none
-          color: red
-          font-weight: bold
-          font-size: 1.3em
+          color: $primary-color
+          font-weight: normal
+          font-size: 1em
           cursor: pointer
+          padding-top: 9px
+          align-self: end
+          font-size: 0.7em
 
     .checkout-bottom
       .total-price
@@ -62,8 +86,35 @@ checkout
         text-align: right
         margin-bottom: 2em
 
-  .pay-area
+  .checkout-btn-area
     +span-columns(4)
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-start
+
+    .cart-nav
+      font-size: 15px
+      margin-top: 30px
+      padding: 16px 80px
+
+    .total
+      color: #686f7a
+      font-size: 18px
+      margin-right: 10px
+
+    .price
+      font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif
+      color: $secondary-color
+      font-size: 36px
+      font-weight: 600
+      line-height: 49px
+      margin: 0
+
+  .pay-area
+    // +span-columns(4)
     font-size: 0.8em
 
     .sign-in-btn

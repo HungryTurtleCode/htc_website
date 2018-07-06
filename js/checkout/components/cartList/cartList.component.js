@@ -19,13 +19,13 @@ const CartList = {
       <a ng-href="/courses/{{item.id}}" class="item-title">
         {{item.name}}
       </a>
-      <span class="price">{{item.price | currency:$:0}}</span>
       <button
         class="remove-button"
         ng-click="$ctrl.remove(item)">
-          <span ng-if="!$ctrl.removeLoading">X</span>
+          <span ng-if="!$ctrl.removeLoading">Remove</span>
           <htc-spinner ng-if="item.removeLoading"></htc-spinner>
       </button>
+      <span class="price">{{item.price | currency:$:0}}</span>
     </div>
     <div class="empty-cart" ng-if="!$ctrl.loadingCart && !$ctrl.cart.length">
       Cart Is Empty
