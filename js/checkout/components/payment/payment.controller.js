@@ -7,7 +7,7 @@ class PaymentController{
     this.auth = auth;
   }
   $onInit(){
-    this.activePayment = 0;
+    this.activePayment = 1;
     this.paymentLoading = false;
     this.feedbackText = '';
   }

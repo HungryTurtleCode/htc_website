@@ -2,29 +2,20 @@ import controller from './payment.controller';
 
 const PaymentComponent = {
   controller,
-  bindings: {
-    showModal: '&',
-  },
   template: `
     <div class="pay-area" ng-if="$ctrl.cart.cart.length">
-      <h2>Pay With</h2>
-      <button
-        class="sign-in-btn"
-        ng-if="!$ctrl.auth.loggedIn"
-        ng-click="$ctrl.showModal()">
-          Log In / Register To Purchase
-      </button>
+      <div class="payment-total">Total: {{$ctrl.cart.getTotal() | currency:$:0}}</div>
       <div class="tabs" ng-if="$ctrl.auth.loggedIn">
         <ul>
-          <li ng-click="$ctrl.activePayment = 0" ng-class="{'active': $ctrl.activePayment === 0}">PayPal</li>
           <li ng-click="$ctrl.activePayment = 1" ng-class="{'active': $ctrl.activePayment === 1}">Card</li>
+          <li ng-click="$ctrl.activePayment = 0" ng-class="{'active': $ctrl.activePayment === 0}">PayPal</li>
         </ul>
       </div>
 
       <div class="paypal-pay"
         ng-if="$ctrl.auth.loggedIn && $ctrl.activePayment === 0">
           <button ng-click="$ctrl.paypalBuy()">
-            <span ng-if="!$ctrl.paymentLoading">Go To PayPal</span>
+            <span ng-if="!$ctrl.paymentLoading">Proceed To PayPal</span>
             <htc-spinner ng-if="$ctrl.paymentLoading"></htc-spinner>
           </button>
           <div class="purchase-feedback">{{$ctrl.feedbackText}}</div>

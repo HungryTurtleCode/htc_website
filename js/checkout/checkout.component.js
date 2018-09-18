@@ -8,13 +8,13 @@ const CheckoutComponent = {
       close-modal="$ctrl.closeSignIn()">
     </login-modal>
     <div class="list-area">
-      <button
+      <!--<button
         ng-click="$ctrl.goToCartList()"
         ng-if="$ctrl.checkoutStage === 1"
         class="cart-nav left"
       >
         Go Back To Cart
-      </button>
+      </button>-->
       <div
         ng-if="$ctrl.checkoutStage === 0"
         class="clear"
@@ -30,12 +30,11 @@ const CheckoutComponent = {
       </div>
       <cart-payment
         class="clear"
-        show-modal="$ctrl.showSignIn()"
         ng-if="$ctrl.checkoutStage === 1"
       ></cart-payment>
     </div>
     <div class="checkout-btn-area"
-      ng-if="$ctrl.cart.cart.length"
+      ng-if="$ctrl.cart.cart.length && $ctrl.checkoutStage === 0 && $ctrl.auth.loggedIn"
     >
       <span class="total">Total:</span>
       <span class="price">
@@ -43,10 +42,19 @@ const CheckoutComponent = {
       </span>
       <button
         ng-click="$ctrl.goToPayment()"
-        ng-if="$ctrl.checkoutStage === 0"
         class="cart-nav"
       >
         Checkout
+      </button>
+
+    </div>
+    <div class="checkout-btn-area"
+      ng-if="$ctrl.cart.cart.length && !$ctrl.auth.loggedIn"
+    >
+      <button
+        class="sign-in-btn"
+        ng-click="$ctrl.showSignIn()">
+          Log In / Register To Purchase
       </button>
     </div>
   `
