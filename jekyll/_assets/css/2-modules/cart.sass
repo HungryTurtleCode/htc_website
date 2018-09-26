@@ -118,11 +118,13 @@ checkout
     font-size: 0.8em
 
     .payment-total
-      font-size: 36px
-      line-height: 49px
-      color: #29303b
+      font-size: 2em
+      color: #676767
       margin: 0
       font-weight: 600
+      position: absolute
+      bottom: 35px
+      right: 50px
 
 
     h2
@@ -132,23 +134,49 @@ checkout
 
     .tabs
       text-align: center
+      margin: 0 0 1em 0
+
+      h4
+        margin: 0 0 1em 0
+        font-size: 1.2em
 
       ul
-        display: inline
+        display: flex
+        flex-direction: row
+        justify-content: space-around
         padding: 0
+        width: 100%
 
         li
-          display: inline-block
+          display: flex
+          justify-content: center
           list-style: none
           padding: 1em 2em
+          margin: 0 0.5em
           cursor: pointer
+          background: #f1f1f1
+          border-radius: 2px
+          width: calc(50% - 2em)
 
           &.active
-            background: $primary-color
+            border: 1px solid $primary-color
+            box-shadow: 0 1px 5px rgba(0,0,0,.3)
+
+          img
+            vertical-align: middle
+            max-width: 100%
+            heigth: auto
+            align-self: center
 
     .paypal-pay,
     .stripe-pay
       text-align: center
+      padding: 1em 2em
+      margin-top: 1em
+      border-radius: 1em
+      border: 1px solid #f4f4f4
+      box-shadow: 0 5px 10px rgba(0,0,0,.3)
+      position: relative
 
       &.ng-enter
         transition: opacity 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940)
@@ -174,13 +202,17 @@ checkout
           margin: 0 auto
           display: block
           text-align: left
+          color: #b4b4b4
 
         input
           width: 100%
           padding: 0.5em
+          border: 1px solid rgb(225,225,225)
+          border-radius: 4px
+          font-size: 1.2em
+          color: rgba(46, 46, 46, .8)
+          outline: none
 
-    .stripe-pay
-      padding: 0 2em
 
 .purchase-feedback
   color: red

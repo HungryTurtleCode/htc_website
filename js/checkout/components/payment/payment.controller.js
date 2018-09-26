@@ -52,12 +52,34 @@ class PaymentController{
       console.error(err)
     });
   }
+  onExpiryChange() {
+    const exp = this.payment.card.expiry;
+    const chars = exp.split('')
+      .map(val => parseInt(val))
+      .filter(val => !isNaN(val));
+
+    if (chars.length > 2) {
+      chars.splice(2, 0, ' / ');
+    }
+    this.payment.card.expiry = chars.slice(0, 5).join('');
+  }
   stripeBuy(){
+    const expSplit = this.payment.card.expiry.split('/');
+    const exp_month = expSplit[0].trim();
+    const exp_year =  expSplit[1].trim();
+
+    // TODO validate card data Wed 26 Sep 2018 17:05:57 BST
+
     if(this.paymentLoading) return;
     this.paymentLoading = true;
     this.feedbackText = '';
 
-    this.stripe.card.createToken(this.payment.card)
+    this.stripe.card.createToken({
+      number: this.payment.card.number,
+      cvc: this.payment.card.cvc,
+      exp_month,
+      exp_year,
+    })
       .then(response => {
         console.log('token created for card ending in ', response.card.last4);
 

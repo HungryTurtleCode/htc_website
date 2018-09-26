@@ -4,11 +4,21 @@ const PaymentComponent = {
   controller,
   template: `
     <div class="pay-area" ng-if="$ctrl.cart.cart.length">
-      <div class="payment-total">Total: {{$ctrl.cart.getTotal() | currency:$:0}}</div>
       <div class="tabs" ng-if="$ctrl.auth.loggedIn">
+        <h4>Choose payment method:</h4>
         <ul>
-          <li ng-click="$ctrl.activePayment = 1" ng-class="{'active': $ctrl.activePayment === 1}">Card</li>
-          <li ng-click="$ctrl.activePayment = 0" ng-class="{'active': $ctrl.activePayment === 0}">PayPal</li>
+          <li
+            ng-click="$ctrl.activePayment = 1"
+            ng-class="{'active': $ctrl.activePayment === 1}"
+          >
+            <img src="https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_240/v1537981927/images_p2ldd1.png" alt="pay with card">
+          </li>
+          <li
+            ng-click="$ctrl.activePayment = 0"
+            ng-class="{'active': $ctrl.activePayment === 0}"
+          >
+            <img src="https://res.cloudinary.com/djxscnpzf/image/upload/v1537980948/paypal_logo_oeygnd.png" alt="pay with paypal">
+          </li>
         </ul>
       </div>
 
@@ -19,6 +29,9 @@ const PaymentComponent = {
             <htc-spinner ng-if="$ctrl.paymentLoading"></htc-spinner>
           </button>
           <div class="purchase-feedback">{{$ctrl.feedbackText}}</div>
+          <div class="payment-total">
+            Total: {{$ctrl.cart.getTotal() | currency:$:0}}
+          </div>
       </div>
 
       <div class="stripe-pay"
@@ -35,18 +48,19 @@ const PaymentComponent = {
             <label>CVC</label>
             <input ng-model="$ctrl.payment.card.cvc" type="text" placeholder="CVC">
           </div>
+
           <div class="payment-field">
-            <label>Exp Month</label>
-            <input ng-model="$ctrl.payment.card.exp_month" type="text" placeholder="Exp Month">
+            <label>Expiry</label>
+            <input ng-model="$ctrl.payment.card.expiry" type="text" placeholder="MM / YY" ng-change="$ctrl.onExpiryChange()">
           </div>
-          <div class="payment-field">
-            <label>Exp Year</label>
-            <input ng-model="$ctrl.payment.card.exp_year" type="text" placeholder="Exp Year">
-          </div>
+
           <button ng-click="$ctrl.stripeBuy()">
-            <span ng-if="!$ctrl.paymentLoading">Buy</span>
+            <span ng-if="!$ctrl.paymentLoading">Pay Now</span>
             <htc-spinner ng-if="$ctrl.paymentLoading"></htc-spinner>
           </button>
+          <div class="payment-total">
+            Total: {{$ctrl.cart.getTotal() | currency:$:0}}
+          </div>
           <div class="purchase-feedback">{{$ctrl.feedbackText}}</div>
       </div>
 
