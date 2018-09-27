@@ -18,7 +18,7 @@ const LessonPageComponent = angular
         getLessonMeta: ['$stateParams', 'firebaseService', ($stateParams, firebaseService) => {
           return firebaseService.getLessonMeta(
             $stateParams.lesson || $stateParams.course
-          )
+          );
         }],
         signIn: ['auth', 'userData', '$stateParams', 'firebaseService', (auth, userData, $stateParams, firebaseService) => {
 
@@ -26,6 +26,9 @@ const LessonPageComponent = angular
             $stateParams.lesson || $stateParams.course
           )
           .then(con => {
+            if (!con) {
+              window.location.href = `/courses/${$stateParams.course}`
+            }
             return con;
           });
         }]
