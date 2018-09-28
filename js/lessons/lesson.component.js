@@ -24,9 +24,12 @@ const LessonComponent = {
         <div class="header-container">
           <nav>
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/account">My Account</a></li>
-              <li><a href="/courses">Courses</a></li>
+              <li><a href="/projects">Build Projects</a></li>
+              <li><a href="/tutorials">Tutorials</a></li>
+              <li><a href="/courses">Premium Courses</a></li>
+              <li><a href="/about-me">About Me</a></li>
+              <li><a href="/contact-me">Contact Me</a></li>
+              <li><a href="/account">My Courses</a></li>
             </ul>
           </nav>
           <header-panel></header-panel>
