@@ -6,6 +6,13 @@ class LessonListController{
     this.activeTag = window.activeTag || null;
     this.lessonList = this.lessonList || window.lessonList || [];
     this.tags = this.tags || window.sidebartags || null;
+    this.massageLessonList();
+
+    if(this.lessonList){
+      this.setActiveSection();
+    }
+  }
+  massageLessonList() {
     let currentIndex = 1;
     this.lessonList = this.lessonList.map(section => {
       section.lessons = section.lessons.map(lesson => {
@@ -15,13 +22,10 @@ class LessonListController{
       });
       return section;
     });
-
-    if(this.lessonList){
-      this.setActiveSection();
-    }
   }
   $onChanges(change){
     if(change.lessonList && change.lessonList.currentValue){
+      this.massageLessonList();
       this.setActiveSection();
     } else if(change.lesson) {
       this.setActiveSection();
