@@ -70,7 +70,11 @@
 
         h3
           font-size: 0.8em
+          font-weight: normal
           position: relative
+          cursor: default
+          color: #aaa
+          border: none
           // background: lighten($default-dark-color, 10%)
 
           span
@@ -86,16 +90,32 @@
               transform: rotate(135deg)
 
         .lesson-item
-          color: $default-dark-color
-          background: #d4d4d4
-          transition: background 0.4s ease
+          color: #c4c4c4
+          background: $default-dark-color
+          transition: background 0.4s ease, color 0.3s ease
+          border: none
+          padding: 0
+
+          .sidebar-item
+            display: inline-block
+            cursor: pointer
+            padding: 0.5em 2.2em
+            padding-right: 0
+
+          hr
+            width: 70%
+            display: block
+            height: 1px
+            border: 0
+            border-top: 1px solid #ebebeb
+            margin: 0.2em auto
+            padding: 0
 
           &:hover
-            background: darken(#d4d4d4, 10%)
-            cursor: pointer
+            color: $secondary-color
 
           &.active
-            background: darken(#d4d4d4, 15%)
+            color: $secondary-color
 
     h3
       cursor: pointer

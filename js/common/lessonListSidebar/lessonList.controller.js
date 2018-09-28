@@ -19,16 +19,12 @@ class LessonListController{
     if(this.lessonList){
       this.setActiveSection();
     }
-    this.showExplore = !this.lessonList;
   }
   $onChanges(change){
     if(change.lessonList && change.lessonList.currentValue){
       this.setActiveSection();
-      this.showExplore = false;
     } else if(change.lesson) {
       this.setActiveSection();
-    } else{
-      this.showExplore = true;
     }
   }
   slugify(name){

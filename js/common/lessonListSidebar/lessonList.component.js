@@ -15,17 +15,20 @@ const LessonList = {
       <ul class="lesson-list explore"
         ng-if="$ctrl.tags.length">
           <li class="section">
-            <h3 ng-click="$ctrl.showExplore = !$ctrl.showExplore" ng-class="{'active': $ctrl.showExplore}">
-              What Do You Want To Learn?
-              <span>+</span>
+            <h3>
+              Pick a topic
             </h3>
-            <ul class="section" ng-if="$ctrl.showExplore">
-              <a ng-href="{{tag.url}}"
-                ng-repeat="tag in $ctrl.tags">
-                  <li class="lesson-item" ng-class="{active: $ctrl.slugify(tag.title) === $ctrl.activeTag}">
+            <ul class="section">
+              <li class="lesson-item" ng-class="{active: $ctrl.slugify(tag.title) === $ctrl.activeTag}"
+                  ng-repeat="tag in $ctrl.tags"
+              >
+                <span class="sidebar-item">
+                  <a ng-href="{{tag.url}}">
                     <p>{{tag.title}}</p>
-                  </li>
-              </a>
+                  </a>
+                </span>
+                <hr />
+              </li>
             </ul>
           </li>
       </ul>
