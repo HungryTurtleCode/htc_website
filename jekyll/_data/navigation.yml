@@ -11,6 +11,8 @@ primary:
     url: /about-me/
   - title: Contact Me
     url: /contact-me/
+  - title: My Courses
+    url: /account/
 
 sidebar:
   - title: Javascript
@@ -19,5 +21,3 @@ sidebar:
     url: /tag/angularjs
   - title: Debugging
     url: /tag/debugging
-  - title: jQuery
-    url: /tag/jquery
