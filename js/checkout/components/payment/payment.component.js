@@ -52,22 +52,17 @@ const PaymentComponent = {
             </label>
             <input ng-model="$ctrl.payment.card.number" type="text" placeholder="Card Number" ng-class="{'error': $ctrl.errors.number}" ng-change="$ctrl.onNumberChange()">
           </div>
-          <div class="payment-field">
-            <label>CVC
-              <span class="error-label" ng-class="{'active': $ctrl.errors.cvc}">
-                {{$ctrl.errors.cvc}}
-              </span>
-            </label>
-            <input ng-model="$ctrl.payment.card.cvc" type="text" placeholder="CVC" ng-class="{'error': $ctrl.errors.cvc}" ng-change="$ctrl.onCvcChange()">
-          </div>
 
-          <div class="payment-field">
-            <label>Expiry
-              <span class="error-label" ng-class="{'active': $ctrl.errors.exp_month || $ctrl.errors.exp_year}">
-                {{$ctrl.errors.exp_month || $ctrl.errors.exp_year}}
-              </span>
-            </label>
-            <input ng-model="$ctrl.payment.card.expiry" type="text" placeholder="MM / YY" ng-change="$ctrl.onExpiryChange()" ng-class="{'error': $ctrl.errors.exp_month || $ctrl.errors.exp_year}">
+          <div class="half-wrapper">
+            <div class="payment-field half-width">
+              <label>CVC</label>
+              <input ng-model="$ctrl.payment.card.cvc" type="text" placeholder="CVC" ng-class="{'error': $ctrl.errors.cvc}" ng-change="$ctrl.onCvcChange()">
+            </div>
+
+            <div class="payment-field half-width">
+              <label>Expiry</label>
+              <input ng-model="$ctrl.payment.card.expiry" type="text" placeholder="MM / YY" ng-change="$ctrl.onExpiryChange()" ng-class="{'error': $ctrl.errors.exp_month || $ctrl.errors.exp_year}">
+            </div>
           </div>
 
           <button ng-click="$ctrl.stripeBuy()">

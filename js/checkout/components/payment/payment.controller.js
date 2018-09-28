@@ -108,12 +108,19 @@ class PaymentController{
         });
       } else if (key === 'cvc') {
         const chars = this.getNumberChars(val);
-        const number = parseInt(chars.join(''));
-        if (number > 999) {
+        if (chars.length !== 3) {
           errors.push({
             key,
-            error: 'CVC number is invalid',
+            error: 'CVC must be 3 digits',
           });
+        } else {
+          const number = parseInt(chars.join(''));
+          if (number > 999) {
+            errors.push({
+              key,
+              error: 'CVC number is invalid',
+            });
+          }
         }
       } else if (key === 'exp_month') {
         const chars = this.getNumberChars(val);
