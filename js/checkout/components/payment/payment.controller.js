@@ -210,6 +210,19 @@ class PaymentController{
             });
             console.error(err)
           });
+      })
+      .catch((err) => {
+        this.paymentLoading = false;
+        if (err.message = 'Your card number is incorrect.') {
+          this.errors = {
+            number: 'Invalid / incorrect card number',
+          }
+        } else {
+          this.feedbackText = 'Something Went Wrong. Please try again later';
+        }
+        this.cart.cart.forEach(item => {
+          this.analytics.trackEvent('StripeApiFAIL', item.name, null, item.price);
+        });
       });
   }
 }
