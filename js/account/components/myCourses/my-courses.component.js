@@ -8,7 +8,7 @@ const myCourses = {
   template: `
     <title-block
       title="Education Goodness"
-      subtitle="All the courses you can start watching right now">
+      subtitle="All the premium courses you can start watching right now">
     </title-block>
     <div class="course-list" ng-if="$ctrl.courses">
       <course-card
