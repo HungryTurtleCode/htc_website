@@ -39,7 +39,7 @@ const LessonList = {
               <a ng-href="{{::$ctrl.getLessonUrl(lesson.id || lesson.slug)}}"
                 ng-repeat="lesson in section.lessons | orderBy:'position'">
                 <li class="lesson-item" ng-class="{active: lesson.id === $ctrl.lesson || (!$ctrl.lesson && $index === 0 && $parent.$index === 0) || lesson.slug === $ctrl.lesson}" scroll-to="{{lesson.id === $ctrl.lesson || lesson.slug === $ctrl.lesson}}">
-                  <p>{{lesson.title}}</p>
+                  <p>{{lesson.index}}. {{lesson.title}}</p>
                   <p class="length">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" data-inboxsdk-session-id="1485829018686-0.44899969075421664">
                     <path d="M236.6,271.6c4.6,5.7,11.5,9.4,19.4,9.4c13.8,0,25-11.2,25-25c0-7.3-3.2-13.8-8.2-18.4c-0.6-0.7-1.3-1.5-2.2-2.2  c0,0-117.7-87.5-120.3-85.2c-2.6,2.3,85.3,120.2,85.3,120.2C235.8,270.8,236.3,271.2,236.6,271.6z"/>

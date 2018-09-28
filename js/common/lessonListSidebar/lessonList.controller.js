@@ -4,8 +4,17 @@ class LessonListController{
   }
   $onInit(){
     this.activeTag = window.activeTag || null;
-    this.lessonList = this.lessonList || window.lessonList || null;
+    this.lessonList = this.lessonList || window.lessonList || [];
     this.tags = this.tags || window.sidebartags || null;
+    let currentIndex = 1;
+    this.lessonList = this.lessonList.map(section => {
+      section.lessons = section.lessons.map(lesson => {
+        lesson.index = currentIndex;
+        currentIndex++;
+        return lesson;
+      });
+      return section;
+    });
 
     if(this.lessonList){
       this.setActiveSection();
