@@ -7,14 +7,17 @@ const CheckoutComponent = {
       ng-if="$ctrl.showModal"
       close-modal="$ctrl.closeSignIn()">
     </login-modal>
+    <h1
+      ng-if="$ctrl.checkoutStage === 0"
+    >Cart</h1>
     <div class="list-area">
-      <!--<button
+      <button
         ng-click="$ctrl.goToCartList()"
         ng-if="$ctrl.checkoutStage === 1"
-        class="cart-nav left"
+        class="payment-back-btn left"
       >
-        Go Back To Cart
-      </button>-->
+        Back
+      </button>
       <div
         ng-if="$ctrl.checkoutStage === 0"
         class="clear"
