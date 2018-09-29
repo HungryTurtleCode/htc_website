@@ -7,8 +7,9 @@ const HeaderComponent = {
       <div class="sign-in-register">
 
         <div class="cart-icon">
-          <button class="notification-btn"
+          <a class="notification-btn"
             ng-click="$ctrl.cartClick()"
+            href="{{site.baseurl}}/checkout"
             ng-if="!$ctrl.loading">
             <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 -256 1792 1792" id="svg2989" version="1.1" inkscape:version="0.48.3.1 r9886" width="100%" height="100%" sodipodi:docname="shopping_cart_font_awesome.svg" data-inboxsdk-session-id="1488913123475-0.7579071169318441">
               <metadata id="metadata2999">
@@ -28,7 +29,7 @@ const HeaderComponent = {
             <span ng-if="$ctrl.cartSvc.cart.length">
               {{$ctrl.cartSvc.cart.length}}
             </span>
-          </button>
+          </a>
         </div>
 
         <div class="relative">

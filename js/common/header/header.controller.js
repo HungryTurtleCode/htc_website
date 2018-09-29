@@ -56,9 +56,6 @@ class HeaderController{
   closeLogOut(){
     this.showLogOut = false;
   }
-  cartClick(){
-    window.location.href = '/checkout';
-  }
   clickNotificationItem(item){
 
     this.fb.markNotificationRead(item.id)
