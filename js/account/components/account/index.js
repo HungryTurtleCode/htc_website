@@ -12,9 +12,18 @@ const accountComponent = angular
     $stateProvider
       .state('account', {
         url: '/account',
-        template: '<account user="$resolve.signin"></account>',
+        template: '<account user="$resolve.user"></account>',
         resolve: {
-          signin: ['userData', (userData) => {
+          signin: ['accountService', 'auth', '$window', (account, auth, $window) => {
+            return auth.isLoggedIn()
+              .then(res => {
+                if (!res) {
+                  $window.location.href = '/courses';
+                }
+                return res;
+              });
+          }],
+          user: ['userData', (userData) => {
             return userData.getUserMeta()
               .then(user => {
                 return user;

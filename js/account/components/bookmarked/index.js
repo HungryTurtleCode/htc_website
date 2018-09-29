@@ -9,9 +9,18 @@ const bookmarkedComponent = angular
     $stateProvider
       .state('bookmarked', {
         url: '/bookmarked',
-        template: '<bookmarked courses="$resolve.signin"></bookmarked>',
+        template: '<bookmarked courses="$resolve.courses"></bookmarked>',
         resolve: {
-          signin: ['accountService', (account) => {
+          signin: ['accountService', 'auth', '$window', (account, auth, $window) => {
+            return auth.isLoggedIn()
+              .then(res => {
+                if (!res) {
+                  $window.location.href = '/courses';
+                }
+                return res;
+              });
+          }],
+          courses: ['accountService', (account) => {
             return account.getUserBookmarked()
               .then(courses => {
                 return courses;

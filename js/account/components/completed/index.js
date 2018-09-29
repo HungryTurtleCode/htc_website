@@ -8,10 +8,19 @@ const completedComponent = angular
     $stateProvider
       .state('completed', {
         url: '/completed',
-        template: '<completed courses="$resolve.signin"></completed>',
+        template: '<completed courses="$resolve.courses"></completed>',
         // TODO add a resolve to check wait for log in Sun 29 Jan 2017 02:24:09 UTC
         resolve: {
-          signin: ['accountService', (account) => {
+          signin: ['accountService', 'auth', '$window', (account, auth, $window) => {
+            return auth.isLoggedIn()
+              .then(res => {
+                if (!res) {
+                  $window.location.href = '/courses';
+                }
+                return res;
+              });
+          }],
+          courses: ['accountService', (account) => {
             return account.getUserCompleted()
               .then(courses => {
                 return courses;
