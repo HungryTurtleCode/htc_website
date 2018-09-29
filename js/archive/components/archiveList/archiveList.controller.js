@@ -39,7 +39,7 @@ class ArchiveListController {
     this.analytics.trackUserEvent(
       'Search',
       {
-        event: query,
+        value: query,
         location: this.getPageLocations()
       }
     );
