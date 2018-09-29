@@ -2,6 +2,7 @@
 logs
 *.log
 npm-debug.log*
+.firebase
 
 # Runtime data
 pids
