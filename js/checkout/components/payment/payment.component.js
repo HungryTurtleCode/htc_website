@@ -34,46 +34,37 @@ const PaymentComponent = {
           </div>
       </div>
 
-      <div class="stripe-pay"
+      <form class="stripe-pay"
+        id="payment-form"
         ng-if="$ctrl.auth.loggedIn && $ctrl.activePayment === 1">
+
           <div class="payment-field">
-            <label>Name
-              <span class="error-label" ng-class="{'active': $ctrl.errors.name}">
-                {{$ctrl.errors.name}}
-              </span>
+            <label>
+              <input ng-model="$ctrl.payment.name" type="text" placeholder="Jane Doe" ng-class="{'error': $ctrl.errors.name, 'is-empty': !$ctrl.payment.name, 'is-focused': $ctrl.focused.name}" class="field" ng-focus="$ctrl.focused.name = true" ng-blur="$ctrl.focused.name = false">
+              <span><span ng-class="{'error': $ctrl.errors.name}">Name</span></span>
             </label>
-            <input ng-model="$ctrl.payment.name" type="text" placeholder="Name" ng-class="{'error': $ctrl.errors.name}">
-          </div>
-          <div class="payment-field">
-            <label>Card Number
-              <span class="error-label" ng-class="{'active': $ctrl.errors.number}">
-                {{$ctrl.errors.number}}
-              </span>
-            </label>
-            <input ng-model="$ctrl.payment.card.number" type="text" placeholder="Card Number" ng-class="{'error': $ctrl.errors.number}" ng-change="$ctrl.onNumberChange()">
           </div>
 
-          <div class="half-wrapper">
-            <div class="payment-field half-width">
-              <label>CVC</label>
-              <input ng-model="$ctrl.payment.card.cvc" type="text" placeholder="CVC" ng-class="{'error': $ctrl.errors.cvc}" ng-change="$ctrl.onCvcChange()">
-            </div>
 
-            <div class="payment-field half-width">
-              <label>Expiry</label>
-              <input ng-model="$ctrl.payment.card.expiry" type="text" placeholder="MM / YY" ng-change="$ctrl.onExpiryChange()" ng-class="{'error': $ctrl.errors.exp_month || $ctrl.errors.exp_year}">
-            </div>
+
+          <div class="payment-field">
+            <label>
+              <div id="card-element" class="field is-empty"></div>
+              <span><span ng-class="{'error': $ctrl.errors.number}">
+                {{$ctrl.errors.number ? $ctrl.errors.number : 'Card or debit card'}}
+              </span></span>
+            </label>
           </div>
 
           <button ng-click="$ctrl.stripeBuy()">
-            <span ng-if="!$ctrl.paymentLoading">Pay Now</span>
+            <span ng-if="!$ctrl.paymentLoading">Pay {{$ctrl.cart.getTotal() | currency:$:0}}</span>
             <htc-spinner ng-if="$ctrl.paymentLoading"></htc-spinner>
           </button>
-          <div class="payment-total">
+          <!--<div class="payment-total">
             Total: {{$ctrl.cart.getTotal() | currency:$:0}}
-          </div>
+          </div>-->
           <div class="purchase-feedback">{{$ctrl.feedbackText}}</div>
-      </div>
+      </form>
 
     </div>
   `

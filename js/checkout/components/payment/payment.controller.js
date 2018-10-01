@@ -1,22 +1,65 @@
 class PaymentController{
-  constructor(stripe, analytics, cart, fb, auth) {
+  constructor(stripe, analytics, cart, fb, auth, $timeout) {
     this.stripe = stripe;
     this.analytics = analytics;
     this.cart = cart;
     this.fb = fb;
     this.auth = auth;
+    this.$timeout = $timeout;
   }
   $onInit(){
     this.activePayment = 1;
     this.paymentLoading = false;
     this.feedbackText = '';
     this.errors = {};
-    this.payment = {
-      card: {
-        number: '',
-        cvc: '',
-        expiry: '',
-      }
+    this.payment = {}
+    this.focused = {
+      name: false,
+    };
+    this.elements = {};
+    this.$timeout(() => {
+      this.mountStripeElements();
+    }, 0);
+  }
+  mountStripeElements() {
+    const card = this.stripe.createElement('card', {
+      iconStyle: 'solid',
+      style: {
+        base: {
+          iconColor: '#8898AA',
+          color: '#454545',
+          lineHeight: '36px',
+          fontWeight: 300,
+          fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+          fontSize: '19px',
+
+          '::placeholder': {
+            color: '#8898AA',
+          },
+        },
+        invalid: {
+          iconColor: '#e85746',
+          color: '#e85746',
+        }
+      },
+      classes: {
+        focus: 'is-focused',
+        empty: 'is-empty',
+      },
+    });
+
+    card.mount('#card-element');
+    card.addEventListener('change', event => {
+      this.$timeout(() => {
+        if (event.error) {
+          this.errors.number = event.error.message;
+        } else {
+          this.errors.number = '';
+        }
+      }, 0);
+    });
+    this.elements = {
+      card,
     }
   }
   paypalBuy(){
@@ -60,42 +103,8 @@ class PaymentController{
       console.error(err)
     });
   }
-  getNumberChars(str) {
-    return str.split('')
-      .map(val => parseInt(val))
-      .filter(val => !isNaN(val));
-  }
-  onExpiryChange() {
-    const exp = this.payment.card.expiry;
-    const chars = this.getNumberChars(exp);
-
-    if (chars.length > 2) {
-      chars.splice(2, 0, ' / ');
-    }
-    this.payment.card.expiry = chars.slice(0, 5).join('');
-  }
-  onCvcChange() {
-    const cvc = this.payment.card.cvc;
-    const chars = this.getNumberChars(cvc);
-    this.payment.card.cvc = chars.slice(0, 3).join('');
-  }
-  onNumberChange() {
-    const number = this.payment.card.number;
-    const chars = this.getNumberChars(number);
-
-    if (chars.length > 4) {
-      chars.splice(4, 0, ' ');
-    }
-    if (chars.length > 9) {
-      chars.splice(9, 0, ' ');
-    }
-    if (chars.length > 14) {
-      chars.splice(14, 0, ' ');
-    }
-    this.payment.card.number = chars.slice(0, 19).join('');
-  }
   validatePaymentData(data) {
-    const keys = ['cvc', 'exp_month', 'exp_year', 'number', 'name'];
+    const keys = ['name'];
     const errors = [];
 
     for (let i = 0; i < keys.length; i++) {
@@ -106,67 +115,19 @@ class PaymentController{
           key,
           error: `${key} must not be blank`,
         });
-      } else if (key === 'cvc') {
-        const chars = this.getNumberChars(val);
-        if (chars.length !== 3) {
-          errors.push({
-            key,
-            error: 'CVC must be 3 digits',
-          });
-        } else {
-          const number = parseInt(chars.join(''));
-          if (number > 999) {
-            errors.push({
-              key,
-              error: 'CVC number is invalid',
-            });
-          }
-        }
-      } else if (key === 'exp_month') {
-        const chars = this.getNumberChars(val);
-        const number = parseInt(chars.join(''));
-        if (number > 12 || number < 0) {
-          errors.push({
-            key,
-            error: 'Month must be between 1 and 12',
-          });
-        }
-      } else if (key === 'exp_year') {
-        const chars = this.getNumberChars(val);
-        const number = parseInt(chars.join(''));
-        if (number < 18) {
-          errors.push({
-            key,
-            error: 'Invalid year',
-          });
-        }
-      } else if (key === 'number') {
-        const chars = this.getNumberChars(val);
-        if (chars.length !== 16) {
-          errors.push({
-            key,
-            error: 'Card number must be 16 digits long',
-          });
-        }
       }
     }
     return errors;
   }
   stripeBuy(){
+    if(this.paymentLoading) return;
     this.errors = {};
-    const expSplit = this.payment.card.expiry.split('/');
-    const exp_month = (expSplit[0] || '').trim();
-    const exp_year =  (expSplit[1] || '').trim();
 
-    const cardData = {
+    const extraData = {
       name: this.payment.name,
-      number: this.payment.card.number,
-      cvc: this.payment.card.cvc,
-      exp_month,
-      exp_year,
     }
 
-    const errors = this.validatePaymentData(cardData);
+    const errors = this.validatePaymentData(extraData);
 
     if (errors.length) {
       this.errors = errors.reduce((agg, val) => {
@@ -176,15 +137,21 @@ class PaymentController{
       return;
     }
 
-    if(this.paymentLoading) return;
     this.paymentLoading = true;
     this.feedbackText = '';
 
-    this.stripe.card.createToken(cardData)
+    this.stripe.stripe.createToken(this.elements.card, extraData)
       .then(response => {
-        console.log('token created for card ending in ', response.card.last4);
+        if (response.error) {
+          this.$timeout(() => {
+            this.paymentLoading = false;
+          }, 0);
+          this.errors.number = response.error.message;
+          return;
+        }
+        console.log('token created for card ending in ', response.token.card.last4);
 
-        this.fb.stripeBuy(this.cart.cart, response.id)
+        this.fb.stripeBuy(this.cart.cart, response.token.id)
           .then(data => {
             if(data.success){
               this.cart.cart.forEach(item => {
@@ -227,6 +194,6 @@ class PaymentController{
   }
 }
 
-PaymentController.$inject = ['stripe', 'analyticsService', 'cartService', 'firebaseService', 'auth'];
+PaymentController.$inject = ['stripeService', 'analyticsService', 'cartService', 'firebaseService', 'auth', '$timeout'];
 
 export default PaymentController;
