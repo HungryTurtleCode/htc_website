@@ -6,9 +6,15 @@ layout: default
 
 <div id="page-container">
   <main>
+    {% assign max = site.num_homepage_posts %}
+    {% assign count = 0 %}
     {% for post in site.posts %}
       {% unless post.loop == false %}
         {% include article-excerpt.html data=post %}
+        {% assign count = count | plus: 1 %}
+        {% if count >= max %}
+          {% break %}
+        {% endif %}
       {% endunless %}
     {% endfor %}
   </main>
