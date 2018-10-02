@@ -25,8 +25,6 @@ class AccountService{
       });
   }
   getUserBookmarked(){
-    if(this.bookmarked.length){return Promise.resolve(this.bookmarked)}
-
     return this.fb.getUserBookmarked()
       .then(courses => {
         this.bookmarked = courses || [];
