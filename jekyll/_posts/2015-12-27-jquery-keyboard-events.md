@@ -4,7 +4,7 @@ date: 2015-12-27T12:02:02+00:00
 author: Adrian
 layout: post-sidebar
 permalink: /tutorials/jquery-keyboard-events/
-image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2Fother_side.jpg?alt=media&token=fa9d3ef7-eda1-4216-815a-b43b2e3dc9c0 
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2Farticle_images_2Fother_side_zdjrse.jpg?alt=media&token=4e5005ae-024c-4f25-a92e-cc0c6edfe3aa
 excerpt: How do I track keystrokes with jQuery? I often hear people who are just getting into programming ask things like, “but how do I use this in the real world?”. It is all well and good understanding things from a …
 course-index: jquery-keyboard
 videoID: zi9JA9LLIcM

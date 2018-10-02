@@ -4,7 +4,7 @@ date: 2016-01-03T01:55:46+00:00
 author: Adrian
 layout: post-sidebar
 permalink: /tutorials/jquery-keyboard-events-part-2/
-image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2Fother_side_2.jpg?alt=media&token=d94618c9-82b3-4a31-9554-2d8e65ba9d3a 
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2Farticle_images_2Fother_side_2_vkgo5w.jpg?alt=media&token=2eb30bd7-e1df-4640-a3eb-8e0528b5e5c8
 excerpt: What Is This Modular JavaScript You Speak Of? This is part 2 of this mini series recreating the “Other Side” video effect using jQuery keyboard events. If you haven’t seen part 1, go take a look at that first. In …
 course-index: jquery-keyboard
 categories:
