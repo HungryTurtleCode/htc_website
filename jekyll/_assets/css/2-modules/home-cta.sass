@@ -3,49 +3,108 @@ $neut1-primary: mix-neutral($harm-primary)
 $neut2-primary: lighten($neut1-primary, 40%)
 $neut3-primary: darken($neut1-primary, 20%)
 $neut3-primary: lighten($neut1-primary, 20%)
+$dark-primary: darken($primary-color, 20%)
 
 .cta
-  background: $neut2-primary
+  // background: $neut2-primary
+  // background: #fefefe
+  background: #fcfcfc
   margin-bottom: 2em
   position: relative
+  overflow-x: hidden
+  height: 780px
+  display: flex
+  justify-content: center
+  align-items: center
   overflow: hidden
 
   .right-block
-    height: 500px
-    width: 1000px
-    transform: rotate(-40deg)
-    background: $neut1-primary
+    height: 100%
+    width: 100%
+    transform: skewY(-12deg)
+    // background: $neut1-primary
+    background: #c2c2c2
     position: absolute
-    top: -40%
-    left: -35%
+    transform-origin: 0
+    // background: linear-gradient(150deg,#53f 15%,#05d5ff 70%,#a6ffcb 94%)
+    // background: linear-gradient(150deg,$primary-color 15%,#05d5ff 70%,$neut2-primary 94%)
+    background: linear-gradient(150deg,$dark-primary 10%,#05d5ff 70%,lighten($primary-color, 30%) 94%)
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2)
 
-  .left-block
-    height: 500px
-    width: 1500px
-    transform: rotate(30deg)
-    background: $neut3-primary
-    position: absolute
-    top: -40%
-    left: 55%
-    z-index: 0
+    span
+      position: absolute
+      height: 150px
+
+      &:nth-child(1)
+        background: $dark-primary
+        height: 150px
+        width: 24%
+        left: -12%
+        top: 0
+
+      // &:nth-child(2)
+      //   background: #1a696e
+      //   height: 150px
+      //   width: 24%
+      //   top: 0
+      //   left: 12%
+
+      &:nth-child(3)
+        background: #158290
+        height: 150px
+        width: 70%
+        top: 0
+        left: 30%
+
+      &:nth-child(4)
+        background: #fcfcfc
+        height: 200px
+        border-radius: 2px
+        width: 47%
+        bottom: -1px
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.07)
+
+      &:nth-child(5)
+        // background: #fcfcfc
+        background: #05d3fc
+        background: linear-gradient(150deg, #08c7ec 10%,#05d5ff 50%, #67dce9 94%)
+        height: 150px
+        border-radius: 2px
+        width: 30%
+        left: 67%
+        // box-shadow: 1px 1px 2px #05d4fe
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.07)
+        // right: -12%
+        // top: 60%
+        bottom: 200px
 
   .cont
     width: 1200px
-    padding: 3em 2em 2em 2em
-    margin: 0 auto
+    max-width: 100%
+    color: white
+    color: pick-contrast(#0abcdd)
+    color: $default-dark-color
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+    // padding: 3em 2em 2em 2em
+    // margin: 0 auto
+    margin-top: -50px
     text-align: center
     position: relative
     z-index: 10
+    -webkit-font-smoothing: antialiased
 
   h1
-    color: pick-contrast($neut2-primary)
+    // color: pick-contrast($neut2-primary)
+    // font-weight: 400
     margin: 0
     padding: 0
+    text-transform: uppercase
 
   p
     font-size: 1.1em
     max-width: 600px
     margin: 3em auto
+    color: lighten($default-dark-color, 5%)
 
   .button
     text-decoration: none
@@ -53,16 +112,22 @@ $neut3-primary: lighten($neut1-primary, 20%)
     // color: lighten(mix-neutral($secondary-color), 70%)
     // background: tint($secondary-color, 10%)
     // background: $neut3-primary
-    background: $primary-color
-    color: pick-contrast($primary-color)
+    // background: $primary-color
+    // background: $secondary-color
+    background: $default-dark-color
+    // color: pick-contrast($primary-color)
+    color: pick-contrast($default-dark-color)
     padding: 1em 2em
     border: none
     outline: none
     cursor: pointer
-    transition: background 0.3s ease-in
+    transition: background 0.3s ease-in, box-shadow 0.3s ease-in
+    border-radius: 2px
 
     &:hover
-      background: shade($primary-color, 20%)
+      // background: shade($primary-color, 20%)
+      background: $primary-color
+      box-shadow: 3px 3px 6px rgba(0,0,0,0.4)
 
 
 
