@@ -79,6 +79,11 @@ const ArchiveList = {
             </p>
             <p class="text">Lessons</p>
           </div>
+          <div ng-if="post.enrolled" class="is-enrolled">
+            <p>
+              ENROLLED
+            </p>
+          </div>
           <a ng-href="{{post.url}}">
             <img ng-src="{{post.image}}"/>
           </a>

@@ -149,8 +149,10 @@ archive-list
     .item-image-cont
       height: 10em
       overflow: hidden
+      position: relative
 
-      .lessons
+      .lessons,
+      .is-enrolled
         position: absolute
         background: green
         display: inline-block
@@ -164,6 +166,15 @@ archive-list
 
           &.text
             font-size: 0.6em
+
+      .is-enrolled
+        font-size: 1.5em
+        right: 0
+        transform: rotate(45deg)
+        top: 30px
+        width: 250px
+        right: -65px
+        background: $secondary-color
 
       img
         width: 100%

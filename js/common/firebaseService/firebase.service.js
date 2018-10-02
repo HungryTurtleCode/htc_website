@@ -186,7 +186,7 @@ class FirebaseService{
   }
   getUserEnrolledCourses(){
     return this.api.get(`/user/enrollments`)
-      .then(res => res.courses);
+      .then(res => res.courses || []);
   }
   getSingleComment(comment_id){
     return this.api.get(`/comments/single/${comment_id}`)

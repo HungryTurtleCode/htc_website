@@ -1,11 +1,25 @@
 class ArchiveListController {
-  constructor(paginationService, analytics, $location) {
+  constructor(paginationService, analytics, $location, firebase) {
     this.paginationService = paginationService;
     this.analytics = analytics;
     this.$location = $location;
+    this.fb = firebase;
 
     this.data = courseList;
+    this.enrollments = [];
     this.setupData(this.data);
+  }
+  $onInit(){
+    this.search = this.getParameterByName('search') || '';
+    this.orderParam = '-timemark';
+    this.fb.getUserEnrolledCourses()
+      .then(res => {
+        this.enrollments = res.map(val => val.course_id);
+        this.setupData();
+      });
+  }
+  isEnrolledInCourse(course) {
+    return this.enrollments.indexOf(course) > -1;
   }
   setupData(){
     let difficultyData = {
@@ -18,12 +32,11 @@ class ArchiveListController {
       item.price = item.price || 0;
       item.lessons = item.lessons || 0;
       item.difficultyNum = difficultyData[item.skill.toLowerCase()] || 2;
+      const urlSplit = item.url.split('/').filter(val => !!val);
+      item.id = urlSplit[urlSplit.length - 1];
+      item.enrolled = this.isEnrolledInCourse(item.id);
       return item;
     });
-  }
-  $onInit(){
-    this.search = this.getParameterByName('search') || '';
-    this.orderParam = '-timemark';
   }
   getStartFromData(){
     return this.paginationService.currentPage * this.paginationService.pageSize;
@@ -86,6 +99,6 @@ class ArchiveListController {
   }
 }
 
-ArchiveListController.$inject = ['paginationService', 'analyticsService', '$location'];
+ArchiveListController.$inject = ['paginationService', 'analyticsService', '$location', 'firebaseService'];
 
 export default ArchiveListController ;
