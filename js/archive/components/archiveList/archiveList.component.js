@@ -70,7 +70,7 @@ const ArchiveList = {
 
   <!--ng-repeat="course in list.courses | filter:list.search | filter:list.selectFramework | filter:list.selectLang | filter:list.enrolled | calcPage | startFrom:list.pagination.currentPage*list.pagination.pageSize | limitTo:list.pagination.pageSize | orderBy:list.orderParam">-->
 
-    <div class="archive-item" ng-repeat="post in $ctrl.data | orderBy:$ctrl.orderParam | filter:$ctrl.search | calcPage | startFrom:$ctrl.getStartFromData() | limitTo: $ctrl.paginationService.pageSize">
+    <div class="archive-item" ng-repeat="post in filteredPosts = ($ctrl.data | orderBy:$ctrl.orderParam | filter:$ctrl.search | calcPage | startFrom:$ctrl.getStartFromData() | limitTo: $ctrl.paginationService.pageSize)">
       <section>
         <div class="item-image-cont">
           <div ng-if="post.lessons" class="lessons">
@@ -154,6 +154,9 @@ const ArchiveList = {
           </a>
         </div>
       </section>
+    </div>
+    <div ng-show="filteredPosts.length === 0">
+      No courses found for <strong>{{$ctrl.search}}</strong>
     </div>
 
     <paginate-buttons></paginate-buttons>
