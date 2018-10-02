@@ -21,7 +21,7 @@
       {% endif %}
     {% endfor %}
 
-    {% if sameTagCount >= minCommonTags %}
+    {% if sameTagCount >= minCommonTags and post.loop %}
       <a href="{{ site.baseurl  }}{{ post.url  }}">
         <div class="related-item">
           <img src="{{post.image}}"/>
