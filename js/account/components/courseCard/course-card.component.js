@@ -30,7 +30,7 @@ const CourseCard = {
         </ul>-->
       </div>
       <div class="info-end">
-        <a ng-href="/lessons/#!/{{$ctrl.courseData.course_id}}/">Learn More</a>
+        <a ng-href="/lessons/#!/{{$ctrl.courseData.course_id}}/">Go To Course</a>
       </div>
       <bookmark-button course="$ctrl.courseData.course_id" ng-if="$ctrl.showBookmark"></bookmark-button>
   `
