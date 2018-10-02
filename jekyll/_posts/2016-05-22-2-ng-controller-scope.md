@@ -8,6 +8,7 @@ head-title: Part 2 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-2_j1jjhy.jpg?alt=media&token=5132e829-c4a4-4b95-9bf5-29f80e43f17f
 excerpt: Using An Angular Controller To Add Content In the last part we wrote our first bits of Angular code. One of those bits was the code that instantiates the controller for our list view. In this part we will take …
 loop: false
+series: Basic Angular Quiz App
 
 course-index: angular-quiz
 categories:

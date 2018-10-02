@@ -8,6 +8,7 @@ head-title: Part 7 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-7_hy22ev.jpg?alt=media&token=91a09386-dfd1-4cc3-a34c-f6394b732d4f
 excerpt: Angular Services – Serving (Some) Of Your Needs Fully armed with the knowledge on how to hide and show HTML elements, we can now go ahead and create the quiz controller that we will show at the same time that …
 loop: false
+series: Basic Angular Quiz App
 
 course-index: angular-quiz
 categories:

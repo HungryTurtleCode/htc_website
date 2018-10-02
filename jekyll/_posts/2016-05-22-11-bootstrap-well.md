@@ -8,6 +8,7 @@ alias: /code-projects/angular-quiz-app/11-bootstrap-well/
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-11_jxnkd4.jpg?alt=media&token=5cc5fd19-bb21-49c6-bdc0-8e937f4efb1b
 excerpt: Bootstrapping The Quiz Questions No waiting around here, let’s just jump straight into creating the markup for the questions in the quiz. The whole area will be surrounded in a bootstrap well and we will pull the questions from the …
 loop: false
+series: Basic Angular Quiz App
 
 course-index: angular-quiz
 categories:

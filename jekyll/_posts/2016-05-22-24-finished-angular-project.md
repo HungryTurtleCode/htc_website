@@ -8,6 +8,7 @@ head-title: Part 24 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-24_l0q3sc.jpg?alt=media&token=f85a27b6-2bf8-453d-9184-b5d138eb61ed
 excerpt: We Have Made It To The End, Friends There is only one small thing that we still have left to do before you have your finished Angular project. That feature is just adding a button that will take us back …
 loop: false
+series: Basic Angular Quiz App
 
 course-index: angular-quiz
 categories:

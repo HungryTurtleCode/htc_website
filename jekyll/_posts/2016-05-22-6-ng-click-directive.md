@@ -8,6 +8,7 @@ head-title: Part 6 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-6_njlvtc.jpg?alt=media&token=bc80f7d0-71e2-42c3-80c0-c1504ef05af1
 excerpt: Ng-Click Directive And Ng-Show / Ng-Hide We’re nearly in a position to move away from our list controller and start building out the quiz controller. But before we can do that we need to create the “start quiz” button, which …
 loop: false
+series: Basic Angular Quiz App
 
 course-index: angular-quiz
 categories:

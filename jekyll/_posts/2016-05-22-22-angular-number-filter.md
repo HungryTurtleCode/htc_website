@@ -8,6 +8,7 @@ head-title: Part 22 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-22_zw1ina.jpg?alt=media&token=481d5545-ef32-4a19-831a-47e01f4a09ca
 excerpt: Last Two Functions For The ResultsCtrl In this part we will add the final two functions into the results controller. A function that will be similar to the setActiveQuestion in the quiz controller but not nearly as complex and the …
 loop: false
+series: Basic Angular Quiz App
 
 course-index: angular-quiz
 categories:

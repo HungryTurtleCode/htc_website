@@ -8,6 +8,7 @@ head-title: Part 4 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-4_xidsve.jpg?alt=media&token=e4ecadcc-e7ee-406b-90f7-291b6e15651c
 excerpt: Bootstrap Modal Markup And Other CSS We made a good start on our bootstrap markup in last part but we did end up leaving a few little issues with the CSS most notably the image sizing was not consistent.
 loop: false
+series: Basic Angular Quiz App
 
 course-index: angular-quiz
 categories:

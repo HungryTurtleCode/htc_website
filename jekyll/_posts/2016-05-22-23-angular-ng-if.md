@@ -8,6 +8,7 @@ head-title: Part 23 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-23_gxzkuu.jpg?alt=media&token=298261de-b7e5-4418-833e-61ca3a111e2b
 excerpt: Our Old Enemy – The Image Questions When we created the quiz controller we had the problem of the image urls displaying instead of the images themselves on image questions. We again face this problem in the results controller. Having …
 loop: false
+series: Basic Angular Quiz App
 
 course-index: angular-quiz
 categories:

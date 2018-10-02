@@ -8,6 +8,7 @@ head-title: Part 21 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-21_vaxed8.jpg?alt=media&token=da4b2142-1fac-41cc-ab94-2353473bd0ad
 excerpt: Deja Vu + A New Way To Use Ng-Class Much like the previous part, the markup in this part will be very similar to that of the markup in the quiz controller. But we will spice things up a bit …
 loop: false
+series: Basic Angular Quiz App
 
 course-index: angular-quiz
 categories:
