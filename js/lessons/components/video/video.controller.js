@@ -3,13 +3,15 @@ class VideoController{
     this.analytics = analytics;
     this.$location = $location;
     this.lessonVid = [];
-
-    // this.poster = 'https://artfiles.alphacoders.com/365/36568.gif';
-    // this.poster = 'http://www.freeiconspng.com/uploads/spinner-icon-0.gif';
-    this.poster = 'http://zellox.com/wp-content/uploads/2016/05/animated-gif-wallpaper-3.gif';
+    this.setPoster();
 
     this.posterLoaded = false;
     this.videoPlayed = false;
+  }
+  setPoster() {
+    this.poster = 'https://res.cloudinary.com/djxscnpzf/image/upload/v1538525843/36568_hn6x3c.gif';
+    // this.poster = 'http://www.freeiconspng.com/uploads/spinner-icon-0.gif';
+    // this.poster = 'http://zellox.com/wp-content/uploads/2016/05/animated-gif-wallpaper-3.gif';
   }
   $onInit(){
     this.config = {
@@ -35,7 +37,7 @@ class VideoController{
       this.poster = change.poster.currentValue;
       this.posterLoaded = true;
     }else if(!this.posterLoaded){
-      this.poster = 'http://zellox.com/wp-content/uploads/2016/05/animated-gif-wallpaper-3.gif';
+      this.setPoster();
     }
   }
   onPlayerReady($API){
