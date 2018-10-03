@@ -35,7 +35,7 @@
       var apiScript = document.createElement("script");
       var node = document.getElementsByTagName('script')[0];
       apiScript.async = 1;
-      apiScript.src = '{% asset_path youtubeembedtracking %}';
+      apiScript.src = '/assets/youtubeembedtracking.js';
       node.parentNode.insertBefore(apiScript, node);
     }
     function addAPIScript(){
