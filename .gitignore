@@ -39,6 +39,7 @@ jspm_packages
 _image_optim_archive
 _image_optim_cache.yml
 _site
+jekyll/_assets/js/*
 jekyll/_assets/js/bundle.*
 jekyll/_assets/js/account.*
 jekyll/_assets/js/post.*
