@@ -10,6 +10,8 @@
     "api": "npm start --prefix api/",
     "build": "yarn webpack -- --env.env=prod",
     "deploy": "rm -r _site && export JEKYLL_ENV=production && yarn build && bundle exec jekyll build --config _config.prod.yml && firebase deploy",
+    "jekyll:build": "rm -r _site && bundle exec jekyll build",
+    "jekyll:prod": "rm -r _site && export JEKYLL_ENV=production && bundle exec jekyll build --config _config.prod.yml",
     "webpack-defaults": "webpack-defaults",
     "dev": "yarn webpack:watch -- --env.env=dev",
     "dev:analyse": "yarn dev -- --env.addons=bundleanalyse",
