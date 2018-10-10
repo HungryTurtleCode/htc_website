@@ -9,10 +9,10 @@ layout: default
 
       {% include breadcrumbs.html data=page %}
 
-      <h1>
-        {{page.title}}
+      <div class="title-tag-wrapper">
+        <h1>{{page.title}}</h1>
         {% include tags.html data=page %}
-      </h1>
+      </div>
 
       {% include author-tag.html data=page %}
 
