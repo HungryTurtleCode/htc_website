@@ -1,6 +1,5 @@
 ---
 title: Internet Explorer is Gone!!!
-head-title: No More Internet Explorer 8, 9 or 10
 date: 2016-01-07T04:26:03+00:00
 author: Adrian
 layout: post

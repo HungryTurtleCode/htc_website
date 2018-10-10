@@ -4,7 +4,6 @@ date: 2016-07-22T15:47:38+00:00
 author: Adrian
 layout: post-sidebar
 alias: /tips-tricks/console-trace/
-head-title: Console.trace() - Javascript Debugging
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FJavaScript_DebuggngTip_1_tgpysg.jpg?alt=media&token=ed01815f-4744-4641-a593-c5b68801ec76
 excerpt: Little Known But Powerful Tool – console.trace() A while ago I released a post and a video about using console.table as part of your javascript debugging arsenal. I got a great reception from it and many people said they where …
 course-index: js-debugging

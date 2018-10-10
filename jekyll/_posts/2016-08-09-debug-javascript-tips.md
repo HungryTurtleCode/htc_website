@@ -4,7 +4,6 @@ date: 2016-08-09T14:39:30+00:00
 author: Adrian
 layout: post-sidebar
 alias: /tips-tricks/debug-javascript-tips/
-head-title: Debug() - Javascript Debugging
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FJavaScript_Debug_method.jpg?alt=media&token=41860161-c0bd-4ad3-aa56-cdf800aac5d6
 excerpt: Debug() – The Death Of Ctrl+f If you are anything like me, you have wasted countless hours of your life using ctrl+f to find functions inside your code. If you only have one file, ctrl+f is still going to be …
 videoID: wRWVNCdygEY
