@@ -9,6 +9,11 @@ class Auth{
     this.isLoggedIn();
   }
   isLoggedIn() {
+    const token = JSON.parse(localStorage.getItem('htca')) || '';
+    if (token) {
+      this.loggedIn = true;
+    }
+
     return this.fb.isLoggedIn()
       .then(res => {
         this.authSubs.forEach(fn => fn(res));
@@ -26,6 +31,11 @@ class Auth{
   }
   subscribeAuthChange(fn) {
     this.authSubs.push(fn);
+    if (this.loggedIn) {
+      setTimeout(() => {
+        fn(true);
+      }, 0);
+    }
   }
 }
 
