@@ -12,7 +12,8 @@ const config = {
     'contact': './js/contact.js',
     'archive': './js/archive.js',
     'forgot': './js/forgot.js',
-    'reset': './js/reset.js'
+    'reset': './js/reset.js',
+    'donate': './js/donate.js'
   },
   output: {
     filename: "[name].js",

@@ -44,6 +44,9 @@ class FirebaseService{
         return response;
       });
   }
+  stripeDonate(amount, token){
+    return this.api.post(`/purchase/donate`, {amount, token});
+  }
   logOut() {
     return this.api.delete('/auth')
       .then(res => res.success);

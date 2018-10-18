@@ -1,18 +1,16 @@
 class PaymentController{
-  constructor(stripe, analytics, cart, fb, auth, $timeout) {
+  constructor(stripe, analytics, fb, auth, $timeout) {
     this.stripe = stripe;
     this.analytics = analytics;
-    this.cart = cart;
     this.fb = fb;
     this.auth = auth;
     this.$timeout = $timeout;
   }
   $onInit(){
-    this.activePayment = 1;
     this.paymentLoading = false;
     this.feedbackText = '';
     this.errors = {};
-    this.payment = {}
+    this.payment = {};
     this.focused = {
       name: false,
     };
@@ -20,6 +18,21 @@ class PaymentController{
     this.$timeout(() => {
       this.mountStripeElements();
     }, 0);
+  }
+  amountChange() {
+    const chars = this.payment.amount.split('');
+
+    let hasDecimal = false;
+    this.payment.amount = chars.reduce((agg, ch) => {
+      const num = parseFloat(ch);
+      if (!isNaN(num)) {
+        agg += ch;
+      } else if (ch === '.' && !hasDecimal) {
+        agg += ch;
+        hasDecimal = true;
+      }
+      return agg;
+    }, '');
   }
   mountStripeElements() {
     const card = this.stripe.createElement('card', {
@@ -62,49 +75,8 @@ class PaymentController{
       card,
     }
   }
-  paypalBuy(){
-    if(this.paymentLoading) return;
-    this.paymentLoading = true;
-    this.feedbackText = '';
-    this.fb.paypalBuy(this.cart.cart)
-      .then(data => {
-        if(data.url){
-          this.analytics.fbTrackEvent(
-                                      'Purchase',
-                                      {
-                                        content_ids: this.cart.cart,
-                                        content_type: 'courses',
-                                        value: this.cart.getTotal().toFixed(2),
-                                        currency: 'USD'
-                                      },
-                                      'content_type'
-                                    );
-          this.cart.cart.forEach(item => {
-            this.analytics.trackEvent('Purchase', item.name, null, item.price);
-            // TODO track purchase analytics on the server not here Mon 24 Jul 2017 16:26:12 UTC
-            this.analytics.trackUserEvent('Purchase', {location: item.name, value: item.price});
-          });
-          this.paymentLoading = false;
-          window.location.href = data.url;
-        }else{
-          this.paymentLoading = false;
-          this.feedbackText = 'Something Went Wrong, try again later';
-          this.cart.cart.forEach(item => {
-            this.analytics.trackEvent('PaypalFAIL', item.name, null, item.price);
-          });
-        }
-      })
-    .catch(err => {
-      this.paymentLoading = false;
-      this.feedbackText = 'Something Went Wrong, try again later';
-      this.cart.cart.forEach(item => {
-        this.analytics.trackEvent('PaypalFAIL', item.name, null, item.price);
-      });
-      console.error(err)
-    });
-  }
   validatePaymentData(data) {
-    const keys = ['name'];
+    const keys = ['name', 'amount'];
     const errors = [];
 
     for (let i = 0; i < keys.length; i++) {
@@ -116,15 +88,25 @@ class PaymentController{
           error: `${key} must not be blank`,
         });
       }
+      if (key === 'amount') {
+        const num = parseFloat(val);
+        if (isNaN(num)) {
+          errors.push({
+            key,
+            error: `${key} must be a valid number`,
+          });
+        }
+      }
     }
     return errors;
   }
-  stripeBuy(){
+  stripeDonate(){
     if(this.paymentLoading) return;
     this.errors = {};
 
     const extraData = {
       name: this.payment.name,
+      amount: this.payment.amount,
     }
 
     const errors = this.validatePaymentData(extraData);
@@ -151,30 +133,25 @@ class PaymentController{
         }
         console.log('token created for card ending in ', response.token.card.last4);
 
-        this.fb.stripeBuy(this.cart.cart, response.token.id)
+        const amount = parseFloat(parseFloat(this.payment.amount).toFixed(2)) * 100;
+
+        this.fb.stripeDonate(amount, response.token.id)
           .then(data => {
             if(data.success){
-              this.cart.cart.forEach(item => {
-                this.analytics.trackEvent('Purchase', item.name, null, item.price);
-                // TODO track purchase analytics on the server not here Mon 24 Jul 2017 16:26:12 UTC
-                this.analytics.trackUserEvent('Purchase', {location: item.name, value: item.price})
-              });
+              this.analytics.trackEvent('Donate', 'donate', null, amount);
+              this.analytics.trackUserEvent('Donate', {location: 'donate', value: amount})
               this.paymentLoading = false;
               window.location.href = data.url;
             }else{
               this.paymentLoading = false;
               this.feedbackText = 'Something Went Wrong, try again later';
-              this.cart.cart.forEach(item => {
-                this.analytics.trackEvent('StripeFAIL', item.name, null, item.price);
-              });
+              this.analytics.trackEvent('StripeFAIL', 'donate', null, amount);
             }
           })
           .catch(err => {
             this.paymentLoading = false;
             this.feedbackText = 'Something Went Wrong, try again later';
-            this.cart.cart.forEach(item => {
-              this.analytics.trackEvent('StripeFAIL', item.name, null, item.price);
-            });
+            this.analytics.trackEvent('StripeFAIL','donate', null, amount);
             console.error(err)
           });
       })
@@ -187,13 +164,11 @@ class PaymentController{
         } else {
           this.feedbackText = 'Something Went Wrong. Please try again later';
         }
-        this.cart.cart.forEach(item => {
-          this.analytics.trackEvent('StripeApiFAIL', item.name, null, item.price);
-        });
+        this.analytics.trackEvent('StripeFAIL','donate', null, amount);
       });
   }
 }
 
-PaymentController.$inject = ['stripeService', 'analyticsService', 'cartService', 'firebaseService', 'auth', '$timeout'];
+PaymentController.$inject = ['stripeService', 'analyticsService', 'firebaseService', 'auth', '$timeout'];
 
 export default PaymentController;
