@@ -11,6 +11,8 @@ primary:
     url: /about-me/
   - title: Contact Me
     url: /contact-me/
+  - title: Donate
+    url: /support/
   # - title: My Courses
   #   url: /account/
 
