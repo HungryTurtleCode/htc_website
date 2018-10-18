@@ -18,9 +18,28 @@ layout: default
 
       {% include video-embed.html videoID=page.videoID %}
 
-      <div analytics-scroll class="lesson-content-article">
-        {% include share.html %}
-        {{content}}
+      {% include share.html %}
+      <div class="article-wrapper">
+        <div analytics-scroll class="lesson-content-article">
+          {{content}}
+        </div>
+        <div class="resource-sidebar">
+          {% if page.demo or page.repo or page.resouces %}
+            <h3>Links:</h3>
+            <ul>
+              {% if page.demo %}
+                <li><a href="{{site.url}}/demos/{{page.demo}}" target="_blank">Live demo</a></li>
+              {% endif %}
+              {% if page.repo %}
+                <li><a href="https://github.com/{{site.github_org}}/{{page.repo}}" target="_blank">Github Repo</a></li>
+              {% endif %}
+              <br/>
+              {% for res in page.resources %}
+                <li><a href="{{res.link}}" target="_blank">{{res.name}}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
       </div>
 
       <div id="content-end">

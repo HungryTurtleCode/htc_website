@@ -7,20 +7,26 @@ alias: /code-projects/angular-quiz-app/3-ng-repeat-directive/
 head-title: Part 3 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-3_tuziev.jpg?alt=media&token=ce33aa8b-ba5f-408a-923e-b5bf84a965b9
 excerpt: Ng-Repeat Directive Will Do Your Work For You Now armed with the ability to create controller properties with some data attached then inserting that data into our HTML we can move on to create something useful.
-loop: false
-series: Basic Angular Quiz App
 
+videoID: iAX67gisQ2M
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+series: Basic Angular Quiz App
+loop: false
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
-videoID: iAX67gisQ2M
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## Ng-Repeat Directive Will Do Your Work For You
 

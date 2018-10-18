@@ -7,20 +7,26 @@ alias: /code-projects/angular-quiz-app/14-index-for-ng-repeat/
 head-title: Part 14 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-14_swngy0.jpg?alt=media&token=01ff7799-c3a7-4acf-add9-5a53ff857548
 excerpt: Index For Ng-Repeat Will Help User Feedback We now have the questions all displaying nicely in the quiz. The problem we face now is that when the user selects an answer there is no visual feedback to let them know …
-loop: false
-series: Basic Angular Quiz App
 
+videoID: lQ4lVuGC2F4
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+series: Basic Angular Quiz App
+loop: false
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
-videoID: lQ4lVuGC2F4
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## Index For Ng-Repeat Will Help User Feedback
 

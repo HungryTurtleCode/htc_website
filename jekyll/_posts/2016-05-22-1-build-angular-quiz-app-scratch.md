@@ -7,19 +7,24 @@ layout: post-sidebar
 alias: /code-projects/1-build-angular-quiz-app-scratch/
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-Quiz-App_kifpk9.jpg?alt=media&token=8a4e0a51-43c6-4abb-9731-86e1d8aedaf0 
 excerpt: I’ve Learnt Some JavaScript! What Now? That may be something that pretty much all of us have said at some point or another. You have learnt some basic programming syntax, but you now want to build something.
-videoID: yordL7Yczes
 
+videoID: yordL7Yczes
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## I&#8217;ve Learnt Some JavaScript! What Now?
 

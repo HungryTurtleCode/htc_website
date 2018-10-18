@@ -7,20 +7,26 @@ alias: /code-projects/angular-quiz-app/19-angular-dependency-injection/
 head-title: Part 19 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-19_f7ugae.jpg?alt=media&token=d824b20e-e6a5-43eb-b3af-9e7b00ced4e5
 excerpt: First Steps To Getting The Results We have finished the quiz controller so now it is time to start the results controller. In the last part we created a property called resultsActive, which is what we will use to trigger …
-loop: false
-series: Basic Angular Quiz App
 
+videoID: N6N3KhkKk3o
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+series: Basic Angular Quiz App
+loop: false
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
-videoID: N6N3KhkKk3o
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## First Steps To Getting The Results
 

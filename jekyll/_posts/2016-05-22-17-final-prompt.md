@@ -7,20 +7,26 @@ alias: /code-projects/angular-quiz-app/17-final-prompt/
 head-title: Part 17 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-17_blwjwc.jpg?alt=media&token=8bb7a5e3-615b-4127-8ca1-741f4577285b
 excerpt: The End Of The Quiz Controller Is Near The only thing left for us to do with the quiz controller is just prompt the user when they have finished just to confirm they want to move onto the results page. …
-loop: false
-series: Basic Angular Quiz App
 
+videoID: 6uZfUfB4bN8
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+series: Basic Angular Quiz App
+loop: false
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
-videoID: 6uZfUfB4bN8
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## The End Of The Quiz Controller Is Near
 

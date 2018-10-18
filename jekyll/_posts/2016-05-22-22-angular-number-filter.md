@@ -7,20 +7,26 @@ alias: /code-projects/angular-quiz-app/22-angular-number-filter/
 head-title: Part 22 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-22_zw1ina.jpg?alt=media&token=481d5545-ef32-4a19-831a-47e01f4a09ca
 excerpt: Last Two Functions For The ResultsCtrl In this part we will add the final two functions into the results controller. A function that will be similar to the setActiveQuestion in the quiz controller but not nearly as complex and the …
-loop: false
-series: Basic Angular Quiz App
 
+videoID: mWmfEtzGtRY
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+series: Basic Angular Quiz App
+loop: false
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
-videoID: mWmfEtzGtRY
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## Last Two Functions For The ResultsCtrl
 

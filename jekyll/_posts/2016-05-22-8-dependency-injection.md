@@ -7,20 +7,26 @@ alias: /code-projects/angular-quiz-app/8-dependency-injection/
 head-title: Part 8 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-8_imuigb.jpg?alt=media&token=fbcbdb21-7e4d-49f8-ae0b-fb1e9da4c909
 excerpt: Make The Factory Useful – Dependency Injection It is no use to us to have a factory if we cannot use it inside our controller. In this part we will inject the factory into the list controller so we can …
-loop: false
-series: Basic Angular Quiz App
 
+videoID: txzLabEIP_w
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+series: Basic Angular Quiz App
+loop: false
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
-videoID: txzLabEIP_w
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## Make The Factory Useful &#8211; Dependency Injection
 

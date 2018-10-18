@@ -7,20 +7,26 @@ alias: /code-projects/angular-quiz-app/23-angular-ng-if/
 head-title: Part 23 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-23_gxzkuu.jpg?alt=media&token=298261de-b7e5-4418-833e-61ca3a111e2b
 excerpt: Our Old Enemy – The Image Questions When we created the quiz controller we had the problem of the image urls displaying instead of the images themselves on image questions. We again face this problem in the results controller. Having …
-loop: false
-series: Basic Angular Quiz App
 
+videoID: xxH3dhPC5bY
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+series: Basic Angular Quiz App
+loop: false
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
-videoID: xxH3dhPC5bY
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## Our Old Enemy &#8211; The Image Questions
 

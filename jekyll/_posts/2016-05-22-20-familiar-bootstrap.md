@@ -7,20 +7,26 @@ alias: /code-projects/angular-quiz-app/20-familiar-bootstrap/
 head-title: Part 20 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-20_jtmhg5.jpg?alt=media&token=07629e87-bb51-4d29-bcec-9b0b88ae939b
 excerpt: Some Really Familiar Bootstrap Markup This lesson isn’t introducing anything new. Infact, you will have seen much of this code before. What we are tackling is the area at the top of the results controller that shows what questions the user …
-loop: false
-series: Basic Angular Quiz App
 
+videoID: AxQcLIRoxYw
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+series: Basic Angular Quiz App
+loop: false
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
-videoID: AxQcLIRoxYw
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## Some Really Familiar Bootstrap Markup
 

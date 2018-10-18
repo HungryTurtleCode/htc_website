@@ -7,20 +7,26 @@ alias: /code-projects/angular-quiz-app/16-bootstrap-alerts/
 head-title: Part 16 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-16_nvilyd.jpg?alt=media&token=746bda3d-9a59-4b5e-a714-c0f2ac4750a1
 excerpt: Errors Must Be Handled In All Apps Handling errors is a critical part of the life of a software developer. If you cannot handle errors, you will create code that has a ton of bugs and just doesn’t function satisfactorily. …
-loop: false
-series: Basic Angular Quiz App
 
+videoID: doU9zxZBoXI
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+series: Basic Angular Quiz App
+loop: false
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
-videoID: doU9zxZBoXI
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## Errors Must Be Handled In All Apps
 

@@ -7,20 +7,26 @@ alias: /code-projects/angular-quiz-app/7-angular-services/
 head-title: Part 7 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-7_hy22ev.jpg?alt=media&token=91a09386-dfd1-4cc3-a34c-f6394b732d4f
 excerpt: Angular Services – Serving (Some) Of Your Needs Fully armed with the knowledge on how to hide and show HTML elements, we can now go ahead and create the quiz controller that we will show at the same time that …
-loop: false
-series: Basic Angular Quiz App
 
+videoID: HrbkZO5Mt0g
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+series: Basic Angular Quiz App
+loop: false
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
-videoID: HrbkZO5Mt0g
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## Angular Services &#8211; Serving (Some) Of Your Needs
 

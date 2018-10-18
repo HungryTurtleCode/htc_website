@@ -7,20 +7,26 @@ alias: /code-projects/angular-quiz-app/18-marking-the-quiz/
 head-title: Part 18 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-18_eybezd.jpg?alt=media&token=70cb5428-d3fe-4394-88f4-1625ac3033d8
 excerpt: No Quiz Is Complete Without It Being Marked In the last part we reference a function on the quizMetrics factory that we have not yet created. So it will be the task of this part to create that function – …
-loop: false
-series: Basic Angular Quiz App
 
+videoID: mBDbwKr4DyQ
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+series: Basic Angular Quiz App
+loop: false
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
-videoID: mBDbwKr4DyQ
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## No Quiz Is Complete Without It Being Marked
 

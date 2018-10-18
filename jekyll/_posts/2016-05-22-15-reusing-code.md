@@ -7,20 +7,26 @@ alias: /code-projects/angular-quiz-app/15-reusing-code/
 head-title: Part 15 AngularJS Quiz App Tutorial
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FAngular-quiz-part-15_xy7gaj.jpg?alt=media&token=faacff61-45bf-451c-bc9f-679e8fdd1573
 excerpt: Custom CSS For Image Feedback + Code Reuse Having nice user feedback is great, but move forward to the image questions and you will find that it all breaks. There is no feedback whatsoever for the image questions. In this …
-loop: false
-series: Basic Angular Quiz App
 
+videoID: kDQco9gfYmo
+repo: TurtleFactQuiz
+demo: turtlefacts
+fbimg: /assets/ng-quiz-app-fb.jpg
+twitterimg: /assets/ng-quiz-app-twitter.jpg
+googleplusimg: /assets/ng-quiz-app-fb.jpg
 course-index: angular-quiz
+series: Basic Angular Quiz App
+loop: false
+
 categories:
   - Projects
 tags:
   - AngularJS
   - Basic Angular Quiz App
   - Javascript
-fbimg: /assets/ng-quiz-app-fb.jpg
-twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
-videoID: kDQco9gfYmo
+resources:
+  - name: Angular Docs
+    link: https://docs.angularjs.org/api
 ---
 ## Custom CSS For Image Feedback + Code Reuse
 
