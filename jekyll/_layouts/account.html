@@ -24,9 +24,12 @@
       <!-- <li ui-sref="completed" ui-sref-active="active">Completed</li> -->
       <!-- <hr> -->
       <!-- <li ui-sref="bookmarked" ui-sref-active="active">Bookmarked</li> -->
-      <hr>
       <li ui-sref="account" ui-sref-active="active">Profile</li>
-      <!-- <hr> -->
+      <hr>
+      {% for nav in site.data.navigation.sidebar %}
+        <li><a href="{{site.url}}{{nav.url}}">{{nav.title}}</a></li>
+        <hr>
+      {% endfor %}
     </ul>
   </div>
   <div class="account-container">
