@@ -13,13 +13,13 @@ hide-related: true
 
 ![Adrian Henry - Hungry Turtle Code]({% asset_path adrian_portrait %}){: class="alignright" width="375" height="493"}
 
-I will start with myself. My name is Adrian Henry and I founded Hungry Turtle Code. I am a 23 year old currently living in Ireland.
+I will start with myself. My name is Adrian Henry and I founded Hungry Turtle Code. I am a 26 year old currently living in the UK.
 
 Code has played a part of my life since my early teens, but I was always mainly a hardware kind of guy. I loved tinkering with electronics and building cool projects. Of course code was usually involved in some capacity.
 
 I then went to University and did a degree in Electronic and Electrical Engineering at Loughborough University in Leicestershire, England.
 
-I even worked for a year as an Electronic Engineer at a (very) large multinational.
+I even worked for a while as an Electronic Engineer at a (very) large multinational.
 
 ### I Needed MOAR Code!
 
@@ -31,16 +31,16 @@ It was at this point that I knew software was where I should be, despite still h
 
 During this time, I was also pursuing other programming languages in my spare time. I learnt JavaScript and PHP and started doing some freelance web development to earn some extra money.
 
-I started off doing very basic projects just to gain experience. PSD to HTML conversions and that sort of thing &#8211; adding some jQuery and thinking I was the greatest.
+I started off doing very basic projects just to gain experience. PSD to HTML conversions and that sort of thing &#8211; adding some jQuery to websites and thinking I was the greatest (we have all been there).
 
-After my year of full time employment as an Electronic Engineer I had a few realisations.
+After my time of full time employment as an Electronic Engineer I had a few realisations.
 
-  1. I didn&#8217;t like having a boss.
+  1. I didn&#8217;t like having a boss that wouldn't let me do all the cool things I wanted to do.
   2. My real skill set lay in code.
 
 It was at that point that I started getting more serious with the freelance web work I was doing. I was filling my day with doing projects for clients and reading and learning about all the latest technologies and news.
 
-In my spare time I would still tinker with other programming projects.
+In my spare time I would still tinker with other programming projects, trying to get as much exposure to as wide array of langauges and technology stacks as possible.
 
 ## The (Hungry Turtle) Code Life.
 
@@ -54,9 +54,9 @@ It was then a natural extension to just create a site to start teaching some of 
 
 I get to learn things and teach those things to others. It was a win win all round. I love it.
 
-The added bonus is that I may be able to make a small amount of money to maintain the longevity of the site through some adverts and occasional premium courses. 95%+ of the content I create will be free though!
+The added bonus is that I may be able to make a small amount of money to maintain the longevity of the site through donations from you wonderful people. This allows me to keep all the content on here free so everyone in the world has the opportunity to learn this amazing and liberating art / science of code.
 
-### But where does Hungry Turtle come from?
+### But where does the name Hungry Turtle come from?
 
 Honestly, I have no idea. It just came to me one day when I was thinking of names. All I knew is I didn&#8217;t want to fall into the trap of looking &#8220;hipster&#8221; or &#8220;corporate&#8221;.
 
@@ -66,7 +66,10 @@ Hungry is also a nice word to use in an educational context as it implies desire
 
 **Plus, Turtles are AMAZING!**
 
-Feel free to follow me on social media (Links in the sidebar and footer), I try to be as active as possible.
+Feel free to follow me on social media, I try to be as active as possible.
+* [twitter](https://twitter.com/hungryturtledev){: target="_blank"}<!--_-->
+* [twitter (personal)](https://twitter.com/theproofofsteak){: target="_blank"}<!--_-->
+* [facebook](https://www.facebook.com/hungryturtlecode/){: target="_blank"}<!--_-->
 
 I like to engage in conversation, **so don&#8217;t be shy.**
 
