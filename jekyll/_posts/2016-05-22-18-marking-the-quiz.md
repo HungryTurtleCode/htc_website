@@ -26,7 +26,7 @@ videoID: mBDbwKr4DyQ
 
 In the [last part]({{site.baseurl}}/projects/17-final-prompt/){: target="_blank"}<!--_--> we reference a function on the quizMetrics factory that we have not yet created. So it will be the task of this part to create that function &#8211; a function that will mark the answers to the quiz and calculate how many correct answers that user gave. Let&#8217;s get on with marking the quiz.
 
-**If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
+**If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/demos/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 

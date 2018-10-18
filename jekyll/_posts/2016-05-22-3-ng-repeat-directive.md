@@ -30,7 +30,7 @@ Now armed with the ability to create controller properties with some data attach
 
 Of course, in any application some data is needed. This data is usually fetched from an [API](https://en.wikipedia.org/wiki/Application_programming_interface){: target="_blank"}<!--_--> on a backend server. However, for this tutorial we will just be focusing on the front end implementation of this application. As a result, we will need to simulate the data in some way.
 
-**If you want to check out the finished app,** [you can see it here]({{site.baseurl}}/turtlefacts).
+**If you want to check out the finished app,** [you can see it here]({{site.baseurl}}/demos/turtlefacts).
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 

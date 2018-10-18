@@ -26,7 +26,7 @@ videoID: EEOMwWO0lhg
 
 There is only one small thing that we still have left to do before you have your finished Angular [project]({{site.baseurl}}/projects/){: target="_blank"}<!--_-->. That feature is just adding a button that will take us back to the start &#8211; the list page.
 
-**If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
+**If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/demos/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 

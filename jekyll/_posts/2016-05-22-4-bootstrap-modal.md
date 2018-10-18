@@ -26,7 +26,7 @@ videoID: IW37XF2g7AU
 
 We made a good start on our bootstrap markup in [last part](/3-ng-repeat-directive) but we did end up leaving a few little issues with the CSS most notably the image sizing was not consistent. <!--more-->So let&#8217;s kick things off this time by just fixing up those problems. Then we will start creating the bootstrap modal.
 
-If you want to see the app in action, [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
+If you want to see the app in action, [check it out here]({{site.baseurl}}/demos/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 

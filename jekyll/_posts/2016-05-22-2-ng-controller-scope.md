@@ -31,7 +31,7 @@ As the saying goes, there are many ways to skin a cat. What that means for us no
 
 In this article I will explain the two main methods of doing this and the pros and cons of both. I will of course also tell you which method I prefer and why.
 
-**If you want to see the app for yourself,** [check it out here.](/turtlefacts)
+**If you want to see the app for yourself,** [check it out here.](/demos/turtlefacts)
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 

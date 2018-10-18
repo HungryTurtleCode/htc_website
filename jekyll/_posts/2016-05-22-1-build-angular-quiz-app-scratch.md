@@ -45,7 +45,7 @@ This results in some of the code not being perfect &#8220;Angular&#8221;. So if 
 
 Take a look at the video below (which is also a video version of this written tutorial) and you will see the application in action.
 
-[Or you can see the finished working application here.]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
+[Or you can see the finished working application here.]({{site.baseurl}}/demos/turtlefacts){: target="_blank"}<!--_-->
 
 The application itself is a quiz application with a little learning &#8220;Facts&#8221; area for users to swot up before they take the quiz. The user will then get their results when they are finished.
 

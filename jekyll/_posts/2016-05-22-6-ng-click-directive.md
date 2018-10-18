@@ -26,13 +26,13 @@ videoID: ZKbPtYYbSOg
 
 We&#8217;re nearly in a position to move away from our list controller and start building out the quiz controller. But before we can do that we need to create the “start quiz” button, which is what we will tackle first. We will then use the ng-click directive to control functionality when the button is clicked.
 
-**If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
+**If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/demos/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 
 [The next part can be found here]({{site.baseurl}}/projects/7-angular-services/)
 
-As you can see from the [example application]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_--> in the video the button is on the right hand side of the grey area where are search bar is. This is part of the same form in the HTML. So we will start by creating a button with some bootstrap classes to pull it to the right.
+As you can see from the [example application]({{site.baseurl}}/demos/turtlefacts){: target="_blank"}<!--_--> in the video the button is on the right hand side of the grey area where are search bar is. This is part of the same form in the HTML. So we will start by creating a button with some bootstrap classes to pull it to the right.
 
 ![start quiz button]({% asset_path start_quiz_button %}){: class="aligncenter" width="800" height="148"}
 

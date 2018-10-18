@@ -28,7 +28,7 @@ Ok, enough playing around, let&#8217;s really dig into the power of AngularJS. C
 
 Using Angular filters in this way is definitely one of my favourite features of AngularJS. It makes seemingly difficult tasks so easy and straight forward to do.
 
-If you want to take a look at this search functionality in action, it can be seen in the video below or [check out the app here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->. As always this video is exactly the same as this article just to give you some options of how you want your information.
+If you want to take a look at this search functionality in action, it can be seen in the video below or [check out the app here]({{site.baseurl}}/demos/turtlefacts){: target="_blank"}<!--_-->. As always this video is exactly the same as this article just to give you some options of how you want your information.
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 

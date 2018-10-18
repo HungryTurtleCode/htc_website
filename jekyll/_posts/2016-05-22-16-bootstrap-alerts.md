@@ -26,7 +26,7 @@ videoID: doU9zxZBoXI
 
 Handling errors is a critical part of the life of a software developer. If you cannot handle errors, you will create code that has a ton of bugs and just doesn’t function satisfactorily. In this part of the series we will use [bootstrap alerts](http://www.tutorialspoint.com/bootstrap/bootstrap_alerts.htm){: target="_blank"}<!--_--> to display an error message when the user tries to continue at the last question but they haven’t answered all questions yet.
 
-**If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
+**If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/demos/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 

@@ -26,7 +26,7 @@ videoID: bGyvJMprAcg
 
 Much like the [previous part]({{site.baseurl}}/projects/20-familiar-bootstrap/){: target="_blank"}<!--_-->, the markup in this part will be very similar to that of the markup in the quiz controller. But we will spice things up a bit by adding new elements and showing a different way of using ng-class &#8211; using a function with ng-class instead of an object with name:value pairs.
 
-**If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->
+**If you want to see the app for yourself,** [check it out here]({{site.baseurl}}/demos/turtlefacts){: target="_blank"}<!--_-->
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 
@@ -97,7 +97,7 @@ Now that that&#8217;s done we can write the code into that h4. It will be much l
 
 ### Adding More Feedback To Each Answer
 
-If you have seen the [final application]({{site.baseurl}}/turtlefacts){: target="_blank"}<!--_-->, you will notice that the answers in the results section display “correct answer” and if you gave a different answer it will display “your answer” on that on to let you know what answer you gave and what the actual correct answer was.
+If you have seen the [final application]({{site.baseurl}}/demos/turtlefacts){: target="_blank"}<!--_-->, you will notice that the answers in the results section display “correct answer” and if you gave a different answer it will display “your answer” on that on to let you know what answer you gave and what the actual correct answer was.
  
 ![results question additonal feedback]({% asset_path results_question_additional_feedback %}){: class="aligncenter" width="800" height="262"}
 

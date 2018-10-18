@@ -26,7 +26,7 @@ videoID: lQ4lVuGC2F4
 
 We now have the questions all displaying nicely in the quiz. The problem we face now is that when the user selects an answer there is no visual feedback to let them know that they have selected that answer. In this part we will introduce [index for ng-repeat](https://docs.angularjs.org/api/ng/directive/ngRepeat){: target="_blank"}<!--_--> and create that feedback for the users.
 
-**If you want to see the app for yourself,** [check it out here.](/turtlefacts)
+**If you want to see the app for yourself,** [check it out here.](/demos/turtlefacts)
 
 The git repo [can be found here](https://github.com/adiman9/HungryTurtleFactQuiz){: target="_blank"}<!--_-->.
 
