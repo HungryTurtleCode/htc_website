@@ -30,7 +30,9 @@ layout: default
 
         {% include related-posts.html %}
 
-        <post-comment></post-comment>
+        {% if page.hide-comments != true %}
+          <post-comment></post-comment>
+        {% endif %}
       </div>
 
       <div id="scroll-indicator"></div>

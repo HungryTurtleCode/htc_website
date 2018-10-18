@@ -4,6 +4,9 @@ date: 2015-12-27T11:58:34+00:00
 author: Adrian
 layout: post
 permalink: /about-me/
+hide-share: true
+hide-comments: true
+hide-related: true
 ---
 
 ## Who Am I? And What Is Hungry Turtle Code?
