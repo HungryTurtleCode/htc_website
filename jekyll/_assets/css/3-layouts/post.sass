@@ -72,8 +72,13 @@
 
     .title-tag-wrapper
       display: flex
+      flex-direction: column
       justify-content: space-between
-      align-items: center
+      // align-items: center
+      align-items: flex-start
+
+      h1
+        margin-bottom: 0
 
     @media screen and (max-width: 1500px)
       width: 65%
