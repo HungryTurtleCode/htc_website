@@ -6,7 +6,7 @@ const HeaderComponent = {
     <div class="header-panel">
       <div class="sign-in-register">
 
-        <div class="cart-icon">
+        <!--<div class="cart-icon">
           <a class="notification-btn"
             ng-click="$ctrl.cartClick()"
             href="{{site.baseurl}}/checkout"
@@ -30,7 +30,7 @@ const HeaderComponent = {
               {{$ctrl.cartSvc.cart.length}}
             </span>
           </a>
-        </div>
+        </div>-->
 
         <div class="relative">
           <button class="notification-btn"

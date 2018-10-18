@@ -5,14 +5,14 @@ primary:
     url: /projects/
   - title: Tutorials
     url: /tutorials/
-  - title: Premium Courses
-    url: /courses/
+  # - title: Premium Courses
+  #   url: /courses/
   - title: About Me
     url: /about-me/
   - title: Contact Me
     url: /contact-me/
-  - title: My Courses
-    url: /account/
+  # - title: My Courses
+  #   url: /account/
 
 sidebar:
   - title: Javascript
