@@ -9,6 +9,7 @@ class Auth{
     this.isLoggedIn();
   }
   isLoggedIn() {
+    this.fb.api.checkForJWT();
     const token = JSON.parse(localStorage.getItem('htca')) || '';
     if (token) {
       this.loggedIn = true;
