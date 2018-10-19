@@ -37,6 +37,13 @@ class Auth{
         fn(true);
       }, 0);
     }
+    return () => {
+      const index = this.authSubs.indexOf(fn);
+
+      if (index > -1) {
+        this.authSubs.splice(index, 1);
+      }
+    }
   }
 }
 
