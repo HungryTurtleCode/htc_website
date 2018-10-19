@@ -15,15 +15,17 @@ class HeaderController{
 
     this.cartSvc.getCart();
 
+    let hasNotifCheck = false;
     this.auth.subscribeAuthChange(res => {
       this.loggedIn = res;
       this.loading = false;
 
       this.getNotifications();
 
-      this.$timeout(() => {
-        this.getNotifications();
-      }, 30000) ;
+      if (!hasNotifCheck) {
+        hasNotifCheck = true;
+        this.notificationTimeout();
+      }
     });
 
     window.addEventListener('click', event => {
@@ -31,6 +33,12 @@ class HeaderController{
         this.notificationActive = false;
       });
     });
+  }
+  notificationTimeout() {
+    this.$timeout(() => {
+      this.getNotifications();
+      this.notificationTimeout();
+    }, 30000) ;
   }
   getNotifications() {
     if(this.loggedIn) {
