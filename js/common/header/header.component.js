@@ -86,10 +86,10 @@ const HeaderComponent = {
                 ng-click="$ctrl.clickNotificationItem(notif)"
                 ng-repeat="notif in $ctrl.notifications">
                   <div class="top">
-                    <img ng-src="{{notif.image}}">
+                    <img ng-src="{{notif.image || $ctrl.defaultImage}}">
                     <p class="reply-text">
                       <span ng-if="notif.type === 'comment'">
-                        <strong>{{notif.from_name}}</strong> said something in a discussion you are involved in on <strong>{{notif.page_name}}</strong>
+                        <strong>{{notif.from_name || 'Unnamed user'}}</strong> said something in a discussion you are involved in on <strong>{{notif.page_name}}</strong>
                         <!--<strong>{{notif.from_name}}</strong> said something in a discussion you are involved in</strong>-->
                       </span>
                     </p>

@@ -4,6 +4,7 @@ class HeaderController{
     this.fb = firebaseService;
     this.$timeout = $timeout;
     this.cartSvc = cartService;
+    this.defaultImage = 'https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png';
   }
   $onInit(){
     this.loggedIn = false;
