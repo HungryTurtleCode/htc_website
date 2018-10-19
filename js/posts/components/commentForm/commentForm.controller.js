@@ -52,10 +52,10 @@ class commentFormController{
           'content'
         );
 
-        this.refresh();
         this.feedbackText = 'Comment Submitted Successfully'
         this.error = false;
         this.submitLoading = false;
+        // this.refresh();
       })
       .catch(err => {
         console.error(err);
