@@ -62,6 +62,9 @@ class FirebaseService{
     }
     return this.api.post(`/auth/login`, obj);
   }
+  changeUserPassword(obj) {
+    return this.api.post(`/auth/changepassword`, obj);
+  }
   userRegister(email, password, password2) {
     const obj = {
       email,

@@ -9,12 +9,64 @@ class AccountController{
     this.forgotPassword = false;
     this.error = false;
     this.loading = false;
+    this.changePassActive = false;
+    this.changePassData = {};
   }
   forgotPass(){
     this.forgotPassword = true;
   }
   closeForgot(){
     this.forgotPassword = false;
+  }
+  triggerChangePassword() {
+    this.changePassActive = true;
+  }
+  changePassword() {
+    const {
+      oldPass,
+      newPass,
+      repeatPass,
+    } = this.changePassData;
+
+    if (!oldPass) {
+      this.error = true;
+      this.feedbackText = 'Old password must not be blank';
+      return;
+    } else if (!newPass) {
+      this.error = true;
+      this.feedbackText = 'New password must not be blank';
+      return;
+    } else if (newPass.length < 6) {
+      this.error = true;
+      this.feedbackText = 'New password must be at least 6 characters';
+      return;
+    } else if (newPass !== repeatPass) {
+      this.error = true;
+      this.feedbackText = 'Passwords must match';
+      return;
+    }
+    this.error = false;
+    this.userData.changeUserPassword(this.changePassData)
+      .then(res => {
+        this.changePassActive = false;
+        this.changePassData = {};
+        if (res.success) {
+          this.feedbackText = 'Successfully Updated Password';
+        } else if (res.errors) {
+          this.error = true;
+          this.feedbackText = res.errors[0].msg;
+        } else {
+          this.error = true;
+          this.feedbackText = 'Something went wrong, please try again later';
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        this.changePassActive = false;
+        this.error = true;
+        this.feedbackText = 'Something went wrong, please try again later';
+      })
+
   }
   save(){
     this.loading = true;

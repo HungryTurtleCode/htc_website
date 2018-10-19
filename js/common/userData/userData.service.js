@@ -10,6 +10,15 @@ class userData{
 
     this.getUserMeta();
   }
+  changeUserPassword(obj) {
+    return this.fb.changeUserPassword(obj)
+      .then((res) => {
+        if(res.errors) {
+          throw res.errors;
+        }
+        return res;
+      });
+  }
   getUserMeta(){
     if(this.user.name){return Promise.resolve(this.user)}
     if(this.gettingMeta) {

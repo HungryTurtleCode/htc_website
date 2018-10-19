@@ -39,9 +39,30 @@ const AccountComponent = {
         </div>
         <label>Email</label>
         <input type="text" placeholder="Email" ng-model="$ctrl.user.email">
+
+        <div
+          class="change-password-wrapper"
+          ng-if="$ctrl.userData.user.provider === 'password'"
+        >
+          <button class="change-pass" ng-click="$ctrl.triggerChangePassword()" ng-if="!$ctrl.changePassActive">
+            Change Password
+          </button>
+          <div ng-if="$ctrl.changePassActive">
+            <label>Old Password</label>
+            <input type="password" ng-model="$ctrl.changePassData.oldPass">
+            <label>New Password</label>
+            <input type="password" ng-model="$ctrl.changePassData.newPass">
+            <label>Repeat Password</label>
+            <input type="password" ng-model="$ctrl.changePassData.repeatPass">
+            <button class="change-pass" ng-click="$ctrl.changePassword()">
+              Save New Password
+            </button>
+          </div>
+        </div>
         <span class="feedback-text" ng-class="{'error': $ctrl.error}">
           {{$ctrl.feedbackText}}
         </span>
+
         <button class="submit" ng-click="$ctrl.save()">
           <span ng-if="!$ctrl.loading">Save</span>
           <htc-spinner ng-if="$ctrl.loading"></htc-spinner>
