@@ -14,15 +14,6 @@ const accountComponent = angular
         url: '/account',
         template: '<account user="$resolve.user"></account>',
         resolve: {
-          signin: ['accountService', 'auth', '$window', (account, auth, $window) => {
-            return auth.isLoggedIn()
-              .then(res => {
-                if (!res) {
-                  $window.location.href = '/courses';
-                }
-                return res;
-              });
-          }],
           user: ['userData', (userData) => {
             return userData.getUserMeta()
               .then(user => {
@@ -31,7 +22,7 @@ const accountComponent = angular
           }]
         }
       });
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/account');
   }])
   .name;
 

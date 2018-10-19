@@ -1,14 +1,16 @@
 class userData{
-  constructor(firebaseService, analytics) {
+  constructor(firebaseService, analytics, auth) {
     this.fb = firebaseService;
     this.analytics = analytics;
+
+    auth.subscribeAuthChange((res) => {
+      this.getUserMeta();
+    });
 
     this.user = {};
 
     this.gettingMeta = false;
     this.subList = [];
-
-    this.getUserMeta();
   }
   changeUserPassword(obj) {
     return this.fb.changeUserPassword(obj)
@@ -23,7 +25,8 @@ class userData{
     if(this.user.name){return Promise.resolve(this.user)}
     if(this.gettingMeta) {
       return new Promise((resolve, reject) => {
-        this.subToMeta((meta) => {
+        const unsub = this.subToMeta((meta) => {
+          unsub();
           resolve(meta);
         });
       });
@@ -32,9 +35,10 @@ class userData{
 
     return this.fb.getUserMeta()
       .then(meta => {
-        this.user = meta;
+        this.gettingMeta = false;
+        this.user = meta || {};
         this.emitMeta(this.user);
-        return meta;
+        return this.user;
       });
   }
   setUserMeta(data){
@@ -49,6 +53,14 @@ class userData{
   }
   subToMeta(fn) {
     this.subList.push(fn);
+
+    return () => {
+      const index = this.subList.indexOf(fn);
+
+      if (index > -1) {
+        this.subList.splice(index, 1);
+      }
+    }
   }
   emitMeta(meta) {
     this.subList.forEach(fn => {
@@ -58,6 +70,6 @@ class userData{
   }
 }
 
-userData.$inject = ['firebaseService', 'analyticsService'];
+userData.$inject = ['firebaseService', 'analyticsService', 'auth'];
 
 export default userData;

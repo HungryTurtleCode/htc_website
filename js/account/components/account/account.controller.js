@@ -6,17 +6,10 @@ class AccountController{
   }
   $onInit(){
     this.defaultImage = 'https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png';
-    this.forgotPassword = false;
     this.error = false;
     this.loading = false;
     this.changePassActive = false;
     this.changePassData = {};
-  }
-  forgotPass(){
-    this.forgotPassword = true;
-  }
-  closeForgot(){
-    this.forgotPassword = false;
   }
   triggerChangePassword() {
     this.changePassActive = true;
@@ -72,12 +65,12 @@ class AccountController{
     this.loading = true;
 
     if(this.profileImage){
-      // this.user.image = this.uploadService
+      // this.userData.user.image = this.uploadService
       //   .dataURItoBlob(this.profileImage[0]);
-      this.user.image = this.profileImage[0];
+      this.userData.user.image = this.profileImage[0];
     }
 
-    this.postUserData(this.user);
+    this.postUserData(this.userData.user);
   }
   postUserData(data){
     this.userData.setUserMeta(data)

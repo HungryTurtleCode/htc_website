@@ -10,27 +10,18 @@ const AccountComponent = {
       title="My Profile"
       subtitle="">
     </title-block>
-    <div ng-if="!$ctrl.user">
-      <htc-sign-in
-        forgot-pass="$ctrl.forgotPass()"
-        ng-if="!$ctrl.forgotPassword">
+    <div ng-if="!$ctrl.userData.user.id">
+      <htc-sign-in>
       </htc-sign-in>
-      <div class="forgot-container"
-        ng-if="$ctrl.forgotPassword">
-          <htc-forgot-pass
-            close-modal="$ctrl.closeForgot()"
-            text="Sign In">
-          </htc-forgot-pass>
-      </div>
     </div>
-    <div class="account-form-cont" ng-if="$ctrl.user">
+    <div class="account-form-cont" ng-if="$ctrl.userData.user.id">
       <form>
         <label>Name</label>
-        <input type="text" placeholder="Name" ng-model="$ctrl.user.name">
+        <input type="text" placeholder="Name" ng-model="$ctrl.userData.user.name">
         <label>Profile Image</label>
         <div class="upload-cont">
           <div class="img-cont">
-            <img ng-src="{{$ctrl.profileImage[0] || $ctrl.user.image || $ctrl.defaultImage}}">
+            <img ng-src="{{$ctrl.profileImage[0] || $ctrl.userData.user.image || $ctrl.defaultImage}}">
           </div>
           <label class="upload">
             <input type="file" accept="image" name="profile_image" fileread="$ctrl.profileImage"/>
@@ -38,7 +29,7 @@ const AccountComponent = {
           </label>
         </div>
         <label>Email</label>
-        <input type="text" placeholder="Email" ng-model="$ctrl.user.email">
+        <input type="text" placeholder="Email" ng-model="$ctrl.userData.user.email">
 
         <div
           class="change-password-wrapper"
