@@ -67,9 +67,13 @@ Hungry is also a nice word to use in an educational context as it implies desire
 **Plus, Turtles are AMAZING!**
 
 Feel free to follow me on social media, I try to be as active as possible.
-* [twitter](https://twitter.com/hungryturtledev){: target="_blank"}<!--_-->
-* [twitter (personal)](https://twitter.com/theproofofsteak){: target="_blank"}<!--_-->
-* [facebook](https://www.facebook.com/hungryturtlecode/){: target="_blank"}<!--_-->
+* [YouTube](https://www.youtube.com/channel/UC7Vxnf06GP6w42Lg3TQLXSw){: target="_blank"}<!--_-->
+* [Twitter](https://twitter.com/hungryturtledev){: target="_blank"}<!--_-->
+* [Twitter (personal)](https://twitter.com/theproofofsteak){: target="_blank"}<!--_-->
+* [Facebook](https://www.facebook.com/hungryturtlecode/){: target="_blank"}<!--_-->
+* [Github (Hungry Turtle Org)](https://github.com/HungryTurtleCode){: target="_blank"}<!--_-->
+* [Github (Personal)](https://github.com/adiman9){: target="_blank"}<!--_-->
+* [Patreon](https://www.patreon.com/hungryturtlecode){: target="_blank"}<!--_-->
 
 I like to engage in conversation, **so don&#8217;t be shy.**
 
