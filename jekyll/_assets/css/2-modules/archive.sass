@@ -75,6 +75,22 @@ archive-list
     margin-right: 0.75%
     margin-left: 0.75%
 
+    @media screen and (max-width: 920px)
+      +span-columns(6)
+      margin-right: 0.55%
+      margin-left: 0.55%
+
+    @media screen and (max-width: 720px)
+      +span-columns(12)
+
+    @media screen and (max-width: 550px)
+      +span-columns(6)
+      margin-right: 0.55%
+      margin-left: 0.55%
+
+    @media screen and (max-width: 360px)
+      +span-columns(12)
+
     section
       +clearfix
 

@@ -20,6 +20,9 @@ header
 
     a
       text-decoration: none
+      @media screen and (max-width: 800px)
+        display: block
+        text-align: center
 
     h4
       display: inline-block
@@ -36,9 +39,19 @@ header
       display: inline-block
       font-size: 0.8em
 
+      @media screen and (max-width: 550px)
+        display: block
+        margin: 0 auto
+
       ul
         display: inline
         padding-left: 1em
+
+        @media screen and (max-width: 550px)
+          display: flex
+          flex-wrap: wrap
+          justify-content: center
+          font-size: 1.1em
 
         li
           display: inline
@@ -75,6 +88,9 @@ header
       float: right
       width: 200px
       padding-top: 3px
+
+      @media screen and (max-width: 870px)
+        width: 130px
 
       .sign-in-register
         display: flex
@@ -188,6 +204,9 @@ header
         outline: none
         font-size: 0.8em
 
+        @media screen and (max-width: 870px)
+          font-size: 0.7em
+
         &.signin
           margin-top: 5px
           color: lighten($secondary-color, 5%)
@@ -206,3 +225,77 @@ header
       padding-left: 128px
       padding-right: 128px
 
+  &.lesson-sidebar
+  &.archive-sidebar
+    .header-container
+      .header-panel
+        @media screen and (max-width: 1140px)
+          width: 120px
+          font-size: 0.7em
+
+      nav
+        ul
+          @media screen and (max-width: 1030px)
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            margin: 0
+
+body
+  #page-container-sidebar
+    @media screen and (max-width: 770px)
+      padding-left: 180px
+
+    @media screen and (max-width: 550px)
+      padding-left: 0px
+
+    @media screen and (max-width: 725px)
+      margin-top: calc(95px + 1.7em)
+
+    @media screen and (max-width: 430px)
+      margin-top: calc(145px + 1.7em)
+
+    @media screen and (max-width: 270px)
+      margin-top: calc(175px + 1.7em)
+
+    .post-page
+      .article-wrapper
+        @media screen and (max-width: 550px)
+          display: block
+        .lesson-content-article
+          @media screen and (max-width: 550px)
+            display: block
+            width: 100%
+
+  #lesson-container
+    .sidebar-container
+      @media screen and (max-width: 770px)
+        width: 180px
+
+      @media screen and (max-width: 550px)
+        display: none
+
+  header
+    &.lesson-sidebar,
+    &.archive-sidebar
+      @media screen and (max-width: 770px)
+        margin-left: 180px
+
+      @media screen and (max-width: 550px)
+        margin-left: 0px
+
+      .header-container
+        @media screen and (max-width: 1050px)
+          padding-left: 40px
+          padding-right: 40px
+
+        @media screen and (max-width: 840px)
+          padding-left: 10px
+          padding-right: 10px
+
+
+.lesson-sidebar,
+.archive-sidebar
+  .mascot-logo-link
+    @media screen and (min-width: 550px)
+      display: none

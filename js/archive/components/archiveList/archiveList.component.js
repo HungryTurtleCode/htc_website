@@ -142,10 +142,10 @@ const ArchiveList = {
             ng-if="post.price">
               {{post.price | currency:$:0 }}
           </span>
-          <span class="price free"
+          <!--<span class="price free"
             ng-if="!post.price">
               Free
-          </span>
+          </span>-->
           <a
             ng-href="{{post.url}}"
             analytics-click="archive-card"
