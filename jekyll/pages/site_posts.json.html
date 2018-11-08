@@ -1,0 +1,22 @@
+---
+permalink: /site_posts.json
+---
+
+[
+  {% for post in site.posts %}
+    {
+      "author": {{post.author}},
+      "categories": {{post.categories}},
+      "collection": {{post.collection}},
+      "course-index": {{post.course-index}},
+      "date": {{post.date}},
+      "excerpt": {{post.excerpt}},
+      "id": {{post.id}},
+      "image": {{post.image}},
+      "slug": {{post.slug}},
+      "tags": {{post.tags}},
+      "title": {{post.title}},
+      "url": {{post.url}},
+      "videoID": {{post.videoID}}
+    },{% endfor %}
+]
