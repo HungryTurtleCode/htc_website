@@ -55,6 +55,9 @@ class ApiService{
     if (res.deauth) {
       localStorage.setItem('htca', JSON.stringify(''));
       this.$http.defaults.headers.common['Authorization'] = '';
+    } else if (res.token) {
+      localStorage.setItem('htca', JSON.stringify(res.token));
+      this.$http.defaults.headers.common['Authorization'] = `Bearer ${res.token}`;
     }
     return res;
   }
