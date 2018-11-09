@@ -19,13 +19,10 @@ You acknowledge and agree that all content and materials available on this web s
 
 **LIMITATIONS ON USE**
 
-You must be at least eighteen (18) years old to access this web site. If you are not at least eighteen years old, you are not permitted to access this web site for any reason.
+If you are under the age of thirteen (13) you must have express permission from a guardian and be supervised while using this site.
 
 If you are provided a password to access this web site, then that password is for your personal use only, unless otherwise specified. You agree to be responsible for the security of your password.
 
-**ORDER AND RETURN POLICIES**
-
-We generally ship all physical orders within two business days. For any digital products, you will receive an email with login details to our membership site or download page. We also offer a 30-day money back guarantee on all our products. If you are not completely satisfied, you can return the product to us in good condition within 30 days of the date that you placed your order. In order to receive a refund within the 30 day period for any physical products, you must return everything that was shipped to you, including any bonuses, and we must receive it at our offices before the 30 day period has passed.
 
 **THIRD PARTY REFERENCES / HYPERLINKS**
 
@@ -62,6 +59,14 @@ UNDER NO CIRCUMSTANCES SHALL COMPANY, OR ITS AGENTS, AFFILIATED COMPANIES, OFFIC
 **INDEMNIFICATION**
 
 Upon a request by COMPANY, you agree to defend, indemnify, and hold COMPANY and its other affiliated companies harmless, and their employees, contractors, officers, and directors from all liabilities, claims, and expenses, including attorney’s fees, that arise from your misuse of this web site or from your violation of the terms and conditions stated herein.
+
+**TERMINATION**
+
+We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.
+
+If you wish to terminate your account, you may simply discontinue using the Service.
+
+All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
 
 **SEVERABILITY AND INTEGRATION**
 
