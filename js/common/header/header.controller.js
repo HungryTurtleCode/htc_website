@@ -7,6 +7,19 @@ class HeaderController{
     this.defaultImage = 'https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png';
   }
   $onInit(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const confirmParam = urlParams.get('confirmed');
+
+    this.showEmailConfirm = false;
+    const emailConfirm = JSON.parse(localStorage.getItem('emailconfirmed'));
+    if (confirmParam === 'email' && !emailConfirm) {
+      this.showEmailConfirm = true;
+      localStorage.setItem('emailconfirmed', JSON.stringify(true));
+      this.$timeout(() => {
+        this.showEmailConfirm = false;
+      }, 5000);
+    }
+
     this.loggedIn = false;
     this.loading = true;
     this.showSignIn = false;

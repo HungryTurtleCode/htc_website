@@ -127,6 +127,9 @@ const HeaderComponent = {
         </button>
 
       </div>
+      <div ng-if="$ctrl.showEmailConfirm" class="email-confirm">
+        You email address has been successfully confirmed!
+      </div>
     </div>
 
     <login-modal
