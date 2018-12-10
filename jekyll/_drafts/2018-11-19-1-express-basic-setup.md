@@ -6,8 +6,8 @@ layout: post-sidebar
 image: 
 excerpt: Let's create a basic API using the ExpressJS framework built on top of Node.js. Using the data from the angular quiz app we will use express and mongodb to fetch the data from an API.
 
-videoID:
-repo: 
+videoID: kibitXQ9aME
+repo: expressQuizApi
 fbimg: 
 twitterimg: 
 googleplusimg: 
@@ -22,7 +22,7 @@ tags:
   - Javascript
   - HTTP
 resources:
-  - name: Code for Angular Turtle Quiz
+  - name: AngularJS Quiz code
     link: https://github.com/HungryTurtleCode/TurtleFactQuiz
   - name: Express Docs
     link: https://expressjs.com/en/4x/api.html
@@ -193,11 +193,11 @@ Nothing too scary right?
 
 Using the npm script we made earlier we can run {% ihighlight bash %}npm start{% endihighlight %} in a terminal window that is inside our project folder and we should see the following printed out to the terminal:
 
-**INSERT IMAGE HERE**
+![Nodemon terminal output]({% asset_path nodemon-terminal %}){: class="aligncenter" width="800"}
 
 and if we now check out the browser and go to http://localhost:8080/test (or whatever other route you defined) and you should get your hello world message like this:
 
-**INSERT IMAGE HERE**
+![Hello World API output]({% asset_path hello-world-api-express %}){: class="aligncenter"}
 
 ### What if we go to a different route?
 
@@ -205,7 +205,7 @@ In your browser you can try to navigate to a different route that you haven't de
 
 Example:
 
-**INSERT IMAGE HERE**
+![Unknown request response]({% asset_path cannot-get-sdf-express %}){: class="aligncenter"}
 
 ## What about serving static files?
 
@@ -255,7 +255,7 @@ A request for the '/' route will send back the index.html if it exists and then 
 
 So if we run the above code (where the express.static is above the app.get) in the browser we get the index.html for the quiz app show to the screen:
 
-**INSERT IMAGE HERE**
+![Express API Static files]({% asset_path express-api-static %}){: class="alignc" width="800"}
 
 But if we change the order of the express.static and app.get like so:
 
@@ -269,7 +269,7 @@ app.use(express.static('../TurtleFactQuiz'));
 
 We now get this output:
 
-**INSERT IMAGE HERE**
+![Express API Order Matters]({% asset_path api-express-order %}){: class="aligncenter"}
 
 The order of the handlers in an express app really matters and you must be aware of that otherwise you may run into some bugs that seem very strange to you.
 
@@ -297,8 +297,7 @@ By doing this, express will continue to cascade down the handlers that match the
 
 If we run the above code we get the index.html displayed in the browser but if we also take a look at the terminal to see the output of the server we see our console.log.
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![Express Next]({% asset_path made-it-here-express %}){: class="aligncenter" width="800"}
 
 ## We have stumbled upon a core idea
 
@@ -365,11 +364,11 @@ app.listen(8080, () => {
 
 So now if we go back to the browser and try to hit an unknown route we get our beautiful error message instead of express' default message.
 
-**INSERT IMAGE HERE**
+![Better 404 error message]({% asset_path express-better-unknown-request %}){: class="aligncenter"}
 
 And there you have it, you have learnt the basics of how express works. Obviously there is a lot more you can do with express and I am sure I will cover some of it in coming tutorials.
 
-[In the next tutorial]({{site.baseurl}}/projects/2-using-express-router) in this API series I will tackle how we can go about splitting our API code into different files so we don't end up with one massive index.js file.
+In the next tutorial in this API series I will tackle how we can go about splitting our API code into different files so we don't end up with one massive index.js file.
 
 Stay hungry, and keep coding.
 
