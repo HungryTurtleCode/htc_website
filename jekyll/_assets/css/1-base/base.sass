@@ -22,7 +22,7 @@ html
   @media screen and (min-width: 1200px)
     font-size: 19px
 
-  #page-container
+  #page-container,
     +outer-container
     +clearfix
     padding: 0 20px
@@ -32,21 +32,6 @@ html
       @media screen and (max-width: 768px)
         +span-columns(12)
         padding: 0 20px
-
-      img
-        border: 2px solid #ccc
-
-      .alignleft
-        float: left
-        +margin(0.3em 1.2em 1.2em 0)
-
-      .alignright
-        float: right
-        +margin(0.3em 0 1.2em 1.2em)
-
-      .aligncenter
-        display: block
-        +margin(1em auto)
 
   #page-container-100
     +clearfix
@@ -126,3 +111,19 @@ html
 .ng-leave.ng-leave-active
   opacity: 0
 
+
+main
+  img
+    border: 2px solid #ccc
+
+  .alignleft
+    float: left
+    +margin(0.3em 1.2em 1.2em 0)
+
+  .alignright
+    float: right
+    +margin(0.3em 0 1.2em 1.2em)
+
+  .aligncenter
+    display: block
+    +margin(1em auto)
