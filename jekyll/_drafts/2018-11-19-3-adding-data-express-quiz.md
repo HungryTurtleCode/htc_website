@@ -2,17 +2,16 @@
 title: Serving Data With ExpressJS | Quiz API Tutorial
 author: Adrian
 layout: post-sidebar
-image: 
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FServing%20Data%20With%20ExpressJS.jpg?alt=media&token=46b36b61-f8d7-46b1-9ab9-64db40631a48
 excerpt: It's finally time to serve some actual data via our API. We will take the data from the Angular Quiz app and serve it to users via API routes.
 
-videoID:
-repo: 
+videoID: 3v5n4DWYk2A
+repo: expressQuizApi
 fbimg: 
 twitterimg: 
 googleplusimg: 
 course-index: express-quiz-api
 series: Express Quiz API
-loop: false
 
 categories:
   - Projects

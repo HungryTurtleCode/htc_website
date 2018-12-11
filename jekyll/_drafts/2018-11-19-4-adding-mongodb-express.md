@@ -2,17 +2,16 @@
 title: Adding MongoDB to ExpressJS | Quiz API Tutorial
 author: Adrian
 layout: post-sidebar
-image: 
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2Fplay%20the%20mongo.jpg?alt=media&token=63b22a89-1a03-48ea-90e7-8d0235ebbbaf
 excerpt: The time has come to stop using hard coded data and add in a database to the project. We will be using MongoDB to store the data.
 
 videoID:
-repo: 
+repo: expressQuizApi
 fbimg: 
 twitterimg: 
 googleplusimg: 
 course-index: express-quiz-api
 series: Express Quiz API
-loop: true
 
 categories:
   - Projects
