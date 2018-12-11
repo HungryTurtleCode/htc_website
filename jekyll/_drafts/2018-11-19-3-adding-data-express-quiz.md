@@ -9,7 +9,6 @@ videoID: 3v5n4DWYk2A
 repo: expressQuizApi
 fbimg: 
 twitterimg: 
-googleplusimg: 
 course-index: express-quiz-api
 series: Express Quiz API
 

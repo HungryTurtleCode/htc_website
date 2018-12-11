@@ -13,7 +13,6 @@ repo: TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
-googleplusimg: /assets/ng-quiz-app-fb.jpg
 series: Basic Angular Quiz App
 course-index: angular-quiz
 loop: false
