@@ -21,7 +21,7 @@
     "webpack:watch": "yarn webpack -- -w",
     "webpack-dev-server": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --port=9000 --hot",
     "lint": "eslint js",
-    "minihtml": "find _site -iname *.html -type f -exec npx html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype {} -o {} \;"
+    "minihtml": "find _site -iname *.html -type f -exec npx html-minifier --collapse-whitespace --remove-comments --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype {} -o {} ';'"
   },
   "repository": {
     "type": "git",
