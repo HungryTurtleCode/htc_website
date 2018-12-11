@@ -3,9 +3,9 @@
     - title: Basic Express Setup
       length: '16:22'
       slug: 1-express-basic-setup
-    # - title: Express Router
-    #   length: '16:22'
-    #   slug: 2-using-express-router
+    - title: Express Router
+      length: '16:22'
+      slug: 2-using-express-router
     # - title: Serving Data
     #   length: '16:22'
     #   slug: 3-adding-data-express-quiz

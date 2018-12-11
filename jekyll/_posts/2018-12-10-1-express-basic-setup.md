@@ -368,7 +368,7 @@ So now if we go back to the browser and try to hit an unknown route we get our b
 
 And there you have it, you have learnt the basics of how express works. Obviously there is a lot more you can do with express and I am sure I will cover some of it in coming tutorials.
 
-In the next tutorial in this API series I will tackle how we can go about splitting our API code into different files so we don't end up with one massive index.js file.
+[In the next tutorial]({{site.baseurl}}/projects/2-using-express-router) in this API series I will tackle how we can go about splitting our API code into different files so we don't end up with one massive index.js file.
 
 Stay hungry, and keep coding.
 

@@ -2,17 +2,16 @@
 title: Using ExpressJS Router | Quiz API Tutorial
 author: Adrian
 layout: post-sidebar
-image: 
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FHow%20to%20use%20Express%20Router%20-%20post.png.jpg?alt=media&token=8508946b-bb04-43f7-b262-d1324533c0eb 
 excerpt: Express Router allows us to split up the handling of requests into multiple files to keep our code more modular and clean.
 
-videoID:
-repo: 
+videoID: paNikhYqdz0
+repo: expressQuizApi
 fbimg: 
 twitterimg: 
 googleplusimg: 
 course-index: express-quiz-api
 series: Express Quiz API
-loop: false
 
 categories:
   - Projects
