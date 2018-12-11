@@ -10,7 +10,7 @@
     "build": "yarn webpack -- --env.env=prod",
     "deploy": "rm -r _site && yarn build && JEKYLL_ENV=production bundle exec jekyll build --config _config.prod.yml && firebase deploy",
     "jekyll:build": "rm -r _site && JEKYLL_ENV=development bundle exec jekyll build",
-    "jekyll:prod": "rm -r _site && JEKYLL_ENV=production bundle exec jekyll build --config _config.prod.yml",
+    "jekyll:prod": "rm -r _site && JEKYLL_ENV=production bundle exec jekyll build --config _config.prod.yml && yarn minihtml",
     "webpack-defaults": "webpack-defaults",
     "dev": "yarn webpack:watch -- --env.env=dev",
     "dev:analyse": "yarn dev -- --env.addons=bundleanalyse",
@@ -20,7 +20,8 @@
     "webpack": "node ./node_modules/webpack/bin/webpack.js",
     "webpack:watch": "yarn webpack -- -w",
     "webpack-dev-server": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --port=9000 --hot",
-    "lint": "eslint js"
+    "lint": "eslint js",
+    "minihtml": "find _site -iname *.html -type f -exec npx html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype {} -o {} \;"
   },
   "repository": {
     "type": "git",
@@ -54,6 +55,7 @@
     "angular": "^1.6.5",
     "angular-animate": "^1.6.5",
     "angular-ui-router": "^0.4.2",
+    "html-minifier": "^3.5.21",
     "videogular": "^1.4.4",
     "videogular-controls": "^1.4.4",
     "videogular-overlay-play": "^1.4.4",
