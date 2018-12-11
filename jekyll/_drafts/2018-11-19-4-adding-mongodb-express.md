@@ -39,7 +39,7 @@ MongoDB is just one database we could choose from. There are many different type
 
 At this point you will need MongoDB installed on your machine. I am not going to go into detail about how to do that. A quick google will let you know how to install it on your system.
 
-**INSERT IMAGE HERE**
+![How to install MongoDB Google Search]({% asset_path how-to-install-mongo %}){: class="aligncenter" }
 
 Now that we have Mongo installed we can use npm (or yarn) to install a library called Mongoose.
 
@@ -694,11 +694,14 @@ Here we convert the mongoose object into a normal javascript object, save the va
   return data;
 {% endraw %}{% endhighlight %}
 
-Here we push the correct answer onto the possible answers array. Then loop through all the possible answers and make sure each is only an object with an answers property. This is done to remove the mongo id property and such. We do this because the returned data looks like this:
+Here we push the correct answer onto the possible answers array. Then loop through all the possible answers and make sure each is only an object with an answers property. This is done to remove the mongo id property and such. We do this because the returned data looks like this (notice the
+{% ihighlight bash %}{% raw %}
+_id
+{% endraw %}{% endihighlight %} property in each question possibilities object):
 
-**INSERT IMAGE HERE**
+![Unwanted Id property in the questions]({% asset_path unwanted-mongo-id-questions %}){: class="aligncenter" }
 
-We want to clean that up so there is only an answer propery on the 
+We want to clean that up so there is only an answer property on the 
 {% ihighlight javascript %}{% raw %}
 question_possibilities 
 {% endraw %}{% endihighlight %} object.
