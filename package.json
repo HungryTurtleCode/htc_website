@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "export JEKYLL_ENV=development && concurrently 'yarn dev' 'bundle exec jekyll serve --livereload --drafts'",
     "noreload": "export JEKYLL_ENV=development && concurrently 'yarn dev' 'bundle exec jekyll serve --drafts'",
-    "build": "yarn webpack -- --env.env=prod",
+    "build": "NODE_ENV=production yarn webpack -- --env.env=prod",
     "deploy": "rm -r _site && yarn build && JEKYLL_ENV=production bundle exec jekyll build --config _config.prod.yml && yarn minihtml && firebase deploy",
     "jekyll:build": "rm -r _site && JEKYLL_ENV=development bundle exec jekyll build",
     "jekyll:prod": "rm -r _site && JEKYLL_ENV=production bundle exec jekyll build --config _config.prod.yml && yarn minihtml",
