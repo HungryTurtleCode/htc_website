@@ -1,3 +1,5 @@
+import angular from 'angular';
+
 class ArchiveListController {
   constructor(paginationService, analytics, $location, firebase) {
     this.paginationService = paginationService;
@@ -35,6 +37,7 @@ class ArchiveListController {
       const urlSplit = item.url.split('/').filter(val => !!val);
       item.id = urlSplit[urlSplit.length - 1];
       item.enrolled = this.isEnrolledInCourse(item.id);
+      item.excerpt = angular.element('<textarea />').html(item.excerpt).text();
       return item;
     });
   }
