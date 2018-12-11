@@ -36,7 +36,9 @@ This is illustrating the idea of incremental addition of features. Too often peo
 So instead of introducing the database immediately, we will build with hardcoded data but keep in mind that we will have a database in the future and build accordingly (what I mean by this will become obvious is a few paragraphs).
 
 ### Get the data
-**INSERT LINK TO RAW DATA**
+
+[Find the data here](https://github.com/HungryTurtleCode/expressQuizApi/blob/master/data.js){: target="_blank"}
+
 I will start by creating a file called {% ihighlight bash %}data.js{% endihighlight %}. The data itself is three arrays each corresponding to facts about turtles, quiz questions and answers to those quiz questions respectively. We will export the three bits of data by placing the following code into data.js:
 
 {% highlight javascript %}
@@ -165,7 +167,7 @@ function dataHandler(req, res) {
 
 Checking it out in the browser by going to http://localhost:8080/api/data we see the following output:
 
-**INSERT IMAGE HERE**
+![Data returned from the API]({% asset_path data-minified-express-api %}){: class="aligncenter" }
 
 As an aside, the output doesn't look very nice, we can change that by adding this into the main app file **after** the {% ihighlight bash %}const app = express(){% endihighlight %} line:
 
@@ -237,14 +239,14 @@ function answerHandler() {
 }
 {% endhighlight %}
 
-This will nicely display the questions and answers when we got to http://localhost:8080/api/questions and http://localhost:8080/api/answers respectively:
+This will nicely display the questions and answers when we go to *http://localhost:8080/api/questions* and *http://localhost:8080/api/answers* respectively:
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![Results from questions endpoint]({% asset_path questions-endpoint-express-api %}){: class="aligncenter" }
+![Result from answers endpoint]({% asset_path answers-endpoint-express-api %}){: class="aligncenter" }
 
 With that we have implemented the data model and serving of that data to the client.
 
-[In the next part]({{site.baseurl}}/projects/4-adding-mongodb-express/) we will be adding Mongodb into the mix as a database to store the data and use that to fetch the data every time a user makes a request.
+In the next part we will be adding Mongodb into the mix as a database to store the data and use that to fetch the data every time a user makes a request.
 
 Stay hungry, and keep coding.
 
