@@ -6,12 +6,12 @@ class CartService{
     this.loading = false;
   }
   getCart() {
-    this.loading = true;
-    this.fb.getUserCart()
-      .then(cart => {
+    // this.loading = true;
+    // this.fb.getUserCart()
+    //   .then(cart => {
         this.loading = false;
-        this.cart = cart;
-      });
+    //     this.cart = cart;
+    //   });
   }
   isInCart(item){
     if(this.cart.length){
@@ -32,8 +32,8 @@ class CartService{
         }
       }
 
-      return this.fb.addToCart(courseData)
-        .then(() => true);
+      // return this.fb.addToCart(courseData)
+      //   .then(() => true);
     }
     return Promise.reject(false);
   }
@@ -46,18 +46,18 @@ class CartService{
     return 0;
   }
   removeFromCart(item){
-    return this.fb.removeFromCart(item)
-      .then(success => {
-        if(success) {
-          let index = this.cart.indexOf(item);
-          if(index > -1) {
-            this.cart.splice(index, 1);
-          }
-          // TODO update the cart Fri 10 Nov 2017 15:08:31 UTC
-        } else {
-          // TODO display error Fri 10 Nov 2017 15:07:51 UTC
-        }
-      });
+    // return this.fb.removeFromCart(item)
+    //   .then(success => {
+    //     if(success) {
+    //       let index = this.cart.indexOf(item);
+    //       if(index > -1) {
+    //         this.cart.splice(index, 1);
+    //       }
+    //       // TODO update the cart Fri 10 Nov 2017 15:08:31 UTC
+    //     } else {
+    //       // TODO display error Fri 10 Nov 2017 15:07:51 UTC
+    //     }
+    //   });
   }
 }
 

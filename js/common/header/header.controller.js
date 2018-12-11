@@ -26,7 +26,7 @@ class HeaderController{
     this.showLogOut = false;
     this.notificationActive = false;
 
-    this.cartSvc.getCart();
+    // this.cartSvc.getCart();
 
     let hasNotifCheck = false;
     this.auth.subscribeAuthChange(res => {
