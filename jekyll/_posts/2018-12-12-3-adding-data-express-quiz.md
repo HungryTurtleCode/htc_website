@@ -245,7 +245,7 @@ This will nicely display the questions and answers when we go to *http://localho
 
 With that we have implemented the data model and serving of that data to the client.
 
-In the next part we will be adding Mongodb into the mix as a database to store the data and use that to fetch the data every time a user makes a request.
+[In the next part]({{site.baseurl}}/projects/4-adding-mongodb-express) we will be adding Mongodb into the mix as a database to store the data and use that to fetch the data every time a user makes a request.
 
 Stay hungry, and keep coding.
 

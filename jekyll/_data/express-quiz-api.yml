@@ -9,6 +9,6 @@
     - title: Serving Data
       length: '12:54'
       slug: 3-adding-data-express-quiz
-    # - title: Adding MongoDB
-    #   length: '16:22'
-    #   slug: 4-adding-mongodb-express
+    - title: Adding MongoDB
+      length: '40:35'
+      slug: 4-adding-mongodb-express
