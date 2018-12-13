@@ -1,14 +1,14 @@
 - name: Express JS API
   lessons:
     - title: Basic Express Setup
-      length: '16:22'
+      length: '18:13'
       slug: 1-express-basic-setup
     - title: Express Router
-      length: '16:22'
+      length: '9:16'
       slug: 2-using-express-router
-    # - title: Serving Data
-    #   length: '16:22'
-    #   slug: 3-adding-data-express-quiz
+    - title: Serving Data
+      length: '12:54'
+      slug: 3-adding-data-express-quiz
     # - title: Adding MongoDB
     #   length: '16:22'
     #   slug: 4-adding-mongodb-express

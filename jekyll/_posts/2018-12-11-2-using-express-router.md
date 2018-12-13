@@ -162,7 +162,7 @@ instantly maps all the urls correctly. '/api/morecomplex' becomes '/newpath/more
 
 With this you now have all the knowledge you need to break your api into as many files as you want. You can create as many different router objects as you want, all in different files, then you can just require them in and mount them using app.use or router.use. A router can mount other routers which can mount other routers etc all till your heart is content (or until your code makes sense :P).
 
-In the next part I will be adding in the data from the quiz app front end to the API and serving it back to the client via routes in the API.
+[In the next part]({{site.baseurl}}/projects/3-adding-data-express-quiz) I will be adding in the data from the quiz app front end to the API and serving it back to the client via routes in the API.
 
 Stay hungry, and keep coding.
 
