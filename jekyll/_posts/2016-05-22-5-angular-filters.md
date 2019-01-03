@@ -9,7 +9,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: Angular Filters Create A Magic Search! Ok, enough playing around, let’s really dig into the power of AngularJS. Creating search functionality from scratch can be notoriously hard, but in this tutorial we will see how easy it is to create …
 
 videoID: zisGjJySdLA
-repo: TurtleFactQuiz
+repo: HungryTurtleCode/TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg

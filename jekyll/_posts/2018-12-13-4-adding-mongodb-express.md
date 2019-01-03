@@ -6,7 +6,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: The time has come to stop using hard coded data and add in a database to the project. We will be using MongoDB to store the data.
 
 videoID: dBGhSt5EXMo
-repo: expressQuizApi
+repo: HungryTurtleCode/expressQuizApi
 fbimg: 
 twitterimg: 
 course-index: express-quiz-api

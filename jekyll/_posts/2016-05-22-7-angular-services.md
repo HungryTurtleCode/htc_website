@@ -9,7 +9,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: Angular Services – Serving (Some) Of Your Needs Fully armed with the knowledge on how to hide and show HTML elements, we can now go ahead and create the quiz controller that we will show at the same time that …
 
 videoID: HrbkZO5Mt0g
-repo: TurtleFactQuiz
+repo: HungryTurtleCode/TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg

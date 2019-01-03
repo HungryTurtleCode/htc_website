@@ -7,7 +7,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: Let's create a basic API using the ExpressJS framework built on top of Node.js. Using the data from the angular quiz app we will use express and mongodb to fetch the data from an API.
 
 videoID: kibitXQ9aME
-repo: expressQuizApi
+repo: HungryTurtleCode/expressQuizApi
 fbimg: 
 twitterimg: 
 course-index: express-quiz-api

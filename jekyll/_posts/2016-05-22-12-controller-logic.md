@@ -9,7 +9,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: Controller Logic Keeps Us Going We set ourselves up nicely in the last part. The ng-click calls a function on the quizController every time the “continue” button is clicked. This function will then need to change the activeQuestion property to …
 
 videoID: XamHS-0PiMM
-repo: TurtleFactQuiz
+repo: HungryTurtleCode/TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg

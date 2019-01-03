@@ -6,7 +6,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: It's finally time to serve some actual data via our API. We will take the data from the Angular Quiz app and serve it to users via API routes.
 
 videoID: 3v5n4DWYk2A
-repo: expressQuizApi
+repo: HungryTurtleCode/expressQuizApi
 fbimg: 
 twitterimg: 
 course-index: express-quiz-api

@@ -9,7 +9,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: Some Really Familiar Bootstrap Markup This lesson isn’t introducing anything new. Infact, you will have seen much of this code before. What we are tackling is the area at the top of the results controller that shows what questions the user …
 
 videoID: AxQcLIRoxYw
-repo: TurtleFactQuiz
+repo: HungryTurtleCode/TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg

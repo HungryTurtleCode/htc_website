@@ -9,7 +9,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: Bootstrap Modal Markup And Other CSS We made a good start on our bootstrap markup in last part but we did end up leaving a few little issues with the CSS most notably the image sizing was not consistent.
 
 videoID: IW37XF2g7AU
-repo: TurtleFactQuiz
+repo: HungryTurtleCode/TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg

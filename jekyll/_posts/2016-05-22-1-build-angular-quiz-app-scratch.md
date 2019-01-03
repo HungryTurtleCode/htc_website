@@ -9,7 +9,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: I’ve Learnt Some JavaScript! What Now? That may be something that pretty much all of us have said at some point or another. You have learnt some basic programming syntax, but you now want to build something.
 
 videoID: yordL7Yczes
-repo: TurtleFactQuiz
+repo: HungryTurtleCode/TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg

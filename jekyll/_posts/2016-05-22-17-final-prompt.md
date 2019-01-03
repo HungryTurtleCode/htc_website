@@ -9,7 +9,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: The End Of The Quiz Controller Is Near The only thing left for us to do with the quiz controller is just prompt the user when they have finished just to confirm they want to move onto the results page. …
 
 videoID: 6uZfUfB4bN8
-repo: TurtleFactQuiz
+repo: HungryTurtleCode/TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg

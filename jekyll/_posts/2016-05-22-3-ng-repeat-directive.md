@@ -9,7 +9,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: Ng-Repeat Directive Will Do Your Work For You Now armed with the ability to create controller properties with some data attached then inserting that data into our HTML we can move on to create something useful.
 
 videoID: iAX67gisQ2M
-repo: TurtleFactQuiz
+repo: HungryTurtleCode/TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg

@@ -9,7 +9,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: Ng-Click Directive And Ng-Show / Ng-Hide We’re nearly in a position to move away from our list controller and start building out the quiz controller. But before we can do that we need to create the “start quiz” button, which …
 
 videoID: ZKbPtYYbSOg
-repo: TurtleFactQuiz
+repo: HungryTurtleCode/TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg

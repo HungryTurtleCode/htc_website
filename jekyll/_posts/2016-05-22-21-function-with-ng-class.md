@@ -9,7 +9,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: Deja Vu + A New Way To Use Ng-Class Much like the previous part, the markup in this part will be very similar to that of the markup in the quiz controller. But we will spice things up a bit …
 
 videoID: bGyvJMprAcg
-repo: TurtleFactQuiz
+repo: HungryTurtleCode/TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg

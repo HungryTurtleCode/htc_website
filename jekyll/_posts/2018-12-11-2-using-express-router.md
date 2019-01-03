@@ -6,7 +6,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: Express Router allows us to split up the handling of requests into multiple files to keep our code more modular and clean.
 
 videoID: paNikhYqdz0
-repo: expressQuizApi
+repo: HungryTurtleCode/expressQuizApi
 fbimg: 
 twitterimg: 
 course-index: express-quiz-api

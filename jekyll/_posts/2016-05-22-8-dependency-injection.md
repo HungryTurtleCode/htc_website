@@ -9,7 +9,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: Make The Factory Useful – Dependency Injection It is no use to us to have a factory if we cannot use it inside our controller. In this part we will inject the factory into the list controller so we can …
 
 videoID: txzLabEIP_w
-repo: TurtleFactQuiz
+repo: HungryTurtleCode/TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg

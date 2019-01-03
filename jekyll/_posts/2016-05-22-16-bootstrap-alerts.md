@@ -9,7 +9,7 @@ image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.co
 excerpt: Errors Must Be Handled In All Apps Handling errors is a critical part of the life of a software developer. If you cannot handle errors, you will create code that has a ton of bugs and just doesn’t function satisfactorily. …
 
 videoID: doU9zxZBoXI
-repo: TurtleFactQuiz
+repo: HungryTurtleCode/TurtleFactQuiz
 demo: turtlefacts
 fbimg: /assets/ng-quiz-app-fb.jpg
 twitterimg: /assets/ng-quiz-app-twitter.jpg
