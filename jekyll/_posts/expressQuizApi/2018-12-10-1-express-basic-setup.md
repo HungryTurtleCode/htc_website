@@ -1,8 +1,6 @@
 ---
 title: Create an API with Express JS
 head-title: Express JS Basic Setup
-author: Adrian
-layout: post-sidebar
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FBuild%20an%20API%20with%20ExpressJS%20from%20Scratch.jpg?alt=media&token=e5ced716-dece-4580-b6be-a852236a6d22
 excerpt: Let's create a basic API using the ExpressJS framework built on top of Node.js. Using the data from the angular quiz app we will use express and mongodb to fetch the data from an API.
 

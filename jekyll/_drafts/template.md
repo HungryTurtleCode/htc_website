@@ -1,8 +1,6 @@
 ---
 title: Template
 head-title: Template
-author: Adrian
-layout: post-sidebar
 image: 
 excerpt: This is the template excerpt
 

@@ -31,6 +31,8 @@ defaults:
       type: "posts"
     values:
       loop: true
+      author: Adrian
+      layout: post-sidebar
 
 jekyll-archives:
   enabled:
