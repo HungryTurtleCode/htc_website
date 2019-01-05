@@ -85,7 +85,7 @@ GEM
       forwardable-extended (~> 2.6)
     progress (3.3.1)
     public_suffix (3.0.3)
-    rack (1.6.5)
+    rack (1.6.11)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
