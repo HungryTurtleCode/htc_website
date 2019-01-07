@@ -22,7 +22,7 @@ resources:
 
 ## Parallax Effects Don't Have To Be Annoying
 
-*Note: This is part one is a series where we will go from idea and hacky code to a generalised library that we will publish as an open source library on NPM*
+***Note:** This is part one is a series where we will go from idea and hacky code to a generalised abstraction that we will publish as an open source library on NPM*
 
 I'm not gonna lie, parallax website's don't have the best reputation in certain circles, and rightly so. Too often the parallax effect is acheived through some kind of hijacking of the user's scroll position on the page. This just leads to an awful experience that makes many hate the concept. However, there are plenty of good examples of this effect all over the internet.
 
@@ -72,8 +72,8 @@ body {
 }
 {% endraw %}{% endhighlight %}
 
-***Note:***
-Setting the body height to 5000px is arbitrary at this point as we just want something taller than the screen so we have something to scroll into. This can be made more clean and precise later on, but for now setting it at some random large value is fine.
+***Note:**
+Setting the body height to 5000px is arbitrary at this point as we just want something taller than the screen so we have something to scroll into. This can be made more clean and precise later on, but for now setting it at some random large value is fine.*
 
 ### Writing some javascript
 
@@ -90,10 +90,9 @@ document.addEventListener('scroll', () => {
 
 Now if we open up the browser we can scroll a little and take a look at the console output:
 
-**INSERT IMAGE HERE**
-![Image alt text]({% asset_path nodemon-terminal %}){: class="aligncenter" width="800"}
+![Terminal output when we scroll]({% asset_path we_are_scrolling %}){: class="aligncenter" width="800"}
 
-***Note:***
+***Note:**
 For ease I like to use an npm package called
 {% ihighlight bash %}{% raw %}
 live-server
@@ -103,7 +102,7 @@ npm install -g live-server
 {% endraw %}{% endihighlight %} and then run 
 {% ihighlight bash %}{% raw %}
 live-server
-{% endraw %}{% endihighlight %} in the project directory and the index.html will pop open in the browser ready for some live reloading goodness.
+{% endraw %}{% endihighlight %} in the project directory and the index.html will pop open in the browser ready for some live reloading goodness.*
 
 ## We need some html to work with
 
@@ -223,7 +222,7 @@ The core of what is going on here is that the whole firstpage section is positio
 
 So now we have the following:
 
-**INSERT IMAGE HERE**
+![Parallax Page Section One]({% asset_path htc_parallax_sect_one %}){: class="aligncenter"}
 
 ### Make it move!
 
@@ -269,7 +268,7 @@ document.addEventListener('scroll', () => {
 });
 {% endraw %}{% endhighlight %}
 
-***Note***We are using [template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to allow us to add variables into the string easily without having to do lots of string concatenation.
+***Note:** We are using [template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to allow us to add variables into the string easily without having to do lots of string concatenation.*
 
 The first thing that we did to actually manipulate the elements is to normalise the 
 {% ihighlight bash %}{% raw %}
@@ -459,7 +458,10 @@ if (yoff < MOUNT_SCALE_END) {
 }
 {% endraw %}{% endhighlight %}
 
-**TODO explain the percentage calculation**
+Again, the percentage calculation here is slightly tricky. Ultimately it is just the offset divided by the length of the animation. The offset is just what we had before and the duration of the animation is calculated by subtrating the end of the previous section from the end of the current section. However, because we are only starting at 500 pixels we need to subtract 500 from both sides. Then we just do
+{% ihighlight javascript %}{% raw %}
+Math.min
+{% endraw %}{% endihighlight %} that value with 1 to make sure we never get a value larger than 1.
 
 ## Section 3
 
