@@ -4,17 +4,18 @@ image:
 excerpt: Let's create a simple 3d parallax effect. No libraries, just pure vanilla javascript. Interacting with user scroll can often be annoying, but not this time. This time the experience wouldn't make any sense without it.
 
 videoID: 
-repo: adiman9/ParallaxProvider
+repo: HungryTurtleCode/hackilax
 fbimg: 
 twitterimg: 
 demo: parallaxbasic
-course-index: template
-series: Template
+course-index: parallax-library
+series: Parallax Library
 
 categories:
-  - Tutorials
+  - Projects
 tags:
   - Javascript
+  - Parallax Library
 resources:
   - name: Resource name
     link: link
