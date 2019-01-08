@@ -1,0 +1,8 @@
+- name: Parallax Library
+  lessons:
+    - title: Pure JS Parallax Effect
+      length: ''
+      slug: parallax-mountains
+    - title: Hacky Code to NPM Library
+      length: ''
+      slug: parallax-library
