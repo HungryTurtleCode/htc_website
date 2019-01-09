@@ -6,3 +6,12 @@
     - title: Hacky Code to NPM Library
       length: ''
       slug: parallax-library
+    - title: Using The Library
+      length: ''
+      slug: parallax-rewrite
+    - title: Testing Our Library
+      length: ''
+      slug: parallax-tests
+    - title: Deploying to NPM
+      length: ''
+      slug: parallax-deploy-npm
