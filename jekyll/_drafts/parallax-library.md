@@ -182,7 +182,7 @@ class ParallaxProvider {
 
 We should now loop through the modules array and calculate the relative offset for each module and call the controller function, passing in that relative offset and the duration of the module as arguments.
 
-{% highlight  linenos%}{% raw %}
+{% highlight javascript linenos%}{% raw %}
 listenToScroll() {
   window.addEventListener('scroll', () => {
     const yoff = window.pageYOffset;
@@ -219,7 +219,198 @@ class ParallaxProvider {
 }
 {% endraw %}{% endhighlight %}
 
-![Image alt text]({% asset_path nodemon-terminal %}){: class="aligncenter" width="800"}
+Now, to calculate the place to mount each module, we need to figure out what the absolute point that the previous module ended was and then use the current modules mount point against that value.
+
+This is the code that we will use. Take a look at it then we will talk through it:
+
+{% highlight javascript linenos%}{% raw %}
+init() {
+  const newModules = [];
+
+  for (let i = 0; i < this.modules.length; i++) {
+    const module = this.modules[i];
+
+    const numNewModules = newModules.length;
+    const previousModule = numNewModules
+      ? newModules[numNewModules - 1]
+      : null;
+
+    let endPrevModule = 0;
+    if (previousModule) {
+      const prevDuration = previousModule.duration;
+      endPrevModule = previousModule._absMountPoint + prevDuration;
+    }
+
+    const absMountPoint = endPrevModule + module.mountPoint;
+    module._absMountPoint = absMountPoint;
+
+    newModules.push(module);
+  }
+
+  this.modules = newModules;
+
+  this.listenToScroll();
+}
+{% endraw %}{% endhighlight %}
+
+Let's talk through this code.
+
+### First loop through the for
+
+So we start by defining a new empty array then loop through the existing modules array.
+
+Then we check if there is anything in the 
+{% ihighlight javascript %}{% raw %}
+newModules
+{% endraw %}{% endihighlight %} array. Obviously in the first loop there won't be anything in it because we have just defined it as being empty. Therefore in the first loop 
+{% ihighlight javascript %}{% raw %}
+previousModules
+{% endraw %}{% endihighlight %} will equal 
+{% ihighlight javascript %}{% raw %}
+null
+{% endraw %}{% endihighlight %}.
+
+That will result in the next if block being skipped and leaving 
+{% ihighlight javascript %}{% raw %}
+endPrevModule
+{% endraw %}{% endihighlight %} equal to 0. This makes sense because there is no previous module because we are dealing with the first element and therefore the mount point should start at 0.
+
+Using this
+{% ihighlight javascript %}{% raw %}
+endPrevModule
+{% endraw %}{% endihighlight %} we calculate the absolute mount point of the current module by adding the current modules mount point to the end of the previous module. In this case because there is no previous module, the mount point will be added to zero. This basically means that whatever mount point is given to the first module will act as an absolute mount point.
+
+Now that we have the absolute mount point calculated, we make that a property on the module itself (we use the convention of prepending an _ to the property name to indicate it is an internal property to the class and shouldn't be accessed from outside).
+
+We then push this module that now has an 
+{% ihighlight javascript %}{% raw %}
+_absMountPoint
+{% endraw %}{% endihighlight %}{: _} property onto the 
+{% ihighlight javascript %}{% raw %}
+newModules
+{% endraw %}{% endihighlight %} array.
+
+### Next loop through
+We now have some elements in the
+{% ihighlight javascript %}{% raw %}
+newModules
+{% endraw %}{% endihighlight %} array and therefore
+{% ihighlight javacscript %}{% raw %}
+previousModule
+{% endraw %}{% endihighlight %} will be correctly set in the ternary expression.
+
+Now that we have a non null value for 
+{% ihighlight javascript %}{% raw %}
+previousModule
+{% endraw %}{% endihighlight %} we will enter the if block. Inside the if block we grab hold of the duration of the previous module and add it to the 
+{% ihighlight javascript %}{% raw %}
+_absMountPoint
+{% endraw %}{% endihighlight %}{: _} that we calculated in the previous loop.
+
+This takes the absolute mount point of the previous module and adds the duration of the previous module to it. That gives us the point at which the previous module ends. If we are mounting the current module relative to the point the previous module ends then that is exactly the value we want.
+
+This now becomes that value of 
+{% ihighlight javascript %}{% raw %}
+endPrevModule
+{% endraw %}{% endihighlight %} and then that value is again used to calulate the absolute mount point of the current module by adding the current modules mount point to it.
+
+### And so it goes
+
+This process continues until all the modules have been looped through and 
+{% ihighlight javascript %}{% raw %}
+newModules
+{% endraw %}{% endihighlight %} has been fully populated. We then leave the for loop and reassign 
+{% ihighlight javascript %}{% raw %}
+this.modules
+{% endraw %}{% endihighlight %} to the 
+{% ihighlight javacript %}{% raw %}
+newModules
+{% endraw %}{% endihighlight %} variable. This results in 
+{% ihighlight javascript %}{% raw %}
+this.modules
+{% endraw %}{% endihighlight %} having all the absolute mount point values for each module too.
+
+## Using the absolute values
+
+If you remember from above, we in the event listener code we loop through all the modules and call their controllers like this:
+
+{% highlight javascript linenos%}{% raw %}
+// Old way of calling the controllers
+this.modules.forEach(module => {
+  const duration = module.duration;
+  module.controller(yoff - module.mountPoint, duration);
+});
+{% endraw %}{% endhighlight %}
+
+Here we are using 
+{% ihighlight javascript %}{% raw %}
+yoff - module.mountPoint
+{% endraw %}{% endihighlight %} to calculate the relative mount point. As we mentioned, this forced us to have mountPoint be absolute values. But now we have converted the code to use relative values and calculate the absolute mount of each module for us. 
+
+So we can convert the above code to use the newly computed mountPoint like so:
+
+{% highlight javascript linenos%}{% raw %}
+this.modules.forEach(module => {
+  const duration = module.duration;
+  module.controller(yoff - module._absMountPoint, duration);
+});
+{% endraw %}{% endhighlight %}{: _}
+
+So there you have it! That is a library that solves all the problems we had in the previous part.
+
+For ease, here is all the code from this part:
+
+{% highlight javascript linenos%}{% raw %}
+class ParallaxProvider {
+  constructor(modules) {
+    if (modules && modules.length) {
+      this.modules = modules;
+      this.init();
+    }
+  }
+
+  init() {
+    const newModules = [];
+
+    for (let i = 0; i < this.modules.length; i++) {
+      const module = this.modules[i];
+
+      const numNewModules = newModules.length;
+      const previousModule = numNewModules
+        ? newModules[numNewModules - 1]
+        : null;
+
+      let endPrevModule = 0;
+      if (previousModule) {
+        const prevDuration = previousModule.duration;
+        endPrevModule = previousModule._absMountPoint + prevDuration;
+      }
+
+      const absMountPoint = endPrevModule + module.mountPoint;
+      module._absMountPoint = absMountPoint;
+
+      newModules.push(module);
+    }
+
+    this.modules = newModules;
+    
+    this.listenToScroll();
+  }
+  listenToScroll() {
+    window.addEventListener('scroll', () => {
+      const yoff = window.pageYOffset;
+
+      this.modules.forEach(module => {
+        module.controller(yoff - module._absMountPoint, module.duration);
+      });
+    });
+  }
+}
+{% endraw %}{% endhighlight %}
+
+Obviously there are many more awesome features that could be added to this library and I intend to add some. When I do, I may create further parts to this series to illustrate how I did them. If you have any ideas feel free to [open a pull request](https://github.com/adiman9/ParallaxProvider).
+
+In the next part I will rebuild the previous parts website using this new library (trust me, it will be a quick one :P). Then we will write tests for this library and deploy it to NPM. Deploying it to npm will involve using travis CI for continuous integration and using other tools like rollup, prettier, eslint, husky etc to ensure consistent code for open source contributions.
 
 Stay hungry, and keep coding.
 
