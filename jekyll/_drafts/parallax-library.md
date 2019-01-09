@@ -147,6 +147,78 @@ We now have a pretty solid idea of how we want this library to function. Let's c
 
 **TODO folder setup**
 
+We know we want to have a class that accepts an array as input so let's create that now.
+
+{% highlight javascript linenos%}{% raw %}
+class ParallaxProvider {
+  constructor(modules) {
+    if (modules && modules.length) {
+      this.modules = modules;
+    }
+  }
+}
+{% endraw %}{% endhighlight %}
+
+The next thing we will require is to register a listener to scroll events on the page and inside it grab hold of the
+{% ihighlight javscript %}{% raw %}
+pageYOffset
+{% endraw %}{% endihighlight %}.
+
+{% highlight javascript linenos%}{% raw %}
+class ParallaxProvider {
+  constructor(modules) {
+    if (modules && modules.length) {
+      this.modules = modules;
+      this.listenToScroll();
+    }
+  }
+  listenToScroll() {
+    window.addEventListener('scroll', () => {
+      const yoff = window.pageYOffset;
+    });
+  }
+}
+{% endraw %}{% endhighlight %}
+
+We should now loop through the modules array and calculate the relative offset for each module and call the controller function, passing in that relative offset and the duration of the module as arguments.
+
+{% highlight  linenos%}{% raw %}
+listenToScroll() {
+  window.addEventListener('scroll', () => {
+    const yoff = window.pageYOffset;
+
+    this.modules.forEach(module => {
+      const duration = module.duration;
+      module.controller(yoff - module.mountPoint, duration);
+    });
+  });
+}
+{% endraw %}{% endhighlight %}
+
+The main issue here is that the mountPoint is being treated as an absolute point in the scroll space of the page. However, I would like the mountPoint to be relative to the end of the previous module in the modules array. This will take a bit of calculation, but it will only need to be done once at the start of the app. So let's create an
+{% ihighlight javascript %}{% raw %}
+init
+{% endraw %}{% endihighlight %} function to do those calculations in. We will call the init function in the constructor and we might as well then call the listen to scroll function at the end of the init.
+
+{% highlight javascript  linenos%}{% raw %}
+class ParallaxProvider {
+  constructor(modules) {
+    if (modules && modules.length) {
+      this.modules = modules;
+      this.init();
+    }
+  }
+  init() {
+    // The code to figure out the relative mounting of modules
+
+    this.listenToScroll();
+  }
+  listenToScroll() {
+    // event listener code
+  }
+}
+{% endraw %}{% endhighlight %}
+
 ![Image alt text]({% asset_path nodemon-terminal %}){: class="aligncenter" width="800"}
 
 Stay hungry, and keep coding.
