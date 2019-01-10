@@ -145,7 +145,133 @@ const p = new ParallaxProvider([
 
 We now have a pretty solid idea of how we want this library to function. Let's create it!
 
-**TODO folder setup**
+***Note:** If you are familiar with Rollup, babel and other transpilation and bundling tools then feel free to skip to the heading "Some actual code"*
+
+First things first, we need to set up the project directory and the tools we are going to need to start developing. We are ultimately going to publish this library to NPM so we are going to need to use modern tooling to allow us to write modern javascript and  ship the code in a way that allows people to consume it in many ways.
+
+This means we will be using babel to transpile our modern javascript code into code that can be run in older browsers and environments. We will also need a way to produce code into "modules". We want our code to run in the browser if someone puts a script tag in that links to our library but we also want someone to be able to to use modern javascript importing  like this: 
+
+{% highlight javascript %}{% raw %}
+import ParallaxProvider from 'ParallaxProvider';
+{% endraw %}{% endhighlight %}
+
+To acheive this end we will use a tool called Rollup. Rollup will allow use to bundle our code up into these different module formats automatically. I'm not going to dive deeply into what rollup is, that is a topic for another full tutorial, but I will breifly explain what you need to get going.
+
+### Creating the project
+
+Create a new directly where you are going to put the library. Then inside that directory run
+
+{% highlight bash linenos%}{% raw %}
+yarn init -y
+{% endraw %}{% endhighlight %}
+
+to create a new package.json then install the dependencies you need with:
+
+{% highlight bash linenos%}{% raw %}
+yarn add --dev @babel/core @babel/cli @babel/preset-env rollup rollup-plugin-babel
+{% endraw %}{% endhighlight %}
+
+### Dotfiles and config
+With the dependencies installed we will need to create the configuration files for them to run correctly. 
+
+Create a 
+{% ihighlight bash %}{% raw %}
+.babelrc
+{% endraw %}{% endihighlight %} file and insert the following:
+
+{% highlight json linenos%}{% raw %}
+{
+  "presets": ["@babel/preset-env"],
+}
+{% endraw %}{% endhighlight %}
+
+Create a 
+{% ihighlight bash %}{% raw %}
+rollup.config.js
+{% endraw %}{% endihighlight %} and insert this:
+
+{% highlight javascript linenos%}{% raw %}
+const rollupBabel = require('rollup-plugin-babel')
+
+const LIB_NAME = 'ParallaxProvider';
+
+export default {
+  input: 'src/index.js',
+  output: [
+    {
+      name: LIB_NAME,
+      file: "dist/parallax-provider.umd.js",
+      format: 'umd'
+    },
+    {
+      name: LIB_NAME,
+      file: "dist/parallax-provider.cjs.js",
+      format: 'cjs'
+    },
+    {
+      name: LIB_NAME,
+      file: "dist/parallax-provider.esm.js",
+      format: 'es'
+    },
+  ],
+  plugins: [
+    rollupBabel({
+      exclude: 'node_modules/**',
+      babelrc: true,
+      runtimeHelpers: false,
+    }),
+  ]
+}
+{% endraw %}{% endhighlight %}
+
+This is a base configuration for Rollup. What we are doing here is telling Rollup to take 
+{% ihighlight bash %}{% raw %}
+src/index.js
+{% endraw %}{% endihighlight %} and bundle it up into three different bundles.
+
+* A UMD (Universal Module Definition) module - which will work in the brower
+* A commonJS bundle which will work with node
+* A ecmascript module bundle which uses the new ecmascript module syntax
+
+All of which will be outputted to the 
+{% ihighlight bash %}{% raw %}
+dist/
+{% endraw %}{% endihighlight %} folder with the filename defined in the config.
+
+We are also using the babel plugin for rollup that will convert that code we write into older versions of javascript that can run on the platforms we want. We tell the plugin to use the config from the .babelrc file we created.
+
+The last two config files I use are 
+{% ihighlight bash %}{% raw %}
+.editorconfig
+{% endraw %}{% endihighlight %} and 
+{% ihighlight bash %}{% raw %}
+.gitignore
+{% endraw %}{% endihighlight %}. Editor config is a plugin you can add to your editor that will read this config file and will format the code in the same way across editors. This is just handy when you have many people working on the same project, you don't want different editors to format the code differently and cause all kinds of formatting issues. Editor config solves that.
+
+gitignore is the final config file and it is just a file that tells git what files and directories it should ignore in your project. This is an essential file as you will rarely want to commit everything into source control. A directory like 
+{% ihighlight bash %}{% raw %}
+node_modules/
+{% endraw %}{% endihighlight %} you never want to commit so you want to ignore it via the gitignore.
+
+[You can see the editor config I used here](https://github.com/adiman9/ParallaxProvider/blob/master/.editorconfig)
+
+[And the gitignore I used here](https://github.com/adiman9/ParallaxProvider/blob/master/.gitignore)
+
+This leaves our final file structure looking something like this:
+
+{% highlight bash linenos%}{% raw %}
+src/
+  - index.js
+.editorconfig
+.babelrc
+.gitignore
+package.json
+rollup.config.js
+{% endraw %}{% endhighlight %}
+
+With that done, let's write some actual library code.
+
+## Some actual code
 
 We know we want to have a class that accepts an array as input so let's create that now.
 
