@@ -14,9 +14,10 @@ categories:
   - Projects
 tags:
   - Javascript
-  - Parallax Library
   - Testing
   - Jest
+  - Open Source
+  - Parallax Library
 resources:
   - name: Resource name
     link: link

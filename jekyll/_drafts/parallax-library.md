@@ -15,6 +15,7 @@ categories:
 tags:
   - Javascript
   - Make a Library
+  - Open Source
   - Parallax Library
 resources:
   - name: Resource name

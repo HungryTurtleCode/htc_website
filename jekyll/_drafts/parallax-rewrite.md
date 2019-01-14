@@ -14,6 +14,7 @@ categories:
   - Projects
 tags:
   - Javascript
+  - Open Source
   - Parallax Library
 resources:
   - name: HTML Markup
