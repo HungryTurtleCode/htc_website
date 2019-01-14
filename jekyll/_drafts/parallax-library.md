@@ -146,7 +146,7 @@ const p = new ParallaxProvider([
 
 We now have a pretty solid idea of how we want this library to function. Let's create it!
 
-***Note:** If you are familiar with Rollup, babel and other transpilation and bundling tools then feel free to skip to the heading "Some actual code"*
+***Note:** If you are familiar with Rollup, babel and other transpilation and bundling tools then feel free to skip to the heading "Some actual code"*{: ***}
 
 First things first, we need to set up the project directory and the tools we are going to need to start developing. We are ultimately going to publish this library to NPM so we are going to need to use modern tooling to allow us to write modern javascript and  ship the code in a way that allows people to consume it in many ways.
 
@@ -240,6 +240,22 @@ dist/
 {% endraw %}{% endihighlight %} folder with the filename defined in the config.
 
 We are also using the babel plugin for rollup that will convert that code we write into older versions of javascript that can run on the platforms we want. We tell the plugin to use the config from the .babelrc file we created.
+
+### NPM Scripts
+To get rollup running we will add some npm scripts into our package.json. These are the scripts I tend to use:
+
+{% highlight javascript linenos%}{% raw %}
+"scripts": {
+  // rest of npm scripts
+  "build": "rollup -c",
+  "dev": "rollup -c -w",
+}
+{% endraw %}{% endhighlight %}
+
+Now we can run 
+{% ihighlight bash %}{% raw %}
+yarn dev
+{% endraw %}{% endihighlight %} and rollup will spin up and start watching our files for changes and automatically spitting out the transpiled modules.
 
 The last two config files I use are 
 {% ihighlight bash %}{% raw %}
