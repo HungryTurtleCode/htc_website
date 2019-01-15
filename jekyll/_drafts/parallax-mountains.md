@@ -138,7 +138,7 @@ Insert the following at the top of the body in index.html:
 So we create a container for the whole application which we give the id
 {% ihighlight bash %}{% raw %}
 app
-{% endraw %}{% endihighlight %} and inside that we have another wrapper for the "first page" of the application which will be the mounting fly through section. Inside that we have a title and three sections: background, middleground and foreground. Inside each of those is another div which will be the actual "mountain-y" parts.
+{% endraw %}{% endihighlight %} and inside that we have another wrapper for the "first page" of the application which will be the mountain fly through section. Inside that we have a title and three sections: background, middleground and foreground. Inside each of those is another div which will be the actual "mountain-y" parts.
 
 The reason we have a div inside each section is so we can have a uniform anchor point to manipulate all the different sections. What I mean by this is that all the "mountain" sections are in a different place, so if we didn't have each wrapped in a container they would all have different anchor points and if we started to scale them or transform them it will become a hot mess to keep everything consistent.
 
