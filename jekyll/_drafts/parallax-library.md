@@ -1,5 +1,5 @@
 ---
-title: Hacky Parallax Code To NPM Library
+title: Writing an NPM Library (Parallax Provider)
 image: 
 excerpt: In this tutorial we will take the hacky parallax code we wrote before and turn it into a nice generalised library that can be used to implement arbitrary parallax website. Ultimately we will publish the library to NPM.
 
