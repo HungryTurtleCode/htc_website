@@ -25,7 +25,7 @@ resources:
 
 [In the previous part]({{site.baseurl}}/projects/parallax-mountains) I wrote some pretty hacky code to get a parallax effect going. In this part I will rebuild that idea into a generalised library that anyone can use to build similar effects easily. In the coming parts we will publish the library on NPM for the world to actually use.
 
-I think this is a good illustration for how typical open source projects some into being. It starts off with someone who has an idea for something they think is cool or something they think will help people out, then they create a super hacky prototype to flesh out the idea a little. Once they have something they think might work then they will start converting it into cleaner code in the format or a library.
+I think this is a good illustration for how typical open source projects come into being. It starts off with someone who has an idea for something they think is cool or something they think will help people out, then they create a super hacky prototype to flesh out the idea a little. Once they have something they think might work then they will start converting it into cleaner code in the format or a library.
 
 ## What were the problems
 
@@ -41,12 +41,12 @@ WORD_SPLIT_END
 const offset = yoff - WORD_SPLIT_END;
 {% endraw %}{% endhighlight %}
 
-That results in offset being 0 at the exact point that the scrolling section comes into view. So the offset here will always refer to how far we have scrolled into the "scolling" section of the page.
+That results in offset being 0 at the exact point that the scrolling section comes into view. So the offset here will always refer to how far we have scrolled into the "scrolling" section of the page.
 
 ### Issue 2
 The second issue was separation of concerns. Ideally we would like to think about the logic for each "section" completely separately. But instead we had to mix the logic for each section up with each other.
 
-The root cause of this issue is that there are 3 phases that can exist in the lifecycle of a "section":
+The root cause of this issue is that there are 3 phases that can exist in the life-cycle of a "section":
 * Phase 1: Before we reach the section.
 * Phase 2: While we are scrolling through the section.
 * Phase 3: When the scroll has past the section.
@@ -156,7 +156,7 @@ This means we will be using babel to transpile our modern javascript code into c
 import ParallaxProvider from 'ParallaxProvider';
 {% endraw %}{% endhighlight %}
 
-To acheive this end we will use a tool called Rollup. Rollup will allow use to bundle our code up into these different module formats automatically. I'm not going to dive deeply into what rollup is, that is a topic for another full tutorial, but I will breifly explain what you need to get going.
+To achieve this end we will use a tool called Rollup. Rollup will allow use to bundle our code up into these different module formats automatically. I'm not going to dive deeply into what rollup is, that is a topic for another full tutorial, but I will briefly explain what you need to get going.
 
 ### Creating the project
 
@@ -230,7 +230,7 @@ This is a base configuration for Rollup. What we are doing here is telling Rollu
 src/index.js
 {% endraw %}{% endihighlight %} and bundle it up into three different bundles.
 
-* A UMD (Universal Module Definition) module - which will work in the brower
+* A UMD (Universal Module Definition) module - which will work in the browser
 * A commonJS bundle which will work with node
 * A ecmascript module bundle which uses the new ecmascript module syntax
 
@@ -303,7 +303,7 @@ class ParallaxProvider {
 {% endraw %}{% endhighlight %}
 
 The next thing we will require is to register a listener to scroll events on the page and inside it grab hold of the
-{% ihighlight javscript %}{% raw %}
+{% ihighlight javascript %}{% raw %}
 pageYOffset
 {% endraw %}{% endihighlight %}.
 
@@ -455,7 +455,7 @@ This takes the absolute mount point of the previous module and adds the duration
 This now becomes that value of 
 {% ihighlight javascript %}{% raw %}
 endPrevModule
-{% endraw %}{% endihighlight %} and then that value is again used to calulate the absolute mount point of the current module by adding the current modules mount point to it.
+{% endraw %}{% endihighlight %} and then that value is again used to calculate the absolute mount point of the current module by adding the current modules mount point to it.
 
 ### And so it goes
 
@@ -466,7 +466,7 @@ newModules
 {% ihighlight javascript %}{% raw %}
 this.modules
 {% endraw %}{% endihighlight %} to the 
-{% ihighlight javacript %}{% raw %}
+{% ihighlight javascript %}{% raw %}
 newModules
 {% endraw %}{% endihighlight %} variable. This results in 
 {% ihighlight javascript %}{% raw %}
