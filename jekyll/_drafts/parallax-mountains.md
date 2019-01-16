@@ -23,9 +23,9 @@ resources:
 
 ## Parallax Effects Don't Have To Be Annoying
 
-***Note:** This is part one is a series where we will go from idea and hacky code to a generalised abstraction that we will publish as an open source library on NPM*
+***Note:** This is part one is a series where we will go from idea and hacky code to a generalised abstraction that we will publish as an open source library on NPM* {:***}
 
-I'm not gonna lie, parallax website's don't have the best reputation in certain circles, and rightly so. Too often the parallax effect is acheived through some kind of hijacking of the user's scroll position on the page. This just leads to an awful experience that makes many hate the concept. However, there are plenty of good examples of this effect all over the internet.
+I'm not gonna lie, parallax website's don't have the best reputation in certain circles, and rightly so. Too often the parallax effect is achieved through some kind of hijacking of the user's scroll position on the page. This just leads to an awful experience that makes many hate the concept. However, there are plenty of good examples of this effect all over the internet.
 
 The key to a good parallax website is a website where the user controls the scroll entirely but the scroll position directly informs what should be on the page. In other words, what is displayed on the UI is a pure function of the scroll position. Then the experience feels good. Almost as if scrolling through the page is like scrubbing through a video timeline. The website becomes a canvas for an interactive video type of experience.
 
@@ -41,7 +41,7 @@ You can also check the start of the video tutorial for a quick run through what 
 
 As you can see, we will create a pretty interesting 3d parallax effect that looks like we are moving through some mountains, some moving text animation and a typical scrolling parallax.
 
-When I first started building websites this sort of thing seemed like it would be insanely difficult and well outsite of my reach. But I am here to tell you that it really isn't as hard as you may think. So let's get started.
+When I first started building websites this sort of thing seemed like it would be insanely difficult and well outside of my reach. But I am here to tell you that it really isn't as hard as you may think. So let's get started.
 
 ### Scaffolding out the HTML and CSS
 
@@ -74,7 +74,7 @@ body {
 {% endraw %}{% endhighlight %}
 
 ***Note:**
-Setting the body height to 5000px is arbitrary at this point as we just want something taller than the screen so we have something to scroll into. This can be made more clean and precise later on, but for now setting it at some random large value is fine.*
+Setting the body height to 5000px is arbitrary at this point as we just want something taller than the screen so we have something to scroll into. This can be made more clean and precise later on, but for now setting it at some random large value is fine.*{:***}
 
 ### Writing some javascript
 
@@ -103,11 +103,11 @@ npm install -g live-server
 {% endraw %}{% endihighlight %} and then run 
 {% ihighlight bash %}{% raw %}
 live-server
-{% endraw %}{% endihighlight %} in the project directory and the index.html will pop open in the browser ready for some live reloading goodness.*
+{% endraw %}{% endihighlight %} in the project directory and the index.html will pop open in the browser ready for some live reloading goodness.*{:***}
 
 ## We need some html to work with
 
-At this point we have a basic structure and we can listen to scrolling but we need some actual html on the page for us to manipulate while we scroll. So let's create the intial mountain looking things.
+At this point we have a basic structure and we can listen to scrolling but we need some actual html on the page for us to manipulate while we scroll. So let's create the initial mountain looking things.
 
 Insert the following at the top of the body in index.html:
 
@@ -241,7 +241,7 @@ const bg = document.querySelector('.background');
 const title = document.querySelector('.firstpage h1');
 {% endraw %}{% endhighlight %}
 
-Then inside the scoll event listener we want to grab hold of the total scroll offset and define the length of the zoom animation through the mountains. This length will be a pixel value. For example if we define the length to be 500 then the animation will take 500 pixels of scrolling to complete.
+Then inside the scroll event listener we want to grab hold of the total scroll offset and define the length of the zoom animation through the mountains. This length will be a pixel value. For example if we define the length to be 500 then the animation will take 500 pixels of scrolling to complete.
 
 {% highlight javascript linenos%}{% raw %}
 document.addEventListener('scroll', () => {
@@ -269,7 +269,7 @@ document.addEventListener('scroll', () => {
 });
 {% endraw %}{% endhighlight %}
 
-***Note:** We are using [template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to allow us to add variables into the string easily without having to do lots of string concatenation.*
+***Note:** We are using [template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to allow us to add variables into the string easily without having to do lots of string concatenation.*{:***}
 
 The first thing that we did to actually manipulate the elements is to normalise the 
 {% ihighlight bash %}{% raw %}
@@ -278,11 +278,11 @@ pageYOffset
 
 Once we have that percentage we can scale the different elements using it by multiplying the percentage by some constant to get different scaling on each element.
 
-The end result is a beautiful parallax zoom effect when we start to scroll that just stops when we reach 500 pixels of scoll down the page.
+The end result is a beautiful parallax zoom effect when we start to scroll that just stops when we reach 500 pixels of scroll down the page.
 
 ## Section 2
 
-Next thing to do is add in the second section. The first thing i'll do towards that is create a fade out transition that will later lead into the second section.
+Next thing to do is add in the second section. The first thing I'll do towards that is create a fade out transition that will later lead into the second section.
 
 We will change the opacity of the 
 {% ihighlight css %}{% raw %}
@@ -459,7 +459,7 @@ if (yoff < MOUNT_SCALE_END) {
 }
 {% endraw %}{% endhighlight %}
 
-Again, the percentage calculation here is slightly tricky. Ultimately it is just the offset divided by the length of the animation. The offset is just what we had before and the duration of the animation is calculated by subtrating the end of the previous section from the end of the current section. However, because we are only starting at 500 pixels we need to subtract 500 from both sides. Then we just do
+Again, the percentage calculation here is slightly tricky. Ultimately it is just the offset divided by the length of the animation. The offset is just what we had before and the duration of the animation is calculated by subtracting the end of the previous section from the end of the current section. However, because we are only starting at 500 pixels we need to subtract 500 from both sides. Then we just do
 {% ihighlight javascript %}{% raw %}
 Math.min
 {% endraw %}{% endihighlight %} that value with 1 to make sure we never get a value larger than 1.
@@ -558,7 +558,7 @@ To make this section scroll we are going to need to do some trickery. The reason
 position: fixed
 {% endraw %}{% endihighlight %} because we wanted them to remain still while we scrolled and only animate the elements within. However now we want everything to scroll, including the fixed position second section.
 
-The best way to acheive that is to make the whole app container fixed position (we have actually already done that above, sneaky huh?) and then translate3d the position of the app container at the same pace as the window is scrolling. That will give the visual sense that we are actually scrolling, while we are actually just translating the container at the same pace as the scrolling.
+The best way to achieve that is to make the whole app container fixed position (we have actually already done that above, sneaky huh?) and then translate3d the position of the app container at the same pace as the window is scrolling. That will give the visual sense that we are actually scrolling, while we are actually just translating the container at the same pace as the scrolling.
 
 
 {% highlight javascript linenos%}{% raw %}
@@ -580,7 +580,7 @@ if (yoff < MOUNT_SCALE_END) {
 }
 {% endraw %}{% endhighlight %}
 
-The code above should look pretty familiar to you at this point. We are noramlising the total offset to be the offset for just this section by subtracting the end of the previous section. Then we calculate the duration of the scrolling by subtracting the end of the last section from the end of the current section. The duration will be used shortly.
+The code above should look pretty familiar to you at this point. We are normalising the total offset to be the offset for just this section by subtracting the end of the previous section. Then we calculate the duration of the scrolling by subtracting the end of the last section from the end of the current section. The duration will be used shortly.
 
 The calculated offset is then used to translate the app container to simulate the scrolling as mentioned. We also translate each of the pictures by two different constants multiplied by the offset. By using two different values here we are creating the parallax effect because each image is moving at a different pace.
 
@@ -620,7 +620,7 @@ section.
 
 If you tinker with the web page in the browser and scroll around you will notice that there are a few other issues where we are not correctly resetting an elements state when we scroll around fast. We will clean up those bugs now.
 
-The first issue you may notice is that we are not resetting the title position back to 0 if we scroll back up through the title animation quickly. To fix that we will reset it to zero in the transiton section like so:
+The first issue you may notice is that we are not resetting the title position back to 0 if we scroll back up through the title animation quickly. To fix that we will reset it to zero in the transition section like so:
 
 {% highlight javascript linenos%}{% raw %}
 } else if (yoff < TRANSITION_END) {
@@ -630,7 +630,7 @@ The first issue you may notice is that we are not resetting the title position b
 }
 {% endraw %}{% endhighlight %}
 
-A slighly more subtle bug is that if you refresh the page when you are in section two or three then scroll back up to section one, there will be a flash as the scaling of the "mountain" parts kicks in. This is because the scale starts off at 1 and scales up to some larger value during the section one animation. However if we refresh the page in section three then that animation in section one has never run and therefore the scale is still at 1 when we scroll back through
+A slightly more subtle bug is that if you refresh the page when you are in section two or three then scroll back up to section one, there will be a flash as the scaling of the "mountain" parts kicks in. This is because the scale starts off at 1 and scales up to some larger value during the section one animation. However if we refresh the page in section three then that animation in section one has never run and therefore the scale is still at 1 when we scroll back through
 the transition phase but as soon as we hit the section one animation again it will pop back up the larger scaled values.
 
 So we need to reset the scale to the larger values before we enter back into the transition section. We will also reset the opacity to 0 ready to enter into the transition that will transform that back to 1. Add this to the word animation block:
@@ -675,7 +675,7 @@ if (yoff < MOUNTAIN_SCALE_END) {
 }
 {% endraw %}{% endhighlight %}
 
-And there we have it! A completed (but hacky) implementation of a nice parallax effect using pure Javscript. I really hope you enjoyed it and I look forward to seeing you in the next part where we will take this code, clean it up and convert into a generalised library that we will publish to NPM so anyone can create amazing parallax sites like this with ease! See you then.
+And there we have it! A completed (but hacky) implementation of a nice parallax effect using pure Javascript. I really hope you enjoyed it and I look forward to seeing you in the next part where we will take this code, clean it up and convert into a generalised library that we will publish to NPM so anyone can create amazing parallax sites like this with ease! See you then.
 
 Stay hungry, and keep coding.
 
