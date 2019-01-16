@@ -48,7 +48,7 @@ First we will install eslint and the airbnb (yes the company you book a house to
 We will also install a plugin that will work well with prettier (specifically it will stop eslint from shouting at us for things prettier will fix for us). 
 
 {% highlight bash linenos%}{% raw %}
-yarn add --dev eslint eslint-config-airbnb-base eslint-config-prettier
+yarn add --dev eslint eslint-config-airbnb-base eslint-config-prettier eslint-plugin-jest
 {% endraw %}{% endhighlight %}
 
 Then we will need to create an 
@@ -67,6 +67,7 @@ Then we will need to create an
     "browser": true,
     "node": true,
     "es6": true,
+    "jest": true,
   },
   "plugins": [],
   "rules": {
@@ -84,6 +85,14 @@ Then we will need to create an
 {% endraw %}{% endhighlight %}
 
 Here we tell it to use the airbnb configuration and the prettier configuration defaults and supply it will a few extra rules in the "rules" property. These are just a few that I like to use. You can see a whole list of [rules for eslint here](https://eslint.org/docs/rules/).
+
+It will also install the eslint plugin for jest that will allow eslint to be aware of jest syntax (when we use jest: true in the env of our .eslintrc). If we don't install that plugin eslint will shout at us that the jest global functions like 
+{% ihighlight javascript %}{% raw %}
+expect()
+{% endraw %}{% endihighlight %} and 
+{% ihighlight javascript %}{% raw %}
+test()
+{% endraw %}{% endihighlight %} don't exist. So it's a pretty good idea to add it.
 
 You can also create an 
 {% ihighlight bash %}{% raw %}
@@ -150,7 +159,7 @@ So the workflow looks like this:
 * Make changes to the code
 * git add the changed files
 * git commit the changed files
-* Before the code is actually commited husky will trigger lint-staged
+* Before the code is actually committed husky will trigger lint-staged
 * Lint staged will run eslint, prettier and jest against all the staged files
 * If anything fails the commit won't go through, if everything passes ok then the code is committed.
 
@@ -202,7 +211,7 @@ The final step is to actually get husky to run this on precommit. Open up your p
 }
 {% endraw %}{% endhighlight %}
 
-We create a script called "precommit" (you can call this whatever you want) that runs lint-staged and we create a section called hustky that calls 
+We create a script called "precommit" (you can call this whatever you want) that runs lint-staged and we create a section called husky that calls 
 {% ihighlight bash %}{% raw %}
 yarn precommit
 {% endraw %}{% endihighlight %} during the "pre-commit" git hook.
@@ -375,7 +384,7 @@ The interesting part is the npm release job. We initailly give it a script "yarn
 Then we need to tell travis to use the email and npm api key that we put into travis earlier. This will allow npm to authorise travis to actually deploy to our account.
 
 There are two more options provided:
-* skip_cleanup: true - Tells travis not to clean up the artifacts from the build stage. This is 100% necessary otherwise there will be no files to deploy because travis will clean them up after the build.
+* skip_cleanup: true - Tells travis not to clean up the artifacts from the build stage. This is 100% necessary otherwise there will be no files to deploy because travis will clean them up after the build.{: _}
 * on: tags: true - This tells travis to only run this deploy job when there is a tag present on the commit this job is being run against.
 
 Finally we have 

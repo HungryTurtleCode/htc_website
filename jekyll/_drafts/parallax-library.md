@@ -316,7 +316,7 @@ class ParallaxProvider {
     }
   }
   listenToScroll() {
-    window.addEventListener('scroll', () => {
+    document.addEventListener('scroll', () => {
       const yoff = window.pageYOffset;
     });
   }
@@ -327,7 +327,7 @@ We should now loop through the modules array and calculate the relative offset f
 
 {% highlight javascript linenos%}{% raw %}
 listenToScroll() {
-  window.addEventListener('scroll', () => {
+  document.addEventListener('scroll', () => {
     const yoff = window.pageYOffset;
 
     this.modules.forEach(module => {
@@ -438,7 +438,7 @@ We now have some elements in the
 {% ihighlight javascript %}{% raw %}
 newModules
 {% endraw %}{% endihighlight %} array and therefore
-{% ihighlight javacscript %}{% raw %}
+{% ihighlight javascript %}{% raw %}
 previousModule
 {% endraw %}{% endihighlight %} will be correctly set in the ternary expression.
 
@@ -540,7 +540,7 @@ class ParallaxProvider {
     this.listenToScroll();
   }
   listenToScroll() {
-    window.addEventListener('scroll', () => {
+    document.addEventListener('scroll', () => {
       const yoff = window.pageYOffset;
 
       this.modules.forEach(module => {

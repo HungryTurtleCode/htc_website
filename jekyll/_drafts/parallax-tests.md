@@ -42,10 +42,10 @@ We will also want to use babel with jest to allow us to use some more modern jav
 **OR** If you just want to know what you need to install, run the following:
 
 {% highlight bash linenos%}{% raw %}
-yarn add --dev jest @babel/core babel-jest babel-core@^7.0.0-bridge.0 eslint-plugin-jest
+yarn add --dev jest @babel/core babel-jest babel-core@^7.0.0-bridge.0
 {% endraw %}{% endhighlight %}
 
-This will install jest and the required packages to get babel working with jest. It will also install the eslint plugin for jest that will allow eslint to be aware of jest syntax.
+This will install jest and the required packages to get babel working with jest. 
 
 We want some npm scripts that we can call to run our tests while we are developing so add the following to the "scripts" object in your
 {% ihighlight bash %}{% raw %}
@@ -75,20 +75,6 @@ and answer the questions to create a
 {% ihighlight bash %}{% raw %}
 jest.config.js
 {% endraw %}{% endihighlight %} file with extra configuration for jest.
-
-Inside the
-{% ihighlight bash %}{% raw %}
-.eslintrc
-{% endraw %}{% endihighlight %} add the following under the "env" key:
-
-{% highlight json linenos%}{% raw %}
-"env": {
-  // other env data
-  "jest": true,
-}
-{% endraw %}{% endhighlight %}
-
-This will stop eslint from shouting at you when you use jest global functions.
 
 ## Now write some tests
 We have ourselves all set up with jest now so we can jump in and start writing the tests we need.
@@ -200,7 +186,7 @@ Here we are testing to ensure that the
 addEventListener
 {% endraw %}{% endihighlight %} was actually called and specifically it was called with the first argument 'scroll' and the second argument was any function.
 
-The syntax for jest assertions like this is very intuitive. Just reading it with no knowledge of jest you can still guess what it is doing. In english it is saying this: "I expect that the global function called addEventListener should have been called with the following arguments: 'scroll' and any function". Beautiful.
+The syntax for jest assertions like this is very intuitive. Just reading it with no knowledge of jest you can still guess what it is doing. In English it is saying this: "I expect that the global function called addEventListener should have been called with the following arguments: 'scroll' and any function". Beautiful.
 
 This is really all there is to testing. We write some code that sets up the variables and objects we need then we write some assertions and expectations for what should occur if everything is working correctly.
 
@@ -227,9 +213,9 @@ You will be met with the following screen:
 
 I usually hit "a" or "o" depending on how many tests I have. Jest will now watch for changes in our files and rerun the tests when things have changed. Wonderful stuff.
 
-***Note**: just as a sidenote about testing in general I would like to say that you should try to **start by making the test fail** then change things to make it succeeed. Sometimes if you write the test to immediately pass there may be an issue with it that you missed and you just assume it is right because the test passes.*
+***Note**: just as a sidenote about testing in general I would like to say that you should try to **start by making the test fail** then change things to make it succeeed. Sometimes if you write the test to immediately pass there may be an issue with it that you missed and you just assume it is right because the test passes.*{:***}
 
-*It is much better to verify that the test fails when the conditions aren't met then pass when things are changed back to the correct condition*
+*It is much better to verify that the test fails when the conditions aren't met then pass when things are changed back to the correct condition*{:**}
 
 ## Moar tests plz
 
@@ -248,9 +234,9 @@ Here we use the events object we created earlier and call the scroll function. T
 sectionOneCtrl
 {% endraw %}{% endihighlight %} should have been called. This is the controller defined in the beforeEach of the current describe block. If our code is working correctly, that controller should have been called whent he scroll was triggered.
 
-***Note**: touching on the idea of making the test fail first we could comment out the event.scroll() line above. If we do that the scroll listener should never be called and therefore the controller for each section shouldn't be called either. So with that line commented out the assertion should now fail and therefore the test should fail. Uncommenting the line should then bring the test back into a passing state.*
+***Note**: touching on the idea of making the test fail first we could comment out the event.scroll() line above. If we do that the scroll listener should never be called and therefore the controller for each section shouldn't be called either. So with that line commented out the assertion should now fail and therefore the test should fail. Uncommenting the line should then bring the test back into a passing state.*{:*}
 
-*Doing this kind of thing for each test we write is just a quick sanity check to make sure that the test is actually doing what we thing it should be.*
+*Doing this kind of thing for each test we write is just a quick sanity check to make sure that the test is actually doing what we thing it should be.*{:*}
 
 ### How does jest know how far we scrolled
 
@@ -380,9 +366,9 @@ This has been a pretty good introduction to testing a library with jest. The cor
 
 Obviously just because you are testing doesn't mean your code doesn't have bugs in it. There will definitely still be bugs and things you haven't considered. The point of testing isn't to eliminate all bugs. It is just to make sure you don't introduce new ones to the parts that already work.
 
-You will truely be shocked by how many small bugs you can introduce when you try to add a new feature or refactor some of the code. We are only human, we will miss things. But it's nice to have the tests there to fall back on when we make a change.
+You will truly be shocked by how many small bugs you can introduce when you try to add a new feature or refactor some of the code. We are only human, we will miss things. But it's nice to have the tests there to fall back on when we make a change.
 
-I can't count how many times i've made a change that I thought was great and then I run the tests and they are all failing because of something I overlooked. Without tests I would have shipped that bug. With tests my code is that
+I can't count how many times I've made a change that I thought was great and then I run the tests and they are all failing because of something I overlooked. Without tests I would have shipped that bug. With tests my code is that
 little bit better.
 
 I hope you got something out of this and I will see you back here for the next part where we set up the project with continuous integration and deployment pipeline to push it to NPM.

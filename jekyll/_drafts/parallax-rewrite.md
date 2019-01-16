@@ -81,7 +81,7 @@ Just like in the first part we have the first section and the transition, then t
 conditionals.
 
 ### Define the controllers
-Each section has a controller attatched to it but we have yet to define the actual code for each controller. So let's do that now.
+Each section has a controller attached to it but we have yet to define the actual code for each controller. So let's do that now.
 
 Let's start with the first section:
 
@@ -167,7 +167,7 @@ We have a check to see if we are before, inside or after the section. If we are 
 Initially we translate the "Hungry" and "Code" up and down respectively based on the current offset into the section. We also have a constant that we called
 {% ihighlight javascript %}{% raw %}
 MIDDLE_TRIGGER
-{% endraw %}{% endihighlight %} that acts as the trigger point for when the "Turtle" word starts to animate. We have a check to see if we have past that trigger point. If we have we translate the "Turtle" to the left, again at the same pace as the scrolling. This is achieved by using the offset and subtracting the trigger point to normlise the value.
+{% endraw %}{% endihighlight %} that acts as the trigger point for when the "Turtle" word starts to animate. We have a check to see if we have past that trigger point. If we have we translate the "Turtle" to the left, again at the same pace as the scrolling. This is achieved by using the offset and subtracting the trigger point to normalise the value.
 
 ### Scaling Turtle Image
 
@@ -235,12 +235,12 @@ function calcScroll(offset, duration) {
 }
 {% endraw %}{% endhighlight %}
 
-This code should be starting to look pretty familiar to you. All we are doing is reseting app translation to 0 if we are before the section and if we are inside the section we are translating the whole app container at the same pace as we are scrolling and then offseting each image by different amounts to give a parallax effect. Again we also have a trigger to add the progress line in, which is done by calculating the percentage progress through it and translating the bar down
+This code should be starting to look pretty familiar to you. All we are doing is resetting app translation to 0 if we are before the section and if we are inside the section we are translating the whole app container at the same pace as we are scrolling and then offsetting each image by different amounts to give a parallax effect. Again we also have a trigger to add the progress line in, which is done by calculating the percentage progress through it and translating the bar down
 accordingly.
 
 There we have it folks, we have fully converted the original spaghetti code into wonderful clean code that uses our library. The code is now much easier to read and much easier to maintain. Go us!
 
-In the next part of this series we will go back to the library and write some tests for it using jest. In the part after that we will deploy it to the NPM repositries using all the best practices for open source projects.
+In the next part of this series we will go back to the library and write some tests for it using jest. In the part after that we will deploy it to the NPM repositories using all the best practices for open source projects.
 
 I'm looking forward to it!
 
