@@ -9,6 +9,7 @@ fbimg:
 twitterimg: 
 course-index: parallax-library
 series: Parallax Library
+demo: parallaxbasic
 
 categories:
   - Projects
