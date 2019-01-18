@@ -1,9 +1,9 @@
 ---
 title: Build your own Link Shortener with Netlify
-image: 
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FCreate%20Your%20Own%20Custom%20Shortlinks.jpg?alt=media&token=42e5fe67-d74b-4565-a5d4-da38d6d95ad6
 excerpt: Learn to build your own link shortener using git and netlify. Sending out long links to people can be annoying and you will never remember them. Using your own custom short links is a great way around the problem.
 
-videoID: 
+videoID: SX-C6Dk_-UI
 repo: adiman9/shortlinks-example
 fbimg: 
 twitterimg: 
