@@ -20,7 +20,7 @@ tags:
 
 ## Parallax Effects Don't Have To Be Annoying
 
-***Note:** This is part one is a series where we will go from idea and hacky code to a generalised abstraction that we will publish as an open source library on NPM* {:***}
+***Note:** This is part one is a series where we will go from idea and hacky code to a generalised abstraction that we will publish as an open source library on NPM*{: ***}
 
 I'm not gonna lie, parallax website's don't have the best reputation in certain circles, and rightly so. Too often the parallax effect is achieved through some kind of hijacking of the user's scroll position on the page. This just leads to an awful experience that makes many hate the concept. However, there are plenty of good examples of this effect all over the internet.
 
