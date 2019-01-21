@@ -1,9 +1,9 @@
 ---
 title: Amazing Parallax Effect in Pure JS
-image: 
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FParallax%20Website%20in%20Vanilla%20Javascript.jpeg.jpg?alt=media&token=a21858f1-393c-4633-b3c2-4411e1e2266f
 excerpt: Let's create a simple 3d parallax effect. No libraries, just pure vanilla javascript. Interacting with user scroll can often be annoying, but not this time. This time the experience wouldn't make any sense without it.
 
-videoID: 
+videoID: yBbr8ZUyESw
 repo: HungryTurtleCode/hackilax
 fbimg: 
 twitterimg: 
@@ -16,9 +16,6 @@ categories:
 tags:
   - Javascript
   - Parallax Library
-resources:
-  - name: Resource name
-    link: link
 ---
 
 ## Parallax Effects Don't Have To Be Annoying
