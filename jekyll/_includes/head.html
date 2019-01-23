@@ -12,7 +12,7 @@
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="{% if page.fulltitle %}{{page.fulltitle}}{% else %}{{page.title}} | {{ site.title }} {% endif %}"/>
 	<meta property="og:description" content="{% if page.excerpt %}{{page.excerpt}}{% else %}{{site.description}}{% endif %}"/>
-	<meta property="og:image" content="{% if page.fbimg %}{{site.produrl}}{{page.fbimg}}{% else %}{{site.produrl}}{{site.socialimg}}{% endif %}"/>
+	<meta property="og:image" content="{% if page.fbimg %}{{site.produrl}}{{page.fbimg}}{% elsif page.videoID %}https://img.youtube.com/vi/{{page.videoID}}/maxresdefault.jpg{% else %}{{site.produrl}}{{site.socialimg}}{% endif %}"/>
 	<meta property="og:url" content="{{site.produrl}}{{page.url}}"/>
 	<meta property="og:site_name" content="{{ site.title }} "/>
 
@@ -20,7 +20,7 @@
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="{% if page.fulltitle %}{{page.fulltitle}}{% else %}{{page.title}} | {{ site.title }} {% endif %}">
 	<meta name="twitter:description" content="{% if page.excerpt %}{{page.excerpt}}{% else %}{{site.description}}{% endif %}">
-	<meta name="twitter:image" content="{% if page.twitterimg %}{{site.produrl}}{{page.twitterimg}}{% else %}{{site.produrl}}{{site.socialimg}}{% endif %}"/>
+	<meta name="twitter:image" content="{% if page.twitterimg %}{{site.produrl}}{{page.twitterimg}}{% elsif page.videoID %}https://img.youtube.com/vi/{{page.videoID}}/maxresdefault.jpg{% else %}{{site.produrl}}{{site.socialimg}}{% endif %}"/>
 	<meta name="twitter:url" content="{{site.produrl}}{{page.url}}">
 
 	<!-- CSS & fonts -->
