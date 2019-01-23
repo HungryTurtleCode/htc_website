@@ -1,6 +1,6 @@
 ---
 title: Writing tests for the Parallax Library
-image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FTesting%20With%20Jest%20-%20NPM%20Parallax%20Library.jpeg.jpg?alt=media&token=3726541c-1598-46eb-88a0-b5a1339a6a9d
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FTesting%20With%20Jest%20-%20NPM%20Parallax%20Library.jpg?alt=media&token=fafc7c13-51b9-4726-8fee-def49c7298cf
 excerpt: This is the template excerpt
 
 videoID: VDRfFZapx5Y

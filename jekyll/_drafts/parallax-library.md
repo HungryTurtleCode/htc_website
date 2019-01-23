@@ -1,6 +1,6 @@
 ---
 title: Writing an NPM Library (Parallax Provider)
-image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FMaking%20a%20Parallax%20Library%20For%20NPM.jpeg.jpg?alt=media&token=f7f9c428-ec7c-4509-9db8-57249c9f420c
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FMaking%20a%20Parallax%20Library%20For%20NPM.jpg?alt=media&token=d3a26bcb-4b2c-47ce-a624-cd2a960b73d4
 excerpt: In this tutorial we will take the hacky parallax code we wrote before and turn it into a nice generalised library that can be used to implement arbitrary parallax website. Ultimately we will publish the library to NPM.
 
 videoID: DFa5uQwxUcc
