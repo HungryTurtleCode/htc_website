@@ -288,10 +288,13 @@ With that done, let's write some actual library code.
 
 ## Some actual code
 
-We know we want to have a class that accepts an array as input so let's create that now.
+We know we want to have a class that accepts an array as input so let's create that now in our
+{% ihighlight bash %}{% raw %}
+src/index.js
+{% endraw %}{% endihighlight %}.
 
 {% highlight javascript linenos%}{% raw %}
-class ParallaxProvider {
+export default class ParallaxProvider {
   constructor(modules) {
     if (modules && modules.length) {
       this.modules = modules;
