@@ -3,14 +3,14 @@
     - title: Pure JS Parallax Effect
       length: '47:07'
       slug: parallax-mountains
-    # - title: Writing the NPM Library
-    #   length: ''
-    #   slug: parallax-library
+    - title: Writing the NPM Library
+      length: '26:14'
+      slug: parallax-library
     # - title: Using The Library
-    #   length: ''
+    #   length: '18:35'
     #   slug: parallax-rewrite
     # - title: Testing Our Library
-    #   length: ''
+    #   length: '26:32'
     #   slug: parallax-tests
     # - title: Deploying to NPM
     #   length: ''
