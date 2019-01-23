@@ -1,9 +1,9 @@
 ---
 title: Using the Parallax Library
-image: 
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FUsing%20Our%20New%20Parallax%20Library.jpeg.jpg?alt=media&token=a19e8871-27e6-4236-abed-f2a5da14d91a
 excerpt: Let's take the hacky parallax website code we wrote before and rewrite it to use our shiny new parallax library.
 
-videoID: 
+videoID: yuzN2TvPbII
 repo: adiman9/ParallaxProvider
 fbimg: 
 twitterimg: 
