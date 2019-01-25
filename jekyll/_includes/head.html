@@ -22,13 +22,15 @@
 	<meta name="twitter:description" content="{% if page.excerpt %}{{page.excerpt}}{% else %}{{site.description}}{% endif %}">
 	<meta name="twitter:image" content="{% if page.twitterimg %}{{site.produrl}}{{page.twitterimg}}{% elsif page.videoID %}https://img.youtube.com/vi/{{page.videoID}}/maxresdefault.jpg{% else %}{{site.produrl}}{{site.socialimg}}{% endif %}"/>
 	<meta name="twitter:url" content="{{site.produrl}}{{page.url}}">
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-	(adsbygoogle = window.adsbygoogle || []).push({
-		google_ad_client: "ca-pub-6198767829900068",
-		enable_page_level_ads: true
-	});
-	</script>
+  {% if jekyll.environment == "staging" %}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-6198767829900068",
+      enable_page_level_ads: true
+    });
+    </script>
+  {% endif %}
 
 	<!-- CSS & fonts -->
   {% css app %}
