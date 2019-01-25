@@ -6,9 +6,9 @@
     - title: Writing the NPM Library
       length: '26:14'
       slug: parallax-library
-    # - title: Using The Library
-    #   length: '18:35'
-    #   slug: parallax-rewrite
+    - title: Using The Library
+      length: '18:35'
+      slug: parallax-rewrite
     # - title: Testing Our Library
     #   length: '26:32'
     #   slug: parallax-tests
