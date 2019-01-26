@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "hungry-turtle-code",
+    "prod": "hungry-turtle-code",
     "staging": "hungryturtlecode-staging"
   }
 }
