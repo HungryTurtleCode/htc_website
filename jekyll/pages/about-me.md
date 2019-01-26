@@ -8,6 +8,13 @@ hide-share: true
 hide-comments: true
 hide-related: true
 ---
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+ (adsbygoogle = window.adsbygoogle || []).push({
+   google_ad_client: "ca-pub-6198767829900068",
+   enable_page_level_ads: true
+ });
+</script>
 
 ## Who Am I? And What Is Hungry Turtle Code?
 
@@ -78,3 +85,14 @@ Feel free to follow me on social media, I try to be as active as possible.
 I like to engage in conversation, **so don&#8217;t be shy.**
 
 Adrian
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-6198767829900068"
+     data-ad-slot="6959721879"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

@@ -5,6 +5,13 @@ author: Adrian
 layout: fullwidth
 permalink: /terms-of-use/
 ---
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+ (adsbygoogle = window.adsbygoogle || []).push({
+   google_ad_client: "ca-pub-6198767829900068",
+   enable_page_level_ads: true
+ });
+</script>
 **Last Revised: January 15, 2017**
 
 These terms and conditions are subject to change by Hungry Turtle Code. (hereinafter “Company”) at any time and at our discretion without notice by updating this posting.

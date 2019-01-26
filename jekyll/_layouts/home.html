@@ -12,6 +12,22 @@ layout: default
       {% unless post.loop == false %}
         {% include article-excerpt.html data=post %}
         {% assign count = count | plus: 1 %}
+
+        {% if count == 5 or count == 10 %}
+          <article class="article-excerpt">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                 style="display:block; text-align:center;"
+                 data-ad-layout="in-article"
+                 data-ad-format="fluid"
+                 data-ad-client="ca-pub-6198767829900068"
+                 data-ad-slot="6959721879"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </article>
+        {% endif %}
+
         {% if count >= max %}
           {% break %}
         {% endif %}

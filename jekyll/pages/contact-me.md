@@ -4,6 +4,7 @@ date: 2015-12-27T11:58:46+00:00
 author: Adrian
 layout: fullwidth
 permalink: /contact-me/
+showads: true
 ---
 <div class="contact-me-page">
   If you have any questions or requests about myself or the content of this site, please do not hesitate to ask.
