@@ -1,7 +1,7 @@
 ---
 title: Writing tests for the Parallax Library
 image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FTesting%20With%20Jest%20-%20NPM%20Parallax%20Library.jpg?alt=media&token=fafc7c13-51b9-4726-8fee-def49c7298cf
-excerpt: This is the template excerpt
+excerpt: With the parallax library javascript code written we want to deploy it to NPM. But before we do we have to make sure that everything is working as it should and future proof the projects by adding tests. We will be using the jest testing library to achieve that.
 
 videoID: VDRfFZapx5Y
 repo: adiman9/ParallaxProvider
@@ -20,10 +20,10 @@ tags:
   - Open Source
   - Parallax Library
 resources:
-  - name: Resource name
-    link: link
+  - name: Jest Docs
+    link: https://jestjs.io/docs/en/getting-started 
 ---
-## Writing unit tests
+## Writing unit tests for javascript
 
 Tests are super important in any project but especially so in open source projects that are going to be contributed to by many different people and used by many people. We want to have confidence that the code is correct and no bugs are being introduced by new changes etc.
 
@@ -83,10 +83,13 @@ We have ourselves all set up with jest now so we can jump in and start writing t
 Our library relies on scroll events that are fired in the browser, so how will we mock that behaviour during our tests when there is no browser and therefore no scrolling? Well, fortunately jest exposes an object called
 {% ihighlight javascript %}{% raw %}
 global
-{% endraw %}{% endihighlight %} that we can mock things like
+{% endraw %}{% endihighlight %} that acts like the
+{% ihighlight javascript %}{% raw %}
+window
+{% endraw %}{% endihighlight %} object in the browser. This will allow us to then mock things like
 {% ihighlight javascript %}{% raw %}
 addEventListener
-{% endraw %}{% endihighlight %} on.
+{% endraw %}{% endihighlight %}.
 
 So we will create a new file in the
 {% ihighlight bash %}{% raw %}
@@ -102,7 +105,7 @@ import ParallaxProvider from '../src';
 let events = {};
 beforeEach(() => {
   events = {};
-  global.addEventListener = jest.fn((event, cb) => {
+  global.document.addEventListener = jest.fn((event, cb) => {
     events[event] = cb;
   });
 });
@@ -110,14 +113,14 @@ beforeEach(() => {
 
 {% ihighlight javascript %}{% raw %}
 beforeEach
-{% endraw %}{% endihighlight %} gets called before every test we run, so what we are doing here is before every test we are defining a method called addEventListener on the jest global object and we are telling it is a jest function that accepts two arguments, an event name and a callback. Using jest functions like this like allow us to make assertions that check if the function has been called, how many times, and with what arguments.
+{% endraw %}{% endihighlight %} gets called before every test we run, so what we are doing here is before every test we are defining a method called addEventListener on the document object within the jest global object and we are telling it that it is a jest function that accepts two arguments, an event name and a callback. Using jest functions like this like allows us to make assertions that check if the function has been called, how many times, and with what arguments.
 
 We are also populating an events objects with the key for event name and the callback as a value.
 
 What this means is when our library calls
 
 {% highlight javascript add %}{% raw %}
-window.addEventListener('scroll', () => {
+document.addEventListener('scroll', () => {
   // scroll code
 });
 {% endraw %}{% endhighlight %}
@@ -175,7 +178,7 @@ At the bottom of the above describe block we can place the following:
 
 {% highlight javascript linenos%}{% raw %}
 test('calls window.addEventListener() for scroll event', () => {
-  expect(global.addEventListener).toHaveBeenCalledWith(
+  expect(global.document.addEventListener).toHaveBeenCalledWith(
     'scroll',
     expect.any(Function),
   );
@@ -200,7 +203,7 @@ yarn test
 
 In the terminal. Jest will magically find our test file and run the tests then report back to us about how things went. We should get the following output:
 
-**INSERT IMAGE HERE**
+![Results from yarn test]({% asset_path yarn_test_parallax %}){: class="aligncenter" }
 
 For ease we can now run
 
@@ -210,7 +213,7 @@ yarn test:watch
 
 You will be met with the following screen:
 
-**INSERT IMAGE HERE**
+![Results from yarn test]({% asset_path yarn_test_watch_parallax %}){: class="aligncenter" }
 
 I usually hit "a" or "o" depending on how many tests I have. Jest will now watch for changes in our files and rerun the tests when things have changed. Wonderful stuff.
 

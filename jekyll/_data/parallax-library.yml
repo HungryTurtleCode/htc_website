@@ -9,9 +9,9 @@
     - title: Using The Library
       length: '18:35'
       slug: parallax-rewrite
-    # - title: Testing Our Library
-    #   length: '26:32'
-    #   slug: parallax-tests
+    - title: Testing Our Library
+      length: '26:32'
+      slug: parallax-tests
     # - title: Deploying to NPM
     #   length: ''
     #   slug: parallax-deploy-npm
