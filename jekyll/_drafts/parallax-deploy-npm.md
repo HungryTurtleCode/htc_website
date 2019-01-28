@@ -22,6 +22,8 @@ tags:
 resources:
   - name: Library on NPM
     link: https://www.npmjs.com/package/parallax-provider
+  - name: TravisCI
+    link: https://travis-ci.org/
 ---
 ## Deploying our Library to NPM
 
@@ -254,17 +256,15 @@ We are going to set up continuous integration using Travis CI. Continuous integr
 
 You may have seen this on github pull requests before:
 
-**INSERT IMAGE HERE**
+![Travis Pull Request]({% asset_path travis_pr %}){: class="aligncenter"}
 
 That is travis integrated with github.
 
 So go to [travis-ci.org](https://travis-ci.org) and sign up with your github account.
 
-**INSERT IMAGE HERE**
-
 Once you are logged in, you will be greated by a list of all the public repositories you have on your github account. Search for the one you want and click it, you will be greeted by this page:
 
-**INSERT IMAGE HERE**
+![Travis Not Activated Screen]({% asset_path travis_activate %}){: class="aligncenter"}
 
 Activate the repository.
 
@@ -292,8 +292,6 @@ If we add the above config into the repo and push it to github travis github wil
 
 Here is what the travis dashboard for the repo will look like:
 
-**INSERT IMAGE HERE**
-
 ## CI DONE, time to deploy!
 
 At this point we have all our tools set up for best practices and we have a continuous integration flow working. The next thing to do is to automatically deploy the library to NPM via the travis pipeline.
@@ -304,15 +302,13 @@ Once you have an account you will need to create an API token that will allow tr
 
 On the main page on npmjs.com click the account dropdown at the top and select "tokens":
 
-**INSERT IMAGE HERE(dropdown on npmjs)**
+![NPM Dropdown]({% asset_path npm_dropdown %}){: class="aligncenter"}
 
 You will be brought to the tokens page of your account. Click the "Create new token" button.
 
-**INSERT IMAGE HERE(create new token)**
+![NPM Create token]({% asset_path npm_create_token %}){: class="aligncenter"}
 
 You want to create a "Read and publish" token so that travis can publish on your behalf. Soon as you hit create you will be presented with a success message and the token itself. Be super careful with this token, if anyone get's hold of it they will be able to publish to your npm account, which is really not what you want!
-
-**INSERT IMAGE HERE (npm token)**
 
 ### Add the key to travis
 
@@ -322,7 +318,7 @@ Navigate to the travis dashboard and click on the project in question. In this c
 
 Hit the "More options" button on the top right and go to "settings".
 
-**INSERT IMAGE HERE (more options)**
+![Travis More Options]({% asset_path travis_more_options %}){: class="aligncenter"}
 
 Scroll down to the "Environment Variables" section and create two environment variables as follows:
 
@@ -446,19 +442,17 @@ git push --tags
 
 Once you have pushed the tags to github you should see them under "release":
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![Github Releases]({% asset_path travis_released_github %}){: class="aligncenter"}
 
 ## Everything working
 With our new tag added to git and pushed to github, travis will get to work running our jobs. It will detect that there is a new tag and therefore the deployment to npm will run.
 
-**INSERT IMAGE HERE (travis detecting tag)**
-**INSERT IMAGE HERE (travis running)**
-**INSERT IMAGE HERE (travis completed)**
+![Travis Running]({% asset_path travis_running %}){: class="aligncenter"}
+![Travis Deployed]({% asset_path travis_deploy %}){: class="aligncenter"}
 
 If the travis jobs all passed successfully we should be able to go to your npm account and see a new package has been added:
 
-**INSERT IMAGE HERE (package on npm)**
+![NPM Package published]({% asset_path travis_published %}){: class="aligncenter"}
 
 And there you go! Well done! You now have your very own open source package published on NPM.
 
