@@ -1,6 +1,6 @@
 ---
 title: ESLint and Prettier with Husky Git Hooks
-image:
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2Feslint%20and%20prettier%20with%20husky%20git%20hooks.jpg?alt=media&token=498fb054-609d-493f-ac7b-8583706b5a45
 excerpt: Using eslint and prettier have become standard best practices for javascript projects to maintain consitency in the code base. Enforcing eslint and prettier using husky git hooks is a great way to ensure that quality with minimal developer effort.
 
 videoID: oLxuu7kBZWg

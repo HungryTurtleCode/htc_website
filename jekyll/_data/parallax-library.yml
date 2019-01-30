@@ -12,6 +12,9 @@
     - title: Testing Our Library
       length: '26:32'
       slug: parallax-tests
+    - title: ESLint and Prettier
+      length: '12:08'
+      slug: eslint-husky-parallax
     # - title: Deploying to NPM
     #   length: ''
     #   slug: parallax-deploy-npm
