@@ -37,7 +37,7 @@ Before we set up Travis we will want a few more NPM scripts to trigger things li
 
 Here is all the npm scripts:
 
-{% highlight json linenos%}{% raw %}
+{% highlight javascript linenos%}{% raw %}
 "scripts": {
   // ones we had already from other parts
   "build": "rollup -c",
@@ -86,6 +86,8 @@ You may have seen this on github pull requests before:
 
 That is travis integrated with github.
 
+**TODO mention setting up a git repo if not done already**
+
 So go to [travis-ci.org](https://travis-ci.org) and sign up with your github account.
 
 Once you are logged in, you will be greated by a list of all the public repositories you have on your github account. Search for the one you want and click it, you will be greeted by this page:
@@ -116,7 +118,13 @@ script:
 
 If we add the above config into the repo and push it to github travis github will tell travis that there is a new commit and travis will run according to what is in that config.
 
-Here is what the travis dashboard for the repo will look like:
+If we head back to the travis dashboard and click on "Build History" we should see a new build has been triggered:
+
+![Travis Build History]({% asset_path travis_build_history  %}){: class="aligncenter"}
+
+If we click on the build we will see the build information and the real time progress of the build.
+
+![Your First Travis Build]({% asset_path travis_first_build %}){: class="aligncenter"}
 
 ## CI DONE, time to deploy!
 
@@ -240,6 +248,8 @@ git tag v0.0.1
 At this point we would have a git tag but the "version" key in the package.json won't be in sync with the git tags. This would have to be updated manually. 
 
 ### NPM Version
+**TODO mention version key in package json and a little about the title too**
+
 To save the hastle of the manual tagging process npm has a built it command called
 {% ihighlight bash %}{% raw %}
 npm version <version_type>
