@@ -86,11 +86,9 @@ You may have seen this on github pull requests before:
 
 That is travis integrated with github.
 
-**TODO mention setting up a git repo if not done already**
+If you haven't already, create a git repo and push your code to github. Once you have done that go to [travis-ci.org](https://travis-ci.org) and sign up with your github account.
 
-So go to [travis-ci.org](https://travis-ci.org) and sign up with your github account.
-
-Once you are logged in, you will be greated by a list of all the public repositories you have on your github account. Search for the one you want and click it, you will be greeted by this page:
+Once you are logged in, you will be greeted by a list of all the public repositories you have on your github account. Search for the one you want and click it, you will be greeted by this page:
 
 ![Travis Not Activated Screen]({% asset_path travis_activate %}){: class="aligncenter"}
 
@@ -247,10 +245,13 @@ git tag v0.0.1
 
 At this point we would have a git tag but the "version" key in the package.json won't be in sync with the git tags. This would have to be updated manually. 
 
-### NPM Version
-**TODO mention version key in package json and a little about the title too**
+### Name in the package.json
 
-To save the hastle of the manual tagging process npm has a built it command called
+Just a quick not on the "name" field in the package.json. Whatever you put in here will be the name of your package on NPM. So make sure it is something that makes sense for your library. I don't think you are allowed to use capitals in your names either. I have called mine 'parallax-provider'.
+
+### NPM Version
+
+To save the hassle of the manual tagging process npm has a built it command called
 {% ihighlight bash %}{% raw %}
 npm version <version_type>
 {% endraw %}{% endihighlight %} that conforms to the SemVer spec and where version_type is one of the following:
