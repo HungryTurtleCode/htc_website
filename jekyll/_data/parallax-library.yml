@@ -15,6 +15,6 @@
     - title: ESLint and Prettier
       length: '12:08'
       slug: eslint-husky-parallax
-    # - title: Deploying to NPM
-    #   length: ''
-    #   slug: parallax-deploy-npm
+    - title: Deploying to NPM
+      length: '25:14'
+      slug: parallax-deploy-npm

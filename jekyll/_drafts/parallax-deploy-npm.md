@@ -1,9 +1,9 @@
 ---
 title: How To Deploy a Library to NPM Using Travis CI
-image:
-excerpt: This is the template excerpt
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FHow%20To%20Deploy%20A%20Javascript%20Library%20To%20NPM.jpg?alt=media&token=dff42abc-afa1-4467-bbc2-10cf4347ec05
+excerpt: Let's learn to publish an NPM package automatically using travis continuous integration and deployment. We will set up travis to automatically publish our library to NPM when we add a new release git tag on our repo.
 
-videoID:
+videoID: ccZi8Eb69Is
 repo: adiman9/ParallaxProvider
 fbimg:
 twitterimg:
@@ -27,7 +27,7 @@ resources:
 ---
 ## Deploying our Library to NPM
 
-We finally made it! We are going to deploy the library to NPM. With all the best practices in place [from the previous part]({{site.baseurl}}/projects/eslint-husky-parallax) we are ready to set up travis continuous integration and automated deploy of the library to NPM on git tags. 
+We finally made it! We are going to deploy the library to NPM. With all the best practices in place [from the previous part]({{site.baseurl}}/projects/eslint-husky-parallax) we are ready to set up travis continuous integration and automated deploy of the library to NPM on git tags. Learning how to publish an npm package is definitely something you should have in your tool belt.
 
 Setting up "continuous integration" and automated deployment isn't nearly as complicated as it sounds. So let's get into it.
 
