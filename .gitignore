@@ -63,3 +63,4 @@ npm-debug.log
 api/aws-key/*
 
 .env
+tags
