@@ -5,10 +5,12 @@ excerpt: CSS in JS is taking the javascript world by storm and Styled Components
 
 videoID: JFE_UuHtHT4
 repo: repoOrg/repoName
+demo: styledcomponentsintro
 
 categories:
   - Tutorials
 tags:
+  - Javascript
   - React
 resources:
   - name: Styled Components
