@@ -92,16 +92,18 @@ Now we want to import and run that function into our main index.js file:
 {% highlight javascript linenos%}{% raw %}
 import { hello } from './hello';
 
-hello();
+hello('Hungry Turtle Code');
 
 // rest of code
 {% endraw %}{% endhighlight %}
 
 With our live-server still running we can check out what the browser thinks of our changes:
 
-**TODO INSERT IMAGE**
+![Unexpected Token Console Error]({% asset_path no_parcel_error %}){: class="aligncenter"}
 
 **Woops**
+
+The unexpected token is the opening { in the import statement. The browser has no idea what that is.
 
 ## Parcel to the rescue
 
@@ -131,11 +133,11 @@ yarn start
 
 You will be greeted with this console output:
 
-**TODO insert image**
+![Parcel Bundle Output]({% asset_path parcel_output %}){: class="aligncenter"}
 
 Heading over to the browser to localhost:1234
 
-**TODO insert image**
+![Parcel To The Rescue]({% asset_path parcel_hello_world %}){: class="aligncenter"}
 
 ### What just happened?
 By simply installing parcel our code suddenly works! That is pretty amazing and honestly this alone is enough to sell me on the merits of Parcel. However, we ain't seen nothin' yet. Let's try something crazy.
@@ -154,7 +156,7 @@ If we save and take a look at the
 yarn start
 {% endraw %}{% endihighlight %} script that is running in the terminal we will see that Parcel notices that we don't have React and ReactDom so it will install them for us. 
 
-**TODO insert mind blown gif**
+![Mind Blown]({% asset_path mind_blown %}){: class="aligncenter"}
 
 ***It should be noted at this point that it isn't always the best idea to let Parcel handle installing dependencies. You should still try to do that yourself but know that Parcel can do it for you, but it will cause some strange behaviour sometimes.***
 
@@ -191,7 +193,7 @@ And add a div with id of "app" into our html:
 
 Head over to the browser:
 
-**TODO insert image**
+![Parcel Hello React Output]({% asset_path parcel_hello_react %}){: class="aligncenter"}
 
 WOW. The first time I saw this, it genuinely exploded my brain. React is working, with jsx and everything without having to configure any build tool and without using create-react-app. This is life changing stuff.
 
@@ -227,6 +229,8 @@ ReactDom.render(<App />, document.getElementById('app'));
 {% endraw %}{% endhighlight %}
 
 Taking a look in the browser and we will see our Hello components has been imported as expected and it is displaying nicely on the page.
+
+![Parcel Hello Component]({% asset_path parcel_hello_component %}){: class="aligncenter"}
 
 ### What else is possible
 Just like other bundlers parcel is capable of handling other asset types, not just javascript. This means we can import things like css and images into our javascript bundles as well. 
