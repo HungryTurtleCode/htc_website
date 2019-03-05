@@ -51,7 +51,7 @@ Currently code uses a CSS file and manipulates the classes on the components - t
 For reference here is the code we currently have:
 
 *components/Card.js*
-{% highlight javascript linenos %}{% raw %}
+{% highlight react linenos %}{% raw %}
 import React from 'react';
 
 export function Card({ children, theme }) {
@@ -78,7 +78,7 @@ export function CardFooter({ children }) {
 {% endraw %}{% endhighlight %}
 
 *components/Layout.js*
-{% highlight javascript linenos %}{% raw %}
+{% highlight react linenos %}{% raw %}
 import React from 'react';
 
 export function Container({ children }) {
@@ -91,7 +91,7 @@ export function Container({ children }) {
 {% endraw %}{% endhighlight %}
 
 *components/Button.js*
-{% highlight javascript linenos %}{% raw %}
+{% highlight react linenos %}{% raw %}
 import React from 'react';
 
 export function Button({ children, theme, ...props }) {
@@ -107,7 +107,7 @@ export function Button({ children, theme, ...props }) {
 {% endraw %}{% endhighlight %}
 
 *App.js*
-{% highlight javascript linenos %}{% raw %}
+{% highlight react linenos %}{% raw %}
 import React, { useState } from 'react';
 import './App.css';
 import { Card, CardImage, CardFooter } from './components/Card';
@@ -223,7 +223,7 @@ import styled from 'styled-components';
 
 Then we will want to use that to recreate the Button component. Let's quickly remind ourselves of what the old Button component looked like:
 
-{% highlight javascript linenos %}{% raw %}
+{% highlight react linenos %}{% raw %}
 export function Button({ children, theme, ...props }) {
   return (
     <button
@@ -413,7 +413,7 @@ Now wherever we use the button we can set the {% ihighlight javascript %}{% raw 
 largetext
 {% endraw %}{% endihighlight %} prop to make the text inside the button large and remove it to leave it at the default size:
 
-{% highlight javascript linenos %}{% raw %}
+{% highlight react linenos %}{% raw %}
 <Button
   onClick={toggleTheme}
   theme={theme}
