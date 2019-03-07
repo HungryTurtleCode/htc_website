@@ -1,9 +1,9 @@
 ---
 title: What is Parcel Bundler?
-image: 
+image: https://firebasestorage.googleapis.com/v0/b/hungry-turtle-code.appspot.com/o/article_images%2FWhat%20Is%20Parcel%20Bundler.jpg?alt=media&token=86dccb67-3691-4946-8c75-7f045da6d68a
 excerpt: What is Parcel Bundler and why is it the future? For years now javascript bundlers have become the norm for frontend development workflows. But it is almost a cliche to say that they are difficult to set up and configure. Parcel Bundler aims to solve that by giving you a zero configuration option with all the power of the currently accepted tooling.
 
-videoID: 
+videoID: Wwh3WJ41znI
 
 categories:
   - Tutorials
