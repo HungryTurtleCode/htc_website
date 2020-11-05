@@ -30,6 +30,8 @@ resources:
   - name: Git Hooks
     link: https://githooks.com/
 ---
+*Please note that the video is a little out of date now - the lint-staged config used in it is wrong. This article has been updated to reflect the correct config*
+
 ## Javascript Tooling
 
 If we are maintaining an open source project we have to think about the fact that there will likely be other people from all over the world who could contribute to the project and they all have different levels of ability and different coding preferences. That is absolutely fine, but we still want to strive for consistency in our code.
@@ -181,21 +183,18 @@ lint-staged.config.js
 
 {% highlight javascript linenos%}{% raw %}
 module.exports = {
-  linters: {
-    '**/*.+(js|md|ts|css|sass|less|graphql|yml|yaml|scss|json|vue)': [
-      'eslint --fix',
-      'prettier --write',
-      'jest --findRelatedTests',
-      'git add',
-    ],
-  },
+  '**/*.+(js|ts)': [
+    'eslint --fix',
+    'prettier --write',
+    'jest --findRelatedTests',
+  ],
 };
 {% endraw %}{% endhighlight %}
 
 Here we are telling lint staged to look for any file that ends in any of the following
 {% ihighlight bash %}{% raw %}
-(js|md|ts|css|sass|less|graphql|yml|yaml|scss|json|vue)
-{% endraw %}{% endihighlight %} and then run eslint, prettier and jest on them. Finally it runs git add on each file too to make sure that the most up to date file gets readded to the git stage in the likely event that prettier or eslint modified the files.
+(js|ts)
+{% endraw %}{% endihighlight %} and then run eslint, prettier and jest on them.
 
 The final step is to actually get husky to run this on precommit. Open up your package.json and add the following.
 
