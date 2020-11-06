@@ -27,6 +27,8 @@ Stay hungry, and keep coding.
 
 Adrian
 
+If you enjoy what I'm doing consider following me [on twitter @hungrytrtl](https://twitter.com/hungrytrtl){: target="_blank"}<!--_-->
+
 &nbsp;
 
 Please give this post a share if you enjoyed it. _Everyone_ needs that **awesome friend** to send them amazing stuff.
